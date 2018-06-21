@@ -5,6 +5,7 @@
 # Remove derived stuff
 .docx
 .html
+.pdf
 
 # Session Data files
 .RData
