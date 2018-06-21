@@ -2,6 +2,10 @@
 .Rhistory
 .Rapp.history
 
+# Remove derived stuff
+.docx
+.html
+
 # Session Data files
 .RData
 
