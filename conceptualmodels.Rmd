@@ -1,0 +1,147 @@
+---
+title: "Conceptual models"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+
+For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
+
+
+## Contributor name(s)
+Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Robert Wildermuth 
+
+## Data name
+Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
+
+### Indicator category 
+<!-- 1. Database pull -->
+<!-- 2. Database pull with analysis -->
+3. Synthesis of published information
+4. Extensive analysis; not yet published
+<!-- 5. Published methods -->
+
+
+## Methods
+Conceptual models were constructed to facilitate multidisciplinary analysis and discussion of the linked social-ecological system for integrated ecosystem assessment. The overall process was to first identify the components of the model (focal groups, human activities, environmental drivers, and objectives), and then to document criteria for including groups and linkages and what the specific links were between the components.
+
+The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an overview conceptual model (https://www.integratedecosystemassessment.noaa.gov/Assets/iea/california/conceptual-models/Integrated-SocioEcological-System-Overview6.png), with models for each focal ecosystem component that detailed the ecological, environmental, and human system linkages (https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-overview.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-environmental.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-ecological.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-human.html#). Another set of conceptual models outlined habitat linkages (https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/mediating-components/habitat.html). 
+
+
+### Data source(s) (All types)
+<!--Please provide a text description of data sources.-->
+
+
+Identify 
+focal groups or species 
+human activities and objectives
+environmental drivers
+Document 
+criteria and linkages
+
+
+
+### Data extraction 
+<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
+
+
+Write SQL query here
+```{sql, eval = F, echo = T}
+SELECT * FROM...
+```
+
+```{r r_extract, echo = T, eval = F}
+# Extraction code
+```
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
+
+Identify 
+focal groups or species 
+human activities and objectives
+environmental drivers
+Document 
+criteria and linkages
+
+
+
+
+What packages or libraries did you use in your work flow?
+```{r packages, echo = T}
+sessionInfo(package = NULL)
+
+
+#Use this to output a detailed list of the package information
+current.session <- sessionInfo(package = NULL)
+current.session$otherPkgs
+```
+
+
+Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
+```{r analysis, echo = T, eval = F}
+# analysis code
+```
+
+### References
+<!--List references here.-->
+
+
+
+
+### ERDDAP data set
+If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+```{r erddap pull, echo = T, eval = F}
+library(rerddap)
+
+comet <- 'http://comet.nefsc.noaa.gov/erddap/'
+
+tab_list <- ed_datasets(url = comet)
+tab_list <- data.frame(Title = tab_list$Title,
+                        Identifier = tab_list$Dataset.ID,
+                        Index = 1:nrow(tab_list))
+
+#Get data set ID (will need to change)
+#id <- as.character(tab_list$Identifier[9]) 
+
+#Pull data
+data <- tabledap(id,url = comet)
+
+#Print metadata
+metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
+cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
+
+```
+
+
+### Further metadata
+Fill out the following metadata required by PARR
+
+
+#### Public availability statement
+Will source data be available to the public? If not, is a Data Access Waiver necessary?
+
+
+#### Point of contact - Whom should be contacted?
+
+
+#### Data steward (can be POC; in charge of keeping data updated)
+
+
+
+
+
+
+
+
+
