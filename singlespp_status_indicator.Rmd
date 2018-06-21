@@ -1,0 +1,253 @@
+---
+title: "Single species status across all managed species"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+
+For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
+-->
+
+## Contributor name(s)
+Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
+
+## Data name
+Most recent stock assessment model results summarized for each assessed species.
+
+### Indicator category
+1. Database pull
+2. Database pull with analysis
+3. Synthesis of published information
+4. Extensive analysis, not yet published
+5. Published methods
+
+##Methods
+
+### Data source(s)
+<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
+
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
+https://www.nefsc.noaa.gov/saw/reports.html
+https://www.nefsc.noaa.gov/publications/crd/crd1717/
+
+Additional assessments are reported directly to the New England Fishery Management Council (NEFMC):
+http://s3.amazonaws.com/nefmc.org/Document-2-SAFE-Report-for-Fishing-Year-2016.pdf
+http://s3.amazonaws.com/nefmc.org/4_NEFSC_SkateMemo_July_2017.pdf
+
+
+
+### Data extraction
+<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
+
+I wish there were code for this. A more talented person could write it using OCR from the pdf versions of all of those files and context.
+
+Instead, each assessment document was searched by eye to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
+
+Bcur: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
+
+Fcur: current year fishing mortality, F
+
+Bref: biomass reference point, a proxy of Bmsy (the target)
+
+Fref: fishing mortality reference point, a proxy of Fmsy
+
+<!--Write SQL query here
+```{sql, eval = F, echo = T}
+SELECT * FROM...
+```
+--> 
+```{r r_extract, echo = T, eval = T}
+# Extraction code
+ data.dir  <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018'
+ image.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/images'
+ gis.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/usa_shape_files'
+ 
+#data files are read in from a csv file compiled by hand as in the r script below.
+```
+
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+
+For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
+
+<!--What packages or libraries did you use in your work flow?-->
+```{r packages, echo = T}
+sessionInfo(package = NULL)
+
+#all packages in the SOE file that ran my code snippet, probably only need data.table
+#library(Kendall);library(data.table);library(zoo)
+#library(dplyr);library(nlme);library(AICcmodavg)
+#library(colorRamps);library(Hmisc);library(rgdal)
+#library(maps);library(mapdata);library(raster)
+#library(grid);library(stringr);library(png)
+#library(ncdf4);library(marmap); library(magick)
+
+#Use this to output a detailed list of the package information
+current.session <- sessionInfo(package = NULL)
+current.session$otherPkgs
+```
+
+<!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', fig.show='hold'}
+# analysis code
+#fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', echo = F, message = FALSE, warning = FALSE, eval = T}
+
+dat <- read.csv(file.path(data.dir,"2017assess.csv"))
+
+stocks <- unique(dat$Entity.Name)
+n.stocks <- length(stocks)
+
+decoder <- read.csv(file.path(data.dir,"2017decoder.csv"))
+# set up the headers for most.recent structure - will contain oldest Assessment.Year
+most.recent <- dat[1,]
+most.recent <- most.recent[-1,]
+
+for (i in 1:n.stocks){
+  temp <- dat[dat$Entity.Name == decoder$Entity.Name[i],]
+  most.recent <- rbind(most.recent,temp[temp$Assessment.Year == max(temp$Assessment.Year),])
+}
+#cbind(n.stocks,length(most.recent[,1]))
+
+# get the max of F.Flimit and F.Fmsy and the max of B.Blimit and B.Bmsy
+Frat <- most.recent$F.Fmsy
+Brat <- most.recent$B.Bmsy
+#Frat[6] <- most.recent$F.Flimit[6]  # Ocean Quahog use Flimit because no Fmsy
+#Frat[18] <- 0.88  # hardwire average of the two GOM models for GOM cod
+#Brat[18] <- 0.155 # hardwire average of the two GOM models for GOM cod
+#model averages have been calculated and included in F/Fmsy column in 2017assess.csv
+#cbind(most.recent$Entity.Name,most.recent$F.Flimit,most.recent$F.Fmsy)
+
+# figure out appropriate range for axes WARNING HARD CODED
+#max(Frat,na.rm=T)
+#max(Brat,na.rm=T)
+x.r <- c(0,7)
+y.r <- c(0,3.5)
+
+# set some colors
+my.col <- rep(NA,n.stocks)
+MA.col <- "blue"
+NE.col <- "blue"
+BO.col <- "purple"
+for (i in 1:n.stocks){
+  if(decoder$Council[i] == "MAFMC") my.col[i] <- MA.col
+  if(decoder$Council[i] == "NEFMC") my.col[i] <- NE.col
+  if(decoder$Council[i] == "Both")  my.col[i] <- BO.col
+}
+
+# create new matrix for plotting
+xx <- as.data.frame(cbind(decoder[,2:8],Frat,Brat,my.col))
+newlist <- as.factor(decoder$Code)
+others <- as.factor("7 Skates")
+sppcodes <- unlist(list(newlist, others))
+MA.unknown <- sppcodes[c(1,3,4,47,48)] #mackerel, Loligo, Illex, monkfish unknown
+#MA.unknown <- decoder$Code[c(1,3,4,8)] #BSB known
+#NE.unknown <- c(decoder$Code[c(14,23,33)],"7 Skates")
+NE.overfished <- sppcodes[c(17,19,35)] # GB cod, halibut, witch, thorny skate
+NE.unknown <- sppcodes[c(14,23,33,47,48)] #Red deepsea crab,  Offshore hake, GOM winter flounder, GB YT,2 monkfish, 7 skates unknown
+my.col[50] <- NE.col
+
+
+# break out the Councils
+MA <- xx[xx$Council == "MAFMC",]
+NE <- xx[xx$Council == "NEFMC",]
+BO <- xx[xx$Council == "Both",]
+MABO<-rbind(MA, BO)
+NEBO<-rbind(NE, BO)
+
+#if(saveplots) png(file = "MAFMC_joint_stocks_2017.png",  units="in", width = 6, height = 6, res=1200)
+# plot(MABO$Brat,MABO$Frat,xlim=x.r,ylim=y.r,xlab="B/Bmsy",ylab="F/Fmsy",pch=16,col=my.col[c(1:11,47:49)])
+#   abline(v=0.5,lty=2)
+#   abline(v=1,lty=3)
+#   abline(h=1,lty=2)
+#   title(expression("MAFMC " * phantom("and Joint Stocks")), col.main="blue")
+#   title(expression(phantom("MAFMC ") * "and " * phantom("Joint Stocks")), col.main="black")
+#   title(expression(phantom("MAFMC and ") * "Joint" * phantom(" Stocks")), col.main="purple")
+#   title(expression(phantom("MAFMC and Joint") * " Stocks"), col.main="black")  
+#   legend('topright',legend=MA.unknown,pch=NA,text.col=my.col[c(1,3,4,47,48)], title="Unknown Status", title.col = "black")
+#   text(MABO$Brat,MABO$Frat,labels=MABO$Code,pos=MABO$my.pos3,col=my.col[c(1:11,47:49)],cex=0.8)
+#if(saveplots) savePlot("MAFMC_Joint_stocks.png", type='png')
+#if(saveplots) dev.off()
+
+#if(saveplots) pdf(file = "NEFMC_joint_stocks.pdf",  width = 6, height = 6)
+#if(saveplots) png(file = "NEFMC_joint_stocks.png",  units="in", width = 6, height = 9, res=1200)
+plot(NEBO$Brat,NEBO$Frat,xlim=x.r,ylim=y.r,xlab="B/Bmsy",ylab="F/Fmsy",pch=16,col=my.col[12:49])
+   abline(v=0.5,lty=2)
+   abline(v=1,lty=3)
+   abline(h=1,lty=2)
+   title(expression("NEFMC " * phantom("and Joint Stocks")), col.main="blue")
+   title(expression(phantom("NEFMC ") * "and " * phantom("Joint Stocks")), col.main="black")
+   title(expression(phantom("NEFMC and ") * "Joint" * phantom(" Stocks")), col.main="purple")
+   title(expression(phantom("NEFMC and Joint") * " Stocks"), col.main="black")
+   legend('topright',legend=NE.overfished,pch=NA,text.col=my.col[c(17,19,35)], title="Overfished, F \nStatus Unknown",title.col = "black", bty="n", text.width=strwidth("Offshore Hake"), inset=c(0,.05))
+   legend('right',legend=NE.unknown,pch=NA,text.col=my.col[c(14,23,33,47,48)],title="Unknown Status", title.col = "black",bty="n")
+   text(NEBO$Brat,NEBO$Frat,labels=NEBO$Code,pos=NEBO$my.pos3,col=my.col[12:49],cex=0.8)
+#if(saveplots) savePlot("NEFMC_Joint_stocks.png", type='png')
+#if(saveplots) dev.off()
+
+```
+
+### References
+<!--List references here-->
+
+
+
+### ERDDAP data set
+If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+```{r erddap pull, echo = T, eval = F}
+if(!"rerddap" %in% rownames(installed.packages())){
+  install.packages('rerddap')}
+library(rerddap)
+
+comet <- 'http://comet.nefsc.noaa.gov/erddap/'
+
+tab_list <- ed_datasets(url = comet)
+tab_list <- data.frame(Title = tab_list$Title,
+                        Identifier = tab_list$Dataset.ID,
+                        Index = 1:nrow(tab_list))
+
+#Get data set ID (will need to change)
+#id <- as.character(tab_list$Identifier[9]) 
+
+#Pull data
+data <- tabledap(id,url = comet)
+
+#Print metadata
+metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
+cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
+
+```
+
+
+### Further metadata
+<!--Fill out the following metadata required by PARR-->
+
+
+#### Public availability statement
+<!--Will source data be available to the public? If not, is a Data Access Waiver necessary?-->
+
+
+#### Point of contact - Whom should be contacted?
+Sarah Gaichas
+
+#### Data steward (can be POC; in charge of keeping data updated)
+Sarah Gaichas
+
+
+
+
+
+
+
+
