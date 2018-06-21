@@ -23,17 +23,24 @@ For the tech memo, we will be documenting the methods behind each indicator to t
 
 ## Data name
 
+### Indicator category 
+1. Database pull
+2. Database pull with analysis
+3. Synthesis of published information
+4. Extensive analysis; not yet published
+5. Published methods
 
-##Methods
+
+## Methods
 
 
-### Data source(s)
-Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any? 
+### Data source(s) (All types)
+Please provide a text description of data sources. 
 
 
 
-### Data extraction
-Text overview description of extraction methods
+### Data extraction 
+Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.
 
 
 
@@ -42,26 +49,43 @@ Write SQL query here
 SELECT * FROM...
 ```
 
+```{r r_extract, echo = T, eval = F}
+# Extraction code
+```
+
 ### Data analysis
-Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section
+Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
 
 
 
-Include accompanying R code here
+
+
+
+What packages or libraries did you use in your work flow?
+```{r packages, echo = T}
+sessionInfo(package = NULL)
+
+
+#Use this to output a detailed list of the package information
+current.session <- sessionInfo(package = NULL)
+current.session$otherPkgs
+```
+
+
+Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
 ```{r analysis, echo = T, eval = F}
 # analysis code
 ```
 
 ### References
-List references here
+List references here.
+
 
 
 
 ### ERDDAP data set
 If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
 ```{r erddap pull, echo = T, eval = F}
-if(!"rerddap" %in% rownames(installed.packages())){
-  install.packages('rerddap')}
 library(rerddap)
 
 comet <- 'http://comet.nefsc.noaa.gov/erddap/'
