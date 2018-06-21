@@ -1,9 +1,9 @@
 ---
 title: "Single species status across all managed species"
 output:
+  word_document: default
   html_document: default
   pdf_document: default
-  word_document: default
 ---
 
 ```{r setup,  echo = F, message=F}
@@ -26,11 +26,11 @@ Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legau
 Most recent stock assessment model results summarized for each assessed species.
 
 ### Indicator category
-1. Database pull
-2. Database pull with analysis
+<!-- 1. Database pull -->
+<!-- 2. Database pull with analysis -->
 3. Synthesis of published information
-4. Extensive analysis, not yet published
-5. Published methods
+<!-- 4. Extensive analysis, not yet published -->
+<!-- 5. Published methods -->
 
 ##Methods
 
@@ -100,6 +100,8 @@ current.session$otherPkgs
 ```
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid Atlantic or New England figures.
+
 ```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', fig.show='hold'}
 # analysis code
 #fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', echo = F, message = FALSE, warning = FALSE, eval = T}
