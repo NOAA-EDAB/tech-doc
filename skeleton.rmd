@@ -1,19 +1,98 @@
-## Tech Memo 
+---
+title: "Tech Memo Methods Template"
+output:
+  word_document: default
+  html_document: default
+---
+The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
 
-# Text write up of methods (like for a journal)
+For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 
 
-# References
+## Contributor name(s)
+
+
+## Data name
+
+
+##Methods
+
+
+### Data source(s)
+Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any? 
 
 
 
-## Code 
-# Code 
+### Data extraction
+Text overview description of extraction methods
 
-# Data source
 
-# Data extraction
 
-# Data processing for SOE
+Write SQL query here
+```{sql, eval = F, echo = T}
+SELECT * FROM...
+```
 
-# Example figure
+### Data analysis
+Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section
+
+
+
+Include accompanying R code here
+```{r analysis, echo = T, eval = F}
+# analysis code
+```
+
+### References
+List references here
+
+
+
+### ERDDAP data set
+If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+```{r erddap pull, echo = T, eval = F}
+if(!"rerddap" %in% rownames(installed.packages())){
+  install.packages('rerddap')}
+library(rerddap)
+
+comet <- 'http://comet.nefsc.noaa.gov/erddap/'
+
+tab_list <- ed_datasets(url = comet)
+tab_list <- data.frame(Title = tab_list$Title,
+                        Identifier = tab_list$Dataset.ID,
+                        Index = 1:nrow(tab_list))
+
+#Get data set ID (will need to change)
+#id <- as.character(tab_list$Identifier[9]) 
+
+#Pull data
+data <- tabledap(id,url = comet)
+
+#Print metadata
+metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
+cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
+
+```
+
+
+### Further metadata
+Fill out the following metadata required by PARR
+
+
+#### Public availability statement
+Will source data be available to the public? If not, is a Data Access Waiver necessary?
+
+
+#### Point on contact - Whom should be contacted?
+
+
+#### Data steward (can be POC; in charge of keeping data updated)
+
+
+
+
+
+
+
+
+
