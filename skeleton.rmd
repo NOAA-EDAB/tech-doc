@@ -92,7 +92,7 @@ Fill out the following metadata required by PARR
 Will source data be available to the public? If not, is a Data Access Waiver necessary?
 
 
-#### Point on contact - Whom should be contacted?
+#### Point of contact - Whom should be contacted?
 
 
 #### Data steward (can be POC; in charge of keeping data updated)
