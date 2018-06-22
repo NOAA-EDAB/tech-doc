@@ -69,9 +69,9 @@ SELECT * FROM...
 --> 
 ```{r r_extract, echo = T, eval = T}
 # Extraction code
- data.dir  <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018'
- image.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/images'
- gis.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/usa_shape_files'
+ data.dir  <- './data'
+ image.dir <- './images'
+ #gis.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/usa_shape_files'
  
 #data files are read in from a csv file compiled by hand as in the r script below.
 ```
