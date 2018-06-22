@@ -1,8 +1,8 @@
 ---
 title: "Conceptual models"
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 bibliography: conceptmods.bib
 ---
@@ -46,12 +46,12 @@ image.dir <- './images'
 knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 ```
 
-After the initial draft model was developed, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation of the link between groups. This information was recorded in a spreadsheet. Submodels were then merged together by common components. The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) ecosystem production units (see EPU section). 
+After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a spreadsheet (*make available on ERDDAP*). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) ecosystem production units (see EPU section). 
 
 ### Data source(s) (All types)
 <!--Please provide a text description of data sources.-->
 ####Ecological submodels
-
+Published food web models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to update from historical information to current conditions. 
 
 ####Environmental submodels
 
@@ -69,7 +69,37 @@ criteria and linkages
 
 ### Data extraction 
 <!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
-"Data" included model estimated quantities to determine whether inclusion thresholds were met. 
+####Ecological submodels
+"Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were supplemental information. 
+
+Example FEAST sql script for Cod weighted diet on Georges Bank. Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
+```{sql, eval = F, echo = T}
+Select svspp,year,cruise6,stratum,station,catsex,pdid,pdgutw,pdlen,pdwgt,perpyw,pyamtw,COLLCAT,numlen,pyamtv  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by svspp,year,cruise6,stratum,station,pdid,COLLCAT
+Select distinct svspp,year,cruise6,stratum,station from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by svspp,year,cruise6,stratum,station
+Select distinct svspp,year,cruise6,stratum,station,catsex,catnum from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by svspp,year,cruise6,stratum,station
+Select distinct COLLCAT from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by COLLCAT
+Select distinct svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,pdgutw,pdwgt  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by svspp,year,cruise6,stratum,station,catsex,pdid
+Select svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,COLLCAT,sum(perpyw),sum(pyamtw),sum(pyamtv)  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,COLLCAT order by svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,COLLCAT
+Select svspp,year,cruise6,stratum,station,COLLCAT,sum(pyamtv) sumpvol from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,COLLCAT order by svspp,year,cruise6,stratum,station,COLLCAT
+Select svspp,year,cruise6,stratum,station, count(distinct pdid) nstom  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,catsex order by svspp,year,cruise6,stratum,station
+Select svspp,year,cruise6,stratum,station,pdlen,numlen,count(distinct pdid) nstom  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and numlen is not null and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,pdlen,numlen,catsex order by svspp,year,cruise6,stratum,station,pdlen
+Select svspp,year,cruise6,stratum,station,pdlen,COLLCAT,sum(pyamtv) sumpvol  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,pdlen,COLLCAT order by svspp,year,cruise6,stratum,station,pdlen,COLLCAT
+Select distinct svspp,year,cruise6,stratum,station,pdid,pdlen from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and numlen is null and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB'
+Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by year,cruise6,stratum,station
+
+```
+
+EMAX model groups were aggregated to focal groups according to the table below.
+```{r groups,eval = T, echo = F}
+#read in EMAXconceptualmodgroups.csv and kable it
+```
+
+
+####Environmental submodels
+
+
+####Human dimensions submodels
+
 <!--
 Write SQL query here
 ```{sql, eval = F, echo = T}
@@ -83,6 +113,14 @@ SELECT * FROM...
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
+####Ecological submodels
+Aggregated information was examine to determine which links between which groups should be inclded in the conceptual models.The intent was to include only the most important linkages supporting or causing mortality on focal species groups. Therefore, 
+
+####Environmental submodels
+
+
+####Human dimensions submodels
+
 
 Identify 
 focal groups or species 
