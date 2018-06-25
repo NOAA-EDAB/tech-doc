@@ -92,14 +92,6 @@ Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_fea
 
 ```
 
-EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below.
-```{r groups,eval = T, echo = F}
-#read in EMAXconceptualmodgroups.csv and kable it
-emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"))
-names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
-kable(emaxgroups)
-```
-
 
 ####Environmental submodels
 
@@ -120,7 +112,18 @@ SELECT * FROM...
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
 ####Ecological submodels
-Aggregated information was examine to determine which links between which groups should be inclded in the conceptual models.The intent was to include only the most important linkages supporting or causing mortality on focal species groups. Therefore, 
+Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two possible types of links were possible using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include in the model and 20% to include as a strong link.
+
+EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below. "Linked groups" directly support or impact the Focal groups defined above.
+
+```{r groups,eval = T, echo = F}
+#read in EMAXconceptualmodgroups.csv and kable it
+emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"))
+names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
+kable(emaxgroups)
+```
+
+
 
 ####Environmental submodels
 
