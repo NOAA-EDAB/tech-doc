@@ -13,6 +13,9 @@ bibliography: conceptmods.bib
 library(knitr)
 library(rmarkdown)
 
+data.dir  <- './data'
+image.dir <- './images'
+
 ```
 
 <!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
@@ -42,7 +45,7 @@ The prototype conceptual model used to design Northeast US conceptual models for
 An inital conceptual model for Georges Bank and the Gulf of Maine was outlined at the 2015 ICES WGNARS meeting. It specified four categories: Large scale drivers, focal ecosystem components, human activities, and human well being. Strategic management objectives were included in the conceptual model, which had not been done in the NCC. Focal ecosystem components were defined as aggregate species groups that had associated US management objectives (outlined within WGNARS for IEAs, see @depiper_operationalizing_2017): groundfish, forage fish, fished invertebrates, living habitat, and protected species. 
 
 ```{r draftmod, echo = F, eval = T}
-image.dir <- './images'
+
 knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 ```
 
@@ -89,9 +92,12 @@ Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_fea
 
 ```
 
-EMAX model groups were aggregated to focal groups according to the table below.
+EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below.
 ```{r groups,eval = T, echo = F}
 #read in EMAXconceptualmodgroups.csv and kable it
+emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"))
+names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
+kable(emaxgroups)
 ```
 
 
