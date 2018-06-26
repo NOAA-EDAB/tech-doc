@@ -59,8 +59,8 @@ Published food web (EMAX) models for each subregion [@link_documentation_2006; @
 ####Environmental submodels
 Published literature on the primary environmental drivers (seasonal and interannual) in each EPU were consulted. 
 Sources for Georges Bank included @backus_georges_1987 and @townsend_oceanography_2006. 
-Sources for the Gulf of Maine included [Smith et al. 1983 J Phys Ocean 13] @brooks_vernal_1985, @mountain_bottom_1987, @mountain_seasonal_1994, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
-Sources for the Mid Atlantic Bight included @mountain_variability_2003
+Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
+Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015,@fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
 
 ####Human dimensions submodels
 
