@@ -114,7 +114,7 @@ SELECT * FROM...
 ####Ecological submodels
 Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the spreadsheet (*link to ERDDAP*). 
 
-Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
+Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
 
 EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below. "Linked groups" directly support or impact the Focal groups as described above.
 
@@ -125,9 +125,19 @@ names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX g
 kable(emaxgroups)
 ```
 
+An example ecological submodel (Gulf of Maine), visualized in Mental Modeler, is below.
+```{r draftGOMeco, echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Ecological.png'))
+```
 
 ####Environmental submodels
 
+An example environmental submodel (Gulf of Maine), visualized in Mental Modeler, is below.
+```{r draftGOMenv, echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Climate.png'))
+```
 
 ####Human dimensions submodels
 
@@ -139,7 +149,29 @@ environmental drivers
 Document 
 criteria and linkages
 
+An example human dimensions submodel (Gulf of Maine), visualized in Mental Modeler, is below.
+```{r draftGOMhuman, echo = F, eval = T}
 
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Human_Connections.png'))
+```
+
+#### Merged models
+All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia with color codes for each model component type for improved readability. Examples for each system are below. 
+
+```{r diaGB, fig.cap="Georges Bank conceptual model", echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'GBoverview5.png'))
+```
+
+```{r diaGOM, fig.cap="Gulf of Maine conceptual model", echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'GOMoverview4.png'))
+```
+
+```{r diaMAB, fig.cap="Mid-Atlantic Bight conceptual model", echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'MAB_3.png'))
+```
 
 <!--
 What packages or libraries did you use in your work flow?
