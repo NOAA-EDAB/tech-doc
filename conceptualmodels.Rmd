@@ -57,16 +57,12 @@ After the initial draft model was outlined, working groups were formed to develo
 Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
 
 ####Environmental submodels
-
+Published literature on the primary environmental drivers (seasonal and interannual) in each EPU were consulted. 
+Sources for Georges Bank included
+Sources for the Gulf of Maine included
+Sources for the Mid Atlantic Bight included
 
 ####Human dimensions submodels
-
-Identify 
-focal groups or species 
-human activities and objectives
-environmental drivers
-Document 
-criteria and linkages
 
 
 
@@ -156,22 +152,25 @@ knitr::include_graphics(file.path(image.dir, 'MM_GoM_Human_Connections.png'))
 ```
 
 #### Merged models
-All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia with color codes for each model component type for improved readability. Examples for each system are below. 
+All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia (http://dia-installer.de/) with color codes for each model component type for improved readability. Examples for each system are below. 
 
 ```{r diaGB, fig.cap="Georges Bank conceptual model", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'GBoverview5.png'))
 ```
 
+
 ```{r diaGOM, fig.cap="Gulf of Maine conceptual model", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'GOMoverview4.png'))
 ```
 
+
 ```{r diaMAB, fig.cap="Mid-Atlantic Bight conceptual model", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'MAB_3.png'))
 ```
+
 
 <!--
 What packages or libraries did you use in your work flow?
