@@ -63,7 +63,7 @@ Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001
 Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015,@fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
 
 ####Human dimensions submodels
-Fishery catch and bycatch information was drown from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. 
+Fishery catch and bycatch information was drown from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. 
 
 Habitat-fishery linkages were drawn from unpublished reports, including:
 1. Mid-Atlantic Fishery Management Council. 2016. Amendment 16 to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
@@ -81,9 +81,9 @@ Published literature on human activities in each EPU was consulted.
 
 Sources for protected species and tourism links included @hoagland_demand_2000 and @lee_economic_2010. 
 
-Sources for links between environmental drivers and human activities included
+Sources for links between environmental drivers and human activities included @adams_uncertainty_1973, @matzarakis_proceedings_2001, @scott_climate_2004, @hess_climate_2008, @colburn_social_2012, @jepson_development_2013, and @colburn_indicators_2016. 
 
-Sources for cultural practices and attachments links included
+Sources for cultural practices and attachments links included @pauly_putting_1997, @mcgoodwin_understanding_2001, @st_martin_making_2001, @norris-raynbird_for_2004, @pollnac_toward_2006, @clay_defining_2007, @clay_definingfishing_2008, @everett_role_2008, @donkersloot_politics_2010, @lord_understanding_2011, @halpern_index_2012, @wynveen_natural_2012, @cortes-vazquez_identity_2013, @koehn_progress_2013, @potschin_landscapes_2013, @reed_beyond_2013, @urquhart_constructing_2013, @blasiak_paradigms_2014, @klain_what_2014, @poe_cultural_2014, @brown_we_2015, @donatuto_evaluating_2015, @khakzad_role_2016, @oberg_surviving_2016, and @seara_perceived_2016.  
 
 ### Data extraction 
 <!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
@@ -181,7 +181,7 @@ knitr::include_graphics(file.path(image.dir, 'GBoverview5.png'))
 
 ```{r diaGOM, fig.cap="Gulf of Maine conceptual model", echo = F, eval = T}
 
-knitr::include_graphics(file.path(image.dir, 'GOMoverview4.png'))
+knitr::include_graphics(file.path(image.dir, 'GoMoverview4.png'))
 ```
 
 
