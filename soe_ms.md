@@ -1,6 +1,6 @@
 # Title: State of the Ecosystem: So What? Improving ecosystem reporting for fisheries managers in the Northeast US
 ### Authors: all contributors to 2018 SOEs (also add past contributors, and Scott!)
-
+ 
 1. Intro:
 * EBFM sounds hard but it doesnt have to be, here is an example of ecosystem reporting that is useful to managers and how we did it.
 initial drafts followed a format used in another region but managers wanted to know "so what". Here is how we addressed this to produce two relatively automated reports that Councils are now requesting annually. lessons learned could serve as example for other ecosystem reporting efforts.
