@@ -24,6 +24,8 @@ For the tech memo, we will be documenting the methods behind each indicator to t
 ## Data name
 
 ### Indicator category 
+Indicate from the list below which category the contributed data fall under by deleting other entries.
+
 1. Database pull
 2. Database pull with analysis
 3. Synthesis of published information
@@ -49,8 +51,9 @@ Write SQL query here
 SELECT * FROM...
 ```
 
+R code used in extraction process.
 ```{r r_extract, echo = T, eval = F}
-# Extraction code
+# Insert R code used for extraction here
 ```
 
 ### Data analysis
@@ -64,48 +67,19 @@ Text description of analysis methods, similar in structure and detail to a peer-
 What packages or libraries did you use in your work flow?
 ```{r packages, echo = T}
 sessionInfo(package = NULL)
-
+#Insert packages used here
 
 #Use this to output a detailed list of the package information
-current.session <- sessionInfo(package = NULL)
-current.session$otherPkgs
+#current.session <- sessionInfo(package = NULL)
+#current.session$otherPkgs
 ```
 
 
 Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
 ```{r analysis, echo = T, eval = F}
-# analysis code
+# Insert analysis code here
 ```
 
-### References
-List references here.
-
-
-
-
-### ERDDAP data set
-If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
-```{r erddap pull, echo = T, eval = F}
-library(rerddap)
-
-comet <- 'http://comet.nefsc.noaa.gov/erddap/'
-
-tab_list <- ed_datasets(url = comet)
-tab_list <- data.frame(Title = tab_list$Title,
-                        Identifier = tab_list$Dataset.ID,
-                        Index = 1:nrow(tab_list))
-
-#Get data set ID (will need to change)
-#id <- as.character(tab_list$Identifier[9]) 
-
-#Pull data
-data <- tabledap(id,url = comet)
-
-#Print metadata
-metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
-cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
-
-```
 
 
 ### Further metadata
@@ -121,8 +95,8 @@ Will source data be available to the public? If not, is a Data Access Waiver nec
 
 #### Data steward (can be POC; in charge of keeping data updated)
 
-
-
+### References
+List references here.
 
 
 
