@@ -3,7 +3,9 @@ title: "Tech Memo Methods Template"
 output:
   word_document: default
   html_document: default
+bibliography: XYZ.bib
 ---
+<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
 
 ```{r setup,  echo = F, message=F}
 
@@ -83,7 +85,7 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 
 
 ### Further metadata
-Fill out the following metadata required by PARR
+Fill out the following metadata required by PARR under each subheader.
 
 
 #### Public availability statement
@@ -95,8 +97,8 @@ Will source data be available to the public? If not, is a Data Access Waiver nec
 
 #### Data steward (can be POC; in charge of keeping data updated)
 
-### References
-List references here.
+References
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
