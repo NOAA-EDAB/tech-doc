@@ -1,8 +1,8 @@
 ---
 title: "New England shellfish bed closures due to HAB-associated toxins"
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 bibliography: NE_HAB.bib
 header-includes: 
@@ -24,7 +24,7 @@ For the tech memo, we will be documenting the methods behind each indicator to t
 -->
 
 ## Contributor name(s)
-Sean Hardison, Dave Kulis, Don Anderson
+Sean Hardison, Dave Kulis, Donald M Anderson
 
 ## Data name
 New England Shellfish Bed Closures 2007-2016
@@ -37,16 +37,18 @@ New England Shellfish Bed Closures 2007-2016
 <!-- 5. Published methods -->
 
 ##Methods
-The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above permissable levels between 2007-2016. Unique methods were used to identify the presence of toxins associated with Amnesic Shellfish Poison (ASP), Paralytic Shellfish Poisoning (PSP), and Diarhettic Shellfish Poisoning (DSP). Detection methods typically varied by state. 
+The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016. Approved detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poison (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
 
 ####Paralytic Shellfish Poisoning
-The most common cause of shellfish bed closures in New England was due to the presence of paralytic shellfish toxins (PST) which play a causative role in PSP. These toxins are produced by dinoflagellates of genera *Alexandrium*, *Gymnodinium*, and *Pyrodinium* [@Boundy2015]. Prior to 2014, the primary method used to detect PST in Maine was mouse bioassay [@Anonymous2005]. PST detection methods in Maine were updated in May 2014 to rely on a hydrophilic interaction liquid chromatography (HILIC) UPLC-MS/MS protocol [@Boundy2015] in concordance with National Shellfish Sanitation Program (NSSP) requirements. States outside of Maine in New England relied on the mouse bioassay method to detect PST. 
+The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate Alexandrium catenella. All New England states except Maine relied on the AOAC-approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
+
+In Maine, PST detection methods were updated in May 2014 when the state adopted the hydrophilic interaction liquid chromatography (HILIC) UPLC-MS/MS protocol [@Boundy2015] in concordance with National Shellfish Sanitation Program (NSSP) requirements.  Prior to this, the primary method used to detect PST in Maine was with the mouse bioassay. 
 
 ####Amnesic Shellfish Poisoning
-ASP is caused by ingestion of the toxin domoic acid (DA), which is produced naturally by phytoplankton species of genus *Pseudo-nitzchia* and accumulates in shellfish. Methods used in New England to detect DA in shellfish follow @Quilliam1995, which specifies a HPLC-UV protocol. 
+The syndrome amnesic shellfish poisoning (ASP) is caused by the toxin domoic acid (DA), which is produced by several phytoplankton species belonging to the genus *Pseudo-nitzchia*. In New England, a UV-HPLC method [@Quilliam1995], which specifies a HPLC-UV protocol. 
 
 ####Diarrhetic Shellfish Poisoning
-DSP is rare in New England but the presence of the DSP-associated okadaic acid (OA) in sentinel mussels was confirmed in Massachusetts in 2015 (personal comm.). Testing for OA in Massachusetts was implemented through the commercially available Protein Phosphatase Inhibition Assay (PPIA) and confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
+Diarrhetic Shellfish Poisoning (DSP) is rare in New England but the presence of the DSP-associated okadaic acid (OA) in mussels was confirmed in Massachusetts in 2015 (personal comm.). Preliminary testing for OA in Massachusetts utilized the commercially available Protein Phosphatase Inhibition Assay (PPIA) and these results are confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
 
 
 ### Data source(s)
@@ -57,7 +59,20 @@ Data used in this indicator were drawn from the 2017 Report on the ICES-IOC Work
 
 http://www.ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGEPD/2017/01%20WGHABD%20-%20Report%20of%20the%20ICES%20-%20IOC%20Working%20Group%20on%20Harmful%20Algal%20Bloom%20Dynamics.pdf
 
-Who reported these data?
+Closure information was collated from information provided by the following organizations:
+```{r source table, echo = F, include = T, results='asis'}
+tabl <- "
+| State     | Source Organization                                  |
+|:-------------------------|:----------------------------------------------------------|
+|Maine|Maine Department of Marine Resources|
+|New Hampshire|New Hampshire Department of Environmental Services|
+|Massachusetts|Massachusetts Division of Marine Fisheries|
+|Rhode Island|Rhode Island Department of Environmental Management|
+|Connecticut|Connecticut Department of Agriculture|
+"
+cat(tabl)
+```
+
 
 ### Data extraction
 <!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
