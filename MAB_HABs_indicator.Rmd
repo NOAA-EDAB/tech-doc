@@ -58,12 +58,13 @@ SELECT * FROM...
 --> 
 ```{r r_extract, echo = T, eval = T, message=F, warning=F}
 
-setwd('z:/shardison/soe 2018/data/hab')
+
 rm(list = ls())
 
 ## Libraries
 library(dplyr);library(readxl);library(data.table);library(tidyr)
 
+setwd("./data/CB_HAB")
 
 # 2007 - 2012 data
 HAB_2007_2012 <- read_excel("HAB_data_2007-2012.xlsx")
@@ -108,6 +109,8 @@ HAB_2014 <- HAB_2014 %>% mutate(year = "2014") %>%
   group_by(year,species) %>%
   dplyr::summarise(Events = n()) %>%
   as.data.frame()
+
+#Two data points from VIMS missing from 2014
 
 ###### 2016 Data
 HAB_2016 <- read_excel("HAB_MAP_Data_2016.xlsx")
