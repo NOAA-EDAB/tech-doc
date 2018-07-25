@@ -119,6 +119,10 @@ The script used to develop the figure in the SOE report is below.
 data.dir  <- "c:/users/sean.hardison/documents/soe_compile"
 gis.dir <- 'c:/users/sean.hardison/documents/soe_compile/gis'
 
+data.dir <- './data'
+image.dir <- './images'
+gis.dir <- './gis'
+
 #SOE data
 load(file.path(data.dir, "SOE_data_2018.Rdata"))
 
