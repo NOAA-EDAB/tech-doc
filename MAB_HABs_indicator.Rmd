@@ -1,0 +1,238 @@
+---
+title: "Chesapeake Bay Algal Bloom Events"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+bibliography: MAB_HAB.bib
+header-includes: 
+- \usepackage{float}
+- \usepackage[bottom]{footmisc}
+---
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+
+For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
+-->
+
+## Contributor name(s)
+Sean Hardison
+
+## Data name
+Chesapeake Bay Algal Blooms
+
+### Indicator category
+<!-- 1. Database pull -->
+<!-- 2. Database pull with analysis -->
+3. Synthesis of published information
+<!-- 4. Extensive analysis, not yet published -->
+<!-- 5. Published methods -->
+
+##Methods
+We presented two indicator time series for reports of algal blooms in the southern portion of Chesapeake Bay between 2007-2017. The first indicator was reports of algal blooms above 5000 cell ml^-1^. This threshold was developed by the Virginia Department of Health (VDH) for *Microcystis* spp. algal blooms based on World Health Organization guidelines [@WHO2003; @VDH2011], although the same threshold is currently applied to other algal species blooms in Virginia. Above cell concentrations of 5000 cell ml^-1^, VDH recommends that biweekly water sampling be initiated and that relevant local agencies be notified of the elevated cell concentrations.
+
+The second indicator we reported, blooms of *Cochlodinium polykrikoides* at cell concentrations >300 cell ml^-1^, was chosen due to reports of high ichthyotoxicity seen at these levels. @Tang2009 showed that fish exposed to cultured *C. polykrikoides* at densities as low 330 cells ml^-1^ saw 100% mortality within 1 hour, which if often far less than *C. polykrikoides* cell concentrations seen in the field. Algal bloom data were not available for 2015 nor 2010. The algal bloom information presented here are a synthesis of reported events, and only those with available latitude and longitude data are included in time series.
+
+### Data source(s)
+<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
+
+Source data were obtained from VDH. Sampling, identification, and bloom characterization was accomplished by the VDH, Phytoplankton Analysis Laboratory at Old Dominion University, Reece Lab at the Virginia Institute of Marine Science, and Virginia Department of Environmental Quality. Problem algal species were targeted for identification via light microscopy followed by standard or quantitative PCR assays, and/or ELISA, although methodology varies from year to year.
+
+### Data extraction
+<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
+
+Data were extracted from a series of spreadsheets provided by the VDH. We quantified the number of algal blooms in each year reaching target cell density thresholds in the southern Chesapeake Bay, east of 76.7 W. Entries without longitude and latitude data were not considered in the aggregated time series.   
+
+<!--Write SQL query here
+```{sql, eval = F, echo = T}
+SELECT * FROM...
+```
+--> 
+```{r r_extract, echo = T, eval = T, message=F, warning=F}
+
+setwd('z:/shardison/soe 2018/data/hab')
+rm(list = ls())
+
+## Libraries
+library(dplyr);library(readxl);library(data.table);library(tidyr)
+
+
+# 2007 - 2012 data
+HAB_2007_2012 <- read_excel("HAB_data_2007-2012.xlsx")
+HAB_2007_2012$date <- as.character(HAB_2007_2012$date)
+HAB_2007_2012 <- HAB_2007_2012 %>% filter(!is.na(cells_per_ml)) %>%
+  filter(!is.na(date)) %>%
+  mutate(year = format(as.POSIXct(date), "%Y")) %>% 
+  mutate(Longitude = abs(as.numeric(Longitude))) %>%
+  filter(cells_per_ml >= 5000, Longitude < 76.7) %>%
+  group_by(year, species) %>%
+  dplyr::summarise(Events = n()) %>%
+  as.data.frame()
+
+
+####### 2013 HAB data 
+HAB_2013 <- read_excel("Algal Bloom Results - VIMS 28July2013_KSR.xlsx",skip = 6)
+
+HAB_2013 <- HAB_2013 %>% filter(!is.na(cells_per_ml)) %>%
+  mutate(year = "2013") %>%
+  mutate(decimalLongitude = abs(as.numeric(decimalLongitude))) %>%
+  filter(cells_per_ml >= 5000, decimalLongitude < 76.7) %>%
+  group_by(year, species) %>%
+  dplyr::summarise(Events = n()) %>%
+  as.data.frame()
+
+####### 2014 HAB data
+ODU_pre_filt <- read_excel("2014 ODU data.xlsx")
+ODU_post <- ODU_pre_filt %>% 
+  mutate(decimalLongitude = abs(as.numeric(decimalLongitude)))
+ODU <- ODU_post %>% mutate(index = as.factor(seq(1,nrow(ODU_post),1)))
+
+
+long <- gather(ODU, species, cells_per_ml, `Karlodinium veneficum`:`Cyanobacteria bloom`, factor_key = TRUE)
+HAB_2014 <- long %>% filter(cells_per_ml != 0)
+HAB_2014$species <- sub("[.]"," ", HAB_2014$species)
+HAB_2014$cells_per_ml <- gsub("[A-Za-z+//]",'',HAB_2014$cells_per_ml)
+HAB_2014$cells_per_ml <- as.numeric(HAB_2014$cells_per_ml)
+
+HAB_2014 <- HAB_2014 %>% mutate(year = "2014") %>%
+  select(-c(date)) %>%
+  filter(cells_per_ml >= 5000, decimalLongitude < 76.7) %>%
+  group_by(year,species) %>%
+  dplyr::summarise(Events = n()) %>%
+  as.data.frame()
+
+###### 2016 Data
+HAB_2016 <- read_excel("HAB_MAP_Data_2016.xlsx")
+HAB_2016 <- HAB_2016 %>% mutate(species= 
+                                plyr::mapvalues(species, 
+                                                from = c("Eugelna sanguinea",
+                                                                  "Microcystin aeruginosa",
+                                                                  "Microcystis aeruginosa",
+                                                                  "Alexandrium monilatum-likely",
+                                                                  "Alexandrium monilatum"),
+                                                to = c("Eugelena spp.", 
+                                                       "Microcystis spp.",
+                                                       "Microcystis spp.",
+                                                       "Alexandrium spp.",
+                                                       "Alexandrium spp.")))
+HAB_2016$cells_per_ml <- gsub('[a-zA-Z+<>]','',HAB_2016$cells_per_ml)
+HAB_2016 <- HAB_2016 %>%
+  filter(!is.na(cells_per_ml)) %>%
+  mutate(year = format(date, "%Y")) %>%
+  mutate(decimalLongitude = abs(as.numeric(decimalLongitude))) %>%
+  filter(cells_per_ml >= 5000, decimalLongitude < 76.7) %>%
+  group_by(year, species) %>%
+  dplyr::summarise(Events = n()) %>%
+  as.data.frame()
+
+
+### 2017 data
+library(stringr)
+HAB_2017 <- read_excel("HAB_MAP_data_2017.xlsx",sheet=2)
+HAB_2017$species = str_trim(HAB_2017$species)
+
+HAB_2017 <- HAB_2017 %>% mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
+                                                                     "Anabaena sp.","Anabaena spp",
+                                                                     "none","NO HABs","C. polykrikoides",
+                                                                     "Microcystis aeurignosa","Cylindrospermopsis sp"),
+                                                          c("Alexandrium monilatum", "Anabaena spp.",
+                                                            "Anabaena spp.","Anabaena spp.",
+                                                            "NA","NA","Cochlodinium polykrikoides",
+                                                            "Microcystis aeruginosa","Cylindrospermopsis sp.")))
+HAB_2017$cells_per_ml <- gsub("[a-zA-Z+/]",'',HAB_2017$cells_per_ml)
+HAB_2017$cells_per_ml <- as.numeric(HAB_2017$cells_per_ml)
+HAB_2017 <- HAB_2017 %>% mutate(decimalLongitude = abs(as.numeric(decimalLongitude))) %>%
+  filter(!is.na(cells_per_ml)) %>%
+  mutate(year = "2017") %>%
+  filter(cells_per_ml >= 5000, decimalLongitude < 76.7) %>%
+  group_by(year, species) %>%
+  dplyr::summarise(Events = n()) %>%
+  as.data.frame()
+  
+ts <- rbind(HAB_2007_2012, HAB_2013, HAB_2014, HAB_2016, HAB_2017)
+##All HABs by years
+library(plyr)
+full <- ts %>% mutate(species = plyr::mapvalues(species, from = c("Chattonella subsalsa",
+                                                                  "Heterocapsa rotundata",
+                                                                  "Heterocapsa triquetra",
+                                                                  #"Gymnodinium",
+                                                                  "Alexandrium monilatum"),
+                                                        to = c("Chattonella spp.",
+                                                               "Heterocapsa spp.",
+                                                               "Heterocapsa spp.",
+                                                               #"Gymnodinium spp.",
+                                                               "Alexandrium spp."))) %>%
+  ungroup() %>%
+  as.data.frame()
+
+```
+
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+
+No data analysis steps took place for this indicator.
+
+<!--What packages or libraries did you use in your work flow?-->
+```{r packages, echo=T, message=FALSE, warning=FALSE, include=T}
+
+#SOE R packages
+
+library(Kendall);library(data.table);library(zoo)
+library(dplyr);library(nlme);library(AICcmodavg)
+library(colorRamps);library(Hmisc);library(rgdal)
+library(maps);library(mapdata);library(raster)
+library(grid);library(stringr);library(png)
+library(ncdf4);library(marmap); library(magick)
+
+```
+
+<!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+
+The script used to develop the figure in the SOE report is below. 
+
+### ERDDAP data set
+If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+```{r erddap pull, echo = F, eval = F}
+library(rerddap)
+
+comet <- 'http://comet.nefsc.noaa.gov/erddap/'
+
+tab_list <- ed_datasets(url = comet)
+tab_list <- data.frame(Title = tab_list$Title,
+                        Identifier = tab_list$Dataset.ID,
+                        Index = 1:nrow(tab_list))
+
+#Get data set ID (will need to change)
+id <- as.character(tab_list$Identifier[1]) 
+
+#Pull data
+data <- tabledap(id,url = comet)
+
+#Print metadata
+metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
+cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
+```
+
+### Further metadata
+NA
+
+#### Public availability statement
+NA
+
+#### Point of contact - Whom should be contacted?
+Sean Hardison
+
+#### Data steward (can be POC; in charge of keeping data updated)
+Sean Hardison
+
+### References
+<!--List references here-->
