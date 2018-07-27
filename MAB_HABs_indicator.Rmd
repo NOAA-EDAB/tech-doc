@@ -200,36 +200,14 @@ library(ncdf4);library(marmap); library(magick)
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 
-The script used to develop the figure in the SOE report is below. 
-
-### ERDDAP data set
-If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
-```{r erddap pull, echo = F, eval = F}
-library(rerddap)
-
-comet <- 'http://comet.nefsc.noaa.gov/erddap/'
-
-tab_list <- ed_datasets(url = comet)
-tab_list <- data.frame(Title = tab_list$Title,
-                        Identifier = tab_list$Dataset.ID,
-                        Index = 1:nrow(tab_list))
-
-#Get data set ID (will need to change)
-id <- as.character(tab_list$Identifier[1]) 
-
-#Pull data
-data <- tabledap(id,url = comet)
-
-#Print metadata
-metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
-cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
-```
-
 ### Further metadata
-NA
 
 #### Public availability statement
-NA
+Source data for this indicator are available here:
+https://github.com/NOAA-EDAB/tech-memo/tree/master/data/CB_HAB
+
+Derived data are available here:
+http://comet.nefsc.noaa.gov/erddap/tabledap/CB_habs_2018.html
 
 #### Point of contact - Whom should be contacted?
 Sean Hardison
