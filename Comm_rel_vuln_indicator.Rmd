@@ -1,0 +1,218 @@
+---
+title: "Community reliance and vulnerability"
+output:
+  html_document: default
+  word_document: default
+bibliography: Comm_rel_vuln.bib
+---
+<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+
+For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
+
+
+## Contributor name(s)
+Lisa L. Colburn
+
+## Data name
+
+### Indicator category 
+<!-- 1. Database pull -->
+2. Database pull with analysis
+<!-- 3. Synthesis of published information -->
+<!-- 4. Extensive analysis; not yet published -->
+<!-- 5. Published methods -->
+
+## Methods
+
+
+### Data source(s) (All types)
+NOAA Fisheries' Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic and fisheries variables. The social and demographic data were downloaded from the 2014 American Community Survey (ACS) 5-yr estimates Dataset at the [U.S. Census American FactFinder site](https://www.census.gov/programs-surveys/acs/) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the SOLE server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the [Marine Recreational Information Program (MRIP)](https://www.st.nmfs.noaa.gov/recreational-fisheries/MRIP/), and for this analysis was custom requested from NOAA Fisheries headquarters.
+
+
+### Data extraction 
+Commercial fisheries data was pulled from the NEFSC SOLE server in Woods Hole, MA.
+
+SQL and SAS code for data extraction and processing steps
+```{sql, eval = F, echo = T}
+create table cfders2011 as
+select *
+from connection to oracle
+(select port, state, year, dealnum, permit, nespp3, spplndlb, sppvalue from cfders2011 where permit > 0 order by permit);
+create table cfvess11 as
+select *
+from connection to oracle
+(select permit, homeport, homest from CFDBS.cfvess11 where permit > 0 order by permit);
+create table port_name as
+select *
+from connection to oracle
+(select port, portnm from port order by port);
+create table st_name as
+select *
+from connection to oracle
+(select state, stateabb from statenm order by state);
+
+
+Truncated SAS code:
+
+/*CREATE VARIABLES FOR TOTAL LANDINGS WEIGTH AND VALUE (SUM) BY PORT OF LANDING AND BY HOMEPORT*/
+data landings_ports1; set landings_ports;
+run;
+proc sort;
+by port state;
+run;
+proc means noprint data = landings_ports1; by port state; 
+var spplndlb sppvalue;
+id port state;
+output out = landport_totspp sum = L_Totlb L_Totval;
+run;
+proc sort;
+by port;
+run;
+data landings_ports2; set landings_ports;
+run;
+proc sort;
+by homeport homest;
+run;
+proc means noprint data = landings_ports2; by homeport homest; 
+var spplndlb sppvalue;
+id homeport homest;
+output out = homeport_totspp sum = H_Totlb H_Totval;
+run;
+proc sort;
+by homeport;
+run;
+
+/*CREATE SPECIES VARIABLES*/
+data landings_ports_NE_spp; set landings_ports;
+monklb = 0; monkval = 0; /*monkfish*/
+bluelb = 0; blueval = 0; /*bluefish*/
+.omitted.
+otherlb = 0; otherval = 0; /*other - everything else*/
+run;
+data landings_ports_NE_spp2; set landings_ports_NE_spp;
+if nespp3 = 012 then do; monklb = spplndlb; monkval = sppvalue; end;
+...ommitted.
+if nespp3 = 406 then do; spotlb = spplndlb; spotval = sppvalue; end;
+if nespp3 not in (012, 023, 033, 051, 081, 105, 112, 115, 116, 120, 121, 122, 123, 124, 125, 132, 147, 152, 153, 155, 159, 168, 194, 197, 212, 
+221, 240, 250, 269, 305, 329, 330, 335, 344, 345, 351, 352, 365, 366, 367, 368, 369, 370, 372, 373, 384, 415, 418, 432, 438, 443, 444, 445, 
+446, 447, 464, 466, 467, 468, 469, 470, 471, 472, 507, 508, 509, 512, 517, 700, 710, 711, 724, 727, 748, 754, 769, 774, 775, 781, 786, 789, 
+798, 799, 800, 801, 802, 805, 806, 899, 001, 090, 069, 107, 150, 173, 196, 334, 347, 349, 364, 371, 420, 422, 481, 484, 714, 776, 777, 823, 763, 736) 
+then do; otherlb = spplndlb; otherval = sppvalue; end;
+run; 
+
+/*SUM SPECIES LANDINGS BY PORT OF LANDING*/
+proc sort; by port; proc means noprint data = landings_ports_NE_spp2; by port state; 
+. omitted ...
+id port state;
+output out = spp_porlnd_NE sum = ;
+run;
+proc sort;
+by port;
+run;
+
+/*SUM SPECIES LANDINGS BY HOMEPORT*/
+data spp_home; set landings_ports_NE_spp2;
+run;
+proc sort; by homeport homest; proc means noprint data = spp_home; by homeport homest; 
+. species are counted..
+id homeport homest;
+output out = spp_homep_NE sum = ;
+run
+proc sort;
+by homeport; run;
+
+/*MERGE TOTAL PERMITS AND TOTAL DEALERS BY PORT OF LANDING*/
+data land_port_totperm2; set land_port_totperm;
+run;
+proc sort;
+by port; run;
+data lnd_port_permit; merge spp_porlnd_NE (IN=X) land_port_totperm2 (IN=Y);
+by port; if X=1; run;data land_port_totdeal2; set land_port_totdeal;
+run;
+proc sort;
+by port;
+run;
+data lnd_port_permit_deal; merge lnd_port_permit (IN=x) land_port_totdeal2 (IN=Y);
+by port; if X=1; run;
+
+/*MERGE WITH PORT NAME AND STATE ABBREVIATION*/
+data lnd_port_permit_deal_nm; merge lnd_port_permit_deal (IN=X) port_name (IN=Y);
+by port; if X=1; run;
+data lnd_port_permit_deal_nm_st; merge lnd_port_permit_deal_nm (IN=x) st_name (IN=Y); proc sort;
+by port; if X=1; run;
+
+/*MERGE TOTAL PERMITS AND TOTAL DEALERS BY HOMEPORT*/
+data home_port_totperm2; set home_port_totperm;
+run;
+proc sort;
+by homeport;
+run;
+data home_port_permit; merge spp_homep_NE (IN=X) home_port_totperm2 (IN=Y);
+by homeport; if X=1; run; data home_port_totdeal2; set home_port_totdeal;
+run;
+proc sort;
+by homeport;
+run;
+data home_port_permit_deal; merge home_port_permit (IN=x) home_port_totdeal2 (IN=Y);
+by homeport; if X=1; run; proc sort;
+by homeport;
+run;
+
+/*MERGE TOTAL LANDINGS BY PORT OF LANDING*/
+data lnd_port_per_deal_nm_st_tspp; merge lnd_port_permit_deal_nm_st (IN=X) landport_totspp (IN=Y);
+by port; if X=1; run;
+
+/*MERGE TOTAL LANDINGS BY HOMEPORT*/
+data home_port_per_deal_tspp; merge home_port_permit_deal (IN=X) homeport_totspp (IN=Y);
+by homeport; if X=1; run;
+data netana.port_landing11; set lnd_port_per_deal_nm_st_tspp;
+if state in (22, 32, 24, 42, 7, 35, 33, 8, 23, 49, 36);
+run;
+proc sort;
+by port state;
+run;
+data netana.homeport11; set home_port_per_deal_tspp;
+if homest in ('ME', 'NH', 'MA', 'RI', 'CT', 'NY', 'NJ', 'DE', 'MD', 'VA', 'NC');
+run;
+proc sort;
+by homeport homest;
+run;
+
+
+```
+
+
+### Data analysis
+Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
+
+The indicators were developed using the same methodology described in @Jacob2010, @Jacob2013, @Colburn2012 and @Jepson2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+
+
+### Further metadata
+#### Public availability statement
+The fisheries data used to construct the commercial fishing engagement and reliance indices include confidential information so will require a Data Access Waiver. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. Note that all calculated indices are currently publicly available at:  https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map.
+
+#### Point of contact - Whom should be contacted?
+Lisa Colburn
+
+#### Data steward (can be POC; in charge of keeping data updated)
+Lisa Colburn
+
+#### References
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+
+
+
+
+
+
