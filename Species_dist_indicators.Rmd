@@ -3,7 +3,7 @@ title: "Species Distributions"
 output:
   html_document: default
   word_document: default
-bibliography: Species_distribution.bib
+bibliography: Species_dist.bib
 ---
 <!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
 
