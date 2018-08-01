@@ -97,7 +97,7 @@ For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid Atlantic or New England figures.
 
-```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', fig.show='hold'}
+```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold'}
 # analysis code
 #fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', echo = F, message = FALSE, warning = FALSE, eval = T}
 
