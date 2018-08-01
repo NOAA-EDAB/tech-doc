@@ -1,5 +1,5 @@
-%Stata Data extraction and Analysis for Permit-level species and fleet diversity measures
-%2017 SOE analysis run on December 13, 2017
+/*Stata Data extraction and Analysis for Permit-level species and fleet diversity measures
+2017 SOE analysis run on December 13, 2017*/
 
 clear
 odbc load, dsn("osole") user() password() exec("select distinct ap_year,vp_num, hull_id, len, crew, gtons, ntons, vhp, blt from vps_vessel ;")
