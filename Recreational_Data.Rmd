@@ -1,0 +1,55 @@
+---
+title: "Recreational Fishing Indicators"
+output:
+  html_document: default
+  word_document: default
+---
+<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+## Contributor name(s)
+Geret DePiper
+
+## Data name
+Total Catch and total angler trips, by region (North Atlantic and Mid-Atlantic)
+
+### Indicator category 
+1. Database pull
+
+## Methods
+We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively.
+
+### Data source(s)
+The number of harvested fish was downloaded from the MRIP National Query December 12, 2017.  Harvested fish is TOTAL HARVEST (A+B1). Note that 2017 is considered preliminary at the time of the pull. The series can be found at https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index, and map the "NORTH ATLANTIC" Region to "NE" and "MID-ATLANTIC" Region to "MA" for purposes of the SOE. The number of angler trips and number of anglers was pulled from two sources on December 12, 2017.  Angler trips is "TOTAL" trips, was pulled from the MRIP effort data time series, and includes data from 1981 - 2017. Note that 2017 is considered preliminary at the time of the pull. The number of anglers is total number of anglers from the MRFSS participation time series, and includes data from 1981 - 2016. Both series can be found at https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index, and map the "NORTH ATLANTIC" Region to "NE" and "MID-ATLANTIC" Region to "MA" for purposes of the SOE.
+
+### Data extraction 
+Data must be downloaded into a csv, which is then imported to R for the purpose of the SOE. 
+
+### Data analysis
+N/A
+
+### Further metadata
+#### Public availability statement
+Data is publically available at web addresses indicated above.
+
+#### Point of contact
+Geret DePiper, geret.depiper@noaa.gov
+
+#### Data steward
+Geret DePiper, geret.depiper@noaa.gov
+
+<!-- References -->
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+---
+title: "Right Whale Abundance"
+output:
+  html_document: default
+  word_document: default
+bibliography: RW.bib
+---
+<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+## Contributor name(s)
+
+Christopher D. Orphanides
+
+
+## Data name
+
+Right Whale
+
+### Indicator category 
+
+3. Synthesis of published information
+5. Published methods
+
+
+## Methods
+
+
+### Data source(s) (All types)
+The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates, which were taken from the 2016 NOAA marine mammal stock assessment [@Hayes2017] and unpublished 2017 stock assessment.
+
+
+
+### Data extraction 
+Data were taken from existing reports and plotted. 
+
+### Data analysis
+Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
+
+### Further metadata
+
+#### Public availability statement
+Source data is available through the New England Aquarium.
+
+#### Point of contact
+Richard Pace, richard.pace@noaa.gov
+
+#### Data steward
+Chris Orphanides, chris.orphanides@noaa.gov
+
+#### References
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+
+
+
+
+
+
