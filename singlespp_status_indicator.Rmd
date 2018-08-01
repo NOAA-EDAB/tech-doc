@@ -1,10 +1,4 @@
----
-title: "Single species status across all managed species"
-output:
-  word_document: default
-  html_document: default
-  pdf_document: default
----
+# Single Species Status Indicator
 
 ```{r setup,  echo = F, message=F}
 
@@ -18,6 +12,7 @@ library(rmarkdown)
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 -->
+
 
 ## Contributor name(s)
 Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
@@ -83,8 +78,8 @@ SELECT * FROM...
 For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
 
 <!--What packages or libraries did you use in your work flow?-->
-```{r packages, echo = T}
-sessionInfo(package = NULL)
+```{r packages, eval=F, echo = T}
+#sessionInfo(package = NULL)
 
 #all packages in the SOE file that ran my code snippet, probably only need data.table
 #library(Kendall);library(data.table);library(zoo)
@@ -95,14 +90,14 @@ sessionInfo(package = NULL)
 #library(ncdf4);library(marmap); library(magick)
 
 #Use this to output a detailed list of the package information
-current.session <- sessionInfo(package = NULL)
-current.session$otherPkgs
+#current.session <- sessionInfo(package = NULL)
+#current.session$otherPkgs
 ```
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid Atlantic or New England figures.
 
-```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', fig.show='hold'}
+```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold'}
 # analysis code
 #fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', echo = F, message = FALSE, warning = FALSE, eval = T}
 

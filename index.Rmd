@@ -1,0 +1,99 @@
+---
+title: "Technical Documentation, State of the Ecosystem Report"
+author: "Northeast Fisheries Science Center"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: ["conceptmods.bib", "NE_HAB.bib"]
+biblio-style: apalike
+link-citations: yes
+github-repo: NOAA-EDAB/tech-memo
+description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
+---
+
+# Introduction: Technical Documentation Template
+
+The purpose of this document is to provide the methods used to collect, process, and analyze derived data ("indicators") prior to submission for State of the Ecosystem reports produced by the Northeast Fisheries Science Center. This document can also be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. The intent is to document the methods behind each indicator to the level of a peer-reviewed document.
+
+The following template is used to describe each indicator in subsequent sections, with each section title corresponding to an indicator or analysis presented in the State of the Ecosystem report:
+
+## Contributor name(s)
+
+## Data name
+
+### Indicator category 
+Indicate from the list below which category the contributed data fall under by deleting other entries.
+
+1. Database pull
+2. Database pull with analysis
+3. Synthesis of published information
+4. Extensive analysis; not yet published
+5. Published methods
+
+
+## Methods
+
+
+### Data source(s) (All types)
+Text description of data sources. 
+
+
+
+### Data extraction 
+Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.
+
+
+
+Write SQL query here
+```{sql, eval = F, echo = T}
+SELECT * FROM...
+```
+
+R code used in extraction process.
+```{r r_extract, echo = T, eval = F}
+# Insert R code used for extraction here
+```
+
+### Data analysis
+Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
+
+What packages or libraries did you use in your work flow?
+```{r packages, echo = T}
+sessionInfo(package = NULL)
+#Insert packages used here
+
+#Use this to output a detailed list of the package information
+#current.session <- sessionInfo(package = NULL)
+#current.session$otherPkgs
+```
+
+
+Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
+```{r analysis, echo = T, eval = F}
+# Insert analysis code here
+```
+
+
+
+### Further metadata
+Fill out the following metadata required by PARR under each subheader.
+
+
+#### Public availability statement
+Will source data be available to the public? If not, is a Data Access Waiver necessary?
+
+
+#### Point of contact - Whom should be contacted?
+
+
+#### Data steward (can be POC; in charge of keeping data updated)
+
+### References
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+
+
+
+
+
+
