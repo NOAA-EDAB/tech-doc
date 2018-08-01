@@ -18,6 +18,7 @@ library(rmarkdown)
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 -->
+# Single Species Status Indicator
 
 ## Contributor name(s)
 Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
