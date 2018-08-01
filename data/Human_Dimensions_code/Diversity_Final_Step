@@ -1,0 +1,273 @@
+/*Stata Data extraction and Analysis for Permit-level species and fleet diversity measures
+2017 SOE analysis run on December 13, 2017*/
+
+clear
+odbc load, dsn("osole") user() password() exec("select distinct ap_year,vp_num, hull_id, len, crew, gtons, ntons, vhp, blt from vps_vessel ;")
+rename HULL_ID HULLNUM
+rename (VP_NUM AP_YEAR) (permit year)
+destring BLT NTONS LEN CREW VHP, replace
+collapse (mean) NTONS BLT LEN CREW GTONS VHP, by(year permit)
+save "X:\gdepiper\ESR2017\vesselsALL2017", replace
+
+
+#delimit;
+clear;
+global ora_user ; #Need to put valid user name here
+global ora_pwd ; #Need to put valid password here
+cd "X:\gdepiper\ESR2017\" ;
+set mem 800m;
+global oracle_cxn "dsn(osole) user($ora_user) password($ora_pwd) lower" ;
+set more off; 
+global firstyr =1996; 
+global lastyr =2017; 
+global firstders =$firstyr; 
+global lastders =$lastyr; 
+global scal_prefix SCALpricing;
+global allprefix  ALLpricing;
+timer clear;
+timer on 1;
+quietly forvalues yr=$firstyr/$lastyr{ ;
+	tempfile new;
+	local NEWfiles `"`NEWfiles'"`new'" "'  ;
+	clear;
+	odbc load, exec("select unique s.qtykept, s.qtydisc, t.permit,t.tripid, g.gearcode, trunc(nvl(s.datesold, t.datelnd1)) as datesell, extract(year from t.DATESAIL) as year from vtr.veslog`yr's s,  vtr.veslog`yr't t,  vtr.veslog`yr'g g 
+		where t.tripid= s.tripid and t.tripid = g.tripid and g.gearid=s.gearid and (t.tripcatg=1 or t.tripcatg=4);")  $oracle_cxn;                    
+
+	quietly save `new';
+};
+dsconcat `NEWfiles';
+	renvarlab, lower;
+	destring, replace;
+	compress;
+	 drop datesell;
+	 duplicates drop;
+	 replace qtykept = 0 if qtykept == .;
+	 replace qtydisc = 0 if qtydisc == .;
+	 gen double qty = qtykept+qtydisc;
+	 collapse (sum) qty, by(year tripid permit gearcode);
+	bysort year tripid permit: egen double q_max = max(qty);
+	drop if q_max ~= qty;
+	duplicates drop year tripid permit, force;
+save "veslog_gear.dta", replace;
+
+set more off
+cd "X:\gdepiper\ESR2017"
+use "SOE_diversityrevenuedata", clear
+drop _merge*
+merge m:1 permit tripid year using "veslog_gear.dta", update
+drop if _merge == 2
+drop _merge
+merge m:1 permit year using "X:\gdepiper\ESR2017\vesselsALL2017"
+drop if _merge == 2
+drop _merge
+gen MAFMC = 0
+	replace MAFMC = 1 if inlist(species_group, "DGSP","MONK")
+	replace MAFMC = 1 if inlist(species_group, "CLQU","CLSU","TILE","BSBFLK","SCUP","BSCUP","LOL","ILX")
+	replace MAFMC = 1 if inlist(myspp,335,121,329,23,51,212,352,446,748)
+	replace MAFMC = 1 if inlist(myspp,754,755,801,802)
+gen NEFMC = 0
+	replace NEFMC = 1 if inlist(species_group, "SKATE","SCAL", "FLYT")
+	replace NEFMC = 1 if inlist(myspp, 81, 120, 122, 123, 147, 269, 153, 124, 240)
+	replace NEFMC = 1 if inlist(myspp, 82, 125, 154, 159, 250, 152, 155, 507, 508)
+	replace NEFMC = 1 if inlist(myspp, 509, 710)
+	bysort permit year: egen MAFMCPermit = sum(MAFMC)
+	bysort permit year: egen NEFMCPermit = sum(NEFMC)
+	rename (LEN)  (len)
+gen lencat = ""
+	replace  lencat = "Less than 30'" if len < 30 
+	replace  lencat = "30 to < 50" if len >= 30 & len < 50
+	replace  lencat = "50 to < 75'" if len >= 50 & len < 75
+	replace  lencat = "75 and above" if len >= 75
+replace gearcode = "DRC" if inlist(myspp, 754,769) & gearcode == ""
+
+gen gearcode2 = "OTH"
+	replace gearcode2 = "Scallop Dredge" if inlist(gearcode, "DRS","DSC","DTC","DTS")
+	replace gearcode2 = "Other Dredge" if inlist(gearcode, "DRM","DRO","DRU")
+	replace gearcode2 = "Gillnet" if inlist(gearcode,"GND","GNT","GNO","GNR","GNS")
+	replace gearcode2 = "Hand" if inlist(gearcode,"HND")
+	replace gearcode2 = "Longline" if inlist(gearcode,"LLB","LLP")
+	replace gearcode2 = "Bottom Trawl" if inlist(gearcode, "OTB","OTF","OTO","OTC","OTS","OHS","OTR","OTT","PTB")
+	replace gearcode2 = "Midwater Trawl" if inlist(gearcode,"OTM","PTM")
+	replace gearcode2 = "Pot" if inlist(gearcode,"PTL","PTW","PTC","PTE","PTF","PTH","PTL","PTO")
+	replace gearcode2 = "Pot" if inlist(gearcode,"PTS","PTX")
+	replace gearcode2 = "Purse Seine" if inlist(gearcode,"PUR")
+	replace gearcode2 = "Clam Dredge" if inlist(gearcode,"DRC")
+preserve
+	rename real_revenue R_REV
+	collapse (sum) R_REV, by(year permit gearcode2)
+	bysort year permit: egen double r_max = max(R_REV)
+	drop if r_max ~= R_REV
+	drop r_max R_REV
+	rename gearcode2 majgear
+	duplicates drop
+	drop if permit == 330845 & year == 2014 & majgear ~= "DRS"
+	drop if permit == 330898 & year == 2014 & majgear ~= "DRS"
+	drop if permit == 410618 & year == 2014 & majgear ~= "DRS"
+	drop if permit == 221567 & year == 2011 & majgear == "OTH"
+	tempfile mgear
+	save "X:\gdepiper\ESR2017\majorgear", replace
+restore
+merge m:1 year permit using "X:\gdepiper\ESR2017\majorgear"
+	drop gearcode2
+gen portg = ""
+	replace portg = "DowneastME" if inlist(state,22) & inlist(county,19)
+	replace portg = "UmidcoastME" if inlist(state,22) & inlist(county,3,7,17)
+	replace portg = "LmidcoastME" if inlist(state,22) & inlist(county,1,5,9,15)
+	replace portg = "SouthernME" if inlist(state,22) & inlist(county,20)
+	replace portg = "GloucNSMA" if inlist(state,24) & inlist(county,7)
+	replace portg = "BostonMA" if inlist(state,24) & inlist(county,11,13,15,16)
+	replace portg = "CapeIslMA" if inlist(state,24) & inlist(county,1,5,9)
+	replace portg = "NBedSSMA" if inlist(state,24) & inlist(county,3)
+	replace portg = "NonspecMA" if inlist(state,24) & inlist(county,99)
+	replace portg = "NorthNJ" if inlist(state,33) & inlist(county,3,13,17,29,33)
+	replace portg = "SouthNJ" if inlist(state,33) & inlist(county,1,5,7,9,11,15,19,21,23,25,27,31)
+	replace portg = "WestMD" if inlist(state,23) & inlist(county,1,3,8,9,15,16,19)
+	replace portg = "EastMD" if inlist(state,23) & inlist(county,5,7,11,13,17,21,23,25,27,29,31)
+	replace portg = "EastVA" if inlist(state,49) & inlist(county,1,45)
+	replace portg = "NorthVA" if inlist(state,49) & inlist(county,15,17,27,29,31,33,37,41,47,53,55,61,67)
+	replace portg = "SouthVA" if inlist(state,49) & inlist(county,7,9,10,13,19,18,21,23,25,35,49,51,55,63,69)
+	replace portg = "NorthNC" if inlist(state,36) & inlist(county,3,7,11,17,39,43,47,49)
+	replace portg = "CentralNC" if inlist(state,36) & inlist(county,1,9,13,19,27,37,45)
+	replace portg = "SouthNC" if inlist(state,36) & inlist(county,5,33,35,41)
+	replace portg = "RI" if inlist(state,42)
+	replace portg = "CT" if inlist(state,7)
+	replace portg = "NY" if inlist(state,35)
+	replace portg = "NH" if inlist(state,32)
+	replace portg = "DE" if inlist(state,8)
+	replace portg = "FL" if inlist(state,10,11)
+	replace portg = "GA" if inlist(state,13)
+	replace portg = "SC" if inlist(state,43)
+	replace portg = "CN" if inlist(state,96)
+	gen mrev = real_revenue/1000000
+	gen State = state1
+		replace State = "Other" if inlist(State,"CN","FL" "PR","GA","DE","SC","NH","ME")
+	gen Species = ""
+		replace Species = "Bluefish" if myspp == 23
+		replace Species = "Tilefish" if myspp == 446
+		replace Species = "O. Quahog" if myspp == 754
+		replace Species = "S. Clam" if myspp == 769
+		replace Species = "Monkfish" if inlist(myspp, 12, 11)
+		replace Species = "B. Seabass" if myspp == 335
+		replace Species = "Butterfish" if myspp == 51
+		replace Species = "S. Dogfish" if myspp == 352
+		replace Species = "Scup" if myspp == 329
+		replace Species = "Illex" if myspp == 802
+		replace Species = "Loligo" if myspp == 801
+		replace Species = "A. Mackerel" if myspp == 212
+		replace Species = "S. Flounder" if myspp == 121
+
+	save "X:\gdepiper\ESR2017\FinalMAFMCNEFMC_2017", replace
+	cd "X:\gdepiper\ESR2017\"
+	use "X:\gdepiper\ESR2017\FinalMAFMCNEFMC_2017", clear
+	rename real_revenue R_REV
+preserve
+	drop if MAFMCPermit == 0 | MAFMCPermit == .
+	replace R_REV = 0 if R_REV == .
+	collapse (sum) R_REV, by(permit year species_group)
+	bysort permit year: egen trev = sum(R_REV)
+	bysort permit year: egen species_count = count(R_REV)
+	gen prev = R_REV/trev
+	gen pshannonrev = -prev*ln(prev)
+	gen pHHIrev = (100*(prev))^2
+	bysort year permit: egen Shannonrev = sum(pshannonrev)
+	bysort year permit: gen eShannonrev = exp(Shannonrev)
+	bysort year permit: egen HHIrev = sum(pHHIrev)
+	drop R_REV prev pshannonrev pHHIrev species_group
+	duplicates drop
+	collapse (mean) Shannonrev eShannonrev HHIrev, by(year)
+	line eShannonrev year, saving(ShannonEffMAFMCpermitrev , replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("MAFMC" "Effective Shannon Index") 
+	gen Region = "MA"
+	gen Units = "effective Shannon"
+	gen Var = "Permit revenue species diveristy"
+	rename (year eShannon) (Time Value) 
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\MAFMCspeciesdiversity_2017", replace	
+restore
+preserve
+	drop if NEFMCPermit == 0 | NEFMCPermit == .
+	replace R_REV = 0 if R_REV == .
+	collapse (sum) R_REV, by(permit year species_group)
+	bysort permit year: egen trev = sum(R_REV)
+	gen prev = R_REV/trev
+	gen pshannonrev = -prev*ln(prev)
+	gen pHHIrev = (100*(prev))^2
+	bysort year permit: egen Shannonrev = sum(pshannonrev)
+	bysort year permit: gen eShannonrev = exp(Shannonrev)
+	bysort year permit: egen HHIrev = sum(pHHIrev)
+	bysort permit year: egen species_count = count(R_REV)
+	drop R_REV prev pshannonrev pHHIrev species_group
+	duplicates drop
+	gen meaneShannonrev = exp(Shannonrev)
+	collapse (mean) Shannonrev eShannonrev HHIrev, by(year)
+	line eShannonrev year, saving(ShannonEffNEFMCpermitrev , replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("Effective Shannon Index") 
+	gen Region = "NE"
+	gen Units = "effective Shannon"
+	gen Var = "Permit revenue species diveristy"
+	rename (year eShannon) (Time Value) 
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\NEFMCspeciesdiversity_2017", replace	
+restore
+preserve
+	drop if MAFMCPermit == 0 | MAFMCPermit == .
+	replace R_REV = 0 if R_REV == .
+	collapse (sum) R_REV, by(lencat majgear year)
+	bysort year: egen trev = sum(R_REV)
+	gen prev = R_REV/trev
+	gen pshannonrev = -prev*ln(prev)
+	gen pHHIrev = (100*(prev))^2
+	bysort year: egen Shannonrev = sum(pshannonrev)
+	bysort year: gen eShannonrev = exp(Shannonrev)
+	bysort year: egen HHIrev = sum(pHHIrev)
+	bysort year: egen fleet_count = count(R_REV)
+	drop R_REV prev pshannonrev pHHIrev lencat majgear
+	duplicates drop
+	collapse (mean) Shannonrev eShannonrev HHIrev fleet_count, by(year)
+	
+	line fleet_count year , saving(FleetcountMAFMC, replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("Number of Fleets") 
+	line Shannonrev year , saving(ShannonMAFMCfleetrev , replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("Shannon Index") 
+	
+	egen meShannon = mean(eShannonrev)
+	egen SDeShannon = sd(eShannonrev)
+	gen leShannon = meShannon-SDeShannon
+	gen ueShannon = meShannon+SDeShannon
+	line eShannonrev year, saving(ShannonEffMAFMCfleetrev , replace) graphregion(fcolor(white) icolor(white)) ytitle("Effective Shannon Index") lwidth(medthick) legend(off)
+	gen Region = "MA"
+	gen Units = "effective Shannon"
+	gen Var = "Fleet diveristy in revenue"
+	rename (year eShannonrev) (Time Value) 	
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\MAFMCfleetdiversity_2017", replace
+	replace Units = "number of fleets"
+	replace Var = "Fleet count"
+	drop Value
+	rename (fleet_count) (Value) 
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\MAFMCfleetcount_2017", replace
+restore
+preserve
+	drop if NEFMCPermit == 0 | NEFMCPermit == .
+	replace R_REV = 0 if R_REV == .
+	collapse (sum) R_REV, by(lencat majgear year)
+	bysort year: egen trev = sum(R_REV)
+	gen prev = R_REV/trev
+	gen pshannonrev = -prev*ln(prev)
+	gen pHHIrev = (100*(prev))^2
+	bysort year: egen Shannonrev = sum(pshannonrev)
+	bysort year: gen eShannonrev = exp(Shannonrev)
+	bysort year: egen HHIrev = sum(pHHIrev)
+	bysort year: egen fleet_count = count(R_REV)
+	export delimited using "X:\gdepiper\ESR2017\NEFMCfleetdiversity", replace
+	drop R_REV prev pshannonrev pHHIrev lencat majgear
+	duplicates drop
+	collapse (mean) Shannonrev eShannonrev HHIrev fleet_count, by(year)
+	line fleet_count year , saving(FleetcountNEFMC, replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("Number of Fleets") 
+	line Shannonrev year , saving(ShannonNEFMCfleetrev , replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick) ytitle("Shannon Index") 
+	line eShannonrev year, saving(ShannonEffNEFMCfleetrev , replace) graphregion(fcolor(white) icolor(white)) ytitle("Effective Shannon Index") lwidth(medthick)
+	line HHIrev year, saving(HHINEFMCfleetrev , replace) graphregion(fcolor(white) icolor(white)) lwidth(medthick)  ytitle("HHI") 
+	gen Region = "NE"
+	gen Units = "effective Shannon"
+	gen Var = "Fleet diveristy in revenue"
+	rename (year eShannonrev) (Time Value) 
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\NEFMCavgfleetdiversity_2017", replace
+	replace Units = "number of fleets"
+	replace Var = "Fleet count"
+	drop Value
+	rename (fleet_count) (Value) 
+	export delimited Time Region Value Var Units using "X:\gdepiper\ESR2017\NEFMCfleetcount_2017", replace
+restore
