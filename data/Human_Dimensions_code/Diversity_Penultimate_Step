@@ -1,0 +1,287 @@
+/* wrapper 
+Geret DePiper
+2017 SOE
+Producer Price Index is WPU0223*/
+
+insheet using "https://download.bls.gov/pub/time.series/wp/wp.data.3.ProcessedFoods", clear tab
+drop if year < 1996
+gen deflator = 365.7/value
+gen month = substr(period,-2,.)
+drop period
+destring month, replace
+drop if series_id ~= "WPU0223"
+drop series_id footnote*
+save "X:\gdepiper\ESR2017\diversitypplong", replace
+
+#delimit ;
+clear;
+macro drop _all;
+set more off;
+pause on;
+
+/*******************************************************************************************************/
+/********************************************************************************************************/
+/****FILES NEEDED IN DIRECTORY ARE:
+			1. "communities_cleaned2.dta" 
+			2. "null_ports_trim.dta" 
+			
+			
+If you don't have  permissions for SFCLAM schema, then you'll need sfclam96_2013.dta *****/
+
+/* year == year based on "datesell"
+   dbyear == YYYY from VESLOGYYYY or CFDERSYYYY */
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+
+/* Windows user:  Fill in */
+#delimit ;
+cd "V:\mlee\diversity\";
+
+use "veslog_species_huge_10192017.dta", clear;
+
+#delimit ;
+merge m:1 tripid using "just_one_area_10192017.dta", keep(1 3);
+rename _merge _merge1;
+
+#delimit ;
+merge m:1 tripid using "just_one_EPU_10192017.dta", keep(1 3);
+rename _merge _merge2;
+
+#delimit ;
+merge m:1 tripid myspp using "areas_tripids_species_10192017.dta", keep(1 3);
+rename _merge _merge3;
+
+#delimit ;
+merge m:1 tripid myspp using "EPUs_tripids_species_10192017.dta", keep(1 3 4 5) update;
+rename _merge _merge4;
+
+/*Missing area information, predominantly for Surf Clam and Ocean Quahog, 
+which are wholly within MA purview, so attributed as such later*/
+#delimit ;
+replace frac00=frac00A if frac00==.;
+replace fracMA=fracMAA if fracMA==.;
+replace fracNE=fracNEA if fracNE==.;
+
+drop frac00A fracMAA fracNEA;
+
+#delimit;
+preserve;
+expand = 2 if fracMA ~= . & fracMA ~= 0  & fracMA ~= 1, gen(dup1);
+
+#delimit;
+replace raw_revenue = raw_revenue*fracMA if dup1 == 0 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+replace raw_revenue = raw_revenue*fracNE if dup1 == 1 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+
+/*Dropping single observation of Atlantic Sturgeon*/
+#delimit;
+drop if myspp == 420;
+
+/*Flagging groundfish and scallop fishing years*/
+gen month = month(date);
+gen gf_fishing_year = year;
+	replace gf_fishing_year = gf_fishing_year - 1 if month <=4;
+gen s_fishing_year = year;
+	replace s_fishing_year = s_fishing_year - 1 if month <= 2;
+gen t_fishing_year = year;
+	replace t_fishing_year = t_fishing_year - 1 if month <= 4;
+/*Creating species group indicator*/
+#delimit;
+*gen areafshd = "";
+	replace areafshd = "MA" if fracMA == 1;
+	replace areafshd = "MA" if dup1 == 0 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+	replace areafshd = "NE" if fracNE == 1;
+	replace areafshd = "NE" if dup1 == 1 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+	#delimit;
+gen species_group = "OTHER";
+    replace species_group = "HMS" if inlist(myspp, 470, 469, 467, 468, 493,487, 537, 355, 359);
+    replace species_group = "HMS" if inlist(myspp, 481, 482, 494, 349, 354, 353, 466,432, 471);
+    replace species_group = "HMS" if inlist(myspp, 358, 491);
+    replace species_group = "MONK" if inlist(myspp, 12, 11);
+    replace species_group = "SCAL" if inlist(myspp, 800);
+    replace species_group = "SHR" if inlist(myspp, 736, 737, 735, 738);
+    replace species_group = "SKATE" if inlist(myspp, 365, 368, 372, 366, 373, 369, 367);
+    replace species_group = "SKATE" if inlist(myspp, 370, 373);
+    replace species_group = "HERR" if inlist(myspp, 168);
+    replace species_group = "CLQU" if inlist(myspp, 754);
+    replace species_group = "CLSU" if inlist(myspp, 769);
+    replace species_group = "TILE" if inlist(myspp,447, 444, 446, 445);
+    replace species_group = "BSBFLK" if inlist(myspp,335,121);
+    replace species_group = "BUTHAK" if inlist(myspp, 51, 509, 152);
+    replace species_group = "BLU" if inlist(myspp, 23);
+    replace species_group = "DGSP" if inlist(myspp, 352);
+    *replace species_group = "FLUKE" if inlist(myspp, 121);
+    replace species_group = "ILX" if inlist(myspp, 802);
+    replace species_group = "LOB" if inlist(myspp, 727);
+    replace species_group = "LOL" if inlist(myspp, 801);
+    replace species_group = "MEN" if inlist(myspp, 221);
+    replace species_group = "HAKOS" if inlist(myspp, 508);
+    replace species_group = "SCUP" if inlist(myspp, 329);
+    replace species_group = "FLSD" if inlist(myspp, 125);
+    replace species_group = "POUT" if inlist(myspp, 250);
+    replace species_group = "CAT" if inlist(myspp, 512);
+    replace species_group = "FLBB" if inlist(myspp, 120);
+    replace species_group = "FLYT" if inlist(myspp, 123);
+    replace species_group = "HAKNS" if inlist(myspp, 155);
+    replace species_group = "WHAK" if inlist(myspp, 153);
+    replace species_group = "HAL" if inlist(myspp, 159);
+    replace species_group = "BSCUP" if inlist(myspp, 23, 329) & areafshd == "NE";
+    replace species_group = "NEGF" if inlist(myspp, 81, 120, 122, 123, 147, 269, 153, 124, 240) & areafshd == "NE";
+    replace species_group = "NEGF" if inlist(myspp, 12) & areafshd == "NE";
+    replace species_group = "MAGF" if inlist(myspp, 81, 512, 124, 122, 155, 147, 269, 240, 159) & areafshd == "MA";
+    replace species_group = "FLSDPT" if inlist(myspp, 125, 250) & areafshd == "MA";
+
+	/*merging permit data in*/
+	#delimit;
+	cd "C:\Users\gdepiper\Documents\Stata do\Diversity\code" ;
+*merge m:1 permit using itqfisherypermitroster, nogen;
+#delimit;
+
+*drop state_xfactor - plancat_year revenue1;
+rename raw_revenue nrevenue;
+bysort myspp year: egen p95 = pctile(nrevenue), p(97.5);
+*gen pdiff = nrevenue-p95;
+*gen price = nrevenue/qtykept;
+
+/*cleaning some outliers*/
+*drop if year <= 2004 | year >= 2015;
+*replace nrevenue = nrevenue/100 if permit == 250603 & myspp == 168 & tripid == 4501121 & year == 2014; /*missing two zeros from spplndlb in CFDBS for this trip*/
+#delimit;
+replace nrevenue = nrevenue/10 if permit == 410326 & myspp == 801 & tripid == 3492650 & year == 2010; /*extra zero in VTR data in CFDBS for this trip*/
+replace qtykept = qtykept/10 if permit == 410326 & myspp == 801 & tripid == 3492650 & year == 2010; /*extra zero in VTR data in CFDBS for this trip*/
+*replace nrevenue = qtykept*.5 if permit == 320304 & tripid == 3427415 & myspp == 365 & year == 2010;  /*not sure what is going on with this trip, so changing to have a more realistic price (price currently $26/lb)*/
+#delimit;
+drop _merge*;
+merge m:1 month year using "X:\gdepiper\ESR2017\diversitypplong";
+	gen real_revenue = nrevenue*deflator;
+
+#delimit;
+drop if real_revenue == .;
+*preserve;
+drop if qtykept == 0;
+	*drop dbyear dealnum p95 pdiff price ppi deflator;
+	*rename (gf_fishing_year s_fishing_year t_fishing_year species_group gsector2010 gsector2011 gsector2012 gsector2013 gsector2014 gcommon2010 gcommon2011 gcommon2012 gcommon2013 gcommon2014 ///
+	*	scallopitq2010 scallopitq2011 scallopitq2012 scallopitq2013 scallopitq2014 scallopitq2015 tilefishitq2010 tilefishitq2011 tilefishitq2012 tilefishitq2013 tilefishitq2014 tilefishitq2015 real_revenue) ///
+	*	(GF_FYR SCAL_FYR TILE_FYR S_GROUP GSEC2010 GSEC2011 GSEC2012 GSEC2013 GSEC2014 GCOM2010 GCOM2011 GCOM2012 GCOM2013 GCOM2014 ///
+	*	S_ITQ10 S_ITQ11 S_ITQ12 S_ITQ13 S_ITQ14 S_ITQ15 T_ITQ10 T_ITQ11 T_ITQ12 T_ITQ13 T_ITQ14 T_ITQ15 R_REV);
+	save "X:\gdepiper\ESR2017\SOE_diversityrevenuedata", replace;
+	restore
+
+preserve
+#delimit;
+gen gom_revenue = raw_revenue*fracgom;
+gen gb_revenue = raw_revenue*fracgb;
+gen ss_revenue = raw_revenue*fracss;
+gen mab_revenue = raw_revenue*fracmab;
+
+#delimit;
+drop if source=="SFOQ";
+append using "sfclam_areas_10192017.dta";
+#delimit
+	replace gom_revenue = raw_revenue if gom_revenue == . & EPU == "gom";
+	replace gb_revenue = raw_revenue if gb_revenue == . & EPU == "gb";
+	replace ss_revenue = raw_revenue if ss_revenue == . & EPU == "ss";
+	replace mab_revenue = raw_revenue if mab_revenue == . & EPU == "mab";
+	#delimit;
+	foreach x in gom gb ss mab {;
+	replace `x'_revenue = 0 if gom_revenue != . & gom_revenue != 0 &  `x'_revenue == .;
+	replace `x'_revenue = 0 if gb_revenue != . & gb_revenue != 0 &  `x'_revenue == .;
+	replace `x'_revenue = 0 if ss_revenue != . & ss_revenue != 0 &  `x'_revenue == .;
+	replace `x'_revenue = 0 if mab_revenue != . & mab_revenue != 0 &  `x'_revenue == .;
+	};
+/*Dropping single observation of Atlantic Sturgeon*/
+#delimit;
+drop if myspp == 420;
+drop EPU _merge*;
+
+/*Flagging groundfish and scallop fishing years*/
+#delimit;
+gen month = month(date);
+/*gen gf_fishing_year = year;
+	replace gf_fishing_year = gf_fishing_year - 1 if month <=4;
+gen s_fishing_year = year;
+	replace s_fishing_year = s_fishing_year - 1 if month <= 2;
+gen t_fishing_year = year;
+	replace t_fishing_year = t_fishing_year - 1 if month <= 4;*/
+/*Creating species group indicator*/
+*#delimit;
+/*gen areafshd = "";
+	replace areafshd = "MA" if fracMA == 1;
+	replace areafshd = "MA" if dup1 == 0 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+	replace areafshd = "NE" if fracNE == 1;
+	replace areafshd = "NE" if dup1 == 1 & fracMA ~= . & fracMA ~= 0  & fracMA ~= 1;
+	#delimit;
+gen species_group = "OTHER";
+    replace species_group = "HMS" if inlist(myspp, 470, 469, 467, 468, 493,487, 537, 355, 359);
+    replace species_group = "HMS" if inlist(myspp, 481, 482, 494, 349, 354, 353, 466,432, 471);
+    replace species_group = "HMS" if inlist(myspp, 358, 491);
+    replace species_group = "MONK" if inlist(myspp, 12, 11);
+    replace species_group = "SCAL" if inlist(myspp, 800);
+    replace species_group = "SHR" if inlist(myspp, 736, 737, 735, 738);
+    replace species_group = "SKATE" if inlist(myspp, 365, 368, 372, 366, 373, 369, 367);
+    replace species_group = "SKATE" if inlist(myspp, 370, 373);
+    replace species_group = "HERR" if inlist(myspp, 168);
+    replace species_group = "CLQU" if inlist(myspp, 754);
+    replace species_group = "CLSU" if inlist(myspp, 769);
+    replace species_group = "TILE" if inlist(myspp,447, 444, 446, 445);
+    replace species_group = "BSBFLK" if inlist(myspp,335,121);
+    replace species_group = "BUTHAK" if inlist(myspp, 51, 509, 152);
+    replace species_group = "BLU" if inlist(myspp, 23);
+    replace species_group = "DGSP" if inlist(myspp, 352);
+    *replace species_group = "FLUKE" if inlist(myspp, 121);
+    replace species_group = "ILX" if inlist(myspp, 802);
+    replace species_group = "LOB" if inlist(myspp, 727);
+    replace species_group = "LOL" if inlist(myspp, 801);
+    replace species_group = "MEN" if inlist(myspp, 221);
+    replace species_group = "HAKOS" if inlist(myspp, 508);
+    replace species_group = "SCUP" if inlist(myspp, 329);
+    replace species_group = "FLSD" if inlist(myspp, 125);
+    replace species_group = "POUT" if inlist(myspp, 250);
+    replace species_group = "CAT" if inlist(myspp, 512);
+    replace species_group = "FLBB" if inlist(myspp, 120);
+    replace species_group = "FLYT" if inlist(myspp, 123);
+    replace species_group = "HAKNS" if inlist(myspp, 155);
+    replace species_group = "WHAK" if inlist(myspp, 153);
+    replace species_group = "HAL" if inlist(myspp, 159);
+    replace species_group = "BSCUP" if inlist(myspp, 23, 329) & areafshd == "NE";
+    replace species_group = "NEGF" if inlist(myspp, 81, 120, 122, 123, 147, 269, 153, 124, 240) & areafshd == "NE";
+    replace species_group = "NEGF" if inlist(myspp, 12) & areafshd == "NE";
+    replace species_group = "MAGF" if inlist(myspp, 81, 512, 124, 122, 155, 147, 269, 240, 159) & areafshd == "MA";
+    replace species_group = "FLSDPT" if inlist(myspp, 125, 250) & areafshd == "MA";
+*/
+	/*merging permit data in*/
+	#delimit;
+	cd "C:\Users\gdepiper\Documents\Stata do\Diversity\code" ;
+*merge m:1 permit using itqfisherypermitroster, nogen;
+#delimit;
+
+*drop state_xfactor - plancat_year revenue1;
+rename raw_revenue nrevenue;
+bysort myspp year: egen p95 = pctile(nrevenue), p(97.5);
+*gen pdiff = nrevenue-p95;
+*gen price = nrevenue/qtykept;
+
+/*cleaning some outliers*/
+*drop if year <= 2004 | year >= 2015;
+*replace nrevenue = nrevenue/100 if permit == 250603 & myspp == 168 & tripid == 4501121 & year == 2014; /*missing two zeros from spplndlb in CFDBS for this trip*/
+#delimit;
+replace nrevenue = nrevenue/10 if permit == 410326 & myspp == 801 & tripid == 3492650 & year == 2010; /*extra zero in VTR data in CFDBS for this trip*/
+replace qtykept = qtykept/10 if permit == 410326 & myspp == 801 & tripid == 3492650 & year == 2010; /*extra zero in VTR data in CFDBS for this trip*/
+*replace nrevenue = qtykept*.5 if permit == 320304 & tripid == 3427415 & myspp == 365 & year == 2010;  /*not sure what is going on with this trip, so changing to have a more realistic price (price currently $26/lb)*/
+#delimit;
+*drop _merge;
+merge m:1 month year using "X:\gdepiper\ESR2017\diversitypplong";
+	gen real_revenue = nrevenue*deflator;
+
+#delimit;
+drop if real_revenue == .;
+*preserve;
+drop if qtykept == 0;
+	*drop dbyear dealnum p95 pdiff price ppi deflator;
+	*rename (gf_fishing_year s_fishing_year t_fishing_year species_group gsector2010 gsector2011 gsector2012 gsector2013 gsector2014 gcommon2010 gcommon2011 gcommon2012 gcommon2013 gcommon2014 ///
+	*	scallopitq2010 scallopitq2011 scallopitq2012 scallopitq2013 scallopitq2014 scallopitq2015 tilefishitq2010 tilefishitq2011 tilefishitq2012 tilefishitq2013 tilefishitq2014 tilefishitq2015 real_revenue) ///
+	*	(GF_FYR SCAL_FYR TILE_FYR S_GROUP GSEC2010 GSEC2011 GSEC2012 GSEC2013 GSEC2014 GCOM2010 GCOM2011 GCOM2012 GCOM2013 GCOM2014 ///
+	*	S_ITQ10 S_ITQ11 S_ITQ12 S_ITQ13 S_ITQ14 S_ITQ15 T_ITQ10 T_ITQ11 T_ITQ12 T_ITQ13 T_ITQ14 T_ITQ15 R_REV);
+	save "X:\gdepiper\ESR2017\SOE_productivityrevenuedata_2017", replace;
+	restore
