@@ -1,0 +1,3 @@
+rmd_files: ["index.Rmd", "singlespp_status_indicator.Rmd"]
+delete_merged_file: true
+new_session: yes
