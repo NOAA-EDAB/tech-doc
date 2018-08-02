@@ -1,14 +1,4 @@
----
-title: "Chesapeake Bay Algal Bloom Events"
-output:
-  pdf_document: default
-  html_document: default
-  word_document: default
-bibliography: MAB_HAB.bib
-header-includes: 
-- \usepackage{float}
-- \usepackage[bottom]{footmisc}
----
+# Mid-Atlantic Harmful Algal Bloom Indicator
 
 ```{r setup,  echo = F, message=F}
 
@@ -139,7 +129,7 @@ HAB_2016 <- HAB_2016 %>%
 
 ### 2017 data
 library(stringr)
-HAB_2017 <- read_excel("HAB_MAP_data_2017.xlsx",sheet=2)
+HAB_2017 <- read_excel("HAB_MAP_Data_2017.xlsx",sheet=2)
 HAB_2017$species = str_trim(HAB_2017$species)
 
 HAB_2017 <- HAB_2017 %>% mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
