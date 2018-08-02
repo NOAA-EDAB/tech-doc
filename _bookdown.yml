@@ -9,6 +9,8 @@ rmd_files: ["index.Rmd",
 "MAB_HABs_indicator.Rmd",
 "Comm_rel_vuln_indicator.Rmd",
 "Comm_climate_vuln_indicator.Rmd",
+"HP_indicator.Rmd",
+"RW_indicator.rmd",
 "references.Rmd"]
 delete_merged_file: true
 new_session: yes
