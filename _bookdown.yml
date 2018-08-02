@@ -1,3 +1,3 @@
-rmd_files: ["index.Rmd", "singlespp_status_indicator.Rmd"]
+rmd_files: ["index.Rmd", "singlespp_status_indicator.Rmd", "Recreational_Data.Rmd", "Bennet_indicator.Rmd", "NE_HABs_indicator.Rmd"]
 delete_merged_file: true
 new_session: yes
