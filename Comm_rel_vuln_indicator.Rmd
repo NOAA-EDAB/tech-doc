@@ -1,11 +1,4 @@
----
-title: "Community reliance and vulnerability"
-output:
-  html_document: default
-  word_document: default
-bibliography: Comm_rel_vuln.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Fishery Reliance and Social Vulnerability
 
 ```{r setup,  echo = F, message=F}
 
@@ -15,15 +8,13 @@ library(rmarkdown)
 
 ```
 
-The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
-
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 
 
 ## Contributor name(s)
 Lisa L. Colburn
 
 ## Data name
+Fishing community commercial and recreational fishing reliance and social vulnerability
 
 ### Indicator category 
 <!-- 1. Database pull -->
