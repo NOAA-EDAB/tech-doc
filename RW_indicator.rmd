@@ -1,11 +1,5 @@
----
-title: "Right Whale Abundance"
-output:
-  html_document: default
-  word_document: default
-bibliography: RW.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Right Whale Abundance 
+
 
 ```{r setup,  echo = F, message=F}
 
