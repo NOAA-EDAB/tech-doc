@@ -7,6 +7,8 @@ rmd_files: ["index.Rmd",
 "Aquaculture_indicators.Rmd",
 "NE_HABs_indicator.Rmd",
 "MAB_HABs_indicator.Rmd",
+"Comm_rel_vuln_indicator.Rmd",
+"Comm_climate_vuln_indicator.Rmd",
 "references.Rmd"]
 delete_merged_file: true
 new_session: yes
