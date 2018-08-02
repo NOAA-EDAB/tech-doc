@@ -1,0 +1,72 @@
+---
+title: "Harbor Porpoise Bycatch"
+output:
+  html_document: default
+  word_document: default
+#bibliography: XYZ.bib
+---
+
+<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+
+
+
+## Contributor name(s)
+Christopher D. Orphandies
+
+## Data name
+Harbor Porpoise Indicator
+
+### Indicator category 
+Indicate from the list below which category the contributed data fall under by deleting other entries.
+
+
+3. Synthesis of published information
+5. Published methods
+
+
+## Methods
+
+
+### Data source(s) 
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents. Annual bycatch estimates are documented in annual stock assessment reports that can be found on the [NOAA website](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press).
+
+More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). The document for the 2016 estimates is currently in press and will be available on the above website when published. Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: CRD-17-18, CRD-16-05, CRD 15-15, CRD 14-02, CRD 13-13, CRD 11-08, CRD 10-10, CRD 07-20, CRD 06-13, CRD 03-18, CRD 01-15, and CRD 99-17.
+
+### Data extraction 
+NA
+
+### Data analysis
+Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution (stddev = mean*CV, 95% CI = xbar +/- 1.96 * stddev).
+
+
+### Further metadata
+
+#### Public availability statement
+Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html).
+
+
+#### Point of contact - Whom should be contacted?
+Chris Orphanides, chris.orphanides@noaa.gov
+
+#### Data steward (can be POC; in charge of keeping data updated)
+Chris Orphanides, chris.orphanides@noaa.gov
+
+#### References
+NA
+
+<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+
+
+
+
+
+
