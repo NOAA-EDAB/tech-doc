@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: ["conceptmods.bib", "NE_HAB.bib"]
+bibliography: ["conceptmods.bib", "Bennet_indicator.bib", "NE_HAB.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-memo

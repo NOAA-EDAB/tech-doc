@@ -1,11 +1,4 @@
----
-title: "Bennet Indicator"
-output:
-  html_document: default
-  word_document: default
-  bibliography: Bennet_indicator.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Bennet Indicator
 
 ```{r setup,  echo = F, message=F}
 
@@ -86,7 +79,7 @@ setkey(landsum, "YEAR", "Feeding.guild")
 
 Revenue earned by harvesting resources from an LME at time *t* is a function of both the quantity landed of each species and the prices paid for landings. Changes in revenue between any two years depends on both prices and quantities in each year, and both may be changing simultaneously. For example, an increase in the harvest of higher priced species, such as scallops can lead to an overall increase in total revenue from an LME between time periods even if quantities landed of other species decline. Although measurement of revenue change is useful, the ability to see what drives revenue change, whether it is changing harvest levels, the mix of species landed, or price changes provides additional valuable information. Therefore, it is useful to decompose revenue change into two parts, one which is due to changing quantities (or volumes), and a second which is due to changing prices. In an LME, the quantity component will yield useful information about how the species mix of harvests are changing through time.
 
-A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator [@Cross2009]. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index [@Balk2010], and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads [@lim2009], and dividend changes in banking operations [@Grifell-Tatjé2004].  An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents [@Balk2010]. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964and 2015.
+A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator [@Cross2009]. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index [@Balk2010], and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads [@lim2009], and dividend changes in banking operations [@Grifell-Tatj?2004].  An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents [@Balk2010]. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964and 2015.
 
 Revenue in a given year for any species group is the product of quantity landed times price, and the sum of revenue from all groups is total revenue from the LME. In any year, both prices and quantities can change from prior years, leading to total revenue change. At time t, revenue (R) is defined as $$R^{t} = \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t},$$
 where $p_{j}$ is the price for species group $j$, and $y_{j}$ is the quantity landed of species group $j$. Revenue change between any two time periods, say $t+1$ and $t$, is then $R^{t+1}-R^{t}$, which can also be expressed as:

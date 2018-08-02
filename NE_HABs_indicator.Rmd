@@ -1,14 +1,4 @@
----
-title: "New England shellfish bed closures due to HAB-associated toxins"
-output:
-  html_document: default
-  word_document: default
-  pdf_document: default
-bibliography: NE_HAB.bib
-header-includes: 
-- \usepackage{float}
-- \usepackage[bottom]{footmisc}
----
+# New England Harmful Algal Bloom Indicator
 
 ```{r setup,  echo = F, message=F}
 
@@ -22,7 +12,6 @@ library(rmarkdown)
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 -->
-# New England Harmful Algal Bloom Indicator
 
 ## Contributor name(s)
 Sean Hardison, Dave Kulis, Donald M Anderson
