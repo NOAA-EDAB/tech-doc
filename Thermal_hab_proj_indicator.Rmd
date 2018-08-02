@@ -1,11 +1,5 @@
----
-title: "Thermal Habitat Projections"
-output:
-  html_document: default
-  word_document: default
-bibliography: thermal_hab_proj.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Thermal Habitat Projections
+
 
 ```{r setup,  echo = F, message=F}
 

@@ -1,12 +1,5 @@
----
-title: "Groundfish productivity"
-output:
-  pdf_document: default
-  html_document: default
-  word_document: default
-bibliography: productivity_tech_memo.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Fish Productivity Indicator
+ 
 
 ```{r setup,  echo = F, message=F}
 

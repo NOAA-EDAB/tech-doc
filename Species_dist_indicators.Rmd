@@ -1,11 +1,5 @@
----
-title: "Species Distributions"
-output:
-  html_document: default
-  word_document: default
-bibliography: Species_dist.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Species Distribution Indicators
+
 
 ```{r setup,  echo = F, message=F}
 
@@ -14,10 +8,6 @@ library(knitr)
 library(rmarkdown)
 
 ```
-
-The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
-
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 
 
 ## Contributor name(s)
@@ -35,7 +25,7 @@ Species mean depth, along-shelf distance, and distance to coastline
 <!-- 5. Published methods -->
 
 ## Methods
-Three metrics quantifying spatial-temporal distribution shifts within fish populations were developed by @Friedland2018, including mean depth, along-shelf distance, and distance to coastline. Along-shelf distance is a metric for quantifying the distribution of a species through time along the axis of the US Northeast Continental Shelf, which originates in the southwest Atlantic and extends northeastward. Values in the derived time series correspond to mean distance in km from the southwest origin of the along-shelf axis at 0 km. The along-shelf axis begins at 76.53°W 34.60°N and terminates at 65.71°W 43.49°N. 
+Three metrics quantifying spatial-temporal distribution shifts within fish populations were developed by @Friedland2018, including mean depth, along-shelf distance, and distance to coastline. Along-shelf distance is a metric for quantifying the distribution of a species through time along the axis of the US Northeast Continental Shelf, which originates in the southwest Atlantic and extends northeastward. Values in the derived time series correspond to mean distance in km from the southwest origin of the along-shelf axis at 0 km. The along-shelf axis begins at 76.53?W 34.60?N and terminates at 65.71?W 43.49?N. 
 
 Once mean distance is found, depth of occurrence and distance to coastline can be calculated for each species' positional center. Analyses present in the State of the Ecosystem (SOE) reports include mean depth and along-shelf distance for Atlantic cod, sea scallop, summer flounder, and black sea bass. 
 
