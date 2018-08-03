@@ -377,7 +377,7 @@ soe.plot(SOE.data.2018, "Time", "Recreational Seafood MA", scale.axis = 10^6,
          end.start = 2008, x.label = 'Year', rel.y.text = 1.5, rel.y.num = 1.1,
          y.line = 2.5, y.label = expression("Fish caught, 10"^6 *" n"))
 ```
-```
+
 
 
 ### Further metadata
