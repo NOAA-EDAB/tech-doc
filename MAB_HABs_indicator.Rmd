@@ -1,16 +1,6 @@
----
-title: "Chesapeake Bay Algal Bloom Events"
-output:
-  pdf_document: default
-  html_document: default
-  word_document: default
-bibliography: MAB_HAB.bib
-header-includes: 
-- \usepackage{float}
-- \usepackage[bottom]{footmisc}
----
+# Mid-Atlantic Harmful Algal Bloom Indicator
 
-```{r setup,  echo = F, message=F}
+```{r setup, echo = F, message=F}
 
 #Load packages
 library(knitr)
@@ -58,16 +48,16 @@ SELECT * FROM...
 --> 
 ```{r r_extract, echo = T, eval = T, message=F, warning=F}
 
-
-rm(list = ls())
-
 ## Libraries
-library(dplyr);library(readxl);library(data.table);library(tidyr)
+library(dplyr)
+library(readxl)
+library(data.table)
+library(tidyr)
+library(stringr)
 
-setwd("./data/CB_HAB")
 
 # 2007 - 2012 data
-HAB_2007_2012 <- read_excel("HAB_data_2007-2012.xlsx")
+HAB_2007_2012 <- read_excel("data/CB_HAB/HAB_data_2007-2012.xlsx")
 HAB_2007_2012$date <- as.character(HAB_2007_2012$date)
 HAB_2007_2012 <- HAB_2007_2012 %>% filter(!is.na(cells_per_ml)) %>%
   filter(!is.na(date)) %>%
@@ -80,7 +70,7 @@ HAB_2007_2012 <- HAB_2007_2012 %>% filter(!is.na(cells_per_ml)) %>%
 
 
 ####### 2013 HAB data 
-HAB_2013 <- read_excel("Algal Bloom Results - VIMS 28July2013_KSR.xlsx",skip = 6)
+HAB_2013 <- read_excel("data/CB_HAB/Algal Bloom Results - VIMS 28July2013_KSR.xlsx",skip = 6)
 
 HAB_2013 <- HAB_2013 %>% filter(!is.na(cells_per_ml)) %>%
   mutate(year = "2013") %>%
@@ -91,7 +81,7 @@ HAB_2013 <- HAB_2013 %>% filter(!is.na(cells_per_ml)) %>%
   as.data.frame()
 
 ####### 2014 HAB data
-ODU_pre_filt <- read_excel("2014 ODU data.xlsx")
+ODU_pre_filt <- read_excel("data/CB_HAB/2014 ODU data.xlsx")
 ODU_post <- ODU_pre_filt %>% 
   mutate(decimalLongitude = abs(as.numeric(decimalLongitude)))
 ODU <- ODU_post %>% mutate(index = as.factor(seq(1,nrow(ODU_post),1)))
@@ -113,7 +103,7 @@ HAB_2014 <- HAB_2014 %>% mutate(year = "2014") %>%
 #Two data points from VIMS missing from 2014
 
 ###### 2016 Data
-HAB_2016 <- read_excel("HAB_MAP_Data_2016.xlsx")
+HAB_2016 <- read_excel("data/CB_HAB/HAB_MAP_Data_2016.xlsx")
 HAB_2016 <- HAB_2016 %>% mutate(species= 
                                 plyr::mapvalues(species, 
                                                 from = c("Eugelna sanguinea",
@@ -138,8 +128,7 @@ HAB_2016 <- HAB_2016 %>%
 
 
 ### 2017 data
-library(stringr)
-HAB_2017 <- read_excel("HAB_MAP_data_2017.xlsx",sheet=2)
+HAB_2017 <- read_excel("data/CB_HAB/HAB_MAP_Data_2017.xlsx",sheet=2)
 HAB_2017$species = str_trim(HAB_2017$species)
 
 HAB_2017 <- HAB_2017 %>% mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
@@ -162,20 +151,15 @@ HAB_2017 <- HAB_2017 %>% mutate(decimalLongitude = abs(as.numeric(decimalLongitu
   
 ts <- rbind(HAB_2007_2012, HAB_2013, HAB_2014, HAB_2016, HAB_2017)
 ##All HABs by years
-library(plyr)
-full <- ts %>% mutate(species = plyr::mapvalues(species, from = c("Chattonella subsalsa",
-                                                                  "Heterocapsa rotundata",
-                                                                  "Heterocapsa triquetra",
-                                                                  #"Gymnodinium",
-                                                                  "Alexandrium monilatum"),
-                                                        to = c("Chattonella spp.",
-                                                               "Heterocapsa spp.",
-                                                               "Heterocapsa spp.",
-                                                               #"Gymnodinium spp.",
-                                                               "Alexandrium spp."))) %>%
-  ungroup() %>%
+full <- ts %>%
+  mutate(species = dplyr::case_when(grepl("Chattonella subsalsa", species) ~ "Chattonella spp.",
+                                    grepl("Heterocapsa rotundata", species) ~ "Heterocapsa spp.",
+                                    grepl("Heterocapsa triquetra", species) ~"Heterocapsa spp.", 
+                                    # grepl("Gymnodinium",) ~ "Gymnodinium spp.",
+                                    grepl("Alexandrium monilatum", species) ~ "Alexandrium spp.",
+                                    TRUE ~ as.character(species))) %>% 
+           ungroup() %>% 
   as.data.frame()
-
 ```
 
 
@@ -185,7 +169,7 @@ full <- ts %>% mutate(species = plyr::mapvalues(species, from = c("Chattonella s
 No data analysis steps took place for this indicator.
 
 <!--What packages or libraries did you use in your work flow?-->
-```{r packages, echo=T, message=FALSE, warning=FALSE, include=T}
+```{r packages, eval = F, echo=T, message=FALSE, warning=FALSE, include=T}
 
 #SOE R packages
 

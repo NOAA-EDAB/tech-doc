@@ -2,10 +2,12 @@
 
 ```{r setup,  echo = F, message=F}
 
+#devtools::install_github("slucey/Rsurvey/Survdat")
+
 #Load packages
 library(knitr)
 library(rmarkdown)
-library(survdat)
+library(Survdat)
 ```
 
 <!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 

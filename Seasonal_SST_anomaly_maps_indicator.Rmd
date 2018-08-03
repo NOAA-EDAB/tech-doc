@@ -1,11 +1,5 @@
----
-title: "Seasonal SST Anomalies"
-output:
-  html_document: default
-  word_document: default
-bibliography: seasonal_sst_anomaly_maps.bib
----
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Seasonal SST Anomalies
+
 
 ```{r setup,  echo = F, message=F}
 
@@ -15,10 +9,6 @@ library(rmarkdown)
 
 
 ```
-
-The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
-
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 
 
 ## Contributor name(s)

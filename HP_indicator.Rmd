@@ -1,12 +1,4 @@
----
-title: "Harbor Porpoise Bycatch"
-output:
-  html_document: default
-  word_document: default
-#bibliography: XYZ.bib
----
-
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
+# Harbor Porpoise Bycatch
 
 ```{r setup,  echo = F, message=F}
 
@@ -15,8 +7,6 @@ library(knitr)
 library(rmarkdown)
 
 ```
-
-
 
 
 ## Contributor name(s)

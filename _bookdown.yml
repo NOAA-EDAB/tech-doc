@@ -1,3 +1,22 @@
-rmd_files: ["index.Rmd", "singlespp_status_indicator.Rmd", "Recreational_Data.Rmd", "Bennet_indicator.Rmd", "NE_HABs_indicator.Rmd"]
+rmd_files: ["index.Rmd", 
+"singlespp_status_indicator.Rmd", 
+"survey_data.rmd", 
+"Recreational_Data.Rmd", 
+"Bennet_indicator.Rmd", 
+"Catch_and_Fleet_Diversity_indicators.Rmd",
+"Aquaculture_indicators.Rmd",
+"NE_HABs_indicator.Rmd",
+"MAB_HABs_indicator.Rmd",
+"Comm_rel_vuln_indicator.Rmd",
+"Comm_climate_vuln_indicator.Rmd",
+"HP_indicator.Rmd",
+"RW_indicator.rmd",
+"Species_dist_indicators.Rmd",
+"Thermal_hab_proj_indicator.Rmd",
+"long_term_sst_indicator.Rmd",
+"Seasonal_SST_anomaly_maps_indicator.Rmd",
+"Condition_indicator.Rmd",
+"productivity_for_tech_memo.Rmd",
+"references.Rmd"]
 delete_merged_file: true
 new_session: yes
