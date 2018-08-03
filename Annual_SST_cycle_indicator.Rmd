@@ -1,10 +1,10 @@
 # Annual SST Cycles
+
 ```{r setup,  echo = F, message=F}
 
 #Load packages
 library(knitr)
 library(rmarkdown)
-
 
 ```
 
@@ -24,6 +24,7 @@ Annual SST Cycles
 <!-- 5. Published methods -->
 
 ## Methods
+
 ### Data source(s) 
 Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis)).
 
@@ -471,6 +472,7 @@ box()
 
 
 ### Further metadata
+
 #### Public availability statement
 Source data are available [here](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423)
 
