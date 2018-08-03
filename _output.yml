@@ -4,6 +4,7 @@ bookdown::gitbook:
   config:
     toolbar:
       position: static
+    edit: https://github.com/NOAA-EDAB/tech-memo/edit/master/%s
 bookdown::pdf_book:
   keep_tex: yes
 bookdown::html_book:
