@@ -85,7 +85,7 @@ After the analyses were done, we next considered options for interpolation of ne
 Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply "Gulf of Maine" in SOE), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses. 
 
 
-```{r EPU maps, echo = T, fig.align='center', echo = F, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue)."}
+```{r EPU maps, echo = T, fig.align='center', echo = F, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue).\\label{EPUmap}"}
 image.dir <- './images'
 knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 ```
