@@ -1,4 +1,4 @@
-# Chlorophyll &alpha; \& Primary Production
+# Chlorophyll \(\alpha\) and Primary Production
 ```{r setup,  echo = F, message=F}
 
 #Load packages
