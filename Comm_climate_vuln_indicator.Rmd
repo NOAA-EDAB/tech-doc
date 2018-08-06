@@ -1,4 +1,4 @@
-# Fishing Community Climate Vulnerability"
+# Fishing Community Climate Vulnerability
 
 ```{r setup,  echo = F, message=F}
 
