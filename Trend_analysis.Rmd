@@ -9,7 +9,7 @@ library(rmarkdown)
 ```
 
 ## Contributor name(s)
-Charles Perretti, Geret DePiper, Sean Hardison
+Sean Hardison, Charles Perretti, Geret DePiper
 
 ## Data name
 Time series trend analysis
@@ -26,9 +26,18 @@ Method
 ##Methods
 In some cases, time series indicators in the State of the Ecosystem reports are presented with trend lines, although not all time series were selected for trend analysis. As has been shown elsewhere [see @Nicholson2004; @Wagner2013; @VonStorch1999a], power of statistical tests for trend is hampered by low sample size and autocorrelated observations, which are common attributes of SOE indicators. 
 
-In a preliminary simulation study, we explored the consequences of time series length and autocorrelation strength on statistical power of three tests for trend. Our results showed that rates of Type I error, or the false rejection of the null hypothesis when no trend exists, increased for time series at lower sample sizes. A similar result was seen for Type II error rates at low sample sizes (i.e. failure to reject the null hypothesis when trend exists), and both types of error were inflated by autocorrelation. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing for trend. We also chose to use a GLS model selection (GLS-MS) approach to assess for trend in State of the Ecosystem reports, as this approach was least sensitive to Type II error at N &geq; 30. GLS-MS also allowed for both linear and quadratic model fits. 
+In a preliminary simulation study, we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods. Overall, when sample size was low (N = 10) there was a high rate of false trend detection, and similarly, a low rate of true trend detection. Both of these forms of error were further amplified by autocorrelation in the observed time series. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend. We also chose to use a GLS model selection (GLS-MS) approach to assess for trend in State of the Ecosystem reports, as this approach performed best overall. GLS-MS also allows for both linear and quadratic model fits and quantification of uncertainty in the trend estimate. 
 
-The model selection process fit four different GLS models to the data using the R package *nlme* [@Pinheiro2017]. The first two models were first-order linear; one was specified with Gaussian error structure, and the second with $AR(1)$ correlation structure. The second two GLS models were quadratic, one specifying Gaussian error and the second an $AR(1)$ correlation structure. All four model fits were compared using second-order AIC (AICc) with the R package *AICcmodavg* [@Mazerolle2017a], and tested against the null hypothesis of no trend through likelihood ratio tests (p < 0.05) against corresponding null models. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
+The model selection procedure for the GLS approach fits four models to each time series and selects the best fitting model using AICc. The models are, 1) linear trend with uncorrelated residuals, 2) linear trend with correlated residuals, 3) quadratic trend with uncorrelated residuals, and 4) quadratic trend with correlated residuals. I.e., the models are of the form
+
+$$ Y_t = \alpha_0 + \alpha_1X_t + \alpha_2X_t^2 + \epsilon_t$$
+$$\epsilon_t = \rho\epsilon_{t-1} + \omega_t$$
+
+$$w_t \sim N(0, \sigma^2)$$
+
+Where $Y_t$ is the observation in time $t$, $X_t$ is the time index, $\epsilon_t$ is the residual in time $t$, and $\omega_t$ is a normally distributed random variable. Setting $\alpha_2 = 0$ yields the linear trend model, and $\rho = 0$ yields the uncorrelated residuals model.
+
+The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p < 0.05). All models were fit using the R package *nlme* [@Pinheiro2017] and AICc was calculated using the R package *AICcmodavg* [@Mazerolle2017a]. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
 
 ### Data source(s)
 NA
@@ -377,7 +386,7 @@ soe.plot(SOE.data.2018, "Time", "Recreational Seafood MA", scale.axis = 10^6,
          end.start = 2008, x.label = 'Year', rel.y.text = 1.5, rel.y.num = 1.1,
          y.line = 2.5, y.label = expression("Fish caught, 10"^6 *" n"))
 ```
-
+```
 
 
 ### Further metadata
