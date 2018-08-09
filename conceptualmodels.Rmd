@@ -1,11 +1,4 @@
----
-title: "Conceptual models"
-output:
-  html_document: default
-  word_document: default
-  pdf_document: default
-bibliography: conceptmods.bib
----
+# Conceptual Models
 
 ```{r setup,  echo = F, message=F}
 
@@ -21,7 +14,7 @@ image.dir <- './images'
 <!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
-# Conceptual Models
+
 
 ## Contributor name(s)
 Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Robert Wildermuth 
@@ -40,7 +33,7 @@ Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-A
 ## Methods
 Conceptual models were constructed to facilitate multidisciplinary analysis and discussion of the linked social-ecological system for integrated ecosystem assessment. The overall process was to first identify the components of the model (focal groups, human activities, environmental drivers, and objectives), and then to document criteria for including groups and linkages and what the specific links were between the components.
 
-The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an overview conceptual model for the Northern California Current Large Marine Ecosystem (NCC)  (https://www.integratedecosystemassessment.noaa.gov/Assets/iea/california/conceptual-models/Integrated-SocioEcological-System-Overview6.png), with models for each focal ecosystem component that detailed the ecological, environmental, and human system linkages (https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-overview.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-environmental.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-ecological.html#, https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-human.html#). Another set of conceptual models outlined habitat linkages (https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/mediating-components/habitat.html). 
+The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an [overview conceptual model for the Northern California Current Large Marine Ecosystem (NCC)](https://www.integratedecosystemassessment.noaa.gov/Assets/iea/california/conceptual-models/Integrated-SocioEcological-System-Overview6.png), with models for each [focal ecosystem component](https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-overview.html#) that detailed the [ecological](https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-ecological.html#), [environmental](https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-environmental.html#), and [human system](https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/focal-components/coastal-pelagic-human.html#) linkages. Another set of conceptual models outlined [habitat](https://www.integratedecosystemassessment.noaa.gov/regions/california-current-region/components/mediating-components/habitat.html) linkages. 
 
 An inital conceptual model for Georges Bank and the Gulf of Maine was outlined at the 2015 ICES WGNARS meeting. It specified four categories: Large scale drivers, focal ecosystem components, human activities, and human well being. Strategic management objectives were included in the conceptual model, which had not been done in the NCC. Focal ecosystem components were defined as aggregate species groups that had associated US management objectives (outlined within WGNARS for IEAs, see @depiper_operationalizing_2017): groundfish, forage fish, fished invertebrates, living habitat, and protected species. These categories roughly align with Fishery Managment Plans (FMPs) for the New England Fishery Management Council. The Mid-Atlantic conceptual model was developed along similar lines, but the Focal groups included demersals, forage fish, squids, medium pelagics, clams/quahogs, and protected species to better align with the Mid Atlantic Council's FMPs.
 
@@ -208,12 +201,6 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 # analysis code
 ```
 -->
-### References
-<!--List references here.-->
-<!--the following line allows reference placement somewhere other than the default end of the doc, if we move the ref section to the end we won't need this-->
-<div id="refs"></div>
-
-
 
 ### ERDDAP data set
 <!--If data are available, adjust code to pull those data and set "eval = T" in chunk header options.-->
@@ -255,6 +242,7 @@ Sarah Gaichas
 #### Data steward (can be POC; in charge of keeping data updated)
 Sarah Gaichas
 
+### References
 
 
 
