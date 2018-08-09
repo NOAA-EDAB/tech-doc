@@ -1,4 +1,4 @@
-# Chlorophyll \(\alpha\) and Primary Production
+# Chlorophyll *a* and Primary Production
 ```{r setup,  echo = F, message=F}
 
 #Load packages
@@ -11,7 +11,7 @@ library(rmarkdown)
 Kimberly Hyde
 
 ## Data name
-Chlorophyll &alpha; \& Primary Production
+Chlorophyll *a* and Primary Production
 
 
 ### Indicator category
