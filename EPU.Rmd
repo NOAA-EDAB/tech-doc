@@ -1,4 +1,4 @@
-# Ecological Production Units
+# Ecological Production Units {#epu}
 
 ```{r setup,  echo = F, message=F}
 
@@ -32,7 +32,7 @@ We did not include information on higher trophic levels or fishing patterns in o
 Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table 1. They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
 
 ### Data source(s)
-Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, oC) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
+Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &degC) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
 
 **Table 1:** Variables used in derivation of Ecological Production Units.
 ```{r source table, echo = F, include = T, results='asis'}
@@ -42,20 +42,20 @@ tab <- '
 |:-----------------------|:-----------------------|:-----------------------|
 |Bathymetry|	Soundings/Hydroacoustics|	Meters|
 |Surficial Sediments|	Benthic Grab|	Krumbian Scale|
-|Sea Surface Temperature|	Satellite Imagery (4km grid)|	oC annual average|
+|Sea Surface Temperature|	Satellite Imagery (4km grid)|	&degC annual average|
 |Sea Surface Temperature|	Satellite Imagery (4km grid)|	dimensionless|
-|Sea Surface Temperature|	Satellite Imagery (4km grid)|	oC annual average|
-|Surface Temperature|	Shipboard hydrography (point)|	oC (Spring and Fall)|
-|Bottom Temperature|	Shipboard hydrography (point)|	oC (Spring and Fall)|
+|Sea Surface Temperature|	Satellite Imagery (4km grid)|	&degC annual average|
+|Surface Temperature|	Shipboard hydrography (point)|	&degC (Spring and Fall)|
+|Bottom Temperature|	Shipboard hydrography (point)|	&degC (Spring and Fall)|
 |Surface Salinity|	Shipboard hydrography (point)|	psu (Spring and Fall)|
 |Bottom Salinity| Shipboard hydrography (point)|	psu (Spring and Fall)|
 |Stratification|	Shipboard hydrography (point)|	Sigma-t units (Spring and Fall)|
-|Chlorophyll-a|	Satellite Imagery (1.25 km grid)|	mg/C/m3 (annual average)|
+|Chlorophyll-a|	Satellite Imagery (1.25 km grid)|	mg/C/m^3 (annual average)|
 |Chlorophyll-a gradient|	Satellite Imagery (1.25 km grid)|	dimensionless|
-|Chlorophyll-a span|	Satellite Imagery (1.25 km grid)|	mg/C/m3 (annual average)|
-|Primary Production|	Satellite Imagery (1.25 km grid)|	gC/m3/year (cumulative)|
+|Chlorophyll-a span|	Satellite Imagery (1.25 km grid)|	mg/C/m^3 (annual average)|
+|Primary Production|	Satellite Imagery (1.25 km grid)|	gC/m^3/year (cumulative)|
 |Primary Production gradient|	Satellite Imagery (1.25 km grid)|	dimensionless|
-|Primary Production span|	Satellite Imagery (1.25 km grid)|	gC/m3/year (cumulative)|
+|Primary Production span|	Satellite Imagery (1.25 km grid)|	gC/m^3/year (cumulative)|
 '
 cat(tab)
 
@@ -85,7 +85,7 @@ After the analyses were done, we next considered options for interpolation of ne
 Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply "Gulf of Maine" in SOE), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses. 
 
 
-```{r EPU maps, echo = T, fig.align='center', echo = F, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue).\\label{EPUmap}"}
+```{r EPU maps,  fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue) \\label{EPUmap}", fig.align='center', echo = F}
 image.dir <- './images'
 knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 ```
@@ -93,7 +93,7 @@ knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 ### Further metadata
 
 #### Public availability statement
-Data used in this analysis are available to the public (location TBD)**.
+Shapefiles for GIS analysis based on these EPUs are available ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
 
 #### Point of contact
 Robert Gamble, <robert.gamble@noaa.gov>
@@ -101,5 +101,3 @@ Robert Gamble, <robert.gamble@noaa.gov>
 #### Data steward
 NA
 
-### References
-<!--List references here-->
