@@ -6,6 +6,7 @@
 library(knitr)
 library(rmarkdown)
 library(magick)
+library(readr)
 
 ```
 
@@ -29,36 +30,41 @@ To define ecological production units, we assembled a set of physiographic, ocea
 
 We did not include information on higher trophic levels or fishing patterns in our analysis. The biomass and production of higher trophic levels in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
 
-Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \ref{sources}. They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
+Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
 
 ### Data source(s)
 Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &deg;C) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
 
-**Table 1:** Variables used in derivation of Ecological Production Units.
-```{r sources,  echo = F, include = T, results='asis'}
+
+```{r epuinputs,  echo = F, include = T, warning = F, message = F, results='asis'}
 #Table: (\#label) Variables used in derivation of Ecological Production Units
 tab <- '
 |Variables|Sampling Method|Units|
 |:-----------------------|:-----------------------|:-----------------------|
-|Bathymetry|	Soundings/Hydroacoustics|	Meters|
-|Surficial Sediments|	Benthic Grab|	Krumbian Scale|
-|Sea Surface Temperature|	Satellite Imagery (4km grid)|	&deg;C annual average|
-|Sea Surface Temperature|	Satellite Imagery (4km grid)|	dimensionless|
-|Sea Surface Temperature|	Satellite Imagery (4km grid)|	&deg;C annual average|
-|Surface Temperature|	Shipboard hydrography (point)|	&deg;C (Spring and Fall)|
-|Bottom Temperature|	Shipboard hydrography (point)|	&deg;C (Spring and Fall)|
-|Surface Salinity|	Shipboard hydrography (point)|	psu (Spring and Fall)|
-|Bottom Salinity| Shipboard hydrography (point)|	psu (Spring and Fall)|
-|Stratification|	Shipboard hydrography (point)|	Sigma-t units (Spring and Fall)|
-|Chlorophyll-a|	Satellite Imagery (1.25 km grid)|	mg/C/m^3^ (annual average)|
-|Chlorophyll-a gradient|	Satellite Imagery (1.25 km grid)|	dimensionless|
-|Chlorophyll-a span|	Satellite Imagery (1.25 km grid)|	mg/C/m^3^ (annual average)|
-|Primary Production|	Satellite Imagery (1.25 km grid)|	gC/m^3^/year (cumulative)|
-|Primary Production gradient|	Satellite Imagery (1.25 km grid)|	dimensionless|
-|Primary Production span|	Satellite Imagery (1.25 km grid)|	gC/m^3^/year (cumulative)|
+|Bathymetry|Soundings/Hydroacoustics|Meters|
+|Surficial Sediments|Benthic Grab|Krumbian Scale|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|dimensionless|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
+|Surface Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
+|Bottom Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
+|Surface Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
+|Bottom Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
+|Stratification|Shipboard hydrography (point)|Sigma-t units (Spring and Fall)|
+|Chlorophyll-a|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
+|Chlorophyll-a gradient|Satellite Imagery (1.25 km grid)|dimensionless|
+|Chlorophyll-a span|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
+|Primary Production|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
+|Primary Production gradient|Satellite Imagery (1.25 km grid)|dimensionless|
+|Primary Production span|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
 '
-cat(tab)
-
+#cat(tab)
+df<-read_delim(tab, delim="|")
+df<-df[-c(1,2) ,c("Variables","Sampling Method","Units")]
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'Variables used in derivation of Ecological Production Units.'
+)
 ```
 
 
