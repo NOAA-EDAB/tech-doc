@@ -27,7 +27,7 @@ Species Thermal Habitat Projections
 5. Published methods
 
 ## Methods
-
+This indicator is based on work reported in @Kleisner2017.
 
 ### Data source(s)
 
@@ -64,9 +64,6 @@ Vincent Saba
 
 #### Data steward
 Vincent Saba
-
-#### References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
