@@ -4,6 +4,12 @@ bookdown::gitbook:
   config:
     toolbar:
       position: static
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+      after: |
+        <li><a href="https://github.com/NOAA-EDAB/tech-memo" target="blank">Published with bookdown</a></li>
     edit: https://github.com/NOAA-EDAB/tech-memo/edit/master/%s
 bookdown::pdf_book:
   keep_tex: yes
