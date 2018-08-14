@@ -27,12 +27,12 @@ Species Thermal Habitat Projections
 5. Published methods
 
 ## Methods
-
+This indicator is based on work reported in @Kleisner2017.
 
 ### Data source(s)
 
 #### Global Climate Model Projection
-We used NOAA GFDL's CM2.6 simulation, which consists of (1) a 1860 pre-industrial control, which brings the climate system into near-equilibrium with 1860 greenhouse gas concentrations, and (2) a transient climate response (2xCO2) simulation where atmospheric CO2 is increased by 1% per year, which results in a doubling of CO2 after 70 years. The climate change response from CM2.6 was based on the difference between these two experimental runs. Refer to @Saba2016 for further details. 
+We used [NOAA GFDL's CM2.6 simulation](https://www.gfdl.noaa.gov/high-resolution-climate-modeling/), which consists of (1) a 1860 pre-industrial control, which brings the climate system into near-equilibrium with 1860 greenhouse gas concentrations, and (2) a transient climate response (2xCO2) simulation where atmospheric CO2 is increased by 1% per year, which results in a doubling of CO2 after 70 years. The climate change response from CM2.6 was based on the difference between these two experimental runs. Refer to @Saba2016 for further details. 
 
 #### Modeling Changes in Suitable Thermal Habitat
 The National Oceanographic and Atmospheric Administration (NOAA) Northeast Fisheries Science Center (NEFSC) U.S. NES bottom trawl survey, which has been conducted for almost 50-years in the spring and fall, provides a rich source of data on historical and current marine species distribution, abundance, and habitat, as well as oceanographic conditions [@Azarovitz1981]. The survey was implemented to meet several objectives: (1) monitor trends in abundance, biomass, and recruitment, (2) monitor the geographic distribution of species, (3) monitor ecosystem changes, (4) monitor changes in life history traits (e.g., trends in growth, longevity, mortality, and maturation, and food habits), and (5) collect baseline oceanographic and environmental data. These data can be leveraged for exploring future changes in the patterns of abundance and distribution of species in the region. 
@@ -42,7 +42,7 @@ The National Oceanographic and Atmospheric Administration (NOAA) Northeast Fishe
 
 ### Data analysis
 #### Global Climate Model Projection
-The CM2.6 80-year projections can be roughly assigned to a time period by using the IPCC Representative Concentration Pathways (RCPs), which describe four different 21st century pathways of anthropogenic greenhouse gas emissions, air pollutant emissions, and land use [@IPCC2014]. There are four RCPs, ranging from a stringent mitigation scenario (RCP2.6), two intermediate scenarios (RCP4.5 and RCP6.0), and one scenario with very high green- house gas emissions (RCP8.5). For RCP8.5, the global average temperature at the surface warms by 2C by approximately 2060-2070 relative to the 1986-2005 climatology (see Figure SPM.6a in IPCC, 2013). For CM2.6, the global average temperature warms by 2C by approximately years 60-80 (see Fig. 1 in Winton et al., 2014). Therefore, the last 20 years of the transient climate response simulation roughly corresponds to 2060-2080 of the RCP8.5 scenario. 
+The CM2.6 80-year projections can be roughly assigned to a time period by using the IPCC Representative Concentration Pathways (RCPs), which describe four different 21st century pathways of anthropogenic greenhouse gas emissions, air pollutant emissions, and land use [@IPCC2014]. There are four RCPs, ranging from a stringent mitigation scenario (RCP2.6), two intermediate scenarios (RCP4.5 and RCP6.0), and one scenario with very high green- house gas emissions (RCP8.5). For RCP8.5, the global average temperature at the surface warms by 2C by approximately 2060-2070 relative to the 1986-2005 climatology (see Figure SPM.7a in [IPCC, 2013](https://www.ipcc.ch/pdf/assessment-report/ar5/wg1/WG1AR5_SPM_FINAL.pdf)). For CM2.6, the global average temperature warms by 2C by approximately years 60-80 (see Fig. 1 in @winton_has_2014). Therefore, the last 20 years of the transient climate response simulation roughly corresponds to 2060-2080 of the RCP8.5 scenario. 
 
 Here, the monthly differences in surface and bottom temperatures ('deltas') for spring (February-April) and fall (September- November) are added to an average annual temperature climatology for spring and fall, respectively, derived from observed surface and bottom temperatures to produce an 80-year time series of future bottom and surface temperatures in both seasons. The observed temperatures come from the NEFSC spring and fall bottom trawl surveys conducted from 1968 to 2013 and represent approximately 30,000 observations over the time series. 
 
@@ -64,9 +64,6 @@ Vincent Saba
 
 #### Data steward
 Vincent Saba
-
-#### References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
