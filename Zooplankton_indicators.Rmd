@@ -1,4 +1,4 @@
-#Zooplankton
+# Zooplankton
 ```{r setup,  echo = F, message=F}
 
 #Load packages
@@ -12,6 +12,7 @@ library(rmarkdown)
 Ryan Morse
 
 ## Data name
+Zooplankton abundance anomalies
 
 ### Indicator category 
 
@@ -253,19 +254,10 @@ Data are publicly available here:
 ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
 
 #### Point of contact
-Ryan Morse, NEFSC EDAB, ryan.morse@noaa.gov
-Harvey Walsh, NEFSC OCB, harvey.walsh@noaa.gov
+Ryan Morse, NEFSC EDAB, <ryan.morse@noaa.gov>
+Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
 
 #### Data steward 
-Harvey Walsh, NEFSC OCB, harvey.walsh@noaa.gov
-Mike Jones, NEFSC DMS, michael.jones@noaa.gov
-
-
-#### References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
-
+Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
+Mike Jones, NEFSC DMS, <michael.jones@noaa.gov>
 
