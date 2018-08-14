@@ -21,6 +21,7 @@ rmd_files: ["index.Rmd",
 "Annual_SST_cycle_indicator.Rmd",
 "Seasonal_SST_anomaly_maps_indicator.Rmd",
 "CHL_PPD_indicator.Rmd",
+"Zooplankton_indicators.Rmd",
 "Condition_indicator.Rmd",
 "productivity_for_tech_memo.Rmd",
 "references.Rmd"]
