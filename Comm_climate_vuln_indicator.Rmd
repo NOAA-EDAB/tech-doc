@@ -184,7 +184,7 @@ run;
 
 ### Data analysis
 
-The results described below were developed using the methodology described in @Colburn2016.
+The results described below were developed using the methodology described in @colburn_indicators_2016.
 
 1.  *Mapping community climate vulnerability* - The map was produced using two variables: total value landed in a community and community species vulnerability, defined below:
     a.  Communities were grouped based on total value of landings into the following categories: 1 (<\$ 200,000), 2 (\$200,000-\$9,999,999), 3 (\$10,000,000-\$49, 999,999), and 4 (\$50,000,000 and above). Only communities with a total value landed of \$200,000 or more were selected for the mapping process.
@@ -213,8 +213,6 @@ Lisa Colburn
 #### Data steward (can be POC; in charge of keeping data updated)
 Lisa Colburn
 
-####References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
