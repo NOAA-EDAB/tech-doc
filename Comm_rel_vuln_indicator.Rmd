@@ -186,7 +186,7 @@ run;
 ### Data analysis
 Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
 
-The indicators were developed using the same methodology described in @Jacob2010, @Jacob2013, @Colburn2012 and @Jepson2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+The indicators were developed using the same methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
 
 #### Plot output
 ```{r 'commercial_reliance_and_vulnerability_MAB' , fig.cap="Commercial (A) and recreational (B) reliance and social vulnerability in the Mid-Atlantic Bight. \\label{commvulmap}", cache=TRUE, echo = T, message=F, include=T, warning=F, fig.show='hold', fig.width = 8,fig.height = 5.4,fig.pos='H',fig.align='center'}
@@ -454,8 +454,6 @@ Lisa Colburn
 #### Data steward (can be POC; in charge of keeping data updated)
 Lisa Colburn
 
-#### References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
