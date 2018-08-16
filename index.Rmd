@@ -5,7 +5,7 @@ date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: ["conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib"," long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib"]
+bibliography: ["conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib", "occupancy.bib", "long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-memo
@@ -13,6 +13,15 @@ description: "This book documents each indicator and analysis used in State of t
 ---
 # Introduction {-}
 
-The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (ADD MAP OF REGION). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The methods to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in the State of the Ecosystem Report. Each chapter is derived from a common template to ensure consistency between indicators and the level of documentation is intended to be on par with a peer-reviewed document. Further, the document contains metadata for each indicator according to the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf).
+The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (Figure \@ref(fig:NELMEmap)). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The methods to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in the State of the Ecosystem Report. Each chapter is derived from a common template to ensure consistency between indicators and the level of documentation is intended to be on par with a peer-reviewed document. Further, the document contains metadata for each indicator according to the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf).
+
+```{r NELMEmap, fig.cap="Northeast US shelf large marine ecosystem, from  Hare JA, Morrison WE, Nelson MW, Stachura MM, Teeters EJ, Griffis RB, et al. (2016) A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast U.S. Continental Shelf. PLoS ONE 11(2): e0146756. https://doi.org/10.1371/journal.pone.0146756", echo=F, eval=T}
+
+image.dir <- './images'
+
+knitr::include_graphics(file.path(image.dir, 'journal.pone.0146756.g002.PNG'))
+
+```
+
 
 --------------
