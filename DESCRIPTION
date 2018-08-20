@@ -37,7 +37,8 @@ Imports:
   readr,
   sp,
   openxlsx,
-  lubridate
+  lubridate, 
+  Survdat
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
