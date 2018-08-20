@@ -10,10 +10,10 @@ Relative condition
 Relative condition was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as:
 Kn = W/W'
 Where W is the weight of an individual fish and W' is the predicted length-specific mean weight for the fish population in a given region. 
-Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center's (NEFSC) autumn and spring bottom trawl surveys. Where data allowed, length-weight parameters were calculated for W' by species, sex and season over the time period 1992-20XX. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.
+Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center's (NEFSC) autumn and spring bottom trawl surveys. Where data allowed, length-weight parameters were calculated for W' by species, sex and season over the time period 1992-present. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.
 
 ### Data source(s)
-Individual fish lengths (nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-20XX aboard RVs Albatross IV, Deleware II and the Henry B. Bigelow. A small number of outlier values were removed when calculating the length-weight parameters, with nominal effect on the results.
+Individual fish lengths (nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Deleware II and the Henry B. Bigelow. A small number of outlier values were removed when calculating the length-weight parameters, with nominal effect on the results.
 
 ### Data extraction
 Data were extracted from NEFC's survey database (SVDBS) using SQL. 
