@@ -1,4 +1,4 @@
-#Habitat Occupancy Models
+# Habitat Occupancy Models
 
 <!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
 
@@ -35,10 +35,10 @@ The NEFSC BTS data includes depth observations made concurrently with trawls at 
 Sea surface and bottom water temperature and salinity measurements were included as dynamic predictor variables in the model, and were collected using Conductivity/Temperature/Depth (CTD) instruments. Ocean temperature and salinity measurements had the highest temporal coverage during the spring (February-April) and fall (September-November) months. Station salinity data were available between 1992-2016. 
 
 #### Habitat descriptors
-A variety of benthic habitat descriptors were incorporated as predictor variables in occupancy models (Table 1). The majority of these parameters are based on depth (e.g. *BBI*, *VRM*, *Prcury*, *rugosity*, *seabedforms*, *slp*, and *slpslp*). The vorticity variable is based on current estimates, and the variable *soft_sed* based on sediment grain size. 
+A variety of benthic habitat descriptors were incorporated as predictor variables in occupancy models (Table \@ref(tab:habitatdesc)). The majority of these parameters are based on depth (e.g. *BBI*, *VRM*, *Prcury*, *rugosity*, *seabedforms*, *slp*, and *slpslp*). The vorticity variable is based on current estimates, and the variable *soft_sed* based on sediment grain size. 
 
 
-```{r habitat descriptors, echo = F, results='asis', message=F, warning=F}
+```{r habitatdesc, echo = F, results='asis', message=F, warning=F}
 tab <- '
 |Variables|Notes|References|
 |:-----------------------|:-----------------------|:-----------------------|
@@ -67,7 +67,7 @@ df<-readr::read_delim(tab, delim="|")
 df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
 knitr::kable(
   df, booktabs = TRUE,
-  caption = '**Table 1**: Habitat descriptors used in model parameterization.'
+  caption = 'Habitat descriptors used in model parameterization.'
 )
 ```
 
@@ -103,10 +103,10 @@ The irr R package [@irr] was used to calculate Area Under the ROC Curve (AUC) an
 Source data are publicly available. 
 
 #### Point of contact
-Kevin Friedland, kevin.friedland@noaa.gov
+Kevin Friedland, <kevin.friedland@noaa.gov>
 
 #### Data steward (can be POC; in charge of keeping data updated)
-Kevin Friedland, kevin.friedland@noaa.gov
+Kevin Friedland, <kevin.friedland@noaa.gov>
 
 
 
