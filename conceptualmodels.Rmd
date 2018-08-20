@@ -135,13 +135,13 @@ Aggregated diet and mortality information was examined to determine the type of 
 
 Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
 
-EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below. "Linked groups" directly support or impact the Focal groups as described above.
+EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table \@ref(tab:groups). "Linked groups" directly support or impact the Focal groups as described above.
 
 ```{r groups,eval = T, echo = F}
 #read in EMAXconceptualmodgroups.csv and kable it
 emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"))
 names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
-kable(emaxgroups)
+kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups")
 ```
 
 
