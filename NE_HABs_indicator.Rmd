@@ -50,9 +50,9 @@ Data used in this indicator were drawn from the 2017 Report on the ICES-IOC Work
 http://www.ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGEPD/2017/01%20WGHABD%20-%20Report%20of%20the%20ICES%20-%20IOC%20Working%20Group%20on%20Harmful%20Algal%20Bloom%20Dynamics.pdf
 
 Closure information was collated from information provided by the following organizations:
-```{r source table, echo = F, include = T, results='asis'}
+```{r closuresrc, echo = F, include = T, results='asis'}
 tabl <- "
-| State     | Source Organization                                  |
+|State|Source Organization|
 |:-------------------------|:----------------------------------------------------------|
 |Maine|Maine Department of Marine Resources|
 |New Hampshire|New Hampshire Department of Environmental Services|
@@ -60,7 +60,14 @@ tabl <- "
 |Rhode Island|Rhode Island Department of Environmental Management|
 |Connecticut|Connecticut Department of Agriculture|
 "
-cat(tabl)
+#cat(tabl)
+df<-readr::read_delim(tabl, delim="|")
+df<-df[-c(1,2) ,c("State","Source Organization")]
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'Closure information providers.'
+)
+
 ```
 
 
@@ -179,7 +186,7 @@ text(-67.7,42.525, "2007-2016 Detections")
 
 
 ### ERDDAP data set
-If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+Data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/NE_hab_2018.htmlTable?a,longitude,latitude,val,var,index).
 ```{r erddap pull, echo = T, eval = F}
 library(rerddap)
 
@@ -191,7 +198,8 @@ tab_list <- data.frame(Title = tab_list$Title,
                         Index = 1:nrow(tab_list))
 
 #Get data set ID (will need to change)
-id <- as.character(tab_list$Identifier[15]) 
+#id <- as.character(tab_list$Identifier[15]) 
+id <- as.character("NE_hab_2018") 
 
 #Pull data
 data <- tabledap(id,url = comet)
@@ -204,7 +212,6 @@ cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
 
 
 ### Further metadata
-NA
 
 #### Public availability statement
 NA
@@ -215,9 +222,6 @@ Sean Hardison
 #### Data steward (can be POC; in charge of keeping data updated)
 Sean Hardison
 
-
-### References
-<!--List references here-->
 
 
 
