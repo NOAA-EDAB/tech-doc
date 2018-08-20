@@ -2,14 +2,12 @@
 
 language: r
 pandoc_version: 2.1.1
-sudo: false
 cache: packages
+
+before_script:
+  - chmod +x ./_build.sh
+  - chmod +x ./_deploy.sh
+
 script:
-  - Rscript -e 'bookdown::render_book("index.Rmd", 'bookdown::gitbook')'
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: master  
+  - ./_build.sh
+  - ./_deploy.sh
