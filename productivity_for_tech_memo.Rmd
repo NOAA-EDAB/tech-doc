@@ -48,8 +48,12 @@ library(dplyr)
 
 
 ```{r analysis, echo = T, eval = T}
-load("dat_spec_rec_forSOE.Rdata")
-load("dat_spec_rec_epu_forSOE.Rdata")
+
+data.dir  <- './data'
+image.dir <- './images'
+
+load(file.path(data.dir,"dat_spec_rec_forSOE.Rdata"))
+load(file.path(data.dir,"dat_spec_rec_epu_forSOE.Rdata"))
 
 #### Functions for plotting ####
 library(ggplot2)
@@ -129,10 +133,10 @@ plot_stackbarcpts_single <- function(YEAR, var2bar,
   
   print(p)
   
-  ggsave(plot = p,
-         filename = "./productivity_all.eps",
-         width = width,
-         height = height)
+#  ggsave(plot = p,
+#         filename = "./productivity_all.eps",
+#         width = width,
+#         height = height)
 }
 
 # Plot stacked bars
@@ -185,10 +189,10 @@ plot_stackbarcpts <- function(YEAR, var2bar,
   
   print(p)
   
-  ggsave(plot = p,
-         filename = "./productivity_epu.eps",
-         width = 7,
-         height = 9)
+#  ggsave(plot = p,
+#         filename = "./productivity_epu.eps",
+#         width = 7,
+#         height = 9)
 }
 
 # Recruit per spawner (all stocks in one figure)
