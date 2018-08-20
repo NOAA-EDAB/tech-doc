@@ -1,0 +1,44 @@
+Package: placeholder
+Title: Does not matter
+Description: This is a description. 
+Version: 0.0.1
+Imports: 
+  bookdown, 
+  rmarkdown,
+  tidyverse,
+  data.table,
+  nlme,
+  AICcmodavg,
+  rgdal,
+  maps,
+  mapdata,
+  png,
+  marmap,
+  rerdap,
+  vegan,
+  mgcv,
+  rpart,
+  Kendall,
+  zoo,
+  colorRamps,
+  Hmisc,
+  raster,
+  grid,
+  gridExtra,
+  stringr,
+  ncdf4,
+  magick,
+  readxl,
+  reshape2,
+  Rcolorbrewer,
+  cowplot,
+  stats,
+  geosphere,
+  readr,
+  sp,
+  openxlsx,
+  lubridate
+Remotes: 
+  rstudio/bookdown,
+  slucey/Rsurvey/Survdat
+  
