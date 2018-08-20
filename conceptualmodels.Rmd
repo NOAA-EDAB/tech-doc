@@ -58,16 +58,24 @@ Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_na
 ####Human dimensions submodels
 Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.
 
-Habitat-fishery linkages were drawn from unpublished reports, including:
+Habitat-fishery linkages were drawn from unpublished reports, including:  
+
 1. Mid-Atlantic Fishery Management Council. 2016. Amendment 16 to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
+
 2. NOAA. 2016. Deep sea coral research and technology program 2016 Report to Congress. http://www.habitat.noaa.gov/protection/corals/deepseacorals.html retrieved February 8, 2017.  
+
 3. New England Fishery Management Council. 2016. Habitat Omnibus Deep-Sea Coral Amendment: Draft. http://www.nefmc.org/library/omnibus-deep-sea-coral-amendment Retrieved Feb 8, 2017.
+
 4. Bachman et al. 2011. The Swept Area Seabed Impact (SASI) Model: A Tool for Analyzing the Effects of Fishing on Essential Fish Habitat. New England Fisheries Management Council Report. Newburyport, MA.
 
 Tourism and habitat linkages were drawn from unpublished reports, including: 
-1. http://neers.org/RESOURCES/Bibliographies.html                                 
-2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm          
+
+1. http://neers.org/RESOURCES/Bibliographies.html                               
+
+2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm        
+
 3. Meaney, C.R. and C. Demarest. 2006. Coastal Polution and New England Fisheries. Report for the New England Fisheries Management Council. Newburyport, MA.
+
 4. List of valuation studies, by subregion and/or state, can be found at http://www.oceaneconomics.org/nonmarket/valestim.asp.
 
 Published literature on human activities in each EPU was consulted. 
