@@ -400,5 +400,3 @@ Sean Hardison, sean.hardison@noaa.gov
 #### Data steward
 NA
 
-### References
-<!--List references here-->
