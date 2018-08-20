@@ -195,12 +195,12 @@ plot(NEBO$Brat,NEBO$Frat,xlim=x.r,ylim=y.r,xlab="B/Bmsy",ylab="F/Fmsy",pch=16,co
 
 ```
 
-### References
-<!--List references here-->
-
-
 
 ### ERDDAP data set
+Stock assessment summary results ("dat" above) are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_2018.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
+
+The positioning table to make the plot ("decoder" above) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_2018.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
+
 If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
 ```{r erddap pull, echo = T, eval = F}
 if(!"rerddap" %in% rownames(installed.packages())){
@@ -216,6 +216,8 @@ tab_list <- data.frame(Title = tab_list$Title,
 
 #Get data set ID (will need to change)
 #id <- as.character(tab_list$Identifier[9]) 
+id <- as.character("assess_2018")
+id2 <- as.character("assess_support_2018")
 
 #Pull data
 data <- tabledap(id,url = comet)
@@ -230,10 +232,9 @@ cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
 ### Further metadata
 <!--Fill out the following metadata required by PARR-->
 
-
 #### Public availability statement
 <!--Will source data be available to the public? If not, is a Data Access Waiver necessary?-->
-
+All stock assessment results are publicly available at links above.
 
 #### Point of contact - Whom should be contacted?
 Sarah Gaichas
