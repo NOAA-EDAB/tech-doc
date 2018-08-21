@@ -46,16 +46,16 @@ After the initial draft model was outlined, working groups were formed to develo
 
 ### Data source(s) (All types)
 <!--Please provide a text description of data sources.-->
-####Ecological submodels
+#### Ecological submodels
 Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
 
-####Environmental submodels
+#### Environmental submodels
 Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted. 
 Sources for Georges Bank included @backus_georges_1987 and @townsend_oceanography_2006. 
 Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
 Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015,@fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
 
-####Human dimensions submodels
+#### Human dimensions submodels
 Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.
 
 Habitat-fishery linkages were drawn from unpublished reports, including:  
@@ -88,7 +88,7 @@ Sources for cultural practices and attachments links included @pauly_putting_199
 
 ### Data extraction 
 <!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
-####Ecological submodels
+#### Ecological submodels
 "Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
 
 Example FEAST sql script for Cod weighted diet on Georges Bank. Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
@@ -109,10 +109,10 @@ Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_fea
 ```
 
 
-####Environmental submodels
+#### Environmental submodels
 Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
 
-####Human dimensions submodels
+#### Human dimensions submodels
 Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found at \\\\net\\home4\\gdepiper\\ICES\\IEA\\top10_prim1_common_mode.xlsx for each region (New England or Mid-Atlantic as defined by states). 
 
 Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical memo. In addition, the Northeast Regional Input/Output Model (@steinback_scott_northeast_2006) was used as the basis for the strength of the employment linkages.
@@ -130,7 +130,7 @@ SELECT * FROM...
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
-####Ecological submodels
+#### Ecological submodels
 Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information). 
 
 Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
@@ -152,7 +152,7 @@ Ecological submodels were constructed and visualized in Mental Modeler (Fig. \@r
 knitr::include_graphics(file.path(image.dir, 'MM_GoM_Ecological.png'))
 ```
 
-####Environmental submodels
+#### Environmental submodels
 Environmental submodels were designed to link key oceanographic processes in each ecosystem production unit to the four general habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) with emphasis on the most important physical processes in each ecosystem based on expert knowledge as supported by literature review. The basis of each submodel were environmental variables observable at management-relevant scales as identified by [WGNARS](http://ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGRSP/2014/WGNARS14.pdf): Surface and Bottom Water Temperature and Salinity, Freshwater Input, and Stratification (as well as sea ice timing and cover, which is not relevant to the northeast US shelf). Key drivers changing these observable variables and thus structuring habitat dynamics in each [Ecological Production Units](#epu) were added to the model using expert consensus. 
 
 Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMenv)).
@@ -161,7 +161,7 @@ Environmental submodels were initially constructed and visualized in Mental Mode
 knitr::include_graphics(file.path(image.dir, 'MM_GoM_Climate.png'))
 ```
 
-####Human dimensions submodels
+#### Human dimensions submodels
 The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.
 
 No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model (@steinback_scott_northeast_2006) was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available (@das_chhandita_northeast_2013, @das_chhandita_overview_2014). 
