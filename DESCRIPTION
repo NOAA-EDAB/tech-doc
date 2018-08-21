@@ -38,6 +38,7 @@ Imports:
   sp,
   openxlsx,
   lubridate, 
+  rgeos,
   Survdat
 Remotes: 
   rstudio/bookdown,
