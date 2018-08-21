@@ -27,7 +27,7 @@ Most recent stock assessment model results summarized for each assessed species.
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
 
-##Methods
+## Methods
 
 ### Data source(s)
 <!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
@@ -201,7 +201,8 @@ Stock assessment summary results ("dat" above) are available [here](http://comet
 
 The positioning table to make the plot ("decoder" above) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_2018.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
-If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
+<!--If data are available, adjust code to pull those data and set "eval = T" in chunk header options.-->
+Sample code to pull the data is below.
 ```{r erddap pull, echo = T, eval = F}
 if(!"rerddap" %in% rownames(installed.packages())){
   install.packages('rerddap')}
