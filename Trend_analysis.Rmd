@@ -16,13 +16,13 @@ library(rmarkdown)
 <!-- 3. Synthesis of published information -->
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
-Contributor(s): Sean Hardison, Charles Perretti, Geret DePiper
+**Contributor(s)**: Sean Hardison, Charles Perretti, Geret DePiper
 
-Data steward: NA
+**Data steward**: NA
 
-Point of contact: Sean Hardison, sean.hardison@noaa.gov
+**Point of contact**: Sean Hardison, sean.hardison@noaa.gov
 
-Public availability statement: NA
+**Public availability statement**: NA
 
 
 ## Methods
