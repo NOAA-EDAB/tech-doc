@@ -7,21 +7,23 @@ library(knitr)
 library(rmarkdown)
 
 ```
+Description: Time series trend analysis
 
-## Contributor name(s)
-Sean Hardison, Charles Perretti, Geret DePiper
-
-## Data name
-Time series trend analysis
-
-
-### Indicator category
+Indicator Category: 
 
 <!-- 1. Database pull -->
 <!-- 2. Database pull with analysis -->
 <!-- 3. Synthesis of published information -->
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+Contributor(s): Sean Hardison, Charles Perretti, Geret DePiper
+
+Data Steward: NA
+
+Point Of Contact: Sean Hardison, sean.hardison@noaa.gov
+
+Public availability statement: NA
+
 
 ## Methods
 In some cases, time series indicators in the State of the Ecosystem reports are presented with trend lines, although not all time series were selected for trend analysis. As has been shown elsewhere [see @Nicholson2004; @Wagner2013; @VonStorch1999a], power of statistical tests for trend is hampered by low sample size and autocorrelated observations, which are common attributes of SOE indicators. 
@@ -387,16 +389,4 @@ soe.plot(SOE.data.2018, "Time", "Recreational Seafood MA", scale.axis = 10^6,
          y.line = 2.5, y.label = expression("Fish caught, 10"^6 *" n"))
 ```
 
-
-
-### Further metadata
-
-#### Public availability statement
-NA
-
-#### Point of contact
-Sean Hardison, sean.hardison@noaa.gov
-
-#### Data steward
-NA
 
