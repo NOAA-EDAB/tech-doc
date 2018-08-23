@@ -26,18 +26,18 @@ New England Shellfish Bed Closures 2007-2016
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
 
-##Methods
+## Methods
 The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016. Approved detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poison (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
 
-####Paralytic Shellfish Poisoning
+#### Paralytic Shellfish Poisoning
 The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate *Alexandrium catenella*. All New England states except Maine relied on the AOAC-approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
 
 In Maine, PST detection methods were updated in May 2014 when the state adopted the hydrophilic interaction liquid chromatography (HILIC) UPLC-MS/MS protocol [@Boundy2015] in concordance with National Shellfish Sanitation Program (NSSP) requirements.  Prior to this, the primary method used to detect PST in Maine was with the mouse bioassay. 
 
-####Amnesic Shellfish Poisoning
+#### Amnesic Shellfish Poisoning
 The syndrome amnesic shellfish poisoning (ASP) is caused by the toxin domoic acid (DA), which is produced by several phytoplankton species belonging to the genus *Pseudo-nitzchia*. In New England, a UV-HPLC method [@Quilliam1995], which specifies a HPLC-UV protocol. 
 
-####Diarrhetic Shellfish Poisoning
+#### Diarrhetic Shellfish Poisoning
 Diarrhetic Shellfish Poisoning (DSP) is rare in New England but the presence of the DSP-associated okadaic acid (OA) in mussels was confirmed in Massachusetts in 2015 (personal comm.). Preliminary testing for OA in Massachusetts utilized the commercially available Protein Phosphatase Inhibition Assay (PPIA) and these results are confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
 
 
@@ -216,11 +216,11 @@ cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
 #### Public availability statement
 NA
 
-#### Point of contact - Whom should be contacted?
-Sean Hardison
+#### Point of contact
+Sean Hardison, sean.hardison@noaa.gov
 
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Hardison
+#### Data steward
+Sean Hardison, sean.hardison@noaa.gov
 
 
 
