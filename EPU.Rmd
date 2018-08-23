@@ -25,7 +25,7 @@ Method
 4. Extensive analysis, not yet published
 <!-- 5. Published methods -->
 
-##Methods
+## Methods
 To define ecological production units, we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
 
 We did not include information on higher trophic levels or fishing patterns in our analysis. The biomass and production of higher trophic levels in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
