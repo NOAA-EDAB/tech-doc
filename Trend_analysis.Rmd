@@ -9,7 +9,7 @@ library(rmarkdown)
 ```
 Description: Time series trend analysis
 
-Indicator Category: 
+Indicator category: 
 
 <!-- 1. Database pull -->
 <!-- 2. Database pull with analysis -->
@@ -18,9 +18,9 @@ Indicator Category:
 <!-- 5. Published methods -->
 Contributor(s): Sean Hardison, Charles Perretti, Geret DePiper
 
-Data Steward: NA
+Data steward: NA
 
-Point Of Contact: Sean Hardison, sean.hardison@noaa.gov
+Point of contact: Sean Hardison, sean.hardison@noaa.gov
 
 Public availability statement: NA
 
