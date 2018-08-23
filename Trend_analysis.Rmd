@@ -7,9 +7,9 @@ library(knitr)
 library(rmarkdown)
 
 ```
-Description: Time series trend analysis
+**Description**: Time series trend analysis
 
-Indicator category: 
+**Indicator category**: 
 
 <!-- 1. Database pull -->
 <!-- 2. Database pull with analysis -->
