@@ -23,7 +23,7 @@ NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
 
-##Methods
+## Methods
 Data from NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
 
 ### Data source(s)
