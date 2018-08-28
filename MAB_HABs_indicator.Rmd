@@ -199,5 +199,4 @@ Sean Hardison
 #### Data steward (can be POC; in charge of keeping data updated)
 Sean Hardison
 
-### References
 <!--List references here-->
