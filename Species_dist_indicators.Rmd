@@ -38,7 +38,7 @@ Data for these indicators were derived from fishery-independent bottom trawl sur
 
 
 ### Data analysis
-What packages or libraries did you use in your work flow?
+R packages used:
 ```{r packages, echo = T, eval = F}
 require(raster)
 require(ncdf4)
@@ -48,7 +48,7 @@ library(plyr)
 ```
 
 
-Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
+R code:
 ```{r analysis, echo = T, eval = F}
 
 # set wd C:\1_analyses_ne_shelf\along shelf pos
