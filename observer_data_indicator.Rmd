@@ -26,9 +26,8 @@ The Fisheries Sampling Branch deploys observers on commercial fisheries trips fr
 The derived data presented in the Mid-Atlantic State of the Ecosystem report for southern kingfish include records verified by the SVP program only. The occurrence of southern kingfish in SVP records were chosen for inclusion in the report due to the recent increases of the species in SVP observer records since 2010. These data are not a complete list from the New England Fisheries Observer Program (NEFOP). Southern Kingfish are less common than Northern Kingfish in observer data and are possibly misidentified so we have initially included records here only when a specimen record was submitted to and verified through the SVP (see Data extraction). 
 
 ### Data extraction 
-Write SQL query here
+SQL query:
 ```{sql, eval = F, echo = T}
-# Insert R code used for extraction here
 /* training trips, 900 trips, incidental takes, most duplicate records (unless different idmethod or idcomment) are not included */
 /* this is a general script to pull the data on any species from the SVP*/
 /* specimens submitted as photos and samples included separately */
