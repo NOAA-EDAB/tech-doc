@@ -32,7 +32,7 @@ Data for annual sea surface tempature cycles were derived from the NOAA optimum 
 ### Data extraction 
 Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V5 site](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423) to derive the long-term climatological mean for the period. 
 
-#### R libraries
+R Libraries Used:
 ```{r libraries, echo = T, eval = F}
 #libraries
 library(ncdf4);library(dplyr)
@@ -42,7 +42,7 @@ library(raster);library(stringr)
 
 ```
 
-#### R code used in extraction and processing
+R code used in extraction and processing
 ```{r extraction, echo = T, eval = F}
 
 #get spatial polygons for Ecological Production Units (EPUs) that are used to clip SST data.
