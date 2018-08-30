@@ -6,7 +6,7 @@ Laurel Smith
 ## Data name
 Relative condition
 
-##Methods
+## Methods
 Relative condition was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as:
 Kn = W/W'
 Where W is the weight of an individual fish and W' is the predicted length-specific mean weight for the fish population in a given region. 
@@ -18,7 +18,7 @@ Individual fish lengths (nearest 0.5 cm) and weights (grams) were collected on t
 ### Data extraction
 Data were extracted from NEFC's survey database (SVDBS) using SQL. 
 
-Write SQL query here
+SQL query:
 ```{sql, eval = F, echo = T}
 SELECT cruise6,stratum,tow,station,
   year,month,day,time,beglat,beglon,setdepth,
@@ -74,7 +74,7 @@ Where length is in cm and weight is in kg. Fall survey data were used where samp
 Individual fish lengths from NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition (Kn) was calculated annually by species and sex (for sexually dimorphic species) by dividing individual fish weights by the predicted weight. 
 
 
-Include accompanying R code here:
+R code:
 ```{r analysis, echo = T, eval = F}
 # Length-weight parameter calculation:
 function (data, min.n = 25, min.range = 5, data.avail = NA, data.avail.bigelow = NA) 
@@ -282,9 +282,6 @@ Laurel Smith
 
 #### Data steward (can be POC; in charge of keeping data updated)
 Laurel Smith
-
-
-### References
 
 
 
