@@ -22,7 +22,7 @@ Chlorophyll *a* and Primary Production
 <!-- 4. Extensive analysis, not yet published -->
 5. Published methods
 
-##Methods
+## Methods
 ### Data source(s)
 Level 1A ocean color remote sensing data from the Sea-viewing Wide Field-of-view Sensor (SeaWiFS) [@NASA1] on the OrbView-2 satellite and the Moderate Resolution Imaging Spectroradiometer (MODIS) [@NASA2] on the Aqua satellite were acquired from the NASA Ocean Biology Processing Group (OBPG).  Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder [@Casey2010; @Saha2018] and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 [@SOE4; @SOE14] data.  
 
