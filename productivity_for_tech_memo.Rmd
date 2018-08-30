@@ -37,16 +37,15 @@ where $W$ is weight (kg), $L$ is length (cm), and $a$ and $b$ are parameters fit
 
 Further details of methods described in @perretti_regime_2017.
 
-
+R packages:
 ```{r packages, echo = T}
 sessionInfo(package = NULL)
-#Insert packages used here
 library(ggplot2)
 #library(rpart)
 library(dplyr)
 ```
 
-
+R code used in analysis:
 ```{r analysis, echo = T, eval = T}
 
 data.dir  <- './data'
@@ -233,10 +232,10 @@ plot_stackbarcpts(YEAR = dat2plot$Time,
 Source data available to public.
 
 
-#### Point of contact - Whom should be contacted?
+#### Point of contact
 Charles Perretti
 
-#### Data steward (can be POC; in charge of keeping data updated)
+#### Data steward
 Charles Perretti
 
 
