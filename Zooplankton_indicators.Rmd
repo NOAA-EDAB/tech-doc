@@ -41,7 +41,7 @@ ZPD=openxlsx::read.xlsx(URL, sheet='Data')
 ### Data analysis
 Data are processed similarly to @Kane2007 and @Perretti2017a, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. Abundance anomalies are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
 
-
+R packages used:
 ```{r packages, echo = T, eval = F}
 sessionInfo(package = NULL)
 library(vegan)
@@ -56,8 +56,8 @@ library(marmap)
 library(rgeos)
 ```
 
+R code used for analysis:
 ```{r analysis, echo = T, eval = F}
-# Insert analysis code here
 
 # load data
 URL='ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx'
