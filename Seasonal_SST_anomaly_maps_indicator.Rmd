@@ -288,7 +288,7 @@ Sean Hardison
 #### Data steward
 Sean Hardison
 
-####References
+
 <!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
