@@ -10,7 +10,7 @@ library(rmarkdown)
 
 
 ## Contributor name(s)
-Lisa Colburn
+Lisa L. Colburn
 
 ## Data name
 Community climate vulnerability
