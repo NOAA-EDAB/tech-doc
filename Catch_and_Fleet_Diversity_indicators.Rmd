@@ -13,6 +13,7 @@ Geret DePiper
 
 ## Data name
 Permit-level species diversity and Council-level fleet diversity.
+
 ### Indicator category 
 
 2. Database pull with analysis
