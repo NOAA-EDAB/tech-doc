@@ -113,7 +113,7 @@ Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_fea
 Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
 
 #### Human dimensions submodels
-Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found at \\\\net\\home4\\gdepiper\\ICES\\IEA\\top10_prim1_common_mode.xlsx for each region (New England or Mid-Atlantic as defined by states). 
+Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data\top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
 
 Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical memo. In addition, the Northeast Regional Input/Output Model (@steinback_scott_northeast_2006) was used as the basis for the strength of the employment linkages.
 
