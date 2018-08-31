@@ -17,6 +17,7 @@ For the tech memo, we will be documenting the methods behind each indicator to t
 <!-- 3. Synthesis of published information -->
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+
 **Contributor(s)**: Sean Lucey
 
 **Data steward**: Sean Lucey
@@ -2170,11 +2171,6 @@ save(comland, file = file.path(out.dir, file.name))
 Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into aggregate groups (ref to aggregate groups?).  Species are also marked by which management body manages them.  Landings are then summed by year, EPU, aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
 
 
-
-
-
-
-References
 <!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
