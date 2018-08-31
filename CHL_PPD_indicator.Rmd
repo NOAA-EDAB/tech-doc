@@ -55,12 +55,19 @@ C~3/5~ and C~3/6~ were calculated for each sensor specific RBR (R~3/5~ and R~3/6
 
 where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13]. 
 
-The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll &alpha;, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll &alpha; concentration, and the number of daylight hours (equation PP2).  
+The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll &alpha;, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll &alpha; concentration, and the number of daylight hours (Equation \@ref(eq:two)).  
 
-$$P_{max}^{b}(SST) = 4.6 * 1.065^{SST-20^{0}} \;\;\;\;\;\;\;\;\;\;\textrm{(Eppley function - PP1)}$$
+\begin{equation}
+P_{max}^{b}(SST) = 4.6 * 1.065^{SST-20^{0}} 
+(\#eq:two) 
+\end{equation}
 Where $P_{max}^{b}$ is the maximum carbon fixation rate and *SST* is sea surface temperature.
 
-$$PP_{eu} = 0.66125 * P_{max}^{b} * \frac{I_{0}}{I_{0}+4.1} * Z_{eu} * \textrm{CHL} * \text{DL}\;\;\;\;\;\;\;\textrm{(VGM-PP2)}$$
+\begin{equation}
+PP_{eu} = 0.66125 * P_{max}^{b} * \frac{I_{0}}{I_{0}+4.1} * Z_{eu} * \textrm{CHL} * \text{DL}
+(\#eq:three) 
+\end{equation}
+
 Where $PP_{eu}$ is the daily amount of carbon fixed integrated from the surface to the euphotic depth (mgC m^-2^ day^-1^), $P_{max}^{b}$ is the maximum carbon fixation rate within the water column (mgC mgChl^-1^ hr^-1^), $I_{0}$ is the daily integrated molar photon flux of sea surface PAR (mol quanta m^-2^ day^-1^), Zeu is the euphotic depth (m), CHL is the daily interpolated CHIi-OCI (mg m^-3^), and DL is the photoperiod (hours) calculated for the day of the year and latitude according to @SOE6. The light dependent function $(I_{0}/(I_{0}+4.1))$ describes the relative change in the light saturation fraction of the euphotic zone as a function of surface PAR ($I_0$).  Zeu is derived from an estimate of the total chlorophyll concentration within the euphotic layer (*CHL~eu~*) based on the Case I models of @SOE8:
 
 * For $\textrm{CHL}_{eu} > 10.0\;\;\;\;\;Z_{eu} = 568.2 * \textrm{CHL}_{eu}^{-0.746}$
