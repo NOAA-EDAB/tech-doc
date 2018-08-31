@@ -35,9 +35,9 @@ Data from the 1960s on are housed in the Commercial database (CFDBS) of the Nort
 Fisheries Science Center which contains the commercial fisheries dealer purchase 
 records (weigh-outs) collected by NMFS Statistical Reporting Specialists and state
 agencies from Maine to Virginia. The data format has changed slightly over the time
-series with three distinct time frames as noted in the table below.  
+series with three distinct time frames as noted in the table (\@ref(tab:calibration_factors) below.  
 
-```{r calibration factors, eval = T, echo = F}
+```{r calibration_factors, eval = T, echo = F}
 com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
                          Years = c('1964 - 1981', '1982 - 1993', '> 1994'))
 kable(com.tables)
