@@ -42,6 +42,9 @@ git add .nojekyll
 
 git commit -m"Initial commit"
 git push origin gh-pages
+
+# when done, go back to master branch
+git checkout master
 ```
 >    
 >
