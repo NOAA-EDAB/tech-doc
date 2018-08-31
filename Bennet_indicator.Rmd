@@ -23,7 +23,7 @@ Bennet Indicator
 Data used in the Bennet Indicator were derived from the comland dataset; a processed subset of the Commercial Fisheries Database Biological Sample (CFDBS).
 
 ### Data extraction 
-For information regarding processing of CFDBS, please see *comland* methods. The *comland* dataset containing seafood landings data was subsetted to US landings after 1964 with revenue &geq;0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in a separate program, with the code for Georges Bank (GB) shown below.
+For information regarding processing of CFDBS, please see [*comland*](https://github.com/NOAA-EDAB/tech-memo/commercial-landings-data.html) methods. The *comland* dataset containing seafood landings data was subsetted to US landings after 1964 with revenue &geq;0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in a separate program, with the code for Georges Bank (GB) shown below.
 
 ```{r extraction, echo = T, eval = T, warning=F, message=F}
 #This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. 
@@ -269,7 +269,7 @@ grid_arrange_shared_legend(VI, PI, ncol = 2, nrow = 1)
 
 ### Further metadata
 #### Public availability statement
-Derived CFDBS data are available for this analysis (see *comland*)
+Derived CFDBS data are available for this analysis (see [*comland*](https://github.com/NOAA-EDAB/tech-memo/commercial-landings-data.html))
 
 #### Point of contact
 John Walden
