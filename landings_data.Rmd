@@ -44,7 +44,7 @@ kable(com.tables)
 ```
 
 Comlands is an R database pull that consolidates the landings records from 1964 
-on and attempts to associate them with NAFO statistical areas (Figure 1).  The
+on and attempts to associate them with NAFO statistical areas (Figure \@ref(fig:StatAreaMap)).  The
 script is divided into three sections.  The first pulls domestic landings data 
 from the yearly landings tables and merges them into a single data source.  
 The second section applies an algorithm to associate landings that are not allocated
