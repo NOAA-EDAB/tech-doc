@@ -474,7 +474,7 @@ box()
 ### Further metadata
 
 #### Public availability statement
-Source data are available [here](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423)
+Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 
 
 #### Point of contact
