@@ -31,7 +31,7 @@ Data for seasonal sea surface tempature anomalies were derived from the NOAA opt
 
 
 ### Data extraction 
-Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See ["Seasonal_anom_crop.nc"](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis)). Data were split into three month seasons for analysis (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
+Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](http://www1.ncdc.noaa.gov/pub/data/cmb/ersst/v5/netcdf/). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See ["Seasonal_anom_crop.nc"](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis)). Data were split into three month seasons for analysis (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
 
 R packages:
 ```{r libraries, echo = T, eval = F}
