@@ -30,7 +30,7 @@ Data for annual sea surface tempature cycles were derived from the NOAA optimum 
 
 
 ### Data extraction 
-Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V5 site](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423) to derive the long-term climatological mean for the period. 
+Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V2 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) to derive the long-term climatological mean for the period. 
 
 R Libraries Used:
 ```{r libraries, echo = T, eval = F}
