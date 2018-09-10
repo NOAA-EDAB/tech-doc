@@ -20,6 +20,7 @@ image.dir <- './images'
 3. Synthesis of published information
 4. Extensive analysis; not yet published
 <!-- 5. Published methods -->
+
 **Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
 
 **Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
@@ -198,12 +199,12 @@ The merged models were redrawn for use in communications with the public. These 
 
 ```{r prettyNE, fig.cap="New England conceptual model for public communication", echo = F, eval = T}
 
-knitr::include_graphics(file.path(image.dir, 'GOM_GB_conmod_overview.png'))
+knitr::include_graphics(file.path(image.dir, 'GOM_GB_conmod_overview.jpg'))
 ```
 
 ```{r prettyMA, fig.cap="Mid-Atlantic conceptual model for public communication", echo = F, eval = T}
 
-knitr::include_graphics(file.path(image.dir, 'MAB_conmod_overview.png'))
+knitr::include_graphics(file.path(image.dir, 'MAB_conmod_overview.jpg'))
 ```
 
 <!--
