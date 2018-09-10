@@ -20,6 +20,7 @@ image.dir <- './images'
 3. Synthesis of published information
 4. Extensive analysis; not yet published
 <!-- 5. Published methods -->
+
 **Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
 
 **Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
