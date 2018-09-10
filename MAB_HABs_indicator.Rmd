@@ -12,19 +12,27 @@ library(rmarkdown)
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 -->
+**Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
-## Contributor name(s)
-Sean Hardison
+**Indicator category**: 
 
-## Data name
-Chesapeake Bay Algal Blooms
-
-### Indicator category
-<!-- 1. Database pull -->
+1. Database pull
 <!-- 2. Database pull with analysis -->
-3. Synthesis of published information
+<!-- 3. Synthesis of published information -->
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+**Contributor(s)**: Sean Hardison, Virginia Department of Health
+
+**Data steward**: Sean Hardison, sean.hardison@noaa.gov
+
+**Point of contact**: Sean Hardison, sean.hardison@noaa.gov
+
+**Public availability statement**: Source data for this indicator are available here:
+https://github.com/NOAA-EDAB/tech-memo/tree/master/data/CB_HAB
+
+Derived data are available here:
+http://comet.nefsc.noaa.gov/erddap/tabledap/CBhabs_ann_MAB_V2.html
+
 
 ## Methods
 We presented two indicator time series for reports of algal blooms in the southern portion of Chesapeake Bay between 2007-2017. The first indicator was reports of algal blooms above 5000 cell ml^-1^. This threshold was developed by the Virginia Department of Health (VDH) for *Microcystis* spp. algal blooms based on World Health Organization guidelines [@WHO2003; @VDH2011], although the same threshold is currently applied to other algal species blooms in Virginia. Above cell concentrations of 5000 cell ml^-1^, VDH recommends that biweekly water sampling be initiated and that relevant local agencies be notified of the elevated cell concentrations.
@@ -187,21 +195,3 @@ points(cochlo$year, cochlo$total, type = "b")
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
 No data analysis steps took place for this indicator.
-
-### Further metadata
-
-#### Public availability statement
-Source data for this indicator are available here:
-https://github.com/NOAA-EDAB/tech-memo/tree/master/data/CB_HAB
-
-Derived data are available here:
-http://comet.nefsc.noaa.gov/erddap/tabledap/CB_habs_2018.html
-
-#### Point of contact - Whom should be contacted?
-Sean Hardison
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Hardison
-
-### References
-<!--List references here-->
