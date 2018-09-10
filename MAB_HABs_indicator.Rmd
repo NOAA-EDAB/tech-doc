@@ -21,6 +21,7 @@ For the tech memo, we will be documenting the methods behind each indicator to t
 <!-- 3. Synthesis of published information -->
 <!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+
 **Contributor(s)**: Sean Hardison, Virginia Department of Health
 
 **Data steward**: Sean Hardison, sean.hardison@noaa.gov
