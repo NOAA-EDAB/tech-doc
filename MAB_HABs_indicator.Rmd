@@ -8,19 +8,9 @@ library(rmarkdown)
 
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
-
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
--->
 **Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
-**Indicator category**: 
-
-1. Database pull
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
+**Indicator category**: Database pull
 
 **Contributor(s)**: Sean Hardison, Virginia Department of Health
 
@@ -41,8 +31,6 @@ We presented two indicator time series for reports of algal blooms in the southe
 The second indicator we reported, blooms of *Cochlodinium polykrikoides* at cell concentrations >300 cell ml^-1^, was chosen due to reports of high ichthyotoxicity seen at these levels. @Tang2009 showed that fish exposed to cultured *C. polykrikoides* at densities as low 330 cells ml^-1^ saw 100% mortality within 1 hour, which if often far less than *C. polykrikoides* cell concentrations seen in the field. Algal bloom data were not available for 2015 nor 2010. The algal bloom information presented here are a synthesis of reported events, and has been updated to include data not presented in the 2018 State of the Ecosystem Report. 
 
 ### Data source(s)
-<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
-
 Source data were obtained from VDH. Sampling, identification, and bloom characterization was accomplished by the VDH, Phytoplankton Analysis Laboratory at Old Dominion University, Reece Lab at the Virginia Institute of Marine Science, and Virginia Department of Environmental Quality. Problem algal species were targeted for identification via light microscopy followed by standard or quantitative PCR assays and/or ELISA. Reports specifying full methodologies from ODU, VIMS, and VDH source data are available upon request.
 
 ### Data extraction
@@ -54,11 +42,8 @@ Data were extracted from a series of spreadsheets provided by the VDH. We quanti
 library(readxl)
 library(dplyr)
 library(tidyr)
-library(leaflet)
 library(stringr)
 ```
-
-
 
 ```{r r_extract, echo = T, eval = F, message=F, warning=F}
 data.dir <- "data/CB_HAB"
@@ -180,7 +165,8 @@ fixer <- function(cpm){
 #All blooms > 5000 cells ml^-1
 full <- fixer(cpm = 5000)
 full <- full %>% group_by(year) %>% dplyr::summarise(total = sum(Events))
-plot(full$year, full$total, type = "b", ylim = c(0,90))
+plot(full$year, full$total, type = "o", ylim = c(0,90),
+     pch = 20, ylab = "Bloom Events", las = 1, xlab = "Time", lwd = 2)
 
 #cochlodinum > 300 cells ml^-1
 cochlo <- fixer(cpm = 300)
@@ -188,8 +174,17 @@ cochlo[cochlo$species == "C. polykrikoides" |
      cochlo$species == "C.polykrikoides" ,]$species <- "Cochlodinium polykrikoides"
 cochlo <- cochlo[cochlo$species == "Cochlodinium polykrikoides",]
 cochlo <- cochlo %>% group_by(year) %>% dplyr::summarise(total = sum(Events))
-points(cochlo$year, cochlo$total, type = "b")
+points(cochlo$year, cochlo$total, type = "o", pch = 20, col = "indianred", lwd = 2)
+legend(x = 2007, y = 80, legend = c(expression(paste("All reports >5000 cells ml"^"-1")),
+                                    expression(paste(italic("C. polykrikoides "),"reports >300 cells ml"^"-1"))),
+       col = c("black","indianred"),
+       lwd = 2,
+       bty = "n")
+```
 
+```{r echo = F, fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017.}
+image.dir <- './images'
+knitr::include_graphics(file.path(image.dir, 'MAB_HABs.png'))
 ```
 
 
