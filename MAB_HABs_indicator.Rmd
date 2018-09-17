@@ -182,7 +182,7 @@ legend(x = 2007, y = 80, legend = c(expression(paste("All reports >5000 cells ml
        bty = "n")
 ```
 
-```{r echo = F, fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017.}
+```{r echo = F, fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017."}
 image.dir <- './images'
 knitr::include_graphics(file.path(image.dir, 'MAB_HABs.png'))
 ```
