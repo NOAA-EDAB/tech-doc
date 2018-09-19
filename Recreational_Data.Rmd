@@ -8,14 +8,18 @@ library(rmarkdown)
 
 ```
 
-## Contributor name(s)
-Geret DePiper
+**Description**: Total Catch and total angler trips, by region (North Atlantic and Mid-Atlantic)
 
-## Data name
-Total Catch and total angler trips, by region (North Atlantic and Mid-Atlantic)
+**Indicator category**: Database pull
 
-### Indicator category 
-1. Database pull
+**Contributor(s)**: Geret DePiper
+  
+**Data steward**: Geret DePiper, <geret.depiper@noaa.gov>
+ 
+**Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
+
+**Public availability statement**: Data is publically available at web addresses indicated below.
+  
 
 ## Methods
 We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively.
@@ -28,20 +32,6 @@ Data must be downloaded into a csv, which is then imported to R for the purpose 
 
 ### Data analysis
 N/A
-
-### Further metadata
-#### Public availability statement
-Data is publically available at web addresses indicated above.
-
-#### Point of contact
-Geret DePiper, <geret.depiper@noaa.gov>
-
-#### Data steward
-Geret DePiper, <geret.depiper@noaa.gov>
-
-<!-- References -->
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
 
 
 
