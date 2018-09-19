@@ -7,21 +7,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
 
+**Indicator category**: Database pull with analysis
 
-
-## Contributor name(s)
-Lisa L. Colburn
-
-## Data name
-Fishing community commercial and recreational fishing reliance and social vulnerability
-
-### Indicator category 
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
+**Contributor(s)**: Lisa L. Colburn
+  
+**Data steward**: Lisa L. Colburn
+  
+**Point of contact**: Lisa L. Colburn 
+  
+**Public availability statement**: The fisheries data used to construct the commercial fishing engagement and reliance indices include confidential information so will require a Data Access Waiver. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. Note that all calculated indices are currently publicly available at:  https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map.
+  
 
 ## Methods
 
@@ -442,18 +439,6 @@ text(-73.9, 36.9, "Recreational Reliance",srt=90, cex = .75)
 text(-72.4,35.6, "Social Vulnerability", cex = .75)
 text(-77.1,42, "B", cex = 1.5)
 ```
-
-
-
-### Further metadata
-#### Public availability statement
-The fisheries data used to construct the commercial fishing engagement and reliance indices include confidential information so will require a Data Access Waiver. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. Note that all calculated indices are currently publicly available at:  https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map.
-
-#### Point of contact - Whom should be contacted?
-Lisa Colburn
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Lisa Colburn
 
 
 
