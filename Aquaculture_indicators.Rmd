@@ -7,22 +7,17 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Aquaculture indicators
 
-## Contributor name(s)
-Sean Hardison
+**Indicator category**: Synthesis of published information
 
-## Data name
-Aquaculture indicators
-
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
-
-<!--
-1. Database pull
-2. Database pull with analysis-->
-3. Synthesis of published information
-<!--4. Extensive analysis; not yet published
-5. Published methods-->
+**Contributor(s)**: Sean Hardison
+  
+**Data steward**: Sean Hardison <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison <sean.hardison@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available in referenced reports.
 
 
 ## Methods
@@ -38,17 +33,6 @@ Data were collected directly from state aquaculture reports. Oysters harvest dat
 
 ### Data analysis
 No data analyses occurred for this indicator.
-
-#### Public availability statement
-Source data are publicly available in referenced reports.
-
-#### Point of contact - Whom should be contacted?
-Sean Hardison
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Hardison
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
