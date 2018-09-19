@@ -10,22 +10,18 @@ library(rmarkdown)
 library(Survdat)
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+**Description**: Survdat (Survey database)
 
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
+**Indicator category**: Database pull
 
-## Contributor name(s)
-Sean Lucey
+**Contributor(s)**: Sean Lucey
 
-## Data name
-Survdat (Survey database)
+**Data steward**: Sean Lucey <sean.lucey@noaa.gov>
 
-### Indicator category 
-1. Database pull
-<!--2. Database pull with analysis
-3. Synthesis of published information
-4. Extensive analysis; not yet published
-5. Published methods-->
+**Point of contact**: Sean Lucey <sean.lucey@noaa.gov>
+
+**Public availability statement**: Source data is available to the public.
+
 
 ## Methods
 The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys
@@ -350,21 +346,5 @@ of stations within each EPU per year is counted using unique station records. Bi
 is summed by species per year per EPU.  Those sums are divided by the appropriate
 station count to get the EPU mean.  Finally, the mean biomasses are summed by aggregate
 groups (ref to aggregate groups?).
-
-
-### Further metadata
-
-#### Public availability statement
-Source data is available to the public.
-
-#### Point of contact - Whom should be contacted?
-Sean Lucey
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Lucey
-
-
-
-
 
 
