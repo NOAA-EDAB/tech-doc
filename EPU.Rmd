@@ -9,21 +9,23 @@ library(magick)
 library(readr)
 
 ```
+**Description**: Ecological Production Units
 
-## Contributor name(s)
-Robert Gamble
+**Indicator category**: Extensive analysis, not yet published
 
-## Data name
-Ecological Production Units
-
-
-### Indicator category
-Method
 <!-- 1. Database pull -->
 <!-- 2. Database pull with analysis -->
 <!-- 3. Synthesis of published information -->
-4. Extensive analysis, not yet published
+<!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+**Contributor(s)**: Robert Gamble
+
+**Data steward**: NA
+
+**Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
+
+**Public availability statement**: Spatial analysis based on these EPUs can use the ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
+
 
 ## Methods
 To define ecological production units, we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
@@ -98,15 +100,4 @@ image.dir <- './images'
 knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 ```
-
-### Further metadata
-
-#### Public availability statement
-Spatial analysis based on these EPUs can use the ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
-
-#### Point of contact
-Robert Gamble, <robert.gamble@noaa.gov>
-
-#### Data steward
-NA
 
