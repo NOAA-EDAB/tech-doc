@@ -13,19 +13,17 @@ library(rmarkdown)
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 -->
 
+**Description**: Most recent stock assessment model results summarized for each assessed species.
 
-## Contributor name(s)
-Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
+**Indicator category**: Synthesis of published information
 
-## Data name
-Most recent stock assessment model results summarized for each assessed species.
+**Contributor(s)**: Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
 
-### Indicator category
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-3. Synthesis of published information
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Public availability statement**: All stock assessment results are publicly available at links above.
 
 ## Methods
 
@@ -228,25 +226,4 @@ metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLO
 cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
 
 ```
-
-
-### Further metadata
-<!--Fill out the following metadata required by PARR-->
-
-#### Public availability statement
-<!--Will source data be available to the public? If not, is a Data Access Waiver necessary?-->
-All stock assessment results are publicly available at links above.
-
-#### Point of contact - Whom should be contacted?
-Sarah Gaichas
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sarah Gaichas
-
-
-
-
-
-
-
 
