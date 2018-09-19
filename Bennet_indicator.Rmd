@@ -7,16 +7,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Bennet Indicator
 
-## Contributor name(s)
-John Walden
+**Indicator category**: Database pull with analysis
 
-## Data name
-Bennet Indicator
-
-### Indicator category 
-1. Database pull with analysis
-
+**Contributor(s)**: John Walden
+  
+**Data steward**: NA
+  
+**Point of contact**: John Walden <john.walden@noaa.gov>
+  
+**Public availability statement**: Derived CFDBS data are available for this analysis (see [*comland*](https://noaa-edab.github.io/tech-memo/commercial-landings-data.html))
+  
 ## Methods
 
 ### Data source(s)
@@ -266,20 +268,6 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
 }
 grid_arrange_shared_legend(VI, PI, ncol = 2, nrow = 1)
 ```
-
-### Further metadata
-#### Public availability statement
-Derived CFDBS data are available for this analysis (see [*comland*](https://noaa-edab.github.io/tech-memo/commercial-landings-data.html))
-
-#### Point of contact
-John Walden
-
-#### Data steward
-NA
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
 
 
 
