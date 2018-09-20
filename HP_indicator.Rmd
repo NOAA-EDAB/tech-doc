@@ -7,21 +7,19 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Harbor Porpoise Indicator
 
+**Indicator category**: Synthesis of published information; Published methods
 
-## Contributor name(s)
-Christopher D. Orphandies
+**Contributor(s)**: Christopher D. Orphandies
+  
+**Data steward**: Chris Orphanides, chris.orphanides@noaa.gov
 
-## Data name
-Harbor Porpoise Indicator
+**Point of contact**: Chris Orphanides, chris.orphanides@noaa.gov
+  
+**Public availability statement**: Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html).
 
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
-
-
-3. Synthesis of published information
-5. Published methods
-
+  
 
 ## Methods
 
@@ -36,25 +34,5 @@ NA
 
 ### Data analysis
 Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution (stddev = mean*CV, 95% CI = xbar +/- 1.96 * stddev).
-
-
-### Further metadata
-
-#### Public availability statement
-Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html).
-
-
-#### Point of contact - Whom should be contacted?
-Chris Orphanides, chris.orphanides@noaa.gov
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Chris Orphanides, chris.orphanides@noaa.gov
-
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
 
 
