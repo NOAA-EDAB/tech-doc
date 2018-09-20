@@ -7,21 +7,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
 
-## Contributor name(s)
-Harvey J. Walsh
+**Indicator category**: Database pull with analysis 
 
-## Data name
-NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
+**Contributor(s)**: Harvey J. Walsh
+  
+**Data steward**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/)
 
-
-### Indicator category
-<!-- Method -->
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
 
 ## Methods
 Data from NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
@@ -155,15 +152,4 @@ end
 clear ii yy
 
 ```
-
-### Further metadata
-
-### Public availability statement
-Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/).
-
-### Point of contact 
-Harvey Walsh, harvey.walsh@noaa.gov
-
-### Data Steward
-Harvey Walsh, harvey.walsh@noaa.gov
 
