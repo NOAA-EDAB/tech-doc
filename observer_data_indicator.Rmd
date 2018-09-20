@@ -1,5 +1,4 @@
 # Verified Records of Southern Kingfish
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
 
 ```{r setup,  echo = F, message=F}
 
@@ -8,15 +7,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Fisheries Observer Data – Verified Records of Southern Kingfish
 
-## Contributor name(s)
-Debra Duarte, Loren Kellogg
+**Indicator category**: Database pull 
 
-## Data name
-Fisheries Observer Data – Verified Records of Southern Kingfish
+**Contributor(s)**: Debra Duarte, Loren Kellogg
+  
+**Data steward**: Gina Shield, FSB Database Lead
+  
+**Point of contact**: Gina Shield, FSB Database Lead
+  
+**Public availability statement**: Aggregated data is available to the public upon request.
 
-### Indicator category
-2. Database pull 
 
 
 ## Methods
@@ -270,15 +272,3 @@ barplot(occur,time, col = matlab.like2(8), xlab = c("Time"),ylab = "S. Kingfish 
 axis(1,at = seq(1250,18500,length.out = 8),labels = c("2010","2011","2012","2013",
                                             "2014","2015","2016","2017"), cex.axis=1)
 ```
-
-
-
-### Further metadata
-#### Public availability statement
-Aggregated data is available to the public upon request.
-
-#### Point of contact
-Gina Shield, FSB Database Lead
-
-#### Data steward
-Gina Shield, FSB Database Lead
