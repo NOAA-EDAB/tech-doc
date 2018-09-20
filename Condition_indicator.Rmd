@@ -1,10 +1,19 @@
 # Fish Condition Indicator
 
-## Contributor name(s)
-Laurel Smith
+**Description**: Relative condition
 
-## Data name
-Relative condition
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Laurel Smith
+  
+**Data steward**: Laurel Smith, <laurel.smith@noaa.gov>
+  
+**Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
+  
+**Public availability statement**: The NEFSC fall bottom trawl survey data is available through InPort:
+https://inport.nmfs.noaa.gov/inport/item/22560
+
+
 
 ## Methods
 Relative condition was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as:
@@ -270,21 +279,3 @@ proc sort data=lwdata;
 run;
 
 ```
-
-### Further metadata
-#### Public availability statement
-The NEFSC fall bottom trawl survey data is available through InPort:
-https://inport.nmfs.noaa.gov/inport/item/22560
-
-
-#### Point on contact - Whom should be contacted?
-Laurel Smith
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Laurel Smith
-
-
-
-
-
-
