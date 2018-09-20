@@ -8,21 +8,17 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Right Whale
 
-## Contributor name(s)
+**Indicator category**: Synthesis of published information; Published methods
 
-Christopher D. Orphanides
-
-
-## Data name
-
-Right Whale
-
-### Indicator category 
-
-3. Synthesis of published information
-5. Published methods
-
+**Contributor(s)**: Christopher D. Orphanides
+  
+**Data steward**: Chris Orphanides, chris.orphanides@noaa.gov
+  
+**Point of contact**: Richard Pace, richard.pace@noaa.gov
+  
+**Public availability statement**: Source data is available through the New England Aquarium.
 
 ## Methods
 
@@ -37,23 +33,4 @@ Data were taken from existing reports and plotted.
 
 ### Data analysis
 Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
-
-### Further metadata
-
-#### Public availability statement
-Source data is available through the New England Aquarium.
-
-#### Point of contact
-Richard Pace, richard.pace@noaa.gov
-
-#### Data steward
-Chris Orphanides, chris.orphanides@noaa.gov
-
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
-
 
