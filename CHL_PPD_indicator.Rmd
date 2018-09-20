@@ -6,21 +6,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Chlorophyll *a* and Primary Production
 
-## Contributor name(s)
-Kimberly Hyde
+**Indicator category**: Database pull; Database pull with analysis; Published methods
 
-## Data name
-Chlorophyll *a* and Primary Production
+**Contributor(s)**: Kimberly Hyde
+  
+**Data steward**: Kimberly Hyde, kimberly.hyde@noaa.gov
+  
+**Point of contact**: Kimberly Hyde, kimberly.hyde@noaa.gov
+  
+**Public availability statement**: Source data used in these analyses will be made publicly available. Derived data used in State of the Ecosystem Reports can be found [here](http://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
 
-
-### Indicator category
-<!-- Method -->
-1. Database pull
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-5. Published methods
 
 ## Methods
 ### Data source(s)
@@ -87,14 +84,4 @@ Weekly, monthly and annual anomalies were calculated for each product by taking 
 
 The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files.  The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.  For the extended time series, the 1998-2007 data use the SeaWiFS ocean color products and MODIS-Aqua products were used from 2008 to 2017.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
 
-### Further metadata
-
-### Public availability statement
-Source data used in these analyses will be made publicly available. Derived data used in State of the Ecosystem Reports can be found [here](http://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
-
-### Point of contact 
-Kimberly Hyde, kimberly.hyde@noaa.gov
-
-### Data Steward
-Kimberly Hyde, kimberly.hyde@noaa.gov
 
