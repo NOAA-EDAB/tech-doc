@@ -7,21 +7,19 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Annual SST Cycles
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Sean Hardison, Vincent Saba
+  
+**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) 
 
 
-## Contributor name(s)
-Sean Hardison, Vincent Saba
-
-## Data name
-Annual SST Cycles
-
-### Indicator category 
-
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
 
 ## Methods
 
@@ -468,25 +466,6 @@ polygon(c(doy, rev(doy)),
 points(doy,val_LT, type = "l", lwd = 1, "grey90")
 box()
 ```
-
-
-
-### Further metadata
-
-#### Public availability statement
-Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) 
-
-
-#### Point of contact
-Sean Hardison
-
-#### Data steward
-Sean Hardison
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
 
 
 
