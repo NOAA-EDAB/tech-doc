@@ -1,7 +1,5 @@
 # Habitat Occupancy Models
 
-<!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
-
 ```{r setup,  echo = F, message=F}
 
 #Load packages
@@ -9,17 +7,17 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Habitat Occupancy
 
-## Contributor name(s)
-Kevin Friedland
+**Indicator category**: Database pull with analysis; Extensive analysis; not yet published; Published methods
 
-## Data name
-Habitat Occupancy
-
-### Indicator category 
-2. Database pull with analysis
-4. Extensive analysis; not yet published
-5. Published methods
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available. 
 
 
 ## Methods
@@ -97,18 +95,4 @@ Prior to fitting the occupancy models, predictor variables were tested for multi
 
 #### Selection criteria and variable importance
 The irr R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.  
-
-### Further metadata
-#### Public availability statement
-Source data are publicly available. 
-
-#### Point of contact
-Kevin Friedland, <kevin.friedland@noaa.gov>
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Kevin Friedland, <kevin.friedland@noaa.gov>
-
-
-
-
 
