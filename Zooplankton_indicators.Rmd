@@ -9,7 +9,7 @@ library(rmarkdown)
 
 **Description**: Zooplankton abundance anomalies
 
-**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis; not yet published; Published methods
+**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis: not yet published; Published methods
 
 **Contributor(s)**: Ryan Morse
   
