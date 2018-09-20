@@ -8,21 +8,19 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Species mean depth, along-shelf distance, and distance to coastline
 
+**Indicator category**: Extensive analysis; not yet published
 
-## Contributor name(s)
-Kevin Friedland
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available here:
+https://inport.nmfs.noaa.gov/inport/item/22560
 
-## Data name
-Species mean depth, along-shelf distance, and distance to coastline
-
-### Indicator category 
-
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-4. Extensive analysis; not yet published
-<!-- 5. Published methods -->
 
 ## Methods
 Three metrics quantifying spatial-temporal distribution shifts within fish populations were developed by @Friedland2018, including mean depth, along-shelf distance, and distance to coastline. Along-shelf distance is a metric for quantifying the distribution of a species through time along the axis of the US Northeast Continental Shelf, which originates in the southwest Atlantic and extends northeastward. Values in the derived time series correspond to mean distance in km from the southwest origin of the along-shelf axis at 0 km. The along-shelf axis begins at 76.53&deg;W 34.60&deg;N and terminates at 65.71&deg;W 43.49&deg;N. 
@@ -430,26 +428,4 @@ names(out_data)[names(out_data)=="X7"] <- "DTEOC"
 write.csv(out_data,file=outfile )
 
 ```
-
-
-
-### Further metadata
-#### Public availability statement
-Source data are available here:
-https://inport.nmfs.noaa.gov/inport/item/22560
-
-
-#### Point of contact - Whom should be contacted?
-Kevin Friendland
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Kevin Friedland
-
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
-
 
