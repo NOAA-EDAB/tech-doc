@@ -8,23 +8,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Species Thermal Habitat Projections
 
-## Contributor name(s)
+**Indicator category**: Published methods
 
-Vincent Saba
+**Contributor(s)**: Vincent Saba
+  
+**Data steward**: Vincent Saba, <vincent.saba@noaa.gov>
+  
+**Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
+  
+**Public availability statement**: Source data are available to the public.
 
-
-## Data name
-
-Species Thermal Habitat Projections
-
-### Indicator category 
-
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-5. Published methods
 
 ## Methods
 This indicator is based on work reported in @Kleisner2017.
@@ -52,21 +47,6 @@ We modeled individual species thermal habitat across the whole U.S. NES and not 
 The predictor variables are surface and bottom temperature and depth (all measured by the survey at each station), fit with penalized regression splines, and survey stratum, which accounts for differences in regional habitat quality across the survey region. Stratum may be considered to account for additional information not explicitly measured by the survey (e.g., bottom rugosity). Predictions of species abundance are calculated as the product of the predictions from the presence-absence model, the exponentiated predictions from the logged positive biomass model, and a correction factor to account for the retransformation bias associated with the log transformation [@Duan1983; and see @Pinsky2013]. 
 
 We calculated the suitable thermal habitat both in terms of changes in 'suitable thermal abundance', defined as the species density possible given appropriate temperature, depth and bathymetric conditions, and changes in 'suitable thermal area', defined as the size of the physical area potentially occupied by a species given appropriate temperature, depth and bathymetric conditions. Suitable thermal abundance is determined from the predictions from the GAMs (i.e., a prediction of biomass). However, this quantity should not be interpreted directly as a change in future abundance or biomass, but instead as the potential abundance of a species in the future given changes in temperature and holding all else (e.g., fishing effort, species interactions, productivity, etc.) constant. Suitable thermal area is determined as a change in the suitable area that a species distribution occupies in the future and is derived from the area of the kernel density of the distribution. To ensure that the estimates are conservative, we select all points with values greater than one standard deviation above the mean. We then compute the area of these kernels using the gArea function from the 'rgeos' package in R [@Bivand2011]. 
-
-
-### Further metadata
-
-#### Public availability statement
-Source data are available to the public.
-
-#### Point of contact
-Vincent Saba
-
-#### Data steward
-Vincent Saba
-
-
-
 
 
 
