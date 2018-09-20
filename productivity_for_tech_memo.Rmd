@@ -8,15 +8,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Groundfish productivity estimated as the ratio of small fish to large fish
 
-## Contributor name(s)
-Charles Perretti
+**Indicator category**: Published methods
 
-## Data name
-Groundfish productivity estimated as the ratio of small fish to large fish
+**Contributor(s)**: Charles Perretti
+  
+**Data steward**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Point of contact**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Public availability statement**: Source data available to public.
 
-### Indicator category 
-Published methods
 
 
 ## Methods
@@ -223,23 +226,4 @@ plot_stackbarcpts(YEAR = dat2plot$Time,
                   ylab = "Small fish per Large fish biomass (anomaly)")
 
 ```
-
-
-
-### Further metadata
-
-#### Public availability statement
-Source data available to public.
-
-
-#### Point of contact
-Charles Perretti
-
-#### Data steward
-Charles Perretti
-
-
-
-
-
 
