@@ -7,20 +7,18 @@ library(rmarkdown)
 
 ```
 
+**Description**: Zooplankton abundance anomalies
 
-## Contributor name(s)
-Ryan Morse
+**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis; not yet published; Published methods
 
-## Data name
-Zooplankton abundance anomalies
-
-### Indicator category 
-
-2. Database pull with analysis
-3. Synthesis of published information
-4. Extensive analysis; not yet published
-5. Published methods
-
+**Contributor(s)**: Ryan Morse
+  
+**Data steward**: Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>, Mike Jones, NEFSC DMS, <michael.jones@noaa.gov>
+  
+**Point of contact**: Ryan Morse, NEFSC EDAB, <ryan.morse@noaa.gov>, Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
+  
+**Public availability statement**: Data are publicly available here:
+ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
 
 ## Methods
 
@@ -247,17 +245,6 @@ dataTsm=scs.yr.anom[,smtx]
 dataTlg=scs.yr.anom[,lgtx]
 anom.scs=rowMeans(dataTsm)-(dataTlg)
 ```
-### Further metadata
 
-#### Public availability statement
-Data are publicly available here:
-ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
 
-#### Point of contact
-Ryan Morse, NEFSC EDAB, <ryan.morse@noaa.gov>
-Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
-
-#### Data steward 
-Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
-Mike Jones, NEFSC DMS, <michael.jones@noaa.gov>
 
