@@ -8,22 +8,19 @@ library(rmarkdown)
 
 ```
 
+**Description**: Community climate vulnerability
 
-## Contributor name(s)
-Lisa L. Colburn
+**Indicator category**: Database pull with analysis
 
-## Data name
-Community climate vulnerability
+**Contributor(s)**: Lisa L. Colburn
+  
+**Data steward**: Lisa L. Colburn
+  
+**Point of contact**: Lisa L. Colburn
+  
+**Public availability statement**: The fisheries data used for this analysis includes confidential information and is not available to the public. A Data Access Waiver will be need to access it. 
 
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
-
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
-
+  
 
 ## Methods
 ### Data source(s) (All types)
@@ -202,16 +199,6 @@ vulnerability/ total value of landings \* 100
 If a community received a dominant score (50% or more) for any of the above categories, % VH &, %M, or %L, then the community received a respective community species vulnerability ranking of High, Moderate, or Low.  For example, if 90% of the total value landed a community is contributed by species classified as having very high or high climate change vulnerability, then this community gets "Very High/High" community species vulnerability. In case of no dominant percentage identified, the community gets a "Mixed" community species vulnerability ranking. 
 
 2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray. 
-
-### Further metadata
-#### Public availability statement
-The fisheries data used for this analysis includes confidential information and is not available to the public. A Data Access Waiver will be need to access it. 
-
-#### Point of contact - Whom should be contacted?
-Lisa Colburn
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Lisa Colburn
 
 
 
