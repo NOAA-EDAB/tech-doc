@@ -7,18 +7,18 @@ library(knitr)
 library(rmarkdown)
 
 ```
+
 **Description**: Harbor Porpoise Indicator
 
 **Indicator category**: Synthesis of published information; Published methods
 
 **Contributor(s)**: Christopher D. Orphandies
   
-**Data steward**: Chris Orphanides, chris.orphanides@noaa.gov
+**Data steward**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
-**Point of contact**: Chris Orphanides, chris.orphanides@noaa.gov
-  
-**Public availability statement**: Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html).
+**Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
+**Public availability statement**: Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
   
 
 ## Methods
