@@ -9,21 +9,18 @@ library(rmarkdown)
 
 
 ```
+**Description**: Long-term sea-surface temperatures
 
+**Indicator category**: Database pull
 
-## Contributor name(s)
-Kevin Friedland
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html)
 
-## Data name
-Long-term sea-surface temperatures
-
-### Indicator category 
-
-1. Database pull
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
 
 ## Methods
 Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
@@ -258,22 +255,7 @@ nc_close(ersst)
 
 ```
 
-<!-- ### Data analysis -->
 
-
-### Further metadata
-#### Public availability statement
-Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html)
-
-
-#### Point of contact
-Kevin Friedland, kevin.friedland@noaa.gov
-
-#### Data steward
-Kevin Friedland, kevin.friedland@noaa.gov
-
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
