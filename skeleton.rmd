@@ -1,9 +1,9 @@
 ---
 title: "Tech Memo Methods Template"
 output:
-  word_document: default
   html_document: default
-bibliography: XYZ.bib
+  word_document: default
+#bibliography: XYZ.bib
 ---
 <!-- STOP!!!!! INSERT THE FILE NAME OF YOUR .bib BIBLIOGRAPHY ABOVE.--> 
 
@@ -19,13 +19,10 @@ The purpose of this form is to provide the methods used to collect, process, and
 
 For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
 
+**Description**: *Description of indicator*
 
-## Contributor name(s)
+**Indicator category**: *eg Database pull with analysis; Extensive analysis; * 
 
-
-## Data name
-
-### Indicator category 
 Indicate from the list below which category the contributed data fall under by deleting other entries.
 
 1. Database pull
@@ -33,6 +30,14 @@ Indicate from the list below which category the contributed data fall under by d
 3. Synthesis of published information
 4. Extensive analysis; not yet published
 5. Published methods
+
+**Contributor(s)**: *enter name of contributor(s)*
+  
+**Data steward**: *name and email, eg. fred bloggs, <fred.bloggs@noaa.gov>*
+  
+**Point of contact**: *name and email, eg. fred bloggs, <fred.bloggs@noaa.gov>*
+  
+**Public availability statement**: *Will source data be available to the public? If not, is a Data Access Waiver necessary?*
 
 
 ## Methods
@@ -83,19 +88,6 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 ```
 
 
-
-### Further metadata
-Fill out the following metadata required by PARR under each subheader.
-
-
-#### Public availability statement
-Will source data be available to the public? If not, is a Data Access Waiver necessary?
-
-
-#### Point of contact - Whom should be contacted?
-
-
-#### Data steward (can be POC; in charge of keeping data updated)
 
 References
 <!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
