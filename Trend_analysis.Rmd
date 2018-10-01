@@ -9,13 +9,8 @@ library(rmarkdown)
 ```
 **Description**: Time series trend analysis
 
-**Indicator category**: 
+**Indicator category**: Extensive analysis, not yet published
 
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
 **Contributor(s)**: Sean Hardison, Charles Perretti, Geret DePiper
 
 **Data steward**: NA
@@ -59,7 +54,6 @@ library(AICcmodavg)
 library(data.table)
 ```
 
-<!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 ```{r analysis, echo = T, message= F, warning=F, include=T}
 
 data.dir <- "./data"
