@@ -7,16 +7,9 @@ library(knitr)
 library(rmarkdown)
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
-
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
 **Description**: Commercial landings data pull
 
-**Indicator category**: 1. Database pull
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
+**Indicator category**: Database pull
 
 **Contributor(s)**: Sean Lucey
 
@@ -2169,10 +2162,6 @@ save(comland, file = file.path(out.dir, file.name))
 ### Data analysis
 
 Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into aggregate groups (ref to aggregate groups?).  Species are also marked by which management body manages them.  Landings are then summed by year, EPU, aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
-
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
 
 
 
