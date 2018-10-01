@@ -13,13 +13,7 @@ image.dir <- './images'
 
 **Description**: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
 
-**Indicator category**: 
-
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-3. Synthesis of published information
-4. Extensive analysis; not yet published
-<!-- 5. Published methods -->
+**Indicator category**: Synthesis of published information, Extensive analysis; not yet published
 
 **Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
 
@@ -45,7 +39,7 @@ knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
 
 ### Data source(s) (All types)
-<!--Please provide a text description of data sources.-->
+
 #### Ecological submodels
 Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
 
@@ -87,7 +81,7 @@ Sources for links between environmental drivers and human activities included @a
 Sources for cultural practices and attachments links included @pauly_putting_1997, @mcgoodwin_understanding_2001, @st_martin_making_2001, @norris-raynbird_for_2004, @pollnac_toward_2006, @clay_defining_2007, @clay_definingfishing_2008, @everett_role_2008, @donkersloot_politics_2010, @lord_understanding_2011, @halpern_index_2012, @wynveen_natural_2012, @cortes-vazquez_identity_2013, @koehn_progress_2013, @potschin_landscapes_2013, @reed_beyond_2013, @urquhart_constructing_2013, @blasiak_paradigms_2014, @klain_what_2014, @poe_cultural_2014, @brown_we_2015, @donatuto_evaluating_2015, @khakzad_role_2016, @oberg_surviving_2016, and @seara_perceived_2016.  
 
 ### Data extraction 
-<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
+
 #### Ecological submodels
 "Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
 
@@ -116,17 +110,6 @@ Information was synthesized entirely from published sources and expert knowledge
 Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data/top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
 
 Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical memo. In addition, the Northeast Regional Input/Output Model (@steinback_scott_northeast_2006) was used as the basis for the strength of the employment linkages.
-
-<!--
-Write SQL query here
-```{sql, eval = F, echo = T}
-SELECT * FROM...
-```
-
-```{r r_extract, echo = T, eval = F}
-# Extraction code
-```
--->
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
@@ -226,7 +209,7 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 -->
 
 ### ERDDAP data set
-<!--If data are available, adjust code to pull those data and set "eval = T" in chunk header options.-->
+
 The conceptual model documentation spreadsheet is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information), and can be downloaded with a script:
 
 ```{r erddap pull, echo = T, eval = F}
