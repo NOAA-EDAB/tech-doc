@@ -26,12 +26,49 @@ library(rmarkdown)
 
 
 ### Data source(s) (All types)
-Please provide a text description of data sources. 
 
+Define Columns: 
+Species codes for (3 databases, describe) 
+Common name (AFS list?)
+Scientific name (AFS list? Other source?)
+Aggregate groups
+  
+  EBFM PDT (define, need rationale for mappings, Garrison and Link 2000 but used species rather than species and size, decisions on which sizes dominate for mapping)
+  
+  EMAX (ref Link Tech Memo and 2-3 papers, rational for mappings in that documentation?)
+  
+    GET RID OF Q VALUES IN THIS TABLE, NOT USED HERE
+  
+    Rpath (define, maybe dont need here?): decision: remove
+  
+  SOE Feeding guilds (simplifed from EBFM PDT/Garrison and link to have fewer groups, ensure that mappings make sense)
+  
+  NEIEA (what needed mapping from guilds to website? define)
 
+New columns
+retain:
+Species codes for (3 databases, describe) 
+Common name (AFS list?)
+Scientific name (AFS list? Other source?)
+
+  Federal management (MAFMC, NEFMC, both, NA)
+  State management (ASMFC, [individual state], NA)
+  
+  Garrison and Link 2000 (species and size)
+  EMAX categories (Link et al papers/Tech memo)
+  
+  Rpath categories (expanded from EMAX and updated)
+  
+  2017 SOE categories (species not size simplified from Garrison and Link 2000 and EMAX; also initial EBFM PDT categories)
+  2018 SOE categories (simplified from 2017)
+  NEIEA groups (adjust for conceptual model, focal components mapped back to EMAX for ecology but expanded for other components, and generalized for website descriptions)
+  2019 SOE categories (more sensible from 2018)
 
 ### Data extraction 
-Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.
+
+Pull data by species code, map to aggregate group as in table.
+
+Alternatively, could pull by size and species, then map to aggregate as in Garrison and Link 2000
 
 
 
@@ -46,9 +83,9 @@ R code used in extraction process.
 ```
 
 ### Data analysis
-Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
 
 
+however extracted, sum over aggregate
 
 
 
@@ -70,9 +107,6 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 ```
 
 
-
-References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
 
 
 
