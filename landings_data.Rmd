@@ -1,4 +1,4 @@
-# Commercial Landings Data
+# Commercial Landings Data {#comdat}
 
 ```{r setup,  echo = F, message=F}
 
@@ -13,11 +13,11 @@ library(rmarkdown)
 
 **Contributor(s)**: Sean Lucey
 
-**Data steward**: Sean Lucey
+**Data steward**: Sean Lucey, <Sean.Lucey@noaa.gov>
 
-**Point of contact**: Sean Lucey, Sean.Lucey@NOAA.gov
+**Point of contact**: Sean Lucey, <Sean.Lucey@noaa.gov>
 
-**Public availability statement**: Need to check on this one...possible confidentiality issue.  Derived data can be made 
+**Public availability statement**: Raw data are not publically available due to confidentiality of individual fishery participants.  Derived indicator outputs are
 available.
 
 
@@ -2161,7 +2161,7 @@ save(comland, file = file.path(out.dir, file.name))
 
 ### Data analysis
 
-Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into aggregate groups (ref to aggregate groups?).  Species are also marked by which management body manages them.  Landings are then summed by year, EPU, aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
+Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Species are also marked by which management body manages them.  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
 
 
 
