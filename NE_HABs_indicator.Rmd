@@ -174,7 +174,11 @@ text(-67.7,42.525, "2007-2016 Detections")
 ```
 
 ```{r NE-HAB-image, echo = F, fig.align="center",fig.cap="Regional HAB-related shellfish bed closures in New England (2007-2016)."}
+<<<<<<< HEAD
 image.dir <- 'images'
+=======
+image.dir <- './images'
+>>>>>>> 97e8e2593b8bce39d0da95166e1bc52fd2183bbc
 knitr::include_graphics(file.path(image.dir, 'NE_HABs.png'))
 ```
 
