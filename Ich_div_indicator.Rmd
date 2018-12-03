@@ -17,7 +17,7 @@ library(rmarkdown)
   
 **Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
   
-**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/)
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_2018.html).
 
 
 ## Methods
