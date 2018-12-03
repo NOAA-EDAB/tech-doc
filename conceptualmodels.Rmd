@@ -21,7 +21,7 @@ image.dir <- './images'
 
 **Point of contact**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
 
-**Public availability statement**: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public.
+**Public availability statement**: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public (see Data Sources below).
 
 
 ## Methods
@@ -36,7 +36,7 @@ An inital conceptual model for Georges Bank and the Gulf of Maine was outlined a
 knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 ```
 
-After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
+After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
 
 ### Data source(s) (All types)
 
@@ -114,7 +114,7 @@ Commercial fishing data was developed as part of the State of the Ecosystem Repo
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
 #### Ecological submodels
-Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information). 
+Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). 
 
 Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
 
@@ -208,32 +208,7 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 ```
 -->
 
-### ERDDAP data set
 
-The conceptual model documentation spreadsheet is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.htmlTable?Submodel,FROM_IEA_Conceptual_Model_Focal_Component,FROM_Focal_component_Element,TO_IEA_CM_Linked_Component,TO_Linked_component_element_level,Link_Description,Link_Magnitude,Link_Uncertainty,Supporting_Information), and can be downloaded with a script:
-
-```{r erddap pull, echo = T, eval = F}
-library(rerddap)
-
-comet <- 'http://comet.nefsc.noaa.gov/erddap/'
-
-tab_list <- ed_datasets(url = comet)
-tab_list <- data.frame(Title = tab_list$Title,
-                        Identifier = tab_list$Dataset.ID,
-                        Index = 1:nrow(tab_list))
-
-#Get data set ID (will need to change)
-#id <- as.character(tab_list$Identifier[9]) 
-id <- as.character("concept_model_2018")
-
-#Pull data
-data <- tabledap(id,url = comet)
-
-#Print metadata
-metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
-cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
-
-```
 
 
 
