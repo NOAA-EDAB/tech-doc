@@ -38,7 +38,7 @@ knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 
 After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
 
-### Data source(s) (All types)
+### Data sources
 
 #### Ecological submodels
 Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
