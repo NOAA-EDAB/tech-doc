@@ -21,7 +21,7 @@ library(rmarkdown)
 **Public availability statement**: Data are publicly available
 
 ## Methods
-The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016 (Figure \@ref(fig:NE_HAB_image)). Approved detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poison (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
+The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016 (Figure \@ref(fig:NE-HAB-image)). Approved detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poison (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
 
 #### Paralytic Shellfish Poisoning
 The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate *Alexandrium catenella*. All New England states except Maine relied on the AOAC-approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
@@ -178,7 +178,7 @@ text(-67.7,42.525, "2007-2016 Detections")
 
 ```
 
-```{r NE_HAB_image, echo = F, fig.align="center",fig.cap="Regional HAB-related shellfish bed closures in New England (2007-2016)."}
+```{r NE-HAB-image, echo = F, fig.align="center",fig.cap="Regional HAB-related shellfish bed closures in New England (2007-2016)."}
 image.dir <- './images'
 knitr::include_graphics(file.path(image.dir, 'NE_HABs.png'))
 ```
