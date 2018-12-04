@@ -20,7 +20,7 @@ library(Survdat)
 
 **Point of contact**: Sean Lucey <sean.lucey@noaa.gov>
 
-**Public availability statement**: Source data is available to the public.
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data used in SOE reports are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_2018.html).
 
 
 ## Methods
@@ -67,8 +67,8 @@ file is a data.table, a powerful wrapper for the base data.frame (https://cran.r
 There are also a series of tools that have been developed in order to utilize the Survdat data set
 (https://github.com/slucey/RSurvey).
 
-### Data source(s) (All types)
-Survdat is a database query of the NEFSC survey database (SVDBS).
+### Data sources
+Survdat is a database query of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
 
 ### Data extraction 
 Extraction methods are described above.
