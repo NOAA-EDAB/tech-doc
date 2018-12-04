@@ -77,7 +77,7 @@ The final step of Comlands is to pull the foreign landings from the [NAFO databa
 
 
 ### Data sources
-Comland is a database query of the NEFSC commercial fishery database (CFDBS). Source data from the CFDBS may be available upon request, but is not publicly available. Read more about CFDBS data access procedures [here](https://inport.nmfs.noaa.gov/inport/item/27401).  
+Comland is a database query of the NEFSC commercial fishery database (CFDBS). More information about the CFDBS is available [here](https://inport.nmfs.noaa.gov/inport/item/27401).  
 
 ### Data extraction 
 
