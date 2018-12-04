@@ -8,7 +8,7 @@ library(rmarkdown)
 
 ```
 
-**Description**: Total Catch and total angler trips, by region (North Atlantic and Mid-Atlantic)
+**Description**: Total catch and total angler trips by region (North Atlantic and Mid-Atlantic)
 
 **Indicator category**: Database pull
 
@@ -18,20 +18,24 @@ library(rmarkdown)
  
 **Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
 
-**Public availability statement**: Data is publically available at web addresses indicated below.
+**Public availability statement**: Data sets are publically available (see Data Sources below).
   
 
 ## Methods
 We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively.
 
-### Data source(s)
-The number of harvested fish was downloaded from the MRIP National Query December 12, 2017.  Harvested fish is TOTAL HARVEST (A+B1). Note that 2017 is considered preliminary at the time of the pull. The series can be found at https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index, and map the "NORTH ATLANTIC" Region to "NE" and "MID-ATLANTIC" Region to "MA" for purposes of the SOE. The number of angler trips and number of anglers was pulled from two sources on December 12, 2017.  Angler trips is "TOTAL" trips, was pulled from the MRIP effort data time series, and includes data from 1981 - 2017. Note that 2017 is considered preliminary at the time of the pull. The number of anglers is total number of anglers from the MRFSS participation time series, and includes data from 1981 - 2016. Both series can be found at https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index, and map the "NORTH ATLANTIC" Region to "NE" and "MID-ATLANTIC" Region to "MA" for purposes of the SOE.
+### Data sources
+All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were download from the [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal on December 12, 2017. Relevant metadata including information regarding data updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull.
+
+Data sets are queried by region on the MRIP site, and for the purposes of the SOE, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the Catch Time Series Query page. Angler trips (listed as "TOTAL" trips) were pulled from the MRIP Effort Time Series Query page, and included data from 1981 - 2017.The number of anglers was total number of anglers from the MRFSS Participation Time Series Query, and includes data from 1981 - 2016.
 
 ### Data extraction 
-Data must be downloaded into a csv, which is then imported to R for the purpose of the SOE. 
+Data were download as .CSV files before being brought into R.
 
 ### Data analysis
-N/A
+NA
 
 
 
