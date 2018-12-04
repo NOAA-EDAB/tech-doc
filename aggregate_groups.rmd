@@ -19,13 +19,13 @@ library(rmarkdown)
   
 **Point of contact**: Sean Lucey <Sean.Lucey@noaa.gov>
   
-**Public availability statement**: Source data is available to the public
+**Public availability statement**: Source data is available to the public (see Data Sources). 
 
 
 ## Methods
 
 
-### Data source(s) (All types)
+### Data sources
 
 These data identify species groupings used in analyses of marine community structure and function in the Northeast Large Marine Ecosystem (NE-LME). Included are species common names (COMNAME) along with scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch in their fishery-independent Survey Database (SVDBS) while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.
 
@@ -33,14 +33,14 @@ The column variable "Fed.managed" refers to the species' management body (limite
 
 Species groupings listed in the "NEIEA" column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings, but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the NE-LME (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.
 
-See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:
-https://www.itis.gov/
-https://inport.nmfs.noaa.gov/inport/item/22561
-https://inport.nmfs.noaa.gov/inport/item/22560
-https://inport.nmfs.noaa.gov/inport/item/27401	
+See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:  
 
-More information about the NE-IEA program is available here:
-http://integratedecosystemassessment.noaa.gov
+*    https://www.itis.gov/  
+*    https://inport.nmfs.noaa.gov/inport/item/22561  
+*    https://inport.nmfs.noaa.gov/inport/item/22560  
+*    https://inport.nmfs.noaa.gov/inport/item/27401  	
+
+More information about the NE-IEA program is available [here](http://integratedecosystemassessment.noaa.gov).
 
 *Notes on rationale for SOE categories, could include in the above
   2017 SOE categories (species not size simplified from Garrison and Link 2000 and EMAX; also initial EBFM PDT categories)
