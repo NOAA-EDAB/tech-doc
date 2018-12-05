@@ -18,18 +18,16 @@ library(rmarkdown)
   
 **Point of contact**: Richard Pace, richard.pace@noaa.gov
   
-**Public availability statement**: Source data is available through the New England Aquarium.
+**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
 
 ## Methods
 
-
-### Data source(s) (All types)
-The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates, which were taken from the 2016 NOAA marine mammal stock assessment [@Hayes2017] and unpublished 2017 stock assessment.
-
+### Data sources
+The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 NOAA marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
 
 
 ### Data extraction 
-Data were taken from existing reports and plotted. 
+Data were collected from existing reports and validated by report authors. 
 
 ### Data analysis
 Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
