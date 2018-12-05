@@ -18,16 +18,16 @@ library(rmarkdown)
 
 **Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
-**Public availability statement**: Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
   
 
 ## Methods
 
 
-### Data source(s) 
-Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents. Annual bycatch estimates are documented in annual stock assessment reports that can be found on the [NOAA website](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press).
+### Data sources
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed [here](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). 
 
-More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). The document for the 2016 estimates is currently in press and will be available on the above website when published. Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: CRD-17-18, CRD-16-05, CRD 15-15, CRD 14-02, CRD 13-13, CRD 11-08, CRD 10-10, CRD 07-20, CRD 06-13, CRD 03-18, CRD 01-15, and CRD 99-17.
+The document for the 2016 estimates is currently in press and will be available on the above website when published. Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: CRD-17-18, CRD-16-05, CRD 15-15, CRD 14-02, CRD 13-13, CRD 11-08, CRD 10-10, CRD 07-20, CRD 06-13, CRD 03-18, CRD 01-15, and CRD 99-17.
 
 ### Data extraction 
 NA
