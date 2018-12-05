@@ -17,20 +17,20 @@ library(rmarkdown)
   
 **Point of contact**: Lisa L. Colburn 
   
-**Public availability statement**: The fisheries data used to construct the commercial fishing engagement and reliance indices include confidential information so will require a Data Access Waiver. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. Note that all calculated indices are currently publicly available at:  https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map.
+**Public availability statement**: The source data used to construct the commercial fishing engagement and reliance indices include confidential information and are not available publicly. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. All calculated indices can be found [here](https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map).
   
 
 ## Methods
 
 
-### Data source(s) (All types)
+### Data sources
 NOAA Fisheries' Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic and fisheries variables. The social and demographic data were downloaded from the 2014 American Community Survey (ACS) 5-yr estimates Dataset at the [U.S. Census American FactFinder site](https://www.census.gov/programs-surveys/acs/) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the SOLE server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the [Marine Recreational Information Program (MRIP)](https://www.st.nmfs.noaa.gov/recreational-fisheries/MRIP/), and for this analysis was custom requested from NOAA Fisheries headquarters.
 
 
 ### Data extraction 
 Commercial fisheries data was pulled from the NEFSC SOLE server in Woods Hole, MA.
 
-SQL and SAS code for data extraction and processing steps
+SQL and SAS code for data extraction and processing steps:
 ```{sql, eval = F, echo = T}
 create table cfders2011 as
 select *
@@ -181,12 +181,10 @@ run;
 
 
 ### Data analysis
-Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.
-
-The indicators were developed using the same methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
 
 #### Plot output
-```{r map1, echo = T, eval=T, fig.cap="Commercial (A) and recreational (B) reliance and social vulnerability in the Mid-Atlantic Bight",  fig.width = 8, fig.height = 5.4, fig.align='center', fig.show='hold'}
+```{r map1, echo = T, eval=T, fig.cap="Commercial (A) and recreational (B) reliance and social vulnerability in the Mid-Atlantic Bight",  fig.width = 8, fig.height = 5.4, fig.align='center', fig.show='hold', message=F, warning=F}
   
 #Libraries
 library(rgdal)
