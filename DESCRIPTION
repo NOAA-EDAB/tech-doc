@@ -39,7 +39,8 @@ Imports:
   openxlsx,
   lubridate, 
   rgeos,
-  Survdat
+  Survdat,
+  kableExtra
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
