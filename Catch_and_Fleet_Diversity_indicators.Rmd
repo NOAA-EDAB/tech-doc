@@ -12,25 +12,32 @@ library(rmarkdown)
 **Indicator category**: Database pull with analysis
 Published methods
 
-**Contributor(s)**: Geret DePiper
+**Contributor(s)**: Geret DePiper, Min-Yang Lee
   
 **Data steward**: Geret DePiper, <geret.depiper@noaa.gov>
   
 **Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
   
-**Public availability statement**: Source data is not publically availabe due to PII restrictions, although processed data can be made publically available.
+**Public availability statement**: Source data is not publicly availabe due to PII restrictions. Derived time series are available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/comm_data_2018.html).
   
 
 ## Methods
-Diversity estimates have been developed to being to understand whether specialization, or alternatively stovepiping, is occurring in fisheries of the Northeastern Large Marine Ecosystem. We use the average effective Shannon indices for species revenue at the permit level, for all permits landing any amount of NEFMC or MAFMC FMP species within a year (including both Monkfish and Spiny Dogfish). We also use the effective Shannon index of fleet revenue diversity, and count of active fleets, to assess the extent to which the distribution of fishing changes across fleet segments.
+Diversity estimates have been developed to understand whether specialization, or alternatively stovepiping, is occurring in fisheries of the Northeastern Large Marine Ecosystem. We use the average effective Shannon indices for species revenue at the permit level, for all permits landing any amount of [NEFMC](https://www.nefmc.org/) or [MAFMC](http://www.mafmc.org/) Fishery Management Plan (FMP) species within a year (including both Monkfish and Spiny Dogfish). We also use the effective Shannon index of fleet revenue diversity and count of active fleets to assess the extent to which the distribution of fishing changes across fleet segments.
 
-### Data source(s) (All types)
-Commercial Fishery Dealer Database, Vessel Trip Reports, Clam logbooks, vessel characteristics from Permit database, WPU series producer price index.
+### Data sources
+Data for these diversity estimates comes from a variety of sources, including the
+Commercial Fishery Dealer Database, Vessel Trip Reports, Clam logbooks, vessel characteristics from Permit database, WPU series producer price index. These data are typically not available to the public.
 
 ### Data extraction 
-The following describes both the permit-level species and fleet diversity data generation. Price data was extracted from the Commercial Fishery Dealer database (CFDERS) and linked to Vessel Trip Reports by a heirarchical matching algorithm matching date and port of landing at its highest resolution. This first step is undertaken by Min-Yang Lee, and code is currently archived in the  \\\\net\\home2\\mlee\\diversity\\code folder, while data is currently archived in \\\\net\\home2\\mlee\\diversity folder. This data is then matched to vessel characteristics from the  VPS VESSEL data set. For the permit-level estimate, species groups are based off of a slightly refined NESPP3 code, defined in the data as myspp, and developed in Min-Yang's code to rectify inconsistencies in the data.
+The following describes both the permit-level species and fleet diversity data generation. Price data was extracted from the Commercial Fishery Dealer database (CFDERS) and linked to Vessel Trip Reports by a heirarchical matching algorithm that matched date and port of landing at its highest resolution. Code used in these analyses is available upon request.
 
-Species groups used include Highly Migratory Species, Monkfish, Atlantic Sea Scallops, Shrimp, Skates, Atlantic Herring, Ocean Quahog, Surf Clam, Tilefish, Black Sea Bass and Fluke, Butterfish and Red Hake and Unknown Whiting, Bluefish, Spiny Dogfish, Illex, American Lobster, Loligo, Menhaden, Offshore hake, Scup, Sand Dabs, Pout, Wolffish, Winter Flounder, Yellowtail Flounder, Unspecified hakes, White hake, Halibut, Bluefish & Scup (NE only), New England Groundfish (cod, pollock, hadddock,Monkfish,Winter flounder, Witch flounder, White hake, Plaice, redfish), Mid-Atlantic Groundfish (cod, wolffish,plaice, Witch flounder, haddock,  pollock,redfish, and halibut), pout and windowpane flounder (MA only), and an Other category for all other species. For the fleet diversity metric, gears include scallop dredge (gearcodes DRS, DSC, DTC, DTS), other dredges (gearcodes DRM, DRO, and DRU), gillnet (gearcodes GND, GNT, GNO, GNR, and GNS), hand (gearcode HND), longline (gearcodes LLB and LLP), bottom trawl (gearcodes OTB, OTF, OTO, OTC. OTS, OHS, OTR, OTT, and PTB), midwater trawls (gearcode OTM and PTM), pot (gearcodes PTL, PTW, PTC, PTE, PTF, PTH, PTL, PTO, PTS, and PTX), purse seine (gearcode PUR), and hydraulic clam dredge (gearcode DRC).Vessels were further grouped by length categories of less than 30 feet, 30 to 50 feet, 50 to 75 feet, and 75 feet and above. All revenue was deflated to real dollars using the "WPU0223" Producer Price Index with a base of January 2015. Stata code for data processing can be found at the NOAA-EDAB github repository in the tech-memo/data/Human_Dimensions_Code folder.
+<!-- For NOAA personnel: Code currently archived in the \\\\net\\home2\\mlee\\diversity\\code folder, while data is currently archived in \\\\net\\home2\\mlee\\diversity folder. -->
+
+Output data was then matched to vessel characteristics from the VPS VESSEL data set. For the permit-level estimate, species groups are based off of a slightly refined NESPP3 code, defined in the data as "myspp", which is further developed in the script to rectify inconsistencies in the data.
+
+Species groups used include Highly Migratory Species, Monkfish, Atlantic Sea Scallops, Shrimp, Skates, Atlantic Herring, Ocean Quahog, Surf Clam, Tilefish, Black Sea Bass and Fluke, Butterfish and Red Hake and Unknown Whiting, Bluefish, Spiny Dogfish, Illex, American Lobster, Loligo, Menhaden, Offshore hake, Scup, Sand Dabs, Pout, Wolffish, Winter Flounder, Yellowtail Flounder, Unspecified hakes, White hake, Halibut, Bluefish & Scup (NE only), New England Groundfish (cod, pollock, hadddock, Monkfish, Winter flounder, Witch flounder, White hake, Plaice, redfish), Mid-Atlantic Groundfish (cod, wolffish, plaice, Witch flounder, haddock,  pollock, redfish, and halibut), pout and windowpane flounder (MA only), and an "Other" category for all other species. 
+
+For the fleet diversity metric, gears include scallop dredge (gearcodes DRS, DSC, DTC, and DTS), other dredges (gearcodes DRM, DRO, and DRU), gillnet (gearcodes GND, GNT, GNO, GNR, and GNS), hand (gearcode HND), longline (gearcodes LLB and LLP), bottom trawl (gearcodes OTB, OTF, OTO, OTC. OTS, OHS, OTR, OTT, and PTB), midwater trawls (gearcode OTM and PTM), pot (gearcodes PTL, PTW, PTC, PTE, PTF, PTH, PTL, PTO, PTS, and PTX), purse seine (gearcode PUR), and hydraulic clam dredge (gearcode DRC).Vessels were further grouped by length categories of less than 30 feet, 30 to 50 feet, 50 to 75 feet, and 75 feet and above. All revenue was deflated to real dollars using the "WPU0223" Producer Price Index with a base of January 2015. Stata code for data processing is available [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/data/Human_Dimensions_code).
 
 ### Data analysis
 This permit-level species effective Shannon index is calculated as 
