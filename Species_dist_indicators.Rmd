@@ -18,8 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
   
-**Public availability statement**: Source data are available here:
-https://inport.nmfs.noaa.gov/inport/item/22560
+**Public availability statement**: Source data are available upon request (read more [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data may be downloaded [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_2018.html).
 
 
 ## Methods
@@ -28,7 +27,7 @@ Three metrics quantifying spatial-temporal distribution shifts within fish popul
 Once mean distance is found, depth of occurrence and distance to coastline can be calculated for each species' positional center. Analyses present in the State of the Ecosystem (SOE) reports include mean depth and along-shelf distance for Atlantic cod, sea scallop, summer flounder, and black sea bass. 
 
 
-### Data source(s) (All types)
+### Data sources
 Data for these indicators were derived from fishery-independent bottom trawl survey data collected by the Northeast Fisheries Science Center (NEFSC). 
 
 
@@ -36,18 +35,15 @@ Data for these indicators were derived from fishery-independent bottom trawl sur
 
 
 ### Data analysis
-R packages used:
-```{r packages, echo = T, eval = F}
-require(raster)
-require(ncdf4)
-library(stats)
-library(geosphere)
-library(plyr)
-```
-
 
 R code:
 ```{r analysis, echo = T, eval = F}
+
+library(raster)
+library(ncdf4)
+library(stats)
+library(geosphere)
+library(plyr)
 
 # set wd C:\1_analyses_ne_shelf\along shelf pos
 #setwd(choose.dir(default=getwd()))
