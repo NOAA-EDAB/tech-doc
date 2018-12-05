@@ -1,4 +1,4 @@
-# Aquaculture Indicators
+# Aquaculture
 
 ```{r setup,  echo = F, message=F}
 
@@ -11,20 +11,20 @@ library(rmarkdown)
 
 **Indicator category**: Synthesis of published information
 
-**Contributor(s)**: Sean Hardison
+**Contributor(s)**: Sean Hardison, Lisa Calvo, Karl Roscher
   
 **Data steward**: Sean Hardison <sean.hardison@noaa.gov>
   
-**Point of contact**: Sean Hardison <sean.hardison@noaa.gov>
+**Point of contact**: Sean Hardison <sean.hardison@noaa.gov> 
   
-**Public availability statement**: Source data are publicly available in referenced reports.
+**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_2018.html). 
 
 
 ## Methods
 Aquaculture data included in the SOE report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
 
 
-### Data source(s) (All types)
+### Data sources
 Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@Hudson2017a]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@ACC2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@Calvo2017]. 
 
 
