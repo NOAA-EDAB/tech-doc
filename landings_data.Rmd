@@ -5,6 +5,7 @@
 #Load packages
 library(knitr)
 library(rmarkdown)
+library(dplyr)
 ```
 
 **Description**: Commercial landings data pull
@@ -62,7 +63,11 @@ The majority of landings data are associated with a NAFO Statistical Area.  For 
 gear.table <- data.frame('Major gear' = c('Otter Trawls', 'Scallop Dredges', 
                                         'Other Dredges', 'Gillnets', 'Longlines',
                                         'Seines', 'Pots/Traps', 'Midwater', 'Other'))
-kable(gear.table,caption="Gear types")
+names(gear.table) <- "Major gear"
+knitr::kable(gear.table,
+      caption="Gear types", format = "html") %>%
+  kableExtra::kable_styling(full_width = F) %>% 
+  kableExtra::column_spec(1,width = "8cm")
 ```
 
 ```{r statareas, eval = T, echo = F}
@@ -70,7 +75,8 @@ area.table <- data.frame(EPU = c('Gulf of Maine', 'Georges Bank', 'Mid-Atlantic'
                          'Stat Areas' = c('500, 510, 512, 513, 514, 515',
                                         '521, 522, 523, 524, 525, 526, 551, 552, 561, 562',
                                         '537, 539, 600, 612, 613, 614, 615, 616, 621, 622, 625, 626, 631, 632'))
-kable(area.table, caption = "Statistical areas making up each EPU")
+names(area.table)[2] <- "Stat Areas"
+kable(area.table, caption = "Statistical areas making up each EPU", format = "html")
 ```
 
 The final step of Comlands is to pull the foreign landings from the [NAFO database](https://www.nafo.int/Data/frames).  US landings are removed from this extraction so as not to be double counted.  NAFO codes and CFDBS codes differ so the script rectifies those codes to ensure that the data is seamlessly merged into the domestic landings.  Foreign landings are flagged so that they can be removed if so desired.
