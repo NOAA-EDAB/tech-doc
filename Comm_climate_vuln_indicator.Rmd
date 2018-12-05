@@ -18,29 +18,28 @@ library(rmarkdown)
   
 **Point of contact**: Lisa L. Colburn
   
-**Public availability statement**: The fisheries data used for this analysis includes confidential information and is not available to the public. A Data Access Waiver will be need to access it. 
+**Public availability statement**: The fisheries data used for this analysis includes confidential information and is not available to the public. 
 
   
 
 ## Methods
-### Data source(s) (All types)
+### Data sources
 The data used in community climate vulnerability analyses were derived from the following sources in partnership with the Atlantic Coastal Cooperative Statistics Program's (ACCSP) Standard Atlantic Fisheries Information System (SAFIS).
 
 ```{r source table, echo = F, include = T, results='asis'}
 tabl <- '
-|Variable Name     | Description                                  |
+|Database Name     | Description                                  |
 |:-------------------------|:-------------------------------------|
 |Cfdersyyyy|The dealer data are transaction-level pricing at the level of the "market-category." These data are primarily generated through mandatory reporting by federally-permitted fish dealers. The federal reporting is supplemented with data from non-federally-permitted (state-only) fish dealers. Data are currently reported electronically in partnership with ACCSP through SAFIS.           |
 |Cfvessyyy|A related database that contains permit information.   |
-|Port|Contains the post associated with the vessel.               |
-|Statenm|Contains the state of the mailing address of the owner.  |
 
 '
 cat(tabl)
 ```
 
+In these databases, the variable "port" contains the post associated with the vessel. The variable "Statenm" refers to the state of the mailing address of the owner.
+
 ### Data extraction 
-Write SQL query here
 ```{sql, eval = F, echo = T}
 create table cfders2011 as
 select *
