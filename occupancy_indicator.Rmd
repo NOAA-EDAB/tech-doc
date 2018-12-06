@@ -24,10 +24,10 @@ library(rmarkdown)
 Habitat area with a probability of occupancy greater than 0.5 was modeled for many [species throughout the NE-LME](https://www.nefsc.noaa.gov/ecosys/current-conditions/occupancy-change.html) using random forest decision tree models. 
 
 ### Data source(s)
-Models were parameterized using a suite of static and dynamic predictor variables, with occurrence and catch per unit effort (CPUE) of species from spring and fall Northeast Fisheries Science Center bottom trawl surveys (BTS) serving as response variables. Sources of variables used in the analyses are described below.
+Models were parameterized using a suite of static and dynamic predictor variables, with occurrence and catch per unit effort (CPUE) of species from spring and fall Northeast Fisheries Science Center (NEFSC) bottom trawl surveys (BTS) serving as response variables. Sources of variables used in the analyses are described below.
 
 #### Station depth
-The NEFSC BTS data includes depth observations made concurrently with trawls at each station. Station depth was a static variable for these analyses. 
+The NEFSC BTS data included depth observations made concurrently with trawls at each station. Station depth was a static variable for these analyses. 
 
 #### Ocean temperature and salinity
 Sea surface and bottom water temperature and salinity measurements were included as dynamic predictor variables in the model, and were collected using Conductivity/Temperature/Depth (CTD) instruments. Ocean temperature and salinity measurements had the highest temporal coverage during the spring (February-April) and fall (September-November) months. Station salinity data were available between 1992-2016. 
