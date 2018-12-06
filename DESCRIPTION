@@ -40,7 +40,8 @@ Imports:
   lubridate, 
   rgeos,
   Survdat,
-  kableExtra
+  kableExtra,
+  here
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
