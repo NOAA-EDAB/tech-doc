@@ -17,13 +17,13 @@ library(rmarkdown)
   
 **Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
   
-**Public availability statement**: Source data are publicly available. 
+**Public availability statement**: Source data are available upon request (see [Survdat](#survdat), [CHL/PP](#chl-pp), and Data Sources below for more information). Model-derived time series are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_2018.html).
 
 
 ## Methods
 Habitat area with a probability of occupancy greater than 0.5 was modeled for many [species throughout the NE-LME](https://www.nefsc.noaa.gov/ecosys/current-conditions/occupancy-change.html) using random forest decision tree models. 
 
-### Data source(s)
+### Data sources
 Models were parameterized using a suite of static and dynamic predictor variables, with occurrence and catch per unit effort (CPUE) of species from spring and fall Northeast Fisheries Science Center (NEFSC) bottom trawl surveys (BTS) serving as response variables. Sources of variables used in the analyses are described below.
 
 #### Station depth
