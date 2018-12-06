@@ -20,7 +20,7 @@ library(rmarkdown)
 
 
 ## Methods
-### Data source(s)
+### Data sources
 Level 1A ocean color remote sensing data from the Sea-viewing Wide Field-of-view Sensor (SeaWiFS) [@NASA1] on the OrbView-2 satellite and the Moderate Resolution Imaging Spectroradiometer (MODIS) [@NASA2] on the Aqua satellite were acquired from the NASA Ocean Biology Processing Group (OBPG).  Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder [@Casey2010; @Saha2018] and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 [@SOE4; @SOE14] data.  
 
 ### Data extraction
@@ -84,4 +84,38 @@ Weekly, monthly and annual anomalies were calculated for each product by taking 
 
 The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files.  The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.  For the extended time series, the 1998-2007 data use the SeaWiFS ocean color products and MODIS-Aqua products were used from 2008 to 2017.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
 
+#### Plotting
 
+The following figure shows primary production anomaly plotted with the small-large copepod index in the Mid-Atlantic Bight. 
+
+```{r, MAB-zooplankton, fig.cap="Small-large copepod index with primary productivity anomaly in the Mid-Atlantic.", message=F, warning=F}
+
+source("R/BasePlot_source.R")
+par(mar = c(4,4.75,2,4))
+
+#small-large copepod index
+mab_prim_prod <- finder(SOE.data.2018, "annual ppd ratio anomaly MAB")
+mab_copepod_anom <- finder(SOE.data.2018, "Small-Large copepod Index MAB")
+usr <- par("usr")
+plot(NULL,ylim = c(-1.5,1.5), pch = 16, lwd = 3,xlim = c(1998,2017),
+       cex = 1, ylab = "", las = 1, xaxt = "n", cex.axis = 1, xlab = "")
+abline(h = 0, col  = "grey", lwd = 3, lty = 2) 
+with(SOE.data.2018[SOE.data.2018$Var == mab_copepod_anom,], points(Time[22:39], Value[22:39],
+       type = "o", col = "black", ylim = c(-1.5,1.5), pch = 16, lwd = 3,las = 1))
+mtext(side = 2, line = 3, "Small-Lg Copepod Index", cex = 1.1)
+
+par(new = T)
+
+#primary productivity
+with(SOE.data.2018[SOE.data.2018$Var ==  mab_prim_prod[1],], plot(Time, Value,
+       type = "o", col =  "springgreen2", ylim = c(.8,1.25), ylab = "", axes = F,log = "y",
+       yaxt = "n", pch = 16, lwd = 3, cex = 1, las = 1, xaxt = "n",xlab = ""))
+axis(side = 4, las = 1, cex.axis = 1)
+axis(side = 1, cex.axis = 1)
+mtext(side = 4, line = 3, "Mean Primary Production Ratio", cex = 1.2)
+mtext(side = 1, "", cex = 1.2, text = "Year",line = 2.5)
+legend("bottomright",
+         legend = c("Copepod Index", "Prim. Prod. Ratio"), col = c("black","springgreen2"),
+         bty = "n", lwd = 3)
+
+```
