@@ -6,6 +6,7 @@
 #Load packages
 library(knitr)
 library(rmarkdown)
+library(dplyr)
 
 
 ```
@@ -19,43 +20,33 @@ library(rmarkdown)
   
 **Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
   
-**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html)
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html).
 
 
 ## Methods
 Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
 
-### Data source(s) (All types)
+### Data sources
 This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) .
 
 
 ### Data extraction 
 
-<style type="text/css">
-.table {
-    width: 35%; 
-    margin-left:30%; 
-}
-</style>
+```{r coordinates, echo = F, eval = T, results='asis'}
+df <- data.frame(  
+  Longitude = c(-74,-74,-72,-70,-70,-70,-68,-68),
+  Latitude = c(40,38,40,44,42,40,44,42)
+  )
 
-<!-- **Table 1:** Coordinates used in NOAA ERSST V5 data extraction. -->
-```{r coordinates, echo = F, eval = F, results='asis'}
-tab <- "
-|Longitude|Latitude|
-|:-:|:-:|
-|-74| 40|
-|-74| 38|
-|-72| 40|
-|-70| 44|
-|-70| 42|
-|-70| 40|
-|-68| 44|
-|-68| 42|
-"
-cat(tab)
+knitr::kable(df,
+      caption="Coordinates used in NOAA ERSST V5 data extraction.",
+      format = "html",
+      align = "c") %>%
+  kableExtra::kable_styling(full_width = F) %>% 
+  kableExtra::column_spec(c(1,2), width =  "4cm")
 ```
 
-**R code used in extraction and processing**
+R code used in extraction and processing:
 ```{r extraction, echo = T, eval = F}
 # Include R code here
 # all year
