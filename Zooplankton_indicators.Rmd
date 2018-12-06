@@ -1,4 +1,5 @@
-# Zooplankton
+# Zooplankton {#zooabund}
+
 ```{r setup,  echo = F, message=F}
 
 #Load packages
@@ -9,25 +10,23 @@ library(rmarkdown)
 
 **Description**: Zooplankton abundance anomalies
 
-**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis: not yet published; Published methods
+**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods
 
 **Contributor(s)**: Ryan Morse
   
-**Data steward**: Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>, Mike Jones, NEFSC DMS, <michael.jones@noaa.gov>
+**Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>; Mike Jones, <michael.jones@noaa.gov>
   
-**Point of contact**: Ryan Morse, NEFSC EDAB, <ryan.morse@noaa.gov>, Harvey Walsh, NEFSC OCB, <harvey.walsh@noaa.gov>
+**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>
   
-**Public availability statement**: Data are publicly available here:
-ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
+**Public availability statement**: Source data are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_2018.html).
 
 ## Methods
 
-
-### Data source(s)
+### Data sources
 Zooplankton data are from the NOAA MARMAP and EcoMon cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
 
 ### Data extraction 
-Data are from the publicly available zooplankton dataset on the NOAA ftp site. The excel file has a list of excluded samples and cruises based on @Kane2007 and @Kane2011.
+Data are from the publicly available zooplankton dataset on the NOAA FTP server. The excel file has a list of excluded samples and cruises based on @Kane2007 and @Kane2011.
 
 R code used in extraction process.
 ```{r r_extract, echo = T, eval = F}
@@ -37,11 +36,15 @@ ZPD=openxlsx::read.xlsx(URL, sheet='Data')
 ```
 
 ### Data analysis
-Data are processed similarly to @Kane2007 and @Perretti2017a, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. Abundance anomalies are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
+Data are processed similarly to @Kane2007 and @Perretti2017a, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
 
-R packages used:
-```{r packages, echo = T, eval = F}
-sessionInfo(package = NULL)
+Abundance anomalies are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
+
+
+R code used for analysis:
+```{r analysis, echo = T, eval = F}
+
+#libraries
 library(vegan)
 library(stats)
 library(mgcv)
@@ -52,10 +55,7 @@ library(sp)
 library(maptools)
 library(marmap)
 library(rgeos)
-```
 
-R code used for analysis:
-```{r analysis, echo = T, eval = F}
 
 # load data
 URL='ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx'
@@ -246,5 +246,17 @@ dataTlg=scs.yr.anom[,lgtx]
 anom.scs=rowMeans(dataTsm)-(dataTlg)
 ```
 
+### Plotting
 
+```{r, zooplankton-abundance, fig.cap = "*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight.", message = F, warning=F}
+source("R/BasePlot_source.R")
+
+#C. typicus abundance anomaly
+opar <- par(mar = c(4,4.75,2,4))
+soe.plot(SOE.data.2018, "Time", "Centropages typicus abundance anomaly MAB", 
+         anomaly = T, stacked = "A", suppressAxis = T, x.start = 1986, cex.stacked = 1.75)
+soe.stacked.axis("Year", "Abundance anomaly", rel.x.text = 1.2, rel.y.text = 1.2, 
+                 y.line = 3.1, outer = F)
+
+```
 
