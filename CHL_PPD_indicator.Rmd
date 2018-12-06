@@ -84,9 +84,9 @@ Weekly, monthly and annual anomalies were calculated for each product by taking 
 
 The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files.  The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.  For the extended time series, the 1998-2007 data use the SeaWiFS ocean color products and MODIS-Aqua products were used from 2008 to 2017.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
 
-#### Plotting
+### Plotting
 
-The following figure shows primary production anomaly plotted with the small-large copepod index in the Mid-Atlantic Bight. 
+The following figures show examples of how Chlorophyll *a* and primary production data were incoporated into the 2017 State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight. 
 
 ```{r, MAB-zooplankton, fig.cap="Small-large copepod index with primary productivity anomaly in the Mid-Atlantic.", message=F, warning=F}
 
@@ -119,3 +119,180 @@ legend("bottomright",
          bty = "n", lwd = 3)
 
 ```
+
+Chl *a* and primary production data for 2017-2018 were also examined in relation to the long-term means of each series. The figure below shows data specific to the Mid-Atlantic Bight. 
+
+```{r SST-PPD-CHL-MAB, fig.cap="Primary production (A) and Chl *a* (B) over 2017 (colored polygons) compared against long-term mean (black line) and +/- 1 standard deviation (grey polygon) in the Mid-Atlantic",echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
+## SST
+par(mar = c(4, 4, 2, 1), mfrow = c(1,2))
+
+## primary production
+doy <- seq(1,52,1)
+ppd_val_2017 <- SOE.data.2018[SOE.data.2018$Var == "geometric mean ppd 2017 MAB",]$Value
+ppd_val_LT <- SOE.data.2018[SOE.data.2018$Var == "geometric mean ppd long term MAB",]$Value
+ppd_val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sd ppd long term MAB",]$Value
+
+above_mean <- NULL
+for (i in 1:length(ppd_val_2017)){
+  if (ppd_val_2017[i] >= ppd_val_LT[i]){
+    above_mean[i] <- ppd_val_2017[i]
+  } else if (ppd_val_2017[i] < ppd_val_LT [i]){
+    above_mean[i] <- NA
+  }
+}
+
+below_mean <- NULL
+for (i in 1:length(ppd_val_2017)){
+  if (ppd_val_2017[i] <= ppd_val_LT[i]){
+    below_mean[i] <- ppd_val_2017[i]
+  } else if (ppd_val_2017[i] > ppd_val_LT [i]){
+    below_mean[i] <- NA
+  }
+}
+
+above_sd <- NULL
+for (i in 1:length(ppd_val_2017)){
+  if (ppd_val_2017[i] >= ppd_val_LT_sd[i] + ppd_val_LT[i]){
+    above_sd[i] <- ppd_val_2017[i]
+  } else if (ppd_val_2017[i] < ppd_val_LT_sd [i] + ppd_val_LT[i]){
+    above_sd[i] <- NA
+  }
+}
+
+below_sd <- NULL
+for (i in 1:length(ppd_val_2017)){
+  if (ppd_val_2017[i] <= ppd_val_LT[i] - ppd_val_LT_sd[i]){
+    below_sd[i] <- ppd_val_2017[i]
+  } else if (ppd_val_2017[i] > ppd_val_LT[i] - ppd_val_LT_sd [i]){
+    below_sd[i] <- NA
+  }
+}
+
+
+#Lines for polygons
+above_sd[is.na(above_sd)] <- ppd_val_LT_sd[which(is.na(above_sd))] + ppd_val_LT[which(is.na(above_sd))]
+below_sd[is.na(above_sd)] <- ppd_val_LT[which(is.na(below_sd))] - ppd_val_LT_sd[which(is.na(below_sd))] 
+above_mean[is.na(above_mean)] <- ppd_val_LT[which(is.na(above_mean))]
+below_mean[is.na(below_mean)] <- ppd_val_LT[which(is.na(below_mean))]
+
+upper <- ppd_val_LT_sd + ppd_val_LT
+lower <- ppd_val_LT - ppd_val_LT_sd
+
+#Null figure
+plot(NULL, xlim = c(doy[1],doy[(length(doy))]),ylim = c(0,2.25), las = 1, 
+     ylab = "", yaxt = "n", xaxt = "n", xlab = "")
+axis(2, cex.axis = 1.25, las = 1)
+axis(1,  labels = c("Jan","Mar","May","July","Sep","Nov","Jan"), 
+     at = c(1,8,16,24,32,40,48), cex.axis= 1.25)
+mtext(2, line = 2.5, text = expression(paste("Primary Production (gC m"^-2*"d"^-1*")")), cex = 1.1)
+mtext(1, line = 2.5, text = "Time", cex = 1.1)
+text(2,2.25*.95,"A", cex = 1.5)
+# +/- 1 sd
+polygon(c(doy, rev(doy)),
+        c(upper, rev(lower)),
+        col = "grey85", border = NA)
+
+#Fills plot
+polygon(c(doy, rev(doy)),
+        c(below_mean + (ppd_val_LT-below_mean), rev(below_mean)),
+        col = "lightblue", border = NA)
+polygon(c(doy, rev(doy)),
+        c(above_mean - (above_mean-ppd_val_LT), rev(above_mean)),
+        col = "darkolivegreen1", border = NA)
+polygon(c(doy, rev(doy)),
+        c(above_sd - (above_sd-(ppd_val_LT + ppd_val_LT_sd)), rev(above_sd)),
+        col = "darkolivegreen3", border = NA)
+polygon(c(doy, rev(doy)),
+        c(below_sd + (below_sd-(ppd_val_LT - ppd_val_LT_sd)), rev(below_sd)),
+        col = "blue", border = NA)
+points(doy,ppd_val_LT, type = "l", lwd = 1, "grey90")
+#points(doy,ppd_val_2017, type = "l", lwd = .5, "black")
+box(lty = 'solid', col = 'black',lwd = 1.25)
+
+par(mar = c(4, 4, 2, 1))
+## Chlorophyll a
+chl_val_2017 <- SOE.data.2018[SOE.data.2018$Var == "geometric mean chl 2017 MAB",]$Value
+chl_val_LT <- SOE.data.2018[SOE.data.2018$Var == "geometric mean chl long term MAB",]$Value
+chl_val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sd chl long term MAB",]$Value
+
+above_mean <- NULL
+for (i in 1:length(chl_val_2017)){
+  if (chl_val_2017[i] >= chl_val_LT[i]){
+    above_mean[i] <- chl_val_2017[i]
+  } else if (chl_val_2017[i] < chl_val_LT [i]){
+    above_mean[i] <- NA
+  }
+}
+
+below_mean <- NULL
+for (i in 1:length(chl_val_2017)){
+  if (chl_val_2017[i] <= chl_val_LT[i]){
+    below_mean[i] <- chl_val_2017[i]
+  } else if (chl_val_2017[i] > chl_val_LT [i]){
+    below_mean[i] <- NA
+  }
+}
+
+above_sd <- NULL
+for (i in 1:length(chl_val_2017)){
+  if (chl_val_2017[i] >= chl_val_LT_sd[i] + chl_val_LT[i]){
+    above_sd[i] <- chl_val_2017[i]
+  } else if (chl_val_2017[i] < chl_val_LT_sd [i] + chl_val_LT[i]){
+    above_sd[i] <- NA
+  }
+}
+
+below_sd <- NULL
+for (i in 1:length(chl_val_2017)){
+  if (chl_val_2017[i] <= chl_val_LT[i] - chl_val_LT_sd[i]){
+    below_sd[i] <- chl_val_2017[i]
+  } else if (chl_val_2017[i] > chl_val_LT[i] - chl_val_LT_sd [i]){
+    below_sd[i] <- NA
+  }
+}
+
+
+#Lines for polygons
+above_sd[is.na(above_sd)] <- chl_val_LT_sd[which(is.na(above_sd))] + chl_val_LT[which(is.na(above_sd))]
+below_sd[is.na(above_sd)] <- chl_val_LT[which(is.na(below_sd))] - chl_val_LT_sd[which(is.na(below_sd))] 
+above_mean[is.na(above_mean)] <- chl_val_LT[which(is.na(above_mean))]
+below_mean[is.na(below_mean)] <- chl_val_LT[which(is.na(below_mean))]
+
+upper <- chl_val_LT_sd + chl_val_LT
+lower <- chl_val_LT - chl_val_LT_sd
+
+#Null figure
+plot(NULL, xlim = c(doy[1],doy[(length(doy))]),ylim = c(0,2), las = 1, 
+     ylab = "", yaxt = "n", xaxt = "n", xlab = "")
+axis(2, cex.axis = 1.25, las = 1)
+axis(1,  labels = c("Jan","Mar","May","July","Sep","Nov","Jan"), 
+     at = c(1,8,16,24,32,40,48), cex.axis= 1.25)
+mtext(2, line = 2.5, text = expression(paste("Chl a (mg m"^-3*")")), cex = 1.1)
+mtext(1, line = 2.5, text = "Time", cex = 1.1)
+
+# +/- 1 sd
+polygon(c(doy, rev(doy)),
+        c(upper, rev(lower)),
+        col = "grey85", border = NA)
+
+#Fills plot
+polygon(c(doy, rev(doy)),
+        c(below_mean + (chl_val_LT-below_mean), rev(below_mean)),
+        col = "lightblue", border = NA)
+polygon(c(doy, rev(doy)),
+        c(above_mean - (above_mean-chl_val_LT), rev(above_mean)),
+        col = "darkolivegreen1", border = NA)
+polygon(c(doy, rev(doy)),
+        c(above_sd - (above_sd-(chl_val_LT + chl_val_LT_sd)), rev(above_sd)),
+        col = "darkolivegreen3", border = NA)
+polygon(c(doy, rev(doy)),
+        c(below_sd + (below_sd-(chl_val_LT - chl_val_LT_sd)), rev(below_sd)),
+        col = "blue", border = NA)
+points(doy,chl_val_LT, type = "l", lwd = 1, "grey90")
+#points(doy,chl_val_2017, type = "l", lwd = .5, "black")
+box(lty = 'solid', col = 'black',lwd = 1.25)
+text(2,2*.95,"B", cex = 1.5)
+
+```
+
+
