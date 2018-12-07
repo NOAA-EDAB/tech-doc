@@ -217,16 +217,23 @@ ORDER BY SPECIES, YEAR, TRIPID, HAUL
 ### Data analysis
 Time series were summed by year and plotted, and mapped data for individual records were plotted according to the location where gear was hauled. As coordinate data were not always available for each record, the map does not include all occurrences of southern kingfish, but was included for spatial context.
 
-R code used in aggregation and plotting
+R code use to aggregate data:
+```{r agg_code, eval = F, echo = T}
+library(dplyr)
+
+total_by_year<- source %>%
+  filter(SPECIES == "KINGFISH, SOUTHERN") %>% #Filter species
+  group_by(YEAR) %>%
+  dplyr::summarise(n = n()) #Sum observations per year
+```
+
+### Plotting
+
 ```{r analysis, echo = T, eval = F}
 
-# Aggregating time series from source data=====================
-# d <- source[source$SPECIES == "KINGFISH, SOUTHERN",]
-# total_by_year <- d %>% group_by(YEAR) %>% dplyr::summarise(n = n())
-#==============================================================
-
 #For map and plot. Latitude and longitude data for this figure are not publicly available. 
-sk.dat <- SOE.data.2018[grepl("Lat",SOE.data.2018$Units) & grepl("Southern Kingfish",SOE.data.2018$Var),]
+sk.dat <- SOE.data.2018[grepl("Lat",SOE.data.2018$Units) &
+                          grepl("Southern Kingfish",SOE.data.2018$Var),]
 lon <- sk.dat[as.numeric(sk.dat$Value) < 0,]$Value
 lat <- sk.dat[as.numeric(sk.dat$Value) > 0,]$Value
 
@@ -274,3 +281,10 @@ barplot(occur,time, col = matlab.like2(8), xlab = c("Time"),ylab = "S. Kingfish 
 axis(1,at = seq(1250,18500,length.out = 8),labels = c("2010","2011","2012","2013",
                                             "2014","2015","2016","2017"), cex.axis=1)
 ```
+
+```{r SK-plot, fig.align='center', echo = F, fig.cap = "Verified records of Southern Kingfish occurrence in the Mid-Atlantic."}
+image.dir <- here::here('images')
+
+knitr::include_graphics(file.path(image.dir, 'southern_kingfish.PNG'))
+```
+
