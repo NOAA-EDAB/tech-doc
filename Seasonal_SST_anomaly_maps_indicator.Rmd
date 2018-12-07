@@ -186,7 +186,7 @@ summer_anom <- seasonal_sst_2017[[3]] - summer_mean
 fall_anom <- seasonal_sst_2017[[4]] - fall_mean
 ```
 
-### Plotting:
+### Plotting
 ```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
 
 #Source constants for GIS code
