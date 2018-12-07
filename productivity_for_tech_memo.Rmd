@@ -42,7 +42,7 @@ Further details of methods described in @perretti_regime_2017.
 
 ### Plotting
 
-```{r analysis, echo = T, eval = T, message=F, warning=F}
+```{r analysis, echo = T, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Northeast Large Marine Ecosystem."}
 
 data.dir  <- here::here('data')
 
@@ -197,7 +197,7 @@ plot_stackbarcpts_single(YEAR = dat_spec_rec_forSOE$Time,
 
 ```
 
-```{r plot_all, fig.height=8}
+```{r plot-all, fig.height=8, fig.cap = "Groundfish productivity visualized by EPU."}
 
 
 # Recruit per spawner (by EPU)
