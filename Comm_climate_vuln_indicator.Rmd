@@ -178,7 +178,7 @@ run;
 
 ```
 
-### Data analysis
+### Data analysis and plotting
 
 The results described below were developed using the methodology described in @colburn_indicators_2016.
 
@@ -197,11 +197,13 @@ vulnerability/ total value of landings \* 100
 
 If a community received a dominant score (50% or more) for any of the above categories, % VH &, %M, or %L, then the community received a respective community species vulnerability ranking of High, Moderate, or Low.  For example, if 90% of the total value landed a community is contributed by species classified as having very high or high climate change vulnerability, then this community gets "Very High/High" community species vulnerability. In case of no dominant percentage identified, the community gets a "Mixed" community species vulnerability ranking. 
 
-2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray. 
+2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray.
 
 
-
-
+```{r 'species-vulnerability' , fig.cap="Commercial species vulnerability to climate change in in New England fishing communities.",fig.align = 'center', echo = F, fig.pos='H', fig.width=8}
+image.dir <- here::here("images")
+knitr::include_graphics(file.path(image.dir, 'Species_vulnerability_NE.jpg'))
+```
 
 
 
