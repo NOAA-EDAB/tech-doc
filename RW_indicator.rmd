@@ -32,3 +32,21 @@ Data were collected from existing reports and validated by report authors.
 ### Data analysis
 Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
 
+### Plotting
+
+```{r rw-abundance, fig.cap="North Atlantic right whale population estimates shown with 95% credible intervals.",echo = T, message=F, warning=F,  fig.pos='H', fig.height = 4.5, fig.width=7}
+
+source("R/BasePlot_source.R")
+
+par(mar = c(5,5,4,1))
+soe.plot(SOE.data.2018, 'Time', "right_whale_median", rel.y.num = 1.2, 
+         full.trend = F, lwd = 1.5, point.cex = 1, end.start = 2007,
+         x.label = 'Year', y.label = 'Abundance, n', 
+         rel.y.text = 1)
+
+lw_CI <- SOE.data.2018[Var == 'right_whale_lower_95', list(Time, Value)]
+up_CI <- SOE.data.2018[Var == 'right_whale_upper_95', list(Time, Value)]
+points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
+points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
+
+```
