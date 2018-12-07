@@ -96,3 +96,22 @@ Prior to fitting the occupancy models, predictor variables were tested for multi
 #### Selection criteria and variable importance
 The irr R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.  
 
+### Plotting
+
+```{r occupancy-MAB, fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = T, fig.show='hold', warning = F, message = F,fig.pos='H'}
+
+source("R/BasePlot_source.R")
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data.2018, "Time", "summer flounder spring occupancy", stacked = "A",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "summer flounder fall occupancy", stacked = "B",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", expression("Habitat Area, 10"^3*" km"^2), y.line = 2.5)
+
+```
+
