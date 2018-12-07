@@ -281,13 +281,14 @@ run;
 
 ### Plotting
 
+```{r condition-factor, eval = T, fig.width = 8, fig.cap = "Normalized condition factors of MAFMC managed species.", message=F, warning=F}
 
-```{r condition-factor, eval = F}
+library(dplyr)
+library(tidyr)
+
 data.dir <- here::here("data")
 
-
-#-------------------------------------------------------------------------------
-#User created functions
+#Function for normalizing 
 ztrans <- function(x){
     meanx <- mean(x, na.rm = T)
     sdx   <- sd(  x, na.rm = T)
@@ -295,52 +296,45 @@ ztrans <- function(x){
     return(z)
 }
 
-
-#-------------------------------------------------------------------------------
-
-#get data
+#Get data
 CF <- read.csv(file.path(data.dir, "MAFMC_RelativeWeight_2018.csv"))
 
-#combine factors and organize
-rows <- paste(CF$species,CF$stock,CF$sex)
-rows <- tolower(rows) %>% capitalize() 
-CF <- CF %>% select(-c(species, stock, sex))
-names(CF) <- gsub("X","",names(CF))
+#Processing
+CF_mat <- CF %>%
+  unite(.,Var,c("species","stock","sex"), sep =", ") %>% #Unite groupings
+  gather(.,Time,Value,-Var) %>% #Convert to long
+  mutate(Time = as.numeric(gsub("X","",Time))) %>% #Tidy years 
+  group_by(Var) %>% 
+  mutate(Value = ztrans(Value)) %>% #Normalize
+  spread(.,Time,Value) %>% #Convert to wide for plotting
+  arrange(Var) 
 
-#standardize data
-CF <- as.data.frame(apply(CF,1,ztrans))
-
-#set rowname and transpose for d3heatmap
-CF <- CF %>% `names<-`(rows)
-CF <- as.data.frame(t(CF))
-
-
+#Figure palette
 graph.colors<-colorRampPalette(c('#C6E2FF','#00008B'))
 
 #Main figure
 par(mar = c(2, 2, 3, 18), fig = c(0, 1, 0.1, 1))
 
-#image rotates matrix 90 degrees so use transverse matrix and order variables in reverse order in .csv file
-image(z = t(CF.data),
-      breaks = c(-10, -1, 0, 1, 10), col = graph.colors(4), 
-      xlim = c(0,1), ylim = c(0,1), axes = F, xlab = '', ylab = '', useRaster = T)
+#Image rotates matrix 90 degrees so use transverse matrix
+image(z = t(as.matrix(CF_mat[,2:27])),
+      breaks = c(-10, -1, 0, 1, 10), col = graph.colors(4),
+      xlim = c(0,1), ylim = c(0-0.037,1+0.037), axes = F,
+      xlab = '', ylab = '', useRaster = T)
 
-my.axis(3, at = image.x(length(unique(CF.fixed[, YEAR])))[seq(5, 25, 5)] - 
-            0.5 * (image.x(length(unique(CF.fixed[, YEAR])))[2]), 
-     labels = seq(1995, 2015, 5))
+#Set y axis labels
+row_names <- CF_mat$Var
+mtext(text = row_names,side = 4, las = 1,
+      cex = 0.7, at = seq(0,1,0.071),
+      line = 1)
 
-# axis(4, at = -, 
-#      label = paste(names(CF), 
-#                    names(CF)), las = T, lwd = 0)
-
-my.box()
-
-#Key
-par(mar = c(0.7, 0.5, 0.2, 0.5), fig = c(0.2, 0.5, 0, 0.1), new = T)
-image(x = image.x(4), z = t(matrix(1:4,1,4)), col = graph.colors(4), axes = F, 
+#Figure key
+par(mar = c(0.7, 0.5, 0.2, 0.5),
+    fig = c(0.2, 0.5, 0, 0.1),
+    new = T)
+image(x = seq(0,1,1/4), z = t(matrix(1:4,1,4)), col = graph.colors(4), axes = F, 
       xlim = c(0,1), ylim = c(0,1))
-axis(3, at = image.x(4), labels = c(-3, -1, 0, 1, 3), cex = 2)
-my.box()
+axis(3, at =  seq(0,1,1/4), labels = c(-3, -1, 0, 1, 3), cex = 2)
+
 
 
 ```
