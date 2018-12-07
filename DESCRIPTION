@@ -41,7 +41,8 @@ Imports:
   rgeos,
   Survdat,
   kableExtra,
-  here
+  here,
+  rerddap
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
