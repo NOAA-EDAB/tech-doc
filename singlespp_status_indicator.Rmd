@@ -76,32 +76,48 @@ library(ncdf4);library(marmap); library(magick)
 ```
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
-The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_2018.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
-```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold'}
-# analysis code
-data.dir  <- './data'
-image.dir <- './images'
+### Plotting
 
-dat <- read.csv(file.path(data.dir,"2017assess.csv"))
+The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
-stocks <- unique(dat$Entity.Name)
+```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold', message=F, warning=F}
+
+# Relative working directories
+data.dir  <- here::here('data')
+image.dir <- here::here('images')
+r.dir <- here::here('R')
+
+#Load current SOE ERDDAP data set IDs
+load(file.path(data.dir, "ERDDAP_datasets.Rdata"))
+
+#Source get_erddap function to query data
+source(file.path(r.dir,"get_erddap.R"))
+
+#Data queries
+dat <- get_erddap(df = erddap_datasets,
+                  id = "assess_soe_v1")
+
+decoder <- get_erddap(erddap_datasets,
+                      id = "assess_support_soe_v1")
+
+#Plotting code
+stocks <- unique(dat$Entity_Name)
 n.stocks <- length(stocks)
 
-decoder <- read.csv(file.path(data.dir,"2017decoder.csv"))
 # set up the headers for most.recent structure - will contain oldest Assessment.Year
 most.recent <- dat[1,]
 most.recent <- most.recent[-1,]
 
 for (i in 1:n.stocks){
-  temp <- dat[dat$Entity.Name == decoder$Entity.Name[i],]
-  most.recent <- rbind(most.recent,temp[temp$Assessment.Year == max(temp$Assessment.Year),])
+  temp <- dat[dat$Entity_Name == decoder$Entity_Name[i],]
+  most.recent <- rbind(most.recent,temp[temp$Assessment_Year == max(temp$Assessment_Year),])
 }
 #cbind(n.stocks,length(most.recent[,1]))
 
 # get the max of F.Flimit and F.Fmsy and the max of B.Blimit and B.Bmsy
-Frat <- most.recent$F.Fmsy
-Brat <- most.recent$B.Bmsy
+Frat <- most.recent$F_Fmsy
+Brat <- most.recent$B_Bmsy
 #Frat[6] <- most.recent$F.Flimit[6]  # Ocean Quahog use Flimit because no Fmsy
 #Frat[18] <- 0.88  # hardwire average of the two GOM models for GOM cod
 #Brat[18] <- 0.155 # hardwire average of the two GOM models for GOM cod
@@ -171,7 +187,7 @@ plot(NEBO$Brat,NEBO$Frat,xlim=x.r,ylim=y.r,xlab="B/Bmsy",ylab="F/Fmsy",pch=16,co
    title(expression(phantom("NEFMC and Joint") * " Stocks"), col.main="black")
    legend('topright',legend=NE.overfished,pch=NA,text.col=my.col[c(17,19,35)], title="Overfished, F \nStatus Unknown",title.col = "black", bty="n", text.width=strwidth("Offshore Hake"), inset=c(0,.05))
    legend('right',legend=NE.unknown,pch=NA,text.col=my.col[c(14,23,33,47,48)],title="Unknown Status", title.col = "black",bty="n")
-   text(NEBO$Brat,NEBO$Frat,labels=NEBO$Code,pos=NEBO$my.pos3,col=my.col[12:49],cex=0.8)
+   text(NEBO$Brat,NEBO$Frat,labels=NEBO$Code,pos=NEBO$my_pos3,col=my.col[12:49],cex=0.8)
 #if(saveplots) savePlot("NEFMC_Joint_stocks.png", type='png')
 #if(saveplots) dev.off()
 
