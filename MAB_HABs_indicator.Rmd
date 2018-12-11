@@ -32,7 +32,7 @@ Source data were obtained from VDH. Sampling, identification, and bloom characte
 ### Data extraction
 Data were extracted from a series of spreadsheets provided by the VDH. We quantified the number of algal blooms in each year reaching target cell density thresholds in the southern Chesapeake Bay.
 
-```{r packages, eval = F, echo=T, message=FALSE, warning=FALSE, include=T}
+```{r packages, eval = T, echo=T, message=FALSE, warning=FALSE, include=T}
 #SOE R packages
 
 library(readxl)
@@ -41,8 +41,9 @@ library(tidyr)
 library(stringr)
 ```
 
-```{r r_extract, echo = T, eval = F, message=F, warning=F}
+```{r r-extract,fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017.", echo = T, eval = T, message=F, warning=F}
 data.dir <- "data/CB_HAB"
+
 #Function to process data - cpm specifies cells per ml filter
 fixer <- function(cpm){
   hab_2007_2012 <- read_excel(file.path(data.dir,"Query_2007-2012.xlsx"))
@@ -176,11 +177,6 @@ legend(x = 2007, y = 80, legend = c(expression(paste("All reports >5000 cells ml
        col = c("black","indianred"),
        lwd = 2,
        bty = "n")
-```
-
-```{r echo = F, fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017."}
-image.dir <- './images'
-knitr::include_graphics(file.path(image.dir, 'MAB_HABs.png'))
 ```
 
 
