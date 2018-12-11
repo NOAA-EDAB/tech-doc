@@ -44,15 +44,25 @@ Further details of methods described in @perretti_regime_2017.
 
 ```{r analysis, echo = T, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Northeast Large Marine Ecosystem."}
 
-data.dir  <- here::here('data')
 
-load(file.path(data.dir,"dat_spec_rec_forSOE.Rdata"))
-load(file.path(data.dir,"dat_spec_rec_epu_forSOE.Rdata"))
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
 
 #### Functions for plotting ####
 library(ggplot2)
 library(rpart)
 library(dplyr)
+library(stringr)
+
+all_epu <- SOE.data.2018 %>%
+  filter(str_detect(Var, "All EPU productivity"))
+
+all_epu$Var <- str_trim(str_replace(all_epu$Var, "All EPU productivity",""))
+
 
 # Adjust plot properties
 adjustAxes <- 
@@ -186,9 +196,9 @@ plot_stackbarcpts <- function(YEAR, var2bar,
 }
 
 # Recruit per spawner (all stocks in one figure)
-plot_stackbarcpts_single(YEAR = dat_spec_rec_forSOE$Time,
-                         var2bar = dat_spec_rec_forSOE$Var,
-                         x = dat_spec_rec_forSOE$Value,
+plot_stackbarcpts_single(YEAR = all_epu$Time,
+                         var2bar = all_epu$Var,
+                         x = all_epu$Value,
                          titl = "",
                          xlab = "",
                          ylab = "Small fish per large fish biomass (anomaly)",
@@ -199,11 +209,15 @@ plot_stackbarcpts_single(YEAR = dat_spec_rec_forSOE$Time,
 
 ```{r plot-all, fig.height=8, fig.cap = "Groundfish productivity visualized by EPU."}
 
+by_epu <- SOE.data.2018 %>% filter(str_detect(Var, "productivity"),
+                                                    !EPU %in% c("All","SS"))
+by_epu$Var <- str_trim(str_replace(by_epu$Var,
+                                   " GOM productivity| GB productivity| MAB productivity", ""))
 
 # Recruit per spawner (by EPU)
 dat2plot <-
-  dat_spec_rec_epu_forSOE %>%
-  tidyr::spread(Region, Value)
+  by_epu %>%
+  tidyr::spread(EPU, Value)
 
 
 plot_stackbarcpts(YEAR = dat2plot$Time,
