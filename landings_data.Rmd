@@ -2168,7 +2168,50 @@ save(comland, file = file.path(out.dir, file.name))
 
 Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Species are also marked by which management body manages them.  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
 
+### Plotting
 
+```{r seafood-landings, fig.cap="NEFMC seafood specific landings (red) and total commericial landings (black) in Georges Bank (A: Apex predators, B: Piscivore, C: Planktivore, D: Benthivore, E: Benthos).",echo = T, warning = F,fig.pos='H', message = F, fig.align="center", fig.height=7}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+## Ecosystem-wide and managed species total landings
+opar <- par(mfrow = c(5, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
+
+soe.plot(SOE.data.2018, "Time","Apex Predator Landings GB", stacked = "A",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0,cex.stacked = 1.5 )
+
+soe.plot(SOE.data.2018, "Time", "Piscivore Landings GB", stacked = "B",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Piscivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data.2018, "Time", "Planktivore Landings GB", stacked = "C",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Planktivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data.2018, "Time", "Benthivore Landings GB", stacked = "D",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Benthivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data.2018, "Time", "Benthos Landings GB", stacked = "E",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Benthos NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.stacked.axis("Year", expression("Landings, 10"^3*"metric tons"), x.line = 2.7)
+
+```
 
 
 
