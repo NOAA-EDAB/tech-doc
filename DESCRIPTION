@@ -42,7 +42,7 @@ Imports:
   Survdat,
   kableExtra,
   here,
-  rerddap
+  purrr
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
