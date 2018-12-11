@@ -429,7 +429,16 @@ write.csv(out_data,file=outfile )
 
 ```{r asd-bsb,fig.cap="Black sea bass along-shelf distance trends in spring (A) and fall (B).", echo = T, fig.show='hold', warning = F, message = F,fig.pos='H'}
 
-source("R/BasePlot_source.R")
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
@@ -447,7 +456,6 @@ soe.stacked.axis("Year", "Mean along-shelf distance, km", y.line = 3.0)
 
 ```{r mean-depth-bsb,fig.cap="Mean depth of black sea bass in spring (A) and fall (B) on the Northeast Continental Shelf.", echo = T, fig.show='hold', warning = F, message = F,fig.pos='H'}
 
-source("R/BasePlot_source.R")
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
