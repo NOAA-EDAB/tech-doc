@@ -251,7 +251,16 @@ nc_close(ersst)
 
 
 ```{r long-term-sst,fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.",  echo=T, message=FALSE, warning=FALSE , fig.width=8, fig.align = 'center',fig.pos='H'}
-source("R/BasePlot_source.R")
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
 
 opar <- par(mar = c(4, 6, 2, 6))
 soe.plot(SOE.data.2018, "Time", "long term sst", end.start = 2007, 
