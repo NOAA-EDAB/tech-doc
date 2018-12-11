@@ -8,42 +8,38 @@ library(rmarkdown)
 
 ```
 
+**Description**: Community climate vulnerability
 
-## Contributor name(s)
-Lisa Colburn
+**Indicator category**: Database pull with analysis
 
-## Data name
-Community climate vulnerability
+**Contributor(s)**: Lisa L. Colburn
+  
+**Data steward**: Lisa L. Colburn
+  
+**Point of contact**: Lisa L. Colburn
+  
+**Public availability statement**: The fisheries data used for this analysis includes confidential information and is not available to the public. 
 
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
-
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
-
+  
 
 ## Methods
-### Data source(s) (All types)
+### Data sources
 The data used in community climate vulnerability analyses were derived from the following sources in partnership with the Atlantic Coastal Cooperative Statistics Program's (ACCSP) Standard Atlantic Fisheries Information System (SAFIS).
 
 ```{r source table, echo = F, include = T, results='asis'}
 tabl <- '
-|Variable Name     | Description                                  |
+|Database Name     | Description                                  |
 |:-------------------------|:-------------------------------------|
 |Cfdersyyyy|The dealer data are transaction-level pricing at the level of the "market-category." These data are primarily generated through mandatory reporting by federally-permitted fish dealers. The federal reporting is supplemented with data from non-federally-permitted (state-only) fish dealers. Data are currently reported electronically in partnership with ACCSP through SAFIS.           |
 |Cfvessyyy|A related database that contains permit information.   |
-|Port|Contains the post associated with the vessel.               |
-|Statenm|Contains the state of the mailing address of the owner.  |
 
 '
 cat(tabl)
 ```
 
+In these databases, the variable "port" contains the post associated with the vessel. The variable "Statenm" refers to the state of the mailing address of the owner.
+
 ### Data extraction 
-Write SQL query here
 ```{sql, eval = F, echo = T}
 create table cfders2011 as
 select *
@@ -182,9 +178,9 @@ run;
 
 ```
 
-### Data analysis
+### Data analysis and plotting
 
-The results described below were developed using the methodology described in @Colburn2016.
+The results described below were developed using the methodology described in @colburn_indicators_2016.
 
 1.  *Mapping community climate vulnerability* - The map was produced using two variables: total value landed in a community and community species vulnerability, defined below:
     a.  Communities were grouped based on total value of landings into the following categories: 1 (<\$ 200,000), 2 (\$200,000-\$9,999,999), 3 (\$10,000,000-\$49, 999,999), and 4 (\$50,000,000 and above). Only communities with a total value landed of \$200,000 or more were selected for the mapping process.
@@ -201,23 +197,13 @@ vulnerability/ total value of landings \* 100
 
 If a community received a dominant score (50% or more) for any of the above categories, % VH &, %M, or %L, then the community received a respective community species vulnerability ranking of High, Moderate, or Low.  For example, if 90% of the total value landed a community is contributed by species classified as having very high or high climate change vulnerability, then this community gets "Very High/High" community species vulnerability. In case of no dominant percentage identified, the community gets a "Mixed" community species vulnerability ranking. 
 
-2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray. 
-
-### Further metadata
-#### Public availability statement
-The fisheries data used for this analysis includes confidential information and is not available to the public. A Data Access Waiver will be need to access it. 
-
-#### Point of contact - Whom should be contacted?
-Lisa Colburn
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Lisa Colburn
-
-####References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray.
 
 
-
+```{r 'species-vulnerability' , fig.cap="Commercial species vulnerability to climate change in in New England fishing communities.",fig.align = 'center', echo = F, fig.pos='H', fig.width=8}
+image.dir <- here::here("images")
+knitr::include_graphics(file.path(image.dir, 'Species_vulnerability_NE.jpg'))
+```
 
 
 

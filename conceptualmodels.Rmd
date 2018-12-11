@@ -11,23 +11,17 @@ image.dir <- './images'
 
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+**Description**: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
 
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
+**Indicator category**: Synthesis of published information, Extensive analysis; not yet published
 
+**Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
 
-## Contributor name(s)
-Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Robert Wildermuth 
+**Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
 
-## Data name
-Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
+**Point of contact**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
 
-### Indicator category 
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-3. Synthesis of published information
-4. Extensive analysis; not yet published
-<!-- 5. Published methods -->
+**Public availability statement**: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public (see Data Sources below).
 
 
 ## Methods
@@ -42,32 +36,40 @@ An inital conceptual model for Georges Bank and the Gulf of Maine was outlined a
 knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
 ```
 
-After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a spreadsheet (*make available on ERDDAP*). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) ecosystem production units (see EPU section). 
+After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
 
-### Data source(s) (All types)
-<!--Please provide a text description of data sources.-->
-####Ecological submodels
+### Data sources
+
+#### Ecological submodels
 Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
 
-####Environmental submodels
+#### Environmental submodels
 Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted. 
 Sources for Georges Bank included @backus_georges_1987 and @townsend_oceanography_2006. 
 Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
-Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015,@fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
+Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015, @fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
 
-####Human dimensions submodels
+#### Human dimensions submodels
 Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.
 
-Habitat-fishery linkages were drawn from unpublished reports, including:
+Habitat-fishery linkages were drawn from unpublished reports, including:  
+
 1. Mid-Atlantic Fishery Management Council. 2016. Amendment 16 to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
+
 2. NOAA. 2016. Deep sea coral research and technology program 2016 Report to Congress. http://www.habitat.noaa.gov/protection/corals/deepseacorals.html retrieved February 8, 2017.  
+
 3. New England Fishery Management Council. 2016. Habitat Omnibus Deep-Sea Coral Amendment: Draft. http://www.nefmc.org/library/omnibus-deep-sea-coral-amendment Retrieved Feb 8, 2017.
+
 4. Bachman et al. 2011. The Swept Area Seabed Impact (SASI) Model: A Tool for Analyzing the Effects of Fishing on Essential Fish Habitat. New England Fisheries Management Council Report. Newburyport, MA.
 
 Tourism and habitat linkages were drawn from unpublished reports, including: 
-1. http://neers.org/RESOURCES/Bibliographies.html                                 
-2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm          
+
+1. http://neers.org/RESOURCES/Bibliographies.html                               
+
+2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm        
+
 3. Meaney, C.R. and C. Demarest. 2006. Coastal Polution and New England Fisheries. Report for the New England Fisheries Management Council. Newburyport, MA.
+
 4. List of valuation studies, by subregion and/or state, can be found at http://www.oceaneconomics.org/nonmarket/valestim.asp.
 
 Published literature on human activities in each EPU was consulted. 
@@ -79,8 +81,8 @@ Sources for links between environmental drivers and human activities included @a
 Sources for cultural practices and attachments links included @pauly_putting_1997, @mcgoodwin_understanding_2001, @st_martin_making_2001, @norris-raynbird_for_2004, @pollnac_toward_2006, @clay_defining_2007, @clay_definingfishing_2008, @everett_role_2008, @donkersloot_politics_2010, @lord_understanding_2011, @halpern_index_2012, @wynveen_natural_2012, @cortes-vazquez_identity_2013, @koehn_progress_2013, @potschin_landscapes_2013, @reed_beyond_2013, @urquhart_constructing_2013, @blasiak_paradigms_2014, @klain_what_2014, @poe_cultural_2014, @brown_we_2015, @donatuto_evaluating_2015, @khakzad_role_2016, @oberg_surviving_2016, and @seara_perceived_2016.  
 
 ### Data extraction 
-<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
-####Ecological submodels
+
+#### Ecological submodels
 "Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
 
 Example FEAST sql script for Cod weighted diet on Georges Bank. Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
@@ -101,64 +103,53 @@ Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_fea
 ```
 
 
-####Environmental submodels
-Information was synthesized entirely from published sources; no additional data extraction was completed for the environmental submodels.
+#### Environmental submodels
+Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
 
-####Human dimensions submodels
-Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found at \\net\home4\gdepiper\ICES\IEA\top10_prim1_common_mode.xlsx for each region (New England or Mid-Atlantic as defined by states). 
-<!--
-Write SQL query here
-```{sql, eval = F, echo = T}
-SELECT * FROM...
-```
+#### Human dimensions submodels
+Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data/top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
 
-```{r r_extract, echo = T, eval = F}
-# Extraction code
-```
--->
+Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical memo. In addition, the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used as the basis for the strength of the employment linkages.
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
-####Ecological submodels
-Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the spreadsheet (*link to ERDDAP*). 
+#### Ecological submodels
+Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). 
 
 Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
 
-EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to the table below. "Linked groups" directly support or impact the Focal groups as described above.
+EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table \@ref(tab:groups). "Linked groups" directly support or impact the Focal groups as described above.
 
 ```{r groups,eval = T, echo = F}
 #read in EMAXconceptualmodgroups.csv and kable it
 emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"))
 names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
-kable(emaxgroups)
+kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups")
 ```
 
-An example ecological submodel (Gulf of Maine), visualized in Mental Modeler, is below.
-```{r draftGOMeco, echo = F, eval = T}
+
+Ecological submodels were constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMeco)). Here, we show only the Gulf of Maine submodels as examples.
+
+```{r draftGOMeco, fig.cap="Gulf of Maine Ecological submodel", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'MM_GoM_Ecological.png'))
 ```
 
-####Environmental submodels
+#### Environmental submodels
+Environmental submodels were designed to link key oceanographic processes in each ecosystem production unit to the four general habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) with emphasis on the most important physical processes in each ecosystem based on expert knowledge as supported by literature review. The basis of each submodel were environmental variables observable at management-relevant scales as identified by [WGNARS](http://ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGRSP/2014/WGNARS14.pdf): Surface and Bottom Water Temperature and Salinity, Freshwater Input, and Stratification (as well as sea ice timing and cover, which is not relevant to the northeast US shelf). Key drivers changing these observable variables and thus structuring habitat dynamics in each [Ecological Production Units](#epu) were added to the model using expert consensus. 
 
-An example environmental submodel (Gulf of Maine), visualized in Mental Modeler, is below.
-```{r draftGOMenv, echo = F, eval = T}
+Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMenv)).
+```{r draftGOMenv, fig.cap="Gulf of Maine Environmental submodel", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'MM_GoM_Climate.png'))
 ```
 
-####Human dimensions submodels
+#### Human dimensions submodels
+The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.
 
+No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available [@das_chhandita_northeast_2013; @das_chhandita_overview_2014]. Human activities and objectives for the conceptual sub model are defined in @depiper_operationalizing_2017. As shown in Figure \@ref(fig:draftGOMhuman), human dimensions submodels were also initially constructed and visualized in Mental Modeler.
 
-Identify 
-focal groups or species 
-human activities and objectives
-environmental drivers
-Document 
-criteria and linkages
-
-An example human dimensions submodel (Gulf of Maine), visualized in Mental Modeler, is below.
-```{r draftGOMhuman, echo = F, eval = T}
+```{r draftGOMhuman, fig.cap="Gulf of Maine Human dimensions submodel", echo = F, eval = T}
 
 knitr::include_graphics(file.path(image.dir, 'MM_GoM_Human_Connections.png'))
 ```
@@ -183,6 +174,18 @@ knitr::include_graphics(file.path(image.dir, 'GoMoverview4.png'))
 knitr::include_graphics(file.path(image.dir, 'MAB_3.png'))
 ```
 
+#### Communication tools
+The merged models were redrawn for use in communications with the public. These versions lead off the State of the Ecosystem reports for both Fishery Management Councils to provide an overview of linkages between environmental drivers, ecological, and human systems. 
+
+```{r prettyNE, fig.cap="New England conceptual model for public communication", echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'GOM_GB_conmod_overview.jpg'))
+```
+
+```{r prettyMA, fig.cap="Mid-Atlantic conceptual model for public communication", echo = F, eval = T}
+
+knitr::include_graphics(file.path(image.dir, 'MAB_conmod_overview.jpg'))
+```
 
 <!--
 What packages or libraries did you use in your work flow?
@@ -202,47 +205,9 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 ```
 -->
 
-### ERDDAP data set
-<!--If data are available, adjust code to pull those data and set "eval = T" in chunk header options.-->
-Put documentation spreadsheet on ERDDAP as a table?
-
-```{r erddap pull, echo = T, eval = F}
-library(rerddap)
-
-comet <- 'http://comet.nefsc.noaa.gov/erddap/'
-
-tab_list <- ed_datasets(url = comet)
-tab_list <- data.frame(Title = tab_list$Title,
-                        Identifier = tab_list$Dataset.ID,
-                        Index = 1:nrow(tab_list))
-
-#Get data set ID (will need to change)
-#id <- as.character(tab_list$Identifier[9]) 
-
-#Pull data
-data <- tabledap(id,url = comet)
-
-#Print metadata
-metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
-cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
-
-```
-
-### Further metadata
-<!--Fill out the following metadata required by PARR-->
 
 
-#### Public availability statement
-<!--Will source data be available to the public? If not, is a Data Access Waiver necessary?-->
 
-
-#### Point of contact - Whom should be contacted?
-Sarah Gaichas
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sarah Gaichas
-
-### References
 
 
 

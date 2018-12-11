@@ -41,3 +41,7 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 .Rproj.user
+
+# bookdown files
+_book
+_bookdown_files

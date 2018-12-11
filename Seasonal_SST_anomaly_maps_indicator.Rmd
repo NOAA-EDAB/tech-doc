@@ -1,48 +1,45 @@
 # Seasonal SST Anomalies
 
 
-```{r setup,  echo = F, message=F}
+```{r setup, echo = F, message=F}
 
 #Load packages
 library(knitr)
 library(rmarkdown)
 
-
 ```
+**Description**: Seasonal SST Anomalies
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Sean Hardison, Vincent Saba
+  
+**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)
 
 
-## Contributor name(s)
-Sean Hardison, Vincent Saba
 
-## Data name
-Seasonal SST Anomalies
-
-### Indicator category 
-
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
 
 ## Methods
-### Data source(s) 
-Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007].  
+### Data sources
+Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007].  
 
 
 ### Data extraction 
-Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See ["Seasonal_anom_crop.nc"](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis)). Data were split into three month seasons for analysis (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
+Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](http://www1.ncdc.noaa.gov/pub/data/cmb/ersst/v5/netcdf/). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See [Seasonal_anom_crop.nc](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis)). Data were split into three month seasons for analysis (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
 
-**R libraries**
-```{r libraries, echo = T, eval = F}
+
+R code used in extraction and processing:
+```{r extraction, echo = T, eval = F}
+#libraries
 library(ncdf4);library(dplyr)
 library(readr);library(tidyr)
 library(sp);library(rgdal)
 library(raster);library(stringr)
-```
 
-**R code used in extraction and processing**
-```{r extraction, echo = T, eval = F}
 fall <- stack()
 winter <- stack()
 spring <- stack()
@@ -189,10 +186,15 @@ summer_anom <- seasonal_sst_2017[[3]] - summer_mean
 fall_anom <- seasonal_sst_2017[[4]] - fall_mean
 ```
 
-**Plotting code**
-```{r plot SST anomaly, echo = T, eval = F}
-colors <- colorRampPalette(c("darkblue",'blue', 'white', 'firebrick1',"firebrick4"))  
-color_levels=100   
+### Plotting
+```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
+
+
+# Relative working directory
+r.dir <- "R"
+
+#Source constants for GIS code
+source(file.path(r.dir,"GIS_source.R"))
 
 #SST map function
 SST_plot <- function(raster_data, text,pos = "left"){
@@ -205,7 +207,7 @@ SST_plot <- function(raster_data, text,pos = "left"){
   }
   
   #read .nc and convert to raster
-  d <- raster(raster_data)
+  d <- raster(file.path(gis.dir,raster_data))
   crs(d) <- map.crs
   #crop data
   d <- crop(d, e)
@@ -272,27 +274,6 @@ plot(d, col=colors(n=color_levels),
                     cex.axis=0.8),
      legend.args=list(text=expression(paste('Temperature Anomaly (',degree,"C)")),
                       side=4, font=2, line=2, cex=1))
-  }
 
-}
 ```
-
-### Further metadata
-#### Public availability statement
-Source data are available [here](https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=69156&vid=2423)
-
-
-#### Point of contact
-Sean Hardison
-
-#### Data steward
-Sean Hardison
-
-####References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
-
 

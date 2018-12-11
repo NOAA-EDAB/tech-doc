@@ -8,28 +8,22 @@ library(rmarkdown)
 
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
 
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.
--->
+**Description**: Most recent stock assessment model results summarized for each assessed species.
 
+**Indicator category**: Synthesis of published information
 
-## Contributor name(s)
-Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
+**Contributor(s)**: Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
 
-## Data name
-Most recent stock assessment model results summarized for each assessed species.
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
 
-### Indicator category
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-3. Synthesis of published information
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
 
-##Methods
+**Public availability statement**: All stock assessment results are publicly available (see Data Sources). Summarized data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_2018.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
 
-### Data source(s)
+## Methods
+
+### Data sources
 <!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
 
 "Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
@@ -49,28 +43,19 @@ I wish there were code for this. A more talented person could write it using OCR
 
 Instead, each assessment document was searched by eye to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
 
-Bcur: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
+*    **Bcur**: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
 
-Fcur: current year fishing mortality, F
+*    **Fcur**: current year fishing mortality, F
 
-Bref: biomass reference point, a proxy of Bmsy (the target)
+*    **Bref**: biomass reference point, a proxy of Bmsy (the target)
 
-Fref: fishing mortality reference point, a proxy of Fmsy
+*    **Fref**: fishing mortality reference point, a proxy of Fmsy
 
 <!--Write SQL query here
 ```{sql, eval = F, echo = T}
 SELECT * FROM...
 ```
 --> 
-```{r r_extract, echo = T, eval = T}
-# Extraction code
- data.dir  <- './data'
- image.dir <- './images'
- #gis.dir <- '/users/sgaichas/Documents/0_Data/ESR/SOE2018/usa_shape_files'
- 
-#data files are read in from a csv file compiled by hand as in the r script below.
-```
-
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
@@ -78,48 +63,61 @@ SELECT * FROM...
 For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
 
 <!--What packages or libraries did you use in your work flow?-->
-```{r packages, eval=F, echo = T}
-#sessionInfo(package = NULL)
-
+```{r packages, eval=F, echo = F}
 #all packages in the SOE file that ran my code snippet, probably only need data.table
-#library(Kendall);library(data.table);library(zoo)
-#library(dplyr);library(nlme);library(AICcmodavg)
-#library(colorRamps);library(Hmisc);library(rgdal)
-#library(maps);library(mapdata);library(raster)
-#library(grid);library(stringr);library(png)
-#library(ncdf4);library(marmap); library(magick)
+library(Kendall);library(data.table);library(zoo)
+library(dplyr);library(nlme);library(AICcmodavg)
+library(colorRamps);library(Hmisc);library(rgdal)
+library(maps);library(mapdata);library(raster)
+library(grid);library(stringr);library(png)
+library(ncdf4);library(marmap); library(magick)
 
-#Use this to output a detailed list of the package information
-#current.session <- sessionInfo(package = NULL)
-#current.session$otherPkgs
+
 ```
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
-The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid Atlantic or New England figures.
 
-```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold'}
-# analysis code
-#fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, out.width='0.85\\linewidth', fig.align='center', echo = F, message = FALSE, warning = FALSE, eval = T}
+### Plotting
 
-dat <- read.csv(file.path(data.dir,"2017assess.csv"))
+The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
-stocks <- unique(dat$Entity.Name)
+```{r analysis, echo = T, eval = T, fig.cap="Summary of single species status for NEFMC stocks \\label{KOBE}", fig.height=8, fig.width=11, fig.align='center', fig.show='hold', message=F, warning=F}
+
+# Relative working directories
+data.dir  <- here::here('data')
+image.dir <- here::here('images')
+r.dir <- here::here('R')
+
+#Load current SOE ERDDAP data set IDs
+load(file.path(data.dir, "ERDDAP_datasets.Rdata"))
+
+#Source get_erddap function to query data
+source(file.path(r.dir,"get_erddap.R"))
+
+#Data queries
+dat <- get_erddap(df = erddap_datasets,
+                  id = "assess_soe_v1")
+
+decoder <- get_erddap(erddap_datasets,
+                      id = "assess_support_soe_v1")
+
+#Plotting code
+stocks <- unique(dat$Entity_Name)
 n.stocks <- length(stocks)
 
-decoder <- read.csv(file.path(data.dir,"2017decoder.csv"))
 # set up the headers for most.recent structure - will contain oldest Assessment.Year
 most.recent <- dat[1,]
 most.recent <- most.recent[-1,]
 
 for (i in 1:n.stocks){
-  temp <- dat[dat$Entity.Name == decoder$Entity.Name[i],]
-  most.recent <- rbind(most.recent,temp[temp$Assessment.Year == max(temp$Assessment.Year),])
+  temp <- dat[dat$Entity_Name == decoder$Entity_Name[i],]
+  most.recent <- rbind(most.recent,temp[temp$Assessment_Year == max(temp$Assessment_Year),])
 }
 #cbind(n.stocks,length(most.recent[,1]))
 
 # get the max of F.Flimit and F.Fmsy and the max of B.Blimit and B.Bmsy
-Frat <- most.recent$F.Fmsy
-Brat <- most.recent$B.Bmsy
+Frat <- most.recent$F_Fmsy
+Brat <- most.recent$B_Bmsy
 #Frat[6] <- most.recent$F.Flimit[6]  # Ocean Quahog use Flimit because no Fmsy
 #Frat[18] <- 0.88  # hardwire average of the two GOM models for GOM cod
 #Brat[18] <- 0.155 # hardwire average of the two GOM models for GOM cod
@@ -189,62 +187,9 @@ plot(NEBO$Brat,NEBO$Frat,xlim=x.r,ylim=y.r,xlab="B/Bmsy",ylab="F/Fmsy",pch=16,co
    title(expression(phantom("NEFMC and Joint") * " Stocks"), col.main="black")
    legend('topright',legend=NE.overfished,pch=NA,text.col=my.col[c(17,19,35)], title="Overfished, F \nStatus Unknown",title.col = "black", bty="n", text.width=strwidth("Offshore Hake"), inset=c(0,.05))
    legend('right',legend=NE.unknown,pch=NA,text.col=my.col[c(14,23,33,47,48)],title="Unknown Status", title.col = "black",bty="n")
-   text(NEBO$Brat,NEBO$Frat,labels=NEBO$Code,pos=NEBO$my.pos3,col=my.col[12:49],cex=0.8)
+   text(NEBO$Brat,NEBO$Frat,labels=NEBO$Code,pos=NEBO$my_pos3,col=my.col[12:49],cex=0.8)
 #if(saveplots) savePlot("NEFMC_Joint_stocks.png", type='png')
 #if(saveplots) dev.off()
 
 ```
-
-### References
-<!--List references here-->
-
-
-
-### ERDDAP data set
-If data are available, adjust code to pull those data and set "eval = T" in chunk header options.
-```{r erddap pull, echo = T, eval = F}
-if(!"rerddap" %in% rownames(installed.packages())){
-  install.packages('rerddap')}
-library(rerddap)
-
-comet <- 'http://comet.nefsc.noaa.gov/erddap/'
-
-tab_list <- ed_datasets(url = comet)
-tab_list <- data.frame(Title = tab_list$Title,
-                        Identifier = tab_list$Dataset.ID,
-                        Index = 1:nrow(tab_list))
-
-#Get data set ID (will need to change)
-#id <- as.character(tab_list$Identifier[9]) 
-
-#Pull data
-data <- tabledap(id,url = comet)
-
-#Print metadata
-metadata <- info(id, url = "http://comet.nefsc.noaa.gov/erddap/")$alldata$NC_GLOBAL
-cat(metadata[metadata$attribute_name == "lineage processing steps",]$value)
-
-```
-
-
-### Further metadata
-<!--Fill out the following metadata required by PARR-->
-
-
-#### Public availability statement
-<!--Will source data be available to the public? If not, is a Data Access Waiver necessary?-->
-
-
-#### Point of contact - Whom should be contacted?
-Sarah Gaichas
-
-#### Data steward (can be POC; in charge of keeping data updated)
-Sarah Gaichas
-
-
-
-
-
-
-
 

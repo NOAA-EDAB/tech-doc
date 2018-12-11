@@ -1,0 +1,126 @@
+# Habitat Occupancy Models
+
+```{r setup,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Habitat Occupancy
+
+**Indicator category**: Database pull with analysis; Extensive analysis; not yet published; Published methods
+
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available upon request (see [Survdat](#survdat), [CHL/PP](#chl-pp), and Data Sources below for more information). Model-derived time series are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_2018.html).
+
+
+## Methods
+Habitat area with a probability of occupancy greater than 0.5 was modeled for many [species throughout the NE-LME](https://www.nefsc.noaa.gov/ecosys/current-conditions/occupancy-change.html) using random forest decision tree models. 
+
+### Data sources
+Models were parameterized using a suite of static and dynamic predictor variables, with occurrence and catch per unit effort (CPUE) of species from spring and fall Northeast Fisheries Science Center (NEFSC) bottom trawl surveys (BTS) serving as response variables. Sources of variables used in the analyses are described below.
+
+#### Station depth
+The NEFSC BTS data included depth observations made concurrently with trawls at each station. Station depth was a static variable for these analyses. 
+
+#### Ocean temperature and salinity
+Sea surface and bottom water temperature and salinity measurements were included as dynamic predictor variables in the model, and were collected using Conductivity/Temperature/Depth (CTD) instruments. Ocean temperature and salinity measurements had the highest temporal coverage during the spring (February-April) and fall (September-November) months. Station salinity data were available between 1992-2016. 
+
+#### Habitat descriptors
+A variety of benthic habitat descriptors were incorporated as predictor variables in occupancy models (Table \@ref(tab:habitatdesc)). The majority of these parameters are based on depth (e.g. *BPI*, *VRM*, *Prcury*, *rugosity*, *seabedforms*, *slp*, and *slpslp*). The vorticity variable is based on current estimates, and the variable *soft_sed* based on sediment grain size. 
+
+
+```{r habitatdesc, echo = F, results='asis', message=F, warning=F}
+tab <- '
+|Variables|Notes|References|
+|:-----------------------|:-----------------------|:-----------------------|
+|Complexity - Terrain Ruggedness Index|The difference in elevation values from a center cell and the eight cells immediately surrounding it. Each of the difference values are squared to make them all positive and averaged. The index is the square root of this average.|@Riley1999|
+
+|Namera bpi|BPI is a second order derivative of the surface depth using the TNC Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data with an inner radius=5 and outer radius=50.|@Lundblad2006|
+
+|Namera_vrm|Vector Ruggedness Measure (VRM) measures terrain ruggedness as the variation in three-dimensional orientation of grid cells within a neighborhood based the TNC Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data.|@Hobson1972; @Sappington2007|
+
+|Prcurv (2 km, 10 km, and 20 km)|Benthic profile curvature at 2km, 10km and 20 km spatial scales was derived from depth data.|@Winship2018|
+
+|Rugosity|A measure of small-scale variations of amplitude in the height of a surface, the ratio of the real to the geometric surface area.|@Friedman2012|
+
+|seabedforms|Seabed topography as measured by a combination of seabed position and slope.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
+
+|Slp (2 km, 10 km, and 20 km)|Benthic slope at 2km, 10km and 20km spatial scales.|@Winship2018|
+
+|Slpslp (2 km, 10 km, and 20 km)|Benthic slope of slope at 2km, 10km and 20km spatial scales|@Winship2018|
+
+|soft_sed|Soft-sediments is based on grain size distribution from the USGS usSeabed: Atlantic coast offshore surficial sediment data.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
+
+|Vort (fall - fa; spring - sp; summer - su; winter - wi)|Benthic current vorticity at a 1/6 degree (approx. 19 km) spatial scale.|@Kinlan2016|
+
+'
+df<-readr::read_delim(tab, delim="|")
+df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'Habitat descriptors used in model parameterization.'
+)
+```
+
+#### Zooplankton
+Zooplankton data are acquired through the NEFSC Ecosystem Monitoring Program ("EcoMon"). For more information regarding the collection process for these data, see @Kane2007, @Kane2011, and @Morse2017. The bio-volume of the 18 most abundant zooplankton taxa were considered as potential predictor variables.  
+
+#### Remote sensing data
+Both chlorophyll concentration and SST from remote sensing sources were incorporated as static predictor variables in the model. During the period of 1997-2016, chlorophyll concentrations were derived from observations made by the Sea-viewing Wide Field of View Sensor (SeaWIFS), Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua), Medium Resolution Imaging Spectrometer (MERIS), and Visible and Infrared Imaging/Radiometer Suite (VIIRS). 
+
+### Data processing
+
+#### Zooplankton
+Missing values in the EcoMon time series were addressed by summing data over five-year time steps for each seasonal time frame and interpolating a complete field using ordinary kriging. Missing values necessitated interpolation for spring data in 1989, 1990, 1991, and 1994. The same was true of the fall data for 1989, 1990, and 1992.
+
+#### Remote sensing data
+An overlapping time series of observations from the four sensors listed above was created using a bio-optical model inversion algorithm [@Maritorena2010]. Monthly SST data were derived from MODIS-Terra sensor data (available [here](https://oceancolor.gsfc.nasa.gov/data/terra/)). 
+
+#### Ocean temperature and salinity
+Date of collection corrections for ocean temperature data were developed using linear regressions for the spring and fall time frames; standardizing to collection dates of April 3 and October 11 for spring and fall. No correction was performed for salinity data. Annual data for ocean temperature and salinity were combined with climatology by season through an optimal interpolation approach. Specifically, mean bottom temperature or salinity was calculated by year and season on a 0.5&deg; grid across the ecosystem, and data from grid cells with >80% temporal coverage were used to calculate a final seasonal mean. Annual seasonal means were then used to calculate combined anomalies for seasonal surface and bottom climatologies. 
+
+An annual field was then estimated using raw data observations for a year, season, and depth using universal kriging [@automap], with depth included as a covariate (on a standard 0.1&deg; grid). This field was then combined with the climatology anomaly field and adjusted by the annual mean using the variance field from kriging as the basis for a weighted mean between the two. The variance field was divided into quartiles with the lowest quartile assigned a weighting of 4:1 between the annual and climatology values. The optimally interpolated field at these locations was therefore skewed towards the annual data, reflecting their proximity to actual data locations and associated low kriging variance. The highest kriging variance quartile (1:1) reflected less information from the annual field and more from the climatology.
+
+### Data analysis
+
+#### Occupancy models
+Prior to fitting the occupancy models, predictor variables were tested for multi-collinearity and removed if found to be correlated. The final model variables were then chosen utilizing a model selection process as shown by @Murphy2010 and implemented with the R package rfUtilities [@rfUtilities-package]. Occupancy models were then fit as two-factor classification models (absence as 0 and presence as 1) using the randomForest R package [@randomForest]. 
+
+#### Selection criteria and variable importance
+The irr R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.  
+
+### Plotting
+
+```{r occupancy-MAB, fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = T, fig.show='hold', warning = F, message = F,fig.pos='H'}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data.2018, "Time", "sumflo spring habitat occupancy", stacked = "A",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "sumflo fall habitat occupancy", stacked = "B",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", expression("Habitat Area, 10"^3*" km"^2), y.line = 2.5)
+
+```
+

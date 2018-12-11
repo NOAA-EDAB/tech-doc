@@ -9,30 +9,32 @@ library(magick)
 library(readr)
 
 ```
+**Description**: Ecological Production Units
 
-## Contributor name(s)
-Robert Gamble
+**Indicator category**: Extensive analysis, not yet published
 
-## Data name
-Ecological Production Units
-
-
-### Indicator category
-Method
 <!-- 1. Database pull -->
 <!-- 2. Database pull with analysis -->
 <!-- 3. Synthesis of published information -->
-4. Extensive analysis, not yet published
+<!-- 4. Extensive analysis, not yet published -->
 <!-- 5. Published methods -->
+**Contributor(s)**: Robert Gamble
 
-##Methods
-To define ecological production units, we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
+**Data steward**: NA
+
+**Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
+
+**Public availability statement**: Spatial analysis based on these EPUs can use the ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
+
+
+## Methods
+To define ecological production units, we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
 
 We did not include information on higher trophic levels or fishing patterns in our analysis. The biomass and production of higher trophic levels in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
 
 Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
 
-### Data source(s)
+### Data sources
 Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &deg;C) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
 
 
@@ -68,7 +70,7 @@ knitr::kable(
 ```
 
 
-The biotic measurements included satellite-derived estimates of chlorophyll a (CHLa) mean concentration, annual span, and CHLa gradients and related measures of primary production. Daily merged SeaWiFS/MODIS-Aqua CHLa (CHL, mg m^-3^) and SeaiWiFS photosynthetically available radiation (PAR, Einsteins m^-2^ d^-1^) scenes at 1.25 km resolution were obtained from NASA Ocean Biology Processing Group. 
+The biotic measurements included satellite-derived estimates of chlorophyll *a* (CHLa) mean concentration, annual span, and CHLa gradients and related measures of primary production. Daily merged SeaWiFS/MODIS-Aqua CHLa (CHL, mg m^-3^) and SeaiWiFS photosynthetically available radiation (PAR, Einsteins m^-2^ d^-1^) scenes at 1.25 km resolution were obtained from NASA Ocean Biology Processing Group. 
 
 ### Data extraction
 NA
@@ -98,15 +100,4 @@ image.dir <- './images'
 knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 ```
-
-### Further metadata
-
-#### Public availability statement
-Spatial analysis based on these EPUs can use the ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
-
-#### Point of contact
-Robert Gamble, <robert.gamble@noaa.gov>
-
-#### Data steward
-NA
 

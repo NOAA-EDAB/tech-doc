@@ -10,22 +10,18 @@ library(rmarkdown)
 library(Survdat)
 ```
 
-<!--The purpose of this form is to provide the methods used to collect, process, and analyze derived data prior to data submission for all EDAB reports. This information will be compiled into the State of the Ecosystem Tech Memo, AND be used to meet metadata requirements put forth by the Public Access to Research Results (PARR) directive. 
+**Description**: Survdat (Survey database)
 
-For the tech memo, we will be documenting the methods behind each indicator to the level of a peer-reviewed document.-->
+**Indicator category**: Database pull
 
-## Contributor name(s)
-Sean Lucey
+**Contributor(s)**: Sean Lucey
 
-## Data name
-Survdat (Survey database)
+**Data steward**: Sean Lucey <sean.lucey@noaa.gov>
 
-### Indicator category 
-1. Database pull
-<!--2. Database pull with analysis
-3. Synthesis of published information
-4. Extensive analysis; not yet published
-5. Published methods-->
+**Point of contact**: Sean Lucey <sean.lucey@noaa.gov>
+
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data used in SOE reports are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_2018.html).
+
 
 ## Methods
 The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys
@@ -71,8 +67,8 @@ file is a data.table, a powerful wrapper for the base data.frame (https://cran.r
 There are also a series of tools that have been developed in order to utilize the Survdat data set
 (https://github.com/slucey/RSurvey).
 
-### Data source(s) (All types)
-Survdat is a database query of the NEFSC survey database (SVDBS).
+### Data sources
+Survdat is a database query of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
 
 ### Data extraction 
 Extraction methods are described above.
@@ -348,23 +344,51 @@ For the aggregate biomass indicators, Survdat is first post stratified into [Eco
 using the *over* function from the *rdgal* R package [@rgdal].  Next, the total number 
 of stations within each EPU per year is counted using unique station records. Biomass
 is summed by species per year per EPU.  Those sums are divided by the appropriate
-station count to get the EPU mean.  Finally, the mean biomasses are summed by aggregate
-groups (ref to aggregate groups?).
+station count to get the EPU mean.  Finally, the mean biomasses are summed by [aggregate groups](#aggroups).
+
+### Plotting
+
+```{r fall-survey-MAB, fig.cap="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos).",  echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',out.width='50%', fig.height=6}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
 
 
-### Further metadata
+opar <- par(mfrow = c(4, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
-#### Public availability statement
-Source data is available to the public.
+soe.plot(SOE.data.2018, "Time", "Piscivore Fall Biomass Index MAB", 
+         stacked = "A", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Planktivore Fall Biomass Index MAB", 
+         stacked = "B", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Benthivore Fall Biomass Index MAB", 
+         stacked = "C", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Benthos Fall Biomass Index MAB", 
+         stacked = "D", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+#soe.plot(SOE.data.2018, "Time", "Total Fall Biomass MAB", stacked = "E",status  = F,
+#         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 1)
+soe.stacked.axis("Year", expression("Biomass, kg tow"^-1), y.line = 3.0,
+                 x.line = 2.7)
 
-#### Point of contact - Whom should be contacted?
-Sean Lucey
+opar <- par(mfrow = c(4, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Lucey
+soe.plot(SOE.data.2018, "Time", "Piscivore Spring Biomass Index MAB", 
+         stacked = "A", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Planktivore Spring Biomass Index MAB", 
+         stacked = "B", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Benthivore Spring Biomass Index MAB", 
+         stacked = "C", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Benthos Spring Biomass Index MAB", 
+         stacked = "D", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
+#soe.plot(SOE.data.2018, "Time", "Total Spring Biomass MAB", stacked = "E",status  = F,
+#         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 1)
+soe.stacked.axis("Year", expression("Biomass, kg tow"^-1*''), y.line = 3.0,
+                 x.line = 2.7)
 
-
-
-
-
-
+```

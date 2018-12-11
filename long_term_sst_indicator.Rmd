@@ -6,59 +6,47 @@
 #Load packages
 library(knitr)
 library(rmarkdown)
+library(dplyr)
 
 
 ```
+**Description**: Long-term sea-surface temperatures
 
+**Indicator category**: Database pull
 
-## Contributor name(s)
-Kevin Friedland
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html).
 
-## Data name
-Long-term sea-surface temperatures
-
-### Indicator category 
-
-1. Database pull
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis; not yet published -->
-<!-- 5. Published methods -->
 
 ## Methods
 Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
 
-### Data source(s) (All types)
+### Data sources
 This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) .
 
 
 ### Data extraction 
 
-<style type="text/css">
-.table {
-    width: 35%; 
-    margin-left:30%; 
-}
-</style>
+```{r coordinates, echo = F, eval = T, results='asis'}
+df <- data.frame(  
+  Longitude = c(-74,-74,-72,-70,-70,-70,-68,-68),
+  Latitude = c(40,38,40,44,42,40,44,42)
+  )
 
-<!-- **Table 1:** Coordinates used in NOAA ERSST V5 data extraction. -->
-```{r coordinates, echo = F, eval = F, results='asis'}
-tab <- "
-|Longitude|Latitude|
-|:-:|:-:|
-|-74| 40|
-|-74| 38|
-|-72| 40|
-|-70| 44|
-|-70| 42|
-|-70| 40|
-|-68| 44|
-|-68| 42|
-"
-cat(tab)
+knitr::kable(df,
+      caption="Coordinates used in NOAA ERSST V5 data extraction.",
+      format = "html",
+      align = "c") %>%
+  kableExtra::kable_styling(full_width = F) %>% 
+  kableExtra::column_spec(c(1,2), width =  "4cm")
 ```
 
-**R code used in extraction and processing**
+R code used in extraction and processing:
 ```{r extraction, echo = T, eval = F}
 # Include R code here
 # all year
@@ -258,22 +246,29 @@ nc_close(ersst)
 
 ```
 
-<!-- ### Data analysis -->
+
+### Plotting
 
 
-### Further metadata
-#### Public availability statement
-Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html)
+```{r long-term-sst,fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.",  echo=T, message=FALSE, warning=FALSE , fig.width=8, fig.align = 'center',fig.pos='H'}
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
 
 
-#### Point of contact
-Kevin Friendland
+opar <- par(mar = c(4, 6, 2, 6))
+soe.plot(SOE.data.2018, "Time", "long term sst", end.start = 2007, 
+         line.forward = TRUE, point.cex = 0.8, rel.y.text = 1.1,
+         x.line = 2, y.line = 2.3, x.label = 'Year', rel.y.num = 1.1,
+         y.label = expression(paste("Mean SST (",degree,"C)")))
 
-#### Data steward
-Kevin Friedland
-
-####References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+```
 
 
 

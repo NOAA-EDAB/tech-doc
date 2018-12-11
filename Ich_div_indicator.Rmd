@@ -7,38 +7,35 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
 
-## Contributor name(s)
-Harvey J. Walsh
+**Indicator category**: Database pull with analysis 
 
-## Data name
-NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
+**Contributor(s)**: Harvey J. Walsh
+  
+**Data steward**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_2018.html).
 
 
-### Indicator category
-<!-- Method -->
-<!-- 1. Database pull -->
-2. Database pull with analysis
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
-
-##Methods
+## Methods
 Data from NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
 
-### Data source(s)
+### Data sources
 Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year.  A random-stratified design based on the NEFSC bottom trawl survey design is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design. 
-The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo. Net tow speed was 1.5 knots and maximum sample depth was 200-m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5-m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net. 
+The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo net. Net tow speed was 1.5 knots and maximum sample depth was 200 m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5 m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net. 
 
-Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 . m-2 sea surface.
+Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 m^-2^ sea surface.
 
 ### Data extraction
-Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) (Filename: EcoMon_Plankton_Data_v3_0.xlsx, File Date: 10/20/2016).
+Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) (Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
 
 ### Data analysis
 Data processing steps are not currently included in this document, but data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
 
-#### MATLAB code used to calculate diversity indices
+MATLAB code used to calculate diversity indices:
 ```{octave, echo = T, eval = F}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Calculates Shannon Diversity Index of Ichthyoplankton data
@@ -156,15 +153,29 @@ clear ii yy
 
 ```
 
-### Further metadata
+### Plotting
 
-### Public availability statement
-Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/).
+```{r larval-diversity, fig.cap="Ichthyoplankton Shannon diversity in the spring (A) and fall (B) in the Northeast Large Marine Ecosystem.",echo = T, fig.show='hold', fig.align='default', warning = F, message = F,fig.pos='H'}
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
 
-### Point of contact 
-Harvey Walsh, harvey.walsh@noaa.gov
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
 
-### Data Steward
-Harvey Walsh, harvey.walsh@noaa.gov
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
 
-#### References
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data.2018, "Time", "Spring_Ich_Shannon Diversity Index", stacked = "A",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data.2018, "Time", "Fall_Ich_Shannon Diversity Index", stacked = "B",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", "Shannon Index", y.line = 2.5)
+
+```

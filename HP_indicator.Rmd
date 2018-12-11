@@ -8,55 +8,69 @@ library(rmarkdown)
 
 ```
 
+**Description**: Harbor Porpoise Indicator
 
-## Contributor name(s)
-Christopher D. Orphandies
+**Indicator category**: Synthesis of published information; Published methods
 
-## Data name
-Harbor Porpoise Indicator
+**Contributor(s)**: Christopher D. Orphandies
+  
+**Data steward**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
+**Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
-
-3. Synthesis of published information
-5. Published methods
-
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
+  
 
 ## Methods
 
 
-### Data source(s) 
-Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents. Annual bycatch estimates are documented in annual stock assessment reports that can be found on the [NOAA website](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press).
+### Data sources
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed [here](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). 
 
-More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). The document for the 2016 estimates is currently in press and will be available on the above website when published. Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: CRD-17-18, CRD-16-05, CRD 15-15, CRD 14-02, CRD 13-13, CRD 11-08, CRD 10-10, CRD 07-20, CRD 06-13, CRD 03-18, CRD 01-15, and CRD 99-17.
+The document for the 2016 estimates is currently in press and will be available on the above website when published. Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: CRD-17-18, CRD-16-05, CRD 15-15, CRD 14-02, CRD 13-13, CRD 11-08, CRD 10-10, CRD 07-20, CRD 06-13, CRD 03-18, CRD 01-15, and CRD 99-17.
 
 ### Data extraction 
 NA
 
 ### Data analysis
-Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution (stddev = mean*CV, 95% CI = xbar +/- 1.96 * stddev).
+Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+
+### Plotting
+
+```{r harbor-porpoise, fig.cap="Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange).", echo = T, message=F, warning=F, fig.pos='H', fig.height=4}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
 
 
-### Further metadata
+opar <- par(mar = c(4, 6, 2, 6))
 
-#### Public availability statement
-Source data are available in publicly available [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html).
+soe.plot(SOE.data.2018, 'Time', "Harbor porpoise bycatch estimates",            
+         rel.y.num = 1.2, end.start = 2007, full.trend = F, point.cex = 1,
+         ymax = F, y.upper = 2500, mean_line = F, x.label = 'Year',
+         y.label = 'Bycatch, n', rel.y.text = 1)
 
+legend(2000, 2250, legend = "Potential Biological Removal",
+       col = adjustcolor("red", .5), lwd = 3,
+       bty = "n", cex = 0.9)
 
-#### Point of contact - Whom should be contacted?
-Chris Orphanides, chris.orphanides@noaa.gov
+#credible intervals and PBI
+lw_CI <- SOE.data.2018[Var == 'Harbor porpoise bycatch 2.5 CI',
+                       list(Time, Value)]
+up_CI <- SOE.data.2018[Var == 'Harbor porpoise bycatch 97.5 CI',
+                       list(Time, Value)]
+pbi   <- SOE.data.2018[Var == 'Harbor porpoise potential biological removal',
+                       list(Time, Value)]
 
-#### Data steward (can be POC; in charge of keeping data updated)
-Chris Orphanides, chris.orphanides@noaa.gov
-
-#### References
-NA
-
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
-
-
-
-
-
+points(pbi,   type  = "l", lty = 1, col = adjustcolor("red", .5), lwd = 3)
+points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+```
 

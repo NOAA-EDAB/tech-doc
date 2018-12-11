@@ -1,4 +1,4 @@
-# Aquaculture Indicators
+# Aquaculture
 
 ```{r setup,  echo = F, message=F}
 
@@ -7,29 +7,24 @@ library(knitr)
 library(rmarkdown)
 
 ```
+**Description**: Aquaculture indicators
 
-## Contributor name(s)
-Sean Hardison
+**Indicator category**: Synthesis of published information
 
-## Data name
-Aquaculture indicators
-
-### Indicator category 
-Indicate from the list below which category the contributed data fall under by deleting other entries.
-
-<!--
-1. Database pull
-2. Database pull with analysis-->
-3. Synthesis of published information
-<!--4. Extensive analysis; not yet published
-5. Published methods-->
+**Contributor(s)**: Sean Hardison, Lisa Calvo, Karl Roscher
+  
+**Data steward**: Sean Hardison <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison <sean.hardison@noaa.gov> 
+  
+**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_2018.html). 
 
 
 ## Methods
 Aquaculture data included in the SOE report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
 
 
-### Data source(s) (All types)
+### Data sources
 Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@Hudson2017a]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@ACC2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@Calvo2017]. 
 
 
@@ -39,19 +34,54 @@ Data were collected directly from state aquaculture reports. Oysters harvest dat
 ### Data analysis
 No data analyses occurred for this indicator.
 
-#### Public availability statement
-Source data are publicly available in referenced reports.
+### Plotting
 
-#### Point of contact - Whom should be contacted?
-Sean Hardison
+```{r, mariculture, fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = T, warning = F, message=F, fig.align='center', fig.height=4}
 
-#### Data steward (can be POC; in charge of keeping data updated)
-Sean Hardison
+library(dplyr)
 
-#### References
-<!-- References must be submitted in BibTeX format. When compiling this document, they will appear in this section. There is no need to write them out here. Don't forget to include the name of your .bib file in the YAML header (fill in XYZ.bib in YAML header)!!!!!--> 
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
 
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
 
+#colors
+topo <- c('black', "indianred", "darkorange")
+
+#filter
+oyst_vars <- SOE.data.2018 %>%
+  dplyr::filter(Var %in%
+          c("aquaculture NJ gear raised oysters sold",
+            "aquaculture MD oyster harvest N",
+            "aquaculture VA oyster harvest N")) %>% 
+  tidyr::spread(.,Var,Value)
+
+#plotting
+opar <- par(mar = c(4, 6, 2, 6))
+y.min <- 1
+y.max <- 40e6
+time <- oyst_vars$Time
+plot(NULL, xlim = c(2005, 2017),
+     ylim = c(y.min,y.max), xlab = '', ylab = '', yaxt = "n",ty = 'n',
+     cex.lab=1, las = 1, cex.axis = 1)
+points(time, oyst_vars$`aquaculture NJ gear raised oysters sold`, type = "o", lwd = 2.5, col = topo[1], pch = 20)
+points(time, oyst_vars$`aquaculture MD oyster harvest N`, type = "o", lwd = 2.5, col = topo[2], pch = 20)
+points(time, oyst_vars$`aquaculture VA oyster harvest N`, type = "o", lwd = 2.5, col = topo[3], pch = 20)
+
+mtext(1, text = 'Year', line = 2)
+mtext(2, text = expression("Oysters Harvested, 10"^6*'n'), line = 2.5)
+axis(2, at = c(1*10^6,5*10^6,10*10^6,15*10^6,
+                 20*10^6,25*10^6,30*10^6,35*10^6,40*10^6), 
+       labels = c("1","5","10","15","20",
+                  "25","30","35","40"),
+       las = 1, cex.axis = 1)
+legend(2006, 40e6, legend = c("New Jersey",
+                            "Maryland",
+                            "Virginia"), col = topo, bty = "n",lwd = 2)
+
+```
 
 
 
