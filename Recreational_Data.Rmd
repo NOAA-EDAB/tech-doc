@@ -37,6 +37,38 @@ Data were download as .CSV files before being brought into R.
 ### Data analysis
 NA
 
+### Plotting
+
+```{r recreation, fig.cap="Number of anglers (A) and number of fishing trips (B) taken in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE,fig.pos='H'}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(4, 6, 2, 6))
+
+
+soe.plot(SOE.data.2018, "Time", "Mid-Atlantic Rec participation", stacked = "A",
+         rel.y.num = 0.9, end.start = 2008, tol = 0.15, full.trend = F, 
+         cex.stacked = 1.5, scale.axis = 10^6)
+soe.stacked.axis('Year', expression('Anglers, 10'^6*'n'), 
+                 rel.x.text = 0.1, rel.y.text = 1, y.line = 2.5, outer = F)
+
+soe.plot(SOE.data.2018, "Time", "Mid-Atlantic angler trips", stacked = "B",
+         rel.y.num = 0.9, scale.axis = 10^6, x.end = 2016, end.start = 2007,
+         tol = 0.15, y.lower = 0, ymin = F,  cex.stacked = 1.25)
+
+soe.stacked.axis('Year', expression('Trips, 10'^6*'n'), 
+                 rel.x.text = 1, rel.y.text = 1, y.line = 2.5, outer = F)
+
+```
 
 
 
