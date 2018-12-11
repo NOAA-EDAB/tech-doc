@@ -1,4 +1,5 @@
 rmd_files: ["index.Rmd", 
+"erddap_query_and_build.Rmd",
 "conceptualmodels.Rmd",
 "Trend_analysis.Rmd",
 "EPU.Rmd",
