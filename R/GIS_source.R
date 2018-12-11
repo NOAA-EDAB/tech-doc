@@ -6,6 +6,7 @@ library(ncdf4)
 library(rgdal)
 library(maps)
 library(mapdata)
+library(dplyr)
 
 
 #Colors for SST anomalies
