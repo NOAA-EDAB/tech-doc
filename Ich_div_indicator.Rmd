@@ -156,7 +156,15 @@ clear ii yy
 ### Plotting
 
 ```{r larval-diversity, fig.cap="Ichthyoplankton Shannon diversity in the spring (A) and fall (B) in the Northeast Large Marine Ecosystem.",echo = T, fig.show='hold', fig.align='default', warning = F, message = F,fig.pos='H'}
-source("R/BasePlot_source.R")
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
 
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
