@@ -12,8 +12,6 @@ library(knitr);library(zoo)
 #Set data directory
 data.dir <- here("data")
 
-#Load in time series data
-load(file.path(data.dir,"SOE_data_2018.Rdata"))
 
 #GLS function that is incorporated within plotting code
 fit_lm <- function(dat) {
@@ -166,7 +164,7 @@ soe.plot <- function(data, x.var, y.var, x.label = '', y.label = '', tol = 0.1,
   y.sd <- sd(x[, Value])
   
   #Plot blank plot
-  plot(x[X >= x.start, list(X, Var)], xlim = c(x.start, x.end),
+  plot(x[X >= x.start, list(X, Var)]$X, xlim = c(x.start, x.end),
        ylim = c(y.min,y.max), xlab = '', ylab = '', axes = F, ty = 'n')
   
   
