@@ -249,7 +249,16 @@ anom.scs=rowMeans(dataTsm)-(dataTlg)
 ### Plotting
 
 ```{r, zooplankton-abundance, fig.cap = "*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight.", message = F, warning=F}
-source("R/BasePlot_source.R")
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
 
 #C. typicus abundance anomaly
 opar <- par(mar = c(4,4.75,2,4))
