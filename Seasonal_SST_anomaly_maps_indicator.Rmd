@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Sean Hardison, <sean.hardison@noaa.gov>
   
-**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 
 
 
@@ -277,3 +277,4 @@ plot(d, col=colors(n=color_levels),
 
 ```
 
+**Note**: The derived data sets used to create the above figures are available [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis).
