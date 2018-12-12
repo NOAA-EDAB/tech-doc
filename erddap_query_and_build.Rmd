@@ -1,4 +1,4 @@
-# Data and code access {#erddap}
+# Data and Code Access {#erddap}
 
 ```{r setup,  echo = F, message=F}
 
