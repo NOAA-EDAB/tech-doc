@@ -1,4 +1,4 @@
-# Single Species Status Indicator
+# Single Species Status Indicator {#stockstatus}
 
 ```{r setup,  echo = F, message=F}
 
