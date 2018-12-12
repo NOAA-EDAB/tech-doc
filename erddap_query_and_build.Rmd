@@ -18,13 +18,11 @@ The Technical Documentation for the State of the Ecosystem reports is a [bookdow
 
 Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators present in the State of the Ecosystem reports. The majority of derived data sets are available for download through the NEFSC [ERDDAP server](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000), although some data is also present in the [Github repository](https://github.com/NOAA-EDAB/tech-memo) associated with this document. 
 
-In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analytses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. 
+In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. 
 
-There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/get_erddap.R). These scripts along with the code presented in sections titled "Plotting" may be used to recreate any figures present in State of the Ecosystem reports. The script [get_erddap.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/get_erddap.R) is used to both query individual data sets and to build a parent data set containing all indicator data. The exact usage in the latter case is shown below. 
+There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/get_erddap.R). These scripts along with the code presented in sections titled "Plotting" may be used to recreate the majority of figures present in State of the Ecosystem reports. The script [get_erddap.R](https://github.com/NOAA-EDAB/tech-memo/blob/master/R/get_erddap.R) is used to both query individual data sets and to build a parent data set containing all indicator data. The exact usage in the latter case is shown in the R code block below. For querying individual data sets using get_erddap.R, see the [single-species status indicator](#stockstatus).
 
-### ERDDAP queries
-
-
+### Building the parent data set from ERDDAP
 
 ```{r query, echo = T, eval = T, message=F, warning=F}
 
@@ -36,7 +34,6 @@ library(data.table)
 
 # Relative working directories
 data.dir  <- here::here('data')
-image.dir <- here::here('images')
 r.dir <- here::here('R')
 
 #Source function for querying ERDDAP server
@@ -55,11 +52,13 @@ erddap_datasets <- tab_list %>%
 
 #Save and clean updated IDs for use in rest of report
 save(erddap_datasets, file = file.path(data.dir, "ERDDAP_datasets.Rdata"))
-  
+
+# Exclude stock assessment status data, which have unique structure
 erddap_datasets <- erddap_datasets %>%
   dplyr::filter(!str_detect(Dataset.ID, "assess")) 
 
-#Create SOE data set, filter out NAs
+#Create SOE parent data set, filter out NAs. This queries based on 
+#data set IDs that were collected above
 SOE.data.2018.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
                          erddap_datasets$Dataset.ID) %>% 
   purrr::map(function(x) {
@@ -77,4 +76,6 @@ save(SOE.data.2018, file = file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
 
 ```
 
+#### A note on data structures
 
+The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/tech-memo/blob/master/R/BasePlot_source.R)).
