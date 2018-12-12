@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
   
-**Public availability statement**: Source data are available to the public.
+**Public availability statement**: Source data are available to the public. Model outputs for thermal habitat projections are available [here](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
 
 
 ## Methods
@@ -51,11 +51,16 @@ We calculated the suitable thermal habitat both in terms of changes in 'suitable
 ### Plotting
 
 ```{r th-maps,fig.cap="Current thermal habitat estimate (A), and 20-40 year thermal habitat projection (B) for summer flounder on the Northeast Continental Shelf." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', warning=F, message=F}
-#fill plot with images
 
-source("R/GIS_source.R")
+#Source GIS script
+r.dir <- here::here("R")
+source(file.path(r.dir,"GIS_source.R"))
+
+
 library(dplyr)
 library(colorRamps)
+library(rerddap)
+
 
 #thermal habitat map function
 th_plot <- function(data, letter, z.max, y.axis = T,
@@ -131,3 +136,6 @@ th_plot(data = "Summer Flounderfall_4.nc",
         letter = "B", z.max = 2.5, y.axis = T, legend = T)
 
 ```
+
+
+**Note**: The thermal habitat model output for all species presented in State of the Ecosystem reports is accessible through the [NEFSC ERDDAP server](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
