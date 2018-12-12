@@ -25,7 +25,7 @@ There are multiple R scripts sourced throughout this document in an attempt to k
 ### Building the parent data set from ERDDAP
 
 ```{r query, echo = T, eval = T, message=F, warning=F}
-
+ 
 #Libraries
 library(dplyr)
 library(rerddap)
