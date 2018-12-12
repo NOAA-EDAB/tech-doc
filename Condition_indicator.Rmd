@@ -281,10 +281,11 @@ run;
 
 ### Plotting
 
-```{r condition-factor, eval = T, fig.width = 8, fig.cap = "Normalized condition factors of MAFMC managed species.", message=F, warning=F}
+```{r condition-factor, eval = T, fig.width = 8, fig.cap = "Normalized condition factors of managed species in the Northeast Large Marine Ecosystem.", message=F, warning=F, fig.height = 7.5}
 
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 data.dir <- here::here("data")
 
@@ -297,17 +298,18 @@ ztrans <- function(x){
 }
 
 #Get data
-CF <- read.csv(file.path(data.dir, "MAFMC_RelativeWeight_2018.csv"))
+load(file.path(data.dir, "SOE_data_2018_erddap.Rdata"))
+
+CF <- SOE.data.2018 %>% filter(str_detect(Var, "condition"))
 
 #Processing
 CF_mat <- CF %>%
-  unite(.,Var,c("species","stock","sex"), sep =", ") %>% #Unite groupings
-  gather(.,Time,Value,-Var) %>% #Convert to long
-  mutate(Time = as.numeric(gsub("X","",Time))) %>% #Tidy years 
   group_by(Var) %>% 
   mutate(Value = ztrans(Value)) %>% #Normalize
-  spread(.,Time,Value) %>% #Convert to wide for plotting
-  arrange(Var) 
+  tidyr::spread(.,Time,Value) %>% #Convert to wide for plotting
+  arrange(Var) %>% 
+  dplyr::select(-Units, -EPU) 
+  
 
 #Figure palette
 graph.colors<-colorRampPalette(c('#C6E2FF','#00008B'))
@@ -315,20 +317,22 @@ graph.colors<-colorRampPalette(c('#C6E2FF','#00008B'))
 #Main figure
 par(mar = c(2, 2, 3, 18), fig = c(0, 1, 0.1, 1))
 
+
 #Image rotates matrix 90 degrees so use transverse matrix
-image(z = t(as.matrix(CF_mat[,2:27])),
+image(z = t(as.matrix(CF_mat[,2:26])),
       breaks = c(-10, -1, 0, 1, 10), col = graph.colors(4),
       xlim = c(0,1), ylim = c(0-0.037,1+0.037), axes = F,
       xlab = '', ylab = '', useRaster = T)
 
+
 #Set y axis labels
 row_names <- CF_mat$Var
 mtext(text = row_names,side = 4, las = 1,
-      cex = 0.7, at = seq(0,1,0.071),
+      cex = 0.7, at = seq(0,1,0.0303),
       line = 1)
 
 #Figure key
-par(mar = c(0.7, 0.5, 0.2, 0.5),
+par(mar = c(0.1, 0.5, 2.25, 0.5),
     fig = c(0.2, 0.5, 0, 0.1),
     new = T)
 image(x = seq(0,1,1/4), z = t(matrix(1:4,1,4)), col = graph.colors(4), axes = F, 
