@@ -20,7 +20,7 @@ library(Survdat)
 
 **Point of contact**: Sean Lucey <sean.lucey@noaa.gov>
 
-**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data used in SOE reports are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_2018.html).
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data used in SOE reports are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
 
 
 ## Methods
@@ -355,7 +355,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -363,30 +363,30 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mfrow = c(4, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
-soe.plot(SOE.data.2018, "Time", "Piscivore Fall Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Piscivore Fall Biomass Index MAB", 
          stacked = "A", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Planktivore Fall Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Planktivore Fall Biomass Index MAB", 
          stacked = "B", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Benthivore Fall Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Benthivore Fall Biomass Index MAB", 
          stacked = "C", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Benthos Fall Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Benthos Fall Biomass Index MAB", 
          stacked = "D", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-#soe.plot(SOE.data.2018, "Time", "Total Fall Biomass MAB", stacked = "E",status  = F,
+#soe.plot(SOE.data, "Time", "Total Fall Biomass MAB", stacked = "E",status  = F,
 #         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 1)
 soe.stacked.axis("Year", expression("Biomass, kg tow"^-1), y.line = 3.0,
                  x.line = 2.7)
 
 opar <- par(mfrow = c(4, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
-soe.plot(SOE.data.2018, "Time", "Piscivore Spring Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Piscivore Spring Biomass Index MAB", 
          stacked = "A", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Planktivore Spring Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Planktivore Spring Biomass Index MAB", 
          stacked = "B", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Benthivore Spring Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Benthivore Spring Biomass Index MAB", 
          stacked = "C", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Benthos Spring Biomass Index MAB", 
+soe.plot(SOE.data, "Time", "Benthos Spring Biomass Index MAB", 
          stacked = "D", rel.y.num = 1.1, end.start = 2007,cex.stacked = 1.5)
-#soe.plot(SOE.data.2018, "Time", "Total Spring Biomass MAB", stacked = "E",status  = F,
+#soe.plot(SOE.data, "Time", "Total Spring Biomass MAB", stacked = "E",status  = F,
 #         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 1)
 soe.stacked.axis("Year", expression("Biomass, kg tow"^-1*''), y.line = 3.0,
                  x.line = 2.7)

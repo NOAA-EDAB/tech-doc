@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Richard Pace, richard.pace@noaa.gov
   
-**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
+**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
 
 ## Methods
 
@@ -41,19 +41,19 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
 
 par(mar = c(5,5,4,1))
-soe.plot(SOE.data.2018, 'Time', "right_whale_median", rel.y.num = 1.2, 
+soe.plot(SOE.data, 'Time', "right_whale_median", rel.y.num = 1.2, 
          full.trend = F, lwd = 1.5, point.cex = 1, end.start = 2007,
          x.label = 'Year', y.label = 'Abundance, n', 
          rel.y.text = 1)
 
-lw_CI <- SOE.data.2018[Var == 'right_whale_lower_95', list(Time, Value)]
-up_CI <- SOE.data.2018[Var == 'right_whale_upper_95', list(Time, Value)]
+lw_CI <- SOE.data[Var == 'right_whale_lower_95', list(Time, Value)]
+up_CI <- SOE.data[Var == 'right_whale_upper_95', list(Time, Value)]
 points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
 points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
 
