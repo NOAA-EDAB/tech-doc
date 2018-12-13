@@ -103,7 +103,7 @@ gis.dir <- here::here('gis')
 source(file.path(r.dir, "GIS_source.R"))
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 
 #projection
@@ -121,10 +121,10 @@ e1  <- extent(-78.5, -64, 41, 45)
 coast1 <- crop(coast, e1)
 
 #Get data from SOE dataset
-events <- SOE.data.2018[grepl("SP occurrence",SOE.data.2018$Var),]
-lon <- SOE.data.2018 %>%
+events <- SOE.data[grepl("SP occurrence",SOE.data$Var),]
+lon <- SOE.data %>%
   dplyr::filter(Var == "NE HAB Regional center Lon") %>% pull(Value)
-lat <- SOE.data.2018 %>%
+lat <- SOE.data %>%
   dplyr::filter(Var == "NE HAB Regional center Lat") %>% pull(Value)
 
 events_df <- data.frame(lon = lon,

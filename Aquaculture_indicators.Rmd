@@ -17,7 +17,7 @@ library(rmarkdown)
   
 **Point of contact**: Sean Hardison <sean.hardison@noaa.gov> 
   
-**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_2018.html). 
+**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_soe_v1.html). 
 
 
 ## Methods
@@ -45,13 +45,13 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 #colors
 topo <- c('black', "indianred", "darkorange")
 
 #filter
-oyst_vars <- SOE.data.2018 %>%
+oyst_vars <- SOE.data %>%
   dplyr::filter(Var %in%
           c("aquaculture NJ gear raised oysters sold",
             "aquaculture MD oyster harvest N",

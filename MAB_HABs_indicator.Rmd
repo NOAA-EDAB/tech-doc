@@ -18,7 +18,7 @@ library(rmarkdown)
 
 **Point of contact**: Sean Hardison, sean.hardison@noaa.gov
 
-**Public availability statement**: Source data for this indicator are available [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/data/CB_HAB). Processed time series can be found [here](http://comet.nefsc.noaa.gov/erddap/tabledap/CBhabs_ann_MAB_V2.html).
+**Public availability statement**: Source data for this indicator are available [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/data/CB_HAB). Processed time series can be found [here](http://comet.nefsc.noaa.gov/erddap/tabledap/CBhabs_ann_soe_v2.html).
 
 
 ## Methods

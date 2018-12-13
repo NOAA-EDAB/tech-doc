@@ -377,11 +377,11 @@ main.neg <- rgb(178/255, 171/255, 210/255, alpha = .9)
 **Example plot**
 ```{r examplefig, fig.cap="Example plot formatted for the report", echo = T, eval = T, warning=F,message=F}
 data.dir <- "data"
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 opar <- par(mar = c(4, 6, 2, 6))
 
-soe.plot(SOE.data.2018, "Time", "Mid-Atlantic Rec catch", scale.axis = 10^6,
+soe.plot(SOE.data, "Time", "Mid-Atlantic Rec catch", scale.axis = 10^6,
          end.start = 2008, x.label = 'Year', rel.y.text = 1.5, rel.y.num = 1.1,
          y.line = 2.5, y.label = expression("Fish caught, 10"^6 *" n"))
 ```

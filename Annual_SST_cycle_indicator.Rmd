@@ -197,14 +197,14 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 ##---------------------------------MAB-----------------------------------------#
 par(mfrow = c(1,3))
-doy <- as.numeric(SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 MAB",]$Time)
-val_2017 <- SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 MAB",]$Value
-val_LT <- SOE.data.2018[SOE.data.2018$Var == "sst mean long term MAB",]$Value
-val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sst sd long term MAB",]$Value
+doy <- as.numeric(SOE.data[SOE.data$Var == "sst mean 2017 MAB",]$Time)
+val_2017 <- SOE.data[SOE.data$Var == "sst mean 2017 MAB",]$Value
+val_LT <- SOE.data[SOE.data$Var == "sst mean long term MAB",]$Value
+val_LT_sd <- SOE.data[SOE.data$Var == "sst sd long term MAB",]$Value
 
 
 # val_2017 <- approx(doy,val_2017, xout = seq(doy[1],doy[length(doy)],length.out = 365*1))$y
@@ -290,10 +290,10 @@ points(doy,val_LT, type = "l", lwd = 1, "grey90")
 
 ##-------------------------------------GB-------------------------------------#
 
-doy <- as.numeric(SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 GB",]$Time)
-val_2017 <- SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 GB",]$Value
-val_LT <- SOE.data.2018[SOE.data.2018$Var == "sst mean long term GB",]$Value
-val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sst sd long term GB",]$Value
+doy <- as.numeric(SOE.data[SOE.data$Var == "sst mean 2017 GB",]$Time)
+val_2017 <- SOE.data[SOE.data$Var == "sst mean 2017 GB",]$Value
+val_LT <- SOE.data[SOE.data$Var == "sst mean long term GB",]$Value
+val_LT_sd <- SOE.data[SOE.data$Var == "sst sd long term GB",]$Value
 
 
 # val_2017 <- approx(doy,val_2017, xout = seq(doy[1],doy[length(doy)],length.out = 365*1))$y
@@ -380,10 +380,10 @@ points(doy,val_LT, type = "l", lwd = 1, "grey90")
 
 ## SST GOM
 
-doy <- as.numeric(SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 GOM",]$Time)
-val_2017 <- SOE.data.2018[SOE.data.2018$Var == "sst mean 2017 GOM",]$Value
-val_LT <- SOE.data.2018[SOE.data.2018$Var == "sst mean long term GOM",]$Value
-val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sst sd long term GOM",]$Value
+doy <- as.numeric(SOE.data[SOE.data$Var == "sst mean 2017 GOM",]$Time)
+val_2017 <- SOE.data[SOE.data$Var == "sst mean 2017 GOM",]$Value
+val_LT <- SOE.data[SOE.data$Var == "sst mean long term GOM",]$Value
+val_LT_sd <- SOE.data[SOE.data$Var == "sst sd long term GOM",]$Value
 
 
 # val_2017 <- approx(doy,val_2017, xout = seq(doy[1],doy[length(doy)],length.out = 365*1))$y

@@ -10,7 +10,7 @@
   
 **Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
   
-**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_2018.html).
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_soe_v1.html).
 
 
 
@@ -298,9 +298,9 @@ ztrans <- function(x){
 }
 
 #Get data
-load(file.path(data.dir, "SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir, "SOE_data_erddap.Rdata"))
 
-CF <- SOE.data.2018 %>% filter(str_detect(Var, "condition"))
+CF <- SOE.data %>% filter(str_detect(Var, "condition"))
 
 #Processing
 CF_mat <- CF %>%

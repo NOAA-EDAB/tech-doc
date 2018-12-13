@@ -232,8 +232,8 @@ total_by_year<- source %>%
 ```{r analysis, echo = T, eval = F}
 
 #For map and plot. Latitude and longitude data for this figure are not publicly available. 
-sk.dat <- SOE.data.2018[grepl("Lat",SOE.data.2018$Units) &
-                          grepl("Southern Kingfish",SOE.data.2018$Var),]
+sk.dat <- SOE.data[grepl("Lat",SOE.data$Units) &
+                          grepl("Southern Kingfish",SOE.data$Var),]
 lon <- sk.dat[as.numeric(sk.dat$Value) < 0,]$Value
 lat <- sk.dat[as.numeric(sk.dat$Value) > 0,]$Value
 
@@ -271,8 +271,8 @@ plot(coast, xlim = c(-76,-73), ylim = c(35,40.5),col = "grey")
 plot(df, pch = 16, col = colors, add = T, cex = 2.5)
 
 
-occur <- SOE.data.2018[SOE.data.2018$Var == "Southern Kingfish observer sightings",]$Value
-time <- SOE.data.2018[SOE.data.2018$Var == "Southern Kingfish observer sightings",]$Time
+occur <- SOE.data[SOE.data$Var == "Southern Kingfish observer sightings",]$Value
+time <- SOE.data[SOE.data$Var == "Southern Kingfish observer sightings",]$Time
 
 ts <- zoo(occur,time)
 par(fig = c(0.5,1, 0.1, .5), new = T, bty = "l",mar = c(5,6,3,1)) 

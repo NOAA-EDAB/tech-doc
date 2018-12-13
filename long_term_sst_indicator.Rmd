@@ -256,14 +256,14 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
 
 
 opar <- par(mar = c(4, 6, 2, 6))
-soe.plot(SOE.data.2018, "Time", "long term sst", end.start = 2007, 
+soe.plot(SOE.data, "Time", "long term sst", end.start = 2007, 
          line.forward = TRUE, point.cex = 0.8, rel.y.text = 1.1,
          x.line = 2, y.line = 2.3, x.label = 'Year', rel.y.num = 1.1,
          y.label = expression(paste("Mean SST (",degree,"C)")))

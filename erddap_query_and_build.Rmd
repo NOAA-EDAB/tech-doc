@@ -59,7 +59,7 @@ erddap_datasets <- erddap_datasets %>%
 
 #Create SOE parent data set, filter out NAs. This queries based on 
 #data set IDs that were collected above
-SOE.data.2018.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
+SOE.data.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
                          erddap_datasets$Dataset.ID) %>% 
   purrr::map(function(x) {
     readr::read_csv(url(x))
@@ -69,10 +69,10 @@ SOE.data.2018.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv
     dplyr::filter(!is.na(Value))
 
 #Convert to data.table
-SOE.data.2018 <- as.data.table(SOE.data.2018.erd)
+SOE.data <- as.data.table(SOE.data.erd)
 
 #Save data
-save(SOE.data.2018, file = file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+save(SOE.data, file = file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 ```
 

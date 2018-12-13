@@ -18,7 +18,7 @@ Published methods
   
 **Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
   
-**Public availability statement**: Source data is not publicly availabe due to PII restrictions. Derived time series are available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/comm_data_2018.html).
+**Public availability statement**: Source data is not publicly availabe due to PII restrictions. Derived time series are available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/comm_data_soe_v1.html).
   
 
 ## Methods
@@ -55,18 +55,18 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(4, 6, 2, 6))
 
-soe.plot(SOE.data.2018, "Time", "Mid-Atlantic average fleet diversity", stacked = "A",
+soe.plot(SOE.data, "Time", "Mid-Atlantic average fleet diversity", stacked = "A",
          rel.y.num = 0.9, end.start = 2008, tol = 0.15, full.trend = F, cex.stacked = 1.5)
 soe.stacked.axis('Year', 'Fleet diversity', y.line = 2.5, outer = F,
                  rel.x.text = 1, rel.y.text = 1)
-soe.plot(SOE.data.2018,"Time", "Mid-Atlantic fleet count", stacked = "B",
+soe.plot(SOE.data,"Time", "Mid-Atlantic fleet count", stacked = "B",
          rel.y.num = 0.9, end.start = 2008, full.trend = F, cex.stacked = 1.5)
 
 soe.stacked.axis('Year', 'Fleet count', y.line = 2.5, outer = F,

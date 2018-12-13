@@ -17,7 +17,7 @@ library(rmarkdown)
   
 **Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
   
-**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_2018.html).
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_soe_v1.html).
 
 
 ## Methods
@@ -161,7 +161,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -169,10 +169,10 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
-soe.plot(SOE.data.2018, "Time", "Spring_Ich_Shannon Diversity Index", stacked = "A",
+soe.plot(SOE.data, "Time", "Spring_Ich_Shannon Diversity Index", stacked = "A",
          rel.y.num = 1.1, end.start = 2007, full.trend = F,
          cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "Fall_Ich_Shannon Diversity Index", stacked = "B",
+soe.plot(SOE.data, "Time", "Fall_Ich_Shannon Diversity Index", stacked = "B",
          rel.y.num = 1.1, end.start = 2007, full.trend = F,
          cex.stacked = 1.5)
 

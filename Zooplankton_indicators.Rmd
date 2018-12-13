@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>
   
-**Public availability statement**: Source data are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_2018.html).
+**Public availability statement**: Source data are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html).
 
 ## Methods
 
@@ -254,7 +254,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -262,7 +262,7 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 #C. typicus abundance anomaly
 opar <- par(mar = c(4,4.75,2,4))
-soe.plot(SOE.data.2018, "Time", "Centropages typicus abundance anomaly MAB", 
+soe.plot(SOE.data, "Time", "Centropages typicus abundance anomaly MAB", 
          anomaly = T, stacked = "A", suppressAxis = T, x.start = 1986, cex.stacked = 1.75)
 soe.stacked.axis("Year", "Abundance anomaly", rel.x.text = 1.2, rel.y.text = 1.2, 
                  y.line = 3.1, outer = F)

@@ -17,7 +17,7 @@ library(rmarkdown)
   
 **Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
   
-**Public availability statement**: Source data are available upon request (see [Survdat](#survdat), [CHL/PP](#chl-pp), and Data Sources below for more information). Model-derived time series are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_2018.html).
+**Public availability statement**: Source data are available upon request (see [Survdat](#survdat), [CHL/PP](#chl-pp), and Data Sources below for more information). Model-derived time series are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html).
 
 
 ## Methods
@@ -105,7 +105,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -113,10 +113,10 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
-soe.plot(SOE.data.2018, "Time", "sumflo spring habitat occupancy", stacked = "A",
+soe.plot(SOE.data, "Time", "sumflo spring habitat occupancy", stacked = "A",
          rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
          cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "sumflo fall habitat occupancy", stacked = "B",
+soe.plot(SOE.data, "Time", "sumflo fall habitat occupancy", stacked = "B",
          rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
          cex.stacked = 1.5)
 

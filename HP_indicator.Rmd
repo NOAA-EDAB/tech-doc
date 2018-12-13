@@ -18,7 +18,7 @@ library(rmarkdown)
 
 **Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
 
-**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_2018.html)
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
   
 
 ## Methods
@@ -44,7 +44,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -52,7 +52,7 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mar = c(4, 6, 2, 6))
 
-soe.plot(SOE.data.2018, 'Time', "Harbor porpoise bycatch estimates",            
+soe.plot(SOE.data, 'Time', "Harbor porpoise bycatch estimates",            
          rel.y.num = 1.2, end.start = 2007, full.trend = F, point.cex = 1,
          ymax = F, y.upper = 2500, mean_line = F, x.label = 'Year',
          y.label = 'Bycatch, n', rel.y.text = 1)
@@ -62,11 +62,11 @@ legend(2000, 2250, legend = "Potential Biological Removal",
        bty = "n", cex = 0.9)
 
 #credible intervals and PBI
-lw_CI <- SOE.data.2018[Var == 'Harbor porpoise bycatch 2.5 CI',
+lw_CI <- SOE.data[Var == 'Harbor porpoise bycatch 2.5 CI',
                        list(Time, Value)]
-up_CI <- SOE.data.2018[Var == 'Harbor porpoise bycatch 97.5 CI',
+up_CI <- SOE.data[Var == 'Harbor porpoise bycatch 97.5 CI',
                        list(Time, Value)]
-pbi   <- SOE.data.2018[Var == 'Harbor porpoise potential biological removal',
+pbi   <- SOE.data[Var == 'Harbor porpoise potential biological removal',
                        list(Time, Value)]
 
 points(pbi,   type  = "l", lty = 1, col = adjustcolor("red", .5), lwd = 3)
