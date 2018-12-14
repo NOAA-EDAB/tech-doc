@@ -27,7 +27,7 @@ Data used in the Bennet Indicator were derived from the Comland data set; a proc
 ### Data extraction 
 For information regarding processing of CFDBS, please see [Comland](#comdat) methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was &geq;0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.
 
-```{r extraction, echo = T, eval = T, warning=F, message=F}
+```{r extraction, echo = T, eval = F, warning=F, message=F}
 #This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. 
 
 #Packages
@@ -37,17 +37,10 @@ for (p in PKG) {
     install.packages(p)
     require(p,character.only = TRUE)}
 }
-
-
 # #Setting Save path
-# SAVE_PATH <- 'Z:/shardison/neiea/'
 
-#Load comland data
 
-data.dir <- "./data"
-gis.dir <- "./gis"
-
-load(file.path(data.dir, "comland_meatwt_deflated.RData"))
+#load "comland" data - These data are unavailble due to PII concerns. See aggregated data load below
 ecosys2<-subset(comland, US=='TRUE' & YEAR>=1964 & SPPVALUE >=0)
 
 #Load species and PDT codes
@@ -67,12 +60,17 @@ add.apex <- data.table(NESPP3 = 000, YEAR = 1971, QY = 1, GEAR = 'other',
 sp_combine <- rbindlist(list(sp_combine, add.apex))
 
 #Subset data into Georges Bank group
-LANDINGS<-subset(sp_combine, EPU==epu)
+LANDINGS<-subset(sp_combine)
 LANDINGS<-LANDINGS[which(!is.na(LANDINGS$Feeding.guild)),]
 
 #Set Up data Table
 landsum<-data.table(LANDINGS)
-setkey(landsum, "YEAR", "Feeding.guild")
+# setkey(landsum,  "EPU", "YEAR","Feeding.guild")
+setkey(landsum,"EPU","YEAR","Feeding.guild")
+
+
+#Sum by feeding guild
+landsum[,lapply(.SD, sum, na.rm=TRUE), by=key(landsum), .SDcols=c("SPPLIVMT","SPPVALUE")]
 
 ```
 
@@ -93,7 +91,7 @@ The price indicator (PI) is calculated as follows:
 $$PI = \frac{1}{2}(\sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t} + \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t})$$
 Total revenue change between time $t$ and $t+1$ is the sum of the VI and PI. Since revenue change is being driven by changes in the individual prices and quantities landed of each species group, changes at the species group level can be examined separately by taking advantage of the additive property of the indicator. For example, if there are five different species groups, the sum of the VI for each group will equal the overall VI, and the sum of the PI for each group will equal the overall PI. 
 
-```{r analysis, echo = T, eval = T, fig.align='center',fig.asp=0.75}
+```{r analysis, echo = T, eval = F, fig.align='center',fig.asp=0.75}
 #R code to construct Bennet Indicator for Ecosystem Project
 #Author: John Walden
 #Date: October 4, 2017
@@ -102,8 +100,11 @@ Total revenue change between time $t$ and $t+1$ is the sum of the VI and PI. Sin
 #during each time period. Set EPU in extraction/processing code chunk above.
 
 
-#Sum by feeding guild
-value<-landsum[,lapply(.SD, sum, na.rm=TRUE), by=key(landsum), .SDcols=c("SPPVALUE", "SPPLIVMT")]
+#filter by specific EPU
+epu = "GB"
+value <- subset(landsum, EPU == epu)
+
+#Calculate price
 value$PRICE=value$SPPVALUE/value$SPPLIVMT
 value[is.na(value)]<-0
 
@@ -153,84 +154,111 @@ y2$indicator='PI'
 colnames(y1)[2]<-"value"
 colnames(y2)[2]<-"value"
 ytotal<-rbind(y1,y2)
+```
 
-viy1<-subset(ytotal, (indicator=="VI" & value>=0))
-viy2<-subset(ytotal, (indicator=="VI" & value<0))
+### Plotting
 
-piy1<-subset(ytotal, (indicator=="PI" & value>=0))
-piy2<-subset(ytotal, (indicator=="PI" & value<0))
+```{r bennet-plot1, message = F, warning=F}
 
-BI<-ggplot()+geom_bar(data=viy1, aes(x=YEAR, y=value, fill=indicator), stat="identity")+
-  geom_bar(data=viy2, aes(x=YEAR, y=value, fill=indicator), stat="identity")+
-  geom_bar(data=piy1, aes(x=YEAR, y=value, fill=indicator), stat="identity")+
-  geom_bar(data=piy2, aes(x=YEAR, y=value, fill=indicator), stat="identity")+
+#This section loads the aggregated comland data set to the point where the last chunk left off
+#to avoid privacy issues. As such, there are some repeated steps from above. Apologies for mixed #syntax.
+
+#Libraries
+library(data.table)
+library(plyr)
+library(RColorBrewer)
+library(ggplot2)
+library(cowplot)
+library(gridExtra)
+library(grid)
+library(dplyr)
+
+epu <- "GB"
+
+data.dir <- here::here("data")
+
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+#Load data for Georges Bank
+ytotal <- SOE.data %>% filter(Units == "million USD ($2015)",
+                    stringr::str_detect(Var, "by EPU"),
+                    EPU == epu)
+ytotal$Var <- stringr::str_remove(ytotal$Var, "by EPU")
+
+#Calculate Bennet indicator as the sum of price and volume indicators
+#This step was accomplished above when the data.frame "biyear" was created
+BI <- ytotal %>%
+  group_by(EPU, Time) %>%
+  dplyr::summarise(revchange = sum(Value)) 
+
+#Subset by sign
+viy1<-subset(ytotal, (stringr::str_detect(ytotal$Var, "VI") & Value>=0))
+viy2<-subset(ytotal, (stringr::str_detect(ytotal$Var, "VI") & Value<0))
+piy1<-subset(ytotal, (stringr::str_detect(ytotal$Var, "PI") & Value>=0))
+piy2<-subset(ytotal, (stringr::str_detect(ytotal$Var, "PI") & Value<0))
+
+#plot
+BI<-ggplot()+geom_bar(data=viy1, aes(x=Time, y=Value, fill=Var), stat="identity")+
+  geom_bar(data=viy2, aes(x=Time, y=Value, fill=Var), stat="identity")+
+  geom_bar(data=piy1, aes(x=Time, y=Value, fill=Var), stat="identity")+
+  geom_bar(data=piy2, aes(x=Time, y=Value, fill=Var), stat="identity")+
   ggtitle("Revenue Change ($2015), Price (PI) and Volume Indicator (VI)", subtitle=paste0(epu," EPU 1964-2016 Compared to Average Year")) +
-  labs(x="YEAR", y="VALUE $1,000,000 ($2015)") +
+  labs(x="YEAR", y="Value $1,000,000 ($2015)") +
   scale_fill_brewer(name="Indicator",palette = "Set2")+
-  geom_line(data=biyear, aes(x=YEAR, y=revchange, colour="$"))+
+  geom_line(data=BI, aes(x=Time, y=revchange, colour="$"))+
   scale_colour_grey(name="Revenue Change")+
   theme(plot.title = element_text(hjust=0.3),plot.subtitle=element_text(hjust=0.5))
 
-# tiff(paste0(SAVE_PATH,filename=paste0("Bennet_",epu,".tiff")), units="px", width=4800, height=3200, res=800, pointsize = 10) #setting up the save file
-
-#Output to TIFF files. These have better resolution than PDF files.
-
-#printing to the save file
-# dev.off() #closing the save file
-
 #The next step creates the separate volume indicators
 #The aggregate volume indicator can be broken into smaller
-#components. In this case, by Feeding.guild group. First, separate into
-#two data frames, one for values >=0 and one for <0 
+#components. In this case, by Feeding.guild group.  
 
-vi1<-subset(value,VI >=0)
-vi2<-subset(value, VI <0)
+VI <- SOE.data %>% filter(Units == "million USD ($2015)",
+                    !stringr::str_detect(Var, "by EPU"),
+                    stringr::str_detect(Var, "VI"),
+                    EPU == epu)
+VI$Var <- stringr::str_remove(VI$Var,"VI")
 
-#Here is where I graph the VI using ggplot.
+#Subset by sign
+vi1<-subset(VI, Value >= 0)
+vi2<-subset(VI, Value < 0)
 
-VI<-ggplot()+geom_bar(data=vi1, aes(x=YEAR, y=VI, fill=Feeding.guild), stat="identity")+
-  geom_bar(data=vi2, aes(x=YEAR, y=VI, fill=Feeding.guild), stat="identity")+
+#Volume indicator
+volind <- VI %>% group_by(Time) %>% dplyr::summarise(revchange = sum(Value))
+
+VI<-ggplot()+geom_bar(data=vi1, aes(x=Time, y=Value, fill=Var), stat="identity")+
+  geom_bar(data=vi2, aes(x=Time, y=Value, fill=Var), stat="identity")+
   ggtitle(paste0("Volume Indicator ($2015) Year 2000 Base\n",epu," EPU 1964-2016")) +
-  labs(x="YEAR", y="VALUE $1,000,000 ($2015)") +
+  labs(x="YEAR", y="Value $1,000,000 ($2015)") +
   scale_fill_brewer(name= "Feeding Guild", palette="Set1")+
-  geom_line(data=biyear, aes(x=YEAR, y=VI, colour="$"))+
+    geom_line(data=volind , aes(x=Time, y=revchange, colour="$"))+
   scale_colour_grey(name="VI/PI")+
   theme(plot.title = element_text(hjust=0.5, size = 10),
         axis.text = element_text(size = 10),
         axis.title = element_text(size = 10)) 
 
-# tiff(paste0(SAVE_PATH,filename=paste0(epu,"v1.tiff")), units="px", width=4800, height=3200, res=800, pointsize = 10) #setting up the save file
-
-#printing to the save file
-# dev.off() #closing the save file
-
 
 #Next, use the same algorithm to create Price Indicator graphs
+PI <- SOE.data %>% filter(Units == "million USD ($2015)",
+                    !stringr::str_detect(Var, "by EPU"),
+                    stringr::str_detect(Var, "PI"),
+                    EPU == epu)
+PI$Var <- stringr::str_remove(PI$Var,"PI")
+pi1<-subset(PI, Value >= 0)
+pi2<-subset(PI, Value < 0)
+prind <- PI %>% group_by(Time) %>% dplyr::summarise(revchange = sum(Value))
 
-pi1<-subset(value,PI >=0)
-pi2<-subset(value, PI <0)
-
-PI<-ggplot()+geom_bar(data=pi1, aes(x=YEAR, y=PI, fill=Feeding.guild), stat="identity") + 
-  geom_bar(data=pi2, aes(x=YEAR, y=PI, fill=Feeding.guild), stat="identity")+
+PI<-ggplot()+geom_bar(data=pi1, aes(x=Time, y=Value, fill=Var), stat="identity") + 
+  geom_bar(data=pi2, aes(x=Time, y=Value, fill=Var), stat="identity")+
   geom_bar(stat="identity") + 
   ggtitle(paste0("Price Indicator ($2015) Year 2000 Base\n",epu," EPU 1964-2016")) +
-  labs(x="YEAR", y="VALUE $1,000,000 ($2015)") +
+  labs(x="YEAR", y="Value $1,000,000 ($2015)") +
   scale_fill_brewer(name= "Feeding Guild", palette="Set1")+
-  geom_line(data=biyear, aes(x=YEAR, y=PI, colour="$"))+
+  geom_line(data=prind, aes(x=Time, y=revchange, colour="$"))+
   scale_colour_grey(name="VI/PI")+  
   theme(plot.title = element_text(hjust=0.5, size = 10),
         axis.text = element_text(size = 10),
         axis.title = element_text(size = 10)) 
-  
-
-#get legend
-
-# tiff(paste0(SAVE_PATH,filename=paste0(epu,"pi.tiff")), units="px", width=4000, height=3200, res=800, pointsize = 10) #setting up the save file
-
-
-#printing to the save file
-# dev.off() #closing the save file
-# 
 
 #grid.arrange(VI, PI,BI, nrow = 2,width = 1:2)
 r1 <-plot_grid(BI, ncol = 1)
