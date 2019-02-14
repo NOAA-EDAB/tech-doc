@@ -27,13 +27,15 @@ NA
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 ```{r analysis, echo = T, message= F, warning=F, include=T, eval = T}
+devtools::install_github("noaa-edab/ecodata")
+
+library(ecodata)
 library(maps)
 library(mapdata)
 library(ks)
 library(marmap)
 library(raster)
 library(geosphere)
-library(ecodata)
 library(dplyr)
 
 #  plot ks plots

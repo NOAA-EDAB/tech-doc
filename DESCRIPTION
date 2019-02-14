@@ -42,7 +42,6 @@ Imports:
   Survdat,
   kableExtra,
   here,
-  ecodata,
   ks,
   geosphere,
   purrr
