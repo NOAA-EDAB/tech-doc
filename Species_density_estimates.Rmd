@@ -1,4 +1,4 @@
-# Current and Historical Species Distributions
+# Species Density Estimates
 
 **Description**: Current and Historical Species Distributions
 
