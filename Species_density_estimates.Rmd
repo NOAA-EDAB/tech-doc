@@ -27,8 +27,6 @@ NA
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 ```{r analysis, echo = T, message= F, warning=F, include=T, eval = T}
-devtools::install_github("noaa-edab/ecodata")
-
 library(ecodata)
 library(maps)
 library(mapdata)
@@ -158,9 +156,6 @@ plot_kd <- function(species, season, exclude_years){
   # add col to survdat for PLOTWT
   survdat$PLOTWT <- NA
   survdat$PLOTWT <- ceiling(survdat$AREAPERTOW/1000*survdat$LOGBIO/9)
-  
-  # Plot stations
-  plot(survdat$LON[survdat$YEAR==1974],survdat$LAT[survdat$YEAR==1974])
   
   if (!is.null(exclude_years)){
     sdat <- survdat %>% filter(!YEAR %in% exclude_years)

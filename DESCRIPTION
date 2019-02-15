@@ -48,4 +48,5 @@ Imports:
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat
+  noaa-edab/ecodata
   
