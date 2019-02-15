@@ -4,7 +4,7 @@
 
 **Indicator category**: Database pull; Database pull with analysis
 
-**Contributor(s)**: Kevin Friedland
+**Contributor**: Kevin Friedland
 
 **Data steward**: Kevin Friedland
 
@@ -14,14 +14,13 @@
 
 
 ## Methods
-We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on NEFSC fall Bottom Trawl Survey data. Kernel density estimates of distributions (shaded regions) are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red). Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. 
+We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on NEFSC fall Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions (shaded regions) are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
 
-### Data source(s)
+Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. A wide array of KDEs for many ecologically and economically important species on the Northeast US Continental Shelf are available [here](https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html).
+
+### Data sources
 Current and historical species distributions are based on the NEFSC Bottom Trawl Survey data (aka ["Survdat"](#survdat)) and depth strata. Strata are available as shapefiles that can be downloaded  [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis) (listed as 
 "strata.shp"). 
-
-### Data extraction
-NA
 
 ### Data analysis
 
@@ -324,7 +323,7 @@ plot_kd <- function(species, season, exclude_years){
 
 ### Plotting
 
-```{r examplefig, fig.cap="Current and historical sea scallop kernel density estimates derived from spring survey data. Current estimates derived from 2016-2018 data.", echo = T, eval = T}
+```{r kde-fig, fig.cap="Current and historical sea scallop kernel density estimates derived from spring survey data. Current estimates derived from 2016-2018 data.", echo = T, eval = T}
 plot_kd(species = "SEA SCALLOP", season = "SPRING", exclude_years = NULL)
 ```
 
