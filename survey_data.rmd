@@ -71,9 +71,8 @@ There are also a series of tools that have been developed in order to utilize th
 Survdat is a database query of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
 
 ### Data extraction 
-Extraction methods are described above.
+Extraction methods are described above. The following is the R code used in the data extraction process.
 
-R code used in extraction process.
 ```{r survdat, echo = T, eval = F}
 #Survdat.r
 #This script will generate data from the NEFSC bottom trawl surveys
