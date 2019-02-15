@@ -47,6 +47,6 @@ Imports:
   purrr
 Remotes: 
   rstudio/bookdown,
-  slucey/Rsurvey/Survdat
+  slucey/Rsurvey/Survdat,
   noaa-edab/ecodata
   
