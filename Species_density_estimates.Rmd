@@ -70,7 +70,7 @@ load(file.path(data.dir, "StratAreas.Rdata"))
 load(file.path(data.dir, "nesbath.Rdata"))
 
 #Load raw survey data
-load(file.path(data.dir, "Survdat.Rdata"))
+load(file.path(data.dir, "Survdat.RData"))
 
 # MUST run addTrans function
 # color transparency
