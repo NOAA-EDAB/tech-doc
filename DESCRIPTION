@@ -1,6 +1,6 @@
 Package: placeholder
-Title: does not matter
-Description: This is a description. 
+Title: Technical Documentation, State of the Ecosystem Report
+Description: Technical documentation for State of the Ecosystem Reporting.
 Version: 0.0.1
 Imports: 
   bookdown, 
