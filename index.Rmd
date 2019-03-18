@@ -8,16 +8,17 @@ documentclass: book
 bibliography: ["conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib", "occupancy.bib", "long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib","aggregate_groups.bib"]
 biblio-style: apalike
 link-citations: yes
-github-repo: NOAA-EDAB/tech-memo
+github-repo: NOAA-EDAB/tech-doc
 description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
 ---
 # Introduction {-}
 
-The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The methods to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in the State of the Ecosystem Report. Each chapter is derived from a common template to ensure consistency between indicators, and the level of documentation is intended to be on par with a peer-reviewed document. Further, the document contains metadata for each indicator according to the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf).
+The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (Figure \@ref(fig:map). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator according to the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports.
 
+Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
 **The Northeast US Shelf Large Marine Ecosystem (NE-LME)**
-```{r, map, echo=F, eval=T, fig.align='center', fig.height=6}
+```{r, map, echo=F, eval=T, fig.align='center', fig.height=6, fig.cap = "Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @rHare2016."}
 
 image.dir <- './images'
 
@@ -25,8 +26,8 @@ knitr::include_graphics(file.path(image.dir, 'journal.pone.0146756.g002.PNG'))
 
 ```
 
-**References**
+<!-- **References** -->
 
-Hare JA, Morrison WE, Nelson MW, Stachura MM, Teeters EJ, Griffis RB, et al. (2016) A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast US Continental Shelf. PLoS ONE 11(2): e0146756. https://doi.org/10.1371/journal.pone.0146756
+<!-- Hare JA, Morrison WE, Nelson MW, Stachura MM, Teeters EJ, Griffis RB, et al. (2016) A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast US Continental Shelf. PLoS ONE 11(2): e0146756. https://doi.org/10.1371/journal.pone.0146756 -->
 
---------------
+<!-- -------------- -->
