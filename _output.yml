@@ -9,8 +9,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
       after: |
-        <li><a href="https://github.com/NOAA-EDAB/tech-memo" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/NOAA-EDAB/tech-memo/edit/master/%s
+        <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
 bookdown::pdf_book:
   keep_tex: yes
 bookdown::html_book:

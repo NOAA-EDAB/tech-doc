@@ -1,6 +1,6 @@
-# tech-memo
+# tech-doc
 
-[![Travis-CI Build Status](https://travis-ci.org/NOAA-EDAB/tech-memo.svg?branch=master)](https://travis-ci.org/NOAA-EDAB/tech-memo)
+[![Travis-CI Build Status](https://travis-ci.org/NOAA-EDAB/tech-doc.svg?branch=master)](https://travis-ci.org/NOAA-EDAB/tech-doc)
 
 Technical documentation for State of the Ecosystem indicators and general methods. 
 

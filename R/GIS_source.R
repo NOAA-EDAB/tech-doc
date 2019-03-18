@@ -1,4 +1,4 @@
-#Tech-memo GIS sourcing
+#tech-doc GIS sourcing
 
 #Libraries
 library(raster)

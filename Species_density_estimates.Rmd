@@ -19,7 +19,7 @@ We used kernel density plots to depict shifts in species' distributions over tim
 Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. A wide array of KDEs for many ecologically and economically important species on the Northeast US Continental Shelf are available [here](https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html).
 
 ### Data sources
-Current and historical species distributions are based on the NEFSC Bottom Trawl Survey data (aka ["Survdat"](#survdat)) and depth strata. Strata are available as shapefiles that can be downloaded  [here](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis) (listed as 
+Current and historical species distributions are based on the NEFSC Bottom Trawl Survey data (aka ["Survdat"](#survdat)) and depth strata. Strata are available as shapefiles that can be downloaded  [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis) (listed as 
 "strata.shp"). 
 
 ### Data analysis
