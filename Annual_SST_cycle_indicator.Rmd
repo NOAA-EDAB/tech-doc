@@ -24,7 +24,7 @@ library(rmarkdown)
 ## Methods
 
 ### Data sources
-Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
+Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
 
 
 ### Data extraction 
@@ -172,7 +172,7 @@ sst_2017 <- rbind(mab_2017, gb_2017, gom_2017)
 ```
 
 ### Data analysis 
-We found the long-term mean and standard deviation of SST over the period of 1982-2012 for each EPU, as well as the daily mean for 2017.  
+We calculated the long-term mean and standard deviation of SST over the period of 1982-2012 for each EPU, as well as the daily mean for 2017.  
 
 ```{r analyses, echo = T, eval = F}
 #----------------------Load results--------------------------#
