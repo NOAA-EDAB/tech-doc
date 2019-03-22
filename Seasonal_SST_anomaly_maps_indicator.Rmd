@@ -25,7 +25,7 @@ library(rmarkdown)
 
 ## Methods
 ### Data sources
-Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007].  
+Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007].  
 
 
 ### Data extraction 
@@ -132,7 +132,7 @@ for (dir. in 1){
 ```
 
 ### Data analysis
-We found the long-term mean (LTM) across each season-specific stack of rasters for the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the 2017 SST anomaly. 
+We calculated the long-term mean (LTM) for each season-specific stack of rasters for the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the 2017 SST anomaly. 
 
 ```{r anomaly calculation, echo = T, eval = F}
 fall_1 <- stack("fall_1")
