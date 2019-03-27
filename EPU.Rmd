@@ -30,7 +30,7 @@ library(readr)
 ## Methods
 To define ecological production units, we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
 
-We did not include information on higher trophic levels or fishing patterns in our analysis. The biomass and production of higher trophic levels in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
+We did not include information on zooplankton, benthic invertebrates, fish, protected species, or fishing patterns in our analysis. The biomass and production of the higher trophic level groups in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
 
 Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
 
@@ -73,9 +73,9 @@ knitr::kable(
 The biotic measurements included satellite-derived estimates of chlorophyll *a* (CHLa) mean concentration, annual span, and CHLa gradients and related measures of primary production. Daily merged SeaWiFS/MODIS-Aqua CHLa (CHL, mg m^-3^) and SeaiWiFS photosynthetically available radiation (PAR, Einsteins m^-2^ d^-1^) scenes at 1.25 km resolution were obtained from NASA Ocean Biology Processing Group. 
 
 ### Data extraction
-NA
+<!--*Can we refer to other methods already documented here? Or put in an outline of the queries used and which databases were involved? This section is applicable based on the above description of shipboard and satellite sources.*-->
 
-### Data analysis
+### Data analysis <!--*Can we include the code for each step below? Needed to recreate the analysis*-->
 In all cases, we standardized the data to common spatial units by taking annual means of each observation type within spatial units of 10' latitude by 10' longitude to account for the disparate spatial and temporal scales at which these observations are taken. There are over 1000 spatial cells in this analysis. Shipboard sampling used to obtain direct hydrographic measurements is constrained by a minimum sampling depth of 27 m specified on the basis of prescribed safe operating procedures. As a result nearshore waters are not fully represented in our initial specifications of ecological production units. 
 
 The size of the spatial units employed further reflects a compromise between retaining spatial detail and minimizing the need for spatial interpolation of some data sets. For shipboard data sets characterized by relatively coarse spatial resolution, where necessary, we first constructed an interpolated map using an inverse distance weighting function before including it in the analysis. Although alternative interpolation schemes based on geostatistical approaches are possible, we considered the inverse distance weighting function to be both tractable and robust for this application. 
