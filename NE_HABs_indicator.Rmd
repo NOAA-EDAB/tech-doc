@@ -32,7 +32,7 @@ In Maine, PST detection methods were updated in May 2014 when the state adopted 
 Amnesic shellfish poisoning (ASP) is caused by the toxin domoic acid (DA), which is produced by several phytoplankton species belonging to the genus *Pseudo-nitzchia*. In New England, a UV-HPLC method [@Quilliam1995], which specifies a HPLC-UV protocol, is used for ASP detection. 
 
 #### Diarrhetic Shellfish Poisoning
-Diarrhetic Shellfish Poisoning (DSP) is rare in New England waters, but the presence of the DSP-associated okadaic acid (OA) in mussels was confirmed in Massachusetts in 2015 (personal comm.). Preliminary testing for OA in Massachusetts utilized the commercially available Protein Phosphatase Inhibition Assay (PPIA) and these results are confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
+Diarrhetic Shellfish Poisoning (DSP) is rare in New England waters, but the presence of the DSP-associated okadaic acid (OA) in mussels was confirmed in Massachusetts in 2015 (J. Deeds, personal communication, July 7, 2018). Preliminary testing for OA in Massachusetts utilized the commercially available Protein Phosphatase Inhibition Assay (PPIA) and these results are confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
 
 
 ### Data sources
