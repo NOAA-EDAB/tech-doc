@@ -24,11 +24,11 @@ library(rmarkdown)
 ## Methods
 
 ### Data sources
-Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)). The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
+Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
 
 
 ### Data extraction 
-Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V2 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) to derive the long-term climatological mean for the period. 
+Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V2 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) to derive the long-term climatological mean for the period. The use of a 30-year climatological reference period is a standard procedure for metereological observing [@WMO2017]. These reference periods serve as benchmarks for comparing current or recent observations, and for the development of standard anomaly data sets. The reference period of 1982-2012 was chosen to be consistent with previous versions of the State of the Ecosystem report. 
 
 R code used in extraction and processing:
 ```{r extraction, echo = T, eval = F}
@@ -172,7 +172,7 @@ sst_2017 <- rbind(mab_2017, gb_2017, gom_2017)
 ```
 
 ### Data analysis 
-We found the long-term mean and standard deviation of SST over the period of 1982-2012 for each EPU, as well as the daily mean for 2017.  
+We calculated the long-term mean and standard deviation of SST over the period of 1982-2012 for each EPU, as well as the daily mean for 2017.  
 
 ```{r analyses, echo = T, eval = F}
 #----------------------Load results--------------------------#
@@ -190,7 +190,7 @@ ltm <- d %>% group_by(EPU, day) %>% dplyr::summarise(mean  = mean(Value),
 ```
 
 ### Plotting
-```{r plotting, echo = T, eval = T, fig.cap = "Long-term mean SSTs for the Mid-Atlantic Bight (A), Georges Bank (B), and Gulf of Maine (C) are shown by the black line, with +/- 1 SD shaded in grey. Red or dark blue shaded regions show where mean daily SSTs exceeded +/- 1 SD in 2017.", fig.width=8, fig.height=3.25, fig.align='center'}
+```{r plotting, echo = T, eval = T, fig.cap = "Long-term mean (1982-2012) SSTs for the Mid-Atlantic Bight (A), Georges Bank (B), and Gulf of Maine (C) are shown by the black line, with +/- 1 SD shaded in grey. Red or dark blue shaded regions show where mean daily SSTs exceeded +/- 1 SD in 2017, and orange and cyan shaded regions show where mean daily SSTs were above or below the long-term mean.", fig.width=8, fig.height=3.25, fig.align='center'}
 
 # Relative working directories
 data.dir  <- here::here('data')
