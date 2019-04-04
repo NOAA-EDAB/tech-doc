@@ -5,6 +5,7 @@
 #Load packages
 library(knitr)
 library(rmarkdown)
+image.dir <- here::here("images")
 
 ```
 
@@ -200,8 +201,7 @@ If a community received a dominant score (50% or more) for any of the above cate
 2)  *Pie charts* - The pie charts were created using the NMFS landings data pulled from NEFSC databases in Woods Hole, MA. The percent contribution of each species was calculated by dividing the total value of landings in each port by each species' landed value.  Data was calculated and graphed in a pie chart in Excel and given the colors that represent High (red), Moderate (blue), Low (yellow) climate vulnerability. The "other" category consists of species with low landings and/or those that do not have a vulnerability ranking based on @Hare2016.  These species were aggregated and given the color gray.
 
 
-```{r species-vulnerability, fig.cap="Commercial species vulnerability to climate change in in New England fishing communities.",fig.align = 'center', echo = F, fig.width=8}
-image.dir <- './images'
+```{r species-vulnerability, fig.cap="Commercial species vulnerability to climate change in in New England fishing communities.",fig.align = 'center', echo = F, eval = T}
 knitr::include_graphics(file.path(image.dir, 'Species_vulnerability_NE.jpg'))
 ```
 
