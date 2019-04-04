@@ -132,7 +132,7 @@ for (dir. in 1){
 ```
 
 ### Data analysis
-We calculated the long-term mean (LTM) for each season-specific stack of rasters for the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the 2017 SST anomaly. 
+We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the SST anomaly. The use of a 30-year climatological reference period is a standard procedure for the calculation of meteorological anomalies [@WMO2017]. In our case, we chose to use the 1982-2012 reference period to remain consistent with previous State of the Ecosystem reports. 
 
 ```{r anomaly calculation, echo = T, eval = F}
 fall_1 <- stack("fall_1")
@@ -191,7 +191,7 @@ fall_anom <- seasonal_sst_2017[[4]] - fall_mean
 
 
 # Relative working directory
-r.dir <- "R"
+r.dir <- here::here("R")
 
 #Source constants for GIS code
 source(file.path(r.dir,"GIS_source.R"))
