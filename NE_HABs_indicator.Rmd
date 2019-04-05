@@ -12,7 +12,7 @@ library(rmarkdown)
 
 **Indicator Category**: Synthesis of published information
 
-**Contributor(s)**: Sean Hardison, Dave Kulis, Donald M Anderson
+**Contributor(s)**: Dave Kulis, Donald M Anderson, Sean Hardison
 
 **Data steward**: Sean Hardison, sean.hardison@noaa.gov
 
