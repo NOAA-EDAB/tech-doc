@@ -24,7 +24,7 @@ library(dplyr)
 
 
 ## Methods
-Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
 
 ### Data sources
 This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) .
