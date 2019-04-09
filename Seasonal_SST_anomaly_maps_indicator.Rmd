@@ -187,7 +187,7 @@ fall_anom <- seasonal_sst_2017[[4]] - fall_mean
 ```
 
 ### Plotting
-```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
+```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017. Black lines depict the 200 m isobath." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
 
 
 # Relative working directory
@@ -221,7 +221,7 @@ SST_plot <- function(raster_data, text,pos = "left"){
        legend.width = 1.5,bty ="L",axes=F,
        interpolate = T, las = 1,box = FALSE,legend = FALSE, asp = 1)
   #plot contour
-  contour(bathy,drawlabels = F,nlevels = 5,add=T)
+  contour(bathy,drawlabels = T,add=T, nlevels = 2, zlim = c(-200,-200))
   #plot coastline
   plot(coast, col = 'grey',add = T , lty=0)
   #axes
