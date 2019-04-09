@@ -9,7 +9,7 @@ library(rmarkdown)
 ```
 
 
-**Description**: Most recent stock assessment model results summarized for each assessed species.
+**Description**: Summary of the most recent stock assessment results for each assessed species.
 
 **Indicator category**: Synthesis of published information
 
@@ -26,7 +26,7 @@ library(rmarkdown)
 ### Data sources
 <!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
 
-"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes the most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
 https://www.nefsc.noaa.gov/saw/reports.html  
 https://www.nefsc.noaa.gov/publications/crd/crd1717/
 

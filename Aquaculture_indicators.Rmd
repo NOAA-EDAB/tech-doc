@@ -29,7 +29,7 @@ Virginia oyster harvest data are collected from mail and internet-based surveys 
 
 
 ### Data extraction 
-Data were collected directly from state aquaculture reports. Oysters harvest data in MD was reported in bushels which were then converted to individual oysters by an estimate of 300 oysters bushel$^{-1}$.
+Data were collected directly from state aquaculture reports. Oyster harvest data in MD was reported in bushels which were then converted to individual oysters by an estimate of 300 oysters bushel$^{-1}$.
 
 ### Data analysis
 No data analyses occurred for this indicator.
