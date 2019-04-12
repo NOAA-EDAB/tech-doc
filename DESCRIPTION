@@ -44,7 +44,8 @@ Imports:
   here,
   ks,
   geosphere,
-  purrr
+  purrr,
+  remotes
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat,
