@@ -46,6 +46,7 @@ Imports:
   geosphere,
   purrr,
   remotes (> 2.0.2),
+  ggplot2,
   ecodata
 Remotes: 
   rstudio/bookdown,
