@@ -17,6 +17,7 @@ Imports:
   rerddap,
   vegan,
   mgcv,
+  ggplot2,
   rpart,
   Kendall,
   zoo,
