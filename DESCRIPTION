@@ -17,6 +17,7 @@ Imports:
   rerddap,
   vegan,
   mgcv,
+  ggplot2,
   rpart,
   Kendall,
   zoo,
@@ -45,10 +46,11 @@ Imports:
   ks,
   geosphere,
   purrr,
-  remotes,
-  devtools
+  remotes (> 2.0.2),
+  ggplot2,
+  ecodata
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat,
-  noaa-edab/ecodata
+  NOAA-EDAB/ecodata
   
