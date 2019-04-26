@@ -221,7 +221,9 @@ for (i in 1:dim(mab.anom)[1]){
 scs.anom.b=data.frame(matrix(NA, nrow = dim(scs.anom)[1], ncol = dim(scs.anom)[2]))
 for (i in 1:dim(scs.anom)[1]){
   scs.anom.b[i,23:50]=scs.anom[i,23:50]-scs.yr.spln[which(scs.anom$DOY[i]==rownames(scs.yr.spln)),]
-}  scs.anom.b=rbind(scs.anom.b,test)
+}  
+
+scs.anom.b=rbind(scs.anom.b,test)
 # Aggregrate by Year, Yearly anomaly by epu
 gbk.yr.anom=aggregate(gbk.anom.b, by=list(gbk.anom$year), FUN=mean, na.rm=T); rownames(gbk.yr.anom)=gbk.yr.anom[,1]; gbk.yr.anom[,1]=NULL; colnames(gbk.yr.anom)=colnames(gbk.anom)
 gom.yr.anom=aggregate(gom.anom.b, by=list(gom.anom$year), FUN=mean, na.rm=T); rownames(gom.yr.anom)=gom.yr.anom[,1]; gom.yr.anom[,1]=NULL; colnames(gom.yr.anom)=colnames(gom.anom)
