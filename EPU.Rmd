@@ -24,7 +24,7 @@ library(readr)
 
 **Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
 
-**Public availability statement**: Spatial analysis based on these EPUs can use the ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-memo/tree/master/gis). Data used in this analysis are available to the public **(location TBD)**.
+**Public availability statement**: Ecological production unit (EPU) shapefiles are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis). More information about source data used to derive EPUs can be found [here](https://www.integratedecosystemassessment.noaa.gov/sites/default/files/pdf/ne-ecological-production-units-paper.pdf).
 
 
 ## Methods

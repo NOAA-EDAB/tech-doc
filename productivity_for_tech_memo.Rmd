@@ -10,7 +10,7 @@ library(rmarkdown)
 ```
 **Description**: Groundfish productivity estimated as the ratio of small fish to large fish
 
-**Indicator category**: Published methods
+**Indicator category**: Database pull with analysis; Published methods
 
 **Contributor(s)**: Charles Perretti
   
@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Charles Perretti, <charles.perretti@noaa.gov>
   
-**Public availability statement**: Source data available to public.
+**Public availability statement**: Source data are available upon request.
 
 
 
@@ -50,7 +50,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 #### Functions for plotting ####
 library(ggplot2)
@@ -58,7 +58,7 @@ library(rpart)
 library(dplyr)
 library(stringr)
 
-all_epu <- SOE.data.2018 %>%
+all_epu <- SOE.data %>%
   filter(str_detect(Var, "All EPU productivity"))
 
 all_epu$Var <- str_trim(str_replace(all_epu$Var, "All EPU productivity",""))
@@ -209,7 +209,7 @@ plot_stackbarcpts_single(YEAR = all_epu$Time,
 
 ```{r plot-all, fig.height=8, fig.cap = "Groundfish productivity visualized by EPU."}
 
-by_epu <- SOE.data.2018 %>% filter(str_detect(Var, "productivity"),
+by_epu <- SOE.data %>% filter(str_detect(Var, "productivity"),
                                                     !EPU %in% c("All","SS"))
 by_epu$Var <- str_trim(str_replace(by_epu$Var,
                                    " GOM productivity| GB productivity| MAB productivity", ""))

@@ -10,18 +10,18 @@
   
 **Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
   
-**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_2018.html).
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_soe_v1.html).
 
 
 
 ## Methods
-Relative condition was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
-$Kn = W/W',$ where W is the weight of an individual fish and W' is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center's (NEFSC) autumn and spring bottom trawl surveys. 
+Relative condition (Kn) was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
+$Kn = W/W',$ where W is the weight of an individual fish and W' is the predicted length-specific mean weight for the fish population in a given region. "Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn and spring bottom trawl surveys, from 1992-present. 
 
-Where data allowed, length-weight parameters were calculated for W' by species, sex and season over the time period 1992-present. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.
+Where data allowed, predicted length-weight parameters were calculated for W’ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.
 
 ### Data sources
-Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow  (see [Survdat](#survdat)). A small number of outlier values were removed when calculating the length-weight parameters, with nominal effect on the results.
+Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow  (see [Survdat](#survdat)). A small number of outlier values were removed when calculating the length-weight parameters.
 
 ### Data extraction
 Data were extracted from NEFSC's survey database (SVDBS) using SQL. 
@@ -73,7 +73,7 @@ execute (commit) by oracle;
 ```
 
 ### Data analysis
-The following growth curve was fit through individual fish lengths and weights from the NEFSC bottom trawl survey data from 1992-20XX to produce reference length-weight parameters:
+The following growth curve was fit through individual fish lengths and weights from the NEFSC bottom trawl survey data from 1992-2012 to produce reference length-weight parameters:
 
 
 $$\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},$$
@@ -281,10 +281,11 @@ run;
 
 ### Plotting
 
-```{r condition-factor, eval = T, fig.width = 8, fig.cap = "Normalized condition factors of MAFMC managed species.", message=F, warning=F}
+```{r condition-factor, eval = T, fig.width = 8, fig.cap = "Normalized condition factors of managed species in the Northeast Large Marine Ecosystem.", message=F, warning=F, fig.height = 7.5}
 
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 data.dir <- here::here("data")
 
@@ -297,17 +298,18 @@ ztrans <- function(x){
 }
 
 #Get data
-CF <- read.csv(file.path(data.dir, "MAFMC_RelativeWeight_2018.csv"))
+load(file.path(data.dir, "SOE_data_erddap.Rdata"))
+
+CF <- SOE.data %>% filter(str_detect(Var, "condition"))
 
 #Processing
 CF_mat <- CF %>%
-  unite(.,Var,c("species","stock","sex"), sep =", ") %>% #Unite groupings
-  gather(.,Time,Value,-Var) %>% #Convert to long
-  mutate(Time = as.numeric(gsub("X","",Time))) %>% #Tidy years 
   group_by(Var) %>% 
   mutate(Value = ztrans(Value)) %>% #Normalize
-  spread(.,Time,Value) %>% #Convert to wide for plotting
-  arrange(Var) 
+  tidyr::spread(.,Time,Value) %>% #Convert to wide for plotting
+  arrange(Var) %>% 
+  dplyr::select(-Units, -EPU) 
+  
 
 #Figure palette
 graph.colors<-colorRampPalette(c('#C6E2FF','#00008B'))
@@ -315,20 +317,22 @@ graph.colors<-colorRampPalette(c('#C6E2FF','#00008B'))
 #Main figure
 par(mar = c(2, 2, 3, 18), fig = c(0, 1, 0.1, 1))
 
+
 #Image rotates matrix 90 degrees so use transverse matrix
-image(z = t(as.matrix(CF_mat[,2:27])),
+image(z = t(as.matrix(CF_mat[,2:26])),
       breaks = c(-10, -1, 0, 1, 10), col = graph.colors(4),
       xlim = c(0,1), ylim = c(0-0.037,1+0.037), axes = F,
       xlab = '', ylab = '', useRaster = T)
 
+
 #Set y axis labels
 row_names <- CF_mat$Var
 mtext(text = row_names,side = 4, las = 1,
-      cex = 0.7, at = seq(0,1,0.071),
+      cex = 0.7, at = seq(0,1,0.0303),
       line = 1)
 
 #Figure key
-par(mar = c(0.7, 0.5, 0.2, 0.5),
+par(mar = c(0.1, 0.5, 2.25, 0.5),
     fig = c(0.2, 0.5, 0, 0.1),
     new = T)
 image(x = seq(0,1,1/4), z = t(matrix(1:4,1,4)), col = graph.colors(4), axes = F, 

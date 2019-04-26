@@ -18,7 +18,7 @@ library(rmarkdown)
   
 **Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
   
-**Public availability statement**: Source data are available upon request (read more [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data may be downloaded [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_2018.html).
+**Public availability statement**: Source data are available upon request (read more [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data may be downloaded [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html).
 
 
 ## Methods
@@ -434,7 +434,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -442,11 +442,11 @@ source(file.path(r.dir,"BasePlot_source.R"))
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
-soe.plot(SOE.data.2018, "Time", "black sea bass spring mean along-shelf dist", 
+soe.plot(SOE.data, "Time", "black sea bass spring mean along-shelf dist", 
          stacked = "A", rel.y.num = 1.1, suppressAxis = T, 
          line.forward = T, tol = 0.15, x.start = 1963, end.start = 2007,
          cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "black sea bass fall mean along-shelf dist", 
+soe.plot(SOE.data, "Time", "black sea bass fall mean along-shelf dist", 
          stacked = "B", rel.y.num = 1.1, tol = 0.15, end.start = 2007,
          cex.stacked = 1.5)
 soe.stacked.axis("Year", "Mean along-shelf distance, km", y.line = 3.0)
@@ -459,11 +459,11 @@ soe.stacked.axis("Year", "Mean along-shelf distance, km", y.line = 3.0)
 
 opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
 
-soe.plot(SOE.data.2018, "Time", "black sea bass spring mean depth", 
+soe.plot(SOE.data, "Time", "black sea bass spring mean depth", 
          stacked = "A", rel.y.num = 1.1, suppressAxis = T, 
           tol = 0.15, x.start = 1963, end.start = 2007,
          cex.stacked = 1.5)
-soe.plot(SOE.data.2018, "Time", "black sea bass fall mean depth", 
+soe.plot(SOE.data, "Time", "black sea bass fall mean depth", 
          stacked = "B", rel.y.num = 1.1, tol = 0.15, end.start = 2007,line.forward = T,
          cex.stacked = 1.5)
 soe.stacked.axis("Year", "Mean depth, m", y.line = 3.0)

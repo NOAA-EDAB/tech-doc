@@ -1,7 +1,7 @@
 Package: placeholder
-Title: does not matter
-Description: This is a description. 
-Version: 0.0.1
+Title: Technical Documentation, State of the Ecosystem Report
+Description: Technical documentation for State of the Ecosystem Reporting.
+Version: 1.0.0
 Imports: 
   bookdown, 
   rmarkdown,
@@ -17,6 +17,7 @@ Imports:
   rerddap,
   vegan,
   mgcv,
+  ggplot2,
   rpart,
   Kendall,
   zoo,
@@ -42,8 +43,14 @@ Imports:
   Survdat,
   kableExtra,
   here,
-  purrr
+  ks,
+  geosphere,
+  purrr,
+  remotes (> 2.0.2),
+  ggplot2,
+  ecodata
 Remotes: 
   rstudio/bookdown,
-  slucey/Rsurvey/Survdat
+  slucey/Rsurvey/Survdat,
+  NOAA-EDAB/ecodata
   

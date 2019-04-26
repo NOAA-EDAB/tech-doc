@@ -19,17 +19,12 @@ library(dplyr)
 **Point of contact**: Sean Lucey, <Sean.Lucey@noaa.gov>
 
 **Public availability statement**: Raw data are not publically available due to confidentiality of individual fishery participants.  Derived indicator outputs are
-available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_2018.html).
+available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
 
 
 ## Methods
 
-Fisheries dependent data for the Northeast Shelf extend back several decades.  
-Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast
-Fisheries Science Center which contains the commercial fisheries dealer purchase 
-records (weigh-outs) collected by NMFS Statistical Reporting Specialists and state
-agencies from Maine to Virginia. The data format has changed slightly over the time
-series with three distinct time frames as noted in table \@ref(tab:calibration) below.  
+Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by NMFS Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in table \@ref(tab:calibration) below.  
 
 ```{r calibration, eval = T, echo = F}
 com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
@@ -37,14 +32,7 @@ com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
 kable(com.tables,caption="Data formats")
 ```
 
-Comlands is an R database pull that consolidates the landings records from 1964 
-on and attempts to associate them with NAFO statistical areas (Figure \@ref(fig:StatAreaMap)).  The
-script is divided into three sections.  The first pulls domestic landings data 
-from the yearly landings tables and merges them into a single data source.  
-The second section applies an algorithm to associate landings that are not allocated
-to a statistical area using similar characteristics of the trip to trips with known 
-areas.  The final section pulls foreign landings from the NAFO website and rectifies
-species and gear codes so they can be merged along with domestic landings.
+Comlands is an R database pull that consolidates the landings records from 1964 on and attempts to associate them with NAFO statistical areas (Figure \@ref(fig:StatAreaMap)). The script is divided into three sections. The first pulls domestic landings data from the yearly landings tables and merges them into a single data source. The second section applies an algorithm to associate landings that are not allocated to a statistical area using similar characteristics of the trip to trips with known areas. The final section pulls foreign landings from the NAFO website and rectifies species and gear codes so they can be merged along with domestic landings.
 
 ```{r StatAreaMap, fig.cap="Map of the North Atlantic Fisheries Organization (NAFO) Statistical Areas.  Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated.", echo=F, eval=T}
 
@@ -53,9 +41,9 @@ image.dir <- './images'
 knitr::include_graphics(file.path(image.dir, 'Stat_Area_Map.jpg'))
 ```
 
-During the first section, the Comlands script pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record.  The script includes a toggle to use landed weights as opposed to live weights.  For all but shellfish species live weights are used for the State of the Ecosystem report.  Due to the volume of data contained within each yearly landings table, landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class.  All weights are then converted from pounds to metric tons.  Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish.  Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.
+During the first section, the Comlands script pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record.  The script includes a toggle to use landed weights as opposed to live weights.  For all but shellfish species, live weights are used for the State of the Ecosystem report.  Due to the volume of data contained within each yearly landings table, landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class.  All weights are then converted from pounds to metric tons.  Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish.  Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.
 
-Several species have additional steps after the data is pulled from CFDBS.  Skates are typically landed as a species complex.  In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another.  Finally, Atlantic herring landings pulled from a separate database as the most accurate weights are housed by the State of Maine.  Comlands pulls from the State database and replaces the less accurate numbers from the federal database.
+Several species have additional steps after the data is pulled from CFDBS.  Skates are typically landed as a species complex.  In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another.  Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine.  Comlands pulls from the State database and replaces the less accurate numbers from the federal database.
 
 The majority of landings data are associated with a NAFO Statistical Area.  For those that are not, Comlands attempts to assign them to an area using similar characteristics of trips where the area is known.  To simplify this task, landings data are further aggregated into quarter and half year, small and large vessels, and eight major gear categories (Table \@ref(tab:gears)).  Landings are then proportioned to areas that meet similar characteristics based on the proportion of landings in each area by that temporal/vessel/gear combination.  If a given attribute is unknown, the algorithm attempts to assign it one, once again based on matched characteristics of known trips.  Statistical areas are then assigned to their respective [Ecological Production Unit](#epu) (Table \@ref(tab:statareas)).  
 
@@ -2177,7 +2165,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -2185,26 +2173,26 @@ source(file.path(r.dir,"BasePlot_source.R"))
 ## Ecosystem-wide and managed species total landings
 opar <- par(mfrow = c(5, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
-soe.plot(SOE.data.2018, "Time","Apex Predator Landings GB", stacked = "A",status = F,
+soe.plot(SOE.data, "Time","Apex Predator Landings GB", stacked = "A",status = F,
          endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0,cex.stacked = 1.5 )
 
-soe.plot(SOE.data.2018, "Time", "Piscivore Landings GB", stacked = "B",status = F,
+soe.plot(SOE.data, "Time", "Piscivore Landings GB", stacked = "B",status = F,
          endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Piscivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
-soe.plot(SOE.data.2018, "Time", "Planktivore Landings GB", stacked = "C",status = F,
+soe.plot(SOE.data, "Time", "Planktivore Landings GB", stacked = "C",status = F,
          endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Planktivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
-soe.plot(SOE.data.2018, "Time", "Benthivore Landings GB", stacked = "D",status = F,
+soe.plot(SOE.data, "Time", "Benthivore Landings GB", stacked = "D",status = F,
          endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Benthivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
-soe.plot(SOE.data.2018, "Time", "Benthos Landings GB", stacked = "E",status = F,
+soe.plot(SOE.data, "Time", "Benthos Landings GB", stacked = "E",status = F,
          endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Benthos NEFMC managed species sea food GB",cex.stacked = 1.5)

@@ -95,7 +95,7 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
@@ -103,20 +103,20 @@ source(file.path(r.dir,"BasePlot_source.R"))
 par(mar = c(4,4.75,2,4))
 
 #small-large copepod index
-mab_prim_prod <- finder(SOE.data.2018, "annual ppd ratio anomaly MAB")
-mab_copepod_anom <- finder(SOE.data.2018, "Small-Large copepod Index MAB")
+mab_prim_prod <- finder(SOE.data, "annual ppd ratio anomaly MAB")
+mab_copepod_anom <- finder(SOE.data, "Small-Large copepod Index MAB")
 usr <- par("usr")
 plot(NULL,ylim = c(-1.5,1.5), pch = 16, lwd = 3,xlim = c(1998,2017),
        cex = 1, ylab = "", las = 1, xaxt = "n", cex.axis = 1, xlab = "")
 abline(h = 0, col  = "grey", lwd = 3, lty = 2) 
-with(SOE.data.2018[SOE.data.2018$Var == mab_copepod_anom,], points(Time[22:39], Value[22:39],
+with(SOE.data[SOE.data$Var == mab_copepod_anom,], points(Time[22:39], Value[22:39],
        type = "o", col = "black", ylim = c(-1.5,1.5), pch = 16, lwd = 3,las = 1))
 mtext(side = 2, line = 3, "Small-Lg Copepod Index", cex = 1.1)
 
 par(new = T)
 
 #primary productivity
-with(SOE.data.2018[SOE.data.2018$Var ==  mab_prim_prod[1],], plot(Time, Value,
+with(SOE.data[SOE.data$Var ==  mab_prim_prod[1],], plot(Time, Value,
        type = "o", col =  "springgreen2", ylim = c(.8,1.25), ylab = "", axes = F,log = "y",
        yaxt = "n", pch = 16, lwd = 3, cex = 1, las = 1, xaxt = "n",xlab = ""))
 axis(side = 4, las = 1, cex.axis = 1)
@@ -137,9 +137,9 @@ par(mar = c(4, 4, 2, 1), mfrow = c(1,2))
 
 ## primary production
 doy <- seq(1,52,1)
-ppd_val_2017 <- SOE.data.2018[SOE.data.2018$Var == "geometric mean ppd 2017 MAB",]$Value
-ppd_val_LT <- SOE.data.2018[SOE.data.2018$Var == "geometric mean ppd long term MAB",]$Value
-ppd_val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sd ppd long term MAB",]$Value
+ppd_val_2017 <- SOE.data[SOE.data$Var == "geometric mean ppd 2017 MAB",]$Value
+ppd_val_LT <- SOE.data[SOE.data$Var == "geometric mean ppd long term MAB",]$Value
+ppd_val_LT_sd <- SOE.data[SOE.data$Var == "sd ppd long term MAB",]$Value
 
 above_mean <- NULL
 for (i in 1:length(ppd_val_2017)){
@@ -220,9 +220,9 @@ box(lty = 'solid', col = 'black',lwd = 1.25)
 
 par(mar = c(4, 4, 2, 1))
 ## Chlorophyll a
-chl_val_2017 <- SOE.data.2018[SOE.data.2018$Var == "geometric mean chl 2017 MAB",]$Value
-chl_val_LT <- SOE.data.2018[SOE.data.2018$Var == "geometric mean chl long term MAB",]$Value
-chl_val_LT_sd <- SOE.data.2018[SOE.data.2018$Var == "sd chl long term MAB",]$Value
+chl_val_2017 <- SOE.data[SOE.data$Var == "geometric mean chl 2017 MAB",]$Value
+chl_val_LT <- SOE.data[SOE.data$Var == "geometric mean chl long term MAB",]$Value
+chl_val_LT_sd <- SOE.data[SOE.data$Var == "sd chl long term MAB",]$Value
 
 above_mean <- NULL
 for (i in 1:length(chl_val_2017)){

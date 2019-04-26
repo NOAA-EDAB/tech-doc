@@ -1,7 +1,7 @@
 # Long-term Sea Surface Temperature
 
 
-```{r setup,  echo = F, message=F}
+```{r setup,  echo = F, message=F,warning=F}
 
 #Load packages
 library(knitr)
@@ -24,10 +24,11 @@ library(dplyr)
 
 
 ## Methods
-Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+
 
 ### Data sources
-This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) .
+This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) [@Huang2017].
 
 
 ### Data extraction 
@@ -256,14 +257,14 @@ data.dir  <- here::here('data')
 r.dir <- here::here('R')
 
 # Load data
-load(file.path(data.dir,"SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
 # Source plotting functions
 source(file.path(r.dir,"BasePlot_source.R"))
 
 
 opar <- par(mar = c(4, 6, 2, 6))
-soe.plot(SOE.data.2018, "Time", "long term sst", end.start = 2007, 
+soe.plot(SOE.data, "Time", "long term sst", end.start = 2007, 
          line.forward = TRUE, point.cex = 0.8, rel.y.text = 1.1,
          x.line = 2, y.line = 2.3, x.label = 'Year', rel.y.num = 1.1,
          y.label = expression(paste("Mean SST (",degree,"C)")))

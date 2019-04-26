@@ -199,7 +199,7 @@ data.dir <- here::here("data")
 gis.dir <- here::here("gis")
 
 
-load(file.path(data.dir, "SOE_data_2018_erddap.Rdata"))
+load(file.path(data.dir, "SOE_data_erddap.Rdata"))
 
 #coastline
 coast <- readOGR(gis.dir, 'NES_LME_coast', verbose = F)
@@ -215,8 +215,8 @@ coast <- spTransform(coast,map.crs)
 #Make figures
 par(mfrow=c(1,2), mar = c(2,2.85,1,1))
 
-cat1 <- SOE.data.2018[SOE.data.2018$Var == "social vulnerability MAB",]$Value
-cat2 <- SOE.data.2018[SOE.data.2018$Var == "commercial reliance MAB",]$Value
+cat1 <- SOE.data[SOE.data$Var == "social vulnerability MAB",]$Value
+cat2 <- SOE.data[SOE.data$Var == "commercial reliance MAB",]$Value
 
 #group data into categories
 ncat1 <- NULL
@@ -247,8 +247,8 @@ cat3 <- factor(cat3, levels = c("A1","A2","A3",
                                 "B1","B2","B3",
                                 "C1","C2","C3"),
                ordered = TRUE)
-lon <- SOE.data.2018[SOE.data.2018$Var == "choropleth longitude MAB",]$Value
-lat <- SOE.data.2018[SOE.data.2018$Var == "choropleth latitude MAB",]$Value
+lon <- SOE.data[SOE.data$Var == "choropleth longitude MAB",]$Value
+lat <- SOE.data[SOE.data$Var == "choropleth latitude MAB",]$Value
 
 #new dataframe to turn into sp object
 mab.dat <- data.frame(lon = lon,
@@ -330,8 +330,8 @@ box(lty = 1, lwd = 2)
 
 #####################################################################################################
 
-cat1 <- SOE.data.2018[SOE.data.2018$Var == "social vulnerability MAB",]$Value
-cat2 <- SOE.data.2018[SOE.data.2018$Var == "recreational reliance MAB",]$Value
+cat1 <- SOE.data[SOE.data$Var == "social vulnerability MAB",]$Value
+cat2 <- SOE.data[SOE.data$Var == "recreational reliance MAB",]$Value
 
 #group data into categories
 ncat1 <- NULL
@@ -362,8 +362,8 @@ cat3 <- factor(cat3, levels = c("A1","A2","A3",
                                 "B1","B2","B3",
                                 "C1","C2","C3"),
                ordered = TRUE)
-lon <- SOE.data.2018[SOE.data.2018$Var == "choropleth longitude MAB",]$Value
-lat <- SOE.data.2018[SOE.data.2018$Var == "choropleth latitude MAB",]$Value
+lon <- SOE.data[SOE.data$Var == "choropleth longitude MAB",]$Value
+lat <- SOE.data[SOE.data$Var == "choropleth latitude MAB",]$Value
 
 #new dataframe to turn into sp object
 mab.dat <- data.frame(lon = lon,

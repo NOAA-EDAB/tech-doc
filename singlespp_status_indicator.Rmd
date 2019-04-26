@@ -1,4 +1,4 @@
-# Single Species Status Indicator
+# Single Species Status Indicator {#stockstatus}
 
 ```{r setup,  echo = F, message=F}
 
@@ -9,7 +9,7 @@ library(rmarkdown)
 ```
 
 
-**Description**: Most recent stock assessment model results summarized for each assessed species.
+**Description**: Summary of the most recent stock assessment results for each assessed species.
 
 **Indicator category**: Synthesis of published information
 
@@ -19,19 +19,19 @@ library(rmarkdown)
 
 **Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
 
-**Public availability statement**: All stock assessment results are publicly available (see Data Sources). Summarized data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_2018.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
+**Public availability statement**: All stock assessment results are publicly available (see Data Sources). Summarized data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_soe_v1.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
 
 ## Methods
 
 ### Data sources
 <!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
 
-"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
-https://www.nefsc.noaa.gov/saw/reports.html
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes the most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
+https://www.nefsc.noaa.gov/saw/reports.html  
 https://www.nefsc.noaa.gov/publications/crd/crd1717/
 
 Additional assessments are reported directly to the New England Fishery Management Council (NEFMC):
-http://s3.amazonaws.com/nefmc.org/Document-2-SAFE-Report-for-Fishing-Year-2016.pdf
+http://s3.amazonaws.com/nefmc.org/Document-2-SAFE-Report-for-Fishing-Year-2016.pdf  
 http://s3.amazonaws.com/nefmc.org/4_NEFSC_SkateMemo_July_2017.pdf
 
 
@@ -39,9 +39,7 @@ http://s3.amazonaws.com/nefmc.org/4_NEFSC_SkateMemo_July_2017.pdf
 ### Data extraction
 <!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
 
-I wish there were code for this. A more talented person could write it using OCR from the pdf versions of all of those files and context.
-
-Instead, each assessment document was searched by eye to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
+Each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
 
 *    **Bcur**: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
 
