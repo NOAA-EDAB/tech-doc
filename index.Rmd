@@ -3,7 +3,9 @@ title: "Technical Documentation, State of the Ecosystem Report"
 author: "Northeast Fisheries Science Center"
 date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook
+  bookdown::pdf_book
 documentclass: book
 bibliography: ["bibliography/introduction.bib", "bibliography/conceptmods.bib", "bibliography/trend_analysis.bib", "bibliography/EPU.bib", "bibliography/survey_data.bib", "bibliography/Bennet_indicator.bib", "bibliography/Revenue_Diversity.bib", "bibliography/Aquaculture.bib", "bibliography/NE_HAB.bib", "bibliography/MAB_HAB.bib", "bibliography/Comm_rel_vuln.bib", "bibliography/Comm_climate_vuln.bib", "bibliography/RW.bib", "bibliography/thermal_hab_proj.bib", "bibliography/occupancy.bib", "bibliography/long_term_sst.bib", "bibliography/seasonal_sst_anomaly_maps.bib", "bibliography/Ich_div.bib", "bibliography/Species_dist.bib", "bibliography/CHL_PPD.bib", "bibliography/zooplankton.bib", "bibliography/Condition.bib", "bibliography/productivity_tech_memo.bib","bibliography/aggregate_groups.bib"]
 biblio-style: apalike

@@ -1,12 +1,5 @@
 # Catch and Fleet Diversity
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: Permit-level species diversity and Council-level fleet diversity.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
