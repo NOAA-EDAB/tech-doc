@@ -1,0 +1,256 @@
+# Chlorophyll *a* and Primary Production {#chl-pp}
+
+**Description**: Chlorophyll *a* and Primary Production
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
+**Indicator category**: Database pull; Database pull with analysis; Published methods
+
+**Contributor(s)**: Kimberly Hyde
+  
+**Data steward**: Kimberly Hyde, kimberly.hyde@noaa.gov
+  
+**Point of contact**: Kimberly Hyde, kimberly.hyde@noaa.gov
+  
+**Public availability statement**: Source data used in these analyses will be made publicly available. Derived data used in State of the Ecosystem Reports can be found [here](http://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
+
+
+## Methods
+### Data sources
+Level 1A ocean color remote sensing data from the Sea-viewing Wide Field-of-view Sensor (SeaWiFS) [@NASA1] on the OrbView-2 satellite and the Moderate Resolution Imaging Spectroradiometer (MODIS) [@NASA2] on the Aqua satellite were acquired from the NASA Ocean Biology Processing Group (OBPG).  Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder [@Casey2010; @Saha2018] and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 [@SOE4; @SOE14] data.  
+
+### Data extraction
+NA
+
+### Data analysis
+The SeaWiFS and MODIS L1A files were processed using the NASA Ocean Biology Processing Group [SeaDAS](https://seadas.gsfc.nasa.gov/) software version 7.4.  All MODIS files were spatially subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) using [L1AEXTRACT_MODIS](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL1aextract_modis.html). SeaWiFS files were subset using the same coordinates prior to begin downloaded from the [Ocean Color Web Browser](https://oceancolor.gsfc.nasa.gov/cgi/browse.pl?sen=am).  SeaDAS's [L2GEN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2gen.html) program was used to generate Level 2 (L2) files using the default settings and optimal ancillary files, and the [L2BIN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2bin.html) program spatially and temporally aggregated the L2 files to create daily Level 3 binned (L3B) files.  The daily files were binned at 2 km resolution that are stored in a global, nearly equal-area, [integerized sinusoidal grids](https://oceancolor.gsfc.nasa.gov/docs/format/l3bins/) and use the default [L2 ocean color flag masks](https://oceancolor.gsfc.nasa.gov/atbd/ocl2flags/).  The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid.    
+
+The L2 files contain several ocean color products including the default chlorophyll &alpha; product (CHL-OCI), photosynthetic available radiation (PAR), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property products (IOPs).  The CHL-OCI product combines two algorithms, the O'Reilly band ratio (OCx) algorithm [@SOE11] and the Hu color index (CI) algorithm [@SOE5].  The SeaDAS default CHL-OCI algorithm diverges slightly from @SOE5 in that the transition between CI and OCx occurs at 0.15 < CI < 0.2 mg m^-3^ to ensure a smooth [transition](https://oceancolor.gsfc.nasa.gov/atbd/chlor_a/). The regional chlorophyll &alpha; algorithm by @SOE12 was used to create a second chlorophyll product (CHL-PAN).  CHL-PAN is an empirical algorithm derived from *in situ* sampling within the Northeast Large Marine Ecosystem (NE-LME) and demonstrated significant improvements from the standard NASA operational algorithm in the NES-LME [@SOE13].  A 3rd-order polynomial function (Equation \@ref(eq:one)) is used to derive [CHL-PAN] from Rrs band ratios (RBR): 
+
+\begin{equation}
+log[\textrm{CHL-PAN}] = A_{0} + A_{1}X + A_{2}X^{2} + A_{3}X^{3},  
+(\#eq:one) 
+\end{equation}
+
+where $X = log(R_{rs}(\lambda_{1})/R_{rs}(\lambda_{2}))$ and $A_{i} (i = 0, 1, 2, \textrm{or }  3)$ are sensor and RBR specific coefficients:
+
+* If SeaWiFS and RBR is $R_{rs}(490)/R_{rs}(555)(R_{^3{\mskip -5mu/\mskip -3mu}_5})$ then: $A_0=0.02534, A_1=-3.033, A_2=2.096, A_3=-1.607$
+* If SeaWiFS and RBR is $R_{rs}(490)/R_{rs}(670)(R_{^3{\mskip -5mu/\mskip -3mu}_6})$  then: $A_0=1.351, A_1=-2.427, A_2=0.9395, A_3=-0.2432$
+* If MODIS and RBR is $R_{rs}(488)/R_{rs}(547)(R_{^3{\mskip -5mu/\mskip -3mu}_5})$  then: $A_0=0. 03664, A_1=-3.451, A_2=2.276, A_3=-1.096$
+* If MODIS and RBR is $R_{rs}(488)/R_{rs}(667)(R_{^3{\mskip -5mu/\mskip -3mu}_6})$  then: $A_0=1.351, A_1=-2.427, A_2=0.9395, A_3=-0.2432$
+
+C~3/5~ and C~3/6~ were calculated for each sensor specific RBR (R~3/5~ and R~3/6~ respectively) and then the following criteria were used to determine to derive CHL-PAN:
+
+<ol type="a">
+  <li>If $R_{^3{\mskip -5mu/\mskip -3mu}_5}>0.15$ or $R_{6} <0.0001$ then $\textrm{CHL-PAN} = C_{^3{\mskip -5mu/\mskip -3mu}_5};$</li>
+  <li> Otherwise, $\textrm{CHL-PAN} = \textrm{max}(C_{^3{\mskip -5mu/\mskip -3mu}_5}, C_{^3{\mskip -5mu/\mskip -3mu}_6})$,</li>
+</ol>
+
+where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13]. 
+
+The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll &alpha;, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll &alpha; concentration, and the number of daylight hours (Equation \@ref(eq:two)).  
+
+\begin{equation}
+P_{max}^{b}(SST) = 4.6 * 1.065^{SST-20^{0}} 
+(\#eq:two) 
+\end{equation}
+Where $P_{max}^{b}$ is the maximum carbon fixation rate and *SST* is sea surface temperature.
+
+\begin{equation}
+PP_{eu} = 0.66125 * P_{max}^{b} * \frac{I_{0}}{I_{0}+4.1} * Z_{eu} * \textrm{CHL} * \text{DL}
+(\#eq:three) 
+\end{equation}
+
+Where $PP_{eu}$ is the daily amount of carbon fixed integrated from the surface to the euphotic depth (mgC m^-2^ day^-1^), $P_{max}^{b}$ is the maximum carbon fixation rate within the water column (mgC mgChl^-1^ hr^-1^), $I_{0}$ is the daily integrated molar photon flux of sea surface PAR (mol quanta m^-2^ day^-1^), Zeu is the euphotic depth (m), CHL is the daily interpolated CHIi-OCI (mg m^-3^), and DL is the photoperiod (hours) calculated for the day of the year and latitude according to @SOE6. The light dependent function $(I_{0}/(I_{0}+4.1))$ describes the relative change in the light saturation fraction of the euphotic zone as a function of surface PAR ($I_0$).  Zeu is derived from an estimate of the total chlorophyll concentration within the euphotic layer (*CHL~eu~*) based on the Case I models of @SOE8:
+
+* For $\textrm{CHL}_{eu} > 10.0\;\;\;\;\;Z_{eu} = 568.2 * \textrm{CHL}_{eu}^{-0.746}$
+* For $\textrm{CHL}_{eu} \leq 10.0\;\;\;\;\;Z_{eu} = 200.0 * \textrm{CHL}_{eu}^{-0.293}$
+* For $\textrm{CHL}_{0} \leq 1.0\;\;\;\;\;\textrm{CHL}_{eu} = 38.0 * \textrm{CHL}_{0}^{0.425}$
+* For $\textrm{CHL}_{0} > 1.0\;\;\;\;\;\textrm{CHL}_{eu} = 40.2 * \textrm{CHL}_{0}^{0.507}$
+
+Where $\textrm{CHL}_0$ is the surface chlorophyll concentration.
+
+Prior to being input into the VGPM-Eppley model, the daily CHL-OCI and AVHRR SST data were temporally interpolated and smoothed (CHL-OCI~INT~ and SST~INT~ respectively) to increase the data coverage and better match data collected from different sensors and different times.  The daily PAR data are not affected by cloud cover and MUR SST data is a blended/gap free data product so these products were not interpolated.  
+
+Daily data at each pixel location covering the entire date range were extracted to create a pixel time series $(D_{x,y})$.  $(D_{x,y})$ are linearly interpolated based on days in the time series using [interpx.pro](https://github.com/callumenator/idl/blob/master/external/JHUAPL/INTERPX.PRO). Prior to interpolation, the CHL data are log-transformed to account for the log-normal distribution of chlorophyll data [@SOE2].  Interpolating the entire times series requires a large amount of processing time so the series was processed one year at a time.  Each yearly series included 60 days from the previous year and 60 days from the following year to improve the interpolation at the beginning and end of the year.  Following interpolation, the data are smoothed with a tri-cube filter (width=7) using IDL's [CONVOL](https://www.harrisgeospatial.com/docs/CONVOL.html) program.  In order to avoid over interpolating data when there were several days of missing data in the time series, the interpolated data were removed and replaced with blank data if the window of interpolation spanned more than 7 days for CHL or 10 days for SST.  After all D~x,y~ pixels had been processed, the one-dimensional pixel time series were converted back to two-dimensional daily files. 
+
+Statistics, including the arithmetic mean, geometric mean (for CHL and PP), standard deviation, and coefficient of variation were calculated at daily (3 and 8-day running means), weekly, monthly, and annual time steps and for several climatological periods.  Annual statistics used the monthly means as inputs to avoid a summer time bias when more data is available due to reduced cloud cover.  The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period.  For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year.  The CHL and PP climatological statistics include data from both SeaWiFS (1997-2007) and MODIS (2008-2017).  
+
+Weekly, monthly and annual anomalies were calculated for each product by taking the difference between the mean of the input time period (i.e. week, month, year) and the climatological mean for the same period.  Because bio-optical data are typically log-normally distributed [@SOE2], the CHL and PP data were first log-transformed prior to taking the difference and then untransformed, resulting in an anomaly ratio.
+
+The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files.  The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.  For the extended time series, the 1998-2007 data use the SeaWiFS ocean color products and MODIS-Aqua products were used from 2008 to 2017.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
+
+### Plotting
+
+The following figures show examples of how Chlorophyll *a* and primary production data have been included into State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight. 
+
+```{r, MAB-zooplankton, fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F}
+
+epu_abbr <- "MAB"
+
+sli <- ecodata::zoo_anom_sli %>% 
+  filter(EPU == epu_abbr,
+         str_detect(Var, "small-large")) %>% 
+  mutate(hline = 0) 
+
+pp_anom <- ecodata::chl_pp %>% 
+  filter(str_detect(Var, "ANNUAL_PPD_RATIO_ANOMALY"),
+         EPU == "MAB") %>% 
+  mutate(hline = 1,
+         Time = as.numeric(as.character(Time)),
+         Var = "ANNUAL_PPD_RATIO_ANOMALY")
+
+sli_plt <- sli %>% 
+  ggplot(aes(x = Time, y = Value, group = Var)) +
+         annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_line() +
+  geom_point() +
+  guides(color = F) +
+  xlab("")+
+  ylab("Small-large abundance") +
+  ggtitle("Small-large copepod abundance") +
+    scale_x_continuous(expand = c(0.01, 0.01), limits = c(1988, 2018))+
+      geom_hline(aes(yintercept = hline,
+                     group = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty)+
+  theme_ts() +
+  theme(strip.text=element_text(hjust=0,
+                                face = "italic"))
+
+pp_anom_plt <- pp_anom %>% 
+    ggplot(aes(x = Time, y = Value, group = Var)) +
+         annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_line() +
+  geom_point() +
+  guides(color = F) +
+  ylab("Anomaly ratio") +
+  ggtitle("Primary production anomaly ratio") +
+    scale_x_continuous(expand = c(0.01, 0.01), limits = c(1988, 2018))+
+    scale_y_continuous(limits = c(0.8,1.2)) +
+      geom_hline(aes(yintercept = hline,
+                     group = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty)+
+  theme_ts() +
+  theme(strip.text=element_text(hjust=0,
+                                face = "italic"))
+
+
+sli_plt + pp_anom_plt + plot_layout(ncol = 1) & theme(plot.margin = margin(t = 0))
+
+```
+
+Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figure below shows data specific to the Mid-Atlantic Bight. 
+
+```{r SST-PPD-CHL-MAB, fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2018. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
+
+interp_chl_pp <- function(epu, year = 2018, Variable){
+  out <- ecodata::chl_pp %>% 
+    filter(str_detect(Var,Variable),
+           EPU == epu) %>% 
+    separate(.,Time, c("Year","Week"),sep = 4) %>% 
+    filter(Year == year) %>% 
+    group_by(EPU) %>% 
+    mutate(Time = 1:length(Year))
+  
+  ltm_out <- ecodata::chl_pp %>% 
+    filter(str_detect(Var,Variable),
+           EPU == epu) %>% 
+    separate(.,Time, c("Year","Week"),sep = 4) %>% 
+    group_by(Week) %>% 
+    dplyr::summarise(LTM = mean(Value, na.rm = T),
+                     SD = sd(Value, na.rm = T)) %>% 
+    mutate(Time = 1:length(Week),
+           sd.low = LTM - SD,
+           sd.high = LTM + SD) %>% 
+    left_join(.,out, by = c("Time")) %>% 
+    mutate(status = ifelse(Value < sd.high & Value > sd.low, "near_mean",
+                           ifelse(Value > sd.high, "high",
+                                  ifelse(Value < sd.low,"low",NA))),
+           group = "PLOT")
+  
+  return(ltm_out)
+}
+
+
+MAB_chl <- interp_chl_pp(epu = "MAB", Variable = "WEEKLY_CHLOR_A_MEDIAN MODIS-Aqua PAN")
+
+MAB_chl_weekly <- ggplot(data = MAB_chl) +
+  geom_line(aes(x = Time, y = LTM)) +
+  geom_ribbon(aes(x = Time, ymin = sd.low, ymax = sd.high), 
+              alpha = 0.1,
+              fill = "grey1") +
+  geom_line(aes(x = Time, y = Value),
+            size = 1,color = "#33a02c") +
+  ggtitle(expression("Chlorophyll"~italic(a)~"")) +
+  guides(color = F) +
+  xlab("")+
+  ylab(expression("CHL (mg m"^-3*")")) +
+  scale_x_continuous(breaks = seq(1,52,10),
+                   labels = c("Jan.","Mar.","May","July","Oct.","Dec."),
+                   expand = c(0.01,0.01)) +
+  scale_color_manual(values = c("#ef8a62","#2c7fb8","#a1d99b"))+
+  theme_ts()
+
+MAB_pp <- interp_chl_pp(epu = "MAB", Variable =  "WEEKLY_PPD_MEDIAN")
+
+MAB_pp_weekly <- ggplot(data = MAB_pp) +
+  geom_line(aes(x = Time, y = LTM)) +
+  geom_ribbon(aes(x = Time, ymin = sd.low, ymax = sd.high),
+              alpha = 0.1,
+              fill = "grey1") +
+  geom_line(aes(x = Time, y = Value),
+            size = 1,color = "#33a02c") +
+  ggtitle(expression("Primary production")) +
+  guides(color = F) +
+  xlab("")+
+  ylab(expression("PP (gC m"^-2*" d"^-1*")")) +
+  scale_x_continuous(breaks = seq(1,52,10),
+                   labels = c("Jan.","Mar.","May","July","Oct.","Dec."),
+                   expand = c(0.01,0.01)) +
+  scale_color_manual(values = c("#ef8a62","#2c7fb8","#a1d99b"))+
+  theme_ts()
+
+#MAB_chl_weekly + MAB_pp_weekly + plot_layout(ncol = 1)
+MAB_chl_weekly
+```
+
+In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. 
+
+```{r PP-OCCI, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
+out_pp <- ecodata::chl_pp %>% 
+  filter(EPU == epu_abbr,
+         str_detect(Var, "MONTHLY_PPD_MEDIAN")) %>% 
+  separate(.,Time, into = c("Year","Month"), sep = 4) %>% 
+    mutate(Month = plyr::mapvalues(Month, from = c("01","02","03","04","05","06",
+                                                   "07","08","09","10","11","12"),
+                                   to = c(month.abb))) %>% 
+  group_by(Month) %>% 
+  mutate(hline = mean(Value))
+out_pp$Month <- factor(out_pp$Month, levels = month.abb)
+
+
+(pp_cci <- ggplot(out_pp) +  
+   # geom_gls(aes(x = Year, y = Value, group = Month))+
+    geom_point(aes(x = Year, y = Value, group = Month)) +
+    geom_line(aes(x = Year, y = Value, group = Month)) +
+    scale_x_discrete(name = "Time", breaks = seq(min(out_pp$Year),max(out_pp$Year),10)) +  
+        geom_hline(aes(yintercept = hline),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+    facet_wrap(Month~., ncol = 6) +
+    ggtitle("Monthly median PPD") +
+    ylab(expression("PP (gC m"^-2*" d"^-1*")")) +
+    theme_facet() +
+    theme(axis.text.x = element_text(angle=45, hjust = 1),
+          panel.spacing = unit(1, "lines"),
+          plot.margin = unit(c(0.1, 0, 0, 0), "cm")))
+```

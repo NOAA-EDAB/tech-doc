@@ -5,7 +5,7 @@ date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: ["introduction.bib", "conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib", "occupancy.bib", "long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib","aggregate_groups.bib"]
+bibliography: ["bibliography/introduction.bib", "bibliography/conceptmods.bib", "bibliography/trend_analysis.bib", "bibliography/EPU.bib", "bibliography/survey_data.bib", "bibliography/Bennet_indicator.bib", "bibliography/Revenue_Diversity.bib", "bibliography/Aquaculture.bib", "bibliography/NE_HAB.bib", "bibliography/MAB_HAB.bib", "bibliography/Comm_rel_vuln.bib", "bibliography/Comm_climate_vuln.bib", "bibliography/RW.bib", "bibliography/thermal_hab_proj.bib", "bibliography/occupancy.bib", "bibliography/long_term_sst.bib", "bibliography/seasonal_sst_anomaly_maps.bib", "bibliography/Ich_div.bib", "bibliography/Species_dist.bib", "bibliography/CHL_PPD.bib", "bibliography/zooplankton.bib", "bibliography/Condition.bib", "bibliography/productivity_tech_memo.bib","bibliography/aggregate_groups.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-doc
@@ -17,15 +17,91 @@ The purpose of this document is to collate the methods used to access, collect, 
 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
-```{r neusmap, echo=F, eval=T, fig.align='center', fig.height=6}
+```{r setup, echo=F, eval=T}
+#source directories
+image.dir <- here::here("images")
+r.dir <- here::here("R")
+gis.dir <- here::here("gis")
 
-image.dir <- './images'
+#Plotting and data libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ecodata)
+library(here)
+library(kableExtra)
+library(ggrepel)
+library(stringr)
+library(patchwork)
+library(grid)
+library(vegan)
+library(rpart)
+library(knitr)
+library(rmarkdown)
+library(magick)
+library(readr)
 
-knitr::include_graphics(file.path(image.dir, 'journal.pone.0146756.g002.PNG'))
+#GIS libraries
+library(sf)
+library(rgdal)
+library(raster)
+library(rnaturalearth)
+
+#Time series constants
+shade.alpha <- 0.3
+shade.fill <- "lightgrey"
+lwd <- 1
+pcex <- 2
+trend.alpha <- 0.5
+trend.size <- 2
+hline.size <- 1
+hline.alpha <- 0.35
+hline.lty <- "dashed"
+label.size <- 5
+hjust.label <- 1.5
+letter_size <- 4
+feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
+x.shade.min <- 2009
+x.shade.max <- 2018
+
+#Function for custom ggplot facet labels
+label <- function(variable,value){
+  return(facet_names[value])
+}
+
+#Map line parameters
+map.lwd <- 0.4
+
+#CRS
+crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
+
+#Coastline shapefile
+coast <- ne_countries(scale = 10,
+                          continent = "North America",
+                          returnclass = "sf") %>%
+             sf::st_transform(crs = crs)
+
+#State polygons
+ne_states <- ne_states(country = "united states of america",
+                                      returnclass = "sf") %>%
+  sf::st_transform(crs = crs)
+
+#high-res polygon of Maine
+#new_england <- read_sf(gis.dir,"new_england")
+
+#EPU shapefile
+epu_sf <- ecodata::epu_sf %>% 
+  filter(EPU %in% c("MAB","GB","GOM"))
+
 
 ```
 Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
+
+```{r neusmap, fig.align='center', fig.height=6, echo = F}
+knitr::include_graphics(file.path(image.dir, "journal.pone.0146756.g002.png"))
+
+```
 
 <!-- **References** -->
 

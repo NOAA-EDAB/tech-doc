@@ -1,0 +1,76 @@
+# Harbor Porpoise Bycatch
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+**Description**: Harbor Porpoise Indicator
+
+**Indicator category**: Synthesis of published information; Published methods
+
+**Contributor(s)**: Christopher D. Orphandies
+  
+**Data steward**: Chris Orphanides, <chris.orphanides@noaa.gov>
+
+**Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
+
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
+  
+
+## Methods
+
+
+### Data sources
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed [here](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). 
+
+The document for the 2016 estimates (CRD 19-04) is available [here](https://www.nefsc.noaa.gov/publications/crd/crd1904/crd1904.pdf). Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: [CRD 17-18](https://www.nefsc.noaa.gov/publications/crd/crd1718/crd1718.pdf), [CRD-16-05](https://www.nefsc.noaa.gov/publications/crd/crd1605/crd1605.pdf), [CRD 15-15](https://www.nefsc.noaa.gov/publications/crd/crd1515/crd1515.pdf), [CRD 14-02](https://repository.library.noaa.gov/view/noaa/4718), [CRD 13-13](https://www.nefsc.noaa.gov/publications/crd/crd1313/crd1313_2nd_ed.pdf), [CRD 11-08](https://www.nefsc.noaa.gov/publications/crd/crd1108/1108.pdf), [CRD 10-10](https://www.nefsc.noaa.gov/publications/crd/crd1010/crd1010.pdf), [CRD 07-20](https://www.nefsc.noaa.gov/publications/crd/crd0720/crd0720.pdf), [CRD 06-13](https://www.nefsc.noaa.gov/publications/crd/crd0613/crd0613.pdf), [CRD 03-18](https://www.nefsc.noaa.gov/publications/crd/crd0318/crd0318.pdf), [CRD 01-15](https://www.nefsc.noaa.gov/publications/crd/crd0115/0115.pdf), and [CRD 99-17](https://www.nefsc.noaa.gov/publications/crd/pdfs/crd9917.pdf).
+
+### Data extraction 
+Annual gillnet bycatch estimates are documented in a CRD (see sources above). These feed into the Stock Assessment Reports which report both the annual bycatch estimate and the mean 5-year estimate. The 5-year estimate is the one used for management purposes, so that is the one provided for the SOE plot.
+
+### Data analysis
+Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+
+### Plotting
+
+```{r harbor-porpoise, fig.cap="Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange).", echo = T, message=F, warning=F, fig.pos='H', fig.height=4}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mar = c(4, 6, 2, 6))
+
+soe.plot(SOE.data, 'Time', "Harbor porpoise bycatch estimates",            
+         rel.y.num = 1.2, end.start = 2007, full.trend = F, point.cex = 1,
+         ymax = F, y.upper = 2500, mean_line = F, x.label = 'Year',
+         y.label = 'Bycatch, n', rel.y.text = 1)
+
+legend(2000, 2250, legend = "Potential Biological Removal",
+       col = adjustcolor("red", .5), lwd = 3,
+       bty = "n", cex = 0.9)
+
+#credible intervals and PBI
+lw_CI <- SOE.data[Var == 'Harbor porpoise bycatch 2.5 CI',
+                       list(Time, Value)]
+up_CI <- SOE.data[Var == 'Harbor porpoise bycatch 97.5 CI',
+                       list(Time, Value)]
+pbi   <- SOE.data[Var == 'Harbor porpoise potential biological removal',
+                       list(Time, Value)]
+
+points(pbi,   type  = "l", lty = 1, col = adjustcolor("red", .5), lwd = 3)
+points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+```
+
