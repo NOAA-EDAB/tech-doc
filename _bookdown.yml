@@ -1,6 +1,5 @@
 rmd_files: ["index.Rmd", 
 "chapters/erddap_query_and_build.Rmd",
-"chapters/erddap_query_and_build.Rmd",
 "chapters/aggregate_groups.Rmd",
 "chapters/Annual_SST_cycle_indicator.Rmd",
 "chapters/Aquaculture_indicators.Rmd",
