@@ -54,7 +54,7 @@ Fishery catch and bycatch information was drawn from multiple regional datasets,
 
 Habitat-fishery linkages were drawn from unpublished reports, including:  
 
-1. Mid-Atlantic Fishery Management Council. 2016. Amendment 16 to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
+1. Mid-Atlantic Fishery Management Council. 2016. [Amendment 16](http://www.mafmc.org/actions/msb-am16) to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
 
 2. NOAA. 2016. Deep sea coral research and technology program 2016 Report to Congress. http://www.habitat.noaa.gov/protection/corals/deepseacorals.html retrieved February 8, 2017.  
 
