@@ -5,7 +5,6 @@ date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook
-  bookdown::pdf_book
 documentclass: book
 bibliography: ["bibliography/introduction.bib", "bibliography/conceptmods.bib", "bibliography/trend_analysis.bib", "bibliography/EPU.bib", "bibliography/survey_data.bib", "bibliography/Bennet_indicator.bib", "bibliography/Revenue_Diversity.bib", "bibliography/Aquaculture.bib", "bibliography/NE_HAB.bib", "bibliography/MAB_HAB.bib", "bibliography/Comm_rel_vuln.bib", "bibliography/Comm_climate_vuln.bib", "bibliography/RW.bib", "bibliography/thermal_hab_proj.bib", "bibliography/occupancy.bib", "bibliography/long_term_sst.bib", "bibliography/seasonal_sst_anomaly_maps.bib", "bibliography/Ich_div.bib", "bibliography/Species_dist.bib", "bibliography/CHL_PPD.bib", "bibliography/zooplankton.bib", "bibliography/Condition.bib", "bibliography/productivity_tech_memo.bib","bibliography/aggregate_groups.bib"]
 biblio-style: apalike
@@ -13,6 +12,7 @@ link-citations: yes
 github-repo: NOAA-EDAB/tech-doc
 description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
 ---
+
 # Introduction {-}
 
 The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports.
