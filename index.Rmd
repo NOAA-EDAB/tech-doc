@@ -5,7 +5,7 @@ date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: ["introduction.bib", "conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib", "occupancy.bib", "long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib","aggregate_groups.bib"]
+bibliography: ["introduction.bib","erddap_query_and_build.bib", "conceptmods.bib", "trend_analysis.bib", "EPU.bib", "survey_data.bib", "Bennet_indicator.bib", "Revenue_Diversity.bib", "Aquaculture.bib", "NE_HAB.bib", "MAB_HAB.bib", "Comm_rel_vuln.bib", "Comm_climate_vuln.bib", "RW.bib", "thermal_hab_proj.bib", "occupancy.bib", "long_term_sst.bib", "seasonal_sst_anomaly_maps.bib", "Ich_div.bib", "Species_dist.bib", "CHL_PPD.bib", "zooplankton.bib", "Condition.bib", "productivity_tech_memo.bib","aggregate_groups.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-doc
