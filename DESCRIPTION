@@ -48,7 +48,7 @@ Depends:
   purrr,
   remotes (> 2.0.2),
   ggplot2,
-  Rcurl,
+  RCurl,
   rvest,
   xml2
 Remotes: 
