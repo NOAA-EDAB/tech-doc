@@ -48,7 +48,9 @@ Depends:
   purrr,
   remotes (> 2.0.2),
   ggplot2,
-  ecodata
+  Rcurl,
+  rvest,
+  xml2
 Remotes: 
   rstudio/bookdown,
   slucey/Rsurvey/Survdat,
