@@ -18,3 +18,4 @@ before_script:
 script:
   - ./_build.sh
   - ./_deploy.sh
+  - Rscript -e "source('R/pull_functions.R')"
