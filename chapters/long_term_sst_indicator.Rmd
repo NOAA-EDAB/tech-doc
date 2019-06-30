@@ -12,6 +12,8 @@ library(dplyr)
 ```
 **Description**: Long-term sea-surface temperatures
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Database pull
 
 **Contributor(s)**: Kevin Friedland

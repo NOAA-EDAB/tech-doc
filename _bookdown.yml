@@ -9,6 +9,9 @@ rmd_files: ["index.Rmd",
 "chapters/Comm_climate_vuln_indicator.Rmd",
 "chapters/conceptualmodels.Rmd",
 "chapters/Condition_indicator.Rmd",
-"chapters/EPU.Rmd"]
+"chapters/EPU.Rmd",
+"chapters/HP_indicator.Rmd",
+"chapters/Ich_div_indicator.Rmd",
+"chapters/landings_data.Rmd"]
 delete_merged_file: false
 new_session: no
