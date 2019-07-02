@@ -10,6 +10,8 @@ library(rmarkdown)
 ```
 **Description**: Groundfish productivity estimated as the ratio of small fish to large fish
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Database pull with analysis; Published methods
 
 **Contributor(s)**: Charles Perretti

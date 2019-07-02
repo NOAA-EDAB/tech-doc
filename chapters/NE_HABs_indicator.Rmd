@@ -10,6 +10,8 @@ library(rmarkdown)
 
 **Description**: Regional incidence of shellfish bed closures due to presence of toxins associated with harmful algae. 
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018)
+
 **Indicator Category**: Synthesis of published information
 
 **Contributor(s)**: Dave Kulis, Donald M Anderson, Sean Hardison

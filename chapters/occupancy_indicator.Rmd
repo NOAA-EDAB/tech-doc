@@ -9,6 +9,8 @@ library(rmarkdown)
 ```
 **Description**: Habitat Occupancy
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
+
 **Indicator category**: Database pull with analysis; Extensive analysis; not yet published; Published methods
 
 **Contributor(s)**: Kevin Friedland

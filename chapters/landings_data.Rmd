@@ -1169,8 +1169,10 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
                        c('AREA',   'GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to SIZE to small
   no.match.5[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
-  
-  #Merge all together and proportion catch to known sizes
+```
+
+```{r, echo = T, eval = F}
+ #Merge all together and proportion catch to known sizes
   size.all   <- size.all  [!is.na(SPPLIVMT), ]
   size.all.2 <- size.all.2[!is.na(SPPLIVMT), ]
   size.all.2[, QY   := i.QY]
@@ -2158,8 +2160,6 @@ file.name <- paste0('comland', file.landed, file.adjust, file.by, '.RData')
 
 save(comland, file = file.path(out.dir, file.name))
 ```
-
-
 
 ### Data analysis
 

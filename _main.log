@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.6)  30 JUN 2019 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.6)  1 JUL 2019 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,7 +727,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 [4]
 </Users/seanhardison/Documents/git/tech-doc/images/journal.pone.0146756.g002.pn
-g, id=181, 300.4023pt x 309.91785pt>
+g, id=267, 300.4023pt x 309.91785pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/journal.pone.0146756.g0
 02.png Graphic file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/journal.pone.0146756.g00
@@ -872,7 +872,7 @@ Underfull \vbox (badness 10000) detected at line 1228
  []
 
 [25]
-<_main_files/figure-latex/plotting-1.pdf, id=349, 578.16pt x 234.8775pt>
+<_main_files/figure-latex/plotting-1.pdf, id=434, 578.16pt x 234.8775pt>
 File: _main_files/figure-latex/plotting-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/plotting-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/plotting-1.pdf  used on input
@@ -883,7 +883,7 @@ Chapter 4.
 [27
 
 ]
-<_main_files/figure-latex/mariculture-1.pdf, id=379, 469.755pt x 289.08pt>
+<_main_files/figure-latex/mariculture-1.pdf, id=465, 469.755pt x 289.08pt>
 File: _main_files/figure-latex/mariculture-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/mariculture-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/mariculture-1.pdf  used on in
@@ -894,7 +894,7 @@ put line 1346.
 ]
 Chapter 5.
 [31] [32] [33]
-<_main_files/figure-latex/bennet-plot1-1.pdf, id=441, 469.755pt x 325.215pt>
+<_main_files/figure-latex/bennet-plot1-1.pdf, id=527, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/bennet-plot1-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/bennet-plot1-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/bennet-plot1-1.pdf  used on i
@@ -912,33 +912,33 @@ Chapter 6.
 ]
 Chapter 7.
 [41] [42] [43]
-<_main_files/figure-latex/MAB-zooplankton-1.pdf, id=565, 469.755pt x 325.215pt>
+<_main_files/figure-latex/MAB-zooplankton-1.pdf, id=652, 469.755pt x 325.215pt>
 
 File: _main_files/figure-latex/MAB-zooplankton-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/MAB-zooplankton-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/MAB-zooplankton-1.pdf  used o
-n input line 1981.
+n input line 1982.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [44 <./_main_files/figure-latex/MAB-zooplankton-1.pdf>]
-Underfull \vbox (badness 10000) detected at line 2062
+Underfull \vbox (badness 10000) detected at line 2063
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2062
+Underfull \vbox (badness 10000) detected at line 2063
  []
 
 [45]
-<_main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf, id=587, 578.16pt x 289.08pt>
+<_main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf, id=673, 578.16pt x 289.08pt>
 File: _main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf  used o
-n input line 2066.
+n input line 2067.
 (pdftex.def)             Requested size: 469.75385pt x 234.8769pt.
-<_main_files/figure-latex/PP-OCCI-1.pdf, id=588, 578.16pt x 325.215pt>
+<_main_files/figure-latex/PP-OCCI-1.pdf, id=674, 578.16pt x 325.215pt>
 File: _main_files/figure-latex/PP-OCCI-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/PP-OCCI-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/PP-OCCI-1.pdf  used on input 
-line 2077.
+line 2078.
 (pdftex.def)             Requested size: 469.75385pt x 264.23653pt.
 [46 <./_main_files/figure-latex/SST-PPD-CHL-MAB-1.pdf>] [47 <./_main_files/figu
 re-latex/PP-OCCI-1.pdf>] [48
@@ -949,25 +949,25 @@ Chapter 8.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [49] [50]
-Underfull \vbox (badness 10000) detected at line 2281
+Underfull \vbox (badness 10000) detected at line 2282
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2281
+Underfull \vbox (badness 10000) detected at line 2282
  []
 
 [51] [52]
 </Users/seanhardison/Documents/git/tech-doc/images/Species_vulnerability_NE.jpg
-, id=649, 963.6pt x 542.025pt>
+, id=736, 963.6pt x 542.025pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/Species_vulnerability_N
 E.jpg Graphic file (type jpg)
 <use /Users/seanhardison/Documents/git/tech-doc/images/Species_vulnerability_NE
 .jpg>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/Spec
-ies_vulnerability_NE.jpg  used on input line 2358.
+ies_vulnerability_NE.jpg  used on input line 2359.
 (pdftex.def)             Requested size: 963.62706pt x 542.0402pt.
 
-Overfull \hbox (493.87204pt too wide) in paragraph at lines 2358--2359
+Overfull \hbox (493.87204pt too wide) in paragraph at lines 2359--2360
  [][] 
  []
 
@@ -977,44 +977,44 @@ Chapter 9.
 [55
 
 ]
-</Users/seanhardison/Documents/git/tech-doc/images/GBGOMconceptual1.png, id=674
+</Users/seanhardison/Documents/git/tech-doc/images/GBGOMconceptual1.png, id=761
 , 722.7pt x 523.2348pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/GBGOMconceptual1.png Gr
 aphic file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/GBGOMconceptual1.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/GBGO
-Mconceptual1.png  used on input line 2435.
+Mconceptual1.png  used on input line 2436.
 (pdftex.def)             Requested size: 722.75336pt x 523.27344pt.
 
-Overfull \hbox (252.99834pt too wide) in paragraph at lines 2435--2436
+Overfull \hbox (252.99834pt too wide) in paragraph at lines 2436--2437
 [][] 
  []
 
 [56 </Users/seanhardison/Documents/git/tech-doc/images/GBGOMconceptual1.png>] [
 57] [58] [59] [60] [61] [62]
-</Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Ecological.png, id=88
-2, 779.91376pt x 468.5505pt>
+</Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Ecological.png, id=96
+8, 779.91376pt x 468.5505pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Ecological.png G
 raphic file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Ecological.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/MM_G
-oM_Ecological.png  used on input line 3014.
+oM_Ecological.png  used on input line 3015.
 (pdftex.def)             Requested size: 779.93565pt x 468.56366pt.
 
-Overfull \hbox (310.18063pt too wide) in paragraph at lines 3014--3014
+Overfull \hbox (310.18063pt too wide) in paragraph at lines 3015--3015
 [][] 
  []
 
-</Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Climate.png, id=886, 
+</Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Climate.png, id=972, 
 779.91376pt x 468.5505pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Climate.png Grap
 hic file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Climate.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/MM_G
-oM_Climate.png  used on input line 3038.
+oM_Climate.png  used on input line 3039.
 (pdftex.def)             Requested size: 779.93565pt x 468.56366pt.
 
-Overfull \hbox (310.18063pt too wide) in paragraph at lines 3038--3038
+Overfull \hbox (310.18063pt too wide) in paragraph at lines 3039--3039
 [][] 
  []
 
@@ -1022,100 +1022,100 @@ Overfull \hbox (310.18063pt too wide) in paragraph at lines 3038--3038
 ng>] [65 </Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Climate.png>
 ]
 </Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Human_Connections.png
-, id=909, 780.516pt x 468.5505pt>
+, id=995, 780.516pt x 468.5505pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Human_Connection
 s.png Graphic file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Human_Connections
 .png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/MM_G
-oM_Human_Connections.png  used on input line 3076.
+oM_Human_Connections.png  used on input line 3077.
 (pdftex.def)             Requested size: 780.53792pt x 468.56366pt.
 
-Overfull \hbox (310.7829pt too wide) in paragraph at lines 3076--3076
+Overfull \hbox (310.7829pt too wide) in paragraph at lines 3077--3077
 [][] 
  []
 
-</Users/seanhardison/Documents/git/tech-doc/images/GBoverview5.png, id=911, 104
+</Users/seanhardison/Documents/git/tech-doc/images/GBoverview5.png, id=997, 104
 4.90375pt x 907.39pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/GBoverview5.png Graphic
  file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/GBoverview5.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/GBov
-erview5.png  used on input line 3089.
+erview5.png  used on input line 3090.
 (pdftex.def)             Requested size: 748.99785pt x 650.42657pt.
 
-Overfull \hbox (279.24283pt too wide) in paragraph at lines 3089--3089
+Overfull \hbox (279.24283pt too wide) in paragraph at lines 3090--3090
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.941pt on input line 3090.
+LaTeX Warning: Float too large for page by 23.941pt on input line 3091.
 
-</Users/seanhardison/Documents/git/tech-doc/images/GoMoverview4.png, id=912, 13
+</Users/seanhardison/Documents/git/tech-doc/images/GoMoverview4.png, id=998, 13
 45.025pt x 995.72pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/GoMoverview4.png Graphi
 c file (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/GoMoverview4.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/GoMo
-verview4.png  used on input line 3093.
+verview4.png  used on input line 3094.
 (pdftex.def)             Requested size: 878.62738pt x 650.44655pt.
 
-Overfull \hbox (408.87236pt too wide) in paragraph at lines 3093--3093
+Overfull \hbox (408.87236pt too wide) in paragraph at lines 3094--3094
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.96097pt on input line 3094.
+LaTeX Warning: Float too large for page by 23.96097pt on input line 3095.
 
-</Users/seanhardison/Documents/git/tech-doc/images/MAB_3.png, id=913, 1236.62pt
+</Users/seanhardison/Documents/git/tech-doc/images/MAB_3.png, id=999, 1236.62pt
  x 1048.91875pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/MAB_3.png Graphic file 
 (type png)
 <use /Users/seanhardison/Documents/git/tech-doc/images/MAB_3.png>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/MAB_
-3.png  used on input line 3097.
+3.png  used on input line 3098.
 (pdftex.def)             Requested size: 766.84744pt x 650.45094pt.
 
-Overfull \hbox (297.09242pt too wide) in paragraph at lines 3097--3097
+Overfull \hbox (297.09242pt too wide) in paragraph at lines 3098--3098
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.96536pt on input line 3098.
+LaTeX Warning: Float too large for page by 23.96536pt on input line 3099.
 
 </Users/seanhardison/Documents/git/tech-doc/images/GOM_GB_conmod_overview.jpg, 
-id=914, 2348.0523pt x 1770.615pt>
+id=1000, 2348.0523pt x 1770.615pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/GOM_GB_conmod_overview.
 jpg Graphic file (type jpg)
 <use /Users/seanhardison/Documents/git/tech-doc/images/GOM_GB_conmod_overview.j
 pg>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/GOM_
-GB_conmod_overview.jpg  used on input line 3108.
+GB_conmod_overview.jpg  used on input line 3109.
 (pdftex.def)             Requested size: 862.56747pt x 650.4433pt.
 
-Overfull \hbox (392.81245pt too wide) in paragraph at lines 3108--3108
+Overfull \hbox (392.81245pt too wide) in paragraph at lines 3109--3109
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.95772pt on input line 3109.
+LaTeX Warning: Float too large for page by 23.95772pt on input line 3110.
 
 </Users/seanhardison/Documents/git/tech-doc/images/MAB_conmod_overview.jpg, id=
-915, 6522.3675pt x 4918.375pt>
+1001, 6522.3675pt x 4918.375pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/MAB_conmod_overview.jpg
  Graphic file (type jpg)
 <use /Users/seanhardison/Documents/git/tech-doc/images/MAB_conmod_overview.jpg>
 
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/MAB_
-conmod_overview.jpg  used on input line 3112.
+conmod_overview.jpg  used on input line 3113.
 (pdftex.def)             Requested size: 862.46794pt x 650.36826pt.
 
-Overfull \hbox (392.71292pt too wide) in paragraph at lines 3112--3112
+Overfull \hbox (392.71292pt too wide) in paragraph at lines 3113--3113
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.88268pt on input line 3113.
+LaTeX Warning: Float too large for page by 23.88268pt on input line 3114.
 
 [66] [67 </Users/seanhardison/Documents/git/tech-doc/images/MM_GoM_Human_Connec
 tions.png>] [68 </Users/seanhardison/Documents/git/tech-doc/images/GBoverview5.
@@ -1127,439 +1127,619 @@ Chapter 10.
 [73
 
 ] [74] [75]
-Underfull \vbox (badness 10000) detected at line 3435
+Underfull \vbox (badness 10000) detected at line 3436
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3435
+Underfull \vbox (badness 10000) detected at line 3436
  []
 
 [76]
-Underfull \vbox (badness 10000) detected at line 3435
+Underfull \vbox (badness 10000) detected at line 3436
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3435
+Underfull \vbox (badness 10000) detected at line 3436
  []
 
 [77]
-<_main_files/figure-latex/condition-factor-1.pdf, id=992, 578.16pt x 542.025pt>
-
+<_main_files/figure-latex/condition-factor-1.pdf, id=1079, 578.16pt x 542.025pt
+>
 File: _main_files/figure-latex/condition-factor-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/condition-factor-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/condition-factor-1.pdf  used 
-on input line 3441.
+on input line 3442.
 (pdftex.def)             Requested size: 469.75385pt x 440.39423pt.
 [78] [79 <./_main_files/figure-latex/condition-factor-1.pdf>] [80
 
 ]
 Chapter 11.
 [81] [82] [83]
-</Users/seanhardison/Documents/git/tech-doc/images/EPUs.jpg, id=1047, 453.8556p
+</Users/seanhardison/Documents/git/tech-doc/images/EPUs.jpg, id=1133, 453.8556p
 t x 352.6776pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/EPUs.jpg Graphic file (
 type jpg)
 <use /Users/seanhardison/Documents/git/tech-doc/images/EPUs.jpg>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/EPUs
-.jpg  used on input line 3697.
+.jpg  used on input line 3698.
 (pdftex.def)             Requested size: 453.87526pt x 352.69287pt.
 [84] [85 </Users/seanhardison/Documents/git/tech-doc/images/EPUs.jpg>] [86
 
 ]
 Chapter 12.
 [87]
-<_main_files/figure-latex/harbor-porpoise-1.pdf, id=1090, 469.755pt x 289.08pt>
+<_main_files/figure-latex/harbor-porpoise-1.pdf, id=1177, 469.755pt x 289.08pt>
 
 File: _main_files/figure-latex/harbor-porpoise-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/harbor-porpoise-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/harbor-porpoise-1.pdf  used o
-n input line 3827.
+n input line 3828.
 (pdftex.def)             Requested size: 469.75386pt x 289.07928pt.
 [88] [89 <./_main_files/figure-latex/harbor-porpoise-1.pdf>] [90
 
 ]
 Chapter 13.
 
-Overfull \hbox (81.60234pt too wide) in paragraph at lines 3893--3897
+Overfull \hbox (81.60234pt too wide) in paragraph at lines 3894--3898
 \T1/lmr/m/n/10 (-20) Data re-trieved from NOAA NEFSC Oceans and Cli-mate branch
  []pub-lic dataset[] (File-name: ``EcoMon_Plankton_Data_v3_0.xlsx'',
  []
 
 [91] [92]
-Underfull \vbox (badness 10000) detected at line 4026
+Underfull \vbox (badness 10000) detected at line 4027
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4026
+Underfull \vbox (badness 10000) detected at line 4027
  []
 
 [93]
-<_main_files/figure-latex/larval-diversity-1.pdf, id=1140, 469.755pt x 325.215p
+<_main_files/figure-latex/larval-diversity-1.pdf, id=1226, 469.755pt x 325.215p
 t>
 File: _main_files/figure-latex/larval-diversity-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/larval-diversity-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/larval-diversity-1.pdf  used 
-on input line 4058.
+on input line 4059.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [94] [95 <./_main_files/figure-latex/larval-diversity-1.pdf>] [96
 
 ]
 Chapter 14.
-
-LaTeX Warning: Reference `tab:calibration' on page 97 undefined on input line 4
-094.
-
 [97]
-</Users/seanhardison/Documents/git/tech-doc/images/Stat_Area_Map.jpg, id=1170, 
+</Users/seanhardison/Documents/git/tech-doc/images/Stat_Area_Map.jpg, id=1257, 
 722.7pt x 758.835pt>
 File: /Users/seanhardison/Documents/git/tech-doc/images/Stat_Area_Map.jpg Graph
 ic file (type jpg)
 <use /Users/seanhardison/Documents/git/tech-doc/images/Stat_Area_Map.jpg>
 Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/Stat
-_Area_Map.jpg  used on input line 4128.
+_Area_Map.jpg  used on input line 4129.
 (pdftex.def)             Requested size: 234.87471pt x 246.61845pt.
 [98 </Users/seanhardison/Documents/git/tech-doc/images/Stat_Area_Map.jpg>] [99]
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [100]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [101]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [102]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [103]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [104]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [105]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [106]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [107]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [108]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [109]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [110]
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4928
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [111]
-Underfull \vbox (badness 1005) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 1005) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 5319
+ []
 
 [112]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [113]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [114]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [115]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [116]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [117]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [118]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 5319
  []
 
 [119]
-Underfull \vbox (badness 10000) detected at line 5643
- []
-
-
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 1831) detected at line 6311
  []
 
 [120]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [121]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [122]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [123]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [124]
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5643
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
-[125] [126]
-Underfull \vbox (badness 10000) detected at line 6314
+[125]
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
+ []
+
+[126]
+Underfull \vbox (badness 10000) detected at line 6311
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [127]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [128]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [129]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [130]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [131]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [132]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [133]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [134]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [135]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 [136]
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6314
+Underfull \vbox (badness 10000) detected at line 6311
  []
 
-[137]
-Underfull \vbox (badness 1178) has occurred while \output is active []
-
-[138]
-<_main_files/figure-latex/seafood-landings-1.pdf, id=1353, 469.755pt x 505.89pt
+[137] [138]
+<_main_files/figure-latex/seafood-landings-1.pdf, id=1440, 469.755pt x 505.89pt
 >
 File: _main_files/figure-latex/seafood-landings-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/seafood-landings-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/seafood-landings-1.pdf  used 
-on input line 6379.
+on input line 6376.
 (pdftex.def)             Requested size: 469.75386pt x 505.88875pt.
 [139] [140 <./_main_files/figure-latex/seafood-landings-1.pdf>]
-Overfull \hbox (10.32391pt too wide) in paragraph at lines 6450--6454
+Chapter 15.
+[141
+
+] [142]
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+[143]
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+[144]
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6667
+ []
+
+[145]
+<_main_files/figure-latex/long-term-sst-1.pdf, id=1498, 578.16pt x 325.215pt>
+File: _main_files/figure-latex/long-term-sst-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/long-term-sst-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/long-term-sst-1.pdf  used on 
+input line 6694.
+(pdftex.def)             Requested size: 469.75385pt x 264.23653pt.
+[146 <./_main_files/figure-latex/long-term-sst-1.pdf>]
+Chapter 16.
+[147
+
+] [148]
+Underfull \vbox (badness 10000) detected at line 6920
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6920
+ []
+
+[149]
+<_main_files/figure-latex/r-extract-1.pdf, id=1538, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/r-extract-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/r-extract-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/r-extract-1.pdf  used on inpu
+t line 6924.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[150] [151 <./_main_files/figure-latex/r-extract-1.pdf>] [152
+
+]
+Chapter 17.
+
+LaTeX Warning: Reference `fig:NE-HAB-image' on page 153 undefined on input line
+ 6961.
+
+[153]
+<_main_files/figure-latex/NE-HAB-1.pdf, id=1576, 469.755pt x 515.9275pt>
+File: _main_files/figure-latex/NE-HAB-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/NE-HAB-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/NE-HAB-1.pdf  used on input l
+ine 7055.
+(pdftex.def)             Requested size: 469.75386pt x 515.92624pt.
+[154] [155 <./_main_files/figure-latex/NE-HAB-1.pdf>] [156
+
+]
+Chapter 18.
+[157]
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+[158]
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+[159]
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7292
+ []
+
+[160] [161]
+</Users/seanhardison/Documents/git/tech-doc/images/southern_kingfish.png, id=16
+30, 681.14474pt x 574.5465pt>
+File: /Users/seanhardison/Documents/git/tech-doc/images/southern_kingfish.png G
+raphic file (type png)
+<use /Users/seanhardison/Documents/git/tech-doc/images/southern_kingfish.png>
+Package pdftex.def Info: /Users/seanhardison/Documents/git/tech-doc/images/sout
+hern_kingfish.png  used on input line 7373.
+(pdftex.def)             Requested size: 681.19504pt x 574.58891pt.
+
+Overfull \hbox (211.44002pt too wide) in paragraph at lines 7373--7374
+ [][] 
+ []
+
+[162] [163 </Users/seanhardison/Documents/git/tech-doc/images/southern_kingfish
+.png>] [164
+
+]
+Chapter 19.
+[165] [166] [167]
+<_main_files/figure-latex/occupancy-MAB-1.pdf, id=1707, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/occupancy-MAB-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/occupancy-MAB-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/occupancy-MAB-1.pdf  used on 
+input line 7634.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[168] [169 <./_main_files/figure-latex/occupancy-MAB-1.pdf>] [170
+
+]
+Chapter 20.
+[171] [172]
+Underfull \vbox (badness 10000) detected at line 7859
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7859
+ []
+
+[173]
+Underfull \vbox (badness 10000) detected at line 7859
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7859
+ []
+
+[174]
+<_main_files/figure-latex/unnamed-chunk-27-1.pdf, id=1764, 469.755pt x 325.215p
+t>
+File: _main_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-27-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-27-1.pdf  used 
+on input line 7863.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<_main_files/figure-latex/plot-all-1.pdf, id=1765, 469.755pt x 578.16pt>
+File: _main_files/figure-latex/plot-all-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/plot-all-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/plot-all-1.pdf  used on input
+ line 7870.
+(pdftex.def)             Requested size: 469.75386pt x 578.15858pt.
+[175 <./_main_files/figure-latex/unnamed-chunk-27-1.pdf>] [176 <./_main_files/f
+igure-latex/plot-all-1.pdf>]
+Chapter 21.
+[177
+
+]
+<_main_files/figure-latex/recreation-1.pdf, id=1797, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/recreation-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/recreation-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/recreation-1.pdf  used on inp
+ut line 7972.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[178] [179 <./_main_files/figure-latex/recreation-1.pdf>] [180
+
+]
+Chapter 22.
+[181]
+<_main_files/figure-latex/rw-abundance-1.pdf, id=1837, 505.89pt x 325.215pt>
+File: _main_files/figure-latex/rw-abundance-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/rw-abundance-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/rw-abundance-1.pdf  used on i
+nput line 8050.
+(pdftex.def)             Requested size: 469.76265pt x 301.99028pt.
+[182 <./_main_files/figure-latex/rw-abundance-1.pdf>]
+Overfull \hbox (10.32391pt too wide) in paragraph at lines 8135--8139
 []\T1/lmr/m/n/10 (-20) https://hsrl.rutgers.edu/outreach/aquaculture/Aquacultur
 eReports/NJAquaculture{\_}Survey{\_}Yr2015.pdf[]. 
  []
 
-[141] [142] [143] [144]
-Overfull \hbox (14.86247pt too wide) in paragraph at lines 6857--6861
+[183
+
+] [184] [185] [186] [187]
+Overfull \hbox (14.86247pt too wide) in paragraph at lines 8638--8642
 \T1/lmr/m/n/10 (-20) Model (GSM) Data Ver-sion R2018.0.'' NASA Ocean Bi-ol-ogy 
 DAAC. doi:[]10.5067/AQUA/MODIS/L3B/GSM/2018[]. 
  []
 
-[145] [146]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7081.
-[147]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7081.
+[188] [189] [190]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8935.
+[191]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8935.
 (./_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7081.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7081.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8935.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8935.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: E7F16C785F61A6B842012B7B6FA995D3;3578.
+(rerunfilecheck)             Checksum: DBA8EB71260A0A76BF82AF1938D1A1FA;6121.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7081.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8935.
  ) 
 Here is how much of TeX's memory you used:
- 13251 strings out of 494553
- 201110 string characters out of 6174237
- 501382 words of memory out of 5000000
- 16159 multiletter control sequences out of 15000+600000
- 101445 words of font info for 151 fonts, out of 8000000 for 9000
+ 13531 strings out of 494553
+ 206791 string characters out of 6174237
+ 581313 words of memory out of 5000000
+ 16284 multiletter control sequences out of 15000+600000
+ 102225 words of font info for 157 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 33i,8n,42p,1007b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,8n,56p,1007b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{survdat} has been referenced but does not exist, 
 replaced by a fixed one
 
@@ -1599,10 +1779,10 @@ type1/public/lm/lmsy7.pfb></Users/seanhardison/Library/TinyTeX/texmf-dist/fonts
 ts/type1/public/lm/lmtt10.pfb></Users/seanhardison/Library/TinyTeX/texmf-dist/f
 onts/type1/public/lm/lmtt8.pfb></Users/seanhardison/Library/TinyTeX/texmf-dist/
 fonts/type1/public/lm/lmtti10.pfb>
-Output written on _main.pdf (147 pages, 5009807 bytes).
+Output written on _main.pdf (191 pages, 5426504 bytes).
 PDF statistics:
- 1648 PDF objects out of 1728 (max. 8388607)
- 1423 compressed objects within 15 object streams
- 402 named destinations out of 1000 (max. 500000)
- 16724 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 2183 PDF objects out of 2487 (max. 8388607)
+ 1892 compressed objects within 19 object streams
+ 545 named destinations out of 1000 (max. 500000)
+ 16905 words of extra memory for PDF output out of 17280 (max. 10000000)
 

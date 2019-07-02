@@ -9,6 +9,8 @@ library(rmarkdown)
 ```
 **Description**: Fisheries Observer Data – Verified Records of Southern Kingfish
 
+**Found in**: State of the Ecosystem - Mid-Atlantic (2018)
+
 **Indicator category**: Database pull 
 
 **Contributor(s)**: Debra Duarte, Loren Kellogg
