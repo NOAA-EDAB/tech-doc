@@ -21,7 +21,14 @@ rmd_files: ["index.Rmd",
 "chapters/productivity_for_tech_memo.Rmd",
 "chapters/Recreational_Data.Rmd",
 "chapters/RW_indicator.Rmd",
-"chapters/references.Rmd",
-"chapters/Seasonal_SST_anomaly_maps_indicator.Rmd"]
+"chapters/Seasonal_SST_anomaly_maps_indicator.Rmd",
+"chapters/singlespp_status_indicator.Rmd",
+"chapters/Species_density_estimates.Rmd",
+"chapters/Species_dist_indicators.Rmd",
+"chapters/survey_data.rmd",
+"chapters/Thermal_hab_proj_indicator.Rmd",
+"chapters/Trend_analysis.Rmd",
+"chapters/Zooplankton_indicators.Rmd",
+"chapters/references.Rmd"]
 delete_merged_file: false
 new_session: no

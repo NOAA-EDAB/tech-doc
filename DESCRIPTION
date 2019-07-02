@@ -53,6 +53,6 @@ Depends:
   xml2
 Remotes: 
   rstudio/bookdown,
-  slucey/Rsurvey/Survdat,
+  slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata
   

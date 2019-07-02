@@ -12,6 +12,8 @@ library(Survdat)
 
 **Description**: Survdat (Survey database)
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Database pull
 
 **Contributor(s)**: Sean Lucey
@@ -347,7 +349,7 @@ station count to get the EPU mean.  Finally, the mean biomasses are summed by [a
 
 ### Plotting
 
-```{r fall-survey-MAB, fig.cap="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos).",  echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',out.width='50%', fig.height=6}
+```{r fall-survey-MAB, fig.cap="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos).",  echo = T, fig.align='default',warning = F, fig.height=6, out.width= "50%", fig.show = 'hold'}
 
 # Relative working directories
 data.dir  <- here::here('data')
