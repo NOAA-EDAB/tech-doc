@@ -10,6 +10,8 @@ library(rmarkdown)
 
 **Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
+**Found in**: State of the Ecosystem - Mid-Atlantic (2018)
+
 **Indicator category**: Database pull
 
 **Contributor(s)**: Sean Hardison, Virginia Department of Health

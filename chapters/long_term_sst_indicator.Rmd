@@ -12,6 +12,8 @@ library(dplyr)
 ```
 **Description**: Long-term sea-surface temperatures
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Database pull
 
 **Contributor(s)**: Kevin Friedland
@@ -48,7 +50,7 @@ knitr::kable(df,
 ```
 
 R code used in extraction and processing:
-```r, echo = T, eval = F}
+```{r, echo = T, eval = F}
 # Include R code here
 # all year
 years="ersst"
@@ -251,7 +253,7 @@ nc_close(ersst)
 ### Plotting
 
 
-```{r long-term-sst,fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.",  echo=T, message=FALSE, warning=FALSE , fig.width=8, fig.align = 'center',fig.pos='H'}
+```{r long-term-sst,fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.",  echo=T, message=FALSE, warning=FALSE , fig.width=8, fig.align = 'center'}
 # Relative working directories
 data.dir  <- here::here('data')
 r.dir <- here::here('R')

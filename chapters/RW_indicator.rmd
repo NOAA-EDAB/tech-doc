@@ -10,6 +10,8 @@ library(rmarkdown)
 ```
 **Description**: Right Whale
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Synthesis of published information; Published methods
 
 **Contributor(s)**: Christopher D. Orphanides

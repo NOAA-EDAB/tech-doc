@@ -3,23 +3,27 @@ title: "Technical Documentation, State of the Ecosystem Report"
 author: "Northeast Fisheries Science Center"
 date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
-output: 
-  bookdown::gitbook
-  bookdown::pdf_book
+knit: "bookdown::render_book"
+output: bookdown::gitbook
 documentclass: book
 bibliography: ["bibliography/introduction.bib", "bibliography/conceptmods.bib", "bibliography/trend_analysis.bib", "bibliography/EPU.bib", "bibliography/survey_data.bib", "bibliography/Bennet_indicator.bib", "bibliography/Revenue_Diversity.bib", "bibliography/Aquaculture.bib", "bibliography/NE_HAB.bib", "bibliography/MAB_HAB.bib", "bibliography/Comm_rel_vuln.bib", "bibliography/Comm_climate_vuln.bib", "bibliography/RW.bib", "bibliography/thermal_hab_proj.bib", "bibliography/occupancy.bib", "bibliography/long_term_sst.bib", "bibliography/seasonal_sst_anomaly_maps.bib", "bibliography/Ich_div.bib", "bibliography/Species_dist.bib", "bibliography/CHL_PPD.bib", "bibliography/zooplankton.bib", "bibliography/Condition.bib", "bibliography/productivity_tech_memo.bib","bibliography/aggregate_groups.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-doc
 description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
+always_allow_html: yes
 ---
+
 # Introduction {-}
 
 The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports.
 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
-```{r setup, echo=F, eval=T}
+```{r setup, echo=F, message = F ,warning = F}
+
+knitr::opts_chunk$set(echo = F, message = F ,warning = F)
+
 #source directories
 image.dir <- here::here("images")
 r.dir <- here::here("R")

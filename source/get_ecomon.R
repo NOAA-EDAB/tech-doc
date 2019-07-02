@@ -24,7 +24,7 @@
 #                    Units = c("","","",
 #                              "","","MM/DD/YYYY",
 #                              "hh:mm","decimal degrees","decimal degrees",
-#                              "m","m","decibars","°C",
+#                              "m","m","decibars","Â°C",
 #                              "PSS-78","kg m^-3^","mg L^-1^",
 #                              "$\\mu$M","$\\mu$M","$\\mu$M",
 #                              "$\\mu$M","$\\mu$mol kg^-1^"))

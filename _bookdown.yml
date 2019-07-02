@@ -9,6 +9,19 @@ rmd_files: ["index.Rmd",
 "chapters/Comm_climate_vuln_indicator.Rmd",
 "chapters/conceptualmodels.Rmd",
 "chapters/Condition_indicator.Rmd",
-"chapters/EPU.Rmd"]
-delete_merged_file: true
+"chapters/EPU.Rmd",
+"chapters/HP_indicator.Rmd",
+"chapters/Ich_div_indicator.Rmd",
+"chapters/landings_data.Rmd",
+"chapters/long_term_sst_indicator.Rmd",
+"chapters/MAB_HABs_indicator.Rmd",
+"chapters/NE_HABs_indicator.Rmd",
+"chapters/observer_data_indicator.Rmd",
+"chapters/occupancy_indicator.Rmd",
+"chapters/productivity_for_tech_memo.Rmd",
+"chapters/Recreational_Data.Rmd",
+"chapters/RW_indicator.Rmd",
+"chapters/references.Rmd",
+"chapters/Seasonal_SST_anomaly_maps_indicator.Rmd"]
+delete_merged_file: false
 new_session: no

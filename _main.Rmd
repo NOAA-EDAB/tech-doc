@@ -3,23 +3,27 @@ title: "Technical Documentation, State of the Ecosystem Report"
 author: "Northeast Fisheries Science Center"
 date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
-output: 
-  bookdown::gitbook
-  bookdown::pdf_book
+knit: "bookdown::render_book"
+output: bookdown::gitbook
 documentclass: book
 bibliography: ["bibliography/introduction.bib", "bibliography/conceptmods.bib", "bibliography/trend_analysis.bib", "bibliography/EPU.bib", "bibliography/survey_data.bib", "bibliography/Bennet_indicator.bib", "bibliography/Revenue_Diversity.bib", "bibliography/Aquaculture.bib", "bibliography/NE_HAB.bib", "bibliography/MAB_HAB.bib", "bibliography/Comm_rel_vuln.bib", "bibliography/Comm_climate_vuln.bib", "bibliography/RW.bib", "bibliography/thermal_hab_proj.bib", "bibliography/occupancy.bib", "bibliography/long_term_sst.bib", "bibliography/seasonal_sst_anomaly_maps.bib", "bibliography/Ich_div.bib", "bibliography/Species_dist.bib", "bibliography/CHL_PPD.bib", "bibliography/zooplankton.bib", "bibliography/Condition.bib", "bibliography/productivity_tech_memo.bib","bibliography/aggregate_groups.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: NOAA-EDAB/tech-doc
 description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
+always_allow_html: yes
 ---
+
 # Introduction {-}
 
 The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports.
 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
-```{r setup, echo=F, eval=T}
+```{r setup, echo=F, message = F ,warning = F}
+
+knitr::opts_chunk$set(echo = F, message = F ,warning = F)
+
 #source directories
 image.dir <- here::here("images")
 r.dir <- here::here("R")
@@ -992,7 +996,7 @@ box()
 
 **Description**: Aquaculture indicators
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
 
 **Indicator category**: Synthesis of published information
 
@@ -1095,13 +1099,15 @@ ggplot() +
 ## Methods
 
 ### Data sources
-Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database Biological Sample (CFDBS). The derived Comland data set is available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
+Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database Biological Sample (CFDBS). The derived Comland data set is available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html)
 
 ### Data extraction 
 For information regarding processing of CFDBS, please see [Comland](#comdat) methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was $\geq$ 0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.
 
 ```{r, echo = T, eval = F, warning=F, message=F}
 #This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. 
+
+drake::readd(proc_get_mass_inshore_survey.R)
 
 #Packages
 PKG <- c("data.table","plyr","RColorBrewer", "ggplot2","cowplot","gridExtra","grid")
@@ -1292,7 +1298,6 @@ Published methods
   
 **Public availability statement**: Source data is not publicly availabe due to PII restrictions. Derived time series are available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/comm_data_soe_v1.html).
   
-
 ## Methods
 Diversity estimates have been developed to understand whether specialization, or alternatively stovepiping, is occurring in fisheries of the Northeastern Large Marine Ecosystem. We use the average effective Shannon indices for species revenue at the permit level, for all permits landing any amount of [NEFMC](https://www.nefmc.org/) or [MAFMC](http://www.mafmc.org/) Fishery Management Plan (FMP) species within a year (including both Monkfish and Spiny Dogfish). We also use the effective Shannon index of fleet revenue diversity and count of active fleets to assess the extent to which the distribution of fishing changes across fleet segments.
 
@@ -1320,7 +1325,7 @@ In a similar manner, the fleet diversity metric is estimated as
 $$exp(-\sum_{i=1}^{N}p_{kt}ln(p_{kt})) $$
 for all $k$, where $p_{kt}$ represents the proportion of total revenue generated by fleet segment $k$ (gear and length combination) per year $t$. The indices each run from 1996 to 2017. A count of the number of fleets active in every year is also provided to assess whether changes in fleet diversity are caused by shifts in abundance (number of fleets), or evenness (concentration of revenue). The work is based off of analysis conducted in @eric_m_thunberg_measures_2015 and published in @gaichas_framework_2016.
 
-```{r fleet-diversity, fig.cap="Fleet diversity (A) and fleet count (B) in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE, fig.align='center'}
+```{r fleet-diversity, fig.cap="Fleet diversity (A) and fleet count (B) in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE, fig.align='center', eval = F}
 
 # Relative working directories
 data.dir  <- here::here('data')
@@ -1375,7 +1380,7 @@ NA
 ### Data analysis
 The SeaWiFS and MODIS L1A files were processed using the NASA Ocean Biology Processing Group [SeaDAS](https://seadas.gsfc.nasa.gov/) software version 7.4.  All MODIS files were spatially subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) using [L1AEXTRACT_MODIS](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL1aextract_modis.html). SeaWiFS files were subset using the same coordinates prior to begin downloaded from the [Ocean Color Web Browser](https://oceancolor.gsfc.nasa.gov/cgi/browse.pl?sen=am).  SeaDAS's [L2GEN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2gen.html) program was used to generate Level 2 (L2) files using the default settings and optimal ancillary files, and the [L2BIN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2bin.html) program spatially and temporally aggregated the L2 files to create daily Level 3 binned (L3B) files.  The daily files were binned at 2 km resolution that are stored in a global, nearly equal-area, [integerized sinusoidal grids](https://oceancolor.gsfc.nasa.gov/docs/format/l3bins/) and use the default [L2 ocean color flag masks](https://oceancolor.gsfc.nasa.gov/atbd/ocl2flags/).  The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid.    
 
-The L2 files contain several ocean color products including the default chlorophyll &alpha; product (CHL-OCI), photosynthetic available radiation (PAR), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property products (IOPs).  The CHL-OCI product combines two algorithms, the O'Reilly band ratio (OCx) algorithm [@SOE11] and the Hu color index (CI) algorithm [@SOE5].  The SeaDAS default CHL-OCI algorithm diverges slightly from @SOE5 in that the transition between CI and OCx occurs at 0.15 < CI < 0.2 mg m^-3^ to ensure a smooth [transition](https://oceancolor.gsfc.nasa.gov/atbd/chlor_a/). The regional chlorophyll &alpha; algorithm by @SOE12 was used to create a second chlorophyll product (CHL-PAN).  CHL-PAN is an empirical algorithm derived from *in situ* sampling within the Northeast Large Marine Ecosystem (NE-LME) and demonstrated significant improvements from the standard NASA operational algorithm in the NES-LME [@SOE13].  A 3rd-order polynomial function (Equation \@ref(eq:one)) is used to derive [CHL-PAN] from Rrs band ratios (RBR): 
+The L2 files contain several ocean color products including the default chlorophyll *a*; product (CHL-OCI), photosynthetic available radiation (PAR), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property products (IOPs).  The CHL-OCI product combines two algorithms, the O'Reilly band ratio (OCx) algorithm [@SOE11] and the Hu color index (CI) algorithm [@SOE5].  The SeaDAS default CHL-OCI algorithm diverges slightly from @SOE5 in that the transition between CI and OCx occurs at 0.15 < CI < 0.2 mg m^-3^ to ensure a smooth [transition](https://oceancolor.gsfc.nasa.gov/atbd/chlor_a/). The regional chlorophyll *a* algorithm by @SOE12 was used to create a second chlorophyll product (CHL-PAN).  CHL-PAN is an empirical algorithm derived from *in situ* sampling within the Northeast Large Marine Ecosystem (NE-LME) and demonstrated significant improvements from the standard NASA operational algorithm in the NES-LME [@SOE13].  A 3rd-order polynomial function (Equation \@ref(eq:one)) is used to derive [CHL-PAN] from Rrs band ratios (RBR): 
 
 \begin{equation}
 log[\textrm{CHL-PAN}] = A_{0} + A_{1}X + A_{2}X^{2} + A_{3}X^{3},  
@@ -1398,7 +1403,7 @@ C~3/5~ and C~3/6~ were calculated for each sensor specific RBR (R~3/5~ and R~3/6
 
 where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13]. 
 
-The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll &alpha;, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll &alpha; concentration, and the number of daylight hours (Equation \@ref(eq:two)).  
+The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll *a*, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll *a* concentration, and the number of daylight hours (Equation \@ref(eq:two)).  
 
 \begin{equation}
 P_{max}^{b}(SST) = 4.6 * 1.065^{SST-20^{0}} 
@@ -2468,4 +2473,4245 @@ knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 
 <!--chapter:end:chapters/EPU.Rmd-->
+
+# Harbor Porpoise Bycatch
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+**Description**: Harbor Porpoise Indicator
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
+**Indicator category**: Synthesis of published information; Published methods
+
+**Contributor(s)**: Christopher D. Orphandies
+  
+**Data steward**: Chris Orphanides, <chris.orphanides@noaa.gov>
+
+**Point of contact**: Chris Orphanides, <chris.orphanides@noaa.gov>
+
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) (2018 report in-press). Derived data as shown in the 2018 SOE reports are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
+  
+
+## Methods
+
+
+### Data sources
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed [here](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). The most recent bycatch estimates for 2016 were taken from the 2018 stock assessment (in-press). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.nefsc.noaa.gov/publications/crd/). 
+
+The document for the 2016 estimates (CRD 19-04) is available [here](https://www.nefsc.noaa.gov/publications/crd/crd1904/crd1904.pdf). Additional methodological details are available for previous year's estimates and are documented in numerous published CRDs: [CRD 17-18](https://www.nefsc.noaa.gov/publications/crd/crd1718/crd1718.pdf), [CRD-16-05](https://www.nefsc.noaa.gov/publications/crd/crd1605/crd1605.pdf), [CRD 15-15](https://www.nefsc.noaa.gov/publications/crd/crd1515/crd1515.pdf), [CRD 14-02](https://repository.library.noaa.gov/view/noaa/4718), [CRD 13-13](https://www.nefsc.noaa.gov/publications/crd/crd1313/crd1313_2nd_ed.pdf), [CRD 11-08](https://www.nefsc.noaa.gov/publications/crd/crd1108/1108.pdf), [CRD 10-10](https://www.nefsc.noaa.gov/publications/crd/crd1010/crd1010.pdf), [CRD 07-20](https://www.nefsc.noaa.gov/publications/crd/crd0720/crd0720.pdf), [CRD 06-13](https://www.nefsc.noaa.gov/publications/crd/crd0613/crd0613.pdf), [CRD 03-18](https://www.nefsc.noaa.gov/publications/crd/crd0318/crd0318.pdf), [CRD 01-15](https://www.nefsc.noaa.gov/publications/crd/crd0115/0115.pdf), and [CRD 99-17](https://www.nefsc.noaa.gov/publications/crd/pdfs/crd9917.pdf).
+
+### Data extraction 
+Annual gillnet bycatch estimates are documented in a CRD (see sources above). These feed into the Stock Assessment Reports which report both the annual bycatch estimate and the mean 5-year estimate. The 5-year estimate is the one used for management purposes, so that is the one provided for the SOE plot.
+
+### Data analysis
+Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+
+### Plotting
+
+```{r harbor-porpoise, fig.cap="Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange).", echo = T, message=F, warning=F, fig.pos='H', fig.height=4}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mar = c(4, 6, 2, 6))
+
+soe.plot(SOE.data, 'Time', "Harbor porpoise bycatch estimates",            
+         rel.y.num = 1.2, end.start = 2007, full.trend = F, point.cex = 1,
+         ymax = F, y.upper = 2500, mean_line = F, x.label = 'Year',
+         y.label = 'Bycatch, n', rel.y.text = 1)
+
+legend(2000, 2250, legend = "Potential Biological Removal",
+       col = adjustcolor("red", .5), lwd = 3,
+       bty = "n", cex = 0.9)
+
+#credible intervals and PBI
+lw_CI <- SOE.data[Var == 'Harbor porpoise bycatch 2.5 CI',
+                       list(Time, Value)]
+up_CI <- SOE.data[Var == 'Harbor porpoise bycatch 97.5 CI',
+                       list(Time, Value)]
+pbi   <- SOE.data[Var == 'Harbor porpoise potential biological removal',
+                       list(Time, Value)]
+
+points(pbi,   type  = "l", lty = 1, col = adjustcolor("red", .5), lwd = 3)
+points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .9), lwd = 2.5)
+```
+
+
+<!--chapter:end:chapters/HP_indicator.Rmd-->
+
+# Ichthyoplankton Diversity
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
+**Indicator category**: Database pull with analysis 
+
+**Contributor(s)**: Harvey J. Walsh
+  
+**Data steward**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_soe_v1.html).
+
+
+## Methods
+Data from the NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
+
+### Data sources
+Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year.  A random-stratified design based on the NEFSC bottom trawl survey design [@Azarovitz1981] is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design. 
+The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo net. Net tow speed was 1.5 knots and maximum sample depth was 200 m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5 m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net. 
+
+Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 m^-2^ sea surface.
+
+### Data extraction
+Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) (Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
+
+### Data analysis
+All detailed data processing steps are not currently included in this document, but general steps are outlined. Data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
+
+MATLAB code used to calculate diversity indices:
+```{octave, echo = T, eval = F}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Calculates Shannon Diversity Index of Ichthyoplankton data
+%   
+%   Input: excel file of ichthyoplankton data
+%
+%   USES: index_SaW.m
+%
+%   last modified: 03August2018, HJW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Data retrieved from NOAA NEFSC Oceans and Climate branch public dataset
+%   ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
+%   Filename: EcoMon_Plankton_Data_v3_0.xlsx
+%   File Date: 10/20/2016
+ 
+% Data processing - not included in this file
+%   Data grouped into seasons: spring = Feb to Apr, fall = Sept to Nov
+%   Stratified weighted mean abundance was calculated for each taxon for each year and season
+%       Abundance across all plankton strata (n = 47) for 17 years (1999 to 2015)
+ 
+%% Import aggregated data from spreadsheet
+% Script for importing data from the following spreadsheet:
+%
+%    Workbook: /Users/hwalsh/NEFSC larval samples/CombinedData/SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx
+%    Worksheet: Sheet1
+%% Output Data
+% SprSW = Spring Shannon Diversity Index
+% SprCount = Spring count of positive ichthyoplankton taxa (Max = 45)
+% FallSW = Fall Shannon Diversity Index
+% FallCount = Fall count of positive ichthyoplankton taxa (Max = 45)
+ 
+%% Import the data
+[~, ~, raw] = xlsread('/Users/hwalsh/NEFSC larval samples/CombinedData/SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx','Sheet1');
+raw = raw(2:end,7:end);
+ 
+%% Create output variable
+data = reshape([raw{:}],size(raw));
+ 
+%% Create table
+NEFSCIchthyoplanktonAbundance = table;
+ 
+%% Allocate imported array to column variable names
+NEFSCIchthyoplanktonAbundance.Brevoortiatyrannus = data(:,1);
+NEFSCIchthyoplanktonAbundance.Clupeaharengus = data(:,2);
+NEFSCIchthyoplanktonAbundance.Cyclothonespp = data(:,3);
+NEFSCIchthyoplanktonAbundance.Diaphusspp = data(:,4);
+NEFSCIchthyoplanktonAbundance.Ceratoscopelusmaderensis = data(:,5);
+NEFSCIchthyoplanktonAbundance.Benthosemaspp = data(:,6);
+NEFSCIchthyoplanktonAbundance.Urophycisspp = data(:,7);
+NEFSCIchthyoplanktonAbundance.Enchelyopuscimbrius = data(:,8);
+NEFSCIchthyoplanktonAbundance.Gadusmorhua = data(:,9);
+NEFSCIchthyoplanktonAbundance.Melanogrammusaeglefinus = data(:,10);
+NEFSCIchthyoplanktonAbundance.Pollachiusvirens = data(:,11);
+NEFSCIchthyoplanktonAbundance.Merlucciusalbidus = data(:,12);
+NEFSCIchthyoplanktonAbundance.Merlucciusbilinearis = data(:,13);
+NEFSCIchthyoplanktonAbundance.Centropristisstriata = data(:,14);
+NEFSCIchthyoplanktonAbundance.Pomatomussaltatrix = data(:,15);
+NEFSCIchthyoplanktonAbundance.Cynoscionregalis = data(:,16);
+NEFSCIchthyoplanktonAbundance.Leiostomusxanthurus = data(:,17);
+NEFSCIchthyoplanktonAbundance.Menticirrhusspp = data(:,18);
+NEFSCIchthyoplanktonAbundance.Micropogoniasundulatus = data(:,19);
+NEFSCIchthyoplanktonAbundance.Tautogolabrusadspersus = data(:,20);
+NEFSCIchthyoplanktonAbundance.Tautogaonitis = data(:,21);
+NEFSCIchthyoplanktonAbundance.Auxisspp = data(:,22);
+NEFSCIchthyoplanktonAbundance.Scomberscombrus = data(:,23);
+NEFSCIchthyoplanktonAbundance.Peprilusspp = data(:,24);
+NEFSCIchthyoplanktonAbundance.Sebastesspp = data(:,25);
+NEFSCIchthyoplanktonAbundance.Prionotusspp = data(:,26);
+NEFSCIchthyoplanktonAbundance.Myoxocephalusaenaeus = data(:,27);
+NEFSCIchthyoplanktonAbundance.Myoxocephalusoctodecemspinosus = data(:,28);
+NEFSCIchthyoplanktonAbundance.Ammodytesspp = data(:,29);
+NEFSCIchthyoplanktonAbundance.Pholisgunnellus = data(:,30);
+NEFSCIchthyoplanktonAbundance.Ulvariasubbifurcata = data(:,31);
+NEFSCIchthyoplanktonAbundance.Anarhichasspp = data(:,32);
+NEFSCIchthyoplanktonAbundance.Citharichthysarctifrons = data(:,33);
+NEFSCIchthyoplanktonAbundance.Etropusspp = data(:,34);
+NEFSCIchthyoplanktonAbundance.Syaciumspp = data(:,35);
+NEFSCIchthyoplanktonAbundance.Bothusspp = data(:,36);
+NEFSCIchthyoplanktonAbundance.Hippoglossinaoblonga = data(:,37);
+NEFSCIchthyoplanktonAbundance.Paralichthysdentatus = data(:,38);
+NEFSCIchthyoplanktonAbundance.Pseudopleuronectesamericanus = data(:,39);
+NEFSCIchthyoplanktonAbundance.Hippoglossoidesplatessoides = data(:,40);
+NEFSCIchthyoplanktonAbundance.Limandaferruginea = data(:,41);
+NEFSCIchthyoplanktonAbundance.Glyptocephaluscynoglossus = data(:,42);
+NEFSCIchthyoplanktonAbundance.Scophthalmusaquosus = data(:,43);
+NEFSCIchthyoplanktonAbundance.Symphurusspp = data(:,44);
+NEFSCIchthyoplanktonAbundance.Lophiusamericanus = data(:,45);
+ 
+%% Clear temporary variables
+clearvars data raw;
+%% Spearate Spring (Spr) and Fall data
+Spr=table2array(NEFSCIchthyoplanktonAbundance(1:17,:))';
+Fall=table2array(NEFSCIchthyoplanktonAbundance(18:34,:))';
+%% Shannon-Wiener index
+[SprSW]=index_SaW(Spr,exp(1));
+[FallSW]=index_SaW(Fall,exp(1));
+%% Count of number taxa per year 
+SprCount=zeros(1,length(SprSW));
+for ii=1:length(Spr)
+    for yy=1:length(SprCount)
+        if Spr(ii,yy)>0
+            SprCount(1,yy)=SprCount(1,yy)+1;
+        end
+    end
+end
+FallCount=zeros(1,length(FallSW));
+for ii=1:length(Fall)
+    for yy=1:length(FallCount)
+        if Fall(ii,yy)>0
+            FallCount(1,yy)=FallCount(1,yy)+1;
+        end
+    end
+end
+clear ii yy
+
+```
+
+### Plotting
+
+```{r larval-diversity, fig.cap="Ichthyoplankton Shannon diversity in the spring (A) and fall (B) in the Northeast Large Marine Ecosystem.",echo = T, fig.show='hold', fig.align='default', warning = F, message = F,fig.pos='H'}
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data, "Time", "Spring_Ich_Shannon Diversity Index", stacked = "A",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data, "Time", "Fall_Ich_Shannon Diversity Index", stacked = "B",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", "Shannon Index", y.line = 2.5)
+
+```
+
+<!--chapter:end:chapters/Ich_div_indicator.Rmd-->
+
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Commercial Landings Data {#comdat}
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+library(dplyr)
+```
+
+**Description**: Commercial landings data pull
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Sean Lucey
+
+**Data steward**: Sean Lucey, <Sean.Lucey@noaa.gov>
+
+**Point of contact**: Sean Lucey, <Sean.Lucey@noaa.gov>
+
+**Public availability statement**: Raw data are not publically available due to confidentiality of individual fishery participants.  Derived indicator outputs are
+available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
+
+
+## Methods
+
+Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by NMFS Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table \@ref(tab:calibration) below.  
+
+```{r calibration, eval = T, echo = F}
+com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
+                         Years = c('1964 - 1981', '1982 - 1993', '> 1994'))
+kable(com.tables,caption="Data formats")
+```
+
+Comlands is an R database pull that consolidates the landings records from 1964 on and attempts to associate them with NAFO statistical areas (Figure \@ref(fig:StatAreaMap)). The script is divided into three sections. The first pulls domestic landings data from the yearly landings tables and merges them into a single data source. The second section applies an algorithm to associate landings that are not allocated to a statistical area using similar characteristics of the trip to trips with known areas. The final section pulls foreign landings from the NAFO website and rectifies species and gear codes so they can be merged along with domestic landings.
+
+```{r StatAreaMap, fig.cap="Map of the North Atlantic Fisheries Organization (NAFO) Statistical Areas.  Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated.", echo=F, eval=T, out.width = "50%", fig.align = "center"}
+
+image.dir <- here::here('images')
+
+knitr::include_graphics(file.path(image.dir, 'Stat_Area_Map.jpg'))
+```
+
+During the first section, the Comlands script pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record.  The script includes a toggle to use landed weights as opposed to live weights.  For all but shellfish species, live weights are used for the State of the Ecosystem report.  Due to the volume of data contained within each yearly landings table, landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class.  All weights are then converted from pounds to metric tons.  Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish.  Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.
+
+
+```{r gears, eval = T, echo = F}
+gear.table <- data.frame('Major gear' = c('Otter Trawls', 'Scallop Dredges', 
+                                        'Other Dredges', 'Gillnets', 'Longlines',
+                                        'Seines', 'Pots/Traps', 'Midwater', 'Other'))
+names(gear.table) <- "Major gear"
+knitr::kable(gear.table,
+      caption="Gear types") %>% 
+  kable_styling(full_width = F, position = "float_right")
+```
+
+Several species have additional steps after the data is pulled from CFDBS.  Skates are typically landed as a species complex.  In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another.  Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine.  Comlands pulls from the State database and replaces the less accurate numbers from the federal database.
+
+The majority of landings data are associated with a NAFO Statistical Area.  For those that are not, Comlands attempts to assign them to an area using similar characteristics of trips where the area is known.  To simplify this task, landings data are further aggregated into quarter and half year, small and large vessels, and eight major gear categories (Table \@ref(tab:gears)).  Landings are then proportioned to areas that meet similar characteristics based on the proportion of landings in each area by that temporal/vessel/gear combination.  If a given attribute is unknown, the algorithm attempts to assign it one, once again based on matched characteristics of known trips.  Statistical areas are then assigned to their respective [Ecological Production Unit](#epu) (Table \@ref(tab:statareas)).  
+
+```{r statareas, eval = T, echo = F}
+area.table <- data.frame(EPU = c('Gulf of Maine', 'Georges Bank', 'Mid-Atlantic'),
+                         'Stat Areas' = c('500, 510, 512, 513, 514, 515',
+                                        '521, 522, 523, 524, 525, 526, 551, 552, 561, 562',
+                                        '537, 539, 600, 612, 613, 614, 615, 616, 621, 622, 625, 626, 631, 632'))
+names(area.table)[2] <- "Stat Areas"
+kable(area.table, caption = "Statistical areas making up each EPU")
+```
+
+The final step of Comlands is to pull the foreign landings from the [NAFO database](https://www.nafo.int/Data/frames).  US landings are removed from this extraction so as not to be double counted.  NAFO codes and CFDBS codes differ so the script rectifies those codes to ensure that the data is seamlessly merged into the domestic landings.  Foreign landings are flagged so that they can be removed if so desired.
+
+
+### Data sources
+Comland is a database query of the NEFSC commercial fishery database (CFDBS). More information about the CFDBS is available [here](https://inport.nmfs.noaa.gov/inport/item/27401).  
+
+### Data extraction 
+
+R code used in the extraction process described above:
+```{r comland, echo = T, eval = F}
+#Comland.r
+#Version now controlled by git - originally part of comcatch.r
+#Grab commercial landings data from US and Foreign countries (NAFO)
+#Need to fix menhaden data
+#SML
+
+#Requires the following files:
+# data.dir.2\\Comland_skates_hakes.R
+# data.dir\\Menhaden.csv
+# data.dir.3\\SS_NAFO_21A.csv
+# data.dir.3\\species.txt
+
+#User parameters
+if(Sys.info()['sysname']=="Windows"){
+  data.dir   <- "L:\\EcoAP\\Data\\Commercial"
+  data.dir.2 <- "L:\\Rworkspace\\RCom"
+  data.dir.3 <- "L:\\EcoAP\\Data\\NAFO"
+  out.dir    <- "L:\\EcoAP\\Data\\Commercial"
+  memory.limit(4000)
+  channel <- odbcDriverConnect()
+}
+
+if(Sys.info()['sysname']=="Linux"){
+  data.dir   <- "/home/slucey/slucey/EcoAP/Data/Commercial"
+  data.dir.2 <- "/home/slucey/slucey/Rworkspace/RCom"
+  data.dir.3 <- "/home/slucey/slucey/EcoAP/Data/NAFO"
+  out.dir    <- "/home/slucey/slucey/EcoAP/Data/Commercial"
+  uid <- 'slucey'
+  cat("Oracle Password: ")
+  pwd <- scan(stdin(), character(), n = 1)
+}
+
+landed       <- 'y' #use landed weight for scallops and clams instead of live weight
+foreign      <- 'y' #Mark foreign landings and keep seperate
+adjust.ppi   <- 'y' #Adjust value for inflation
+use.existing <- 'n' #use raw data from a previous run - saves time
+sum.by       <- 'EPU' #Variable to sum landings by [EPU, stat.area]
+
+#Final year of query
+endyear <- 2016
+#If adjusting for inflation
+refyear  <- 2016
+refmonth <- 1
+
+#-------------------------------------------------------------------------------
+#Required packages
+library(RODBC); library(data.table); library(rgdal)
+
+#-------------------------------------------------------------------------------
+#User created functions 
+#Convert NA's to zeros
+na.zero <- function(x){
+  for(i in 1:length(x[1, ])){
+    if(length(which(is.na(x[, i]))) > 0){
+      x[which(is.na(x[, i])), i] <- 0}
+    }
+    return(x)
+  } 
+  
+#-------------------------------------------------------------------------------
+#Connect to database
+if(Sys.info()['sysname'] == "Windows")channel <- odbcDriverConnect()
+if(Sys.info()['sysname'] == "Linux")  channel <- odbcConnect('sole', uid, pwd)
+
+if(use.existing == 'n'){
+  #Landings
+  tables <- c(paste0('WOLANDS', 64:81), 
+              paste0('WODETS',  82:93), 
+              paste0('CFDETS',  1994:endyear, 'AA'))
+  
+  #Generate one table
+  comland <- c()
+  for(i in 1:length(tables)){
+    landings.qry <- paste("select year, month, negear, toncl1, nespp3, nespp4, area, 
+                           spplivlb, spplndlb, sppvalue, utilcd
+                           from", tables[i])
+    
+    comland.yr <- as.data.table(sqlQuery(channel, landings.qry))
+    
+    setkey(comland.yr,
+           YEAR,
+           MONTH,
+           NEGEAR,
+           TONCL1,
+           NESPP3,
+           NESPP4,
+           AREA,
+           UTILCD)
+  
+    if(landed == 'y') comland.yr[NESPP3 %in% 743:800, SPPLIVLB := SPPLNDLB]
+    
+    #Sum landings and value
+    #landings
+    comland.yr[, V1 := sum(SPPLIVLB), by = key(comland.yr)]
+    #value
+    #Fix null values
+    comland.yr[is.na(SPPVALUE), SPPVALUE := 0]
+    comland.yr[, V2 := sum(SPPVALUE), by = key(comland.yr)]
+    
+    #Remove extra rows/columns
+    comland.yr <- unique(comland.yr, by = key(comland.yr))
+    comland.yr[, c('SPPLIVLB', 'SPPLNDLB', 'SPPVALUE') := NULL]
+    
+    #Rename summed columns
+    setnames(comland.yr, c('V1', 'V2'), c('SPPLIVLB', 'SPPVALUE'))
+    
+    comland <- rbindlist(list(comland, comland.yr))
+  }
+  
+  if(landed == 'n') save(comland, file = file.path(out.dir, "comland_raw_US.RData"))
+  #Last run 8/31/16
+  if(landed == 'y') save(comland, file = file.path(out.dir, "comland_raw_US_meatwt.RData"))
+  #Last run 1/25/18 
+}
+if(use.existing == 'y'){
+  if(landed == 'n') load(file = file.path(out.dir, "comland_raw_US.RData"))
+  if(landed == 'y') load(file = file.path(out.dir, "comland_raw_US_meatwt.RData"))  
+}
+
+#-------------------------------------------------------------------------------
+#Convert from lbs to metric tons
+comland[, SPPLIVMT := SPPLIVLB * 0.00045359237]
+comland[, SPPLIVLB := NULL]
+
+#fix years
+comland[YEAR < 100, YEAR := YEAR + 1900L]
+
+if(adjust.ppi == 'y'){
+    #Adjust SPPVALUE for inflation
+    temp <- tempfile()
+    download.file("http://download.bls.gov/pub/time.series/wp/wp.data.3.ProcessedFoods", temp)
+    inflate <- as.data.table(read.delim(temp))
+    unlink(temp)
+    
+    inflate[, series_id := gsub(" ", "", inflate[, series_id])]
+    deflate <- inflate[series_id == "WPU0223", ]
+    deflate[, MONTH := as.numeric(substr(period, 2, 3))]
+    setnames(deflate, c('year', 'value'), c('YEAR', 'PPI'))
+    deflate <- deflate[, list(YEAR, MONTH, PPI)]
+    
+    #Set yearly deflator to 0 instead of 13 to match unknown month designation
+    deflate[MONTH == 13, MONTH := 0]
+    deflate.base <- deflate[YEAR == refyear & MONTH == refmonth, PPI]
+    
+    comland <- merge(comland, deflate, by = c('YEAR', 'MONTH'), all.x = T)
+    comland[, SPPVALUE := round((SPPVALUE * deflate.base) / PPI)]
+    
+    #Remove extra column
+    comland[, PPI := NULL]
+}
+#Remove market categories of parts
+comland <- comland[!NESPP4 %in% c(119, 123, 125, 127, 812, 819, 828, 829, 1731, 2351,
+                                  2690, 2699, 3472, as.numeric(paste(348:359, 8, sep = '')), 
+                                  3868, as.numeric(paste(469:471, 4, sep = '')), 
+                                  as.numeric(paste(480:499, 8, sep ='')), 5018, 5039, 
+                                  5261, 5265), ]
+
+#Generate NESPP3 and MKTCAT in comland data
+comland[NESPP4 < 100,                MKTCAT := as.numeric(substring(NESPP4, 2, 2))]
+comland[NESPP4 > 99 & NESPP4 < 1000, MKTCAT := as.numeric(substring(NESPP4, 3, 3))]
+comland[NESPP4 > 999,                MKTCAT := as.numeric(substring(NESPP4, 4, 4))]
+
+#drop NESPP4
+comland[, NESPP4 := NULL]
+
+#Deal with Hakes and Skates------------------------------------------------------------------
+source(file.path(data.dir.2, 'Comland_skates_hakes.R'))
+
+#get little skates and winter skates from skates(ns) - use survey in half years
+#Generate Half year variable in comland
+comland.skates <- comland[NESPP3 == 365, ]
+comland.skates[MONTH %in% 1:6,  Half := 1]
+comland.skates[MONTH %in% 7:12, Half := 2]
+
+setkey(skate.hake.us,
+       YEAR,
+       Half,
+       AREA)
+
+comland.skates <- merge(comland.skates, skate.hake.us, by = key(skate.hake.us), all.x = T)
+
+comland.skates[, little       := little.per * SPPLIVMT]
+comland.skates[, little.value := round(little.per * SPPVALUE)]
+comland.skates[is.na(little),       little       := 0]
+comland.skates[is.na(little.value), little.value := 0]
+
+comland.skates[, winter       := winter.per * SPPLIVMT]
+comland.skates[, winter.value := round(winter.per * SPPVALUE)]
+comland.skates[is.na(winter),       winter       := 0]
+comland.skates[is.na(winter.value), winter.value := 0]
+
+comland.skates[, other.skate       := SPPLIVMT - (little       + winter)]
+comland.skates[, other.skate.value := SPPVALUE - (little.value + winter.value)]
+
+#Little (366), winter (367), skates(ns) (365)
+#put skates in comland format to merge back
+little <- comland.skates[, list(YEAR, Half, AREA, MONTH, NEGEAR,
+                                TONCL1, NESPP3, UTILCD, MKTCAT, little, 
+                                little.value)]
+little[, NESPP3 := 366]
+setnames(little, c('little', 'little.value'), c('SPPLIVMT', 'SPPVALUE'))
+little <- little[SPPLIVMT > 0, ]
+
+winter <- comland.skates[, list(YEAR, Half, AREA, MONTH, NEGEAR,
+                                TONCL1, NESPP3, UTILCD, MKTCAT, winter, 
+                                winter.value)]
+winter[, NESPP3 := 367]
+setnames(winter, c('winter', 'winter.value'), c('SPPLIVMT', 'SPPVALUE'))
+winter <- winter[SPPLIVMT > 0, ]
+
+other <- comland.skates[, list(YEAR, Half, AREA, MONTH, NEGEAR,
+                               TONCL1, NESPP3, UTILCD, MKTCAT, other.skate, 
+                               other.skate.value)]
+other[, NESPP3 := 365]
+setnames(other, c('other.skate', 'other.skate.value'), c('SPPLIVMT', 'SPPVALUE'))
+other <- other[SPPLIVMT > 0, ]
+
+#merge all three and reformat for comland
+skates.add.back <- rbindlist(list(little, winter, other))
+
+skates.add.back[, Half := NULL]
+setcolorder(skates.add.back, names(comland))
+
+comland <- rbindlist(list(comland[NESPP3 != 365, ], skates.add.back))  
+
+#get silver hake from mixed hakes - use survey in half years
+#Generate Half year variable in comland
+comland.hakes <- comland[NESPP3 == 507, ]
+comland.hakes[MONTH %in% 1:6,  Half := 1]
+comland.hakes[MONTH %in% 7:12, Half := 2]
+
+comland.hakes <- merge(comland.hakes, skate.hake.us, by = key(skate.hake.us), all.x = T)
+
+comland.hakes[, silver       := silver.per * SPPLIVMT]
+comland.hakes[, silver.value := round(silver.per * SPPVALUE)]
+comland.hakes[is.na(silver),       silver       := 0]
+comland.hakes[is.na(silver.value), silver.value := 0]
+
+comland.hakes[, off.hake       := SPPLIVMT - silver]
+comland.hakes[, off.hake.value := SPPVALUE - silver.value]
+
+#Silver hake (509), mix hakes (507)
+#put hakes in comland format to merge back
+silver <- comland.hakes[, list(YEAR, Half, AREA, MONTH, NEGEAR,
+                               TONCL1, NESPP3, UTILCD, MKTCAT, silver, 
+                               silver.value)]
+silver[, NESPP3 := 509]
+setnames(silver, c('silver', 'silver.value'), c('SPPLIVMT', 'SPPVALUE'))
+silver <- silver[SPPLIVMT > 0, ]
+
+offshore <- comland.hakes[, list(YEAR, Half, AREA, MONTH, NEGEAR,
+                                 TONCL1, NESPP3, UTILCD, MKTCAT, off.hake, 
+                                 off.hake.value)]
+offshore[, NESPP3 := 507]
+setnames(offshore, c('off.hake', 'off.hake.value'), c('SPPLIVMT', 'SPPVALUE'))
+offshore <- offshore[SPPLIVMT > 0, ]
+
+#merge both and reformat for comland
+hakes.add.back <- rbindlist(list(silver, offshore))
+
+hakes.add.back[, Half := NULL]
+setcolorder(hakes.add.back, names(comland))
+
+comland <- rbindlist(list(comland[NESPP3 != 507, ], hakes.add.back))
+
+
+#Herring---------------------------------------------------------------------------------
+#Herring data is housed by the state of Maine.
+herr.qry <- "select year, month, stock_area, negear, gearname, keptmt, discmt
+             from maine_herring_catch"
+
+herr.catch <- as.data.table(sqlQuery(channel, herr.qry))
+setkey(herr.catch, YEAR, MONTH, STOCK_AREA, NEGEAR)
+
+herring <- herr.catch[, list(sum(KEPTMT), sum(DISCMT)), by = key(herr.catch)]
+setnames(herring, c('STOCK_AREA', 'V1', 'V2'),
+                  c('AREA', 'SPPLIVMT', 'DISCMT'))
+
+#Using averages from comland to fill in categories
+herring[, MKTCAT := 5]
+herring[, TONCL1 := 2]
+herring[, UTILCD := 0]
+
+#compute price/utilization from CF tables
+herring.comland <- comland[NESPP3 == 168, ]
+#Price from comland
+herring.price <- herring.comland[, (sum(SPPVALUE) / sum(SPPLIVMT)), by = c('YEAR', 'MONTH')]
+setnames(herring.price, 'V1', 'price')
+herring <- merge(herring, herring.price, by = c('YEAR', 'MONTH'), all.x = T)
+#Use 1964 prices for < 1964
+herring[YEAR < 1964, price := mean(herring[YEAR == 1964, price])]
+#Calculate SPPVALUE from price
+herring[, SPPVALUE := round(price * SPPLIVMT)]
+
+#Utilization from comland
+herring.util <- herring.comland[, sum(SPPLIVMT), by = c('YEAR', 'MONTH', 'UTILCD')]
+setnames(herring.util, 'V1', 'SPPLIVMT')
+herring.util[, SPPLIVMT.ALL := sum(SPPLIVMT), by = c('YEAR', 'MONTH')]
+herring.util[, Prop := SPPLIVMT/SPPLIVMT.ALL]
+setorder(herring.util, YEAR, MONTH, Prop)
+herring.util[, cum.prop := cumsum(Prop), by = c('YEAR', 'MONTH')]
+
+#Apply proportions to Maine data set
+#Not pulled all the time - current through 2017
+herring[, Total := sum(SPPLIVMT), by = c('YEAR', 'MONTH')]
+herring[, Prop := SPPLIVMT / Total]
+setorder(herring, YEAR, MONTH, Prop)
+herring[, cum.prop := cumsum(Prop), by = c('YEAR', 'MONTH')]
+
+for(iyear in unique(herring.util[, YEAR])){
+  for(imonth in unique(herring.util[YEAR == iyear, MONTH])){
+    cum.prop.low <- 0
+    for(iutil in herring.util[YEAR == iyear & MONTH == imonth, UTILCD]){
+      cum.prop.high <- herring.util[YEAR == iyear & MONTH == imonth & 
+                                      UTILCD == iutil, cum.prop]
+      herring[YEAR == iyear & MONTH == imonth & cum.prop <= cum.prop.high &
+                cum.prop > cum.prop.low, UTILCD := iutil]
+      cum.prop.low <- cum.prop.high
+    }
+  }
+}
+
+#fix column headings
+herring[, c('Total', 'Prop', 'cum.prop', 'price', 'DISCMT') := NULL]
+herring[, NESPP3 := 168]
+setcolorder(herring, names(comland))
+
+#remove herring from data pull and add in Maine numbers
+comland <- rbindlist(list(comland[NESPP3 != 168, ], herring))
+
+#Menhaden------------------------------------------------------------------------------------
+##fix menhaden records - data from Tom Miller/ Andre Bouchheister
+#menhaden <- as.data.table(read.csv(paste(data.dir, "Menhaden.csv", sep = '')))
+#menhaden.mab <- menhaden[, MA.Total + CB.Total, by = Year]
+##file metric is 1000s of lbs - convert to mt
+#menhaden.mab[, SPPLIVMT := (V1 * 1000) *  0.00045359237]
+#menhaden.mab[, V1 := NULL]
+#
+#menhaden.gom <- menhaden[, list(Year, NE.Total)]
+#menhaden.gom[, SPPLIVMT := (NE.Total * 1000) *  0.00045359237]
+#menhaden.gom[, NE.Total := NULL]
+
+#save(comland, file = paste(out.dir, "Comland_unkA.RData", sep = ''))
+
+#Deal with unknowns-------------------------------------------------------------------------
+comland[NEGEAR == 999,  NEGEAR := 0]
+comland[is.na(TONCL1),  TONCL1 := 0]
+comland[is.na(AREA),    AREA   := as.factor(0)]
+comland[AREA == 999,    AREA   := as.factor(0)]
+comland[is.na(MKTCAT),  MKTCAT := 0]
+comland[is.na(UTILCD),  UTILCD := 0]
+
+#1 - drop unknown species/landings
+comland <- comland[NESPP3 != 0 & SPPLIVMT != 0, ]
+
+#Sumarry tables
+#missing area
+#known.area <-   comland[AREA != 0, sum(SPPLIVMT), by = NESPP3]
+#unknown.area <- comland[AREA == 0, sum(SPPLIVMT), by = NESPP3]
+#setnames(known.area,   "V1", "AREA.MT.known")
+#setnames(unknown.area, "V1", "AREA.MT.unknown")
+#missing.table <- merge(known.area, unknown.area, by = 'NESPP3', all = T)
+#
+#missing.table[is.na(AREA.MT.known),   AREA.MT.known   := 0]
+#missing.table[is.na(AREA.MT.unknown), AREA.MT.unknown := 0]
+#missing.table[, AREA.Ratio := AREA.MT.unknown / AREA.MT.known]
+#
+##missing month
+#known.month <-   comland[MONTH != 0, sum(SPPLIVMT), by = NESPP3]
+#unknown.month <- comland[MONTH == 0, sum(SPPLIVMT), by = NESPP3]
+#setnames(known.month,   "V1", "MONTH.MT.known")
+#setnames(unknown.month, "V1", "MONTH.MT.unknown")
+#missing.table <- merge(missing.table, known.month,   by = 'NESPP3', all = T)
+#missing.table <- merge(missing.table, unknown.month, by = 'NESPP3', all = T)
+#
+#missing.table[is.na(MONTH.MT.known),   MONTH.MT.known   := 0]
+#missing.table[is.na(MONTH.MT.unknown), MONTH.MT.unknown := 0]
+#missing.table[, MONTH.Ratio := MONTH.MT.unknown / MONTH.MT.known]
+#
+##missing gear
+#known.gear <-   comland[NEGEAR != 0, sum(SPPLIVMT), by = NESPP3]
+#unknown.gear <- comland[NEGEAR == 0, sum(SPPLIVMT), by = NESPP3]
+#setnames(known.gear,   "V1", "GEAR.MT.known")
+#setnames(unknown.gear, "V1", "GEAR.MT.unknown")
+#missing.table <- merge(missing.table, known.gear,   by = 'NESPP3', all = T)
+#missing.table <- merge(missing.table, unknown.gear, by = 'NESPP3', all = T)
+#
+#missing.table[is.na(GEAR.MT.known),   GEAR.MT.known   := 0]
+#missing.table[is.na(GEAR.MT.unknown), GEAR.MT.unknown := 0]
+#missing.table[, GEAR.Ratio := GEAR.MT.unknown / GEAR.MT.known]
+#
+##missing tonnage class
+#known.tc <-   comland[TONCL1 != 0, sum(SPPLIVMT), by = NESPP3]
+#unknown.tc <- comland[TONCL1 == 0, sum(SPPLIVMT), by = NESPP3]
+#setnames(known.tc,   "V1", "TC.MT.known")
+#setnames(unknown.tc, "V1", "TC.MT.unknown")
+#missing.table <- merge(missing.table, known.tc,   by = 'NESPP3', all = T)
+#missing.table <- merge(missing.table, unknown.tc, by = 'NESPP3', all = T)
+#
+#missing.table[is.na(TC.MT.known),   TC.MT.known   := 0]
+#missing.table[is.na(TC.MT.unknown), TC.MT.unknown := 0]
+#missing.table[, TC.Ratio := TC.MT.unknown / TC.MT.known]
+#
+#write.csv(missing.table, paste(out.dir, "\\Missing_table.csv", sep = ''), row.names = F)
+#
+
+#2 - aggregate by quarter year, half year, major gear, and small/large TC
+comland[MONTH %in% 1:3,   QY := 1]
+comland[MONTH %in% 4:6,   QY := 2]
+comland[MONTH %in% 7:9,   QY := 3]
+comland[MONTH %in% 10:12, QY := 4]
+comland[MONTH == 0,       QY := 0]
+
+comland[MONTH %in% 1:6,  HY := 1]
+comland[MONTH %in% 7:12, HY := 2]
+comland[MONTH == 0,      HY := 0]
+
+otter     <- 50:59
+dredge.sc <- 131:132
+pot       <- c(189:190, 200:219, 300, 301)
+longline  <- c(10, 40)
+seine     <- c(70:79, 120:129, 360)
+gillnet   <- c(100:119, 500, 510, 520)
+midwater  <- c(170, 370)
+dredge.o  <- c(281, 282, 380:400)
+
+comland[NEGEAR %in% otter,     GEAR := 'otter']
+comland[NEGEAR %in% dredge.sc, GEAR := 'dredge.sc']
+comland[NEGEAR %in% pot,       GEAR := 'pot']
+comland[NEGEAR %in% longline,  GEAR := 'longline']
+comland[NEGEAR %in% seine,     GEAR := 'seine']
+comland[NEGEAR %in% gillnet,   GEAR := 'gillnet']
+comland[NEGEAR %in% midwater,  GEAR := 'midwater']
+comland[NEGEAR %in% dredge.o,  GEAR := 'dredge.o']
+comland[NEGEAR == 0,           GEAR := 'unknown']
+comland[is.na(GEAR),           GEAR := 'other']
+comland[, GEAR := as.factor(GEAR)]
+
+comland[TONCL1 %in% 1:3, SIZE := 'small']
+comland[TONCL1 > 3,      SIZE := 'large']
+comland[TONCL1 == 0,     SIZE := 'unknown']
+comland[, SIZE := as.factor(SIZE)]
+
+setkey(comland,
+       YEAR,
+       QY,
+       HY,
+       GEAR,
+       SIZE,
+       AREA,
+       NESPP3,
+       UTILCD)
+
+comland.agg <- comland[, list(sum(SPPLIVMT), sum(SPPVALUE)), by = key(comland)]
+
+setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+
+#3 - Use proportions of known catch to assign unknown catch
+#3.A QY/HY------------------------------------------------------------------------------
+  unk.month <- comland.agg[QY == 0, ]
+  k.month   <- comland.agg[QY != 0, ]
+  
+  #3.A.1 - All match
+  match.key <- c('YEAR', 'NESPP3', 'GEAR', 'SIZE', 'AREA')
+  
+  unk.month.all <- unk.month[GEAR != 'unknown']
+  unk.month.all <- unk.month.all[SIZE != 'unknown', ]
+  unk.month.all <- unk.month.all[AREA != 0, ]
+  
+  k.month.all <- k.month[GEAR != 'unknown', ]
+  k.month.all <- k.month.all[SIZE != 'unknown', ]
+  k.month.all <- k.month.all[AREA != 0, ]
+  
+  setkeyv(unk.month.all, match.key)
+  setkeyv(k.month.all,   match.key)
+  
+  month.all <- k.month.all[unk.month.all]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.all[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match, YEAR, NESPP3, AREA, GEAR)
+  setkeyv(k.month.all, key(no.match))
+  month.all.2 <- k.month.all[no.match]
+  no.match.2 <- month.all.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match.2, YEAR, NESPP3, AREA)
+  setkeyv(k.month.all, key(no.match.2))
+  month.all.3 <- k.month.all[no.match.2]
+  no.match.3 <- month.all.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.3, YEAR, NESPP3)
+  setkeyv(k.month.all, key(no.match.3))
+  month.all.4 <- k.month.all[no.match.3]
+  no.match.4 <- month.all.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+                         'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.4[, c('QY', 'HY') := 1]
+  
+  #Merge all together and proportion catch to known months
+  month.all   <- month.all  [!is.na(SPPLIVMT), ]
+  month.all.2 <- month.all.2[!is.na(SPPLIVMT), ]
+  month.all.2[, SIZE   := i.SIZE]
+  month.all.2[, i.SIZE := NULL]
+  setcolorder(month.all.2, names(month.all))
+  month.all.3 <- month.all.3[!is.na(SPPLIVMT), ]
+  month.all.3[, GEAR   := i.GEAR]
+  month.all.3[, SIZE   := i.SIZE]
+  month.all.3[, i.GEAR := NULL]
+  month.all.3[, i.SIZE := NULL]
+  setcolorder(month.all.3, names(month.all))
+  month.all.4 <- month.all.4[!is.na(SPPLIVMT), ]
+  month.all.4[, AREA   := i.AREA]
+  month.all.4[, GEAR   := i.GEAR]
+  month.all.4[, SIZE   := i.SIZE]
+  month.all.4[, i.AREA := NULL]
+  month.all.4[, i.GEAR := NULL]
+  month.all.4[, i.SIZE := NULL]
+  setcolorder(month.all.4, names(month.all))
+  
+  month.all <- rbindlist(list(month.all, month.all.2, month.all.3, month.all.4))
+  
+  month.all[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.all[, unk  := i.SPPLIVMT * prop]
+  month.all[, unk2 := i.SPPVALUE * prop]
+  month.all[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 
+                'i.QY', 'i.UTILCD', 'prop') := NULL]
+  setnames(month.all, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setcolorder(no.match.4, names(month.all))
+  month.solved <- rbindlist(list(month.all, no.match.4))
+  rm(list = c(ls(pattern = 'month.all'), ls(pattern = 'no.match')))
+  
+  #3.A.2 - GEAR/SIZE
+  match.key <- c('YEAR', 'NESPP3', 'GEAR', 'SIZE')
+  
+  unk.month.g.s <- unk.month[GEAR != 'unknown']
+  unk.month.g.s <- unk.month.g.s[SIZE != 'unknown', ]
+  unk.month.g.s <- unk.month.g.s[AREA == 0, ]
+  unk.month.g.s <- unk.month.g.s[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                                 by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.g.s, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.g.s <- k.month[GEAR != 'unknown', ]
+  k.month.g.s <- k.month.g.s[SIZE != 'unknown', ]
+  k.month.g.s <- k.month.g.s[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.g.s, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.g.s, match.key)
+  setkeyv(k.month.g.s,   match.key)
+  
+  month.g.s <- k.month.g.s[unk.month.g.s]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.g.s[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match, YEAR, NESPP3, GEAR)
+  setkeyv(k.month.g.s, key(no.match))
+  month.g.s.2 <- k.month.g.s[no.match]
+  no.match.2 <- month.g.s.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match.2, YEAR, NESPP3)
+  setkeyv(k.month.g.s, key(no.match.2))
+  month.g.s.3 <- k.month.g.s[no.match.2]
+  no.match.3 <- month.g.s.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.3[, c('QY', 'HY') := 1]
+  no.match.3[, AREA := 0]
+  
+  #Merge all together and proportion catch to known months
+  month.g.s   <- month.g.s  [!is.na(SPPLIVMT), ]
+  month.g.s.2 <- month.g.s.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.g.s.2) > 0){
+    month.g.s.2[, SIZE   := i.SIZE]
+    month.g.s.2[, i.SIZE := NULL]
+    setcolorder(month.g.s.2, names(month.g.s))
+    month.g.s <- rbindlist(list(month.g.s, month.g.s.2))  
+  }
+  month.g.s.3 <- month.g.s.3[!is.na(SPPLIVMT), ]
+  if(nrow(month.g.s.3) > 0){
+    month.g.s.3[, GEAR   := i.GEAR]
+    month.g.s.3[, SIZE   := i.SIZE]
+    month.g.s.3[, i.GEAR := NULL]
+    month.g.s.3[, i.SIZE := NULL]
+    setcolorder(month.g.s.3, names(month.g.s))
+    month.g.s <- rbindlist(list(month.g.s, month.g.s.3))
+  }
+  
+  month.g.s[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.g.s[, unk  := i.SPPLIVMT * prop]
+  month.g.s[, unk2 := i.SPPVALUE * prop]
+  month.g.s[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 
+                'i.QY', 'i.UTILCD', 'prop') := NULL]
+  setnames(month.g.s, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.g.s[, AREA := 0]
+  
+  setcolorder(month.g.s,  names(month.solved))
+  setcolorder(no.match.3, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.g.s, no.match.3))
+  rm(list = c(ls(pattern = 'month.g.s'), ls(pattern = 'no.match')))
+  
+  #3.A.3 - AREA/GEAR
+  match.key <- c('YEAR', 'NESPP3', 'GEAR', 'AREA')
+  
+  unk.month.a.g <- unk.month[GEAR != 'unknown']
+  unk.month.a.g <- unk.month.a.g[SIZE == 'unknown', ]
+  unk.month.a.g <- unk.month.a.g[AREA != 0, ]
+  unk.month.a.g <- unk.month.a.g[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                                 by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.a.g, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.a.g <- k.month[GEAR != 'unknown', ]
+  k.month.a.g <- k.month.a.g[AREA != 0, ]
+  k.month.a.g <- k.month.a.g[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.a.g, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.a.g, match.key)
+  setkeyv(k.month.a.g,   match.key)
+  
+  month.a.g <- k.month.a.g[unk.month.a.g]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.a.g[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match, YEAR, NESPP3, AREA)
+  setkeyv(k.month.a.g, key(no.match))
+  month.a.g.2 <- k.month.a.g[no.match]
+  no.match.2 <- month.a.g.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.2, YEAR, NESPP3)
+  setkeyv(k.month.a.g, key(no.match.2))
+  month.a.g.3 <- k.month.a.g[no.match.2]
+  no.match.3 <- month.a.g.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('AREA', 'GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.AREA', 'i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA', 'GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.3[, c('QY', 'HY') := 1]
+  no.match.3[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  
+  #Merge all together and proportion catch to known months
+  month.a.g   <- month.a.g  [!is.na(SPPLIVMT), ]
+  month.a.g.2 <- month.a.g.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.a.g.2) > 0){
+    month.a.g.2[, GEAR   := i.GEAR]
+    month.a.g.2[, i.GEAR := NULL]
+    setcolorder(month.a.g.2, names(month.a.g))
+    month.a.g <- rbindlist(list(month.a.g, month.a.g.2))  
+  }
+  month.a.g.3 <- month.a.g.3[!is.na(SPPLIVMT), ]
+  if(nrow(month.a.g.3) > 0){
+    month.a.g.3[, AREA   := i.AREA]
+    month.a.g.3[, GEAR   := i.GEAR]
+    month.a.g.3[, i.AREA := NULL]
+    month.a.g.3[, i.GEAR := NULL]
+    setcolorder(month.a.g.3, names(month.a.g))
+    month.a.g <- rbindlist(list(month.a.g, month.a.g.3))  
+  }
+  
+  month.a.g[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.a.g[, unk  := i.SPPLIVMT * prop]
+  month.a.g[, unk2 := i.SPPVALUE * prop]
+  month.a.g[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 
+                'i.QY', 'i.UTILCD', 'prop') := NULL]
+  setnames(month.a.g, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.a.g[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+ 
+ setcolorder(month.a.g,  names(month.solved))
+  setcolorder(no.match.3, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.a.g, no.match.3))
+  rm(list = c(ls(pattern = 'month.a.g'), ls(pattern = 'no.match')))
+  
+  #3.A.4 - AREA/TC
+  match.key <- c('YEAR', 'NESPP3', 'SIZE', 'AREA')
+  
+  unk.month.a.s <- unk.month[GEAR == 'unknown']
+  unk.month.a.s <- unk.month.a.s[SIZE != 'unknown', ]
+  unk.month.a.s <- unk.month.a.s[AREA != 0, ]
+  unk.month.a.s <- unk.month.a.s[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                                 by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.a.s, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.a.s <- k.month[SIZE != 'unknown', ]
+  k.month.a.s <- k.month.a.s[AREA != 0, ]
+  k.month.a.s <- k.month.a.s[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.a.s, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.a.s, match.key)
+  setkeyv(k.month.a.s,   match.key)
+  
+  month.a.s <- k.month.a.s[unk.month.a.s]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.a.s[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match, YEAR, NESPP3, AREA)
+  setkeyv(k.month.a.s, key(no.match))
+  month.a.s.2 <- k.month.a.s[no.match]
+  no.match.2 <- month.a.s.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.2, YEAR, NESPP3)
+  setkeyv(k.month.a.s, key(no.match.2))
+  month.a.s.3 <- k.month.a.s[no.match.2]
+  no.match.3 <- month.a.s.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.3[, c('QY', 'HY') := 1]
+  no.match.3[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  #Merge all together and proportion catch to known months
+  month.a.s   <- month.a.s  [!is.na(SPPLIVMT), ]
+  month.a.s.2 <- month.a.s.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.a.s.2) > 0){
+    month.a.s.2[, SIZE   := i.SIZE]
+    month.a.s.2[, i.SIZE := NULL]
+    setcolorder(month.a.s.2, names(month.a.s))
+    month.a.s <- rbindlist(list(month.a.s, month.a.s.2))
+  }
+  month.a.s.3 <- month.a.s.3[!is.na(SPPLIVMT), ]
+  if(nrow(month.a.s.3) > 0){
+    month.a.s.3[, AREA   := i.AREA]
+    month.a.s.3[, SIZE   := i.SIZE]
+    month.a.s.3[, i.AREA := NULL]
+    month.a.s.3[, i.SIZE := NULL]
+    setcolorder(month.a.s.3, names(month.a.s))
+    month.a.s <- rbindlist(list(month.a.s, month.a.s.3))  
+  }
+  
+  month.a.s[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.a.s[, unk  := i.SPPLIVMT * prop]
+  month.a.s[, unk2 := i.SPPVALUE * prop]
+  month.a.s[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 
+                'i.QY', 'i.UTILCD', 'prop') := NULL]
+  setnames(month.a.s, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.a.s[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  setcolorder(month.a.s,  names(month.solved))
+  setcolorder(no.match.3, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.a.s, no.match.3))
+  rm(list = c(ls(pattern = 'month.a.s'), ls(pattern = 'no.match')))
+
+#3.A.5 - SIZE
+  match.key <- c('YEAR', 'NESPP3', 'SIZE')
+  
+  unk.month.si <- unk.month[GEAR == 'unknown']
+  unk.month.si <- unk.month.si[SIZE != 'unknown', ]
+  unk.month.si <- unk.month.si[AREA == 0, ]
+  unk.month.si <- unk.month.si[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                               by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.si, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.si <- k.month[SIZE != 'unknown', ]
+  k.month.si <- k.month.si[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                           by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.si, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.si, match.key)
+  setkeyv(k.month.si,   match.key)
+  
+  month.si <- k.month.si[unk.month.si]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.si[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match, YEAR, NESPP3)
+  setkeyv(k.month.si, key(no.match))
+  month.si.2 <- k.month.si[no.match]
+  no.match.2 <- month.si.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.2[, c('QY', 'HY') := 1]
+  no.match.2[, AREA := 0]
+  no.match.2[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  #Merge all together and proportion catch to known months
+  month.si   <- month.si  [!is.na(SPPLIVMT), ]
+  month.si.2 <- month.si.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.si.2) > 0){
+    month.si.2[, SIZE   := i.SIZE]
+    month.si.2[, i.SIZE := NULL]
+    setcolorder(month.si.2, names(month.si))
+    month.si <- rbindlist(list(month.si, month.si.2))
+    }
+   
+  month.si[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.si[, unk  := i.SPPLIVMT * prop]
+  month.si[, unk2 := i.SPPVALUE * prop]
+  month.si[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 'i.QY', 
+               'i.UTILCD', 'prop') := NULL]
+  setnames(month.si, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.si[, AREA := 0]
+  month.si[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  setcolorder(month.si,  names(month.solved))
+  setcolorder(no.match.2, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.si, no.match.2))
+  rm(list = c(ls(pattern = 'month.si'), ls(pattern = 'no.match')))
+  
+  #3.A.6 - GEAR
+  match.key <- c('YEAR', 'NESPP3', 'GEAR')
+  
+  unk.month.g <- unk.month[GEAR != 'unknown']
+  unk.month.g <- unk.month.g[SIZE == 'unknown', ]
+  unk.month.g <- unk.month.g[AREA == 0, ]
+  unk.month.g <- unk.month.g[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.g, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.g <- k.month[GEAR != 'unknown', ]
+  k.month.g <- k.month.g[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                         by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.g, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.g, match.key)
+  setkeyv(k.month.g,   match.key)
+  
+  month.g <- k.month.g[unk.month.g]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.g[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match, YEAR, NESPP3)
+  setkeyv(k.month.g, key(no.match))
+  month.g.2 <- k.month.g[no.match]
+  no.match.2 <- month.g.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.2[, c('QY', 'HY') := 1]
+  no.match.2[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  no.match.2[, AREA := 0]
+  
+  #Merge all together and proportion catch to known months
+  month.g   <- month.g  [!is.na(SPPLIVMT), ]
+  month.g.2 <- month.g.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.g.2) > 0){
+    month.g.2[, GEAR   := i.GEAR]
+    month.g.2[, i.GEAR := NULL]
+    setcolorder(month.g.2, names(month.g))
+    month.g <- rbindlist(list(month.g, month.g.2))
+    }
+  
+  month.g[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.g[, unk  := i.SPPLIVMT * prop]
+  month.g[, unk2 := i.SPPVALUE * prop]
+  month.g[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 'i.QY', 
+              'i.UTILCD', 'prop') := NULL]
+  setnames(month.g, c('unk', 'unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.g[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  month.g[, AREA := 0]
+  
+  setcolorder(month.g,  names(month.solved))
+  setcolorder(no.match.2, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.g, no.match.2))
+  rm(list = c(ls(pattern = 'month.g'), ls(pattern = 'no.match')))
+  
+  #3.A.7 - AREA
+  match.key <- c('YEAR', 'NESPP3', 'AREA')
+  
+  unk.month.a <- unk.month[GEAR == 'unknown']
+  unk.month.a <- unk.month.a[SIZE == 'unknown', ]
+  unk.month.a <- unk.month.a[AREA != 0, ]
+  unk.month.a <- unk.month.a[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.a, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.a <- k.month[AREA != 0, ]
+  k.month.a <- k.month.a[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                         by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.a, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.a, match.key)
+  setkeyv(k.month.a,   match.key)
+  
+  month.a <- k.month.a[unk.month.a]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- month.a[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match, YEAR, NESPP3)
+  setkeyv(k.month.a, key(no.match))
+  month.a.2 <- k.month.a[no.match]
+  no.match.2 <- month.a.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to first QY/HY
+  no.match.2[, c('QY', 'HY') := 1]
+  no.match.2[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  no.match.2[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  #Merge all together and proportion catch to known months
+  month.a   <- month.a  [!is.na(SPPLIVMT), ]
+  month.a.2 <- month.a.2[!is.na(SPPLIVMT), ]
+  if(nrow(month.a.2) > 0){
+    month.a.2[, AREA   := i.AREA]
+    month.a.2[, i.AREA := NULL]
+    setcolorder(month.a.2, names(month.a))
+    month.a <- rbindlist(list(month.a, month.a.2))
+    }
+  
+  month.a[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.a[, unk  := i.SPPLIVMT * prop]
+  month.a[, unk2 := i.SPPVALUE * prop]
+  month.a[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 
+              'i.QY', 'i.UTILCD', 'prop') := NULL]
+  setnames(month.a, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.a[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  month.a[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  
+  setcolorder(month.a,  names(month.solved))
+  setcolorder(no.match.2, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.a, no.match.2))
+  rm(list = c(ls(pattern = 'month.a'), ls(pattern = 'no.match')))
+    
+  #3.A.8 - Species only - no other match
+  match.key <- c('YEAR', 'NESPP3')
+  
+  unk.month.sp <- unk.month[GEAR == 'unknown']
+  unk.month.sp <- unk.month.sp[SIZE == 'unknown', ]
+  unk.month.sp <- unk.month.sp[AREA == 0, ]
+  unk.month.sp <- unk.month.sp[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                               by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(unk.month.sp, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  k.month.sp <- k.month[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                        by = c(match.key, 'QY', 'HY', 'UTILCD')]
+  setnames(k.month.sp, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.month.sp, match.key)
+  setkeyv(k.month.sp,   match.key)
+  
+  month.sp <- k.month.sp[unk.month.sp]
+  
+  #No match - assign to first QY/HY
+  no.match  <- month.sp[is.na(SPPLIVMT), ]
+  no.match[, c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  no.match[, c('QY', 'HY') := 1]
+  no.match[, AREA := 0]
+  no.match[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  no.match[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  
+  #proportion catch to known months
+  month.sp   <- month.sp  [!is.na(SPPLIVMT), ]
+  
+  month.sp[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  month.sp[, unk  := i.SPPLIVMT * prop]
+  month.sp[, unk2 := i.SPPVALUE * prop]
+  month.sp[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.HY', 'i.QY', 
+               'i.UTILCD', 'prop') := NULL]
+  setnames(month.sp, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  month.sp[, AREA := 0]
+  month.sp[, GEAR := factor('unknown', levels = levels(k.month[, GEAR]))]
+  month.sp[, SIZE := factor('unknown', levels = c('large', 'small', 'unknown'))]
+  
+  setcolorder(month.sp,  names(month.solved))
+  setcolorder(no.match, names(month.solved))
+  month.solved <- rbindlist(list(month.solved, month.sp, no.match))
+  rm(list = c(ls(pattern = 'month.sp'), ls(pattern = 'no.match')))
+  
+  #Merge back month.solved
+  setcolorder(month.solved, names(comland.agg))
+  comland.agg <- rbindlist(list(k.month, month.solved))
+  setkey(comland.agg,
+         YEAR,
+         QY,
+         HY,
+         SIZE,
+         GEAR,
+         AREA,
+         NESPP3,
+         UTILCD)
+  comland.agg <- comland.agg[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = key(comland.agg)]
+  setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+
+#3.B SIZE------------------------------------------------------------------------------
+  unk.size <- comland.agg[SIZE == 'unknown', ]
+  k.size   <- comland.agg[SIZE != 'unknown', ]
+  
+  #3.B.1 - All match
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'GEAR', 'AREA')
+  
+  unk.size.all <- unk.size[GEAR != 'unknown']
+  unk.size.all <- unk.size.all[AREA != 0, ]
+  
+  k.size.all <- k.size[GEAR != 'unknown', ]
+  k.size.all <- k.size.all[AREA != 0, ]
+  
+  setkeyv(unk.size.all, match.key)
+  setkeyv(k.size.all,   match.key)
+  
+  size.all <- k.size.all[unk.size.all]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- size.all[is.na(SPPLIVMT), ]
+  no.match[, c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.SIZE', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, GEAR, AREA)
+  setkeyv(k.size.all, key(no.match))
+  size.all.2 <- k.size.all[no.match]
+  no.match.2 <- size.all.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, GEAR, AREA)
+  setkeyv(k.size.all, key(no.match.2))
+  size.all.3 <- k.size.all[no.match.2]
+  no.match.3 <- size.all.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match.3, YEAR, NESPP3, AREA)
+  setkeyv(k.size.all, key(no.match.3))
+  size.all.4 <- k.size.all[no.match.3]
+  no.match.4 <- size.all.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.4, YEAR, NESPP3)
+  setkeyv(k.size.all, key(no.match.4))
+  size.all.5 <- k.size.all[no.match.4]
+  no.match.5 <- size.all.5[is.na(SPPLIVMT), ]
+  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to SIZE to small
+  no.match.5[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
+```
+
+```{r, echo = T, eval = F}
+ #Merge all together and proportion catch to known sizes
+  size.all   <- size.all  [!is.na(SPPLIVMT), ]
+  size.all.2 <- size.all.2[!is.na(SPPLIVMT), ]
+  size.all.2[, QY   := i.QY]
+  size.all.2[, i.QY := NULL]
+  setcolorder(size.all.2, names(size.all))
+  size.all.3 <- size.all.3[!is.na(SPPLIVMT), ]
+  size.all.3[, QY   := i.QY]
+  size.all.3[, HY   := i.HY]
+  size.all.3[, i.QY := NULL]
+  size.all.3[, i.HY := NULL]
+  setcolorder(size.all.3, names(size.all))
+  size.all.4 <- size.all.4[!is.na(SPPLIVMT), ]
+  size.all.4[, QY     := i.QY]
+  size.all.4[, HY     := i.HY]
+  size.all.4[, GEAR   := i.GEAR]
+  size.all.4[, i.QY   := NULL]
+  size.all.4[, i.HY   := NULL]
+  size.all.4[, i.GEAR := NULL]
+  setcolorder(size.all.4, names(size.all))
+  size.all.5 <- size.all.5[!is.na(SPPLIVMT), ]
+  size.all.5[, QY     := i.QY]
+  size.all.5[, HY     := i.HY]
+  size.all.5[, GEAR   := i.GEAR]
+  size.all.5[, AREA   := i.AREA]
+  size.all.5[, i.QY   := NULL]
+  size.all.5[, i.HY   := NULL]
+  size.all.5[, i.GEAR := NULL]
+  size.all.5[, i.AREA := NULL]
+  setcolorder(size.all.5, names(size.all))
+  
+  size.all <- rbindlist(list(size.all, size.all.2, size.all.3, 
+                             size.all.4, size.all.5))
+  
+  size.all[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  size.all[, unk  := i.SPPLIVMT * prop]
+  size.all[, unk2 := i.SPPVALUE * prop]
+  size.all[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.SIZE', 
+               'i.UTILCD', 'prop') := NULL]
+  setnames(size.all, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setcolorder(no.match.5, names(size.all))
+  size.solved <- rbindlist(list(size.all, no.match.5))
+  rm(list = c(ls(pattern = 'size.all'), ls(pattern = 'no.match')))
+  
+  #3.B.2 - GEAR
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'GEAR')
+  
+  unk.size.g <- unk.size[GEAR != 'unknown']
+  unk.size.g <- unk.size.g[AREA == 0, ]
+  unk.size.g[, AREA := NULL]
+  
+  k.size.g <- k.size[GEAR != 'unknown', ]
+  k.size.g <- k.size.g[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                       by = c(match.key, 'SIZE', 'UTILCD')]
+  setnames(k.size.g, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.size.g, match.key)
+  setkeyv(k.size.g,   match.key)
+  
+  size.g <- k.size.g[unk.size.g]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- size.g[is.na(SPPLIVMT), ]
+  no.match[, c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.SIZE', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, GEAR)
+  setkeyv(k.size.g, key(no.match))
+  size.g.2 <- k.size.g[no.match]
+  no.match.2 <- size.g.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, GEAR)
+  setkeyv(k.size.g, key(no.match.2))
+  size.g.3 <- k.size.g[no.match.2]
+  no.match.3 <- size.g.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match.3, YEAR, NESPP3)
+  setkeyv(k.size.g, key(no.match.3))
+  size.g.4 <- k.size.g[no.match.3]
+  no.match.4 <- size.g.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to SIZE to small
+  no.match.4[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
+  no.match.4[, AREA := 0]
+  
+  #Merge all together and proportion catch to known sizes
+  size.g   <- size.g  [!is.na(SPPLIVMT), ]
+  size.g.2 <- size.g.2[!is.na(SPPLIVMT), ]
+  size.g.2[, QY   := i.QY]
+  size.g.2[, i.QY := NULL]
+  setcolorder(size.g.2, names(size.g))
+  size.g.3 <- size.g.3[!is.na(SPPLIVMT), ]
+  size.g.3[, QY   := i.QY]
+  size.g.3[, HY   := i.HY]
+  size.g.3[, i.QY := NULL]
+  size.g.3[, i.HY := NULL]
+  setcolorder(size.g.3, names(size.g))
+  size.g.4 <- size.g.4[!is.na(SPPLIVMT), ]
+  size.g.4[, QY     := i.QY]
+  size.g.4[, HY     := i.HY]
+  size.g.4[, GEAR   := i.GEAR]
+  size.g.4[, i.QY   := NULL]
+  size.g.4[, i.HY   := NULL]
+  size.g.4[, i.GEAR := NULL]
+  setcolorder(size.g.4, names(size.g))
+  
+  size.g <- rbindlist(list(size.g, size.g.2, size.g.3, size.g.4))
+  
+  size.g[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  size.g[, unk  := i.SPPLIVMT * prop]
+  size.g[, unk2 := i.SPPVALUE * prop]
+  size.g[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.SIZE', 
+             'i.UTILCD', 'prop') := NULL]
+  setnames(size.g, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  size.g[, AREA := 0]
+  
+  setcolorder(size.g,     names(size.solved))
+  setcolorder(no.match.4, names(size.g))
+  size.solved <- rbindlist(list(size.solved, size.g, no.match.4))
+  rm(list = c(ls(pattern = 'size.g'), ls(pattern = 'no.match')))         
+
+  #3.B.3 - AREA
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'AREA')
+  
+  unk.size.a <- unk.size[GEAR == 'unknown']
+  unk.size.a <- unk.size.a[AREA != 0, ]
+  unk.size.a[, GEAR := NULL]
+  
+  k.size.a <- k.size[AREA != 0, ]
+  k.size.a <- k.size.a[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                       by = c(match.key, 'SIZE', 'UTILCD')]
+  setnames(k.size.a, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.size.a, match.key)
+  setkeyv(k.size.a,   match.key)
+  
+  size.a <- k.size.a[unk.size.a]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- size.a[is.na(SPPLIVMT), ]
+  no.match[, c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.SIZE', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, AREA)
+  setkeyv(k.size.a, key(no.match))
+  size.a.2 <- k.size.a[no.match]
+  no.match.2 <- size.a.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, AREA)
+  setkeyv(k.size.a, key(no.match.2))
+  size.a.3 <- k.size.a[no.match.2]
+  no.match.3 <- size.a.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.3, YEAR, NESPP3)
+  setkeyv(k.size.a, key(no.match.3))
+  size.a.4 <- k.size.a[no.match.3]
+  no.match.4 <- size.a.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to SIZE to small
+  no.match.4[, SIZE := factor('small',   levels = c('large', 'small', 'unknown'))]
+  no.match.4[, GEAR := factor('unknown', levels = levels(k.size[, GEAR]))]
+  
+  #Merge all together and proportion catch to known sizes
+  size.a   <- size.a  [!is.na(SPPLIVMT), ]
+  size.a.2 <- size.a.2[!is.na(SPPLIVMT), ]
+  size.a.2[, QY   := i.QY]
+  size.a.2[, i.QY := NULL]
+  setcolorder(size.a.2, names(size.a))
+  size.a.3 <- size.a.3[!is.na(SPPLIVMT), ]
+  size.a.3[, QY     := i.QY]
+  size.a.3[, HY     := i.HY]
+  size.a.3[, i.QY := NULL]
+  size.a.3[, i.HY := NULL]
+  setcolorder(size.a.3, names(size.a))
+  size.a.4 <- size.a.4[!is.na(SPPLIVMT), ]
+  size.a.4[, QY     := i.QY]
+  size.a.4[, HY     := i.HY]
+  size.a.4[, AREA   := i.AREA]
+  size.a.4[, i.QY   := NULL]
+  size.a.4[, i.HY   := NULL]
+  size.a.4[, i.AREA := NULL]
+  setcolorder(size.a.4, names(size.a))
+  
+  size.a <- rbindlist(list(size.a, size.a.2, size.a.3, size.a.4))
+  
+  size.a[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  size.a[, unk  := i.SPPLIVMT * prop]
+  size.a[, unk2 := i.SPPVALUE * prop]
+  size.a[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.SIZE', 
+             'i.UTILCD', 'prop') := NULL]
+  setnames(size.a, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  size.a[, GEAR := factor('unknown', levels = levels(k.size[, GEAR]))]
+  
+  setcolorder(size.a,     names(size.solved))
+  setcolorder(no.match.4, names(size.a))
+  size.solved <- rbindlist(list(size.solved, size.a, no.match.4))
+  rm(list = c(ls(pattern = 'size.a'), ls(pattern = 'no.match')))         
+  
+  #3.B.4 - Species only - no other match
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY')
+  
+  unk.size.sp <- unk.size[GEAR == 'unknown']
+  unk.size.sp <- unk.size.sp[SIZE == 'unknown', ]
+  unk.size.sp <- unk.size.sp[AREA == 0, ]
+  unk.size.sp[, c('GEAR', 'AREA') := NULL]
+  
+  k.size.sp <- k.size[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                      by = c(match.key, 'SIZE', 'UTILCD')]
+  setnames(k.size.sp, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.size.sp, match.key)
+  setkeyv(k.size.sp,   match.key)
+  
+  size.sp <- k.size.sp[unk.size.sp]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- size.sp[is.na(SPPLIVMT), ]
+  no.match[, c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.SIZE', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY)
+  setkeyv(k.size.sp, key(no.match))
+  size.sp.2 <- k.size.sp[no.match]
+  no.match.2 <- size.sp.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('SIZE', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3)
+  setkeyv(k.size.sp, key(no.match.2))
+  size.sp.3 <- k.size.sp[no.match.2]
+  no.match.3 <- size.sp.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to SIZE to small
+  no.match.3[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
+  no.match.3[, GEAR := factor('unknown', levels = levels(k.size[, GEAR]))]
+  no.match.3[, AREA := 0]
+  
+  #Merge together and proportion catch to known sizes
+  size.sp   <- size.sp  [!is.na(SPPLIVMT), ]
+  size.sp.2 <- size.sp.2[!is.na(SPPLIVMT), ]
+  size.sp.2[, QY   := i.QY]
+  size.sp.2[, i.QY := NULL]
+  setcolorder(size.sp.2, names(size.sp))
+  size.sp.3 <- size.sp.3[!is.na(SPPLIVMT), ]
+  size.sp.3[, QY     := i.QY]
+  size.sp.3[, HY     := i.HY]
+  size.sp.3[, i.QY := NULL]
+  size.sp.3[, i.HY := NULL]
+  setcolorder(size.sp.3, names(size.sp))
+  
+  size.sp <- rbindlist(list(size.sp, size.sp.2, size.sp.3))
+  
+  size.sp[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  size.sp[, unk  := i.SPPLIVMT * prop]
+  size.sp[, unk2 := i.SPPVALUE * prop]
+  size.sp[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.SIZE', 
+              'i.UTILCD', 'prop') := NULL]
+  setnames(size.sp, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  size.sp[, AREA := 0]
+  size.sp[, GEAR := factor('unknown', levels = levels(k.size[, GEAR]))]
+  
+  setcolorder(size.sp,    names(size.solved))
+  setcolorder(no.match.3, names(size.solved))
+  size.solved <- rbindlist(list(size.solved, size.sp, no.match.3))
+  rm(list = c(ls(pattern = 'size.sp'), ls(pattern = 'no.match')))
+  
+  #Merge back size.solved
+  setcolorder(size.solved, names(comland.agg))
+  comland.agg <- rbindlist(list(k.size, size.solved))
+  setkey(comland.agg,
+         YEAR,
+         QY,
+         HY,
+         SIZE,
+         GEAR,
+         AREA,
+         NESPP3,
+         UTILCD)
+  comland.agg <- comland.agg[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = key(comland.agg)]
+  setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+#3.C GEAR------------------------------------------------------------------------------
+  unk.gear <- comland.agg[GEAR == 'unknown', ]
+  k.gear   <- comland.agg[GEAR != 'unknown', ]
+  
+  #3.C.1 - All match
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'SIZE', 'AREA')
+  
+  unk.gear.all <- unk.gear[AREA != 0, ]
+  
+  k.gear.all <- k.gear[AREA != 0, ]
+  
+  setkeyv(unk.gear.all, match.key)
+  setkeyv(k.gear.all,   match.key)
+  
+  gear.all <- k.gear.all[unk.gear.all]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- gear.all[is.na(SPPLIVMT), ]
+  no.match[, c('GEAR', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.GEAR', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, SIZE, AREA)
+  setkeyv(k.gear.all, key(no.match))
+  gear.all.2 <- k.gear.all[no.match]
+  no.match.2 <- gear.all.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('GEAR', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, SIZE, AREA)
+  setkeyv(k.gear.all, key(no.match.2))
+  gear.all.3 <- k.gear.all[no.match.2]
+  no.match.3 <- gear.all.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match.3, YEAR, NESPP3, AREA)
+  setkeyv(k.gear.all, key(no.match.3))
+  gear.all.4 <- k.gear.all[no.match.3]
+  no.match.4 <- gear.all.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Drop AREA
+  setkey(no.match.4, YEAR, NESPP3)
+  setkeyv(k.gear.all, key(no.match.4))
+  gear.all.5 <- k.gear.all[no.match.4]
+  no.match.5 <- gear.all.5[is.na(SPPLIVMT), ]
+  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD',
+                         'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to GEAR to other
+  no.match.5[, GEAR := factor('other', levels = levels(k.gear[, GEAR]))]
+  
+  #Merge all together and proportion catch to known gears
+  gear.all   <- gear.all  [!is.na(SPPLIVMT), ]
+  gear.all.2 <- gear.all.2[!is.na(SPPLIVMT), ]
+  gear.all.2[, QY   := i.QY]
+  gear.all.2[, i.QY := NULL]
+  setcolorder(gear.all.2, names(gear.all))
+  gear.all.3 <- gear.all.3[!is.na(SPPLIVMT), ]
+  gear.all.3[, QY   := i.QY]
+  gear.all.3[, HY   := i.HY]
+  gear.all.3[, i.QY := NULL]
+  gear.all.3[, i.HY := NULL]
+  setcolorder(gear.all.3, names(gear.all))
+  gear.all.4 <- gear.all.4[!is.na(SPPLIVMT), ]
+  gear.all.4[, QY     := i.QY]
+  gear.all.4[, HY     := i.HY]
+  gear.all.4[, SIZE   := i.SIZE]
+  gear.all.4[, i.QY   := NULL]
+  gear.all.4[, i.HY   := NULL]
+  gear.all.4[, i.SIZE := NULL]
+  setcolorder(gear.all.4, names(gear.all))
+  gear.all.5 <- gear.all.5[!is.na(SPPLIVMT), ]
+  gear.all.5[, QY     := i.QY]
+  gear.all.5[, HY     := i.HY]
+  gear.all.5[, SIZE   := i.SIZE]
+  gear.all.5[, AREA   := i.AREA]
+  gear.all.5[, i.QY   := NULL]
+  gear.all.5[, i.HY   := NULL]
+  gear.all.5[, i.SIZE := NULL]
+  gear.all.5[, i.AREA := NULL]
+  setcolorder(gear.all.5, names(gear.all))
+  
+  gear.all <- rbindlist(list(gear.all, gear.all.2, gear.all.3, 
+                             gear.all.4, gear.all.5))
+  
+  gear.all[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  gear.all[, unk  := i.SPPLIVMT * prop]
+  gear.all[, unk2 := i.SPPVALUE * prop]
+  gear.all[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.GEAR', 
+               'i.UTILCD', 'prop') := NULL]
+  setnames(gear.all, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setcolorder(no.match.5, names(gear.all))
+  gear.solved <- rbindlist(list(gear.all, no.match.5))
+  rm(list = c(ls(pattern = 'gear.all'), ls(pattern = 'no.match')))
+  
+  #3.C.2 - Species only - no other match
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'SIZE')
+  
+  unk.gear.sp <- unk.gear[AREA == 0, ]
+  unk.gear.sp[, 'AREA' := NULL]
+  
+  k.gear.sp <- k.gear[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                      by = c(match.key, 'GEAR', 'UTILCD')]
+  setnames(k.gear.sp, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setkeyv(unk.gear.sp, match.key)
+  setkeyv(k.gear.sp,   match.key)
+  
+  gear.sp <- k.gear.sp[unk.gear.sp]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- gear.sp[is.na(SPPLIVMT), ]
+  no.match[, c('GEAR', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.GEAR', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, SIZE)
+  setkeyv(k.gear.sp, key(no.match))
+  gear.sp.2 <- k.gear.sp[no.match]
+  no.match.2 <- gear.sp.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('GEAR', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, SIZE)
+  setkeyv(k.gear.sp, key(no.match.2))
+  gear.sp.3 <- k.gear.sp[no.match.2]
+  no.match.3 <- gear.sp.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match.3, YEAR, NESPP3)
+  setkeyv(k.gear.sp, key(no.match.3))
+  gear.sp.4 <- k.gear.sp[no.match.3]
+  no.match.4 <- gear.sp.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - assign to GEAR to other
+  no.match.4[, GEAR := factor('other', levels = levels(k.gear[, GEAR]))]
+  no.match.4[, AREA := 0]
+  
+  #Merge all together and proportion catch to known gears
+  gear.sp   <- gear.sp  [!is.na(SPPLIVMT), ]
+  gear.sp.2 <- gear.sp.2[!is.na(SPPLIVMT), ]
+  gear.sp.2[, QY   := i.QY]
+  gear.sp.2[, i.QY := NULL]
+  setcolorder(gear.sp.2, names(gear.sp))
+  gear.sp.3 <- gear.sp.3[!is.na(SPPLIVMT), ]
+  gear.sp.3[, QY     := i.QY]
+  gear.sp.3[, HY     := i.HY]
+  gear.sp.3[, i.QY := NULL]
+  gear.sp.3[, i.HY := NULL]
+  setcolorder(gear.sp.3, names(gear.sp))
+  gear.sp.4 <- gear.sp.4[!is.na(SPPLIVMT), ]
+  gear.sp.4[, QY     := i.QY]
+  gear.sp.4[, HY     := i.HY]
+  gear.sp.4[, SIZE   := i.SIZE]
+  gear.sp.4[, i.QY   := NULL]
+  gear.sp.4[, i.HY   := NULL]
+  gear.sp.4[, i.SIZE := NULL]
+  setcolorder(gear.sp.4, names(gear.sp))
+  
+  gear.sp <- rbindlist(list(gear.sp, gear.sp.2, gear.sp.3, gear.sp.4))
+  
+  gear.sp[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  gear.sp[, unk  := i.SPPLIVMT * prop]
+  gear.sp[, unk2 := i.SPPVALUE * prop]
+  gear.sp[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.GEAR', 
+              'i.UTILCD', 'prop') := NULL]
+  setnames(gear.sp, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  gear.sp[, AREA := 0]
+  
+  setcolorder(gear.sp,    names(gear.solved))
+  setcolorder(no.match.4, names(gear.solved))
+  gear.solved <- rbindlist(list(gear.solved, gear.sp, no.match.4))
+  rm(list = c(ls(pattern = 'gear.sp'), ls(pattern = 'no.match')))
+  
+  #Merge back gear.solved
+  setcolorder(gear.solved, names(comland.agg))
+  comland.agg <- rbindlist(list(k.gear, gear.solved))
+  setkey(comland.agg,
+         YEAR,
+         QY,
+         HY,
+         SIZE,
+         GEAR,
+         AREA,
+         NESPP3,
+         UTILCD)
+  comland.agg <- comland.agg[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = key(comland.agg)]
+  setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+    
+#3.D AREA------------------------------------------------------------------------------
+  unk.area <- comland.agg[AREA == 0, ]
+  k.area   <- comland.agg[AREA != 0, ]
+  
+  #3.C.1 - All match
+  match.key <- c('YEAR', 'NESPP3', 'QY', 'HY', 'SIZE', 'GEAR')
+  
+  unk.area.all <- unk.area
+  
+  k.area.all <- k.area
+  
+  setkeyv(unk.area.all, match.key)
+  setkeyv(k.area.all,   match.key)
+  
+  area.all <- k.area.all[unk.area.all]
+  
+  #No match - need to match with larger aggregation
+  no.match  <- area.all[is.na(SPPLIVMT), ]
+  no.match[, c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match, c('i.AREA', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop QY
+  setkey(no.match, YEAR, NESPP3, HY, SIZE, GEAR)
+  setkeyv(k.area.all, key(no.match))
+  area.all.2 <- k.area.all[no.match]
+  no.match.2 <- area.all.2[is.na(SPPLIVMT), ]
+  no.match.2[, c('AREA', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('AREA', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop HY
+  setkey(no.match.2, YEAR, NESPP3, SIZE, GEAR)
+  setkeyv(k.area.all, key(no.match.2))
+  area.all.3 <- k.area.all[no.match.2]
+  no.match.3 <- area.all.3[is.na(SPPLIVMT), ]
+  no.match.3[, c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.3, c('i.AREA', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Drop SIZE
+  setkey(no.match.3, YEAR, NESPP3, GEAR)
+  setkeyv(k.area.all, key(no.match.3))
+  area.all.4 <- k.area.all[no.match.3]
+  no.match.4 <- area.all.4[is.na(SPPLIVMT), ]
+  no.match.4[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  #Drop GEAR
+  setkey(no.match.4, YEAR, NESPP3)
+  setkeyv(k.area.all, key(no.match.4))
+  area.all.5 <- k.area.all[no.match.4]
+  no.match.5 <- area.all.5[is.na(SPPLIVMT), ]
+  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+                         'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #Still no match - use 3 or 5 year window then drop year
+  years <- unique(no.match.5[, YEAR], by = key(no.match.5))
+  no.match.6 <- c()
+  area.all.6 <- c()
+  for(i in 1:length(years)){
+    #3 year window
+    k.area.3y <- comland.agg[AREA != 0 & YEAR %in% (years[i] - 1):(years[i] + 1), ]
+    setkey(k.area.3y, NESPP3, AREA)
+    k.area.3y <- k.area.3y[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                           by = c(key(k.area.3y), 'UTILCD')]
+    setnames(k.area.3y, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+    
+    unk.area.3y <- no.match.5[YEAR == years[i], ]
+    
+    setkey(unk.area.3y, NESPP3)
+    setkey(k.area.3y,   NESPP3)
+    area.3y <- k.area.3y[unk.area.3y]
+    
+    no.match.3y <- area.3y[is.na(SPPLIVMT), ]
+    no.match.3y[, c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+    setnames(no.match.3y, c('i.AREA', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+             c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+    no.match.6 <- rbindlist(list(no.match.6, no.match.3y))
+    area.all.6 <- rbindlist(list(area.all.6, area.3y))
+    }
+
+  years <- unique(no.match.6[, YEAR], by = key(no.match.6))  
+  no.match.7 <- c()
+  area.all.7 <- c()  
+  for(i in 1:length(years)){    
+    #5 year window
+    k.area.5y <- comland.agg[AREA != 0 & YEAR %in% (years[i] - 2):(years[i] + 2), ]
+    setkey(k.area.5y, NESPP3, AREA)
+    k.area.5y <- k.area.5y[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                           by = c(key(k.area.5y), 'UTILCD')]
+    setnames(k.area.5y, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+    
+    unk.area.5y <- no.match.6[YEAR == years[i], ]
+    
+    setkey(unk.area.5y, NESPP3)
+    setkey(k.area.5y,   NESPP3)
+    area.5y <- k.area.5y[unk.area.5y] 
+    
+    no.match.5y <- area.5y[is.na(SPPLIVMT), ]
+    no.match.5y[, c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+    setnames(no.match.5y, c('i.AREA', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+             c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+    
+    no.match.7 <- rbindlist(list(no.match.7, no.match.5y))
+    area.all.7 <- rbindlist(list(area.all.7, area.5y))
+    }   
+  #Drop year
+  setkey(no.match.7, NESPP3)
+  k.area.all <- k.area.all[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                           by = c('NESPP3', 'AREA', 'UTILCD')]
+  setnames(k.area.all, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  setkey(k.area.all, NESPP3)
+  
+  area.all.8 <- k.area.all[no.match.7]
+  no.match.8 <- area.all.8[is.na(SPPLIVMT), ]
+  no.match.8[, c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  setnames(no.match.8, c('i.AREA', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+           c('AREA', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+  #If still no match - leave as unknown
+
+  
+  #Merge all together and proportion catch to known areas
+  area.all   <- area.all  [!is.na(SPPLIVMT), ]
+  area.all.2 <- area.all.2[!is.na(SPPLIVMT), ]
+  area.all.2[, QY   := i.QY]
+  area.all.2[, i.QY := NULL]
+  setcolorder(area.all.2, names(area.all))
+  area.all.3 <- area.all.3[!is.na(SPPLIVMT), ]
+  area.all.3[, QY   := i.QY]
+  area.all.3[, HY   := i.HY]
+  area.all.3[, i.QY := NULL]
+  area.all.3[, i.HY := NULL]
+  setcolorder(area.all.3, names(area.all))
+  area.all.4 <- area.all.4[!is.na(SPPLIVMT), ]
+  area.all.4[, QY     := i.QY]
+  area.all.4[, HY     := i.HY]
+  area.all.4[, SIZE   := i.SIZE]
+  area.all.4[, i.QY   := NULL]
+  area.all.4[, i.HY   := NULL]
+  area.all.4[, i.SIZE := NULL]
+  setcolorder(area.all.4, names(area.all))
+  area.all.5 <- area.all.5[!is.na(SPPLIVMT), ]
+  area.all.5[, QY     := i.QY]
+  area.all.5[, HY     := i.HY]
+  area.all.5[, SIZE   := i.SIZE]
+  area.all.5[, GEAR   := i.GEAR]
+  area.all.5[, i.QY   := NULL]
+  area.all.5[, i.HY   := NULL]
+  area.all.5[, i.SIZE := NULL]
+  area.all.5[, i.GEAR := NULL]
+  setcolorder(area.all.5, names(area.all))
+  area.all.6 <- area.all.6[!is.na(SPPLIVMT), ]
+  setcolorder(area.all.6, names(area.all))
+  area.all.7 <- area.all.7[!is.na(SPPLIVMT), ]
+  setcolorder(area.all.7, names(area.all))
+  area.all.8 <- area.all.8[!is.na(SPPLIVMT), ]
+  setcolorder(area.all.8, names(area.all))
+  
+  area.all <- rbindlist(list(area.all,   area.all.2, area.all.3, area.all.4, 
+                             area.all.5, area.all.6, area.all.7, area.all.8))
+  
+  area.all[, prop := SPPLIVMT / sum(SPPLIVMT), by = match.key]
+  area.all[, unk  := i.SPPLIVMT * prop]
+  area.all[, unk2 := i.SPPVALUE * prop]
+  area.all[, c('SPPLIVMT', 'SPPVALUE', 'i.SPPLIVMT', 'i.SPPVALUE', 'i.AREA', 
+               'i.UTILCD', 'prop') := NULL]
+  setnames(area.all, c('unk','unk2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  setcolorder(no.match.8, names(area.all))
+  area.solved <- rbindlist(list(area.all, no.match.8))
+  rm(list = c(ls(pattern = 'area.all'), ls(pattern = 'no.match')))
+  
+  #Merge back area.solved
+  setcolorder(area.solved, names(comland.agg))
+  comland.agg <- rbindlist(list(k.area, area.solved))
+  setkey(comland.agg,
+         YEAR,
+         QY,
+         HY,
+         SIZE,
+         GEAR,
+         AREA,
+         NESPP3,
+         UTILCD)
+  comland.agg <- comland.agg[, list(sum(SPPLIVMT), sum(SPPVALUE)), 
+                             by = key(comland.agg)]
+  setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))  
+
+#-------------------------------------------------------------------------------
+if(sum.by == 'EPU'){
+  #Assign EPU based on statarea
+  gom<-c(500, 510, 512:515)
+  gb<-c(521:526, 551, 552, 561, 562)
+  mab<-c(537, 539, 600, 612:616, 621, 622, 625, 626, 631, 632)
+  ss<-c(463:467, 511)
+
+  comland.agg[AREA %in% gom, EPU := 'GOM']
+  comland.agg[AREA %in% gb,  EPU := 'GB']
+  comland.agg[AREA %in% mab, EPU := 'MAB']
+  comland.agg[AREA %in% ss,  EPU := 'SS']
+  comland.agg[is.na(EPU),    EPU := 'OTHER']
+  comland.agg[, EPU := factor(EPU, levels = c('GOM', 'GB', 'MAB', 'SS', 'OTHER'))]
+ 
+  setkey(comland.agg,
+         YEAR,
+         NESPP3,
+         QY,
+         GEAR,
+         SIZE,
+         EPU,
+         UTILCD)
+
+  comland.agg <- comland.agg[, list(sum(SPPLIVMT), sum(SPPVALUE)), by = key(comland.agg)]
+            
+  setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
+  
+  #Note - NAFO landings by division only so not available in sum.by = "stat.area"
+  #Add NAFO foreign landings - Data from http://www.nafo.int/data/frames/data.html
+  temp <- tempfile()
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-60-69.zip?ver=2016-08-03-063915-850",temp)
+  nafo.60 <- as.data.table(read.csv(unz(temp, "NAFO21B-60-69.txt")))
+  unlink(temp)
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-70-79.zip?ver=2016-08-03-063915-850",temp)
+  nafo.70 <- as.data.table(read.csv(unz(temp, "NAFO21B-70-79.txt")))
+  unlink(temp)
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-80-89.zip?ver=2016-08-03-063915-850",temp)
+  nafo.80 <- as.data.table(read.csv(unz(temp, "NAFO21B-80-89.txt")))
+  unlink(temp)
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-90-99.zip?ver=2016-08-03-063915-850",temp)
+  nafo.90 <- as.data.table(read.csv(unz(temp, "NAFO21B-90-99.txt")))
+  unlink(temp)
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-2000-09.zip?ver=2016-08-03-063915-850",temp)
+  nafo.00 <- as.data.table(read.csv(unz(temp, "NAFO21B-2000-09.txt")))
+  unlink(temp)
+  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-2010-15.zip?ver=2017-06-01-164323-460",temp)
+  nafo.10 <- as.data.table(read.csv(unz(temp, "nafo-21b-2010-15/NAFO21B-2010-15.csv")))
+  unlink(temp)
+  
+  #2010 + data have different column headers
+  setnames(nafo.10,
+          c('Gear', 'AreaCode', 'SpeciesEffort'),
+          c('GearCode', 'Divcode', 'Code'))
+          
+  nafo <- rbindlist(list(nafo.60, nafo.70, nafo.80, nafo.90, nafo.00, nafo.10))
+  
+  #Remove US landings (Country code 22), extra divisions (use only 47, 51:56, 61:63),
+  #and effort codes (1:3)
+  nafo <- nafo[Country != 22 & Divcode %in% c(47, 51:56, 61:63) & Code > 3, ]
+  
+  #Deal with unknown monthly catch?????
+  
+  #Get nafo code in a similar format to comland
+  nafoland <- nafo[, list(Year, GearCode, Tonnage, Divcode, Code, Catches)]
+  nafoland[, MONTH := 0]
+  setnames(nafoland, 'Catches', 'SPPLIVMT')
+  
+  month <- c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+  for(i in 1:12){
+    nafoland.month <- nafo[, list(Year, GearCode, Tonnage, Divcode, Code, get(month[i]))]
+    nafoland.month[, MONTH := i]
+    setnames(nafoland.month,
+            names(nafoland.month)[6],
+            'SPPLIVMT')
+    nafoland <- rbindlist(list(nafoland, nafoland.month))
+    }
+  
+  nafoland <- nafoland[SPPLIVMT != 0,]
+  
+  nafoland[, EPU := factor(NA, levels = c('GOM', 'GB', 'MAB', 'SS', 'OTHER'))]
+  nafoland[Divcode == 47,             EPU := 'SS']
+  nafoland[Divcode == 51,             EPU := 'GOM']
+  nafoland[Divcode %in% c(52, 54:56), EPU := 'GB']
+  nafoland[Divcode %in% c(53, 61:63), EPU := 'MAB']
+  nafoland[is.na(EPU),                EPU := 'OTHER']
+  
+  nafoland[, Divcode := NULL]
+  
+  ##Fix missing Scotian Shelf data from 21B
+  SS.nafo <- as.data.table(read.csv(file.path(data.dir.3, "SS_NAFO_21A.csv"), skip = 8))
+  
+  #Add NAFOSPP code to SS.nafo
+  nafo.spp <- as.data.table(read.csv(file.path(data.dir.3, 'species.txt')))
+  setnames(nafo.spp, "Abbreviation", "Species_ASFIS")
+  nafo.spp <- nafo.spp[, list(Code, Species_ASFIS)]
+  
+  SS.nafo <- merge(SS.nafo, nafo.spp, by = 'Species_ASFIS', all.x = T)
+  
+  #Only grab missing data
+  SS.nafo <- SS.nafo[Year %in% c(2003, 2008, 2009), ]
+  
+  setkey(SS.nafo,
+         Year,
+         Code)
+  
+  SS.land <- SS.nafo[, sum(Catch...000.Kg.), by = key(SS.nafo)]
+  
+  setnames(SS.land, "V1", "SPPLIVMT")
+  
+  #Add GearCode, Tonnage, Month, and EPU 
+  SS.land[, GearCode := 99]
+  SS.land[, Tonnage  := 0]
+  SS.land[, MONTH    := 0]
+  SS.land[, EPU      := 'SS']
+  
+  setcolorder(SS.land, names(nafoland))
+  
+  nafoland <- rbindlist(list(nafoland, SS.land))
+  
+  #Rectify NAFO codes with US codes
+  #Species
+  setnames(nafoland,
+          c('Year', 'GearCode', 'Tonnage', 'Code'),
+          c('YEAR', 'NAFOGEAR', 'TONCL1', 'NAFOSPP'))
+  
+  spp <- as.data.table(sqlQuery(channel, "select NAFOSPP, NESPP3 from CFSPP"))
+  
+  #Fix missing NAFO codes
+  missing.spp <- data.table(NAFOSPP = c(110, 141, 189, 480, 484, 487, 488, 489),
+                            NESPP3  = c(240, 509, 512, 366, 368, 367, 370, 369))
+  spp <- rbindlist(list(spp, missing.spp))
+  
+  setkey(spp, NAFOSPP)
+  spp <- unique(spp, by = key(spp))
+  
+  #Fix many to one relationships
+  spp[NAFOSPP == 199, NESPP3 := 524]
+  spp[NAFOSPP == 299, NESPP3 := 525]
+  spp[NAFOSPP == 469, NESPP3 := 359]
+  spp[NAFOSPP == 499, NESPP3 := 526]
+  spp[NAFOSPP == 529, NESPP3 := 764]
+  spp[NAFOSPP == 699, NESPP3 := 899]
+  
+  nafoland <- merge(nafoland, spp, by = 'NAFOSPP', all.x = T)
+  
+  #fix codes
+  nafoland[NAFOSPP == 309, NESPP3 := 150L]
+  nafoland[NAFOSPP == 462, NESPP3 := 481L]
+  nafoland[NAFOSPP == 464, NESPP3 := 355L]
+  nafoland[NAFOSPP == 468, NESPP3 := 493L]
+  nafoland[NAFOSPP == 704, NESPP3 := 817L]
+  
+  #remove species without a match
+  nafoland <- nafoland[!is.na(NESPP3), ]
+  
+  #Remove herring catch - already included from Maine Data earlier
+  nafoland <- nafoland[NESPP3 != 168, ]
+  
+  #Gearcodes
+  gear <- as.data.table(sqlQuery(channel, "select NEGEAR, NAFOGEAR from Gear"))
+  gear <- unique(gear, by = 'NAFOGEAR')
+  
+  nafoland <- merge(nafoland, gear, by = 'NAFOGEAR', all.x = T)
+  
+  #fix codes
+  nafoland[NAFOGEAR == 8,  NEGEAR := 50L]
+  nafoland[NAFOGEAR == 9,  NEGEAR := 370L]
+  nafoland[NAFOGEAR == 19, NEGEAR := 58L]
+  nafoland[NAFOGEAR == 49, NEGEAR := 60L]
+  nafoland[NAFOGEAR == 56, NEGEAR := 21L]
+  
+  #Tonnage
+  nafoland[TONCL1 == 7, TONCL1 := 6L]
+  
+  #Drop NAFO codes
+  nafoland[, c('NAFOGEAR', 'NAFOSPP') := NULL]
+  
+  #Fix skates
+  #get little skates and winter skates from skates(ns) - use survey in half years
+  #Generate Half year variable in comland
+  nafoland.skates <- nafoland[NESPP3 == 365, ]
+  nafoland.skates[MONTH %in% 1:6, Half := 1]
+  nafoland.skates[MONTH %in% 7:12, Half := 2]
+  
+  setkey(skate.hake.nafo,
+         YEAR,
+         Half,
+         EPU)
+  
+  nafoland.skates <- merge(nafoland.skates, skate.hake.nafo, by = key(skate.hake.nafo), all.x = T)
+  
+  nafoland.skates[NESPP3 == 365, little := little.per * SPPLIVMT]
+  nafoland.skates[is.na(little), little := 0]
+  
+  nafoland.skates[NESPP3 == 365, winter := winter.per * SPPLIVMT]
+  nafoland.skates[is.na(winter), winter := 0]
+  
+  nafoland.skates[NESPP3 == 365, other.skate := SPPLIVMT - (little + winter)]
+  
+  #Little (366), winter (367), skates(ns) (365)
+  #put skates in nafoland format to merge back
+  little <- nafoland.skates[, list(YEAR, Half, EPU, TONCL1, MONTH, 
+                                   NESPP3, NEGEAR, little)]
+  little[, NESPP3 := 366L]
+  setnames(little, "little", "SPPLIVMT")
+  little <- little[SPPLIVMT > 0, ]
+  
+  winter <- nafoland.skates[, list(YEAR, Half, EPU, TONCL1, MONTH, 
+                                   NESPP3, NEGEAR, winter)]
+  winter[, NESPP3 := 367L]
+  setnames(winter, "winter", "SPPLIVMT")
+  winter <- winter[SPPLIVMT > 0, ]
+  
+  other <- nafoland.skates[, list(YEAR, Half, EPU, TONCL1, MONTH, 
+                                  NESPP3, NEGEAR, other.skate)]
+  other[, NESPP3 := 365L]
+  setnames(other, "other.skate", "SPPLIVMT")
+  other <- other[SPPLIVMT > 0, ]
+  
+  #merge all three and reformat for nafoland
+  skates.add.back <- rbindlist(list(little, winter, other))
+  
+  skates.add.back[, Half := NULL]
+  setcolorder(skates.add.back, names(nafoland))
+  
+  nafoland <- rbindlist(list(nafoland[NESPP3 != 365, ], skates.add.back))  
+  
+  #aggregate nafo landings
+  #2 - aggregate by quarter year, half year, major gear, and small/large TC
+  nafoland[MONTH %in% 1:3,   QY := 1]
+  nafoland[MONTH %in% 4:6,   QY := 2]
+  nafoland[MONTH %in% 7:9,   QY := 3]
+  nafoland[MONTH %in% 10:12, QY := 4]
+  nafoland[MONTH == 0,       QY := 1]
+  
+  nafoland[NEGEAR %in% otter,     GEAR := 'otter']
+  nafoland[NEGEAR %in% dredge.sc, GEAR := 'dredge.sc']
+  nafoland[NEGEAR %in% pot,       GEAR := 'pot']
+  nafoland[NEGEAR %in% longline,  GEAR := 'longline']
+  nafoland[NEGEAR %in% seine,     GEAR := 'seine']
+  nafoland[NEGEAR %in% gillnet,   GEAR := 'gillnet']
+  nafoland[NEGEAR %in% midwater,  GEAR := 'midwater']
+  nafoland[NEGEAR %in% dredge.o,  GEAR := 'dredge.o']
+  nafoland[NEGEAR == 99,          GEAR := 'unknown']
+  nafoland[is.na(GEAR),           GEAR := 'other']
+  nafoland[, GEAR := as.factor(GEAR)]
+  
+  nafoland[TONCL1 %in% 1:3, SIZE := 'small']
+  nafoland[TONCL1 > 3,      SIZE := 'large']
+  nafoland[TONCL1 == 0,     SIZE := 'unknown']
+  nafoland[, SIZE := as.factor(SIZE)]
+  
+  setkey(nafoland,
+         YEAR,
+         QY,
+         GEAR,
+         SIZE,
+         EPU,
+         NESPP3)
+  
+  nafoland.agg <- nafoland[, sum(SPPLIVMT), by = key(nafoland)]
+  
+  setnames(nafoland.agg, "V1", "SPPLIVMT")
+  
+  #Create dummy variable for value
+  nafoland.agg[, SPPVALUE := 0]
+  nafoland.agg[, UTILCD := 0]
+  
+  #Merge comland and nafoland
+  setcolorder(nafoland.agg, names(comland.agg))       
+  
+  if(foreign == 'y'){
+    comland.agg[,  US := T]
+    nafoland.agg[, US := F]
+  }
+  
+  comland.nafo <- rbindlist(list(comland.agg, nafoland.agg))
+  
+  #Remove Menhaden data
+  #save(comland.nafo, file = paste(out.dir, "comland_Menhaden.RData", sep = ''))
+  comland <- comland.nafo[NESPP3 != 221, ]
+}
+
+if(sum.by == 'stat.area') comland <- comland.agg
+  
+#Output file
+if(landed     == 'n') file.landed <- '' else file.landed <- '_meatwt'
+if(adjust.ppi == 'n') file.adjust <- '' else file.adjust <- '_deflated'
+if(sum.by == 'EPU') file.by <- '' else file.by <- '_stat_areas'
+file.name <- paste0('comland', file.landed, file.adjust, file.by, '.RData')
+
+save(comland, file = file.path(out.dir, file.name))
+```
+
+### Data analysis
+
+Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Species are also marked by which management body manages them.  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
+
+### Plotting
+
+```{r seafood-landings, fig.cap="NEFMC seafood specific landings (red) and total commericial landings (black) in Georges Bank (A: Apex predators, B: Piscivore, C: Planktivore, D: Benthivore, E: Benthos).",echo = T, warning = F, message = F, fig.align="center", fig.height=7}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+## Ecosystem-wide and managed species total landings
+opar <- par(mfrow = c(5, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
+
+soe.plot(SOE.data, "Time","Apex Predator Landings GB", stacked = "A",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0,cex.stacked = 1.5 )
+
+soe.plot(SOE.data, "Time", "Piscivore Landings GB", stacked = "B",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Piscivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data, "Time", "Planktivore Landings GB", stacked = "C",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Planktivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data, "Time", "Benthivore Landings GB", stacked = "D",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Benthivore NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.plot(SOE.data, "Time", "Benthos Landings GB", stacked = "E",status = F,
+         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
+         y.var2 = "Benthos NEFMC managed species sea food GB",cex.stacked = 1.5)
+
+soe.stacked.axis("Year", expression("Landings, 10"^3*"metric tons"), x.line = 2.7)
+
+```
+
+
+
+
+<!--chapter:end:chapters/landings_data.Rmd-->
+
+# Long-term Sea Surface Temperature
+
+
+```{r,  echo = F, message=F,warning=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+library(dplyr)
+
+
+```
+**Description**: Long-term sea-surface temperatures
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html).
+
+
+## Methods
+Data for long-term sea-surface temperatures were derived from the NOAA extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+
+
+### Data sources
+This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) [@Huang2017].
+
+
+### Data extraction 
+
+```{r coordinates, echo = F, eval = T, results='asis'}
+df <- data.frame(  
+  Longitude = c(-74,-74,-72,-70,-70,-70,-68,-68),
+  Latitude = c(40,38,40,44,42,40,44,42)
+  )
+
+knitr::kable(df,
+      caption="Coordinates used in NOAA ERSST V5 data extraction.",
+      format = "html",
+      align = "c") %>%
+  kableExtra::kable_styling(full_width = F) %>% 
+  kableExtra::column_spec(c(1,2), width =  "4cm")
+```
+
+R code used in extraction and processing:
+```{r, echo = T, eval = F}
+# Include R code here
+# all year
+years="ersst"
+
+# a year
+#years=".2016"
+
+# which data
+setwd("C:/2_ersst/datafiles_v4")
+setwd("C:/2_ersst/datafiles_v5")
+
+
+# NES standard bounded by 34-46N and 78-62W
+minlon= -78; maxlon= -62; minlat= 34; maxlat= 46
+dataoutfile="C:/2_ersst/nes_std_area_v5.csv"
+
+#  DELETE ONLY FILE WILL APPEND AND DOUBLE DATA
+file.remove(dataoutfile)
+
+##################################################  END SET
+
+# LABRODOR SEA  
+#minlon= -66; #maxlon= -44; #minlat= 50; #maxlat= 70
+#dataoutfile="C:/2_ersst/lab_sea.csv"
+
+# New eel
+#minlon= -80; maxlon= -40; minlat= 20; maxlat= 40
+#dataoutfile="C:/2_ersst/new eel.csv"
+
+# G of Mex
+#minlon= -98; maxlon= -82; minlat= 18; maxlat= 30
+#dataoutfile="C:/2_ersst/gomex_area.csv"
+
+# USSE INCLUDING  28-36N and 80-76W not bounding
+#minlon= -80; #maxlon= -76; #minlat= 28; #maxlat= 36
+#dataoutfile="C:/2_ersst/usse_area.csv"
+
+# GSL standard bounded by 34-46N and 78-62W
+#minlon= -68; maxlon= -60; minlat= 46; maxlat= 48
+#dataoutfile="C:/2_ersst/gsl.csv"
+
+# PACIFIC area bounded by 10-30N and 166-146W
+#minlon= -166; #maxlon= -146; #minlat= 10; #maxlat= 30
+#dataoutfile="C:/1_analyses/ersst/pac_islands_area.csv"
+
+# Baltic area bounded by 52-66N and 14-28E
+#minlon= 14; #maxlon= 28; #minlat= 52; #maxlat= 66
+#dataoutfile="C:/2_ersst/baltic area.csv"
+
+# North Atlantic Area bounded by 30-70N and 80W-20E
+#minlon= -80; #maxlon= -2; #minlat= 30; #maxlat= 70
+#dataoutfile="C:/2_ersst/na area1.csv"
+# and ...
+#minlon= 0; #maxlon= 20; #minlat= 30; #maxlat= 70
+#dataoutfile="C:/1_analyses/ersst/na area2.csv"
+
+# NorthEAST Atlantic Area bounded by 55-70N and 10W-20E
+#minlon= -10; #maxlon= -2; #minlat= 56; #maxlat= 70
+#dataoutfile="C:/1_analyses/ersst/ne atl 1.csv"
+# and ...
+#minlon= 0; #maxlon= 10; #minlat= 56; #maxlat= 70
+#dataoutfile="C:/1_analyses/ersst/ne atl 2.csv"
+
+# Pacific steelhead
+#minlon= -160; #maxlon= -122; #minlat= 40; #maxlat= 62
+#dataoutfile="C:/1_analyses/ersst/pac sh.csv"
+
+#North Pacific in two parts
+#1
+#minlon= -180; #maxlon= -120; #minlat= 30; #maxlat= 72
+#dataoutfile="C:/1_analyses/ersst/n_pac_1.csv"
+#2
+#minlon= 120; #maxlon= 178; #minlat= 30; #maxlat= 72
+#dataoutfile="C:/1_analyses/ersst/n_pac_2.csv"
+
+# North Atlantic Area bounded by 20-70N and 100W-30E
+#minlon= -100; #maxlon= -2; #minlat= 20; #maxlat= 70
+#dataoutfile="C:/1_analyses/ersst/na area1.csv"
+# and ...
+#minlon= 0; #maxlon= 30; #minlat= 20; #maxlat= 70
+#dataoutfile="C:/1_analyses/ersst/na area2.csv"
+
+
+
+
+
+
+
+
+
+# constants for area
+R <- 6371 # Earth mean radius [km]
+dheight =  222
+
+#library(ncdf)
+library(ncdf4)
+
+# ERSST data  
+# lon goes from 0E to 358E with lon at center of box
+# lat goes from 88S to 88N with lat at center of box
+
+# start with lon based on degrees lonew
+# array  1  2  ...  90    91    92  ...  180
+# lon    0  2  ... 178   180   182  ...  358
+# lonew  0  2  ... 178  -180  -178  ...   -2
+# star with lat + deg N, - deg S
+# array    1  ...  45  ...  89
+# lon    -88  ...   0  ...  88
+
+# -> -> -> TO KEEP THINGS SIMPLE, RETRIEVALS CAN'T BE CONTINUOUS FROM - LONS TO + LONs
+#          have to extract from -180W to -2W separately from 0E to 180E
+
+# -> -> -> OUTPUT APPENDS SO NEED TO DELETE FILE IF ALREADY EXISTS
+
+# -> -> -> USE APPROPRIATE lon lat and outfile block:
+
+
+
+
+
+
+# set lon limits in array units
+if ( minlon < 0){ 
+  arrayminlon=(minlon+360)/2+1
+} else { 
+  arrayminlon=minlon/2+1 
+} 
+
+if ( maxlon < 0){ 
+  arraymaxlon=(maxlon+360)/2+1
+} else { 
+  arraymaxlon=maxlon/2+1 
+} 
+
+# set lat limits in array units
+arrayminlat=minlat/2+45
+arraymaxlat=maxlat/2+45
+
+
+filelist=list.files(pattern=years)
+
+numfiles=length(filelist)
+
+for (filenum in 1:numfiles){
+
+#  ersst = open.ncdf(filelist[filenum]) 
+  ersst = nc_open(filelist[filenum]) 
+  print(filelist[filenum])
+
+#  sst = get.var.ncdf( ersst, "sst") 
+  sst <- ncvar_get(ersst,"sst" )
+  
+  year=as.numeric(substr(filelist[filenum],10,13))
+  month=as.numeric(substr(filelist[filenum],14,15))
+
+  for (arrlons in arrayminlon:arraymaxlon){
+    for (arrlats in arrayminlat:arraymaxlat){
+      
+
+      if ( arrlons < 91){ 
+        regenlon=(arrlons-1)*2
+      } else { 
+        regenlon=(arrlons-1)*2-360
+      } 
+      
+    
+      regenlat=(arrlats-45)*2
+      
+      long1=regenlon-1 *pi/180
+      lat1=regenlat-1 *pi/180
+      long2=regenlon+1 *pi/180
+      lat2=regenlat-1 *pi/180
+      dwidth1 <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
+      long1=regenlon-1 *pi/180
+      lat1=regenlat+1 *pi/180
+      long2=regenlon+1 *pi/180
+      lat2=regenlat+1 *pi/180
+      dwidth2 <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
+      area=((dwidth1 + dwidth1)/2) * dheight
+      
+      dataline <- matrix(c(year, month, regenlon, regenlat, round(sst[arrlons,arrlats],digits=2),area),1,6)
+      
+      
+      if(is.finite(sst[arrlons,arrlats])) {
+      write.table(dataline,file=dataoutfile,sep=",",row.name=F,col.names=F,append=TRUE)   
+    }
+      
+    }
+  }
+
+#    close.ncdf(ersst) 
+nc_close(ersst)
+  
+  }
+
+
+```
+
+
+### Plotting
+
+
+```{r long-term-sst,fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.",  echo=T, message=FALSE, warning=FALSE , fig.width=8, fig.align = 'center'}
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mar = c(4, 6, 2, 6))
+soe.plot(SOE.data, "Time", "long term sst", end.start = 2007, 
+         line.forward = TRUE, point.cex = 0.8, rel.y.text = 1.1,
+         x.line = 2, y.line = 2.3, x.label = 'Year', rel.y.num = 1.1,
+         y.label = expression(paste("Mean SST (",degree,"C)")))
+
+```
+
+
+
+
+
+
+
+<!--chapter:end:chapters/long_term_sst_indicator.Rmd-->
+
+# Mid-Atlantic Harmful Algal Bloom Indicator
+
+```{r, echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+**Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2018)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Sean Hardison, Virginia Department of Health
+
+**Data steward**: Sean Hardison, sean.hardison@noaa.gov
+
+**Point of contact**: Sean Hardison, sean.hardison@noaa.gov
+
+**Public availability statement**: Source data for this indicator are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/data/CB_HAB). Processed time series can be found [here](http://comet.nefsc.noaa.gov/erddap/tabledap/CBhabs_ann_soe_v2.html).
+
+
+## Methods
+We presented two indicator time series for reports of algal blooms in the southern portion of Chesapeake Bay between 2007-2017. The first indicator was observations of algal blooms above 5000 cell ml^-1^. This threshold was developed by the Virginia Department of Health (VDH) for *Microcystis* spp. algal blooms based on World Health Organization guidelines [@WHO2003; @VDH2011].  VDH also uses this same threshold for other algal species blooms in Virginia waters. When cell concentrations are above 5000 cell ml^-1^, VDH recommends initiation of biweekly water sampling and that relevant local agencies be notified of the elevated cell concentrations.
+
+The second indicator we reported, blooms of *Cochlodinium polykrikoides* at cell concentrations >300 cell ml^-1^, was chosen due to reports of high ichthyotoxicity seen at these levels. @Tang2009 showed that fish exposed to cultured *C. polykrikoides* at densities as low 330 cells ml^-1^ saw 100% mortality within 1 hour, which if often far less than *C. polykrikoides* cell concentrations seen in the field. Algal bloom data were not available for 2015 nor 2010. The algal bloom information presented here are a synthesis of reported events, and has been updated to include data not presented in the 2018 State of the Ecosystem Report. 
+
+### Data source(s)
+Source data were obtained from VDH. Sampling, identification, and bloom characterization was completed by the VDH, Phytoplankton Analysis Laboratory at Old Dominion University, Reece Lab at the Virginia Institute of Marine Science, and Virginia Department of Environmental Quality. Problem algal species were targeted for identification via light microscopy followed by standard or quantitative PCR assays and/or enzyme-linked immunosorbent assay (ELISA). Reports specifying full methodologies from ODU, VIMS, and VDH source data are available upon request.
+
+### Data extraction
+Data were extracted from a series of spreadsheets provided by the VDH. We quantified the number of algal blooms in each year reaching target cell density thresholds in the southern Chesapeake Bay.
+
+```{r, eval = T, echo=T, message=FALSE, warning=FALSE, include=T}
+#SOE R packages
+
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(stringr)
+```
+
+```{r r-extract,fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017.", echo = T, eval = T, message=F, warning=F}
+data.dir <- "data/CB_HAB"
+
+#Function to process data - cpm specifies cells per ml filter
+fixer <- function(cpm){
+  hab_2007_2012 <- read_excel(file.path(data.dir,"Query_2007-2012.xlsx"))
+  hab_2013_odu <- read_excel(file.path(data.dir,"2013 ODU Data.xlsx"),skip = 4)
+  hab_2013_vims <- read_excel(file.path(data.dir,"vims_2013.xlsx"),skip = 6)
+  hab_2014_odu <- read_excel(file.path(data.dir,"2014 ODU data.xlsx"))
+  hab_2014_vims <- read_excel(file.path(data.dir,"FINALforVDH_22Dec14final.xlsx"))
+  hab_2016 <- read_excel(file.path(data.dir,"HAB_MAP_Data_2016.xlsx"))
+  hab_2017 <- read_excel(file.path(data.dir,"HAB_MAP_Data_2017.xlsx"),sheet=2)
+  
+  #2012---------------------------------------------------------
+  HAB_2007_2012 <- hab_2007_2012 %>% filter(!is.na(cells_per_ml)) %>%
+    filter(!is.na(date)) %>%
+    mutate(year = format(as.POSIXct(date), "%Y")) %>% 
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year, species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  #2013---------------------------------------------------------
+  #ODU
+  odu_2013 <- gather(hab_2013_odu, species, cells_per_ml, `Pfiesteria like dinoflagellate`:`A. monilatum`) %>%
+    filter(!is.na(cells_per_ml)) %>%
+    filter(cells_per_ml >= cpm) %>%
+    mutate(year = 2013) %>%
+    group_by(year, species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  #VIMS
+  vims_2013 <- hab_2013_vims %>% filter(!is.na(cells_per_ml)) %>%
+    mutate(year = "2013") %>%
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year, species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  HAB_2013 <- rbind(vims_2013, odu_2013)
+  
+  #2014--------------------------------------------------------
+  #ODU
+  long <- gather(hab_2014_odu, species, cells_per_ml, `Karlodinium veneficum`:`Cyanobacteria bloom`, factor_key = TRUE)
+  hab_2014_odu <- long %>% filter(cells_per_ml != 0)
+  hab_2014_odu$species <- sub("[.]"," ", hab_2014_odu$species)
+  hab_2014_odu$cells_per_ml <- gsub("[A-Za-z+//]",'',hab_2014_odu$cells_per_ml)
+  hab_2014_odu$cells_per_ml <- as.numeric(hab_2014_odu$cells_per_ml)
+  
+  hab_2014_odu <- hab_2014_odu %>% mutate(year = "2014") %>%
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year,species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  #VIMS
+  long <- gather(hab_2014_vims, species, cells_per_ml, `A. monilatum`:`C. subsalsa`)
+  hab_2014_vims <- long %>% mutate(year = "2014") %>% filter(!is.na(cells_per_ml)) %>%
+    mutate(cells_per_ml = as.numeric(cells_per_ml)) %>% 
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year,species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  HAB_2014 <- rbind(hab_2014_odu, hab_2014_vims)
+  
+  #2015----------------------------------------------------------
+  #No data
+  
+  #2016---------------------------------------------------------
+  HAB_2016 <- hab_2016 %>% mutate(species= 
+                                    plyr::mapvalues(species, 
+                                                    from = c("Eugelna sanguinea",
+                                                             "Microcystin aeruginosa",
+                                                             "Microcystis aeruginosa",
+                                                             "Alexandrium monilatum-likely",
+                                                             "Alexandrium monilatum"),
+                                                    to = c("Eugelena spp.", 
+                                                           "Microcystis spp.",
+                                                           "Microcystis spp.",
+                                                           "Alexandrium spp.",
+                                                           "Alexandrium spp.")))
+  HAB_2016$cells_per_ml <- gsub('[a-zA-Z+<>]','',HAB_2016$cells_per_ml)
+  HAB_2016 <- HAB_2016 %>%
+    filter(!is.na(cells_per_ml)) %>%
+    mutate(year = 2016, cells_per_ml = as.numeric(cells_per_ml)) %>%
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year, species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  #2017------------------------------------------------------------
+  hab_2017$species = str_trim(hab_2017$species)
+  HAB_2017 <- hab_2017 %>% mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
+                                                                       "Anabaena sp.","Anabaena spp",
+                                                                       "none","NO HABs","C. polykrikoides",
+                                                                       "Microcystis aeurignosa","Cylindrospermopsis sp"),
+                                                            c("Alexandrium monilatum", "Anabaena spp.",
+                                                              "Anabaena spp.","Anabaena spp.",
+                                                              "NA","NA","Cochlodinium polykrikoides",
+                                                              "Microcystis aeruginosa","Cylindrospermopsis sp.")))
+  HAB_2017$cells_per_ml <- gsub("[a-zA-Z+/]",'',HAB_2017$cells_per_ml)
+  HAB_2017$cells_per_ml <- str_trim(HAB_2017$cells_per_ml)
+  HAB_2017$cells_per_ml <- as.numeric(HAB_2017$cells_per_ml)
+  HAB_2017 <- HAB_2017 %>% 
+    filter(!is.na(cells_per_ml)) %>%
+    mutate(year = "2017") %>%
+    filter(cells_per_ml >= cpm) %>%
+    group_by(year, species) %>%
+    dplyr::summarise(Events = n()) %>%
+    as.data.frame()
+  
+  #Aggregate--------------------------------------------------------
+  ts <- rbind(HAB_2007_2012, HAB_2013, HAB_2014, HAB_2016, HAB_2017)
+  
+  return(ts)
+}
+
+#All blooms > 5000 cells ml^-1
+full <- fixer(cpm = 5000)
+full <- full %>% group_by(year) %>% dplyr::summarise(total = sum(Events))
+plot(full$year, full$total, type = "o", ylim = c(0,90),
+     pch = 20, ylab = "Bloom Events", las = 1, xlab = "Time", lwd = 2)
+
+#cochlodinum > 300 cells ml^-1
+cochlo <- fixer(cpm = 300)
+cochlo[cochlo$species == "C. polykrikoides" |
+     cochlo$species == "C.polykrikoides" ,]$species <- "Cochlodinium polykrikoides"
+cochlo <- cochlo[cochlo$species == "Cochlodinium polykrikoides",]
+cochlo <- cochlo %>% group_by(year) %>% dplyr::summarise(total = sum(Events))
+points(cochlo$year, cochlo$total, type = "o", pch = 20, col = "indianred", lwd = 2)
+legend(x = 2007, y = 80, legend = c(expression(paste("All reports >5000 cells ml"^"-1")),
+                                    expression(paste(italic("C. polykrikoides "),"reports >300 cells ml"^"-1"))),
+       col = c("black","indianred"),
+       lwd = 2,
+       bty = "n")
+```
+
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+No data analysis steps took place for this indicator.
+
+<!--chapter:end:chapters/MAB_HABs_indicator.Rmd-->
+
+# New England Harmful Algal Bloom Indicator
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+**Description**: Regional incidence of shellfish bed closures due to presence of toxins associated with harmful algae. 
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018)
+
+**Indicator Category**: Synthesis of published information
+
+**Contributor(s)**: Dave Kulis, Donald M Anderson, Sean Hardison
+
+**Data steward**: Sean Hardison, sean.hardison@noaa.gov
+
+**Point of contact**: Sean Hardison, sean.hardison@noaa.gov
+
+**Public availability statement**: Data are publicly available (see Data Sources below).
+
+## Methods
+The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016 (Figure \@ref(fig:NE-HAB-image)). Standard detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poisoning (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
+
+#### Paralytic Shellfish Poisoning
+The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate *Alexandrium catenella*. All New England states except Maine relied on the AOAC-approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
+
+In Maine, PST detection methods were updated in May 2014 when the state adopted the hydrophilic interaction liquid chromatography (HILIC) UPLC-MS/MS protocol [@Boundy2015] in concordance with National Shellfish Sanitation Program (NSSP) requirements.  Prior to this, the primary method used to detect PST in Maine was with the mouse bioassay. 
+
+#### Amnesic Shellfish Poisoning
+Amnesic shellfish poisoning (ASP) is caused by the toxin domoic acid (DA), which is produced by several phytoplankton species belonging to the genus *Pseudo-nitzchia*. In New England, a UV-HPLC method [@Quilliam1995], which specifies a HPLC-UV protocol, is used for ASP detection. 
+
+#### Diarrhetic Shellfish Poisoning
+Diarrhetic Shellfish Poisoning (DSP) is rare in New England waters, but the presence of the DSP-associated okadaic acid (OA) in mussels was confirmed in Massachusetts in 2015 (J. Deeds, personal communication, July 7, 2018). Preliminary testing for OA in Massachusetts utilized the commercially available Protein Phosphatase Inhibition Assay (PPIA) and these results are confirmed through LC-MS/MS when necessary [@Smienk2012; @Stutts2017]. 
+
+
+### Data sources
+<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
+
+
+Data used in this indicator were drawn from the 2017 Report on the ICES-IOC Working Group on Harmful Algal Bloom Dynamics (WGHABD). The report and data are available [here](http://www.ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGEPD/2017/01%20WGHABD%20-%20Report%20of%20the%20ICES%20-%20IOC%20Working%20Group%20on%20Harmful%20Algal%20Bloom%20Dynamics.pdf).
+
+
+Closure information was collated from information provided by the following organizations:
+```{r closuresrc, echo = F, include = T, results='asis', message=FALSE, warning=F}
+tabl <- data.frame(State = c("Maine","New Hampshire","Massachusetts","Rhode Island","Connecticut"),
+                   `Source Organization` = c("Maine Department of Marine Resources",
+                                           "New Hampshire Department of Environmental Services",
+                                           "Massachusetts Division of Marine Fisheries",
+                                           "Rhode Island Department of Environmental Management",
+                                           "Connecticut Department of Agriculture"))
+names(tabl)[2] <- "Source Organization"
+knitr::kable(
+  tabl, booktabs = TRUE,
+  caption = 'Shellfish closure information providers.'
+)
+
+```
+
+
+### Data extraction
+<!--Text overview description of extraction methods. What information was extracted and how was it aggregated? Can point to other indicator extraction methods if the same.-->
+
+Data were extracted from the original report visually and accuracy confirmed with report authors.
+
+```{r, echo = F, eval = F}
+
+ #No code used for extraction
+
+```
+
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+
+No data analysis steps took place for this indicator.
+
+```{r, echo=F, message=FALSE, warning=FALSE, include=T, eval = F}
+
+#SOE R packages
+
+library(Kendall);library(data.table);library(zoo)
+library(dplyr);library(nlme);library(AICcmodavg)
+library(colorRamps);library(Hmisc);library(rgdal)
+library(maps);library(mapdata);library(raster)
+library(grid);library(stringr);library(png)
+library(ncdf4);library(marmap); library(magick)
+
+```
+
+The script used to develop the figure in the SOE report is below. 
+
+```{r NE-HAB, fig.cap="Regional HAB related shellfish bed closures in New England between 2007 and 2016.", fig.asp=1.1, fig.align='center', message=F, warning=F}
+#get map data and set constants
+ 
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+gis.dir <- here::here('gis')
+
+#Source GIS script
+source(file.path(r.dir, "GIS_source.R"))
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+
+#projection
+map.crs <- CRS("+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0
+               +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0")
+
+#coastline
+coast <- readOGR(gis.dir, 'NES_LME_coast', verbose = F)
+coast <- spTransform(coast,map.crs)
+
+#define extents for cropping
+e1  <- extent(-78.5, -64, 41, 45)
+
+#crop
+coast1 <- crop(coast, e1)
+
+#Get data from SOE dataset
+events <- SOE.data[grepl("SP occurrence",SOE.data$Var),]
+lon <- SOE.data %>%
+  dplyr::filter(Var == "NE HAB Regional center Lon") %>% pull(Value)
+lat <- SOE.data %>%
+  dplyr::filter(Var == "NE HAB Regional center Lat") %>% pull(Value)
+
+events_df <- data.frame(lon = lon,
+                        lat = lat,
+                        val = events$Value,
+                        var = events$Var)
+
+
+g1 <- events_df %>% filter(val == 8)
+#g2 <- events_df %>% filter(val == 3.5)
+g3 <- events_df %>% filter(val == 1)
+
+#data.frame to sp object
+coordinates(g1) <- ~lon+lat
+g1@proj4string <- map.crs
+g1 <- spTransform(g1, map.crs)
+
+coordinates(g3) <- ~lon+lat
+g3@proj4string <- map.crs
+g3 <- spTransform(g3, map.crs)
+
+
+#plot map and dots of different size based on category
+par(mar = c(0,2.8,0,0.2))
+plot(coast1, xlim = c(-71.5,-64.5),ylim = c(41,45),col = "grey",yaxs="i")
+plot(g1,  add = T,cex = 6, pch = 16, col = "darkorange")
+#plot(g2,  add = T,cex = 4, pch = 16, col = "purple")
+plot(g3,  add = T,cex = 2, pch = 16, col = c("purple","#56B4E9"))
+
+axis(1, at = c(-71,-69,-67,-65), labels = paste( c(-71,-69,-67,-65) * -1, 'W')
+     ,col = NA, col.ticks = 1, pos = 41)
+axis(2, at = c(45, 44, 43, 42, 41.05), labels = paste(c(45, 44, 43, 42, 41), 'N')
+     , las = T, pos = -71.78,col = NA, col.ticks = 1)
+legend(-66.2,42.5, c("PSP", "ASP", "DSP"), col = c("darkorange","purple","#56B4E9"), pch = 16,
+       cex = 1.1, bty = "n", pt.cex = 2)
+text(-65.65,42.495, "Category")
+arrows(-71.765,41,-71.765,45,angle = 90,lwd = 2)
+arrows(-64.22,41,-64.22,45,angle = 90,lwd = 2)
+abline(h = 41, lwd = 2)
+abline(h = 45, lwd = 2)
+abline(v = -64, lwd = 2)
+legend(-67.9,42.5, c("6-10", "2-5", "1"), col = c("black"), pch = 16, cex = 1.1,
+       pt.cex = c(6,4,2), x.intersp = 1.45, y.intersp = 1.75, bty = "n")
+text(-67.7,42.525, "2007-2016 Detections")
+
+```
+
+
+
+<!--chapter:end:chapters/NE_HABs_indicator.Rmd-->
+
+# Verified Records of Southern Kingfish
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Fisheries Observer Data – Verified Records of Southern Kingfish
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2018)
+
+**Indicator category**: Database pull 
+
+**Contributor(s)**: Debra Duarte, Loren Kellogg
+  
+**Data steward**: Gina Shield, gina.shield@noaa.gov
+  
+**Point of contact**: Gina Shield, gina.shield@noaa.gov
+  
+**Public availability statement**: Due to PII concerns data for this indicator are not publicly available.
+
+
+
+## Methods
+
+### Data sources
+
+The Fisheries Sampling Branch deploys observers on commercial fisheries trips from Maine to North Carolina. On observed tows, observers must fully document all kept and discarded species encountered. Observers must comply with a Species Verification Program (SVP), which requires photo or sample submissions of high priority species at least once per quarter. Photos and samples submitted for verification are identified independently by at least two reviewers.
+
+The derived data presented in the Mid-Atlantic State of the Ecosystem report for southern kingfish include records verified by the SVP program only. The occurrence of southern kingfish in SVP records were chosen for inclusion in the report due to the recent increases of the species in SVP observer records since 2010. These data are not a complete list from the New England Fisheries Observer Program (NEFOP). Southern Kingfish are less common than Northern Kingfish in observer data and are possibly misidentified so we have initially included records here only when a specimen record was submitted to and verified through the SVP (see Data extraction). 
+
+### Data extraction 
+SQL query:
+```{sql, eval = F, echo = T}
+/* training trips, 900 trips, incidental takes, most duplicate records (unless different idmethod or idcomment) are not included */
+/* this is a general script to pull the data on any species from the SVP*/
+/* specimens submitted as photos and samples included separately */
+/* nefop_ims.species_verification query that approximates is: select * from nefop_ims.species_verification where SUBJECT_CODE <> '01' and YEAR > '2009' and species = '6617' order by species, year, tripid, haulnum, idmethod but this could includes training trips, duplicates, 900 trips*/
+
+
+SELECT ss.year YEAR, MONTH, ss.obid as OBSID, ss.tripid TRIPID, NEGEAR, DATELAND, SS.HAUL HAUL, CODE, SPECIES, correct, INCCODE, INCORRECTSPP, idmethod, GIS_LATSBEG, GIS_LONSBEG, GIS_LATSEND, GIS_LONSEND, GIS_LATHBEG, GIS_LONHBEG, GIS_LATHEND, GIS_LONHEND, rr.QTR QTR, rr.link1 link1, rr.link3 LINK3, idcomments
+
+from 
+
+(SELECT substr(c.tripid, 1,3) obid, c.tripid, c.year, HAUL, TO_CHAR(t.dateland, 'DD-MON-YY') as DATELAND, CODE, SPECIES, correct, INCORRECTSPP as INCCODE, comname as INCORRECTSPP, idmethod, idcomments
+
+FROM 
+
+(select id_num, a.tripid, a.year, lpad(CAST(haulnum as varchar2(4 byte)),4,'0') haul, inc, dateverify, species as CODE, comname as SPECIES, correct, incorrectspp,
+  idmethod, idcomments, obs_contacted, filelocation
+from nefop_ims.species_verification a, obdbs.obspec b
+where a.species=b.nespp4) c 
+left join obdbs.obspec d 
+on c.incorrectspp=d.nespp4
+join OBSCON.OBSCON_TRIPS_FSB t on c.year||c.tripid=t.year||substr(t.LINK1,10,6)
+where c.YEAR like '%%' and c.TRIPID like '%%' and c.inc is null and DATELAND between to_date('01-JAN-10', 'DD-MON-RR') and to_date('31-DEC-20','DD-MON-RR')
+
+UNION
+
+SELECT substr(g.tripid,1,3) obid, g.tripid, g.year, HAUL, TO_CHAR(s.dateland, 'DD-MON-YY') as DATELAND, CODE, SPECIES, correct, INCORRECTSPP as INCCODE, comname as INCORRECTSPP,
+  idmethod, idcomments
+FROM ((select id_num, e.tripid, e.year, lpad(CAST(haulnum as varchar2(4 byte)),4,'0') haul, inc, dateverify, species as CODE, comname as SPECIES, correct, incorrectspp,
+  idmethod, idcomments, obs_contacted, filelocation
+from nefop_ims.species_verification e, obdbs.obspec f
+where e.species=f.nespp4) g 
+left join obdbs.obspec h 
+on g.incorrectspp=h.nespp4
+join obdbs.asmtrp_entry s on g.year||g.tripid=s.yearland||s.tripid) 
+where g.YEAR like '%%' and g.TRIPID like '%%' and g.inc is null and DATELAND between to_date('01-JAN-10', 'DD-MON-RR') and to_date('31-DEC-20','DD-MON-RR')
+
+UNION
+
+SELECT substr(r.tripid, 1,3) obid, r.tripid, r.year, HAUL, TO_CHAR(s.dateland, 'DD-MON-YY') as DATELAND, CODE, SPECIES, correct, INCORRECTSPP as INCCODE, comname as INCORRECTSPP,
+  idmethod, idcomments
+FROM ((select id_num, a.tripid, a.year, lpad(CAST(haulnum as varchar2(4 byte)),4,'0') haul, inc, dateverify, species as CODE, comname as SPECIES, correct, incorrectspp,
+  idmethod, idcomments, obs_contacted, filelocation
+from nefop_ims.species_verification a, obdbs.obspec b
+where a.species=b.nespp4) r 
+left join obdbs.obspec d 
+on r.incorrectspp=d.nespp4
+join OBPRELIM.TRP_BASE s on r.year||r.tripid=s.yearland||S.TRIPID)
+where r.YEAR like '%%' and r.TRIPID like '%%' and r.inc is null and DATELAND between to_date('01-JAN-10', 'DD-MON-RR') and to_date('31-DEC-20','DD-MON-RR')) ss
+
+left join
+
+(/* OBDBS OBHAU */
+
+select
+   substr(link3,1,15)  LINK1 ,
+   LINK3,   
+   substr(link3,1,3)  PROGRAM ,
+   substr(link3,4,4)   YEAR ,
+   substr(link3,8,2)   MONTH ,
+   substr(link3,10,6)  TRIPID ,
+   substr(link3,16,4)  HAULNUM ,
+   decode(substr(link3,8,2),'01',1,'02',1,'03',1,'04',2,
+           '05',2,'06',2,'07',3,'08',3,'09',3,'10',4,'11',4,'12',4,null) QTR,
+ NEGEAR,
+ OBSRFLAG,
+ CATEXIST,
+case when yearhbeg is not null and monthhbeg is not null and dayhbeg is not null then
+   to_date(ltrim(rtrim(YEARHBEG))||ltrim(rtrim(MONTHHBEG))||ltrim(rtrim(DAYHBEG))||ltrim(rtrim(TIMEHBEG)),'YYYYMMDDHH24MI')
+else null
+end datehbeg,
+case when yearhend is not null and monthend is not null and dayhend is not null then
+   to_date(ltrim(rtrim(YEARHEND))||ltrim(rtrim(MONTHEND))||ltrim(rtrim(DAYHEND))||ltrim(rtrim(TIMEHEND)),'YYYYMMDDHH24MI')
+else null
+end datehend,
+ LATHBEG,
+ LONHBEG,
+ LATHEND,
+ LONHEND,
+ cast( substr(latsbeg,1,2) + substr(latsbeg,3,2) / 60 + substr(latsbeg,5,2) / 3600 as number(8,6)) GIS_LATSBEG ,
+ -1 * cast(substr(lonsbeg,1,2) + substr(lonsbeg,3,2) / 60 + substr(lonsbeg,5,2) / 3600 as number(8,6)) GIS_LONSBEG ,
+  cast(substr(latsend,1,2) + substr(latsend,3,2) / 60 + substr(latsend,5,2) / 3600 as number(8,6)) GIS_LATSEND,
+  -1 * cast(substr(lonsend,1,2) + substr(lonsend,3,2) / 60 + substr(lonsend,5,2) / 3600 as number(8,6)) GIS_LONSEND,
+ cast(substr(lathbeg,1,2) + substr(lathbeg,3,2) / 60 + substr(lathbeg,5,2) / 3600 as number(8,6)) GIS_LATHBEG,
+ -1 * cast(substr(lonhbeg,1,2) + substr(lonhbeg,3,2) / 60 + substr(lonhbeg,5,2) / 3600 as number(8,6)) GIS_LONHBEG,
+ cast(substr(lathend,1,2) + substr(lathend,3,2) / 60 + substr(lathend,5,2) / 3600 as number(8,6)) GIS_LATHEND,
+ -1 * cast(substr(lonhend,1,2) + substr(lonhend,3,2) / 60 + substr(lonhend,5,2) / 3600 as number(8,6)) GIS_LONHEND,
+ AREA,
+ HAUCOMMENTS
+   from obdbs.obhau_base
+
+    
+UNION
+    select
+   substr(link3,1,15)  LINK1 ,
+   LINK3,
+   substr(link3,1,3)  PROGRAM ,
+   substr(link3,4,4)   YEAR ,
+   substr(link3,8,2)   MONTH ,
+   substr(link3,10,6)  TRIPID ,
+   substr(link3,16,4)  HAULNUM ,
+   decode(substr(link3,8,2),'01',1,'02',1,'03',1,'04',2,
+           '05',2,'06',2,'07',3,'08',3,'09',3,'10',4,'11',4,'12',4,null) QTR,
+
+ NEGEAR,
+ OBSRFLAG,
+ CATEXIST,
+case when yearhbeg is not null and monthhbeg is not null and dayhbeg is not null then
+   to_date(ltrim(rtrim(YEARHBEG))||ltrim(rtrim(MONTHHBEG))||ltrim(rtrim(DAYHBEG))||ltrim(rtrim(TIMEHBEG)),'YYYYMMDDHH24MI')
+else null
+end datehbeg,
+case when yearhend is not null and monthend is not null and dayhend is not null then
+   to_date(ltrim(rtrim(YEARHEND))||ltrim(rtrim(MONTHEND))||ltrim(rtrim(DAYHEND))||ltrim(rtrim(TIMEHEND)),'YYYYMMDDHH24MI')
+else null
+end datehend,
+ LATHBEG,
+ LONHBEG, 
+ LATHEND,
+ LONHEND,
+ cast( substr(latsbeg,1,2) + substr(latsbeg,3,2) / 60 + substr(latsbeg,5,2) / 3600 as number(8,6)) GIS_LATSBEG ,
+ -1 * cast(substr(lonsbeg,1,2) + substr(lonsbeg,3,2) / 60 + substr(lonsbeg,5,2) / 3600 as number(8,6)) GIS_LONSBEG ,
+ cast(substr(latsend,1,2) + substr(latsend,3,2) / 60 + substr(latsend,5,2) / 3600 as number(8,6)) GIS_LATSEND,
+ -1 * cast(substr(lonsend,1,2) + substr(lonsend,3,2) / 60 + substr(lonsend,5,2) / 3600 as number(8,6)) GIS_LONSEND,
+ cast(substr(lathbeg,1,2) + substr(lathbeg,3,2) / 60 + substr(lathbeg,5,2) / 3600 as number(8,6)) GIS_LATHBEG,
+ -1 * cast(substr(lonhbeg,1,2) + substr(lonhbeg,3,2) / 60 + substr(lonhbeg,5,2) / 3600 as number(8,6)) GIS_LONHBEG,
+ cast(substr(lathend,1,2) + substr(lathend,3,2) / 60 + substr(lathend,5,2) / 3600 as number(8,6)) GIS_LATHEND,
+ -1 * cast(substr(lonhend,1,2) + substr(lonhend,3,2) / 60 + substr(lonhend,5,2) / 3600 as number(8,6)) GIS_LONHEND,
+ AREA,
+ HAUCOMMENTS
+   from obv10.obhau_base
+
+
+UNION
+
+/*  ASM HAU  */
+
+select
+   substr(link3,1,15)  LINK1 ,
+   LINK3,
+   substr(link3,1,3)  PROGRAM ,
+   substr(link3,4,4)   YEAR ,
+   substr(link3,8,2)   MONTH ,
+   substr(link3,10,6)  TRIPID ,
+   substr(link3,16,4)  HAULNUM ,
+
+   decode(substr(link3,8,2),'01',1,'02',1,'03',1,'04',2,
+           '05',2,'06',2,'07',3,'08',3,'09',3,'10',4,'11',4,'12',4,null) QTR,
+ NEGEAR,
+ OBSRFLAG,
+ cast(null as varchar2(1)) CATEXIST,
+   to_date(ltrim(rtrim(YEARHBEG))||ltrim(rtrim(MONTHHBEG))||ltrim(rtrim(DAYHBEG))||ltrim(rtrim(TIMEHBEG)),'YYYYMMDDHH24MI')datehbeg, 
+   to_date(ltrim(rtrim(YEARHEND))||ltrim(rtrim(MONTHEND))||ltrim(rtrim(DAYHEND))||ltrim(rtrim(TIMEHEND)),'YYYYMMDDHH24MI')datehend, 
+ LATHBEG,
+ LONHBEG,
+ LATHEND,
+ LONHEND,
+ cast(null as number(8,6)) GIS_LATSBEG ,
+ cast(null as number) GIS_LONSBEG ,
+ cast(null as number(8,6)) GIS_LATSEND,
+ cast(null as number) GIS_LONSEND,
+ cast(substr(lathbeg,1,2) + substr(lathbeg,3,2) / 60 + substr(lathbeg,5,2) / 3600 as number(8,6)) GIS_LATHBEG,
+ -1 * cast(substr(lonhbeg,1,2) + substr(lonhbeg,3,2) / 60 + substr(lonhbeg,5,2) / 3600 as number(8,6)) GIS_LONHBEG,
+ cast(substr(lathend,1,2) + substr(lathend,3,2) / 60 + substr(lathend,5,2) / 3600 as number(8,6)) GIS_LATHEND,
+ -1 * cast(substr(lonhend,1,2) + substr(lonhend,3,2) / 60 + substr(lonhend,5,2) / 3600 as number(8,6)) GIS_LONHEND,
+ AREA,
+ HAUCOMMENTS
+ 
+   from asmhau_prelim p
+ left outer join obtriptrack t 
+      on substr(p.link3,1,15) = t.link1 
+  where (substr(link3,4,6) between '201005' and '201012' and substr(link3,1,3) between '230' and '234')
+     or (substr(link3,4,6) > '201012' and substr(link3,1,3) <> '900')
+    and substr(link3,1,15) not in (select link1 from obv10.obtrp_base) ) rr
+    
+on ss.YEAR||ss.TRIPID||ss.HAUL = rr.YEAR||rr.TRIPID||ltrim(rr.HAULNUM)
+
+where ss.OBID like '%%' and ss.TRIPID like '%%' and (CODE like '%6617%') and HAUL like '%%' and SPECIES like '%%' and IDCOMMENTS like '%%' 
+
+ORDER BY SPECIES, YEAR, TRIPID, HAUL
+;
+
+```
+
+### Data analysis
+Time series were summed by year and plotted, and mapped data for individual records were plotted according to the location where gear was hauled. As coordinate data were not always available for each record, the map does not include all occurrences of southern kingfish, but was included for spatial context.
+
+R code use to aggregate data:
+```{r agg_code, eval = F, echo = T}
+library(dplyr)
+
+total_by_year<- source %>%
+  filter(SPECIES == "KINGFISH, SOUTHERN") %>% #Filter species
+  group_by(YEAR) %>%
+  dplyr::summarise(n = n()) #Sum observations per year
+```
+
+### Plotting
+
+```{r, echo = T, eval = F}
+
+#For map and plot. Latitude and longitude data for this figure are not publicly available. 
+sk.dat <- SOE.data[grepl("Lat",SOE.data$Units) &
+                          grepl("Southern Kingfish",SOE.data$Var),]
+lon <- sk.dat[as.numeric(sk.dat$Value) < 0,]$Value
+lat <- sk.dat[as.numeric(sk.dat$Value) > 0,]$Value
+
+#create data.frame
+df <- data.frame(year = sk.dat$Time,
+                 lon = lon,
+                 lat = lat)
+
+#set color palette
+colors1 <- adjustcolor(matlab.like2(8),.5)
+colors2 <- adjustcolor(matlab.like2(8),.5)
+colors3 <- adjustcolor(matlab.like2(8),.5)
+colors4 <- adjustcolor(matlab.like2(8),1)
+colors <- c(colors1[1:2], colors2[3:4], colors3[5:6],colors4[7:8])
+
+#map values to colors
+df <- df %>% arrange(year) %>%
+  mutate(colors = plyr::mapvalues(year, from = c("2010","2011","2012","2013",
+                                                 "2014","2015","2016","2017"),
+                                                               to = c(colors)))
+colors <- df$colors
+
+#projection
+map.crs <- CRS("+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0
+               +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0")
+
+#data.frame to sp object
+coordinates(df) <- ~lon+lat
+df@proj4string <- map.crs
+df <- spTransform(df, map.crs)
+
+#plot
+par(fig = c(0,1,0,1))
+plot(coast, xlim = c(-76,-73), ylim = c(35,40.5),col = "grey")
+plot(df, pch = 16, col = colors, add = T, cex = 2.5)
+
+
+occur <- SOE.data[SOE.data$Var == "Southern Kingfish observer sightings",]$Value
+time <- SOE.data[SOE.data$Var == "Southern Kingfish observer sightings",]$Time
+
+ts <- zoo(occur,time)
+par(fig = c(0.5,1, 0.1, .5), new = T, bty = "l",mar = c(5,6,3,1)) 
+barplot(occur,time, col = matlab.like2(8), xlab = c("Time"),ylab = "S. Kingfish Occurrence, n",
+        cex.lab = 1, las = 1, cex.axis = 1)
+axis(1,at = seq(1250,18500,length.out = 8),labels = c("2010","2011","2012","2013",
+                                            "2014","2015","2016","2017"), cex.axis=1)
+```
+
+```{r SK-plot, fig.align='center', echo = F, fig.cap = "Verified records of Southern Kingfish occurrence in the Mid-Atlantic."}
+image.dir <- here::here('images')
+
+knitr::include_graphics(file.path(image.dir, 'southern_kingfish.PNG'))
+```
+
+
+<!--chapter:end:chapters/observer_data_indicator.Rmd-->
+
+# Habitat Occupancy Models
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Habitat Occupancy
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
+
+**Indicator category**: Database pull with analysis; Extensive analysis; not yet published; Published methods
+
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available upon request (see [Survdat](#survdat), [CHL/PP](#chl-pp), and Data Sources below for more information). Model-derived time series are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html).
+
+
+## Methods
+Habitat area with a probability of occupancy greater than 0.5 was modeled for many [species throughout the NE-LME](https://www.nefsc.noaa.gov/ecosys/current-conditions/occupancy-change.html) using random forest decision tree models. 
+
+### Data sources
+Models were parameterized using a suite of static and dynamic predictor variables, with occurrence and catch per unit effort (CPUE) of species from spring and fall Northeast Fisheries Science Center (NEFSC) bottom trawl surveys (BTS) serving as response variables. Sources of variables used in the analyses are described below.
+
+#### Station depth
+The NEFSC BTS data included depth observations made concurrently with trawls at each station. Station depth was a static variable for these analyses. 
+
+#### Ocean temperature and salinity
+Sea surface and bottom water temperature and salinity measurements were included as dynamic predictor variables in the model, and were collected using Conductivity/Temperature/Depth (CTD) instruments. Ocean temperature and salinity measurements had the highest temporal coverage during the spring (February-April) and fall (September-November) months. Station salinity data were available between 1992-2016. 
+
+#### Habitat descriptors
+A variety of benthic habitat descriptors were incorporated as predictor variables in occupancy models (Table \@ref(tab:habitatdesc)). The majority of these parameters are based on depth (e.g. *BPI*, *VRM*, *Prcury*, *rugosity*, *seabedforms*, *slp*, and *slpslp*). The vorticity variable is based on current estimates, and the variable *soft_sed* based on sediment grain size. 
+
+
+```{r habitatdesc, echo = F, results='asis', message=F, warning=F}
+tab <- '
+|Variables|Notes|References|
+|:-----------------------|:-----------------------|:-----------------------|
+|Complexity - Terrain Ruggedness Index|The difference in elevation values from a center cell and the eight cells immediately surrounding it. Each of the difference values are squared to make them all positive and averaged. The index is the square root of this average.|@Riley1999|
+
+|Namera bpi|BPI is a second order derivative of the surface depth using the TNC Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data with an inner radius=5 and outer radius=50.|@Lundblad2006|
+
+|Namera_vrm|Vector Ruggedness Measure (VRM) measures terrain ruggedness as the variation in three-dimensional orientation of grid cells within a neighborhood based the TNC Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data.|@Hobson1972; @Sappington2007|
+
+|Prcurv (2 km, 10 km, and 20 km)|Benthic profile curvature at 2km, 10km and 20 km spatial scales was derived from depth data.|@Winship2018|
+
+|Rugosity|A measure of small-scale variations of amplitude in the height of a surface, the ratio of the real to the geometric surface area.|@Friedman2012|
+
+|seabedforms|Seabed topography as measured by a combination of seabed position and slope.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
+
+|Slp (2 km, 10 km, and 20 km)|Benthic slope at 2km, 10km and 20km spatial scales.|@Winship2018|
+
+|Slpslp (2 km, 10 km, and 20 km)|Benthic slope of slope at 2km, 10km and 20km spatial scales|@Winship2018|
+
+|soft_sed|Soft-sediments is based on grain size distribution from the USGS usSeabed: Atlantic coast offshore surficial sediment data.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
+
+|Vort (fall - fa; spring - sp; summer - su; winter - wi)|Benthic current vorticity at a 1/6 degree (approx. 19 km) spatial scale.|@Kinlan2016|
+
+'
+df<-readr::read_delim(tab, delim="|")
+df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'Habitat descriptors used in model parameterization.'
+)
+```
+
+#### Zooplankton
+Zooplankton data are acquired through the NEFSC Ecosystem Monitoring Program ("EcoMon"). For more information regarding the collection process for these data, see @Kane2007, @Kane2011, and @Morse2017. The bio-volume of the 18 most abundant zooplankton taxa were considered as potential predictor variables.  
+
+#### Remote sensing data
+Both chlorophyll concentration and SST from remote sensing sources were incorporated as static predictor variables in the model. During the period of 1997-2016, chlorophyll concentrations were derived from observations made by the Sea-viewing Wide Field of View Sensor (SeaWIFS), Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua), Medium Resolution Imaging Spectrometer (MERIS), and Visible and Infrared Imaging/Radiometer Suite (VIIRS). 
+
+### Data processing
+
+#### Zooplankton
+Missing values in the EcoMon time series were addressed by summing data over five-year time steps for each seasonal time frame and interpolating a complete field using ordinary kriging. Missing values necessitated interpolation for spring data in 1989, 1990, 1991, and 1994. The same was true of the fall data for 1989, 1990, and 1992.
+
+#### Remote sensing data
+An overlapping time series of observations from the four sensors listed above was created using a bio-optical model inversion algorithm [@Maritorena2010]. Monthly SST data were derived from MODIS-Terra sensor data (available [here](https://oceancolor.gsfc.nasa.gov/data/terra/)). 
+
+#### Ocean temperature and salinity
+Date of collection corrections for ocean temperature data were developed using linear regressions for the spring and fall time frames; standardizing to collection dates of April 3 and October 11 for spring and fall. No correction was performed for salinity data. Annual data for ocean temperature and salinity were combined with climatology by season through an optimal interpolation approach. Specifically, mean bottom temperature or salinity was calculated by year and season on a 0.5&deg; grid across the ecosystem, and data from grid cells with >80% temporal coverage were used to calculate a final seasonal mean. Annual seasonal means were then used to calculate combined anomalies for seasonal surface and bottom climatologies. 
+
+An annual field was then estimated using raw data observations for a year, season, and depth using universal kriging [@automap], with depth included as a covariate (on a standard 0.1&deg; grid). This field was then combined with the climatology anomaly field and adjusted by the annual mean using the variance field from kriging as the basis for a weighted mean between the two. The variance field was divided into quartiles with the lowest quartile assigned a weighting of 4:1 between the annual and climatology values. The optimally interpolated field at these locations was therefore skewed towards the annual data, reflecting their proximity to actual data locations and associated low kriging variance. The highest kriging variance quartile (1:1) reflected less information from the annual field and more from the climatology.
+
+### Data analysis
+
+#### Occupancy models
+Prior to fitting the occupancy models, predictor variables were tested for multi-collinearity and removed if found to be correlated. The final model variables were then chosen utilizing a model selection process as shown by @Murphy2010 and implemented with the R package rfUtilities [@rfUtilities-package]. Occupancy models were then fit as two-factor classification models (absence as 0 and presence as 1) using the randomForest R package [@randomForest]. 
+
+#### Selection criteria and variable importance
+The irr R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.  
+
+### Plotting
+
+```{r occupancy-MAB, fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = T, fig.show='hold', warning = F, message = F,fig.pos='H'}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data, "Time", "sumflo spring habitat occupancy", stacked = "A",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data, "Time", "sumflo fall habitat occupancy", stacked = "B",
+         rel.y.num = 1.1, scale.axis = 10^3, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", expression("Habitat Area, 10"^3*" km"^2), y.line = 2.5)
+
+```
+
+
+<!--chapter:end:chapters/occupancy_indicator.Rmd-->
+
+# Fish Productivity Indicator
+ 
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Groundfish productivity estimated as the ratio of small fish to large fish
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull with analysis; Published methods
+
+**Contributor(s)**: Charles Perretti
+  
+**Data steward**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Point of contact**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Public availability statement**: Source data are available upon request.
+
+
+
+## Methods
+
+
+### Data sources
+Survey data from NEFSC trawl database. These data in their derived form are available through [Survdat](#survdat).
+
+
+### Data extraction 
+Data were extracted from [Survdat](#survdat).
+
+
+### Data analysis
+We defined size thresholds separating small and large fish for each species based on the 20th percentile of the length distribution across all years. This threshold was then used to calculate a small and large fish index (numbers below and above the threshold, respectively) each year. Although the length percentile corresponding to age-1 fish will vary with species, we use the 20th percentile as an approximation. Biomass was calculated using length–weight relationships directly from the survey data. Following @wigley_length-weight_2003, the length-weight relationship was modeled as 
+$$\ln W = \ln a + b \ln L$$
+where $W$ is weight (kg), $L$ is length (cm), and $a$ and $b$ are parameters fit via linear regression. The ratio of small fish numbers of the following year to larger fish biomass in the current year was used as the index of recruitment success. The fall and spring recruitment success anomalies were averaged to provide an annual index of recruitment success.
+
+Further details of methods described in @perretti_regime_2017.
+
+### Plotting
+
+```{r, echo = T, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Northeast Large Marine Ecosystem."}
+
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+#### Functions for plotting ####
+library(ggplot2)
+library(rpart)
+library(dplyr)
+library(stringr)
+
+all_epu <- SOE.data %>%
+  filter(str_detect(Var, "All EPU productivity"))
+
+all_epu$Var <- str_trim(str_replace(all_epu$Var, "All EPU productivity",""))
+
+
+# Adjust plot properties
+adjustAxes <- 
+  ggplot2::theme(axis.title   = element_text(size = 18),
+                 axis.text    = element_text(size = 15),
+                 plot.title   = element_text(size = 20))
+
+ggplot <- function(...) { ggplot2::ggplot(...)  + 
+    ggplot2::theme_bw() + 
+    adjustAxes}
+
+
+# Plot stacked bar with cpts for single var 
+plot_stackbarcpts_single <- function(YEAR, var2bar,
+                                     x, xlab, ylab,
+                                     titl,
+                                     file_suffix,
+                                     leg_font_size = 10,
+                                     remove_leg = FALSE,
+                                     leg_ncol = 1,
+                                     wcpts = TRUE,
+                                     wdashed = TRUE,
+                                     height = 5.5,
+                                     width = 8) {
+  
+  dat2bar <- data.frame(YEAR, var2bar,
+                        x)
+  
+  dat2plot <-
+    dat2bar %>%
+    tidyr::gather(variable, value, -YEAR, -var2bar) %>%
+    dplyr::mutate(var2bar = gsub(pattern      = "_", 
+                                 replacement  = " ", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "Atl.", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "Atl", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "NS and combined", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "YT", 
+                                 replacement  = "Yellowtail", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = " GoM", 
+                                 replacement  = " GOM", 
+                                 x            = var2bar))
+  
+  
+  p <-   
+    ggplot(dat2plot,
+           aes(x = YEAR)) +
+    geom_bar(data = dat2plot %>% filter(value > 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_bar(data = dat2plot %>% filter(value < 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_hline(size = 0.3, aes(yintercept = 0)) +
+    xlab(xlab) +
+    ylab(ylab) +
+    ggtitle(titl) +
+    guides(fill = guide_legend(ncol = leg_ncol)) +
+    theme(axis.title   = element_text(size = 16),
+          axis.text    = element_text(size = 15),
+          plot.title   = element_text(size = 20),
+          legend.text  = element_text(size = leg_font_size),
+          legend.title = element_blank())
+  
+  if(remove_leg) p <- p + theme(legend.position = "none")
+  
+  print(p)
+  
+#  ggsave(plot = p,
+#         filename = "./productivity_all.eps",
+#         width = width,
+#         height = height)
+}
+
+# Plot stacked bars
+plot_stackbarcpts <- function(YEAR, var2bar,
+                              top, mid, bot,
+                              top_lab, 
+                              mid_lab, 
+                              bot_lab,
+                              xlab = "", 
+                              ylab = "",
+                              titl = "") {
+  
+  dat2bar <- data.frame(YEAR, var2bar,
+                        top, mid, 
+                        bot)
+  
+  dat2plot <-
+    dat2bar %>%
+    tidyr::gather(variable, value, -YEAR, -var2bar) %>%
+    dplyr::mutate(variable = ifelse(variable == "top", 
+                                    top_lab, 
+                                    ifelse(variable == "mid",
+                                           mid_lab, bot_lab)))
+  
+  
+  dat2plot$variable <- 
+    factor(dat2plot$variable,
+           levels = c(top_lab, mid_lab, bot_lab))
+  
+  p <-   
+    ggplot(dat2plot,
+           aes(x = YEAR)) +
+    geom_bar(data = dat2plot %>% filter(value > 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_bar(data = dat2plot %>% filter(value < 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    facet_wrap(~ variable, ncol = 1) +
+    geom_hline(size = 0.3, aes(yintercept = 0)) +
+    xlab(xlab) +
+    ylab(ylab) +
+    ggtitle(titl) +
+    guides(fill = guide_legend(ncol = 1)) +
+    theme(axis.title   = element_text(size = 16),
+          axis.text    = element_text(size = 15),
+          plot.title   = element_text(size = 20),
+          strip.text   = element_text(size = 15),
+          legend.title = element_blank())
+  
+  print(p)
+}
+
+# Recruit per spawner (all stocks in one figure)
+plot_stackbarcpts_single(YEAR = all_epu$Time,
+                         var2bar = all_epu$Var,
+                         x = all_epu$Value,
+                         titl = "",
+                         xlab = "",
+                         ylab = "Small fish per large fish biomass (anomaly)",
+                         height = 7,
+                         width = 9)
+
+```
+
+```{r plot-all, fig.height=8, fig.cap = "Groundfish productivity visualized by EPU."}
+
+by_epu <- SOE.data %>% filter(str_detect(Var, "productivity"),
+                                                    !EPU %in% c("All","SS"))
+by_epu$Var <- str_trim(str_replace(by_epu$Var,
+                                   " GOM productivity| GB productivity| MAB productivity", ""))
+
+# Recruit per spawner (by EPU)
+dat2plot <-
+  by_epu %>%
+  tidyr::spread(EPU, Value)
+
+
+plot_stackbarcpts(YEAR = dat2plot$Time,
+                  var2bar = dat2plot$Var,
+                  top = dat2plot$GOM, 
+                  mid = dat2plot$GB,
+                  bot = dat2plot$MAB,
+                  top_lab = "Gulf of Maine",
+                  mid_lab = "Georges Bank",
+                  bot_lab = "Mid. Atlantic Bight",
+                  xlab = "",
+                  ylab = "Small fish per Large fish biomass (anomaly)")
+
+```
+
+
+<!--chapter:end:chapters/productivity_for_tech_memo.Rmd-->
+
+# Recreational Fishing Indicators
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+
+**Description**: Total catch and total angler trips by region (North Atlantic and Mid-Atlantic)
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Geret DePiper
+  
+**Data steward**: Geret DePiper, <geret.depiper@noaa.gov>
+ 
+**Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
+
+**Public availability statement**: Data sets are publically available (see Data Sources below).
+  
+
+## Methods
+We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively.
+
+### Data sources
+All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were download from the [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
+
+Data sets are queried by region on the MRIP site, and for the purposes of the SOE, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the Catch Time Series Query page. Angler trips (listed as "TOTAL" trips) were pulled from the MRIP Effort Time Series Query page, and included data from 1981 - 2019. The number of anglers was total number of anglers from the MRFSS Participation Time Series Query, and includes data from 1981 - 2016.
+
+### Data extraction 
+Data were download as .CSV files before being brought into R.
+
+### Data analysis
+NA
+
+### Plotting
+
+```{r recreation, fig.cap="Number of anglers (A) and number of fishing trips (B) taken in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE,fig.pos='H'}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(4, 6, 2, 6))
+
+
+soe.plot(SOE.data, "Time", "Mid-Atlantic Rec participation", stacked = "A",
+         rel.y.num = 0.9, end.start = 2008, tol = 0.15, full.trend = F, 
+         cex.stacked = 1.5, scale.axis = 10^6)
+soe.stacked.axis('Year', expression('Anglers, 10'^6*'n'), 
+                 rel.x.text = 0.1, rel.y.text = 1, y.line = 2.5, outer = F)
+
+soe.plot(SOE.data, "Time", "Mid-Atlantic angler trips", stacked = "B",
+         rel.y.num = 0.9, scale.axis = 10^6, x.end = 2016, end.start = 2007,
+         tol = 0.15, y.lower = 0, ymin = F,  cex.stacked = 1.25)
+
+soe.stacked.axis('Year', expression('Trips, 10'^6*'n'), 
+                 rel.x.text = 1, rel.y.text = 1, y.line = 2.5, outer = F)
+
+```
+
+
+
+
+
+<!--chapter:end:chapters/Recreational_Data.Rmd-->
+
+# Right Whale Abundance 
+
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Right Whale
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Synthesis of published information; Published methods
+
+**Contributor(s)**: Christopher D. Orphanides
+  
+**Data steward**: Chris Orphanides, chris.orphanides@noaa.gov
+  
+**Point of contact**: Richard Pace, richard.pace@noaa.gov
+  
+**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
+
+## Methods
+
+### Data sources
+The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 NOAA marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
+
+
+### Data extraction 
+Data were collected from existing reports and validated by report authors. 
+
+### Data analysis
+Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
+
+### Plotting
+
+```{r rw-abundance, fig.cap="North Atlantic right whale population estimates shown with 95% credible intervals.",echo = T, message=F, warning=F,  fig.pos='H', fig.height = 4.5, fig.width=7}
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+par(mar = c(5,5,4,1))
+soe.plot(SOE.data, 'Time', "right_whale_median", rel.y.num = 1.2, 
+         full.trend = F, lwd = 1.5, point.cex = 1, end.start = 2007,
+         x.label = 'Year', y.label = 'Abundance, n', 
+         rel.y.text = 1)
+
+lw_CI <- SOE.data[Var == 'right_whale_lower_95', list(Time, Value)]
+up_CI <- SOE.data[Var == 'right_whale_upper_95', list(Time, Value)]
+points(lw_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
+points(up_CI, type  = "l", lty = 2, col = adjustcolor("darkorange", .6), lwd = 2.5)
+
+```
+
+<!--chapter:end:chapters/RW_indicator.Rmd-->
+
+# References {-}
+
+```{r include=FALSE}
+#`r if (knitr::is_html_output()) '# References {-}'`
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'htmlwidgets', 'webshot', 'DT',
+  'miniUI', 'tufte', 'servr', 'citr', 'rticles'
+), 'packages.bib')
+```
+
+<!--chapter:end:chapters/references.Rmd-->
+
+# Seasonal SST Anomalies
+
+
+```{r, echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: Seasonal SST Anomalies
+
+**Indicator category**: Database pull with analysis
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
+**Contributor(s)**: Sean Hardison, Vincent Saba
+  
+**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
+
+## Methods
+### Data sources
+Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
+
+### Data extraction 
+Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See [Seasonal_anom_crop.nc](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)). Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
+
+
+R code used in extraction and processing:
+```{r, echo = T, eval = F}
+#libraries
+library(ncdf4);library(dplyr)
+library(readr);library(tidyr)
+library(sp);library(rgdal)
+library(raster);library(stringr)
+
+fall <- stack()
+winter <- stack()
+spring <- stack()
+summer <- stack()
+sub_region <- raster("Seasonal_anom_crop.nc") #get an old file to crop with
+
+for (dir. in 1){
+  #Loop through directories
+  setwd(paste0('c:/users/sean.hardison/documents/sst_data/',dir.))
+  print(getwd())
+  for (f in 1:length(list.files())){
+    
+    if (!str_detect(list.files()[f],".nc")){
+      print(paste(list.files()[f],"is not a raster")) #Based on file type
+      next
+    }
+    
+    for (s in c("winter","spring","summer","fall")){
+  
+      y <- as.numeric(str_extract(list.files()[f],"[0-9]+")) #Pull out file year for identifying leap years
+      print(paste('Year:',y,"Season:",s))
+      leap_year <- seq(1984,2016,4)
+      
+      #Pick out leap years
+      if (y %in% leap_year){
+          leap <- T
+      } else {
+        leap <- F
+      }
+      if (s == "winter")
+        if (!leap){
+          season <- 1:90 
+        } else {
+          season <- 1:91
+        }
+      else if (s == "spring"){
+        if (!leap){
+          season <- 91:181 
+        } else {
+          season <- 92:182
+        } 
+      }
+      else if (s == "summer"){
+        if (!leap){
+          season <- 182:273
+        } else {
+          season <- 183:274
+        } 
+      }
+      else if (s == "fall"){
+        if (!leap){
+          season <- 274:365
+        } else {
+          season <- 275:366
+        } 
+      }
+      
+      if(leap){
+        print(paste(s,y,"leap"))
+      }
+      
+        
+        for (b in season){
+          r <- raster(list.files()[f],b) #Import raster bands within a given season
+
+          if (b == season[1]){
+            print(list.files()[f])
+            print(length(season))
+            print(r@file@nbands) #Print file name
+          }
+          
+          #Rotate and crop
+          r <- rotate(r) 
+          r <- crop(r, extent(sub_region))
+          #print(r@file@nbands)
+          if (b == season[50]){
+            print("Over halfway there")
+          }
+          
+          #Add bands to raster stack for each season. Seaonal bands for each year are bound together.
+          assign(s,stack(get(s),r))
+          
+        }
+      print(paste("Done stacking",nlayers(get(s)),"days"))
+    } 
+  }
+}
+
+
+```
+
+### Data analysis
+We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the SST anomaly. The use of a 30-year climatological reference period is a standard procedure for the calculation of meteorological anomalies [@WMO2017]. In our case, we chose to use the 1982-2012 reference period to remain consistent with previous State of the Ecosystem reports. 
+
+```{r anomaly calculation, echo = T, eval = F}
+fall_1 <- stack("fall_1")
+fall_2 <- stack("fall_2")
+fall_3 <- stack("fall_3")
+
+
+spring_1 <- stack("spring_1")
+spring_2 <- stack("spring_2")
+spring_3 <- stack("spring_3")
+
+
+winter_1 <- stack("winter_1")
+winter_2 <- stack("winter_2")
+winter_3 <- stack("winter_3")
+
+
+summer_1 <- stack("summer_1")
+summer_2 <- stack("summer_2")
+summer_3 <- stack("summer_3")
+
+winter <- stack(winter_1,winter_2,winter_3)
+fall <- stack(fall_1,fall_2,fall_3)
+spring <- stack(spring_1,spring_2,spring_3)
+summer <- stack(summer_1,summer_2,summer_3)
+
+winter_mean <- stackApply(winter, indices = rep(1,nlayers(winter)),mean)
+spring_mean <- stackApply(spring, indices = rep(1,nlayers(spring)),mean)
+summer_mean <- stackApply(summer, indices = rep(1,nlayers(summer)),mean)
+fall_mean <- stackApply(fall, indices = rep(1,nlayers(fall)),mean)
+
+rm(winter, spring, summer, fall)
+
+#Get 2017 daily mean data
+#setwd("z:/shardison/neiea")
+daily_mean_2017 <- stack("sst.day.mean.2017.nc")
+
+
+
+daily_mean_2017 <- rotate(daily_mean_2017) #rotate
+daily_mean_2017 <- crop(daily_mean_2017, extent(sub_region)) #crop
+
+#Find daily mean across seasons
+seasonal_sst_2017 <- stackApply(daily_mean_2017, indices = c(rep(1,90),rep(2,91),
+                                                             rep(3, 92), rep(4, 92)), mean)
+
+#Get seasonal anomaly
+winter_anom <- seasonal_sst_2017[[1]] - winter_mean
+spring_anom <- seasonal_sst_2017[[2]] - spring_mean
+summer_anom <- seasonal_sst_2017[[3]] - summer_mean
+fall_anom <- seasonal_sst_2017[[4]] - fall_mean
+```
+
+### Plotting
+```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017. Black lines depict the 200 m isobath." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
+
+
+# Relative working directory
+r.dir <- here::here("R")
+
+#Source constants for GIS code
+source(file.path(r.dir,"GIS_source.R"))
+
+#SST map function
+SST_plot <- function(raster_data, text,pos = "left"){
+  
+  #adjusts par for legend placement 
+  if (pos == "right"){
+    par(mar = c(4.5,0,3,10), mex = .3,  mgp = c(4, .35, 0))
+  } else{
+     par(mar = c(4.1,5,3,6), mex = .3,  mgp = c(4, .35, 0))
+  }
+  
+  #read .nc and convert to raster
+  d <- raster(file.path(gis.dir,raster_data))
+  crs(d) <- map.crs
+  #crop data
+  d <- crop(d, e)
+  
+  #get zmax (~max SST anomaly)
+  z.max=7
+
+  #plot raster
+  plot(d, col=colors(n=color_levels),
+       breaks=seq(-z.max,z.max,length.out=color_levels+1),
+       legend.width = 1.5,bty ="L",axes=F,
+       interpolate = T, las = 1,box = FALSE,legend = FALSE, asp = 1)
+  #plot contour
+  contour(bathy,drawlabels = T,add=T, nlevels = 2, zlim = c(-200,-200))
+  #plot coastline
+  plot(coast, col = 'grey',add = T , lty=0)
+  #axes
+
+  
+  if (pos == "left"){
+    axis(1, at = seq(-77,-65,2), labels = seq(-77,-65,2) , cex.axis = 0.7)
+    axis(2, cex.axis = 0.7)
+    abline(h = 34.95, lty = 1, lwd = 2)
+    abline(v =-77.2, lty = 1, lwd = 2)
+  } else {
+    axis(1, at = seq(-77,-65,2), labels = seq(-77,-65,2) ,
+         cex.axis = 0.7, pos = 34.9)
+    axis(2, cex.axis = 0.7, pos = -77.225)
+    abline(h = 34.9, lty = 1, lwd = 2)
+    abline(v =-77.225, lty = 1, lwd = 2)
+
+  }
+
+  #labels
+  text(-76,45,text,cex = 1.5)
+
+  
+}
+
+#plot maps
+par(oma=c(0,0,0,0), mfrow = c(2,2))
+SST_plot("Winter_2017_anomaly_1982_2012.nc","A")
+SST_plot("Spring_2017_anomaly_1982_2012.nc","B",pos = "right")
+SST_plot("Summer_2017_anomaly_1982_2012.nc","C")
+SST_plot("Fall_2017_anomaly_1982_2012.nc","D",pos = "right") 
+
+#plot only legend
+z.max=7
+
+#set new par
+par(mfrow=c(1, 1), mar=c(2, 5, 2, 0), new=FALSE)
+
+#any data
+d <- raster(matrix(runif(100), ncol=10))
+
+#legend plot
+plot(d, col=colors(n=color_levels),
+     breaks=seq(-z.max,z.max,length.out=color_levels+1),
+     legend.shrink = 1,
+     legend.width = 1,legend.only = T,
+     axes=F, interpolate = T, las = 1,box = FALSE,
+     axis.args=list(at=seq(-z.max, z.max, length.out = 5),
+                    labels=seq(-7,7,length.out = 5), 
+                    cex.axis=0.8),
+     legend.args=list(text=expression(paste('Temperature Anomaly (',degree,"C)")),
+                      side=4, font=2, line=2, cex=1))
+
+```
+
+**Note**: The derived data sets used to create the above figures are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis).
+
+<!--chapter:end:chapters/Seasonal_SST_anomaly_maps_indicator.Rmd-->
 

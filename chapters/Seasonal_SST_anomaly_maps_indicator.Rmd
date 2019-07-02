@@ -12,6 +12,8 @@ library(rmarkdown)
 
 **Indicator category**: Database pull with analysis
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
 **Contributor(s)**: Sean Hardison, Vincent Saba
   
 **Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
@@ -20,20 +22,16 @@ library(rmarkdown)
   
 **Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 
-
-
-
 ## Methods
 ### Data sources
-Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007].  
-
+Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
 
 ### Data extraction 
-Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](http://www1.ncdc.noaa.gov/pub/data/cmb/ersst/v5/netcdf/). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See [Seasonal_anom_crop.nc](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)). Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
+Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See [Seasonal_anom_crop.nc](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)). Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
 
 
 R code used in extraction and processing:
-```r, echo = T, eval = F}
+```{r, echo = T, eval = F}
 #libraries
 library(ncdf4);library(dplyr)
 library(readr);library(tidyr)
@@ -170,8 +168,6 @@ rm(winter, spring, summer, fall)
 #setwd("z:/shardison/neiea")
 daily_mean_2017 <- stack("sst.day.mean.2017.nc")
 
-
-
 daily_mean_2017 <- rotate(daily_mean_2017) #rotate
 daily_mean_2017 <- crop(daily_mean_2017, extent(sub_region)) #crop
 
@@ -187,9 +183,7 @@ fall_anom <- seasonal_sst_2017[[4]] - fall_mean
 ```
 
 ### Plotting
-```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017. Black lines depict the 200 m isobath." , fig.width = 8,fig.height = 5.5, fig.show='hold',fig.pos='H', echo=T, message=F, warning=F}
-
-
+```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017. Black lines depict the 200 m isobath." , fig.width = 8,fig.height = 5.5, echo=T, message=F, warning=F}
 # Relative working directory
 r.dir <- here::here("R")
 
@@ -207,21 +201,21 @@ SST_plot <- function(raster_data, text,pos = "left"){
   }
   
   #read .nc and convert to raster
-  d <- raster(file.path(gis.dir,raster_data))
-  crs(d) <- map.crs
+  d <- raster::raster(file.path(gis.dir,raster_data))
+  raster::crs(d) <- map.crs
   #crop data
-  d <- crop(d, e)
+  d <- raster::crop(d, e)
   
   #get zmax (~max SST anomaly)
   z.max=7
 
   #plot raster
-  plot(d, col=colors(n=color_levels),
+  raster::plot(d, col=colors(n=color_levels),
        breaks=seq(-z.max,z.max,length.out=color_levels+1),
        legend.width = 1.5,bty ="L",axes=F,
        interpolate = T, las = 1,box = FALSE,legend = FALSE, asp = 1)
   #plot contour
-  contour(bathy,drawlabels = T,add=T, nlevels = 2, zlim = c(-200,-200))
+  raster::contour(bathy,drawlabels = T,add=T, nlevels = 2, zlim = c(-200,-200))
   #plot coastline
   plot(coast, col = 'grey',add = T , lty=0)
   #axes
