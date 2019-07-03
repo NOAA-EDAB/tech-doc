@@ -18,7 +18,7 @@ Depends:
   vegan,
   mgcv,
   ggplot2,
-  rpart,
+  rpart, 
   Kendall,
   zoo,
   colorRamps,
@@ -26,7 +26,6 @@ Depends:
   raster,
   grid,
   gridExtra,
-  stringr,
   ncdf4,
   magick,
   readxl,
@@ -51,9 +50,13 @@ Depends:
   RCurl,
   rvest,
   xml2,
-  ggrepel
+  ggrepel,
+  sf,
+  rnaturalearth,
+  rnaturalearthdata
 Remotes: 
   rstudio/bookdown,
   slucey/RSurvey/Survdat,
-  NOAA-EDAB/ecodata
+  NOAA-EDAB/ecodata,
+  thomasp85/patchwork
   
