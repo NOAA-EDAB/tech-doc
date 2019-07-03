@@ -50,7 +50,8 @@ Depends:
   ggplot2,
   RCurl,
   rvest,
-  xml2
+  xml2,
+  ggrepel
 Remotes: 
   rstudio/bookdown,
   slucey/RSurvey/Survdat,
