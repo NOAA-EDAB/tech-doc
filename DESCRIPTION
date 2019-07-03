@@ -52,8 +52,7 @@ Depends:
   xml2,
   ggrepel,
   sf,
-  rnaturalearth,
-  rnaturalearthdata
+  rnaturalearth
 Remotes: 
   rstudio/bookdown,
   slucey/RSurvey/Survdat,
