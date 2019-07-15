@@ -9,6 +9,8 @@ before_install:
 - sudo apt-get install libgeos-dev
 - sudo apt-get install libnetcdf-dev netcdf-bin
 - sudo apt-get install libmagick++-dev
+- sudo apt-get update
+- sudo apt-get install libudunits2-dev
 
 
 before_script:
