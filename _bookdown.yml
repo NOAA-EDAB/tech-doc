@@ -1,6 +1,6 @@
 rmd_files: ["index.Rmd", 
 "chapters/erddap_query_and_build.Rmd",
-"chapters/aggregate_groups.Rmd",
+"chapters/aggregate_groups.rmd",
 "chapters/Annual_SST_cycle_indicator.Rmd",
 "chapters/Aquaculture_indicators.Rmd",
 "chapters/Bennet_indicator.Rmd",
@@ -21,8 +21,15 @@ rmd_files: ["index.Rmd",
 "chapters/occupancy_indicator.Rmd",
 "chapters/productivity_for_tech_memo.Rmd",
 "chapters/Recreational_Data.Rmd",
-"chapters/RW_indicator.Rmd",
-"chapters/references.Rmd",
-"chapters/Seasonal_SST_anomaly_maps_indicator.Rmd"]
+"chapters/RW_indicator.rmd",
+"chapters/Seasonal_SST_anomaly_maps_indicator.Rmd",
+"chapters/singlespp_status_indicator.Rmd",
+"chapters/Species_density_estimates.Rmd",
+"chapters/Species_dist_indicators.Rmd",
+"chapters/survey_data.rmd",
+"chapters/Thermal_hab_proj_indicator.Rmd",
+"chapters/Trend_analysis.Rmd",
+"chapters/Zooplankton_indicators.Rmd",
+"chapters/references.Rmd"]
 delete_merged_file: false
 new_session: no

@@ -10,6 +10,8 @@ library(rmarkdown)
 ```
 **Description**: Species Thermal Habitat Projections
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
+
 **Indicator category**: Published methods
 
 **Contributor(s)**: Vincent Saba

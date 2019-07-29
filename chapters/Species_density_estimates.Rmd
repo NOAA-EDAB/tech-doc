@@ -2,6 +2,8 @@
 
 **Description**: Current and Historical Species Distributions
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018)
+
 **Indicator category**: Database pull; Database pull with analysis
 
 **Contributor**: Kevin Friedland

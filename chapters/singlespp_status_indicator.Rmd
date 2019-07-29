@@ -11,6 +11,8 @@ library(rmarkdown)
 
 **Description**: Summary of the most recent stock assessment results for each assessed species.
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Synthesis of published information
 
 **Contributor(s)**: Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault

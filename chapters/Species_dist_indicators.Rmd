@@ -10,6 +10,8 @@ library(rmarkdown)
 ```
 **Description**: Species mean depth, along-shelf distance, and distance to coastline
 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
 **Indicator category**: Extensive analysis; not yet published
 
 **Contributor(s)**: Kevin Friedland
