@@ -1,13 +1,5 @@
 # Seasonal SST Anomalies
 
-
-```{r, echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: Seasonal SST Anomalies
 
 **Indicator category**: Database pull with analysis
@@ -24,251 +16,129 @@ library(rmarkdown)
 
 ## Methods
 ### Data sources
-Data for seasonal sea surface tempature anomalies were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
+Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST-insitu)) were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
 
 ### Data extraction 
-Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf (See [Seasonal_anom_crop.nc](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)). Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
+Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf. Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  
 
+### Data analysis
+We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2010, and then subtracted the (LTM) from daily mean SST values to find the SST anomaly for a given year. The use of climatological reference periods is a standard procedure for the calculation of meteorological anomalies [@WMO2017]. Prior to 2019 State of the Ecosystem reports, SST anomaly information made use of a 1982-2012 reference period. A 1982-2010 reference period was adopted to facilitate calculating anomalies from a standard [NOAA ESRL](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) data set.
 
 R code used in extraction and processing:
 ```{r, echo = T, eval = F}
-#libraries
-library(ncdf4);library(dplyr)
-library(readr);library(tidyr)
-library(sp);library(rgdal)
-library(raster);library(stringr)
+#Processing for spatial SST anomaly
 
-fall <- stack()
-winter <- stack()
-spring <- stack()
-summer <- stack()
-sub_region <- raster("Seasonal_anom_crop.nc") #get an old file to crop with
+library(dplyr)
+library(raster)
+library(sf)
+library(ggplot2)
+library(ncdf4)
+library(reshape2)
 
-for (dir. in 1){
-  #Loop through directories
-  setwd(paste0('c:/users/sean.hardison/documents/sst_data/',dir.))
-  print(getwd())
-  for (f in 1:length(list.files())){
-    
-    if (!str_detect(list.files()[f],".nc")){
-      print(paste(list.files()[f],"is not a raster")) #Based on file type
-      next
-    }
-    
-    for (s in c("winter","spring","summer","fall")){
-  
-      y <- as.numeric(str_extract(list.files()[f],"[0-9]+")) #Pull out file year for identifying leap years
-      print(paste('Year:',y,"Season:",s))
-      leap_year <- seq(1984,2016,4)
-      
-      #Pick out leap years
-      if (y %in% leap_year){
-          leap <- T
-      } else {
-        leap <- F
-      }
-      if (s == "winter")
-        if (!leap){
-          season <- 1:90 
-        } else {
-          season <- 1:91
-        }
-      else if (s == "spring"){
-        if (!leap){
-          season <- 91:181 
-        } else {
-          season <- 92:182
-        } 
-      }
-      else if (s == "summer"){
-        if (!leap){
-          season <- 182:273
-        } else {
-          season <- 183:274
-        } 
-      }
-      else if (s == "fall"){
-        if (!leap){
-          season <- 274:365
-        } else {
-          season <- 275:366
-        } 
-      }
-      
-      if(leap){
-        print(paste(s,y,"leap"))
-      }
-      
-        
-        for (b in season){
-          r <- raster(list.files()[f],b) #Import raster bands within a given season
-
-          if (b == season[1]){
-            print(list.files()[f])
-            print(length(season))
-            print(r@file@nbands) #Print file name
-          }
-          
-          #Rotate and crop
-          r <- rotate(r) 
-          r <- crop(r, extent(sub_region))
-          #print(r@file@nbands)
-          if (b == season[50]){
-            print("Over halfway there")
-          }
-          
-          #Add bands to raster stack for each season. Seaonal bands for each year are bound together.
-          assign(s,stack(get(s),r))
-          
-        }
-      print(paste("Done stacking",nlayers(get(s)),"days"))
-    } 
-  }
+rast_prep <- function(r){
+  r <- rotate(r) #Rotate
+  r <- crop(r, extent(-77,-60,35,46)) #Crop
+  return(r)
 }
 
+raw.dir <- "~/git/ecodata/inst/extdata/gridded"
+crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40
++lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
+
+
+#These data are large files that are not included among ecodata source files. They are accessible
+#here: https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html
+sst.2018 <- rast_prep(stack(file.path(raw.dir, "sst.day.mean.2018.nc")))
+ltm <- rast_prep(stack(file.path(raw.dir, "sst.day.mean.ltm.1982-2010.nc")))
+
+# save(sst.2018, file = "~/git/ecodata/inst/extdata/gridded/SST.2018.rdata")
+# save(sst.2018, file = "~/git/ecodata/inst/extdata/gridded/SST.LTM.rdata")
+
+winter.ltm <- ltm[[1:90]] 
+spring.ltm <- ltm[[91:181]]
+summer.ltm <- ltm[[182:273]]
+fall.ltm <- ltm[[274:365]]
+
+winter.anom <- sst.2018[[1:90]] - winter.ltm
+spring.anom <- sst.2018[[91:181]] - spring.ltm
+summer.anom <- sst.2018[[182:273]] - summer.ltm
+fall.anom <- sst.2018[[274:365]] - fall.ltm
+
+
+rast_process <- function(r, season){
+  r <- stackApply(r, indices = rep(1,nlayers(r)),mean) #Find mean anomaly
+  crs(r) <- crs #Add SOE CRS
+  r <- disaggregate(r, 5) #interpolate step 1 - create higher res grid
+  r <- focal(r, w=matrix(1,nrow=5,ncol=5), fun=mean,
+             na.rm=TRUE, pad=TRUE) #interpolate step 2 - moving window
+  r <- as(r, "SpatialPointsDataFrame") #Convert to ggplot-able object
+  r <- as.data.frame(r)
+  r <- r %>%
+    reshape2::melt(id = c("y","x")) %>%
+    dplyr::rename(Latitude = y, Longitude = x) %>%
+    dplyr::select(-variable) %>% 
+    mutate(Season = season) %>% 
+    dplyr::rename(Value = value)
+    
+  return(r)
+}
+
+#Converts raster to data.frame for easy use with ggplot2
+seasonal_sst_anomaly_gridded <- 
+  rbind(rast_process(winter.anom,season = "Winter"),
+      rast_process(spring.anom,season = "Spring"),
+      rast_process(summer.anom, season = "Summer"),
+      rast_process(fall.anom, season = "Fall"))
 
 ```
 
-### Data analysis
-We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2012, and then subtracted the (LTM) from 2017 daily mean SST values to find the SST anomaly. The use of a 30-year climatological reference period is a standard procedure for the calculation of meteorological anomalies [@WMO2017]. In our case, we chose to use the 1982-2012 reference period to remain consistent with previous State of the Ecosystem reports. 
-
-```{r anomaly calculation, echo = T, eval = F}
-fall_1 <- stack("fall_1")
-fall_2 <- stack("fall_2")
-fall_3 <- stack("fall_3")
-
-
-spring_1 <- stack("spring_1")
-spring_2 <- stack("spring_2")
-spring_3 <- stack("spring_3")
-
-
-winter_1 <- stack("winter_1")
-winter_2 <- stack("winter_2")
-winter_3 <- stack("winter_3")
-
-
-summer_1 <- stack("summer_1")
-summer_2 <- stack("summer_2")
-summer_3 <- stack("summer_3")
-
-winter <- stack(winter_1,winter_2,winter_3)
-fall <- stack(fall_1,fall_2,fall_3)
-spring <- stack(spring_1,spring_2,spring_3)
-summer <- stack(summer_1,summer_2,summer_3)
-
-winter_mean <- stackApply(winter, indices = rep(1,nlayers(winter)),mean)
-spring_mean <- stackApply(spring, indices = rep(1,nlayers(spring)),mean)
-summer_mean <- stackApply(summer, indices = rep(1,nlayers(summer)),mean)
-fall_mean <- stackApply(fall, indices = rep(1,nlayers(fall)),mean)
-
-rm(winter, spring, summer, fall)
-
-#Get 2017 daily mean data
-#setwd("z:/shardison/neiea")
-daily_mean_2017 <- stack("sst.day.mean.2017.nc")
-
-daily_mean_2017 <- rotate(daily_mean_2017) #rotate
-daily_mean_2017 <- crop(daily_mean_2017, extent(sub_region)) #crop
-
-#Find daily mean across seasons
-seasonal_sst_2017 <- stackApply(daily_mean_2017, indices = c(rep(1,90),rep(2,91),
-                                                             rep(3, 92), rep(4, 92)), mean)
-
-#Get seasonal anomaly
-winter_anom <- seasonal_sst_2017[[1]] - winter_mean
-spring_anom <- seasonal_sst_2017[[2]] - spring_mean
-summer_anom <- seasonal_sst_2017[[3]] - summer_mean
-fall_anom <- seasonal_sst_2017[[4]] - fall_mean
-```
 
 ### Plotting
-```{r sst-anomaly-maps, fig.cap="Sea surface temperature anomalies in winter (A), spring (B), summer (C), and fall (D) 2017. Black lines depict the 200 m isobath." , fig.width = 8,fig.height = 5.5, echo=T, message=F, warning=F}
-# Relative working directory
-r.dir <- here::here("R")
+```{r MAB-SST, fig.width = 8, fig.height = 7, fig.cap = "Seasonal sea-surface temperature anomalies in the Mid-Atlantic Bight."}
 
-#Source constants for GIS code
-source(file.path(r.dir,"GIS_source.R"))
+#EPU shapefile
+epu_sf_ma <- ecodata::epu_sf %>% 
+  filter(EPU %in% c("MAB"))
 
-#SST map function
-SST_plot <- function(raster_data, text,pos = "left"){
-  
-  #adjusts par for legend placement 
-  if (pos == "right"){
-    par(mar = c(4.5,0,3,10), mex = .3,  mgp = c(4, .35, 0))
-  } else{
-     par(mar = c(4.1,5,3,6), mex = .3,  mgp = c(4, .35, 0))
-  }
-  
-  #read .nc and convert to raster
-  d <- raster::raster(file.path(gis.dir,raster_data))
-  raster::crs(d) <- map.crs
-  #crop data
-  d <- raster::crop(d, e)
-  
-  #get zmax (~max SST anomaly)
-  z.max=7
+#Map line parameters
+map.lwd <- 0.4
 
-  #plot raster
-  raster::plot(d, col=colors(n=color_levels),
-       breaks=seq(-z.max,z.max,length.out=color_levels+1),
-       legend.width = 1.5,bty ="L",axes=F,
-       interpolate = T, las = 1,box = FALSE,legend = FALSE, asp = 1)
-  #plot contour
-  raster::contour(bathy,drawlabels = T,add=T, nlevels = 2, zlim = c(-200,-200))
-  #plot coastline
-  plot(coast, col = 'grey',add = T , lty=0)
-  #axes
+# Set lat/lon window for maps
+xmin = -81
+xmax = -66
+ymin = 35.5
+ymax = 43
+xlims <- c(xmin, xmax)
+ylims <- c(ymin, ymax)
+sst <- seasonal_oisst_anom_gridded 
 
-  
-  if (pos == "left"){
-    axis(1, at = seq(-77,-65,2), labels = seq(-77,-65,2) , cex.axis = 0.7)
-    axis(2, cex.axis = 0.7)
-    abline(h = 34.95, lty = 1, lwd = 2)
-    abline(v =-77.2, lty = 1, lwd = 2)
-  } else {
-    axis(1, at = seq(-77,-65,2), labels = seq(-77,-65,2) ,
-         cex.axis = 0.7, pos = 34.9)
-    axis(2, cex.axis = 0.7, pos = -77.225)
-    abline(h = 34.9, lty = 1, lwd = 2)
-    abline(v =-77.225, lty = 1, lwd = 2)
-
-  }
-
-  #labels
-  text(-76,45,text,cex = 1.5)
-
-  
-}
-
-#plot maps
-par(oma=c(0,0,0,0), mfrow = c(2,2))
-SST_plot("Winter_2017_anomaly_1982_2012.nc","A")
-SST_plot("Spring_2017_anomaly_1982_2012.nc","B",pos = "right")
-SST_plot("Summer_2017_anomaly_1982_2012.nc","C")
-SST_plot("Fall_2017_anomaly_1982_2012.nc","D",pos = "right") 
-
-#plot only legend
-z.max=7
-
-#set new par
-par(mfrow=c(1, 1), mar=c(2, 5, 2, 0), new=FALSE)
-
-#any data
-d <- raster(matrix(runif(100), ncol=10))
-
-#legend plot
-plot(d, col=colors(n=color_levels),
-     breaks=seq(-z.max,z.max,length.out=color_levels+1),
-     legend.shrink = 1,
-     legend.width = 1,legend.only = T,
-     axes=F, interpolate = T, las = 1,box = FALSE,
-     axis.args=list(at=seq(-z.max, z.max, length.out = 5),
-                    labels=seq(-7,7,length.out = 5), 
-                    cex.axis=0.8),
-     legend.args=list(text=expression(paste('Temperature Anomaly (',degree,"C)")),
-                      side=4, font=2, line=2, cex=1))
-
+sst$Season <- factor(sst$Season, levels = c("Winter",
+                                            "Spring",
+                                            "Summer",
+                                            "Fall"))
+sst_map <- 
+  ggplot() +
+  geom_tile(data = sst, aes(x = Longitude, y = Latitude,fill = Value)) +
+  geom_sf(data = coast, size = map.lwd) +
+  geom_sf(data = epu_sf_ma, fill = "transparent", size = map.lwd) +
+  scale_fill_gradient2(name = "Temp.\nAnomaly (°C)",
+                       low = scales::muted("blue"),
+                       mid = "white",
+                       high = scales::muted("red"),
+                       limits = c(-5,5)) +
+  coord_sf(crs = crs, xlim = xlims, ylim = ylims) +
+  facet_wrap(Season~.) +
+  theme_map() +
+  ggtitle("SST anomaly (2018)") +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=0.75),
+        legend.key = element_blank(),
+        axis.title = element_text(size = 11),
+        strip.background = element_blank(),
+        strip.text=element_text(hjust=0),
+        axis.text = element_text(size = 8))
+sst_map
 ```
 
-**Note**: The derived data sets used to create the above figures are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis).
+

@@ -1,6 +1,5 @@
 # Seabird diet and productivity
 
-
 **Description**: Common tern annual diet and productivity at seven Gulf of Maine colonies managed by the National Audubon Society's Seabird Restoration Program
 
 **Indicator category**: Published method
@@ -19,13 +18,13 @@
 
 **Chick diet**
 
-Common tern chick diet is quantified at each of the seven nesting sites by observing chick provisioning from portable observation blinds. The locations of observation blinds within each site are chosen to maximize the number of visible nests, and provisioning observations take place between mid-June and early August annually. Observations of chick diet are made during one or two three to four hour periods throughout the day, but typically proceed according to nest activity levels (moreso in the morning hours). Observations begin with chicks as soon as they hatch, and continue until the chicks fledge or die. 
+Common tern chick diet was quantified at each of the seven nesting sites (Fig. \@ref(fig:map-and-prey)a) by observing chick provisioning from portable observation blinds. The locations of observation blinds within each site were chosen to maximize the number of visible nests, and provisioning observations took place between mid-June and early August annually. Observations of chick diet were made during one or two three to four hour periods throughout the day, but typically proceed according to nest activity levels (moreso in the morning hours). Observations began with chicks as soon as they hatched, and continue until the chicks fledged or died. 
 
-Most common tern prey species are identifiable to the species level due to distinct size, color and shape. However, when identification is not possible or is unclear, prey species are listed as "unknown" or "unknown fish". More detailed methods can be found in @hall2000. 
+Most common tern prey species were identifiable to the species level due to distinct size, color and shape. However, when identification was not possible or was unclear, prey species were listed as "unknown" or "unknown fish". More detailed methods can be found in @hall2000. 
 
 **Nest productivity**
 
-Common tern nest productivity, in terms of the number of fledged chicks per nest, is collected annually from fenced enclosures at each study site ("productivity plots"). Newly hatched chicks within these enclosures are weighed, marked or banded, and observed until fledging, death, or until a 15 day period has passed when chicks are assumed to have fledged. Productivity is also quantified from observer blinds for nests outside of the productivity plots where chicks are marked for identification. More detailed methods for quantifying nest productivity can be found in @hall2004
+Common tern nest productivity, in terms of the number of fledged chicks per nest, was collected annually from fenced enclosures at island nesting sites (known as "productivity plots"). Newly hatched chicks within these enclosures were weighed, marked or banded, and observed until fledging, death, or until a 15 day period had passed when chicks were assumed to have fledged. Productivity was also quantified from observer blinds for nests outside of the productivity plots where chicks were marked for identification. More detailed methods for quantifying nest productivity can be found in @hall2004
 
 
 ## Data sources
@@ -162,31 +161,31 @@ islands <- ggplot() +
 #                                                          "New Hampshire",
 #                                                          "Massachusetts"))
 # Set lat/lon window for maps
-xmin2 = -72
-xmax2 = -66.25
-ymin2 = 42.5
-ymax2 = 47.5
-xlims2 <- c(xmin2, xmax2)
-ylims2 <- c(ymin2, ymax2)
-NE <- ggplotGrob(
-ggplot()+
-  geom_sf(data = new_england, size = map.lwd) +
-  coord_sf(crs = crs, xlim = xlims2, ylim = ylims2) +
-  annotate("rect", xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, color = "black",
-           size = 0.1, fill = "transparent") +
-  theme_map() +
-  xlab("") +
-  ylab("") +
-  theme(panel.border = element_rect(colour = "black", fill = "transparent", size=0.75),
-        plot.background = element_rect(fill = "transparent", colour = NA),
-        legend.key = element_blank(),
-        axis.title = element_text(size = 11),
-        strip.background = element_blank(),
-        strip.text=element_text(hjust=0),
-        axis.text = element_blank())
-)
-full_map <- islands +
-  annotation_custom(grob = NE, xmin = -69, xmax = -68.25, ymin = 42.9, ymax = 43.6)
+# xmin2 = -72
+# xmax2 = -66.25
+# ymin2 = 42.5
+# ymax2 = 47.5
+# xlims2 <- c(xmin2, xmax2)
+# ylims2 <- c(ymin2, ymax2)
+# NE <- ggplotGrob(
+# ggplot()+
+#   geom_sf(data = new_england, size = map.lwd) +
+#   coord_sf(crs = crs, xlim = xlims2, ylim = ylims2) +
+#   annotate("rect", xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, color = "black",
+#            size = 0.1, fill = "transparent") +
+#   theme_map() +
+#   xlab("") +
+#   ylab("") +
+#   theme(panel.border = element_rect(colour = "black", fill = "transparent", size=0.75),
+#         plot.background = element_rect(fill = "transparent", colour = NA),
+#         legend.key = element_blank(),
+#         axis.title = element_text(size = 11),
+#         strip.background = element_blank(),
+#         strip.text=element_text(hjust=0),
+#         axis.text = element_blank())
+# )
+# full_map <- islands +
+#   annotation_custom(grob = NE, xmin = -69, xmax = -68.25, ymin = 42.9, ymax = 43.6)
 
 
 # Prey freq stacked bar
@@ -202,10 +201,10 @@ prey_freq <- ecodata::common_tern %>%
     group_by(Var) %>% 
   mutate(hline = mean(Freq, na.rm = T))
 
-diet_freq_bar <- prey_freq %>% 
-  filter(Freq > 0.05) %>% 
-  dplyr::mutate(Prey = gsub("\\.", " ", Var)) %>% 
-  dplyr::mutate(Prey = gsub("Invertebrate", "Invert.", Prey)) %>% 
+diet_freq_bar <- prey_freq %>%
+  filter(Freq > 0.05) %>%
+  dplyr::mutate(Prey = gsub("\\.", " ", Var)) %>%
+  dplyr::mutate(Prey = gsub("Invertebrate", "Invert.", Prey)) %>%
   # dplyr::rename(Prey = Var) %>%
   ggplot(aes(x = Time, y = Freq, fill = Prey)) +
   geom_bar(stat = "identity") +
@@ -214,12 +213,11 @@ diet_freq_bar <- prey_freq %>%
   ggtitle("Prey composition") +
   ylab("Proportion of prey items") +
   labs(tag = "b")  +
-  theme_ts() + 
+  theme_ts() +
   theme(legend.text = element_text(size = 8))
 
 
 # diet_freq_bar <- girafe(ggobj = diet_freq_bar)
 # diet_freq_bar <- girafe_options(diet_freq_bar, opts_zoom(max = 5) )
-
-full_map + diet_freq_bar + plot_layout(ncol = 2, widths=c(4,4))
+islands + diet_freq_bar + plot_layout(ncol = 2, widths=c(4,4))
 ```

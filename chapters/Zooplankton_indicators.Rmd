@@ -8,17 +8,17 @@ library(rmarkdown)
 
 ```
 
-**Description**: Zooplankton abundance anomalies
+**Description**: Annual time series of zooplankton abundance
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
 
 **Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods
 
-**Contributor(s)**: Ryan Morse
+**Contributor(s)**: Ryan Morse, Kevin Friedland
   
 **Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>; Mike Jones, <michael.jones@noaa.gov>
   
-**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>
+**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>; Kevin Friedland, <kevin.friedland@noaa.gov>
   
 **Public availability statement**: Source data are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html).
 
@@ -38,9 +38,12 @@ ZPD=openxlsx::read.xlsx(URL, sheet='Data')
 ```
 
 ### Data analysis
+
+**Annual abundance anomalies**
+
 Data are processed similarly to @Kane2007 and @Perretti2017a, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
 
-Abundance anomalies are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
+Abundance anomalies (Figure \@ref(fig:zooplankton-abundance)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
 
 
 R code used for:
@@ -250,7 +253,13 @@ dataTlg=scs.yr.anom[,lgtx]
 anom.scs=rowMeans(dataTsm)-(dataTlg)
 ```
 
+**Seasonal abundance**
+
+Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit. These data are presented in Figure \@ref(fig:MAB-oi-zoo).
+
 ### Plotting
+
+**Abundance anomaly**
 
 ```{r, zooplankton-abundance, fig.cap = "*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight.", message = F, warning=F}
 # Relative working directories
@@ -273,3 +282,102 @@ soe.stacked.axis("Year", "Abundance anomaly", rel.x.text = 1.2, rel.y.text = 1.2
 
 ```
 
+**Seasonal Abundance**
+
+```{r MAB-oi-zoo, fig.width=8, fig.cap = "Seasonal abundance of key zooplankton species in the MAB."}
+facet_names <- list(
+  'centropages spring'=expression(paste(italic("Centropages "), "spring")),
+  'centropages fall'=expression(paste(italic("Centropages "), "fall")),
+  'temora spring'=expression(paste(italic("Temora "), "spring")),
+  'temora fall' = expression(paste(italic("Temora "), "fall")),
+  'pseudocalanus spring'=expression(paste(italic("Pseudocalanus "), "spring")),
+  'pseudocalanus fall' = expression(paste(italic("Pseudocalanus "), "fall")))
+
+zoo_oi_mab <- ecodata::zoo_oi %>% 
+  filter(!str_detect(Var,"SD"),
+         EPU == "MAB") %>% 
+  
+  mutate(Var = str_remove(Var, " zoo"),
+         Val2 = exp(Value)) %>% 
+      group_by(Var) %>% 
+  mutate(hline = mean(Val2, na.rm = T)) %>% 
+  separate(.,col = Var, into = c("Species","Season"), remove = F)
+
+
+
+top <- zoo_oi_mab %>%  
+  filter(Species == "centropages") %>% 
+
+ggplot(aes(x = Time, y = Val2, group = Var)) +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = 0, ymax = Inf) +
+  geom_hline(aes(yintercept = hline),
+     size = hline.size,
+     alpha = hline.alpha,
+     linetype = hline.lty)+
+  geom_gls() +
+  geom_line()+
+  geom_point()+
+  ylab("") +
+  facet_wrap(Var ~ ., ncol = 2, scales='free_x',labeller = label) +
+  ggtitle("Zooplankton abundance (OI)") +
+  scale_x_continuous(expand = c(0.01, 0.01))+
+  scale_y_continuous(trans = "log10")+
+  theme_facet() +
+    theme(strip.text=element_text(hjust=0,
+                                face = "italic"),
+          axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+middle <- zoo_oi_mab %>%  
+  filter(Species == "pseudocalanus") %>% 
+ggplot(aes(x = Time, y = Val2, group = Var)) +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = 0, ymax = Inf) +
+  geom_hline(aes(yintercept = hline),
+     size = hline.size,
+     alpha = hline.alpha,
+     linetype = hline.lty)+
+  geom_gls() +
+  geom_line()+
+  geom_point()+
+  ylab(expression("Abundance num m"^-3*"")) +
+  facet_wrap(Var ~ ., ncol = 2, scales='free_x',labeller = label) +
+  scale_x_continuous(expand = c(0.01, 0.01))+
+  scale_y_continuous(trans = "log10")+
+  theme_facet() +
+    theme(strip.text=element_text(hjust=0,
+                                face = "italic"),
+          axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+bottom <- zoo_oi_mab %>%  
+  filter(Species == "temora") %>% 
+ggplot(aes(x = Time, y = Val2, group = Var)) +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = 0, ymax = Inf) +
+  geom_hline(aes(yintercept = hline),
+     size = hline.size,
+     alpha = hline.alpha,
+     linetype = hline.lty)+
+    geom_gls() +
+  geom_line()+
+  geom_point()+
+    ylab("") +
+  facet_wrap(Var ~ ., ncol = 2,labeller = label) +
+  scale_x_continuous(breaks = seq(1980,2010,10),
+                     expand = c(0.01, 0.01))+
+
+  theme_facet() +
+    theme(strip.text=element_text(hjust=0,
+                                face = "italic")) +
+   scale_y_log10()
+
+top + middle + bottom + plot_layout(ncol = 1) & theme(plot.margin = margin(0,0,0,0,"cm"))
+
+```
