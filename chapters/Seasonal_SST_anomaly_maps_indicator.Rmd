@@ -14,6 +14,8 @@
   
 **Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 
+
+
 ## Methods
 ### Data sources
 Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST-insitu)) were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
@@ -118,7 +120,7 @@ sst$Season <- factor(sst$Season, levels = c("Winter",
                                             "Fall"))
 sst_map <- 
   ggplot() +
-  geom_tile(data = sst, aes(x = Longitude, y = Latitude,fill = Value)) +
+  # geom_tile(data = sst, aes(x = Longitude, y = Latitude,fill = Value)) +
   geom_sf(data = coast, size = map.lwd) +
   geom_sf(data = epu_sf_ma, fill = "transparent", size = map.lwd) +
   scale_fill_gradient2(name = "Temp.\nAnomaly (°C)",
