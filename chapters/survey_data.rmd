@@ -1,15 +1,5 @@
 # Survey Data {#survdat}
 
-```{r,  echo = F, message=F}
-
-#devtools::install_github("slucey/Rsurvey/Survdat")
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-library(Survdat)
-```
-
 **Description**: Survdat (Survey database)
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)

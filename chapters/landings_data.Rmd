@@ -1,17 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 # Commercial Landings Data {#comdat}
-
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-library(dplyr)
-```
 
 **Description**: Commercial landings data pull
 
