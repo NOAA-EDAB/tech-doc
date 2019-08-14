@@ -15,9 +15,9 @@ before_install:
 before_script:
   - chmod +x ./_build.sh
   - chmod +x ./_deploy.sh
+  - Rscript -e "source('R/pull_functions.R')"
+  - Rscript -e "source('R/write_processing_steps.R')"
 
 script:
   - ./_build.sh
   - ./_deploy.sh
-  - Rscript -e "source('R/pull_functions.R')"
-  - Rscript -e "source('R/write_processing_steps.R')"
