@@ -1,3 +1,5 @@
+library(tidyverse)
+
 write_to_rmd <- function(script, rmd, hook = NULL, output_path){
   
   #Read in script
