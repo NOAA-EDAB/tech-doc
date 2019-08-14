@@ -122,9 +122,9 @@ write_to_rmd(script = here::here("source","get_species_dist.R"),
                                       "Species_dist_indicators.Rmd"))
 # NARW------------------------
 write_to_rmd(script = here::here("source","get_narw.R"),
-             rmd = here::here("chapters","RW_indicator.Rmd"),
+             rmd = here::here("chapters","RW_indicator.rmd"),
              output_path = here::here("chapters",
-                                      "RW_indicator.Rmd"))
+                                      "RW_indicator.rmd"))
 # Productivity data------------------------
 write_to_rmd(script = here::here("source","get_productivity_anomaly.R"),
              rmd = here::here("chapters","productivity_for_tech_memo.Rmd"),
