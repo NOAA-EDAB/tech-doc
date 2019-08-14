@@ -139,9 +139,9 @@ write_to_rmd(script = here::here("source","get_long_term_sst.R"),
 
 # Ichthyoplankton div indices------------------------
 write_to_rmd(script = here::here("source","get_ichthyoplankton.R"),
-             rmd = here::here("chapters","ich_div_indicator.Rmd"),
+             rmd = here::here("chapters","Ich_div_indicator.Rmd"),
              output_path = here::here("chapters",
-                                      "ich_div_indicator.Rmd"))
+                                      "Ich_div_indicator.Rmd"))
 
 # CHL and PPD------------------------
 write_to_rmd(script = here::here("source","get_chl_pp.R"),
