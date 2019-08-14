@@ -9,7 +9,6 @@ write_to_rmd <- function(script, rmd, hook = NULL, output_path){
   source <- paste0("```{r, eval = F, echo = T}\n",source, "```\n")
   
   #Read in Rmd
-  rmd = here::here("chapters","inshore_bottom_trawl_surveys.Rmd")
   rmd <- readr::read_file(rmd)
   
   output <- stringr::str_replace(rmd,
