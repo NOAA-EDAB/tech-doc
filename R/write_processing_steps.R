@@ -58,9 +58,9 @@ write_to_rmd(script = here::here("source","get_mab_inshore_survey.R"),
 #NEFSC Bottom Trawl Survey----------------------
 
 write_to_rmd(script = here::here("source","get_nefsc_survey.R"),
-             rmd = here::here("chapters","survey_data.Rmd"),
+             rmd = here::here("chapters","survey_data.rmd"),
              output_path = here::here("chapters",
-                                      "survey_data.Rmd"))
+                                      "survey_data.rmd"))
 # CFDBS Landings Data----------------------
 
 write_to_rmd(script = here::here("source","get_comdat.R"),
