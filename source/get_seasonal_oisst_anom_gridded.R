@@ -1,5 +1,4 @@
 #Processing for spatial SST anomaly
-
 library(dplyr)
 library(raster)
 library(sf)

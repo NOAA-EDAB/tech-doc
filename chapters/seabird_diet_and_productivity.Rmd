@@ -14,6 +14,88 @@
   
 **Public availability statement**: Please email dlyons@audubon.org for further information and queries on this indicator source data.
 
+```{r setup, echo=F, message = F ,warning = F}
+
+knitr::opts_chunk$set(echo = F, message = F ,warning = F)
+
+#source directories
+image.dir <- here::here("images")
+r.dir <- here::here("R")
+gis.dir <- here::here("gis")
+
+#Plotting and data libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ecodata)
+library(here)
+library(kableExtra)
+library(ggrepel)
+library(stringr)
+library(patchwork)
+library(grid)
+library(vegan)
+library(rpart)
+library(knitr)
+library(rmarkdown)
+library(magick)
+library(readr)
+
+#GIS libraries
+library(sf)
+library(rgdal)
+library(raster)
+library(rnaturalearth)
+
+#Time series constants
+shade.alpha <- 0.3
+shade.fill <- "lightgrey"
+lwd <- 1
+pcex <- 2
+trend.alpha <- 0.5
+trend.size <- 2
+hline.size <- 1
+hline.alpha <- 0.35
+hline.lty <- "dashed"
+label.size <- 5
+hjust.label <- 1.5
+letter_size <- 4
+feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
+x.shade.min <- 2009
+x.shade.max <- 2018
+
+#Function for custom ggplot facet labels
+label <- function(variable,value){
+  return(facet_names[value])
+}
+
+#Map line parameters
+map.lwd <- 0.4
+
+#CRS
+crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
+
+#Coastline shapefile
+coast <- ne_countries(scale = 10,
+                          continent = "North America",
+                          returnclass = "sf") %>%
+             sf::st_transform(crs = crs)
+
+#State polygons
+ne_states <- ne_states(country = "united states of america",
+                                      returnclass = "sf") %>%
+  sf::st_transform(crs = crs)
+
+#high-res polygon of Maine
+#new_england <- read_sf(gis.dir,"new_england")
+
+#EPU shapefile
+epu_sf <- ecodata::epu_sf %>% 
+  filter(EPU %in% c("MAB","GB","GOM"))
+
+
+```
+
 ## Methods
 
 **Chick diet**
@@ -27,11 +109,66 @@ Most common tern prey species were identifiable to the species level due to dist
 Common tern nest productivity, in terms of the number of fledged chicks per nest, was collected annually from fenced enclosures at island nesting sites (known as "productivity plots"). Newly hatched chicks within these enclosures were weighed, marked or banded, and observed until fledging, death, or until a 15 day period had passed when chicks were assumed to have fledged. Productivity was also quantified from observer blinds for nests outside of the productivity plots where chicks were marked for identification. More detailed methods for quantifying nest productivity can be found in @hall2004
 
 
-## Data sources
+### Data sources
 
 Common tern diet and nest productivity data were provided by the National Audubon Society's Seabird Restoration Program.
 
-## Data analysis
+### Data processing
+
+Diet and productivity data were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Process raw common tern productivity and diet data
+
+# If save == TRUE, processed data are saved as a .Rds file to the data directory. 
+
+# Function returns a processed data frame containing time series of productivity and diet
+# composition for common tern at different islands in southern Gulf of Maine. The first three letters
+# in the variable "Var" correspond to the island at which sampling occurred, with COTE referring to 
+# Common Tern. If "Var" includes productivity, then "Value" is the average number of fledged chicks.
+# Otherwise, if "Var" specifies diet, then  "Value"  is equal to the count of observed prey type. 
+# For example, "EER COTE Diet Amphipod" refers to the number of preyed upon amphipods observed at Eastern
+# Egg Rock in a given year. 
+
+library(dplyr)
+library(tidyr)
+
+#Get raw data
+raw.dir <- here::here("data-raw")
+
+
+get_commontern <- function(save_clean = F){
+
+  d <- read.csv(file.path(raw.dir,"Audubon SRP Common Tern Data.csv"))
+  
+  #Process
+  common_tern <- d %>%
+    filter(Island != "") %>% 
+    tidyr::gather(., Var, Value, -Year, -Species, -Island) %>%
+    mutate(Species = ifelse(Var != "Productivity",
+                                   paste(Species, "Diet"), "COTE")) %>% 
+    unite(., "Var", c("Island", "Species", "Var"), sep = " ") %>% 
+    dplyr::rename(Time = Year) %>% 
+    mutate(EPU = "GOM",
+                  Units = ifelse(stringr::str_detect(Var, "Productivity"),
+                                 "fledged chicks per nest","N")) 
+  
+  if (save_clean){
+
+    usethis::use_data(common_tern, overwrite = T)
+  } else {
+    return(common_tern)
+  }
+}
+
+  
+
+
+```
+<!-- {{ProcessEnd}} -->
+
+### Data analysis
 
 Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@R-vegan]. Diet diversity is presented along with nest productivity (+/- 1 SE) below.
 
@@ -96,7 +233,8 @@ prodplot <- aggregate_prod %>% ggplot() +
            alpha = hline.alpha,
            linetype = hline.lty) +
   labs(tag = "a")  +
-  theme_ts()
+  theme_ts() +
+  theme(title = element_text(size = 7))
 
 shannon <- diet_div %>% 
   filter(Var == "shannon") %>% 
@@ -116,14 +254,15 @@ ggplot(aes(x = Time, y = Value)) +
            alpha = hline.alpha,
            linetype = hline.lty) +
   labs(tag = "b")  +
-  theme_ts() 
+  theme_ts() +
+  theme(title = element_text(size = 7))
 
 prodplot + shannon + plot_layout(ncol = 2, widths=c(4,4))
 ```
 
 Along with nest productivity and diet diversity indices, we presented maps of sampling sites in Gulf of Maine and mean prey frequencies across sites. Prey occurring in less than 5\\% of common tern diets was excluded for visual clarity. 
 
-```{r map-and-prey, fig.cap = "Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5\\% of common tern diets were excluded for clarity.", fig.height = 4, fig.width = 8}
+```{r map-and-prey, fig.cap = "Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5\\% of common tern diets were excluded for clarity.", fig.height = 4}
 
 #Map subfig
 # Set lat/lon window for maps
@@ -156,7 +295,8 @@ islands <- ggplot() +
         axis.title = element_text(size = 11),
         strip.background = element_blank(),
         strip.text=element_text(hjust=0),
-        axis.text = element_text(size = 8))
+        axis.text = element_text(size = 6),
+        title = element_text(size = 7))
 # inset_states <- new_england %>% filter(STATE_NAME %in% c("Maine",
 #                                                          "New Hampshire",
 #                                                          "Massachusetts"))
@@ -214,7 +354,7 @@ diet_freq_bar <- prey_freq %>%
   ylab("Proportion of prey items") +
   labs(tag = "b")  +
   theme_ts() +
-  theme(legend.text = element_text(size = 8))
+  theme(title = element_text(size = 7))
 
 
 # diet_freq_bar <- girafe(ggobj = diet_freq_bar)

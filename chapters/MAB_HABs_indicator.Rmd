@@ -28,7 +28,7 @@ We presented two indicator time series for reports of algal blooms in the southe
 
 The second indicator we reported, blooms of *Cochlodinium polykrikoides* at cell concentrations >300 cell ml^-1^, was chosen due to reports of high ichthyotoxicity seen at these levels. @Tang2009 showed that fish exposed to cultured *C. polykrikoides* at densities as low 330 cells ml^-1^ saw 100% mortality within 1 hour, which if often far less than *C. polykrikoides* cell concentrations seen in the field. Algal bloom data were not available for 2015 nor 2010. The algal bloom information presented here are a synthesis of reported events, and has been updated to include data not presented in the 2018 State of the Ecosystem Report. 
 
-### Data source(s)
+### Data sources
 Source data were obtained from VDH. Sampling, identification, and bloom characterization was completed by the VDH, Phytoplankton Analysis Laboratory at Old Dominion University, Reece Lab at the Virginia Institute of Marine Science, and Virginia Department of Environmental Quality. Problem algal species were targeted for identification via light microscopy followed by standard or quantitative PCR assays and/or enzyme-linked immunosorbent assay (ELISA). Reports specifying full methodologies from ODU, VIMS, and VDH source data are available upon request.
 
 ### Data extraction

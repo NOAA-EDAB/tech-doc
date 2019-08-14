@@ -178,6 +178,51 @@ run;
 ### Data analysis
 The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
 
+### Data processing
+
+Data were formatted for inclusion in the ecodata R package using the following R script.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Commercial and recreational engagement and reliance
+
+#More information about these data are available at https://noaa-edab.github.io/tech-doc/fishery-reliance-and-social-vulnerability.html
+
+library(dplyr)
+library(tidyr)
+
+
+raw.dir <- here::here("data-raw")
+
+get_eng_rel <- function(save_clean = F){
+  
+  ne <- read.csv(file.path(raw.dir,"Com_n_Rec_Indicators_New_England_121818.csv"))
+  mab <- read.csv(file.path(raw.dir,"Com_n_Rec_Indicators_Mid-Atlantic_121818.csv"))
+  
+  #Process
+  eng_rel <- rbind(ne,mab) %>%
+    dplyr::select(ComEng_NE16_ct, ComRel_NE16_ct,
+                  RecEng_NE16_ct, RecRel_NE16_ct,
+                  PRIMARY_LONGITUDE, PRIMARY_LATITUDE,
+                  REGION, STATEABBR) %>% 
+    mutate(ComEng_NE16_ct = factor(ComEng_NE16_ct))
+  
+  if (save_clean){
+    usethis::use_data(eng_rel, overwrite = T)
+  } else {
+    return(eng_rel)
+  }
+  
+}
+
+
+
+
+
+```
+<!-- {{ProcessEnd}} -->
+
+
 ### Plotting
 
 ```{r map1, echo = T, eval=T, fig.cap="Commercial engagement (total pounds landed, value landed, commercial permits and commercial dealers in a community) and reliance (per capita engagement) based on 2016 landings and the ACS running average of 2012-2016 census data.",  fig.width = 8, fig.height = 5.4, fig.align='center', fig.show='hold', message=F, warning=F}

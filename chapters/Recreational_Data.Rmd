@@ -13,7 +13,7 @@
 **Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
 
 **Public availability statement**: Data sets are publicly available (see Data Sources below).
-  
+
 
 ## Methods
 We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in managed species (MAFMC, NEFMC, and ASMFC) and fleet effort diversity using the effective Shannon index. 
@@ -28,6 +28,8 @@ The number of recreationally harvested fish was found by selecting "TOTAL HARVES
 Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the MRFSS Participation Time Series Query, and includes data from 1981 - 2016. 
 
 ### Data analysis
+
+
 
 **Recreational fleet effort diversity**
 
@@ -86,10 +88,52 @@ REC_CATCH$Var <- 'Recreational Diversity of Catch'
 REC_CATCH$Source <- 'MRIP catch time series.'
 ```
 
+### Data processing
+
+Recreational fishing indicators were formatted for inclusion in the ecodata R package using the following code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Processing for recreational fishing indicators
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+raw.dir <- here::here("data-raw")
+
+get_rec <- function(save_clean = F){
+  
+  files = list.files(raw.dir, pattern = "REC_HARVEST|Rec_participants|Rec_angler|Rec_Species")
+  for (i in 1:length(files)) assign(files[i], read.csv(file.path(raw.dir,files[i])))
+  
+  recdat <- NULL
+  for (i in ls()){
+    if (stringr::str_detect(i, "REC_|Rec_")){
+      d <- get(i) %>%
+        dplyr::select(Time, EPU = Region, Value, Units, Var)
+      
+      assign('recdat',rbind(recdat, d))
+      
+    }
+  }
+  
+  recdat <- recdat %>% filter(!is.na(EPU))
+  
+  if (save_clean){
+    usethis::use_data(recdat, overwrite = T)
+  } else {
+    return(recdat)
+  }
+}
+
+```
+<!-- {{ProcessEnd}} -->
+
 
 ### Plotting
 
-```{r rec-div, fig.width = 4, fig.asp = 0.8, fig.cap = "Recreational effort diversity and diversity of recreational catch in New England."}
+```{r rec-div, fig.cap = "Recreational effort diversity and diversity of recreational catch in New England."}
 
 recdat <- ecodata::recdat %>% 
   filter(EPU == "NE") %>% 
@@ -178,7 +222,7 @@ cowplot::plot_grid(#rec_effort,
 
  
 
-```{r rec-landings-ne, fig.cap = "Total recreational seafood harvest in New England.", fig.width = 4, fig.asp = 0.45}
+```{r rec-landings-ne, fig.cap = "Total recreational seafood harvest in New England."}
 
 landings_rec <- ecodata::recdat %>% 
   filter(EPU == "NE",
@@ -216,7 +260,7 @@ ggplot(data = landings_rec)+
 ```
 
 
-```{r rec-op, fig.width = 4, fig.asp = 0.8, fig.cap = "Recreational effort and number of recreational anglers in New England."}
+```{r rec-op, fig.cap = "Recreational effort and number of recreational anglers in New England."}
 recdat <- ecodata::recdat %>% 
   filter(EPU == "NE") %>% 
   group_by(Var) %>% 

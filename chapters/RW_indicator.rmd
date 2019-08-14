@@ -34,6 +34,46 @@ Data were collected from existing reports and validated by report authors.
 ### Data analysis
 Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
 
+### Data processing
+
+Time series of right whale abundance estimates were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+#Processing for North Atlantic Right Whale data
+
+#See full documentation for these data at https://noaa-edab.github.io/tech-doc/right-whale-abundance.html
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+raw.dir <- here::here("data-raw")
+
+get_narw <- function(save_clean = F){
+  narw <- read.csv(file.path(raw.dir, "narw_numbers.csv")) %>% 
+    gather(.,Var,Value,-YEAR) %>% 
+    mutate(Var = tolower(paste("right whale abundance",Var)),
+           Units =  "n",
+           EPU = "All") %>% 
+    mutate(Var = ifelse(str_detect(Var, "median"),
+                        "right whale abundance median",
+                        ifelse(str_detect(Var, "lcl"),
+                               "right whale abundance lcl",
+                               "right whale abundance ucl"))) %>% 
+    dplyr::rename(Time = YEAR)
+  
+  if (save_clean){
+    usethis::use_data(narw, overwrite = T)
+  } else {
+    return(narw)
+  }
+  
+}
+
+```
+<!-- {{ProcessEnd}} -->
+
 ### Plotting
 
 ```{r rw-abundance, fig.cap="North Atlantic right whale population estimates shown with 95% credible intervals.",echo = T, message=F, warning=F,  fig.pos='H', fig.height = 4.5, fig.width=7}
