@@ -1,0 +1,74 @@
+# Data and Code Access {#erddap}
+
+### About
+
+The Technical Documentation for the State of the Ecosystem reports is a [bookdown](https://bookdown.org) document; hosted on the NOAA Northeast Fisheries Science Center Ecosystems Dynamics and Assessment Branch [Github page](https://github.com/NOAA-EDAB), and developed in R. Derived data used to populate figures in this document are queried directly from the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package or the NEFSC [ERDDAP server](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000). ERDDAP queries are made using the R package [rerddap](https://cran.r-project.org/web/packages/rerddap/vignettes/Using_rerddap.html).  
+
+
+### Accessing source data and build code
+
+In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled "Plotting", and these code chunks can be used to recreate the figures presented in State of the Ecosystem reports[^1].
+
+Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators present in the State of the Ecosystem reports, and these data sets are available for download through the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package. 
+
+### Building the document
+
+Start a local build of the SOE bookdown document by first cloning the project's associated [git repository](https://github.com/NOAA-EDAB/tech-doc). Next, if you would like to build a past version of the document, use `git checkout [version_commit_hash]` to revert the project to a past commit of interest, and set `build_latest <- FALSE` in the following code chunk. This will ensure the project builds from a cached data set, and not the most updated versions present on the NEFSC ERDDAP server. Once the `tech-doc.Rproj` file is opened in RStudio, run `bookdown::serve_book()` from the console to build the document. 
+
+
+```{r query, echo = T, eval = F, message=F, warning=F}
+
+build_latest <- FALSE
+
+if (build_latest){
+  
+  # Relative working directories
+  data.dir  <- here::here('data')
+  r.dir <- here::here('R')
+  
+  #Source function for querying ERDDAP server
+  source(file.path(r.dir,"get_erddap.R"))
+  
+  #Set URL for COMET (server where NEFSC ERDDAP lives)
+  comet <- 'https://comet.nefsc.noaa.gov/erddap/'
+  
+  #List datasets on the NEFSC ERDDAP
+  tab_list <- ed_datasets(url = comet)
+  
+  #Get updated data set IDs
+  erddap_datasets <- tab_list %>% 
+    filter(str_detect(Dataset.ID, "soe_v")) %>% 
+    get_erddap(id = NULL)
+  
+  #Save and clean updated IDs for use in rest of report
+  save(erddap_datasets, file = file.path(data.dir, "ERDDAP_datasets.Rdata"))
+  
+  # Exclude stock assessment status data, which have unique structure
+  erddap_datasets <- erddap_datasets %>%
+    dplyr::filter(!str_detect(Dataset.ID, "assess")) 
+  
+  #Create SOE parent data set, filter out NAs. This queries based on 
+  #data set IDs that were collected above
+  SOE.data.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
+                           erddap_datasets$Dataset.ID) %>% 
+    purrr::map(function(x) {
+      readr::read_csv(url(x))
+    }) %>% 
+    do.call(rbind,.) %>% 
+    mutate(Value = as.numeric(Value)) %>% 
+      dplyr::filter(!is.na(Value))
+  
+  #Convert to data.table
+  SOE.data <- as.data.table(SOE.data.erd)
+  
+  #Save data
+  save(SOE.data, file = file.path(data.dir,"SOE_data_erddap.Rdata"))
+}
+```
+
+#### A note on data structures
+
+The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R)).
+
+[^1]: There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/get_erddap.R). The scripts `BasePlot_source.R` and `GIS_source.R` refer to deprecated code used prior to the 2019 State of the Ecosystem reports. Indicators that were not included in reports after 2018 make use of this syntax, whereas newer indicators typically use `ggplot2` for plotting.
+

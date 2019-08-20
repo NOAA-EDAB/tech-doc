@@ -1,0 +1,363 @@
+# Recreational Fishing Indicators
+
+**Description**: A variety of indicators derived from MRIP Recreational Fisheries Statistics, including total recreational catch, total angler trips by region, annual diversity of recreational fleet effort, and annual diversity of managed species.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull with analysis
+  
+**Contributor(s)**: Geret DePiper, Scott Steinbeck
+  
+**Data steward**: Geret DePiper, <geret.depiper@noaa.gov>
+ 
+**Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
+
+**Public availability statement**: Data sets are publicly available (see Data Sources below).
+
+
+## Methods
+We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in managed species (MAFMC, NEFMC, and ASMFC) and fleet effort diversity using the effective Shannon index. 
+
+### Data sources
+All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were downloaded from the [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
+
+Data sets were queried by region on the MRIP site, and for the purposes of the SOE, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis included American eel, Atlantic cod, Atlantic mackerel, Atlantic sturgeon, black drum, black sea bass, bluefish, cobia, haddock, pollock, red drum, scup, Spanish mackerel, spiny dogfish, spot, spotted seatrout, striped bass, summer flounder, tautog, tilefish, weakfish, winter flounder, and "All Other Species".
+
+Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the MRFSS Participation Time Series Query, and includes data from 1981 - 2016. 
+
+### Data analysis
+
+
+
+**Recreational fleet effort diversity**
+
+```{r, eval = F, include = T, echo = T}
+REC_DATA <- read.csv('X:/gdepiper/ESR2018/SOE/Data/Rec_Days_Fished_2018.csv', as.is=TRUE)
+
+REC_DATA$P_Shore <- -(as.numeric(gsub("","",'""',REC_DATA$Shore)) /
+                        as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
+                          log(as.numeric(gsub("","",'""',REC_DATA$Shore)) /
+                                as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
+
+REC_DATA$P_Private <- -(as.numeric(gsub("","",'""',REC_DATA$Private_Rental)) /
+                          as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
+                          log(as.numeric(gsub("","",'""',REC_DATA$Private_Rental)) /
+                                as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
+
+REC_DATA$P_Party <- -(as.numeric(gsub("","",'""',REC_DATA$Party_Charter)) /
+                        as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
+                        log(as.numeric(gsub("","",'""',REC_DATA$Party_Charter)) /
+                              as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
+
+REC_DATA$Value <- exp(REC_DATA$P_Shore+REC_DATA$P_Private+REC_DATA$P_Party)
+
+REC_DATA$Region[REC_DATA$Region=='"MID-ATLANTIC"'] <- 'MA'
+REC_DATA$Region[REC_DATA$Region=='"NORTH ATLANTIC"'] <- 'NE'
+
+E_SHANNON <- subset(REC_DATA, select=c('Time','Region','Value'))
+E_SHANNON$Units <- 'Effective Shannon'
+E_SHANNON$Var <- 'Recreational fleet effort diversity across modes'
+E_SHANNON$Source <- 'MRIP effort time series, processed to generate diversity measure.'
+```
+
+**Recreational catch diversity**
+
+```{r, eval = F, include = T, echo = T}
+ REC_CATCH <- read.csv('X:/gdepiper/ESR2018/SOE/Data/Rec_Species_Quantity_2018.csv', as.is=TRUE)
+
+REC_CATCH$Value <-  as.numeric(gsub(",","",REC_CATCH$Value))
+TOT_REC_CATCH <- aggregate(Value~Time+Region, data=REC_CATCH, FUN=sum)
+names(TOT_REC_CATCH) <- c('Time','Region','Tot_Catch')
+REC_CATCH <- merge(REC_CATCH,TOT_REC_CATCH, by=c('Time','Region'))
+REC_CATCH$P_Catch <- -(REC_CATCH$Value/REC_CATCH$Tot_Catch*
+log(REC_CATCH$Value/REC_CATCH$Tot_Catch))
+REC_CATCH <- aggregate(P_Catch~Time+Region, data=REC_CATCH, FUN=sum)
+REC_CATCH$Value <- exp(REC_CATCH$P_Catch)
+REC_CATCH <- subset(REC_CATCH, select=c('Time','Region','Value'))
+REC_CATCH$Region[REC_CATCH$Region=="MID-ATLANTIC"] <- 'MA'
+REC_CATCH$Region[REC_CATCH$Region=="NORTH ATLANTIC"] <- 'NE'
+REC_CATCH$Units <- 'Effective Shannon'
+REC_CATCH$Var <- 'Recreational Diversity of Catch' 
+
+##Species include: American Eel, Atlantic Cod, Atlantic Mackerel, Atlantic Sturgeon, Black Drum, Black Sea Bass, Bluefish, 
+  ##Cobia, Haddock, Pollock, Red Drum, Scup, Spanish Mackerel, Spiny Dogfish, Spot, Spotted Seatrout, Striped Bass, Summer Flounder, Tautog, Tilefish, Weakfish, Winter Flounder,   
+  #and All Other Species.
+
+REC_CATCH$Source <- 'MRIP catch time series.'
+```
+
+### Data processing
+
+Recreational fishing indicators were formatted for inclusion in the ecodata R package using the following code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Processing for recreational fishing indicators
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+raw.dir <- here::here("data-raw")
+
+get_rec <- function(save_clean = F){
+  
+  files = list.files(raw.dir, pattern = "REC_HARVEST|Rec_participants|Rec_angler|Rec_Species")
+  for (i in 1:length(files)) assign(files[i], read.csv(file.path(raw.dir,files[i])))
+  
+  recdat <- NULL
+  for (i in ls()){
+    if (stringr::str_detect(i, "REC_|Rec_")){
+      d <- get(i) %>%
+        dplyr::select(Time, EPU = Region, Value, Units, Var)
+      
+      assign('recdat',rbind(recdat, d))
+      
+    }
+  }
+  
+  recdat <- recdat %>% filter(!is.na(EPU))
+  
+  if (save_clean){
+    usethis::use_data(recdat, overwrite = T)
+  } else {
+    return(recdat)
+  }
+}
+
+```
+<!-- {{ProcessEnd}} -->
+
+
+### Plotting
+
+```{r rec-div, fig.cap = "Recreational effort diversity and diversity of recreational catch in New England."}
+
+recdat <- ecodata::recdat %>% 
+  filter(EPU == "NE") %>% 
+  group_by(Var) %>% 
+  mutate(hline = mean(Value))
+
+ylim_re <- c(5e6, 30e6)
+ylim_rd <- c(1.75,2.75)
+ylim_ra  <- c(0, 2e6)
+
+series.col <- "black"
+
+rec_div <- recdat %>% 
+  filter(Var == "Recreational fleet effort diversity across modes") %>% 
+  ggplot() + 
+ #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+    #label
+  # annotate("text", 
+  #          x = label_loc[label_loc$Var == "Recreational fleet effort diversity across modes",]$xloc,
+  #          y = label_loc[label_loc$Var == "Recreational fleet effort diversity across modes",]$yloc,
+  #          label = label_loc[label_loc$Var == "Recreational fleet effort diversity across modes",]$labels,
+  #          size = letter_size)+
+  geom_gls(aes(x = Time, y = Value,
+               group = Var),
+             alpha = trend.alpha, size = trend.size) +
+  geom_line(aes(x = Time, y = Value, color = Var), size = lwd) +
+  geom_point(aes(x = Time, y = Value, color = Var), size = pcex) +
+  ylim(ylim_rd)+
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+  scale_color_manual(values = series.col, aesthetics = "color")+
+  guides(color = FALSE) +
+  ggtitle("Rec. fleet effort diversity")+
+  ylab(expression("Effective Shannon")) +
+  xlab("")+
+  geom_hline(aes(yintercept = hline,
+               color = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts()
+
+
+rec_div_catch <- recdat %>% 
+  filter(Var == "Recreational Diversity of Catch") %>% 
+  ggplot() + 
+ #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+    # annotate("text", 
+    #        x = label_loc[label_loc$Var == "Recreational anglers",]$xloc,
+    #        y = label_loc[label_loc$Var == "Recreational anglers",]$yloc,
+    #        label = label_loc[label_loc$Var == "Recreational anglers",]$labels,
+    #        size = letter_size)+
+  geom_gls(aes(x = Time, y = Value,
+               group = Var),
+             alpha = trend.alpha, size = trend.size) +
+  geom_line(aes(x = Time, y = Value, color = Var), size = lwd) +
+  geom_point(aes(x = Time, y = Value, color = Var), size = pcex) +
+
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+  scale_color_manual(values = series.col, aesthetics = "color")+
+  guides(color = FALSE) +
+  ggtitle("Rec. diversity of catch")+
+  ylab(expression("Effective Shannon")) +
+  xlab("Time")+
+  geom_hline(aes(yintercept = hline,
+               color = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts()
+
+cowplot::plot_grid(#rec_effort, 
+                   rec_div, 
+                   #rec_anglers, 
+                   rec_div_catch,
+                   ncol = 1, 
+                   align = "hv") +
+    theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))
+
+```
+
+ 
+
+```{r rec-landings-ne, fig.cap = "Total recreational seafood harvest in New England."}
+
+landings_rec <- ecodata::recdat %>% 
+  filter(EPU == "NE",
+         Var == "Recreational Seafood") %>% 
+  mutate(hline = mean(Value))
+
+series.col <- "black"
+
+ggplot(data = landings_rec)+
+  
+  #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_gls(aes(x = Time, y = Value,
+               group = Var),
+             alpha = trend.alpha, size = trend.size) +
+  geom_line(aes(x = Time, y = Value, color = Var), size = lwd) +
+  geom_point(aes(x = Time, y = Value, color = Var), size = pcex) +
+  ggtitle("NE Recreational seafood harvest")+
+  scale_y_continuous(labels = function(l){trans = l / 1000000})+
+  scale_x_continuous(breaks = seq(1985, 2015, by = 5), expand = c(0.01, 0.01)) +
+  scale_color_manual(values = series.col, aesthetics = "color")+
+  guides(color = FALSE) +
+  ylab(expression("Fish caught (10"^6*"n)")) +
+
+  geom_hline(aes(yintercept = hline,
+               
+               color = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts()
+
+```
+
+
+```{r rec-op, fig.cap = "Recreational effort and number of recreational anglers in New England."}
+recdat <- ecodata::recdat %>% 
+  filter(EPU == "NE") %>% 
+  group_by(Var) %>% 
+  mutate(hline = mean(Value))
+
+ylim_re <- c(5e6, 30e6)
+ylim_rd <- c(1.75,2.75)
+ylim_ra  <- c(0, 2e6)
+
+#Create dataframe for label locations
+# label_loc <- data.frame(xloc = min(recdat$Time)+0.3,
+#                         yloc = c(ylim_re[2]*0.975,
+#                                  ylim_rd[2]*0.975,
+#                                  ylim_ra[2]*0.975),
+#                         labels = LETTERS[1:3],
+#                         Var = c("Recreational Effort",
+#                                 "Recreational fleet effort diversity across modes",
+#                                 "Recreational anglers"))
+
+series.col <- "black"
+#x.shade.min <- max(recdat$Time, na.rm = T) - 9
+#x.shade.max <- max(recdat$Time, na.rm = T)
+
+series.col <- "black"
+
+rec_effort <- recdat %>% 
+  filter(Var == "Recreational Effort") %>% 
+  ggplot() + 
+ #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+    #label
+  # annotate("text", 
+  #          x = label_loc[label_loc$Var == "Recreational Effort",]$xloc,
+  #          y = label_loc[label_loc$Var == "Recreational Effort",]$yloc,
+  #          label = label_loc[label_loc$Var == "Recreational Effort",]$labels,
+  #          size = letter_size)+
+  geom_gls(aes(x = Time, y = Value,
+               group = Var),
+             alpha = trend.alpha, size = trend.size) +
+  geom_line(aes(x = Time, y = Value, color = Var), size = lwd) +
+  geom_point(aes(x = Time, y = Value, color = Var), size = pcex) +
+
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+  scale_y_continuous(labels = function(l){trans = l / 1000000}, limits = ylim_re)+
+  scale_color_manual(values = series.col, aesthetics = "color")+
+  guides(color = FALSE) +
+  ggtitle("Recreational effort") +
+  ylab(expression("Days fished (10"^6*" days)")) +
+  xlab("")+
+  geom_hline(aes(yintercept = hline,
+               color = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts() 
+
+
+rec_anglers <- recdat %>% 
+  filter(Var == "Recreational anglers") %>% 
+  ggplot() + 
+ #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+    # annotate("text", 
+    #        x = label_loc[label_loc$Var == "Recreational anglers",]$xloc,
+    #        y = label_loc[label_loc$Var == "Recreational anglers",]$yloc,
+    #        label = label_loc[label_loc$Var == "Recreational anglers",]$labels,
+    #        size = letter_size)+
+  geom_gls(aes(x = Time, y = Value,
+               group = Var),
+             alpha = trend.alpha, size = trend.size) +
+  geom_line(aes(x = Time, y = Value, color = Var), size = lwd) +
+  geom_point(aes(x = Time, y = Value, color = Var), size = pcex) +
+
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+  scale_y_continuous(labels = function(l){trans = l / 1000000}, limits = ylim_ra)+
+  scale_color_manual(values = series.col, aesthetics = "color")+
+  guides(color = FALSE) +
+  ggtitle("Recreational anglers")+
+  ylab(expression("Anglers (10"^6*" n)")) +
+  xlab("Time")+
+  geom_hline(aes(yintercept = hline,
+               color = Var),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts()
+
+cowplot::plot_grid(rec_effort, 
+                   #rec_div, 
+                   rec_anglers, 
+                   #rec_div_catch,
+                   ncol = 1, 
+                   align = "hv") +
+    theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))
+
+```

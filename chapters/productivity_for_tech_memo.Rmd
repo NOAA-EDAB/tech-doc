@@ -1,0 +1,263 @@
+# Fish Productivity Indicator
+ 
+**Description**: Groundfish productivity estimated as the ratio of small fish to large fish
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Database pull with analysis; Published methods
+
+**Contributor(s)**: Charles Perretti
+  
+**Data steward**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Point of contact**: Charles Perretti, <charles.perretti@noaa.gov>
+  
+**Public availability statement**: Source data are available upon request.
+
+
+## Methods
+
+
+### Data sources
+Survey data from NEFSC trawl database. These data in their derived form are available through [Survdat](#survdat).
+
+
+### Data extraction 
+Data were extracted from [Survdat](#survdat).
+
+
+### Data analysis
+We defined size thresholds separating small and large fish for each species based on the 20th percentile of the length distribution across all years. This threshold was then used to calculate a small and large fish index (numbers below and above the threshold, respectively) each year. Although the length percentile corresponding to age-1 fish will vary with species, we use the 20th percentile as an approximation. Biomass was calculated using length–weight relationships directly from the survey data. Following @wigley_length-weight_2003, the length-weight relationship was modeled as 
+$$\ln W = \ln a + b \ln L$$
+where $W$ is weight (kg), $L$ is length (cm), and $a$ and $b$ are parameters fit via linear regression. The ratio of small fish numbers of the following year to larger fish biomass in the current year was used as the index of recruitment success. The fall and spring recruitment success anomalies were averaged to provide an annual index of recruitment success.
+
+Further details of methods described in @perretti_regime_2017.
+
+### Data processing
+
+Productivity data were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+#processing small fish per large fish biomass indicator
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+raw.dir <- here::here("data-raw")
+
+load(file.path(raw.dir,"dat_spec_rec_forSOE.Rdata"))
+load(file.path(raw.dir,"dat_spec_rec_epu_forSOE.Rdata"))
+
+#Select and rename
+epu_rec_anom <- dat_spec_rec_epu_forSOE %>% 
+  dplyr::select(Time, EPU = Region, Value, Units, -Source,Var)
+
+#Select, rename, and bind
+productivity_anomaly <- dat_spec_rec_forSOE %>% 
+  dplyr::select(-Source) %>% 
+  mutate(EPU = "All",
+         Var = paste("NE LME",Var)) %>% 
+  rbind(.,epu_rec_anom) %>% 
+  as.data.frame()
+
+usethis::use_data(productivity_anomaly, overwrite = TRUE)
+
+
+```
+<!-- {{ProcessEnd}} -->
+
+### Plotting
+
+```{r, echo = T, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Northeast Large Marine Ecosystem."}
+
+
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+#### Functions for plotting ####
+library(ggplot2)
+library(rpart)
+library(dplyr)
+library(stringr)
+
+all_epu <- SOE.data %>%
+  filter(str_detect(Var, "All EPU productivity"))
+
+all_epu$Var <- str_trim(str_replace(all_epu$Var, "All EPU productivity",""))
+
+
+# Adjust plot properties
+adjustAxes <- 
+  ggplot2::theme(axis.title   = element_text(size = 18),
+                 axis.text    = element_text(size = 15),
+                 plot.title   = element_text(size = 20))
+
+ggplot <- function(...) { ggplot2::ggplot(...)  + 
+    ggplot2::theme_bw() + 
+    adjustAxes}
+
+
+# Plot stacked bar with cpts for single var 
+plot_stackbarcpts_single <- function(YEAR, var2bar,
+                                     x, xlab, ylab,
+                                     titl,
+                                     file_suffix,
+                                     leg_font_size = 10,
+                                     remove_leg = FALSE,
+                                     leg_ncol = 1,
+                                     wcpts = TRUE,
+                                     wdashed = TRUE,
+                                     height = 5.5,
+                                     width = 8) {
+  
+  dat2bar <- data.frame(YEAR, var2bar,
+                        x)
+  
+  dat2plot <-
+    dat2bar %>%
+    tidyr::gather(variable, value, -YEAR, -var2bar) %>%
+    dplyr::mutate(var2bar = gsub(pattern      = "_", 
+                                 replacement  = " ", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "Atl.", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "Atl", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "NS and combined", 
+                                 replacement  = "", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = "YT", 
+                                 replacement  = "Yellowtail", 
+                                 x            = var2bar),
+                  var2bar = gsub(pattern      = " GoM", 
+                                 replacement  = " GOM", 
+                                 x            = var2bar))
+  
+  
+  p <-   
+    ggplot(dat2plot,
+           aes(x = YEAR)) +
+    geom_bar(data = dat2plot %>% filter(value > 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_bar(data = dat2plot %>% filter(value < 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_hline(size = 0.3, aes(yintercept = 0)) +
+    xlab(xlab) +
+    ylab(ylab) +
+    ggtitle(titl) +
+    guides(fill = guide_legend(ncol = leg_ncol)) +
+    theme(axis.title   = element_text(size = 16),
+          axis.text    = element_text(size = 15),
+          plot.title   = element_text(size = 20),
+          legend.text  = element_text(size = leg_font_size),
+          legend.title = element_blank())
+  
+  if(remove_leg) p <- p + theme(legend.position = "none")
+  
+  print(p)
+  
+#  ggsave(plot = p,
+#         filename = "./productivity_all.eps",
+#         width = width,
+#         height = height)
+}
+
+# Plot stacked bars
+plot_stackbarcpts <- function(YEAR, var2bar,
+                              top, mid, bot,
+                              top_lab, 
+                              mid_lab, 
+                              bot_lab,
+                              xlab = "", 
+                              ylab = "",
+                              titl = "") {
+  
+  dat2bar <- data.frame(YEAR, var2bar,
+                        top, mid, 
+                        bot)
+  
+  dat2plot <-
+    dat2bar %>%
+    tidyr::gather(variable, value, -YEAR, -var2bar) %>%
+    dplyr::mutate(variable = ifelse(variable == "top", 
+                                    top_lab, 
+                                    ifelse(variable == "mid",
+                                           mid_lab, bot_lab)))
+  
+  
+  dat2plot$variable <- 
+    factor(dat2plot$variable,
+           levels = c(top_lab, mid_lab, bot_lab))
+  
+  p <-   
+    ggplot(dat2plot,
+           aes(x = YEAR)) +
+    geom_bar(data = dat2plot %>% filter(value > 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    geom_bar(data = dat2plot %>% filter(value < 0),
+             aes(y = value, fill = var2bar),
+             stat = "identity") +
+    facet_wrap(~ variable, ncol = 1) +
+    geom_hline(size = 0.3, aes(yintercept = 0)) +
+    xlab(xlab) +
+    ylab(ylab) +
+    ggtitle(titl) +
+    guides(fill = guide_legend(ncol = 1)) +
+    theme(axis.title   = element_text(size = 16),
+          axis.text    = element_text(size = 15),
+          plot.title   = element_text(size = 20),
+          strip.text   = element_text(size = 15),
+          legend.title = element_blank())
+  
+  print(p)
+}
+
+# Recruit per spawner (all stocks in one figure)
+plot_stackbarcpts_single(YEAR = all_epu$Time,
+                         var2bar = all_epu$Var,
+                         x = all_epu$Value,
+                         titl = "",
+                         xlab = "",
+                         ylab = "Small fish per large fish biomass (anomaly)",
+                         height = 7,
+                         width = 9)
+
+```
+
+```{r plot-all, fig.height=8, fig.cap = "Groundfish productivity visualized by EPU."}
+
+by_epu <- SOE.data %>% filter(str_detect(Var, "productivity"),
+                                                    !EPU %in% c("All","SS"))
+by_epu$Var <- str_trim(str_replace(by_epu$Var,
+                                   " GOM productivity| GB productivity| MAB productivity", ""))
+
+# Recruit per spawner (by EPU)
+dat2plot <-
+  by_epu %>%
+  tidyr::spread(EPU, Value)
+
+
+plot_stackbarcpts(YEAR = dat2plot$Time,
+                  var2bar = dat2plot$Var,
+                  top = dat2plot$GOM, 
+                  mid = dat2plot$GB,
+                  bot = dat2plot$MAB,
+                  top_lab = "Gulf of Maine",
+                  mid_lab = "Georges Bank",
+                  bot_lab = "Mid. Atlantic Bight",
+                  xlab = "",
+                  ylab = "Small fish per Large fish biomass (anomaly)")
+
+```
+

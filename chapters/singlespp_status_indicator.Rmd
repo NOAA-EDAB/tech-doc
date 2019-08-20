@@ -1,0 +1,203 @@
+# Single Species Status Indicator {#stockstatus}
+
+
+**Description**: Summary of the most recent stock assessment results for each assessed species.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Synthesis of published information
+
+**Contributor(s)**: Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
+
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Public availability statement**: All stock assessment results are publicly available (see Data Sources). Summarized data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_soe_v1.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
+
+## Methods
+
+### Data sources
+<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
+
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes the most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
+https://www.nefsc.noaa.gov/saw/reports.html  
+https://www.nefsc.noaa.gov/publications/crd/crd1717/
+
+Additional assessments are reported directly to the New England Fishery Management Council (NEFMC):
+http://s3.amazonaws.com/nefmc.org/Document-2-SAFE-Report-for-Fishing-Year-2016.pdf  
+http://s3.amazonaws.com/nefmc.org/4_NEFSC_SkateMemo_July_2017.pdf
+
+
+
+### Data extraction
+
+Each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
+
+*    **Bcur**: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
+
+*    **Fcur**: current year fishing mortality, F
+
+*    **Bref**: biomass reference point, a proxy of Bmsy (the target)
+
+*    **Fref**: fishing mortality reference point, a proxy of Fmsy
+
+### Data processing
+
+The following R code was used to process the stock status data set for inclusion in the ecodata R package.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Processing single-species stock mortality and biomass data
+
+# Read more about this data at https://noaa-edab.github.io/tech-doc/stockstatus.html
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+data.dir <- here::here('inst','extdata')
+
+get_stocks <- function(save_clean = F){
+  assess <- read.csv(file.path(data.dir, "2018assess.csv"))
+  decode <- read.csv(file.path(data.dir, "2018decoder.csv"))
+  
+  stock_status <- 
+    assess %>%
+    group_by(Entity.Name) %>%
+    filter(Assessment.Year == max(Assessment.Year)) %>% #Find last year assessment occurred for each stock
+    ungroup() %>% 
+    left_join(.,decode, by = "Entity.Name") %>% #Join in list of managed species
+    dplyr::select(Entity.Name, Assessment.Year, F.Fmsy, B.Bmsy, Council, Code) %>% #select column variables to keep
+    mutate(id = 1:length(Entity.Name)) %>% 
+    gather(.,Var, Value,-id,-Entity.Name,-Assessment.Year,-Council,-Code) %>% #wide to long
+    dplyr::select(-id) %>% 
+    dplyr::rename(`Last assessment` = Assessment.Year,
+                  Stock = Entity.Name) %>% #rename variables for clarity
+    mutate(Units = "unitless")
+  
+  if (save_clean){
+    usethis::use_data(stock_status, overwrite = T)
+  } else {
+    return(stock_status)
+  }
+}
+
+```
+<!-- {{ProcessEnd}} -->
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+
+For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
+
+<!--What packages or libraries did you use in your work flow?-->
+```{r, eval=F, echo = F}
+#all packages in the SOE file that ran my code snippet, probably only need data.table
+library(Kendall);library(data.table);library(zoo)
+library(dplyr);library(nlme);library(AICcmodavg)
+library(colorRamps);library(Hmisc);library(rgdal)
+library(maps);library(mapdata);library(raster)
+library(grid);library(stringr);library(png)
+library(ncdf4);library(marmap); library(magick)
+
+
+```
+
+<!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+
+### Plotting
+
+The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
+
+```{r NE-stock-status, warning=F, fig.cap = "Summary of single species status for NEFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65}
+
+#Get data, spread for plotting, and filter
+stock_status <- ecodata::stock_status %>%
+  spread(.,Var,Value) %>% 
+  filter(Council %in% c("NEFMC","Both"))
+
+#Plot constants
+y.max <- 4.5
+x.max <- 7.5
+
+all_missing <- stock_status %>%
+  filter(is.na(B.Bmsy),is.na(F.Fmsy)) %>% 
+  dplyr::select(Code, Council)
+
+b_missing <- stock_status %>%
+  filter(is.na(B.Bmsy), !is.na(F.Fmsy)) %>% 
+  dplyr::select(Code, Council)
+
+f_missing <- stock_status %>%
+  filter(is.na(F.Fmsy), !is.na(B.Bmsy)) %>% 
+  dplyr::select(Code, Council)
+
+#A dataframe that defines custom legend for stocks with unknown status
+
+all.df <- data.frame(text = all_missing$Code,
+                    x = rep(x.max,length(all_missing$Code)),
+                    y = seq(4.35,2.85,-0.22),
+                    color = all_missing$Council)
+
+b.df <- data.frame(text = b_missing$Code,
+                    x = rep(x.max*0.8,length(b_missing$Code)),
+                    y = c(4.35,4.14),
+                    color = b_missing$Council)
+
+f.df <- data.frame(text = f_missing$Code,
+                    x = rep(x.max*0.6,length(f_missing$Code)),
+                    y = seq(4.35,2.85,-0.22),
+                    color = f_missing$Council)
+
+
+#Plotting code
+ggplot(data = stock_status) +
+  geom_vline(xintercept = 1, linetype = "dotted", color = "grey60")+
+  geom_vline(xintercept = 0.5, linetype = "dashed", color = "grey60")+
+  geom_hline(yintercept = 1, linetype = "dashed", color = "grey60") +
+  geom_point(aes(x = B.Bmsy,
+                 y = F.Fmsy,
+                 color = Council,
+                 shape = Council)) +
+  geom_text_repel(aes(x = B.Bmsy, #geom_text_repel auto-jitters text around points
+                      y = F.Fmsy,
+                      label = Code,
+                      color = Council), show.legend = FALSE,nudge_y = 0.05, nudge_x = 0.05) +
+  ylim(0,y.max) +
+  xlim(0,x.max*1.1) +
+  geom_text(data = all.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
+  geom_text(data = b.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
+  geom_text(data = f.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
+  scale_color_manual(values = c("purple","blue"),#c("purple","blue"), #Change legend labels for clarity
+                   name = "Managed by",
+                   breaks = c("Both","NEFMC"),
+                   labels = c("MAFMC/NEFMC","NEFMC"))+
+  scale_shape_manual(values = c(1, 19), #Change legend labels for clarity
+                     name = "Managed by",
+                     breaks = c("Both","NEFMC"),
+                     labels = c("MAFMC/NEFMC","NEFMC"))+
+  annotate("rect", xmin = 0.924*x.max,
+           xmax = 1.08*x.max,
+           ymin = 0.645*y.max,
+           ymax = 0.98*y.max,
+           alpha = 0.01) +
+  annotate("text", x = 7.5, y = 4.5, label = "F and B missing", fontface =2, size = 3)+
+    annotate("rect", 
+             xmin = 0.729*x.max,
+           xmax = 0.871*x.max,
+           ymin = 0.905*y.max,
+           ymax = 0.98*y.max,
+           alpha = 0.01) +
+  annotate("text", x = 6, y = 4.5, label = "B missing", fontface =2, size = 3)+
+    annotate("rect", xmin = 0.509*x.max,
+           xmax = 0.681*x.max,
+           ymin = 0.65*y.max,
+           ymax = 0.98*y.max,
+           alpha = 0.01) +
+  annotate("text", x = 4.5, y = 4.5, label = "F missing", fontface =2, size = 3)+
+  xlab(expression(~B/B[msy])) +
+  ylab(expression(~F/F[msy])) +
+  theme_ts()
+```
+

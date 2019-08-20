@@ -1,0 +1,291 @@
+# Fishery Reliance and Social Vulnerability
+
+**Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019), State of the Ecosystem - Mid-Atlantic (2018,2019) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Lisa L. Colburn
+  
+**Data steward**: Lisa L. Colburn
+  
+**Point of contact**: Lisa L. Colburn 
+  
+**Public availability statement**: The source data used to construct the commercial fishing engagement and reliance indices include confidential information and are not available publicly. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. All calculated indices can be found [here](https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map).
+  
+
+## Methods
+
+
+### Data sources
+NOAA Fisheries' Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic and fisheries variables. The social and demographic data were downloaded from the 2014 American Community Survey (ACS) 5-yr estimates Dataset at the [U.S. Census American FactFinder site](https://www.census.gov/programs-surveys/acs/) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the SOLE server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the [Marine Recreational Information Program (MRIP)](https://www.st.nmfs.noaa.gov/recreational-fisheries/MRIP/), and for this analysis was custom requested from NOAA Fisheries headquarters.
+
+
+### Data extraction 
+Commercial fisheries data was pulled from the NEFSC SOLE server in Woods Hole, MA.
+
+SQL and SAS code for data extraction and processing steps:
+```{sql, eval = F, echo = T}
+create table cfders2011 as
+select *
+from connection to oracle
+(select port, state, year, dealnum, permit, nespp3, spplndlb, sppvalue from cfders2011 where permit > 0 order by permit);
+create table cfvess11 as
+select *
+from connection to oracle
+(select permit, homeport, homest from CFDBS.cfvess11 where permit > 0 order by permit);
+create table port_name as
+select *
+from connection to oracle
+(select port, portnm from port order by port);
+create table st_name as
+select *
+from connection to oracle
+(select state, stateabb from statenm order by state);
+
+
+Truncated SAS code:
+
+/*CREATE VARIABLES FOR TOTAL LANDINGS WEIGTH AND VALUE (SUM) BY PORT OF LANDING AND BY HOMEPORT*/
+data landings_ports1; set landings_ports;
+run;
+proc sort;
+by port state;
+run;
+proc means noprint data = landings_ports1; by port state; 
+var spplndlb sppvalue;
+id port state;
+output out = landport_totspp sum = L_Totlb L_Totval;
+run;
+proc sort;
+by port;
+run;
+data landings_ports2; set landings_ports;
+run;
+proc sort;
+by homeport homest;
+run;
+proc means noprint data = landings_ports2; by homeport homest; 
+var spplndlb sppvalue;
+id homeport homest;
+output out = homeport_totspp sum = H_Totlb H_Totval;
+run;
+proc sort;
+by homeport;
+run;
+
+/*CREATE SPECIES VARIABLES*/
+data landings_ports_NE_spp; set landings_ports;
+monklb = 0; monkval = 0; /*monkfish*/
+bluelb = 0; blueval = 0; /*bluefish*/
+.omitted.
+otherlb = 0; otherval = 0; /*other - everything else*/
+run;
+data landings_ports_NE_spp2; set landings_ports_NE_spp;
+if nespp3 = 012 then do; monklb = spplndlb; monkval = sppvalue; end;
+...ommitted.
+if nespp3 = 406 then do; spotlb = spplndlb; spotval = sppvalue; end;
+if nespp3 not in (012, 023, 033, 051, 081, 105, 112, 115, 116, 120, 121, 122, 123, 124, 125, 132, 147, 152, 153, 155, 159, 168, 194, 197, 212, 
+221, 240, 250, 269, 305, 329, 330, 335, 344, 345, 351, 352, 365, 366, 367, 368, 369, 370, 372, 373, 384, 415, 418, 432, 438, 443, 444, 445, 
+446, 447, 464, 466, 467, 468, 469, 470, 471, 472, 507, 508, 509, 512, 517, 700, 710, 711, 724, 727, 748, 754, 769, 774, 775, 781, 786, 789, 
+798, 799, 800, 801, 802, 805, 806, 899, 001, 090, 069, 107, 150, 173, 196, 334, 347, 349, 364, 371, 420, 422, 481, 484, 714, 776, 777, 823, 763, 736) 
+then do; otherlb = spplndlb; otherval = sppvalue; end;
+run; 
+
+/*SUM SPECIES LANDINGS BY PORT OF LANDING*/
+proc sort; by port; proc means noprint data = landings_ports_NE_spp2; by port state; 
+. omitted ...
+id port state;
+output out = spp_porlnd_NE sum = ;
+run;
+proc sort;
+by port;
+run;
+
+/*SUM SPECIES LANDINGS BY HOMEPORT*/
+data spp_home; set landings_ports_NE_spp2;
+run;
+proc sort; by homeport homest; proc means noprint data = spp_home; by homeport homest; 
+. species are counted..
+id homeport homest;
+output out = spp_homep_NE sum = ;
+run
+proc sort;
+by homeport; run;
+
+/*MERGE TOTAL PERMITS AND TOTAL DEALERS BY PORT OF LANDING*/
+data land_port_totperm2; set land_port_totperm;
+run;
+proc sort;
+by port; run;
+data lnd_port_permit; merge spp_porlnd_NE (IN=X) land_port_totperm2 (IN=Y);
+by port; if X=1; run;data land_port_totdeal2; set land_port_totdeal;
+run;
+proc sort;
+by port;
+run;
+data lnd_port_permit_deal; merge lnd_port_permit (IN=x) land_port_totdeal2 (IN=Y);
+by port; if X=1; run;
+
+/*MERGE WITH PORT NAME AND STATE ABBREVIATION*/
+data lnd_port_permit_deal_nm; merge lnd_port_permit_deal (IN=X) port_name (IN=Y);
+by port; if X=1; run;
+data lnd_port_permit_deal_nm_st; merge lnd_port_permit_deal_nm (IN=x) st_name (IN=Y); proc sort;
+by port; if X=1; run;
+
+/*MERGE TOTAL PERMITS AND TOTAL DEALERS BY HOMEPORT*/
+data home_port_totperm2; set home_port_totperm;
+run;
+proc sort;
+by homeport;
+run;
+data home_port_permit; merge spp_homep_NE (IN=X) home_port_totperm2 (IN=Y);
+by homeport; if X=1; run; data home_port_totdeal2; set home_port_totdeal;
+run;
+proc sort;
+by homeport;
+run;
+data home_port_permit_deal; merge home_port_permit (IN=x) home_port_totdeal2 (IN=Y);
+by homeport; if X=1; run; proc sort;
+by homeport;
+run;
+
+/*MERGE TOTAL LANDINGS BY PORT OF LANDING*/
+data lnd_port_per_deal_nm_st_tspp; merge lnd_port_permit_deal_nm_st (IN=X) landport_totspp (IN=Y);
+by port; if X=1; run;
+
+/*MERGE TOTAL LANDINGS BY HOMEPORT*/
+data home_port_per_deal_tspp; merge home_port_permit_deal (IN=X) homeport_totspp (IN=Y);
+by homeport; if X=1; run;
+data netana.port_landing11; set lnd_port_per_deal_nm_st_tspp;
+if state in (22, 32, 24, 42, 7, 35, 33, 8, 23, 49, 36);
+run;
+proc sort;
+by port state;
+run;
+data netana.homeport11; set home_port_per_deal_tspp;
+if homest in ('ME', 'NH', 'MA', 'RI', 'CT', 'NY', 'NJ', 'DE', 'MD', 'VA', 'NC');
+run;
+proc sort;
+by homeport homest;
+run;
+
+
+```
+
+
+### Data analysis
+The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+
+### Data processing
+
+Data were formatted for inclusion in the ecodata R package using the following R script.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Commercial and recreational engagement and reliance
+
+#More information about these data are available at https://noaa-edab.github.io/tech-doc/fishery-reliance-and-social-vulnerability.html
+
+library(dplyr)
+library(tidyr)
+
+
+raw.dir <- here::here("data-raw")
+
+get_eng_rel <- function(save_clean = F){
+  
+  ne <- read.csv(file.path(raw.dir,"Com_n_Rec_Indicators_New_England_121818.csv"))
+  mab <- read.csv(file.path(raw.dir,"Com_n_Rec_Indicators_Mid-Atlantic_121818.csv"))
+  
+  #Process
+  eng_rel <- rbind(ne,mab) %>%
+    dplyr::select(ComEng_NE16_ct, ComRel_NE16_ct,
+                  RecEng_NE16_ct, RecRel_NE16_ct,
+                  PRIMARY_LONGITUDE, PRIMARY_LATITUDE,
+                  REGION, STATEABBR) %>% 
+    mutate(ComEng_NE16_ct = factor(ComEng_NE16_ct))
+  
+  if (save_clean){
+    usethis::use_data(eng_rel, overwrite = T)
+  } else {
+    return(eng_rel)
+  }
+  
+}
+
+
+
+
+
+```
+<!-- {{ProcessEnd}} -->
+
+
+### Plotting
+
+```{r map1, echo = T, eval=T, fig.cap="Commercial engagement (total pounds landed, value landed, commercial permits and commercial dealers in a community) and reliance (per capita engagement) based on 2016 landings and the ACS running average of 2012-2016 census data.",  fig.width = 8, fig.height = 5.4, fig.align='center', fig.show='hold', message=F, warning=F}
+xmin = -78
+xmax = -70
+ymin = 35
+ymax = 42
+xlims <- c(xmin, xmax)
+ylims <- c(ymin, ymax)
+
+biv_col <- c("4" = "#ca0020", "3" = "#f4a582", "2" = "grey", "1" = "#92c5de", "0" = "#0571b0")
+
+eng_rel <- ecodata::eng_rel %>%
+    filter(PRIMARY_LATITUDE < 42) %>% 
+  dplyr::rename(comeng = ComEng_NE16_ct,
+                comrel = ComRel_NE16_ct,
+                receng = RecEng_NE16_ct,
+                recrel = RecRel_NE16_ct,
+                Latitude = PRIMARY_LATITUDE,
+                Longitude = PRIMARY_LONGITUDE,
+                State = STATEABBR) %>% 
+  mutate(comsum = sum(as.numeric(comeng), as.numeric(comrel))) %>% 
+  mutate(comeng = factor(comeng, ordered = TRUE, levels = 1:4),
+         comrel = factor(comrel, ordered = TRUE, levels = 1:4),
+         receng = factor(receng, ordered = TRUE, levels = 1:4),
+         recrel = factor(recrel, ordered = TRUE, levels = 1:4))
+
+
+
+(com <- eng_rel %>% 
+  dplyr::select(comeng, comrel, comsum, Latitude, Longitude) %>% 
+  filter(comeng != 0 &
+         comrel != 0) %>% 
+ggplot() +
+  geom_sf(data = coast, size = map.lwd) +
+  geom_sf(data  = ne_states, size = map.lwd) +
+  coord_sf(crs = crs, xlim = xlims, ylim = ylims) +
+  geom_point(aes(x = Longitude, y = Latitude,
+                 fill = comeng, size = comrel),
+             color = "black",pch = 21) +
+  guides(fill = guide_legend(override.aes = list(size = 5),
+                            reverse = T,
+                            title = "Engagement"),
+         size = guide_legend(reverse = T,
+                            title = "Reliance")) +
+  scale_fill_manual(values = biv_col) +
+  theme_map() +
+  xlab("Longitude") +
+  ylab("Latitude") +
+      theme(legend.position = c(0.8, 0.25), 
+        legend.box = "horizontal",
+        legend.direction = "vertical",
+        legend.key=element_blank(),
+        legend.key.width = unit(0, "cm"))+
+  ggtitle("Commercial Reliance & Engagement"))
+
+# com + rec + plot_layout(ncol = 2) &
+#   theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
+```
+
+
+
+
+
+
+

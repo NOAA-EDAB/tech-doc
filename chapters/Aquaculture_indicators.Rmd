@@ -1,0 +1,118 @@
+# Aquaculture
+
+**Description**: Aquaculture indicators
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Synthesis of published information
+
+**Contributor(s)**: Sean Hardison, Lisa Calvo, Karl Roscher
+  
+**Data steward**: Sean Hardison <sean.hardison@noaa.gov>
+  
+**Point of contact**: Sean Hardison <sean.hardison@noaa.gov> 
+  
+**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_soe_v1.html). 
+
+
+## Methods
+Aquaculture data included in the SOE report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
+
+
+### Data sources
+Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@Hudson2017a]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@ACC2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@Calvo2017]. 
+
+
+### Data extraction 
+Data were collected directly from state aquaculture reports. Oyster harvest data in MD was reported in bushels which were then converted to individual oysters by an estimate of 300 oysters bushel$^{-1}$. View processing code for this indicator [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
+
+### Data analysis
+No data analyses occurred for this indicator.
+
+### Data processing
+
+Aquaculture data were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+#Processing code for oyster harvest data in the Mid-Atlantic
+
+#These data were collected directly from shellfish aquaculture surveys performed by state agencies and
+#universities. 
+
+#NJ: http://njseagrant.org/new-jersey-shellfish-aquaculture-situation-outlook-report-new/
+#VA: http://www.vims.edu/research/units/centerspartners/map/aquaculture/docs_aqua/vims_mrr_2018-9.pdf
+#MD: Data from MD Aquaculture Coordinating Council meeting reports. Newest reports available upon request
+
+library(dplyr)
+library(tidyr)
+
+raw.dir <- here::here("data-raw")
+
+get_aquaculture <- function(save_clean = F){
+  aquaculture <- read.csv(file.path(raw.dir,"mab_oyster_harvest.csv"))
+  
+  if (save_clean){
+    usethis::use_data(aquaculture, overwrite = T)
+  } else {
+    return(aquaculture)
+  }
+  
+}
+```
+<!-- {{ProcessEnd}} -->
+
+### Plotting
+
+```{r, mariculture, fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = T, warning = F, message=F, fig.align='center', fig.height=4}
+
+aqua <- ecodata::aquaculture %>% 
+  group_by(Var) %>% 
+  mutate(hline = mean(Value)) %>%
+  ungroup() %>% 
+  mutate(Var = plyr::mapvalues(Var, from = c("md oyster harvest","nj oyster harvest","va oyster harvest"),
+                                                    to  = c("MD","NJ","VA"))) %>%
+  dplyr::rename(State = Var)
+
+aqua$State <- factor(aqua$State, levels = c("VA","MD","NJ"))
+
+
+ggplot() + 
+  geom_segment(aes(x=2005,xend=2017,y=mean(aquaculture[aquaculture$Var == "va oyster harvest",]$Value),
+                   yend=mean(aquaculture[aquaculture$Var == "va oyster harvest",]$Value)),
+               size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty,
+           color = "#1b9e77",
+           inherit.aes = F) +
+  geom_segment(aes(x=2012,xend=2016,y=mean(aquaculture[aquaculture$Var == "nj oyster harvest",]$Value),
+                   yend=mean(aquaculture[aquaculture$Var == "nj oyster harvest",]$Value)),
+               size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty,
+           color = "#d95f02",
+           inherit.aes = F) +
+  geom_segment(aes(x=2012,xend=2017,y=mean(aquaculture[aquaculture$Var == "md oyster harvest",]$Value),
+                   yend=mean(aquaculture[aquaculture$Var == "md oyster harvest",]$Value)),
+               size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty,
+           color = "#7570b3",
+           inherit.aes = F) +
+ #Highlight last ten years
+  geom_line(data = aqua, aes(x = Time, y = Value, color = State), size = lwd) +
+  geom_point(data = aqua,aes(x = Time, y = Value, color = State), size = pcex) +
+  scale_color_manual(values = c(VA = "#1b9e77", MD = "#7570b3",NJ = "#d95f02")) +
+  scale_x_continuous(breaks = seq(2005,2018,3),expand = c(0.01, 0.01)) +
+  scale_y_continuous(labels = function(l){trans = l / 1000000})+
+  ggtitle("Oyster harvest")+
+  ylab(expression("Oysters sold (10"^6*" n)")) +
+  xlab("")+
+  theme_ts()
+
+
+```
+
+
+
+

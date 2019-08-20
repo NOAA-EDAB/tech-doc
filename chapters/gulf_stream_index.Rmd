@@ -1,0 +1,62 @@
+# Gulf Stream Index
+
+**Description**: Annual time series of the Gulf Stream index
+
+**Indicator category**: Published method
+
+**Found in**: State of the Ecosystem - New England (2019)
+
+**Contributor(s)**: Terry Joyce, Rong Zhang
+  
+**Data steward**: Vincent Saba, <vincent.saba@noaa.gov>
+  
+**Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available
+
+## Methods
+
+Summarized from @joyce2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 
+
+### Data sources
+
+Ocean temperatures at 200 m are available at https://www.nodc.noaa.gov/OC5/3M_HEAT_CONTENT/.
+
+### Data analysis
+
+For detailed analytical methods, see @joyce2019. 
+
+### Data Processing
+
+The Gulf Stream index data set was formatted for inclusion in the ecodata R package with the following code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Processing for Gulf Stream Index data
+
+# GSI = degrees latitude above the average Gulf Stream position based
+# on ocean temperature at 200m (15 C) depth between 55W to 75W.
+
+library(dplyr)
+library(tidyr)
+library(lubridate)
+
+raw.dir <- here::here("data-raw")
+
+get_gsi <- function(save_clean = F){
+
+  gsi <- read.csv(file.path(raw.dir, "GSI.csv")) %>% 
+    dplyr::rename(Time = Year, Value = GSI) %>% 
+    mutate(Var = "gulf stream index",
+           Units = "latitude anomaly",
+           EPU = "All")
+  
+  if (save_clean){
+    usethis::use_data(gsi, overwrite = T)
+  } else {
+    return(gsi)
+  }
+}
+
+```
+<!-- {{ProcessEnd}} -->

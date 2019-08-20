@@ -1,0 +1,272 @@
+# Bennet Indicator
+
+**Description**: Bennet Indicator
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: John Walden
+  
+**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+  
+**Point of contact**: John Walden, <john.walden@noaa.gov>
+  
+**Public availability statement**: Derived CFDBS data are available for this analysis (see [Comland](#comdat)).
+  
+## Methods
+
+### Data sources
+Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database System (CFDBS). The derived Comland data set is available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
+
+### Data extraction 
+For information regarding processing of CFDBS, please see [Comland](#comdat) methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was $\geq$ 0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.
+
+```{r, echo = T, eval = F, warning=F, message=F}
+#This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. 
+
+drake::readd(proc_get_mass_inshore_survey.R)
+
+#Packages
+PKG <- c("data.table","plyr","RColorBrewer", "ggplot2","cowplot","gridExtra","grid")
+for (p in PKG) {
+  if(!require(p,character.only = TRUE)) {  
+    install.packages(p)
+    require(p,character.only = TRUE)}
+}
+# #Setting Save path
+
+
+#load "comland" data - These data are unavailble due to PII concerns. See aggregated data load below
+ecosys2<-subset(comland, US=='TRUE' & YEAR>=1964 & SPPVALUE >=0)
+
+#Load species and PDT codes
+load(file.path(data.dir, "Species_codes.RData"))
+
+#Set EPU
+epu <- "GB"
+
+#processing
+spp<-subset(spp, NESPP3>0)
+spp2<-unique(spp[,c(3,12)], by='NESPP3')
+spp2<-spp2[which(!duplicated(spp2$NESPP3)),]
+sp_combine<-merge(ecosys2, spp2, by="NESPP3", all.x=TRUE)
+add.apex <- data.table(NESPP3 = 000, YEAR = 1971, QY = 1, GEAR = 'other',
+                       SIZE = 'small', EPU = epu, UTILCD = 0, SPPLIVMT = 0,
+                       SPPVALUE = 0, US = TRUE, Feeding.guild = 'Apex Predator')
+sp_combine <- rbindlist(list(sp_combine, add.apex))
+
+#Subset data into Georges Bank group
+LANDINGS<-subset(sp_combine)
+LANDINGS<-LANDINGS[which(!is.na(LANDINGS$Feeding.guild)),]
+
+#Set Up data Table
+landsum<-data.table(LANDINGS)
+# setkey(landsum,  "EPU", "YEAR","Feeding.guild")
+setkey(landsum,"EPU","YEAR","Feeding.guild")
+
+
+#Sum by feeding guild
+landsum[,lapply(.SD, sum, na.rm=TRUE), by=key(landsum), .SDcols=c("SPPLIVMT","SPPVALUE")]
+
+```
+
+
+### Data analysis
+
+Revenue earned by harvesting resources from an LME at time *t* is a function of both the quantity landed of each species and the prices paid for landings. Changes in revenue between any two years depends on both prices and quantities in each year, and both may be changing simultaneously. For example, an increase in the harvest of higher priced species, such as scallops can lead to an overall increase in total revenue from an LME between time periods even if quantities landed of other species decline. Although measurement of revenue change is useful, the ability to see what drives revenue change, whether it is changing harvest levels, the mix of species landed, or price changes provides additional valuable information. Therefore, it is useful to decompose revenue change into two parts, one which is due to changing quantities (or volumes), and a second which is due to changing prices. In an LME, the quantity component will yield useful information about how the species mix of harvests are changing through time.
+
+A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator [@Cross2009]. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index [@Balk2010], and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads [@lim2009], and dividend changes in banking operations [@Grifell-Tatje2004].  An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents [@Balk2010]. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964 and 2015.
+
+Revenue in a given year for any species group is the product of quantity landed times price, and the sum of revenue from all groups is total revenue from the LME. In any year, both prices and quantities can change from prior years, leading to total revenue change. At time t, revenue (R) is defined as $$R^{t} = \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t},$$
+where $p_{j}$ is the price for species group $j$, and $y_{j}$ is the quantity landed of species group $j$. Revenue change between any two time periods, say $t+1$ and $t$, is then $R^{t+1}-R^{t}$, which can also be expressed as:
+$$\Delta R = \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1}-\sum_{j=1}^{J}p_{j}^{t}y_{j}^{t}.$$
+This change can be decomposed further, yielding a VI and PI. The VI is calculated using the following formula [@Moosberg2007]:
+
+$$VI = \frac{1}{2}(\sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t} + \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t})$$
+The price indicator (PI) is calculated as follows:
+$$PI = \frac{1}{2}(\sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t} + \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t})$$
+Total revenue change between time $t$ and $t+1$ is the sum of the VI and PI. Since revenue change is being driven by changes in the individual prices and quantities landed of each species group, changes at the species group level can be examined separately by taking advantage of the additive property of the indicator. For example, if there are five different species groups, the sum of the VI for each group will equal the overall VI, and the sum of the PI for each group will equal the overall PI. 
+
+```{r, echo = T, eval = F}
+#R code to construct Bennet Indicator for Ecosystem Project
+#Author: John Walden
+#Date: October 4, 2017
+#
+#Revised January 18, 2018 to calculate the indicator relative to average conditions
+#during each time period. Set EPU in extraction/processing code chunk above.
+
+
+#filter by specific EPU
+epu = "GB"
+value <- subset(landsum, EPU == epu)
+
+#Calculate price
+value$PRICE=value$SPPVALUE/value$SPPLIVMT
+value[is.na(value)]<-0
+
+
+#Next two lines are to calculate mean values for landings
+#and value for the time series by feeding guild
+
+meanval<-as.data.frame(value[,j=list(mean(SPPVALUE,na.rm=TRUE), mean(SPPLIVMT,na.rm=TRUE)), by=Feeding.guild])
+meanval<-rename(meanval, c("V1"="BASEV", "V2"="BASEQ"))
+meanval$BASEP=meanval$BASEV/meanval$BASEQ;
+
+#order by feeding guild
+
+value<-value[order(value$Feeding.guild),]
+meanval<-meanval[order(meanval$Feeding.guild),]
+
+#Merge Value data frame with Base Year Value Data Frame
+value<-merge(value, meanval, by="Feeding.guild")
+
+#Construct price and Volume Indicators
+#NOTE: ALL values are normalized to $1,000,000
+
+value$VI=((0.5*(value$BASEP+value$PRICE))*(value$SPPLIVMT-value$BASEQ))/1000000
+value$PI=((0.5*(value$BASEQ+value$SPPLIVMT))*(value$PRICE-value$BASEP))/1000000
+
+value<-value[order(value$YEAR),]
+
+#The next Data table sets up the yearly aggregate Bennet PI and VI
+
+biyear<-data.table(value)
+setkey(biyear, "YEAR")
+biyear<-biyear[,lapply(.SD, sum), by=key(biyear), .SDcols=c("VI","PI","BASEV","SPPVALUE")]
+biyear$revchange<-(biyear$VI+biyear$PI)
+biyear$BI<-(biyear$VI + biyear$PI)
+
+#The Next Steps restructure the year data frame so the yearly
+#Bennet Indicator can be plotted. Negative values are difficult in GGPLOT.
+#Since the Bennet indicator can have a negative value, separate data frames
+#need to be created. First, the data needs to be restructured to use the 
+#stacked bar function in ggplot. GGPLOT is used because it can graph differen#t data layers on the same graph.
+
+y1<-biyear[,c(1,2)]
+y1$indicator='VI'
+y2<-biyear[,c(1,3)]
+y2$indicator='PI'
+
+colnames(y1)[2]<-"value"
+colnames(y2)[2]<-"value"
+ytotal<-rbind(y1,y2)
+```
+
+### Data processing
+
+Bennet indicator time series were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+# Process Bennet indicator; price and volume indicators
+
+library(dplyr)
+library(tidyr)
+library(magrittr)
+
+raw.dir <- here::here('inst','extdata')
+
+get_bennet <- function(save_clean = F){
+  
+  # Find relevant files and load them into workspace
+  files = list.files(raw.dir, pattern="_vi|_pi|_bennet")
+  for (i in 1:length(files)) assign(files[i], read.csv(file.path(raw.dir,files[i])))
+  
+  #Process Bennet indicator data aggregated to the level of EPU (all feeding guilds)
+  bennet <- NULL
+  for (i in ls()){
+    if (stringr::str_detect(i, "_bennet_")){
+      epu <- stringr::str_extract(i, "gb|gom|mab") #Extract EPU
+      
+      #Process into SOE format
+      out <- get(i) %>% mutate(EPU = epu,
+                               Units = "million USD ($2015)") %>%
+        dplyr::select(-X) %>%
+        gather(.,Var, Value,-YEAR,-EPU, -Units) %>%
+        mutate(Var = paste(Var, "EPU aggregate"),
+               EPU = toupper(EPU)) %>%
+        dplyr::rename(Time = YEAR) %>% 
+        as.data.frame()
+      
+      assign('bennet',rbind(bennet, out))
+      
+    }
+  }
+  
+  pi.vi <- NULL
+  
+  for (i in ls()){
+    if (stringr::str_detect(i, "_pi|_vi")){
+      epu <- stringr::str_extract(i, "gb|gom|mab")
+      indicator <- stringr::str_extract(i, "vi|pi")
+      
+      out <- get(i) %>%
+        mutate(EPU = toupper(epu),
+               class = toupper(indicator),
+               Units = "million USD ($2015)") %>%
+        gather(.,Var,Value,-YEAR, -class, -EPU,-Units) %>% 
+        unite(., "Var", c("Var","class"), sep = " ") %>% 
+        dplyr::rename(Time = YEAR) %>% 
+        as.data.frame()
+      
+      assign('pi.vi', rbind(pi.vi, out))
+      
+    }
+  }
+  
+  bennet <- rbind(pi.vi, bennet)
+  
+  if (save_clean){
+    usethis::use_data(bennet, overwrite = T)
+  } else {
+    return(bennet)
+  }
+  
+}
+```
+<!-- {{ProcessEnd}} -->
+
+### Plotting
+
+```{r bennet-plot1, message = F, warning=F}
+
+epu_abbr <- "MAB"
+
+#Filter data into two dataframes for plotting
+indicators <- ecodata::bennet %>% 
+  filter(EPU == epu_abbr,
+         Var %in% c("VI EPU aggregate",
+                    "PI EPU aggregate")) %>% 
+  mutate(Var, Var = plyr::mapvalues(Var, from = c("VI EPU aggregate","PI EPU aggregate"),
+                                    to = c("Volume","Price")))
+
+revchange <- ecodata::bennet %>% 
+  filter(EPU == epu_abbr,
+         Var %in% c("REVCHANGE EPU aggregate"))
+
+#custom bar fill color (color-blind friendly)
+ind_fill <- c("#a6cee3", "#b2df8a")
+
+#limits
+y.lim <- c(-450,450)
+
+#plot
+ggplot(data = indicators)+
+  
+  #Highlight last ten years
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf)+
+  
+  geom_bar(aes(x=Time, y= Value, fill = Var), stat="identity")+
+  scale_fill_manual(name = "Indicators", values = ind_fill) +
+  geom_line(data = revchange, aes(x = Time, y = Value, colour="$"))+
+  scale_colour_grey(name ="Revenue Change") +
+  ggtitle("Mid-Atlantic Bennet Indicator")+
+  labs(y="Value $1,000,000 ($2015)") +
+  scale_x_continuous(breaks = seq(1985, 2015, by = 5), expand = c(0.01, 0.01)) +
+  scale_y_continuous(breaks = seq(y.lim[1], y.lim[2], by = 100), limits = y.lim, expand = c(0.01, 0.01)) +
+  theme_ts() +
+  theme(title = element_text(size = 10))
+```

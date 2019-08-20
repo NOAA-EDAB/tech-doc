@@ -1,5 +1,6 @@
 bookdown::gitbook:
   lib_dir: assets
+  css: css/style.css
   split_by: chapter
   config:
     toolbar:
@@ -13,5 +14,3 @@ bookdown::gitbook:
     edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
 bookdown::pdf_book:
   keep_tex: yes
-bookdown::html_book:
-  css: toc.css

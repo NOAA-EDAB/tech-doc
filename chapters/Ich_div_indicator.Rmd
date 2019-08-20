@@ -1,0 +1,238 @@
+# Ichthyoplankton Diversity
+
+```{r,  echo = F, message=F}
+
+#Load packages
+library(knitr)
+library(rmarkdown)
+
+```
+**Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+
+**Indicator category**: Database pull with analysis 
+
+**Contributor(s)**: Harvey J. Walsh
+  
+**Data steward**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Point of contact**: Harvey Walsh, harvey.walsh@noaa.gov
+  
+**Public availability statement**: Source data are available to the public [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/). Derived data for this indicator are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_soe_v1.html).
+
+
+## Methods
+Data from the NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
+
+### Data sources
+Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year.  A random-stratified design based on the NEFSC bottom trawl survey design [@Azarovitz1981] is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design. 
+The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo net. Net tow speed was 1.5 knots and maximum sample depth was 200 m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5 m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net. 
+
+Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 m^-2^ sea surface.
+
+### Data extraction
+Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) (Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
+
+### Data analysis
+All detailed data processing steps are not currently included in this document, but general steps are outlined. Data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
+
+MATLAB code used to calculate diversity indices:
+```{octave, echo = T, eval = F}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Calculates Shannon Diversity Index of Ichthyoplankton data
+%   
+%   Input: excel file of ichthyoplankton data
+%
+%   USES: index_SaW.m
+%
+%   last modified: 03August2018, HJW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Data retrieved from NOAA NEFSC Oceans and Climate branch public dataset
+%   ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/
+%   Filename: EcoMon_Plankton_Data_v3_0.xlsx
+%   File Date: 10/20/2016
+ 
+% Data processing - not included in this file
+%   Data grouped into seasons: spring = Feb to Apr, fall = Sept to Nov
+%   Stratified weighted mean abundance was calculated for each taxon for each year and season
+%       Abundance across all plankton strata (n = 47) for 17 years (1999 to 2015)
+ 
+%% Import aggregated data from spreadsheet
+% Script for importing data from the following spreadsheet:
+%
+%    Workbook: /Users/hwalsh/NEFSC larval samples/CombinedData/SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx
+%    Worksheet: Sheet1
+%% Output Data
+% SprSW = Spring Shannon Diversity Index
+% SprCount = Spring count of positive ichthyoplankton taxa (Max = 45)
+% FallSW = Fall Shannon Diversity Index
+% FallCount = Fall count of positive ichthyoplankton taxa (Max = 45)
+ 
+%% Import the data
+[~, ~, raw] = xlsread('/Users/hwalsh/NEFSC larval samples/CombinedData/SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx','Sheet1');
+raw = raw(2:end,7:end);
+ 
+%% Create output variable
+data = reshape([raw{:}],size(raw));
+ 
+%% Create table
+NEFSCIchthyoplanktonAbundance = table;
+ 
+%% Allocate imported array to column variable names
+NEFSCIchthyoplanktonAbundance.Brevoortiatyrannus = data(:,1);
+NEFSCIchthyoplanktonAbundance.Clupeaharengus = data(:,2);
+NEFSCIchthyoplanktonAbundance.Cyclothonespp = data(:,3);
+NEFSCIchthyoplanktonAbundance.Diaphusspp = data(:,4);
+NEFSCIchthyoplanktonAbundance.Ceratoscopelusmaderensis = data(:,5);
+NEFSCIchthyoplanktonAbundance.Benthosemaspp = data(:,6);
+NEFSCIchthyoplanktonAbundance.Urophycisspp = data(:,7);
+NEFSCIchthyoplanktonAbundance.Enchelyopuscimbrius = data(:,8);
+NEFSCIchthyoplanktonAbundance.Gadusmorhua = data(:,9);
+NEFSCIchthyoplanktonAbundance.Melanogrammusaeglefinus = data(:,10);
+NEFSCIchthyoplanktonAbundance.Pollachiusvirens = data(:,11);
+NEFSCIchthyoplanktonAbundance.Merlucciusalbidus = data(:,12);
+NEFSCIchthyoplanktonAbundance.Merlucciusbilinearis = data(:,13);
+NEFSCIchthyoplanktonAbundance.Centropristisstriata = data(:,14);
+NEFSCIchthyoplanktonAbundance.Pomatomussaltatrix = data(:,15);
+NEFSCIchthyoplanktonAbundance.Cynoscionregalis = data(:,16);
+NEFSCIchthyoplanktonAbundance.Leiostomusxanthurus = data(:,17);
+NEFSCIchthyoplanktonAbundance.Menticirrhusspp = data(:,18);
+NEFSCIchthyoplanktonAbundance.Micropogoniasundulatus = data(:,19);
+NEFSCIchthyoplanktonAbundance.Tautogolabrusadspersus = data(:,20);
+NEFSCIchthyoplanktonAbundance.Tautogaonitis = data(:,21);
+NEFSCIchthyoplanktonAbundance.Auxisspp = data(:,22);
+NEFSCIchthyoplanktonAbundance.Scomberscombrus = data(:,23);
+NEFSCIchthyoplanktonAbundance.Peprilusspp = data(:,24);
+NEFSCIchthyoplanktonAbundance.Sebastesspp = data(:,25);
+NEFSCIchthyoplanktonAbundance.Prionotusspp = data(:,26);
+NEFSCIchthyoplanktonAbundance.Myoxocephalusaenaeus = data(:,27);
+NEFSCIchthyoplanktonAbundance.Myoxocephalusoctodecemspinosus = data(:,28);
+NEFSCIchthyoplanktonAbundance.Ammodytesspp = data(:,29);
+NEFSCIchthyoplanktonAbundance.Pholisgunnellus = data(:,30);
+NEFSCIchthyoplanktonAbundance.Ulvariasubbifurcata = data(:,31);
+NEFSCIchthyoplanktonAbundance.Anarhichasspp = data(:,32);
+NEFSCIchthyoplanktonAbundance.Citharichthysarctifrons = data(:,33);
+NEFSCIchthyoplanktonAbundance.Etropusspp = data(:,34);
+NEFSCIchthyoplanktonAbundance.Syaciumspp = data(:,35);
+NEFSCIchthyoplanktonAbundance.Bothusspp = data(:,36);
+NEFSCIchthyoplanktonAbundance.Hippoglossinaoblonga = data(:,37);
+NEFSCIchthyoplanktonAbundance.Paralichthysdentatus = data(:,38);
+NEFSCIchthyoplanktonAbundance.Pseudopleuronectesamericanus = data(:,39);
+NEFSCIchthyoplanktonAbundance.Hippoglossoidesplatessoides = data(:,40);
+NEFSCIchthyoplanktonAbundance.Limandaferruginea = data(:,41);
+NEFSCIchthyoplanktonAbundance.Glyptocephaluscynoglossus = data(:,42);
+NEFSCIchthyoplanktonAbundance.Scophthalmusaquosus = data(:,43);
+NEFSCIchthyoplanktonAbundance.Symphurusspp = data(:,44);
+NEFSCIchthyoplanktonAbundance.Lophiusamericanus = data(:,45);
+ 
+%% Clear temporary variables
+clearvars data raw;
+%% Spearate Spring (Spr) and Fall data
+Spr=table2array(NEFSCIchthyoplanktonAbundance(1:17,:))';
+Fall=table2array(NEFSCIchthyoplanktonAbundance(18:34,:))';
+%% Shannon-Wiener index
+[SprSW]=index_SaW(Spr,exp(1));
+[FallSW]=index_SaW(Fall,exp(1));
+%% Count of number taxa per year 
+SprCount=zeros(1,length(SprSW));
+for ii=1:length(Spr)
+    for yy=1:length(SprCount)
+        if Spr(ii,yy)>0
+            SprCount(1,yy)=SprCount(1,yy)+1;
+        end
+    end
+end
+FallCount=zeros(1,length(FallSW));
+for ii=1:length(Fall)
+    for yy=1:length(FallCount)
+        if Fall(ii,yy)>0
+            FallCount(1,yy)=FallCount(1,yy)+1;
+        end
+    end
+end
+clear ii yy
+
+```
+
+### Data processing
+
+Ichthyoplankton diversity data sets were formatted for inclusion in the ecodata R package using the following R code.
+
+<!-- {{ProcessStart}} -->
+```{r, eval = F, echo = T}
+#Ichthyoplankton species counts, diversity, and abundance
+
+library(dplyr)
+library(tidyr)
+library(readxl)
+library(stringr)
+
+raw.dir <- here::here("data-raw")
+
+ichthyo_spec_counts <- read_excel(file.path(raw.dir,"NEFSCIchthyoplanktonSpeciesCount_v3_3.xlsx")) %>% 
+  dplyr::select(-Source) %>% 
+  dplyr::rename(Time = Year,
+                EPU = Region) %>% 
+  mutate(Var = paste(Season,str_replace_all(Var, "_", " ")),
+         EPU = ifelse(EPU == "all", "All", 
+                      EPU)) %>% 
+  dplyr::select(-Season) %>% 
+  mutate(Value  = as.numeric(Value))
+
+ichthyo_diversity <- read_excel(file.path(raw.dir,"NEFSCIchthyoplanktonDiversity_v3_3.xlsx")) %>% 
+  dplyr::select(-Source) %>% 
+  dplyr::rename(Time = Year,
+                EPU = Region) %>% 
+  mutate(Var = paste(Season,str_replace_all(Var, "_", " ")),
+         EPU = ifelse(EPU == "all", "All", 
+                      EPU)) %>% 
+  dplyr::select(-Season) %>% 
+  mutate(Value  = as.numeric(Value)) %>% 
+  rbind(.,ichthyo_spec_counts)
+
+usethis::use_data(ichthyo_diversity, overwrite = T)
+
+# ichthyo_abundance <- read_excel(file.path(raw.dir,"NEFSCIchthyoplanktonAbundance_v3_3.xlsx")) %>% 
+#   dplyr::select(-Source) %>% 
+#   dplyr::rename(Time = Year,
+#                 EPU = Region) %>% 
+#   mutate(Var = paste(Season,str_replace_all(Var, "_", " ")),
+#          EPU = ifelse(EPU == "all", "All", 
+#                       EPU)) %>% 
+#   tidyr::gather(.,Var,Value,-Time,-Season,-Var,-Units,-EPU) %>% 
+#   unite(.,Var, c("Season","Var"), sep = " ") %>% 
+#   mutate(Value  = as.numeric(Value))
+# 
+# usethis::use_data(ichthyo_abundance, overwrite = T)
+
+```
+<!-- {{ProcessEnd}} -->
+
+
+### Plotting
+
+```{r larval-diversity, fig.cap="Ichthyoplankton Shannon diversity in the spring (A) and fall (B) in the Northeast Large Marine Ecosystem.",echo = T, fig.show='hold', fig.align='default', warning = F, message = F,fig.pos='H'}
+# Relative working directories
+data.dir  <- here::here('data')
+r.dir <- here::here('R')
+
+# Load data
+load(file.path(data.dir,"SOE_data_erddap.Rdata"))
+
+# Source plotting functions
+source(file.path(r.dir,"BasePlot_source.R"))
+
+
+opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(3.5, 5, 2, 4))
+
+soe.plot(SOE.data, "Time", "Spring_Ich_Shannon Diversity Index", stacked = "A",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+soe.plot(SOE.data, "Time", "Fall_Ich_Shannon Diversity Index", stacked = "B",
+         rel.y.num = 1.1, end.start = 2007, full.trend = F,
+         cex.stacked = 1.5)
+
+soe.stacked.axis("Year", "Shannon Index", y.line = 2.5)
+
+```

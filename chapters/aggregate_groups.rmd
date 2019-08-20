@@ -1,0 +1,325 @@
+# Aggregate Groups {#aggroups}
+
+**Description**: Mappings of species into aggregate group categories for different analyses
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019) 
+
+**Indicator category**: Synthesis of published information 
+
+**Contributor(s)**: Geret DePiper, Sarah Gaichas, Sean Hardison, Sean Lucey
+  
+**Data steward**: Sean Lucey <Sean.Lucey@noaa.gov>
+  
+**Point of contact**: Sean Lucey <Sean.Lucey@noaa.gov>
+  
+**Public availability statement**: Source data is available to the public (see Data Sources). 
+
+
+## Methods
+The State of the Ecosystem (SOE) reports are delivered to the New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) to provide ecosystems context.  To better understand that broader ecosystem context, many of the indicators are reported at an aggregate level rather than at a single species level.  Species were assigned to an aggregate group following the classification scheme of @garrison2000dietary and @link2006EMAX.  Both works classified species into feeding guilds based on food habits data collected at the Northeast Fisheries Science Center (NEFSC).  In 2017, the SOE used seven specific feeding guilds (plus an "other" category; Table \@ref(tab:soe2017class)).  These seven were the same guilds used in @garrison2000dietary, which also distinguished ontogentic shifts in species diets.  
+
+For the purposes of the SOE, species were only assigned to one category based on the most prevalent size available to commercial fisheries.  However, several of those categories were confusing to the management councils, so in 2018 those categories were simplified to five (plus "other"; Table \@ref(tab:soe2018class)) along the lines of @link2006EMAX.  In addition to feeding guilds, species managed by the councils have been identified.  This is done to show the breadth of what a given council is responsible for within the broader ecosystem context.
+
+```{r soe2017class, eval = T, echo = F}
+soe.17.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore', 
+                                               'Macrozoo-piscivore', 'Macroplanktivore', 
+                                               'Mesoplanktivore', 'Benthivore',
+                                               'Benthos', 'Other'),
+                           Description = c('Top of the food chain', 'Fish eaters', 
+                                           'Shrimp and small fish eaters', 'Amphipod and shrimp eaters',
+                                           'Zooplankton eaters', 'Bottom eaters',
+                                           'Things that live on the bottom', 
+                                           'Things not classified above'))
+
+kable(soe.17.class, booktabs = TRUE,
+      caption = "Aggregate groups use in 2017 SOE.  Classifications are based on Garrison and Link 2000. \\label{}")
+```
+
+```{r soe2018class, eval = T, echo = F}
+soe.18.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore', 
+                                               'Planktivore', 'Benthivore',
+                                               'Benthos', 'Other'),
+                           Description = c('Top of the food chain', 'Fish eaters', 
+                                           'Zooplankton eaters', 'Bottom eaters',
+                                           'Things that live on the bottom', 
+                                           'Things not classified above'))
+
+kable(soe.18.class, booktabs = TRUE,
+      caption = "Aggregate groups use in 2018 SOE.  Classifications are based on Link et al. 2006.")
+```
+
+### Data sources
+
+In order to match aggregate groups with various data sources, a look-up table was generated which includes species' common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.
+
+Management responsibilities for different species are listed under the column "Fed.managed" (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the "NEIEA" column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings [@link2006EMAX], but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the NE-LME (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.
+
+#### Supplemental information
+
+See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:  
+
+*    https://www.itis.gov/  
+*    https://inport.nmfs.noaa.gov/inport/item/22561  
+*    https://inport.nmfs.noaa.gov/inport/item/22560  
+*    https://inport.nmfs.noaa.gov/inport/item/27401  	
+
+More information about the NE-IEA program is available [here](http://integratedecosystemassessment.noaa.gov).
+
+More information about the New Engalnd Fisheries Management Council is available [here](https://www.nefmc.org/).
+
+More information about the Mid-Atlantic Fisheries Management Council is available [here](http://www.mafmc.org/).
+
+### Data extraction 
+
+Species lists are pulled from SVDBS and CFDBS.  They are merged using the ITIS code.  Classifications from Garrison and Link [@garrison2000dietary] and Link et al. [@link2006EMAX] are added manually. The R code used in the extraction process is presented below.
+
+
+```{r, echo = T, eval = F}
+#Species list
+if(Sys.info()['sysname']=="Windows"){
+  data.dir <- "L:\\EcoAP\\Data\\survey"
+  out.dir  <- "L:\\EcoAP\\Data\\survey"
+  memory.limit(4000)
+}
+if(Sys.info()['sysname']=="Linux"){
+  data.dir  <- "/home/slucey/slucey/EcoAP/Data/survey"
+  out.dir   <- "/home/slucey/slucey/EcoAP/Data/survey"
+  out.dir.2 <- "/home/slucey/slucey/EcoAP/Data/Commercial"
+  uid       <- 'slucey'
+  cat("Oracle Password: ")
+  pwd <- scan(stdin(), character(), n = 1)
+}
+
+library(RODBC); library(data.table)
+
+if(Sys.info()['sysname']=="Windows"){
+  channel <- odbcDriverConnect()
+} else {
+  channel <- odbcConnect('sole', uid, pwd)
+}
+
+#Grab svspp code by itis code
+svspp <- as.data.table(sqlQuery(channel, "select SVSPP, ITISSPP, COMNAME, SCINAME 
+                                from ITIS_Lookup"))
+
+#Grab cfspp by itis code
+cfspp <- as.data.table(sqlQuery(channel, "select NESPP4, SPECIES_ITIS, 
+                                COMMON_NAME, SCIENTIFIC_NAME 
+                                from CFDBS.Species_itis_ne"))
+setnames(cfspp, 'SPECIES_ITIS', 'ITISSPP')
+cfspp[, NESPP3 := as.numeric(substr(sprintf('%04d', NESPP4), 1, 3))]
+setkey(cfspp, NESPP3)
+cfspp <- unique(cfspp)
+cfspp[, NESPP4 := NULL]
+
+setkey(cfspp, ITISSPP, NESPP3)
+cfspp <- unique(cfspp, by = key(cfspp))
+
+#Merge to master species list
+spp <- merge(svspp, cfspp, by = 'ITISSPP', all = T)
+spp <- spp[!(is.na(SVSPP) & is.na(NESPP3)), ]
+
+#Fix known issues
+spp <- spp[!SVSPP %in% c(193, 310), ]
+
+spp[ITISSPP == 630979, SVSPP  := 193] #Ocean Pout
+spp[ITISSPP == 620992, SVSPP  := 310] #Deepsea red crab
+spp[ITISSPP == 172783, SVSPP  := 104] #Fourspot flounder
+spp[ITISSPP == 166283, SVSPP  := 112] #John Dory
+spp[ITISSPP == 161731, SVSPP  :=  36] #Menhaden
+spp[ITISSPP ==  98671, SVSPP  := 311] #Cancer Crabs unk
+spp[ITISSPP ==  98455, SVSPP  := 317] #Spider crabs
+spp[ITISSPP == 159772, NESPP3 := 150] #Hagfish
+spp[ITISSPP == 166284, NESPP3 := 188] #John Dory
+spp[ITISSPP == 98670,  NESPP3 := 714] #Cancer Crabs unk
+
+spp[ITISSPP %in% c(630979, 620992), COMNAME := COMMON_NAME]
+spp[ITISSPP %in% c(630979, 620992), SCINAME := SCIENTIFIC_NAME]
+
+#Drop extra columns
+spp[is.na(COMNAME), COMNAME := COMMON_NAME]
+spp[is.na(SCINAME), SCINAME := SCIENTIFIC_NAME]
+spp[, c('COMMON_NAME', 'SCIENTIFIC_NAME') := NULL]
+setcolorder(spp, c('ITISSPP', 'SVSPP', 'NESPP3', 'COMNAME', 'SCINAME'))
+setkey(spp, SVSPP, NESPP3)
+
+#-------------------------------------------------------------------------------
+#Add management authority
+mafmc <- c(103, 121, 131, 135, 141, 143, 151, 403, 409, 502, 503, 621)
+nefmc <- c(22:28, 32, 69, 72:77, 101, 102, 105:107, 155, 193, 310, 401, 894)
+joint <- c(15, 197)
+spp[SVSPP %in% mafmc, MANAGE := 'MAFMC']
+spp[SVSPP %in% nefmc, MANAGE := 'NEFMC']
+spp[SVSPP %in% joint, MANAGE := 'JOINT']
+
+#-------------------------------------------------------------------------------
+#Add functional groups
+#From NEFMC EBFM PDT work
+#See Functional_group_table_Mike.csv in slucey/EcoAP/EBFM_PDT
+spp[, EBFM.PDT := factor(NA, levels = c('Apex Predator', 'Benthivore', 'Benthos',
+                                        'Macroplanktivore', 'Macrozoo-piscivore',
+                                        'Mesoplanktivore', 'Piscivore', 'Other'))]
+spp[SVSPP %in% c(11, 700, 704, 747), EBFM.PDT := 'Apex Predator']
+spp[SVSPP %in% c(14, 22, 25, 74, 102, 105, 106, 107, 141, 143, 151, 164, 172,
+                   176, 177, 192, 193, 301, 310, 312, 314, 317, 322, 501),
+    EBFM.PDT := 'Benthivore']
+spp[SVSPP %in% c(331, 336, 401, 403, 409), EBFM.PDT := 'Benthos']
+spp[NESPP3 %in% c(775, 781, 805, 806), EBFM.PDT := 'Benthos']  
+spp[SVSPP %in% c(76, 163, 168, 171, 502, 503), EBFM.PDT := 'Macroplanktivore']
+spp[SVSPP %in% c(13, 24, 26, 27, 75, 77, 84, 108, 112, 155, 156, 311),
+    EBFM.PDT := 'Macrozoo-piscivore']
+spp[SVSPP %in% c(32, 33, 34, 35, 36, 121, 131), EBFM.PDT := 'Mesoplanktivore']
+spp[SVSPP %in% c(15, 23, 28, 69, 72, 73, 101, 103, 104, 135, 139, 145, 197),
+    EBFM.PDT := 'Piscivore']
+spp[is.na(EBFM.PDT), EBFM.PDT := 'Other']
+
+#Fix known issues
+spp[SVSPP == 160, EBFM.PDT := 'Macroplanktivore']
+
+#Add EMAX
+load(file.path(data.dir, 'EMAX_groups.RData'))
+emax <- emax[!is.na(SVSPP), ]
+spp <- merge(spp, emax[, list(SVSPP, EMAX, Fall.q, Spring.q)], by = 'SVSPP', all.x = T)
+
+#reduce rows
+setkey(spp, SVSPP, NESPP3)
+species <- unique(spp, by = key(spp))
+
+#Remove EMAX q's
+species[, c('Fall.q', 'Spring.q') := NULL]
+
+#Expand EMAX abbreviations
+species[EMAX == 'BG', EMAX := 'Benthivore Gadiformes']
+species[EMAX == 'BE', EMAX := 'Benthivore Elasmobranchs']
+species[EMAX == 'BP', EMAX := 'Benthivore Pleuronectiformes']
+species[EMAX == 'BS', EMAX := 'Benthivore Scorpaeniformes']
+species[EMAX == 'BO', EMAX := 'Benthivore Others']
+species[EMAX == 'BC', EMAX := 'Benthivore Perciformes']
+species[EMAX == 'PG', EMAX := 'Piscivore Gadiformes']
+species[EMAX == 'PE', EMAX := 'Piscivore Elasmobranchs']
+species[EMAX == 'PO', EMAX := 'Piscivore Others']
+species[EMAX == 'OE', EMAX := 'Omnivore Elasmobranchs']
+species[EMAX == 'OO', EMAX := 'Omnivore Others']
+species[EMAX == 'SC', EMAX := 'Southern Perciformes']
+species[EMAX == 'SP', EMAX := 'Southern Pleuronectiformes']
+species[EMAX == 'SE', EMAX := 'Southern Elasmobranchs']
+species[EMAX == 'SG', EMAX := 'Southern Gadiformes']
+species[EMAX == 'SO', EMAX := 'Southern Others']
+
+#Rename columns
+setnames(species, c('MANAGE', 'EBFM.PDT', 'Feeding.guild'), c('Fed.Managed', 'SOE.17', 'SOE.18'))
+
+#Add classification from Garrison/Link 2000
+size <- data.table(COMNAME = c(rep('SMOOTH DOGFISH',           2), 
+                               rep('SPINY DOGFISH',            3),
+                               rep('WINTER SKATE',             4),
+                               rep('LITTLE SKATE',             2),
+                               rep('SMOOTH SKATE',             1),
+                               rep('THORNY SKATE',             4),
+                               rep('ATLANTIC HERRING',         2),
+                               rep('ALEWIFE',                  1),
+                               rep('SILVER HAKE',              3),
+                               rep('ATLANTIC COD',             4),
+                               rep('HADDOCK',                  3),
+                               rep('POLLOCK',                  4),
+                               rep('WHITE HAKE',               3),
+                               rep('RED HAKE',                 3),
+                               rep('SPOTTED HAKE',             2),
+                               rep('AMERICAN PLAICE',          3), 
+                               rep('SUMMER FLOUNDER',          2),
+                               rep('FOURSPOT FLOUNDER',        2),
+                               rep('YELLOWTAIL FLOUNDER',      3),
+                               rep('WINTER FLOUNDER',          3),
+                               rep('WITCH FLOUNDER',           2), 
+                               rep('WINDOWPANE',               2),
+                               rep('GULF STREAM FLOUNDER',     1), 
+                               rep('ATLANTIC MACKEREL',        3),
+                               rep('BUTTERFISH',               1),
+                               rep('BLUEFISH',                 3),
+                               rep('ATLANTIC CROAKER',         2),
+                               rep('BLACK SEA BASS',           2), 
+                               rep('SCUP',                     1),
+                               rep('WEAKFISH',                 2),
+                               rep('ACADIAN REDFISH',          1),
+                               rep('LONGHORN SCULPIN',         2),
+                               rep('SEA RAVEN',                2),
+                               rep('NORTHERN SAND LANCE',      1),
+                               rep('OCEAN POUT',               1),
+                               rep('FAWN CUSK-EEL',            1),
+                               rep('GOOSEFISH',                1),
+                               rep('ATLANTIC SHARPNOSE SHARK', 1), 
+                               rep('NORTHERN SHORTFIN SQUID',  1),
+                               rep('LONGFIN SQUID',            1)),
+                   SizeCat = c('M', 'L', 'S', 'M', 'L', 'S', 'M', 'L', 'XL', 'S',
+                               'M', 'M', 'S', 'M', 'L', 'XL', 'S','M','M', 'S',
+                               'M', 'L', 'S', 'M', 'L', 'XL', 'S', 'M', 'L', 'S',
+                               'M', 'L', 'XL', 'S', 'M', 'L', 'S', 'M', 'L', 'S',
+                               'M',  'S', 'M', 'L', 'M', 'L', 'S', 'M', 'S', 'M',
+                               'L', 'S', 'M', 'L', 'M', 'L', 'S', 'M', 'S', 'S',
+                               'M', 'L', 'S', 'S', 'M', 'L', 'S', 'M', 'S', 'M',
+                               'M', 'S', 'M', 'M', 'S', 'M', 'S', 'M', 'M', 'L',
+                               'L', 'L', 'L', 'L', 'L'),
+                   Min.size = c(41, 61, 10, 41, 61, 10, 31, 61, 81, 10, 31, 31,
+                                10, 31, 61, 81, 10, 21, 21, 10, 21, 41, 10, 21, 
+                                51, 81, 10, 21, 51, 10, 21, 51, 81, 10, 21, 41, 10, 21, 41, 10, 21, 
+                                10, 21, 41, 21, 41, 10, 21, 10, 21, 41, 10, 21, 
+                                41, 21, 41, 10, 21, 10, 10, 21, 36, 10, 10, 31,
+                                71, 10, 26, 10, 26, 26, 10, 26, 26, 10, 26, 10, 
+                                26, 11, 61, 61, 61, 61, 31, 31),
+                   Garrison.Link = as.character(c(1, 1, 2, 2, 6, 3, 3, 6, 6, 3, 3, 4, 5, 5, 6, 
+                                     6, 2, 2, 2, 4, 4, 6, 3, 3, 6, 6, 5, 5, 5, 4, 
+                                     4, 4, 4, 3, 4, 6, 3, 3, 4, 3, 6, 5, 5, 5, 6,
+                                     6, 3, 6, 3, 5, 5, 5, 5, 5, 5, 5, 3, 3, 5, 2,
+                                     2, 2, 2, 6, 6, 6, 5, 5, 1, 1, 5, 6, 6, 4, 3, 
+                                     3, 6, 6, 2, 5, 3, 6, 6, 2, 2))
+                                )
+
+#Give Garrison.link guilds meaniful names
+size[Garrison.Link == 1, Garrison.Link := 'Crab Eaters']
+size[Garrison.Link == 2, Garrison.Link := 'Planktivores']
+size[Garrison.Link == 3, Garrison.Link := 'Amphipod/Shrimp Eaters']
+size[Garrison.Link == 4, Garrison.Link := 'Shrimp/Small Fish Eaters']
+size[Garrison.Link == 5, Garrison.Link := 'Benthivores']
+size[Garrison.Link == 6, Garrison.Link := 'Piscivores']
+
+#Merge Garrison Link into species list
+species <- merge(species, size, by = 'COMNAME', all = T)
+
+#Set column order
+setcolorder(species, c('ITISSPP', 'SVSPP', 'NESPP3', 'COMNAME', 'SCINAME', 
+                       'SizeCat', 'Min.size', 'Fed.Managed', 'Garrison.Link',
+                       'SOE.17', 'SOE.18', 'EMAX'))
+
+#Add NE.IEA.web category
+#get rerddap
+devtools::install_github("ropensci/rerddap")
+library(rerddap) 
+
+#Set URL for COMET (server where NEFSC ERDDAP lives)
+comet <- 'https://comet.nefsc.noaa.gov/erddap/'
+
+#List datasets on the NEFSC ERDDAP
+tab_list <- ed_datasets(url = comet)
+
+#download a tabular dataset (input is dataset id; this works on vectors)
+ed_spp <- as.data.table(sprintf("https://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv", "species_groups_2018") %>% 
+  
+  purrr::map(function(x) {
+    
+    readr::read_csv(url(x))
+    
+  }))
+
+neiea <- unique(ed_spp[!is.na(NEIEA), list(COMNAME, NEIEA)])
+
+species <- merge(species, neiea, by = 'COMNAME', all = T)
+
+save(species, file = file.path(out.dir, 'SOE_species_list.RData'))
+```
+
+
+
+
+
+
+
