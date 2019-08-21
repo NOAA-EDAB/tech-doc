@@ -123,7 +123,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{20 August 2019}
+    \date{21 August 2019}
 
 
 \begin{document}
@@ -1759,13 +1759,64 @@ convert temperature anomalies back to ocean bottom temperature.
 
 \subsection{Data processing}\label{data-processing-2}
 
+Source data were formatted for inclusion in the ecodata R package using
+the following R code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Process ocean temperature anomaly data}
+
+\CommentTok{# These data include in situ regional time series of both surface and bottom water temperature anomalies}
+\CommentTok{# on the Northeast Continental Shelf. Raw data is split into four files by EPU (SS, GOM, GB, and MAB).}
+
+
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(tidyr)}
+\KeywordTok{library}\NormalTok{(lubridate)}
+
+\CommentTok{#Get raw}
+\NormalTok{raw.dir <-}\StringTok{ }\NormalTok{here}\OperatorTok{::}\KeywordTok{here}\NormalTok{(}\StringTok{"data-raw"}\NormalTok{) }\CommentTok{#input raw}
+
+\NormalTok{get_oceantemp_insitu <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{save_clean =}\NormalTok{ F)\{}
+
+\NormalTok{  ss <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(raw.dir,}\StringTok{"EcoSS_core_Ttopbot.csv"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{EPU =} \StringTok{"SS"}\NormalTok{)}
+\NormalTok{  gom <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(raw.dir,}\StringTok{"EcoGoM_core_Ttopbot.csv"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{EPU =} \StringTok{"GOM"}\NormalTok{)}
+\NormalTok{  gb <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(raw.dir,}\StringTok{"EcoGB_core_Ttopbot.csv"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{EPU =} \StringTok{"GB"}\NormalTok{)}
+\NormalTok{  mab <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(raw.dir,}\StringTok{"EcoMAB_core_Ttopbot.csv"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{EPU =} \StringTok{"MAB"}\NormalTok{)}
+  
+\NormalTok{  oceantemp_insitu <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(ss, gom, gb, mab) }\OperatorTok{%>%}\StringTok{ }\CommentTok{#bind all}
+\StringTok{    }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Time =}\NormalTok{ decimal.year, }\DataTypeTok{Var =}\NormalTok{ variable.name, }\DataTypeTok{Value =}\NormalTok{ temperature) }\OperatorTok{%>%}\StringTok{ }\CommentTok{#rename}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Units =} \StringTok{"degreesC"}\NormalTok{, }\DataTypeTok{Time =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{format}\NormalTok{(}\KeywordTok{date_decimal}\NormalTok{(Time), }\StringTok{"%Y-%b-%d"}\NormalTok{), }\StringTok{"%Y-%b-%d"}\NormalTok{),}
+\NormalTok{           Var, }\DataTypeTok{Var =}\NormalTok{ plyr}\OperatorTok{::}\KeywordTok{mapvalues}\NormalTok{(Var, }\DataTypeTok{from =} \KeywordTok{c}\NormalTok{(}\StringTok{"Tsfc_anom"}\NormalTok{,}\CommentTok{#Rename variables}
+                                                    \StringTok{"Tsfc_ref"}\NormalTok{,}
+                                                    \StringTok{"Tbot_anom"}\NormalTok{,}
+                                                    \StringTok{"Tbot_ref"}\NormalTok{),}
+                                      \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"sst anomaly in situ"}\NormalTok{,}
+                                             \StringTok{"reference sst in situ (1981-2010)"}\NormalTok{,}
+                                             \StringTok{"bottom temp anomaly in situ"}\NormalTok{,}
+                                             \StringTok{"reference bt in situ (1981-2010)"}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{group_by}\NormalTok{(}\DataTypeTok{Time =} \KeywordTok{year}\NormalTok{(Time), EPU, Var, Units) }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{Value =} \KeywordTok{mean}\NormalTok{(Value)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{as.data.frame}\NormalTok{() }
+  
+  \ControlFlowTok{if}\NormalTok{ (save_clean)\{}
+\NormalTok{    usethis}\OperatorTok{::}\KeywordTok{use_data}\NormalTok{(oceantemp_insitu, }\DataTypeTok{overwrite =}\NormalTok{ T)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{return}\NormalTok{(oceantemp_insitu)}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
 \subsection{Plotting}\label{plotting-3}
 
 \begin{figure}
-\centering
-\includegraphics{_main_files/figure-latex/NE-bot-temp-1.pdf}
-\caption{\label{fig:NE-bot-temp}GOM and GB annual bottom temperature
-anomalies.}
+
+{\centering \includegraphics{_main_files/figure-latex/NE-bot-temp-1} 
+
+}
+
+\caption{GOM and GB annual bottom temperature anomalies.}\label{fig:NE-bot-temp}
 \end{figure}
 
 \chapter{Catch and Fleet Diversity}\label{catch-and-fleet-diversity}
@@ -2084,7 +2135,7 @@ line (p \textless{} 0.05).}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=12.49in]{/Users/seanhardison/Documents/git/tech-doc/images/cb_water_quality_attainment} \caption{Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017.}\label{fig:unnamed-chunk-10}
+\includegraphics[width=12.49in]{/Users/seanhardison/Documents/git/tech-doc/images/cb_water_quality_attainment} \caption{Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017.}\label{fig:unnamed-chunk-9}
 \end{figure}
 
 \subsection{Data processing}\label{data-processing-4}
@@ -8644,8 +8695,8 @@ using the following R code.
 
 \begin{figure}
 \centering
-\includegraphics{_main_files/figure-latex/unnamed-chunk-39-1.pdf}
-\caption{\label{fig:unnamed-chunk-39}Groundfish productivity across all
+\includegraphics{_main_files/figure-latex/unnamed-chunk-38-1.pdf}
+\caption{\label{fig:unnamed-chunk-38}Groundfish productivity across all
 stocks in the Northeast Large Marine Ecosystem.}
 \end{figure}
 
@@ -9479,6 +9530,193 @@ available
 NEFMC and jointly managed stocks.}
 \end{figure}
 
+\chapter{Slopewater proportions}\label{slopewater-proportions}
+
+\textbf{Description}: Percent total of water type observed in the deep
+Northeast Channel (150-200 m water depth).
+
+\textbf{Indicator category}: Published methods
+
+\textbf{Found in}: State of the Ecosystem - Gulf of Maine \& Georges
+Bank (2019)
+
+\textbf{Contributors}: Paula Fratantoni,
+\href{mailto:paula.fratantoni@noaa.gov}{\nolinkurl{paula.fratantoni@noaa.gov}};
+David Mountain, NOAA Fisheries, retired.
+
+\textbf{Data steward}: Kimberly Bastille,
+\href{mailto:kimberly.bastille@noaa.gov}{\nolinkurl{kimberly.bastille@noaa.gov}}
+
+\textbf{Point of contact}: Paula Fratantoni,
+\href{mailto:paula.fratantoni@noaa.gov}{\nolinkurl{paula.fratantoni@noaa.gov}}
+
+\textbf{Public availability statement}: Source data are publicly
+available at
+\url{ftp://ftp.nefsc.noaa.gov/pub/hydro/matlab_files/yearly} and in the
+World Ocean Database housed at
+\url{http://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html} under
+institute code 258
+
+\section{Methods}\label{methods-27}
+
+\subsection{Data sources}\label{data-sources-27}
+
+The slope water composition index incorporates temperature and salinity
+measurements collected on Northeast Fisheries Science Center surveys
+between 1977-present within the geographic confines of the Northeast
+Channel in the Gulf of Maine. Early measurements were made using water
+samples collected primarily with Niskin bottles at discreet depths,
+mechanical bathythermographs and expendable bathythermograph probes, but
+by 1991 the CTD -- an acronym for conductivity temperature and depth --
+became standard equipment on all NEFSC surveys.
+
+\subsection{Data extraction}\label{data-extraction-22}
+
+While all processed hydrographic data are archived in an Oracle database
+(OCDBS), we work from Matlab-formatted files stored locally.
+
+\subsection{Data analysis}\label{data-analysis-25}
+
+Temperature and salinity measurements are examined to assess the
+composition of the waters entering the Gulf of Maine through the
+Northeast Channel. The analysis closely follows the methodology
+described by D. G. Mountain
+(\protect\hyperlink{ref-mountain2012}{2012}). This method assumes that
+the waters flowing into the Northeast Channel between 150 and 200 meters
+depth are composed of slope waters, originating offshore of the
+continental shelf, and shelf waters, originating on the continental
+shelf south of Nova Scotia.
+
+For each survey in the hydrographic archive, ocean temperature and
+salinity observations sampled in the area just inside the Northeast
+Channel (bounded by 42.2-42.6 \textdegree latitude north and
+66-66.8\textdegree longitude west) and between 150 - 200 meters depth
+are extracted and a volume-weighted average temperature and salinity is
+calculated. The volume weighting is accomplished by apportioning the
+area within the Northeast Channel polygon among the stations occupying
+the region, based on inverse distance squared weighting. The result of
+this calculation is a timeseries of volume-average temperature and
+salinity having a temporal resolution that matches the survey frequency
+in the database.
+
+The average temperature and salinity observed at depth in the Northeast
+Channel is assumed to be the product of mixing between three distinct
+sources having the following temperature and salinity characteristics:
+(1) Warm Slope Water (T=10\textdegree C, S=35), (2) Labrador Slope Water
+(T=6\textdegree C, S=34.7) and (3) Scotian Shelf Water
+(T=2\textdegree C, S=32). As described by D. G. Mountain
+(\protect\hyperlink{ref-mountain2012}{2012}), the relative proportion of
+each source is determined via a rudimentary 3-point mixing algorithm. On
+a temperature-salinity diagram, lines connecting the T-S coordinates for
+these three sources form a triangle, the sides of which represent mixing
+lines between the sources. A water sample that is a mixture of two
+sources will have a temperature and salinity that falls somewhere along
+the line connecting the two sources on the temperature-salinity diagram.
+Observations of temperature and salinity collected within the Northeast
+Channel would be expected to fall within the triangle if the water
+sampled is a mixture of the three sources. Simple geometry allows us to
+calculate the relative proportion of each source in a given measurement.
+As an example, a line drawn from the T-S point representing shelf water
+through an observed T-S in the center of the triangle will intersect the
+opposite side of the triangle (the mixing line connecting the
+coordinates of the two slope water sources). This intersecting T-S value
+may then be used to calculate the relative proportions (percentage) of
+the two slope water sources. Using this method, the percentage of
+Labrador slope water and Warm slope water are determined for the
+timeseries of volume-average temperature and salinity.
+
+It should be noted that our method assumes that the temperature and
+salinity properties associated with the source watermasses are constant.
+In reality, these may vary from year to year, modified by atmospheric
+forcing, mixing and/or advective processes. Likewise, other sources are
+periodically introduced into the Northeast Channel, including intrusions
+of Gulf Stream water flowing into the Gulf of Maine and modified shelf
+water flowing out of the Gulf of Maine along the flank of Georges Bank.
+These sources are not explicitely considered in the 3-point mixing
+algorithm and may introduce errors in the proportional estimates.
+
+\subsection{Data processing}\label{data-processing-17}
+
+Source data were formatted for inclusion in the ecodata R package using
+the following R code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Process slopewater proportion time series}
+\CommentTok{# }
+\CommentTok{# Slopewater proportions give the percent total of water type observed in}
+\CommentTok{# the deep Northeast Channel (150-200 m depth). }
+\CommentTok{# }
+\CommentTok{# Raw data fields correspond to year, water mass flavor (WSW = Warm Slope Water, LSLW = Labrador Slope Water),}
+\CommentTok{# and proportion of total expressed as a percentage. }
+
+
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(tidyr)}
+
+\CommentTok{#Get raw}
+\NormalTok{raw.dir <-}\StringTok{ }\NormalTok{here}\OperatorTok{::}\KeywordTok{here}\NormalTok{(}\StringTok{"data-raw"}\NormalTok{) }\CommentTok{#input raw}
+
+\NormalTok{get_slopewater <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{save_clean =}\NormalTok{ F)\{}
+  
+\NormalTok{  d <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(raw.dir,}\StringTok{"slopewater_proportions.csv"}\NormalTok{))}
+  
+\NormalTok{  slopewater <-}\StringTok{ }\NormalTok{d }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Time =}\NormalTok{ year, }\DataTypeTok{Var =}\NormalTok{ water.mass.flavor, }\DataTypeTok{Value =}\NormalTok{ prop) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{EPU =} \StringTok{"GOM"}\NormalTok{, }\DataTypeTok{Units =} \StringTok{"unitless"}\NormalTok{, }\DataTypeTok{Var2 =} \StringTok{"proportion ne channel"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{unite}\NormalTok{(.,Var,}\KeywordTok{c}\NormalTok{(Var,Var2), }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{as.data.frame}\NormalTok{()}
+  
+  \ControlFlowTok{if}\NormalTok{ (save_clean)\{}
+\NormalTok{    usethis}\OperatorTok{::}\KeywordTok{use_data}\NormalTok{(slopewater, }\DataTypeTok{overwrite =}\NormalTok{ T)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{return}\NormalTok{(slopewater)}
+\NormalTok{  \}}
+  
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Plotting}\label{plotting-19}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sw.df <-}\StringTok{ }\NormalTok{slopewater }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(Var, }\DataTypeTok{Var =}\NormalTok{ plyr}\OperatorTok{::}\KeywordTok{mapvalues}\NormalTok{(Var, }\DataTypeTok{from =} \KeywordTok{c}\NormalTok{(}\StringTok{"WSW proportion ne channel"}\NormalTok{,}
+                                                  \StringTok{"LSLW proportion ne channel"}\NormalTok{),}
+                                    \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"WSW"}\NormalTok{,}\StringTok{"LSLW"}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Origin  =}\NormalTok{ Var) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Origin) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{hline =} \KeywordTok{mean}\NormalTok{(Value)) }
+
+\NormalTok{sw.df}\OperatorTok{$}\NormalTok{Origin <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(sw.df}\OperatorTok{$}\NormalTok{Origin, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"WSW"}\NormalTok{,}\StringTok{"LSLW"}\NormalTok{))}
+
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ sw.df) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Time, }\DataTypeTok{y =}\NormalTok{ Value, }\DataTypeTok{color =}\NormalTok{ Origin))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Time, }\DataTypeTok{y =}\NormalTok{ Value, }\DataTypeTok{color =}\NormalTok{ Origin)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Percent of Total Slopewater"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Slopewater Proportions in NE Channel"}\NormalTok{)}\OperatorTok{+}
+\StringTok{    }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{expand =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.01}\NormalTok{, }\FloatTok{0.01}\NormalTok{))}\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_hline}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{yintercept =}\NormalTok{ hline,}
+                     \DataTypeTok{color =}\NormalTok{ Origin),}
+           \DataTypeTok{size =}\NormalTok{ hline.size,}
+           \DataTypeTok{alpha =}\NormalTok{ hline.alpha,}
+           \DataTypeTok{linetype =}\NormalTok{ hline.lty)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_ts}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{strip.text=}\KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust=}\DecValTok{0}\NormalTok{,}
+                                \DataTypeTok{face =} \StringTok{"italic"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{_main_files/figure-latex/wsw-prop-1} 
+
+}
+
+\caption{Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.}\label{fig:wsw-prop}
+\end{figure}
+
 \chapter{Species Density Estimates}\label{species-density-estimates}
 
 \textbf{Description}: Current and Historical Species Distributions
@@ -9498,7 +9736,7 @@ Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018)
 \textbf{Public availability statement}: Source data are publicly
 available.
 
-\section{Methods}\label{methods-27}
+\section{Methods}\label{methods-28}
 
 We used kernel density plots to depict shifts in species' distributions
 over time. These figures characterize the probability of a species
@@ -9515,7 +9753,7 @@ A wide array of KDEs for many ecologically and economically important
 species on the Northeast US Continental Shelf are available
 \href{https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html}{here}.
 
-\subsection{Data sources}\label{data-sources-27}
+\subsection{Data sources}\label{data-sources-28}
 
 Current and historical species distributions are based on the NEFSC
 Bottom Trawl Survey data (aka \protect\hyperlink{survdat}{``Survdat''})
@@ -9524,7 +9762,7 @@ downloaded
 \href{https://github.com/NOAA-EDAB/tech-doc/tree/master/gis}{here}
 (listed as ``strata.shp'').
 
-\subsection{Data analysis}\label{data-analysis-25}
+\subsection{Data analysis}\label{data-analysis-26}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9822,7 +10060,7 @@ downloaded
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Plotting}\label{plotting-19}
+\subsection{Plotting}\label{plotting-20}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9864,7 +10102,7 @@ request (read more
 data may be downloaded
 \href{https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html}{here}.
 
-\section{Methods}\label{methods-28}
+\section{Methods}\label{methods-29}
 
 Three metrics quantifying spatial-temporal distribution shifts within
 fish populations were developed by Friedland et al.
@@ -9883,13 +10121,13 @@ Analyses present in the State of the Ecosystem (SOE) reports include
 mean depth and along-shelf distance for Atlantic cod, sea scallop,
 summer flounder, and black sea bass.
 
-\subsection{Data sources}\label{data-sources-28}
+\subsection{Data sources}\label{data-sources-29}
 
 Data for these indicators were derived from fishery-independent bottom
 trawl survey data collected by the Northeast Fisheries Science Center
 (NEFSC).
 
-\subsection{Data analysis}\label{data-analysis-26}
+\subsection{Data analysis}\label{data-analysis-27}
 
 Species distribution indicators were derived using the following R code.
 
@@ -10281,7 +10519,7 @@ Species distribution indicators were derived using the following R code.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Data processing}\label{data-processing-17}
+\subsection{Data processing}\label{data-processing-18}
 
 Distribution indicators were further formatted for inclusion in the
 ecodata R package using the following R code.
@@ -10320,7 +10558,7 @@ ecodata R package using the following R code.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Plotting}\label{plotting-20}
+\subsection{Plotting}\label{plotting-21}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10401,7 +10639,7 @@ qualified researchers upon request (see ``Access Information''
 data used in SOE reports are available
 \href{https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html}{here}.
 
-\section{Methods}\label{methods-29}
+\section{Methods}\label{methods-30}
 
 The Northeast Fisheries Science Center (NEFSC) has been conducting
 standardized bottom trawl surveys in the fall since 1963 and spring
@@ -10445,7 +10683,7 @@ SVDBS. Vessel conversions were made from either the NOAA Ship
 series. The Albatross was decommisioned in 2009 and the Bigelow is now
 the primary vessel for the bottom trawl survey.
 
-\label{tab:unnamed-chunk-52}Calibration factors for NEFSC trawl survey data
+\label{tab:unnamed-chunk-53}Calibration factors for NEFSC trawl survey data
 
 Name
 
@@ -10485,7 +10723,7 @@ is a data.table, a powerful wrapper for the base data.frame
 There are also a series of tools that have been developed in order to
 utilize the Survdat data set (\url{https://github.com/slucey/RSurvey}).
 
-\subsection{Data sources}\label{data-sources-29}
+\subsection{Data sources}\label{data-sources-30}
 
 Survdat is a database query of the NEFSC survey database (SVDBS).These
 data are available to qualified researchers upon request. More
@@ -10493,7 +10731,7 @@ information on the data request process is available under the ``Access
 Information'' field
 \href{https://inport.nmfs.noaa.gov/inport/item/22560}{here}.
 
-\subsection{Data extraction}\label{data-extraction-22}
+\subsection{Data extraction}\label{data-extraction-23}
 
 Extraction methods are described above. The following is the R code used
 in the data extraction process.
@@ -10758,7 +10996,7 @@ in the data extraction process.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Data analysis}\label{data-analysis-27}
+\subsection{Data analysis}\label{data-analysis-28}
 
 The fisheries independent data contained within the Survdat is used in a
 variety of products; the more complicated analyses are detailed in their
@@ -10938,7 +11176,7 @@ ecodata R package.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Plotting}\label{plotting-21}
+\subsection{Plotting}\label{plotting-22}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11010,12 +11248,12 @@ Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
 public. Model outputs for thermal habitat projections are available
 \href{https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1\&itemsPerPage=1000}{here}.
 
-\section{Methods}\label{methods-30}
+\section{Methods}\label{methods-31}
 
 This indicator is based on work reported in Kleisner et al.
 (\protect\hyperlink{ref-Kleisner2017}{2017}).
 
-\subsection{Data sources}\label{data-sources-30}
+\subsection{Data sources}\label{data-sources-31}
 
 \subsubsection{Global Climate Model
 Projection}\label{global-climate-model-projection}
@@ -11048,7 +11286,7 @@ oceanographic and environmental data. These data can be leveraged for
 exploring future changes in the patterns of abundance and distribution
 of species in the region.
 
-\subsection{Data analysis}\label{data-analysis-28}
+\subsection{Data analysis}\label{data-analysis-29}
 
 \subsubsection{Global Climate Model
 Projection}\label{global-climate-model-projection-1}
@@ -11139,7 +11377,7 @@ mean. We then compute the area of these kernels using the gArea function
 from the `rgeos' package in R (Bivand et al.
 \protect\hyperlink{ref-Bivand2011}{2011}).
 
-\subsection{Plotting}\label{plotting-22}
+\subsection{Plotting}\label{plotting-23}
 
 \begin{figure}
 \centering
@@ -11172,7 +11410,7 @@ Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
 
 \textbf{Public availability statement}: NA
 
-\section{Methods}\label{methods-31}
+\section{Methods}\label{methods-32}
 
 Summarizing trends for ecosystem indicators is desirable, but the power
 of statistical tests to detect a trend is hampered by low sample size
@@ -11233,15 +11471,15 @@ using the R package \emph{AICcmodavg} (Mazerolle
 figures, significant positive trends were colored orange, and negative
 trends purple.
 
-\subsection{Data source(s)}\label{data-sources-31}
+\subsection{Data source(s)}\label{data-sources-32}
 
 NA
 
-\subsection{Data extraction}\label{data-extraction-23}
+\subsection{Data extraction}\label{data-extraction-24}
 
 NA
 
-\subsection{Data analysis}\label{data-analysis-29}
+\subsection{Data analysis}\label{data-analysis-30}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11626,16 +11864,16 @@ available
 Derived data can be found
 \href{https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html}{here}.
 
-\section{Methods}\label{methods-32}
+\section{Methods}\label{methods-33}
 
-\subsection{Data sources}\label{data-sources-32}
+\subsection{Data sources}\label{data-sources-33}
 
 Zooplankton data are from the NOAA MARMAP and EcoMon cruises detailed
 extensively in Kane (\protect\hyperlink{ref-Kane2007}{2007}), Kane
 (\protect\hyperlink{ref-Kane2011}{2011}), and Morse et al.
 (\protect\hyperlink{ref-Morse2017}{2017}).
 
-\subsection{Data extraction}\label{data-extraction-24}
+\subsection{Data extraction}\label{data-extraction-25}
 
 Data are from the publicly available zooplankton dataset on the NOAA FTP
 server. The excel file has a list of excluded samples and cruises based
@@ -11652,7 +11890,7 @@ R code used in extraction process.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Data analysis}\label{data-analysis-30}
+\subsection{Data analysis}\label{data-analysis-31}
 
 \textbf{Annual abundance anomalies}
 
@@ -11896,7 +12134,7 @@ the Northeast Shelf. These data were then aggregated further into time
 series of mean abundance by Ecological Production Unit. These data are
 presented in Figure \ref{fig:MAB-oi-zoo}.
 
-\subsection{Data processing}\label{data-processing-18}
+\subsection{Data processing}\label{data-processing-19}
 
 Zooplankton abundances indicators were formatted for inclusion in the
 ecodata R package using the following code.
@@ -12153,7 +12391,7 @@ ecodata R package using the following code.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Plotting}\label{plotting-23}
+\subsection{Plotting}\label{plotting-24}
 
 \textbf{Abundance anomaly}
 
@@ -12803,6 +13041,11 @@ doi:\href{https://doi.org/10.1016/j.jmarsys.2016.09.011}{10.1016/j.jmarsys.2016.
 Mountain, David G. 1991. ``The Volume of Shelf Water in the Middle
 Atlantic Bight: Seasonal and Interannual Variability, 1977--1987.''
 \emph{Continental Shelf Research} 11 (3). Elsevier: 251--67.
+
+\hypertarget{ref-mountain2012}{}
+---------. 2012. ``Labrador Slope Water Entering the Gulf of
+Maine---response to the North Atlantic Oscillation.'' \emph{Continental
+Shelf Research} 47. Elsevier: 150--55.
 
 \hypertarget{ref-mountain_variability_2003}{}
 Mountain, David G. 2003. ``Variability in the Properties of Shelf Water
