@@ -17,7 +17,7 @@
 ## Methods
 
 ### Data sources
-Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database Biological Sample (CFDBS). The derived Comland data set is available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html)
+Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database System (CFDBS). The derived Comland data set is available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
 
 ### Data extraction 
 For information regarding processing of CFDBS, please see [Comland](#comdat) methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was $\geq$ 0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.
