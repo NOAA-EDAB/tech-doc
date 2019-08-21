@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>34 Zooplankton | Technical Documentation, State of the Ecosystem Report</title>
+  <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="34 Zooplankton | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="34 Zooplankton | Technical Documentation, State of the Ecosystem Report" />
+  
+  <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  
+
+<meta name="author" content="Northeast Fisheries Science Center" />
+
+
+<meta name="date" content="2019-08-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="trend-analysis.html">
+<link rel="next" href="references.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
+<li class="chapter" data-level="2.1" data-path="aggroups.html"><a href="aggroups.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="aggroups.html"><a href="aggroups.html#data-sources"><i class="fa fa-check"></i><b>2.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="2.1.2" data-path="aggroups.html"><a href="aggroups.html#data-extraction"><i class="fa fa-check"></i><b>2.1.2</b> Data extraction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html"><i class="fa fa-check"></i><b>3</b> Annual SST Cycles</a><ul>
+<li class="chapter" data-level="3.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#methods-1"><i class="fa fa-check"></i><b>3.1</b> Methods</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-sources-1"><i class="fa fa-check"></i><b>3.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="3.1.2" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-extraction-1"><i class="fa fa-check"></i><b>3.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="3.1.3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-analysis"><i class="fa fa-check"></i><b>3.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="3.1.4" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#plotting"><i class="fa fa-check"></i><b>3.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aquaculture.html"><a href="aquaculture.html"><i class="fa fa-check"></i><b>4</b> Aquaculture</a><ul>
+<li class="chapter" data-level="4.1" data-path="aquaculture.html"><a href="aquaculture.html#methods-2"><i class="fa fa-check"></i><b>4.1</b> Methods</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-2"><i class="fa fa-check"></i><b>4.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.1.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-2"><i class="fa fa-check"></i><b>4.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="aquaculture.html"><a href="aquaculture.html#data-processing"><i class="fa fa-check"></i><b>4.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="aquaculture.html"><a href="aquaculture.html#plotting-1"><i class="fa fa-check"></i><b>4.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a><ul>
+<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-3"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-2"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html"><i class="fa fa-check"></i><b>6</b> Bottom temperatures</a><ul>
+<li class="chapter" data-level="6.1" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#methods-4"><i class="fa fa-check"></i><b>6.1</b> Methods</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-sources-4"><i class="fa fa-check"></i><b>6.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="6.1.2" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-extraction-4"><i class="fa fa-check"></i><b>6.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-analysis-3"><i class="fa fa-check"></i><b>6.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="6.1.4" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-processing-2"><i class="fa fa-check"></i><b>6.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="6.1.5" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#plotting-3"><i class="fa fa-check"></i><b>6.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html"><i class="fa fa-check"></i><b>7</b> Catch and Fleet Diversity</a><ul>
+<li class="chapter" data-level="7.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#methods-5"><i class="fa fa-check"></i><b>7.1</b> Methods</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-sources-5"><i class="fa fa-check"></i><b>7.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="7.1.2" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-extraction-5"><i class="fa fa-check"></i><b>7.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="7.1.3" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-analysis-4"><i class="fa fa-check"></i><b>7.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="7.1.4" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-processing-3"><i class="fa fa-check"></i><b>7.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="7.1.5" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#plotting-4"><i class="fa fa-check"></i><b>7.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html"><i class="fa fa-check"></i><b>8</b> Chesapeake Bay Water Quality Standards Attainment</a><ul>
+<li class="chapter" data-level="8.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#methods-6"><i class="fa fa-check"></i><b>8.1</b> Methods</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-sources-6"><i class="fa fa-check"></i><b>8.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-analysis-5"><i class="fa fa-check"></i><b>8.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-processing-4"><i class="fa fa-check"></i><b>8.1.3</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chl-pp.html"><a href="chl-pp.html"><i class="fa fa-check"></i><b>9</b> Chlorophyll <em>a</em> and Primary Production</a><ul>
+<li class="chapter" data-level="9.1" data-path="chl-pp.html"><a href="chl-pp.html#methods-7"><i class="fa fa-check"></i><b>9.1</b> Methods</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-7"><i class="fa fa-check"></i><b>9.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="9.1.2" data-path="chl-pp.html"><a href="chl-pp.html#data-extraction-6"><i class="fa fa-check"></i><b>9.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="9.1.3" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-6"><i class="fa fa-check"></i><b>9.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="9.1.4" data-path="chl-pp.html"><a href="chl-pp.html#data-processing-5"><i class="fa fa-check"></i><b>9.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="9.1.5" data-path="chl-pp.html"><a href="chl-pp.html#plotting-5"><i class="fa fa-check"></i><b>9.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html"><i class="fa fa-check"></i><b>10</b> Fishing Community Climate Vulnerability</a><ul>
+<li class="chapter" data-level="10.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#methods-8"><i class="fa fa-check"></i><b>10.1</b> Methods</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-sources-8"><i class="fa fa-check"></i><b>10.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="10.1.2" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-extraction-7"><i class="fa fa-check"></i><b>10.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="10.1.3" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-analysis-7"><i class="fa fa-check"></i><b>10.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="10.1.4" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#plotting-6"><i class="fa fa-check"></i><b>10.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="conceptual-models.html"><a href="conceptual-models.html"><i class="fa fa-check"></i><b>11</b> Conceptual Models</a><ul>
+<li class="chapter" data-level="11.1" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-9"><i class="fa fa-check"></i><b>11.1</b> Methods</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-9"><i class="fa fa-check"></i><b>11.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-8"><i class="fa fa-check"></i><b>11.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="11.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-8"><i class="fa fa-check"></i><b>11.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>12</b> Fish Condition Indicator</a><ul>
+<li class="chapter" data-level="12.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-10"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-9"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="12.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-9"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-7"><i class="fa fa-check"></i><b>12.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>13</b> Ecological Production Units</a><ul>
+<li class="chapter" data-level="13.1" data-path="epu.html"><a href="epu.html#methods-11"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="epu.html"><a href="epu.html#data-sources-11"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="epu.html"><a href="epu.html#data-extraction-10"><i class="fa fa-check"></i><b>13.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="13.1.3" data-path="epu.html"><a href="epu.html#data-analysis-10"><i class="fa fa-check"></i><b>13.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.4" data-path="epu.html"><a href="epu.html#data-processing-6"><i class="fa fa-check"></i><b>13.1.4</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>14</b> Gulf Stream Index</a><ul>
+<li class="chapter" data-level="14.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-12"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-11"><i class="fa fa-check"></i><b>14.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="14.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-7"><i class="fa fa-check"></i><b>14.1.3</b> Data Processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>15</b> Harbor Porpoise Bycatch</a><ul>
+<li class="chapter" data-level="15.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-13"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-13"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-12"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-8"><i class="fa fa-check"></i><b>15.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>16</b> Ichthyoplankton Diversity</a><ul>
+<li class="chapter" data-level="16.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-14"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-14"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-13"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-8"><i class="fa fa-check"></i><b>16.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="16.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-9"><i class="fa fa-check"></i><b>16.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>17</b> Commercial Landings Data</a><ul>
+<li class="chapter" data-level="17.1" data-path="comdat.html"><a href="comdat.html#methods-15"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-15"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-14"><i class="fa fa-check"></i><b>17.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="17.1.4" data-path="comdat.html"><a href="comdat.html#plotting-10"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>18</b> Long-term Sea Surface Temperature</a><ul>
+<li class="chapter" data-level="18.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-16"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-16"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-10"><i class="fa fa-check"></i><b>18.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="18.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-11"><i class="fa fa-check"></i><b>18.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="19.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="19.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="19.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>20</b> New England Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="20.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-18"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-18"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-16"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>21</b> Verified Records of Southern Kingfish</a><ul>
+<li class="chapter" data-level="21.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-19"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-19"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-17"><i class="fa fa-check"></i><b>21.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="21.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-17"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-12"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>22</b> Habitat Occupancy Models</a><ul>
+<li class="chapter" data-level="22.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-20"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-20"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-11"><i class="fa fa-check"></i><b>22.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-18"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-13"><i class="fa fa-check"></i><b>22.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>23</b> Fish Productivity Indicator</a><ul>
+<li class="chapter" data-level="23.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-21"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-21"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-18"><i class="fa fa-check"></i><b>23.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="23.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-19"><i class="fa fa-check"></i><b>23.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-12"><i class="fa fa-check"></i><b>23.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="23.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-14"><i class="fa fa-check"></i><b>23.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>24</b> Recreational Fishing Indicators</a><ul>
+<li class="chapter" data-level="24.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-22"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-22"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-20"><i class="fa fa-check"></i><b>24.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-13"><i class="fa fa-check"></i><b>24.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="24.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-15"><i class="fa fa-check"></i><b>24.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>25</b> Right Whale Abundance</a><ul>
+<li class="chapter" data-level="25.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-23"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-23"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-19"><i class="fa fa-check"></i><b>25.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="25.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-21"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="25.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-14"><i class="fa fa-check"></i><b>25.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="25.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-16"><i class="fa fa-check"></i><b>25.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>26</b> Seabird diet and productivity</a><ul>
+<li class="chapter" data-level="26.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-24"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-24"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-15"><i class="fa fa-check"></i><b>26.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="26.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-22"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>27</b> Seasonal SST Anomalies</a><ul>
+<li class="chapter" data-level="27.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-25"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-25"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-23"><i class="fa fa-check"></i><b>27.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="27.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-17"><i class="fa fa-check"></i><b>27.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>28</b> Single Species Status Indicator</a><ul>
+<li class="chapter" data-level="28.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-26"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-26"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-21"><i class="fa fa-check"></i><b>28.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="28.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-16"><i class="fa fa-check"></i><b>28.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="28.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-24"><i class="fa fa-check"></i><b>28.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="28.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-18"><i class="fa fa-check"></i><b>28.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>29</b> Species Density Estimates</a><ul>
+<li class="chapter" data-level="29.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-27"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-27"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-25"><i class="fa fa-check"></i><b>29.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="29.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-19"><i class="fa fa-check"></i><b>29.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>30</b> Species Distribution Indicators</a><ul>
+<li class="chapter" data-level="30.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-28"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-28"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-26"><i class="fa fa-check"></i><b>30.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-17"><i class="fa fa-check"></i><b>30.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="30.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-20"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>31</b> Survey Data</a><ul>
+<li class="chapter" data-level="31.1" data-path="survdat.html"><a href="survdat.html#methods-29"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-29"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-22"><i class="fa fa-check"></i><b>31.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="31.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-27"><i class="fa fa-check"></i><b>31.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.4" data-path="survdat.html"><a href="survdat.html#plotting-21"><i class="fa fa-check"></i><b>31.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>32</b> Thermal Habitat Projections</a><ul>
+<li class="chapter" data-level="32.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-30"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
+<li class="chapter" data-level="32.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-30"><i class="fa fa-check"></i><b>32.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="32.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-28"><i class="fa fa-check"></i><b>32.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="32.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-22"><i class="fa fa-check"></i><b>32.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>33</b> Trend Analysis</a><ul>
+<li class="chapter" data-level="33.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-31"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
+<li class="chapter" data-level="33.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-31"><i class="fa fa-check"></i><b>33.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="33.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-23"><i class="fa fa-check"></i><b>33.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="33.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-29"><i class="fa fa-check"></i><b>33.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="34" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>34</b> Zooplankton</a><ul>
+<li class="chapter" data-level="34.1" data-path="zooabund.html"><a href="zooabund.html#methods-32"><i class="fa fa-check"></i><b>34.1</b> Methods</a><ul>
+<li class="chapter" data-level="34.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-32"><i class="fa fa-check"></i><b>34.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="34.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-24"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="34.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-30"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="34.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-18"><i class="fa fa-check"></i><b>34.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="34.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-23"><i class="fa fa-check"></i><b>34.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Technical Documentation, State of the Ecosystem Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="zooabund" class="section level1">
+<h1><span class="header-section-number">34</span> Zooplankton</h1>
+<p><strong>Description</strong>: Annual time series of zooplankton abundance</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)</p>
+<p><strong>Indicator category</strong>: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods</p>
+<p><strong>Contributor(s)</strong>: Ryan Morse, Kevin Friedland</p>
+<p><strong>Data steward</strong>: Harvey Walsh, <a href="mailto:harvey.walsh@noaa.gov">harvey.walsh@noaa.gov</a>; Mike Jones, <a href="mailto:michael.jones@noaa.gov">michael.jones@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: Ryan Morse, <a href="mailto:ryan.morse@noaa.gov">ryan.morse@noaa.gov</a>; Harvey Walsh, <a href="mailto:harvey.walsh@noaa.gov">harvey.walsh@noaa.gov</a>; Kevin Friedland, <a href="mailto:kevin.friedland@noaa.gov">kevin.friedland@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: Source data are publicly available <a href="ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/">here</a>. Derived data can be found <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html">here</a>.</p>
+<div id="methods-32" class="section level2">
+<h2><span class="header-section-number">34.1</span> Methods</h2>
+<div id="data-sources-32" class="section level3">
+<h3><span class="header-section-number">34.1.1</span> Data sources</h3>
+<p>Zooplankton data are from the NOAA MARMAP and EcoMon cruises detailed extensively in <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span>, <span class="citation">Kane (<a href="#ref-Kane2011">2011</a>)</span>, and <span class="citation">Morse et al. (<a href="#ref-Morse2017">2017</a>)</span>.</p>
+</div>
+<div id="data-extraction-24" class="section level3">
+<h3><span class="header-section-number">34.1.2</span> Data extraction</h3>
+<p>Data are from the publicly available zooplankton dataset on the NOAA FTP server. The excel file has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-Kane2011">2011</a>)</span>.</p>
+<p>R code used in extraction process.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load data</span>
+URL=<span class="st">&#39;ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx&#39;</span>
+ZPD=openxlsx<span class="op">::</span><span class="kw">read.xlsx</span>(URL, <span class="dt">sheet=</span><span class="st">&#39;Data&#39;</span>)</code></pre></div>
+</div>
+<div id="data-analysis-30" class="section level3">
+<h3><span class="header-section-number">34.1.3</span> Data analysis</h3>
+<p><strong>Annual abundance anomalies</strong></p>
+<p>Data are processed similarly to <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span> and <span class="citation">Perretti et al. (<a href="#ref-Perretti2017a">2017</a><a href="#ref-Perretti2017a">b</a>)</span>, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in <span class="citation">Morse et al. (<a href="#ref-Morse2017">2017</a>)</span>. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year.</p>
+<p>Abundance anomalies (Figure <a href="zooabund.html#fig:zooplankton-abundance">34.1</a>) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for <em>Centropages typicus</em>, <em>Pseudocalanus</em> spp., <em>Calanus finmarchicus</em>, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of <em>Pseudocalanus</em> spp., <em>Centropages hamatus</em>, <em>Centropages typicus</em>, and <em>Temora longicornis</em>, and subtracting the abundance anomaly of <em>Calanus finmarchicus</em>. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, <em>Calanus finmarchicus</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#libraries</span>
+<span class="kw">library</span>(vegan)
+<span class="kw">library</span>(stats)
+<span class="kw">library</span>(mgcv)
+<span class="kw">library</span>(reshape2)
+<span class="kw">library</span>(readxl)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(sp)
+<span class="kw">library</span>(maptools)
+<span class="kw">library</span>(marmap)
+<span class="kw">library</span>(rgeos)
+
+
+<span class="co"># load data</span>
+URL=<span class="st">&#39;ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx&#39;</span>
+ZPD=openxlsx<span class="op">::</span><span class="kw">read.xlsx</span>(URL, <span class="dt">sheet=</span><span class="st">&#39;Data&#39;</span>)
+<span class="co"># Fix date, time</span>
+dt=<span class="kw">as_date</span>(ZPD<span class="op">$</span>date, <span class="dt">origin =</span> <span class="st">&quot;1899-12-30&quot;</span>)
+DOY=<span class="kw">yday</span>(dt) <span class="co">#day of year</span>
+month=<span class="kw">as.numeric</span>(<span class="kw">format</span>(dt, <span class="st">&#39;%m&#39;</span>))
+year=<span class="kw">as.numeric</span>(<span class="kw">format</span>(dt, <span class="st">&#39;%Y&#39;</span>))
+ZPD<span class="op">$</span>year=year
+ZPD<span class="op">$</span>month=month
+ZPD<span class="op">$</span>dt=dt
+ZPD<span class="op">$</span>DOY=DOY
+ZPD<span class="op">$</span>day=<span class="kw">as.numeric</span>(<span class="kw">format</span>(dt, <span class="st">&#39;%d&#39;</span>))
+ZPD<span class="op">$</span>lat2=<span class="kw">ceiling</span>(ZPD<span class="op">$</span>lat) <span class="co">#use for binning into 1 degree bins for removal of undersampled bins</span>
+ZPD<span class="op">$</span>lon2=<span class="kw">floor</span>(ZPD<span class="op">$</span>lon) <span class="co">#use for binning into 1 degree bins for removal of undersampled bins</span>
+<span class="co"># ASSIGN EPU based on GPS data</span>
+## load shapefiles from EDAB EPU analysis ## not available here
+
+gbk=<span class="kw">readShapeSpatial</span>(<span class="st">&quot;EPU_GBKPoly.shp&quot;</span>)
+gom=<span class="kw">readShapeSpatial</span>(<span class="st">&quot;EPU_GOMPoly.shp&quot;</span>)
+mab=<span class="kw">readShapeSpatial</span>(<span class="st">&quot;EPU_MABPoly.shp&quot;</span>)
+scs=<span class="kw">readShapeSpatial</span>(<span class="st">&quot;EPU_SCSPoly.shp&quot;</span>)
+<span class="co">#combine shapefiles GOM and GBK</span>
+gom.gbk.shp=<span class="kw">gUnion</span>(gom, gbk, <span class="dt">byid=</span>F, <span class="dt">id=</span><span class="ot">NULL</span>)
+gom.gbk.shp=<span class="kw">gUnion</span>(gom, gbk, <span class="dt">byid=</span>F, <span class="dt">id=</span><span class="ot">NULL</span>)
+gom.scs.shp=<span class="kw">gUnion</span>(gom, scs, <span class="dt">byid=</span>F, <span class="dt">id=</span><span class="ot">NULL</span>)
+mab.gbk.shp=<span class="kw">gUnion</span>(mab, gbk, <span class="dt">byid=</span>F, <span class="dt">id=</span><span class="ot">NULL</span>)
+NES.shp=<span class="kw">gUnion</span>(mab.gbk.shp, gom.scs.shp, <span class="dt">byid=</span>F, <span class="dt">id=</span><span class="ot">NULL</span>)
+<span class="co">#extract just lat/lons for lines</span>
+gbk.lonlat =<span class="kw">as.data.frame</span>(<span class="kw">lapply</span>(<span class="kw">slot</span>(gbk, <span class="st">&quot;polygons&quot;</span>), <span class="cf">function</span>(x) <span class="kw">lapply</span>(<span class="kw">slot</span>(x, <span class="st">&quot;Polygons&quot;</span>), <span class="cf">function</span>(y) <span class="kw">slot</span>(y, <span class="st">&quot;coords&quot;</span>))))
+gom.lonlat =<span class="kw">as.data.frame</span>(<span class="kw">lapply</span>(<span class="kw">slot</span>(gom, <span class="st">&quot;polygons&quot;</span>), <span class="cf">function</span>(x) <span class="kw">lapply</span>(<span class="kw">slot</span>(x, <span class="st">&quot;Polygons&quot;</span>), <span class="cf">function</span>(y) <span class="kw">slot</span>(y, <span class="st">&quot;coords&quot;</span>))))
+mab.lonlat =<span class="kw">as.data.frame</span>(<span class="kw">lapply</span>(<span class="kw">slot</span>(mab, <span class="st">&quot;polygons&quot;</span>), <span class="cf">function</span>(x) <span class="kw">lapply</span>(<span class="kw">slot</span>(x, <span class="st">&quot;Polygons&quot;</span>), <span class="cf">function</span>(y) <span class="kw">slot</span>(y, <span class="st">&quot;coords&quot;</span>))))
+scs.lonlat =<span class="kw">as.data.frame</span>(<span class="kw">lapply</span>(<span class="kw">slot</span>(scs, <span class="st">&quot;polygons&quot;</span>), <span class="cf">function</span>(x) <span class="kw">lapply</span>(<span class="kw">slot</span>(x, <span class="st">&quot;Polygons&quot;</span>), <span class="cf">function</span>(y) <span class="kw">slot</span>(y, <span class="st">&quot;coords&quot;</span>))))
+gom.gbk.lonlat =<span class="kw">as.data.frame</span>(<span class="kw">lapply</span>(<span class="kw">slot</span>(gom.gbk.shp, <span class="st">&quot;polygons&quot;</span>), <span class="cf">function</span>(x) <span class="kw">lapply</span>(<span class="kw">slot</span>(x, <span class="st">&quot;Polygons&quot;</span>), <span class="cf">function</span>(y) <span class="kw">slot</span>(y, <span class="st">&quot;coords&quot;</span>))))
+NES.lonlat =<span class="kw">as.data.frame</span>(NES.shp<span class="op">@</span>polygons[[<span class="dv">1</span>]]<span class="op">@</span>Polygons[[<span class="dv">1</span>]]<span class="op">@</span>coords)<span class="co"># create matrix to use in in.out function</span>
+<span class="co"># create matrix to use in in.out function from package &#39;mgcv&#39;</span>
+gom.mat=<span class="kw">as.matrix</span>(gom.lonlat)
+gbk.mat=<span class="kw">as.matrix</span>(gbk.lonlat)
+mab.mat=<span class="kw">as.matrix</span>(mab.lonlat)
+scs.mat=<span class="kw">as.matrix</span>(scs.lonlat)
+gom.gbk.mat=<span class="kw">as.matrix</span>(gom.gbk.lonlat)
+<span class="co"># assign samples to EPU</span>
+m4=<span class="kw">as.matrix</span>(ZPD[,<span class="dv">6</span><span class="op">:</span><span class="dv">5</span>]) <span class="co">#lon,lat from ZPD</span>
+ZPD<span class="op">$</span>epu=<span class="ot">NA</span>
+ZPD<span class="op">$</span>epu[<span class="kw">which</span>(<span class="kw">in.out</span>(gbk.mat, m4))]=<span class="st">&#39;GBK&#39;</span>
+ZPD<span class="op">$</span>epu[<span class="kw">which</span>(<span class="kw">in.out</span>(gom.mat, m4))]=<span class="st">&#39;GOM&#39;</span>
+ZPD<span class="op">$</span>epu[<span class="kw">which</span>(<span class="kw">in.out</span>(scs.mat, m4))]=<span class="st">&#39;SCS&#39;</span>
+ZPD<span class="op">$</span>epu[<span class="kw">which</span>(<span class="kw">in.out</span>(mab.mat, m4))]=<span class="st">&#39;MAB&#39;</span>
+test=ZPD[<span class="kw">is.na</span>(ZPD<span class="op">$</span>epu),] <span class="co">#unassigned</span>
+nms=<span class="kw">data.frame</span>(<span class="kw">colnames</span>(ZPD)) <span class="co"># column names of orginal data</span>
+<span class="co"># limit data set to zooplankton from 1977 on</span>
+ZPDb=ZPD[,<span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">14</span>,<span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">290</span>,<span class="dv">297</span>,<span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">106</span>,<span class="dv">197</span>,<span class="dv">1</span>))] <span class="co"># check to make sure these are correct against &#39;nms&#39; if data source changes!!!</span>
+ZPDb=ZPDb[<span class="kw">order</span>(ZPDb<span class="op">$</span>date),]
+ZPDb=ZPDb[<span class="kw">which</span>(ZPDb<span class="op">$</span>year <span class="op">&gt;</span><span class="st"> </span><span class="dv">1976</span>),] <span class="co"># remove NA data in years prior to 1977</span>
+<span class="co"># Select only taxa present in yearly data &gt; x percent of samples</span>
+X=<span class="dv">20</span> <span class="co"># percent criteria to use as minimum percent in samples</span>
+ZPDa=ZPDb
+ZPDa=ZPDa[<span class="op">!</span><span class="kw">is.na</span>(ZPDa<span class="op">$</span>zoo_gear),] <span class="co"># Remove NA in zooplankton rows</span>
+<span class="co"># Reduce to taxa occurrance &gt; x percent in samples</span>
+p.a=ZPDa[,<span class="dv">24</span><span class="op">:</span><span class="dv">114</span>]
+p.a[p.a <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]=<span class="dv">1</span> <span class="co"># presence/absence</span>
+count=<span class="kw">colSums</span>(p.a)
+pct=(count<span class="op">/</span><span class="kw">dim</span>(ZPDa)[<span class="dv">1</span>])<span class="op">*</span><span class="dv">100</span>
+crit=<span class="kw">which</span>(pct<span class="op">&gt;</span>X)
+ZPDa=ZPDa[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">23</span>,crit<span class="op">+</span><span class="dv">23</span>)] <span class="co"># data limited to taxa occurring in &gt; X percent of samples</span>
+
+<span class="co">#Take median date from each cruise and assign cruise to bimonth for bi-monthly means aggregation</span>
+cruises=<span class="kw">unique</span>(ZPDa<span class="op">$</span>cruise_name)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(cruises)){
+  ZPDa<span class="op">$</span>medmonth[ZPDa<span class="op">$</span>cruise_name <span class="op">==</span><span class="st"> </span>cruises[i]]=<span class="kw">median</span>(ZPDa<span class="op">$</span>DOY[ZPDa<span class="op">$</span>cruise_name <span class="op">==</span><span class="st"> </span>cruises[i]])
+}
+ZPDa<span class="op">$</span>bmm=<span class="ot">NA</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">59</span>))]=<span class="dv">1</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">60</span>,<span class="dv">120</span>))]=<span class="dv">3</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">121</span>,<span class="dv">181</span>))]=<span class="dv">5</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">182</span>,<span class="dv">243</span>))]=<span class="dv">7</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">244</span>,<span class="dv">304</span>))]=<span class="dv">9</span>
+ZPDa<span class="op">$</span>bmm[<span class="kw">which</span>(<span class="kw">as.integer</span>(ZPDa<span class="op">$</span>medmonth) <span class="op">%in%</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">305</span>,<span class="dv">366</span>))]=<span class="dv">11</span>
+
+ZPDa[,<span class="dv">14</span>]=<span class="kw">as.numeric</span>(ZPDa[,<span class="dv">14</span>])
+ZPDa[,<span class="dv">23</span>]=<span class="kw">as.numeric</span>(ZPDa[,<span class="dv">23</span>])
+ZPDsave=ZPDa <span class="co">#from above routine, Yearly (all data) </span>
+
+SEASON=<span class="st">&#39;Yearly&#39;</span>
+ZPDa=ZPDsave
+<span class="co"># LOG transform data using ZPDa from above (select season first)</span>
+test=<span class="kw">log10</span>(ZPDa[,<span class="dv">24</span><span class="op">:</span><span class="dv">50</span>]<span class="op">+</span><span class="dv">1</span>) <span class="co">#choose columns with zooplankton data</span>
+ZPDlog=ZPDa
+ZPDlog[,<span class="dv">24</span><span class="op">:</span><span class="dv">50</span>]=test
+nm=<span class="kw">matrix</span>(<span class="kw">colnames</span>(ZPDlog))
+
+area=<span class="st">&#39;GBK&#39;</span>
+gbk.yr.spln=<span class="kw">data.frame</span>()
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">23</span><span class="op">:</span><span class="dv">50</span>){
+  num=i
+  name=nm[num,<span class="dv">1</span>]
+  mean.loc.x=<span class="kw">aggregate</span>(ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area),num], <span class="dt">by=</span><span class="kw">list</span>(ZPDlog<span class="op">$</span>bmm[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area)]), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T)
+  func =<span class="st"> </span><span class="kw">splinefun</span>(mean.loc.x[,<span class="dv">1</span>], <span class="dt">y=</span>mean.loc.x[,<span class="dv">2</span>], <span class="dt">method=</span><span class="st">&quot;natural&quot;</span>,  <span class="dt">ties =</span> mean)  
+  x.daily=<span class="kw">func</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="fl">0.0302</span>)) <span class="co">#365 days</span>
+  gbk.yr.spln=<span class="kw">rbind</span>(gbk.yr.spln,x.daily)
+}
+gbk.yr.spln=<span class="kw">t</span>(gbk.yr.spln)
+<span class="kw">rownames</span>(gbk.yr.spln)=<span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">365</span>); <span class="kw">colnames</span>(gbk.yr.spln)=nm[<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">1</span>]
+
+area=<span class="st">&#39;GOM&#39;</span>
+gom.yr.spln=<span class="kw">data.frame</span>()
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">23</span><span class="op">:</span><span class="dv">50</span>){
+  num=i
+  name=nm[num,<span class="dv">1</span>]
+  mean.loc.x=<span class="kw">aggregate</span>(ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area),num], <span class="dt">by=</span><span class="kw">list</span>(ZPDlog<span class="op">$</span>bmm[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area)]), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T)
+  func =<span class="st"> </span><span class="kw">splinefun</span>(mean.loc.x[,<span class="dv">1</span>], <span class="dt">y=</span>mean.loc.x[,<span class="dv">2</span>], <span class="dt">method=</span><span class="st">&quot;natural&quot;</span>,  <span class="dt">ties =</span> mean)
+  x.daily=<span class="kw">func</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="fl">0.0302</span>)) <span class="co">#365 days</span>
+  gom.yr.spln=<span class="kw">rbind</span>(gom.yr.spln,x.daily)
+}
+gom.yr.spln=<span class="kw">t</span>(gom.yr.spln)
+<span class="kw">rownames</span>(gom.yr.spln)=<span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">365</span>); <span class="kw">colnames</span>(gom.yr.spln)=nm[<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">1</span>]
+
+area=<span class="st">&#39;MAB&#39;</span>
+mab.yr.spln=<span class="kw">data.frame</span>()
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">23</span><span class="op">:</span><span class="dv">50</span>){
+  num=i
+  name=nm[num,<span class="dv">1</span>]
+  mean.loc.x=<span class="kw">aggregate</span>(ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area),num], <span class="dt">by=</span><span class="kw">list</span>(ZPDlog<span class="op">$</span>bmm[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area)]), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T)
+  func =<span class="st"> </span><span class="kw">splinefun</span>(mean.loc.x[,<span class="dv">1</span>], <span class="dt">y=</span>mean.loc.x[,<span class="dv">2</span>], <span class="dt">method=</span><span class="st">&quot;natural&quot;</span>,  <span class="dt">ties =</span> mean)
+  x.daily=<span class="kw">func</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="fl">0.0302</span>)) <span class="co">#365 days</span>
+  mab.yr.spln=<span class="kw">rbind</span>(mab.yr.spln,x.daily)
+}
+mab.yr.spln=<span class="kw">t</span>(mab.yr.spln)
+<span class="kw">rownames</span>(mab.yr.spln)=<span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">365</span>); <span class="kw">colnames</span>(mab.yr.spln)=nm[<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">1</span>]
+
+area=<span class="st">&#39;SCS&#39;</span>
+scs.yr.spln=<span class="kw">data.frame</span>()
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">23</span><span class="op">:</span><span class="dv">50</span>){
+  num=i
+  name=nm[num,<span class="dv">1</span>]
+  mean.loc.x=<span class="kw">aggregate</span>(ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area),num], <span class="dt">by=</span><span class="kw">list</span>(ZPDlog<span class="op">$</span>bmm[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span>area)]), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T)
+  func =<span class="st"> </span><span class="kw">splinefun</span>(mean.loc.x[,<span class="dv">1</span>], <span class="dt">y=</span>mean.loc.x[,<span class="dv">2</span>], <span class="dt">method=</span><span class="st">&quot;natural&quot;</span>,  <span class="dt">ties =</span> mean)
+  x.daily=<span class="kw">func</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="fl">0.0302</span>)) <span class="co">#365 days</span>
+  scs.yr.spln=<span class="kw">rbind</span>(scs.yr.spln,x.daily)
+}
+scs.yr.spln=<span class="kw">t</span>(scs.yr.spln)
+<span class="kw">rownames</span>(scs.yr.spln)=<span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">365</span>); <span class="kw">colnames</span>(scs.yr.spln)=nm[<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">1</span>]
+
+<span class="co"># Subtract mean expected value from observed abundance to get anomaly</span>
+gbk.anom=ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span><span class="st">&#39;GBK&#39;</span>),]
+gom.anom=ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span><span class="st">&#39;GOM&#39;</span>),]
+mab.anom=ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span><span class="st">&#39;MAB&#39;</span>),]
+scs.anom=ZPDlog[<span class="kw">which</span>(ZPDlog<span class="op">$</span>epu<span class="op">==</span><span class="st">&#39;SCS&#39;</span>),]
+
+gbk.anom.b=<span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">nrow =</span> <span class="kw">dim</span>(gbk.anom)[<span class="dv">1</span>], <span class="dt">ncol =</span> <span class="kw">dim</span>(gbk.anom)[<span class="dv">2</span>]))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(gbk.anom)[<span class="dv">1</span>]){
+  gbk.anom.b[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]=gbk.anom[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]<span class="op">-</span>gbk.yr.spln[<span class="kw">which</span>(gbk.anom<span class="op">$</span>DOY[i]<span class="op">==</span><span class="kw">rownames</span>(gbk.yr.spln)),]
+}
+gom.anom.b=<span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">nrow =</span> <span class="kw">dim</span>(gom.anom)[<span class="dv">1</span>], <span class="dt">ncol =</span> <span class="kw">dim</span>(gom.anom)[<span class="dv">2</span>]))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(gom.anom)[<span class="dv">1</span>]){
+  gom.anom.b[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]=gom.anom[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]<span class="op">-</span>gom.yr.spln[<span class="kw">which</span>(gom.anom<span class="op">$</span>DOY[i]<span class="op">==</span><span class="kw">rownames</span>(gom.yr.spln)),]
+}
+mab.anom.b=<span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">nrow =</span> <span class="kw">dim</span>(mab.anom)[<span class="dv">1</span>], <span class="dt">ncol =</span> <span class="kw">dim</span>(mab.anom)[<span class="dv">2</span>]))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(mab.anom)[<span class="dv">1</span>]){
+  mab.anom.b[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]=mab.anom[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]<span class="op">-</span>mab.yr.spln[<span class="kw">which</span>(mab.anom<span class="op">$</span>DOY[i]<span class="op">==</span><span class="kw">rownames</span>(mab.yr.spln)),]
+}
+scs.anom.b=<span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">nrow =</span> <span class="kw">dim</span>(scs.anom)[<span class="dv">1</span>], <span class="dt">ncol =</span> <span class="kw">dim</span>(scs.anom)[<span class="dv">2</span>]))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(scs.anom)[<span class="dv">1</span>]){
+  scs.anom.b[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]=scs.anom[i,<span class="dv">23</span><span class="op">:</span><span class="dv">50</span>]<span class="op">-</span>scs.yr.spln[<span class="kw">which</span>(scs.anom<span class="op">$</span>DOY[i]<span class="op">==</span><span class="kw">rownames</span>(scs.yr.spln)),]
+}  
+
+scs.anom.b=<span class="kw">rbind</span>(scs.anom.b,test)
+<span class="co"># Aggregrate by Year, Yearly anomaly by epu</span>
+gbk.yr.anom=<span class="kw">aggregate</span>(gbk.anom.b, <span class="dt">by=</span><span class="kw">list</span>(gbk.anom<span class="op">$</span>year), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T); <span class="kw">rownames</span>(gbk.yr.anom)=gbk.yr.anom[,<span class="dv">1</span>]; gbk.yr.anom[,<span class="dv">1</span>]=<span class="ot">NULL</span>; <span class="kw">colnames</span>(gbk.yr.anom)=<span class="kw">colnames</span>(gbk.anom)
+gom.yr.anom=<span class="kw">aggregate</span>(gom.anom.b, <span class="dt">by=</span><span class="kw">list</span>(gom.anom<span class="op">$</span>year), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T); <span class="kw">rownames</span>(gom.yr.anom)=gom.yr.anom[,<span class="dv">1</span>]; gom.yr.anom[,<span class="dv">1</span>]=<span class="ot">NULL</span>; <span class="kw">colnames</span>(gom.yr.anom)=<span class="kw">colnames</span>(gom.anom)
+mab.yr.anom=<span class="kw">aggregate</span>(mab.anom.b, <span class="dt">by=</span><span class="kw">list</span>(mab.anom<span class="op">$</span>year), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T); <span class="kw">rownames</span>(mab.yr.anom)=mab.yr.anom[,<span class="dv">1</span>]; mab.yr.anom[,<span class="dv">1</span>]=<span class="ot">NULL</span>; <span class="kw">colnames</span>(mab.yr.anom)=<span class="kw">colnames</span>(mab.anom)
+scs.yr.anom=<span class="kw">aggregate</span>(scs.anom.b, <span class="dt">by=</span><span class="kw">list</span>(scs.anom<span class="op">$</span>year), <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span>T); <span class="kw">rownames</span>(scs.yr.anom)=scs.yr.anom[,<span class="dv">1</span>]; scs.yr.anom[,<span class="dv">1</span>]=<span class="ot">NULL</span>; <span class="kw">colnames</span>(scs.yr.anom)=<span class="kw">colnames</span>(scs.anom)
+
+<span class="co"># Small-Large body copepod abundance anomaly</span>
+lgtx=<span class="kw">c</span>(<span class="dv">25</span>) <span class="co">#column for Calanus finmarchicus</span>
+smtx=<span class="kw">c</span>(<span class="dv">26</span>,<span class="dv">24</span>,<span class="dv">28</span>,<span class="dv">27</span>) <span class="co">#Pseudocalanus spp, Centropoges typicus, Centropages hamatus, Temora longicornis</span>
+
+dataTsm=gbk.yr.anom[,smtx]
+dataTlg=gbk.yr.anom[,lgtx]
+anom.gbk=<span class="kw">rowMeans</span>(dataTsm)<span class="op">-</span>(dataTlg)
+dataTsm=gom.yr.anom[,smtx]
+dataTlg=gom.yr.anom[,lgtx]
+anom.gom=<span class="kw">rowMeans</span>(dataTsm)<span class="op">-</span>(dataTlg)
+dataTsm=mab.yr.anom[,smtx]
+dataTlg=mab.yr.anom[,lgtx]
+anom.mab=<span class="kw">rowMeans</span>(dataTsm)<span class="op">-</span>(dataTlg)
+dataTsm=scs.yr.anom[,smtx]
+dataTlg=scs.yr.anom[,lgtx]
+anom.scs=<span class="kw">rowMeans</span>(dataTsm)<span class="op">-</span>(dataTlg)</code></pre></div>
+<p><strong>Seasonal abundance</strong></p>
+<p>Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit. These data are presented in Figure <a href="zooabund.html#fig:MAB-oi-zoo">34.2</a>.</p>
+</div>
+<div id="data-processing-18" class="section level3">
+<h3><span class="header-section-number">34.1.4</span> Data processing</h3>
+<p>Zooplankton abundances indicators were formatted for inclusion in the ecodata R package using the following code.</p>
+<p><strong>Abundance anomaly</strong></p>
+<!-- {{ProcessAbundAnomStart}} -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process zooplankton abundance anomalies and small-large index </span>
+
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
+
+raw.dir &lt;-<span class="st"> </span>here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;data-raw&quot;</span>)
+
+get_zoo_anom_sli &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">save_clean =</span> F){
+  
+  <span class="kw">load</span>(<span class="kw">file.path</span>(raw.dir, <span class="st">&quot;1977_2017_SLI_Calfin_Pseudo_Ctyp.Rdata&quot;</span>))
+  
+  zoo_anom_sli &lt;-<span class="st"> </span>Zooplankton_Primary_Prod <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(.,Var, Value, <span class="op">-</span>year) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Time =</span> year) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(., Var, <span class="kw">c</span>(<span class="st">&quot;Var&quot;</span>,<span class="st">&quot;EPU&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">EPU =</span> plyr<span class="op">::</span><span class="kw">mapvalues</span>(EPU, <span class="dt">from =</span> <span class="kw">c</span>(<span class="st">&quot;gom&quot;</span>,<span class="st">&quot;gbk&quot;</span>,<span class="st">&quot;scs&quot;</span>,<span class="st">&quot;mab&quot;</span>), 
+                               <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;GOM&quot;</span>,<span class="st">&quot;GB&quot;</span>,<span class="st">&quot;SS&quot;</span>,<span class="st">&quot;MAB&quot;</span>)),
+         <span class="dt">Var =</span> plyr<span class="op">::</span><span class="kw">mapvalues</span>(Var, <span class="dt">from =</span> <span class="kw">c</span>(<span class="st">&quot;PseAnom&quot;</span>,
+                                             <span class="st">&quot;CtyAnom&quot;</span>,
+                                             <span class="st">&quot;CalAnom&quot;</span>,
+                                             <span class="st">&quot;SLI&quot;</span>), 
+                               <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;pseudocalanus anomaly&quot;</span>,
+                                      <span class="st">&quot;centropages anomaly&quot;</span>,
+                                      <span class="st">&quot;calanus anomaly&quot;</span>,
+                                      <span class="st">&quot;small-large index&quot;</span>)),
+         <span class="dt">Units =</span> <span class="st">&quot;anomaly&quot;</span>)
+  
+  <span class="cf">if</span> (save_clean){
+    usethis<span class="op">::</span><span class="kw">use_data</span>(zoo_anom_sli, <span class="dt">overwrite =</span> T)
+  } <span class="cf">else</span> {
+    <span class="kw">return</span>(zoo_anom_sli)
+  }
+}
+<span class="kw">get_zoo_anom_sli</span>(<span class="dt">save_clean =</span> T)</code></pre></div>
+<!-- {{ProcessAbundAnomEnd}} -->
+<p><strong>Seasonal abundance</strong></p>
+<!-- {{ProcessSeasAbund1Start}} -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A general function to process various OI data sets</span>
+
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(raster)
+<span class="kw">library</span>(rgdal)
+<span class="kw">library</span>(sf)
+
+process_oi &lt;-<span class="st"> </span><span class="cf">function</span>(variable, <span class="dt">type =</span> <span class="ot">NULL</span>, season, <span class="dt">genus =</span> <span class="ot">NULL</span>, epu){
+  
+  <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(type) <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>variable <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;salinity&quot;</span>,<span class="st">&quot;temperature&quot;</span>)){
+    <span class="kw">stop</span>(<span class="st">&#39;type only applicable for variables &quot;salinity&quot; and &quot;temperature&quot;</span>
+<span class="st">         as type = &quot;bottom&quot; or type = &quot;surface&quot;&#39;</span>)
+  } 
+  
+  <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(genus) <span class="op">&amp;</span><span class="st"> </span>variable <span class="op">!=</span><span class="st"> &quot;zooplankton&quot;</span>){
+    <span class="kw">stop</span>(<span class="st">&#39;genus only applicable for variable &quot;zooplankton&quot;&#39;</span>)
+  } 
+  
+  <span class="co">#get compiled down-sampled raster of chosen strata from shapefile. </span>
+  epumask.raster &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="kw">paste0</span>(<span class="kw">tolower</span>(epu),<span class="st">&quot;_rast&quot;</span>))
+  
+  <span class="co">#get bottom temp data and find mean for stock area--------------------------------------</span>
+  
+  indir &lt;-<span class="st"> </span>here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;inst&quot;</span>,<span class="st">&quot;extdata&quot;</span>,<span class="st">&quot;gridded&quot;</span>)
+  
+  <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;salinity&quot;</span>){
+    <span class="kw">load</span>(<span class="kw">file.path</span>(indir, <span class="kw">paste0</span>(<span class="st">&quot;sal_&quot;</span>,type,<span class="st">&quot;_&quot;</span>,season,<span class="st">&quot;_spdf.rdata&quot;</span>)))
+  } <span class="cf">else</span> <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;temperature&quot;</span>){
+    <span class="kw">load</span>(<span class="kw">file.path</span>(indir, <span class="kw">paste0</span>(<span class="st">&quot;temp_&quot;</span>,type,<span class="st">&quot;_&quot;</span>,season,<span class="st">&quot;_spdf.rdata&quot;</span>)))
+  } <span class="cf">else</span> <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;chlorophyll&quot;</span>){
+    <span class="kw">load</span>(<span class="kw">file.path</span>(indir, <span class="kw">paste0</span>(<span class="st">&quot;chl_&quot;</span>,season,<span class="st">&quot;_1997-2018.rdata&quot;</span>)))
+  } <span class="cf">else</span> <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;zooplankton&quot;</span>){
+    <span class="kw">load</span>(<span class="kw">file.path</span>(indir, <span class="kw">paste0</span>(genus,<span class="st">&quot;_&quot;</span>,season,<span class="st">&quot;_zoo_1977-2016.rdata&quot;</span>)))
+  }
+  
+  
+  <span class="co">#create null df to fill with results</span>
+  data =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">array</span>(<span class="ot">NA</span>,<span class="dt">dim=</span> <span class="kw">c</span>(raster<span class="op">::</span><span class="kw">nlayers</span>(ecsa_dat),<span class="dv">5</span>)))
+  
+  <span class="co">#loops through layers in raster brick</span>
+  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>raster<span class="op">::</span><span class="kw">nlayers</span>(ecsa_dat)){
+    <span class="co">#load raster by year</span>
+    
+    <span class="co">#get file information from title</span>
+    layer_id &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(<span class="kw">names</span>(ecsa_dat)[[i]], <span class="st">&quot;\d.*&quot;</span>)
+    layer_id &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_split</span>(layer_id, <span class="st">&quot;_&quot;</span>)
+    data[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>layer_id[[<span class="dv">1</span>]][[<span class="dv">1</span>]]
+    data[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>layer_id[[<span class="dv">1</span>]][[<span class="dv">2</span>]]
+    data[i,<span class="dv">3</span>] &lt;-<span class="st"> </span>layer_id[[<span class="dv">1</span>]][[<span class="dv">3</span>]]
+    
+    <span class="co">#trim to stock area</span>
+    masked.raster =<span class="st"> </span>ecsa_dat[[i]]<span class="op">*</span>epumask.raster
+    
+    <span class="co">#find mean BT of stock area</span>
+    data[i,<span class="dv">4</span>] =<span class="st"> </span>raster<span class="op">::</span><span class="kw">cellStats</span>(masked.raster, <span class="dt">stat=</span><span class="st">&#39;mean&#39;</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)
+    data[i,<span class="dv">5</span>] =<span class="st"> </span>raster<span class="op">::</span><span class="kw">cellStats</span>(masked.raster, <span class="dt">stat =</span> <span class="st">&#39;sd&#39;</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)
+    <span class="co"># </span>
+    <span class="co"># if (layer_id[[1]][[1]] == &quot;1995&quot;){</span>
+    <span class="co">#   break</span>
+    <span class="co"># }</span>
+  }
+  x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(data<span class="op">$</span>X1)
+  y.out &lt;-<span class="st"> </span>data<span class="op">$</span>X4
+  y.sd &lt;-<span class="st"> </span>data<span class="op">$</span>X5
+  
+  sd.low &lt;-<span class="st"> </span>y.out <span class="op">-</span><span class="st"> </span>y.sd
+  sd.high &lt;-<span class="st"> </span>y.out <span class="op">+</span><span class="st"> </span>y.sd
+  
+  <span class="co"># remove </span>
+  <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;zooplankton&quot;</span>){
+    <span class="cf">if</span> (season <span class="op">==</span><span class="st"> &quot;spring&quot;</span>){
+      y.out[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1991</span>, <span class="dv">1994</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+      sd.low[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1991</span>, <span class="dv">1994</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+      sd.high[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1991</span>, <span class="dv">1994</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+    } <span class="cf">else</span> <span class="cf">if</span> (season <span class="op">==</span><span class="st"> &quot;fall&quot;</span>) {
+      y.out[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1992</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+      sd.low[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1992</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+      sd.high[x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1989</span>, <span class="dv">1990</span>, <span class="dv">1992</span>)] &lt;-<span class="st"> </span><span class="ot">NA</span>
+    }
+  }
+  
+  <span class="cf">if</span>(variable <span class="op">==</span><span class="st"> &quot;chlorophyll&quot;</span>){
+    type &lt;-<span class="st"> &quot;&quot;</span>
+  } <span class="cf">else</span> <span class="cf">if</span> (variable <span class="op">==</span><span class="st"> &quot;zooplankton&quot;</span>){
+    type &lt;-<span class="st"> </span>genus
+    variable &lt;-<span class="st"> &quot;zoo&quot;</span>
+  } 
+  
+  out &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Var =</span> <span class="kw">paste</span>(<span class="kw">paste</span>(type,variable),season),
+                    <span class="dt">Time =</span> <span class="kw">as.numeric</span>(x),
+                    <span class="dt">Value =</span> y.out,
+                    <span class="dt">sd.low =</span> sd.low,
+                    <span class="dt">sd.high =</span> sd.high,
+                    <span class="dt">Season =</span> season,
+                    <span class="dt">epu =</span> epu)
+  
+  out &lt;-<span class="st"> </span>out[out<span class="op">$</span>Time <span class="op">&gt;</span><span class="st"> </span><span class="dv">1968</span>,]
+  <span class="kw">return</span>(out)
+  
+  }</code></pre></div>
+<!-- {{ProcessSeasAbund1End}} -->
+<!-- {{ProcessSeasAbund2Start}} -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process optimally interpolated EcoMon zooplankton data</span>
+<span class="co"># </span>
+<span class="co"># These data show estimated zooplankton abundances on the NE Shelf derived from Ecosystem Monitoring Program (EcoMon) </span>
+<span class="co"># sampling. EcoMon conducts shelf-wide bimonthly surveys of the Northeast Large Marine Ecosystem, collecting </span>
+<span class="co"># and ichthyoplankton to a depth of 200 m using paired Bongo samplers with 333 $mu$m mesh netting. Zooplankton </span>
+<span class="co"># abundance data were interpolated across sampling locations using ordinary kriging to create a complete field. </span>
+<span class="co"># Here we present abundance time series for three species: *Centropages typicus*, *Temora longicornis*, and</span>
+<span class="co"># *Pseudocalanus* spp. These data are processed in a similar manner to optimally interpolated ocean temperature and</span>
+<span class="co"># salinity data sets. More information about the source data and processing methods used to derive these data sets</span>
+<span class="co"># can be found at https://noaa-edab.github.io/ECSA/#sec:methodszoo. </span>
+
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(dplyr)
+
+r.dir &lt;-<span class="st"> </span>here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;data-raw&quot;</span>)
+<span class="kw">source</span>(<span class="kw">file.path</span>(r.dir, <span class="st">&quot;process_oi.R&quot;</span>))
+
+<span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">exists</span>(<span class="st">&quot;mab_rast&quot;</span>),
+         <span class="kw">exists</span>(<span class="st">&quot;gb_rast&quot;</span>),
+         <span class="kw">exists</span>(<span class="st">&quot;gom_rast&quot;</span>))){
+  <span class="kw">message</span>(<span class="st">&quot;Loading EPU rasters.&quot;</span>)
+  <span class="kw">source</span>(<span class="kw">file.path</span>(r.dir, <span class="st">&quot;create_epu_mask_oi.R&quot;</span>))
+} <span class="cf">else</span> {
+  <span class="kw">message</span>(<span class="st">&quot;All EPU rasters exist; skipping load step.&quot;</span>)
+}
+
+get_zoo_oi &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">save_clean =</span> F){
+  
+  <span class="co">#MAB---------------------------------------------------------------------------------------------------</span>
+  ctyp_fall_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+  ctyp_spring_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+  
+  tlong_fall_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+  tlong_spring_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+  
+  pseudo_fall_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+  pseudo_spring_mab &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;MAB&quot;</span>)
+
+  
+  <span class="co">#GB---------------------------------------------------------------------------------------------------</span>
+  ctyp_fall_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  ctyp_spring_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  
+  tlong_fall_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  tlong_spring_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  
+  pseudo_fall_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  pseudo_spring_gb &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GB&quot;</span>)
+  
+  
+  <span class="co">#GOM---------------------------------------------------------------------------------------------------</span>
+  ctyp_fall_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  ctyp_spring_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;centropages&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  
+  tlong_fall_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  tlong_spring_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;temora&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  
+  pseudo_fall_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;fall&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  pseudo_spring_gom &lt;-<span class="st"> </span><span class="kw">process_oi</span>(<span class="dt">variable =</span> <span class="st">&quot;zooplankton&quot;</span>, <span class="dt">genus =</span> <span class="st">&quot;pseudocalanus&quot;</span>, <span class="dt">season =</span> <span class="st">&quot;spring&quot;</span>, <span class="dt">epu =</span> <span class="st">&quot;GOM&quot;</span>)
+  
+  <span class="co">#Bind all zoo output. Be sure to include any new species here</span>
+  zoo_oi &lt;-<span class="st"> </span><span class="ot">NULL</span>
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">ls</span>()){
+    <span class="cf">if</span> (stringr<span class="op">::</span><span class="kw">str_detect</span>(i,<span class="st">&quot;ctyp|tlong|pseudo&quot;</span>)){
+      <span class="kw">assign</span>(<span class="st">&quot;zoo_oi&quot;</span>, <span class="kw">rbind</span>(zoo_oi, <span class="kw">get</span>(i)))
+    }
+  }
+  
+  <span class="co">#Process output from masked rasters (mean, +/- 1 SD). Adjust output in process_oi(), not here.</span>
+  zoo_oi &lt;-<span class="st"> </span>zoo_oi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">EPU =</span> epu) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>Season) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Units =</span> <span class="st">&quot;log N m^-3&quot;</span>)
+  
+  <span class="co">#Split out +/- SD because too lazy to gather ;)</span>
+  sd.low &lt;-<span class="st"> </span>zoo_oi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>Value, <span class="op">-</span>sd.high) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Var =</span> <span class="kw">as.factor</span>(<span class="kw">paste</span>(Var, <span class="st">&quot;- 1 SD&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Value =</span> sd.low)
+  
+  sd.high &lt;-<span class="st"> </span>zoo_oi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>Value, <span class="op">-</span>sd.low) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Var =</span> <span class="kw">as.factor</span>(<span class="kw">paste</span>(Var, <span class="st">&quot;+ 1 SD&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Value =</span> sd.high)
+  
+  zoo_oi &lt;-<span class="st"> </span>zoo_oi <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>sd.high,<span class="op">-</span>sd.low)
+  
+  <span class="co">#Bind all data </span>
+  zoo_oi &lt;-<span class="st"> </span><span class="kw">rbind</span>(zoo_oi, sd.high, sd.low) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()
+  
+  <span class="cf">if</span> (save_clean){
+    usethis<span class="op">::</span><span class="kw">use_data</span>(zoo_oi, <span class="dt">overwrite =</span> T)
+  } <span class="cf">else</span> {
+    <span class="kw">return</span>(zoo_oi)
+  }
+  
+}</code></pre></div>
+<!-- {{ProcessSeasAbund2End}} -->
+</div>
+<div id="plotting-23" class="section level3">
+<h3><span class="header-section-number">34.1.5</span> Plotting</h3>
+<p><strong>Abundance anomaly</strong></p>
+<div class="figure"><span id="fig:zooplankton-abundance"></span>
+<img src="_main_files/figure-html/zooplankton-abundance-1.png" alt="*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight." width="672" />
+<p class="caption">
+Figure 34.1: <em>Centropages typicus</em> abundance anomaly in the Mid-Atlantic Bight.
+</p>
+</div>
+<p><strong>Seasonal Abundance</strong></p>
+<div class="figure"><span id="fig:MAB-oi-zoo"></span>
+<img src="_main_files/figure-html/MAB-oi-zoo-1.png" alt="Seasonal abundance of key zooplankton species in the MAB." width="768" />
+<p class="caption">
+Figure 34.2: Seasonal abundance of key zooplankton species in the MAB.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Kane2007">
+<p>Kane, Joseph. 2007. “Zooplankton abundance trends on Georges Bank, 1977-2004.” <em>ICES Journal of Marine Science</em> 64 (5): 909–19. doi:<a href="https://doi.org/10.1093/icesjms/fsm066">10.1093/icesjms/fsm066</a>.</p>
+</div>
+<div id="ref-Kane2011">
+<p>Kane, Joseph. 2011. “Multiyear variability of phytoplankton abundance in the Gulf of Maine.” <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. doi:<a href="https://doi.org/10.1093/icesjms/fsr122">10.1093/icesjms/fsr122</a>.</p>
+</div>
+<div id="ref-Morse2017">
+<p>Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. “Distinct zooplankton regime shift patterns across ecoregions of the U.S. Northeast continental shelf Large Marine Ecosystem.” <em>Journal of Marine Systems</em> 165: 77–91. doi:<a href="https://doi.org/10.1016/j.jmarsys.2016.09.011">10.1016/j.jmarsys.2016.09.011</a>.</p>
+</div>
+<div id="ref-Perretti2017a">
+<p>Perretti, Charles T., Michael J. Fogarty, Kevin D. Friedland, Jon A. Hare, Sean M. Lucey, Richard S. McBride, Timothy J. Miller, et al. 2017a. “Regime Shifts in Fish Recruitment on the Northeast US Continental Shelf.” <em>Marine Ecology Progress Series</em> 574: 1–11.</p> 2017b. “Regime shifts in fish recruitment on the Northeast US Continental Shelf.” <em>Marine Ecology Progress Series</em> 574: 1–11. doi:<a href="https://doi.org/10.3354/meps12183">10.3354/meps12183</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="trend-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/Zooplankton_indicators.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
