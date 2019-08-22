@@ -27,7 +27,7 @@ Indicators included in this document were selected to clearly align with managem
 
 ```{r setup, echo=F, message = F ,warning = F}
 
-knitr::opts_chunk$set(echo = F, message = F ,warning = F)
+knitr::opts_chunk$set(echo = F, message = F ,warning = F) 
 
 #source directories
 image.dir <- here::here("images")
