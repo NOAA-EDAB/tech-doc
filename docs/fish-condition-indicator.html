@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Fish Condition Indicator | Technical Documentation, State of the Ecosystem Report</title>
+  <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Fish Condition Indicator | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Fish Condition Indicator | Technical Documentation, State of the Ecosystem Report" />
+  
+  <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  
+
+<meta name="author" content="Northeast Fisheries Science Center" />
+
+
+<meta name="date" content="2019-08-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="conceptual-models.html">
+<link rel="next" href="epu.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
+<li class="chapter" data-level="2.1" data-path="aggroups.html"><a href="aggroups.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="aggroups.html"><a href="aggroups.html#data-sources"><i class="fa fa-check"></i><b>2.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="2.1.2" data-path="aggroups.html"><a href="aggroups.html#data-extraction"><i class="fa fa-check"></i><b>2.1.2</b> Data extraction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html"><i class="fa fa-check"></i><b>3</b> Annual SST Cycles</a><ul>
+<li class="chapter" data-level="3.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#methods-1"><i class="fa fa-check"></i><b>3.1</b> Methods</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-sources-1"><i class="fa fa-check"></i><b>3.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="3.1.2" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-extraction-1"><i class="fa fa-check"></i><b>3.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="3.1.3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-analysis"><i class="fa fa-check"></i><b>3.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="3.1.4" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#plotting"><i class="fa fa-check"></i><b>3.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aquaculture.html"><a href="aquaculture.html"><i class="fa fa-check"></i><b>4</b> Aquaculture</a><ul>
+<li class="chapter" data-level="4.1" data-path="aquaculture.html"><a href="aquaculture.html#methods-2"><i class="fa fa-check"></i><b>4.1</b> Methods</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-2"><i class="fa fa-check"></i><b>4.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.1.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-2"><i class="fa fa-check"></i><b>4.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="aquaculture.html"><a href="aquaculture.html#data-processing"><i class="fa fa-check"></i><b>4.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="aquaculture.html"><a href="aquaculture.html#plotting-1"><i class="fa fa-check"></i><b>4.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a><ul>
+<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-3"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-2"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html"><i class="fa fa-check"></i><b>6</b> Catch and Fleet Diversity</a><ul>
+<li class="chapter" data-level="6.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#methods-4"><i class="fa fa-check"></i><b>6.1</b> Methods</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-sources-4"><i class="fa fa-check"></i><b>6.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="6.1.2" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-extraction-4"><i class="fa fa-check"></i><b>6.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-analysis-3"><i class="fa fa-check"></i><b>6.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="6.1.4" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-processing-2"><i class="fa fa-check"></i><b>6.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="6.1.5" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#plotting-3"><i class="fa fa-check"></i><b>6.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html"><i class="fa fa-check"></i><b>7</b> Chesapeake Bay Water Quality Standards Attainment</a><ul>
+<li class="chapter" data-level="7.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#methods-5"><i class="fa fa-check"></i><b>7.1</b> Methods</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-sources-5"><i class="fa fa-check"></i><b>7.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="7.1.2" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-analysis-4"><i class="fa fa-check"></i><b>7.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="7.1.3" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-processing-3"><i class="fa fa-check"></i><b>7.1.3</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chl-pp.html"><a href="chl-pp.html"><i class="fa fa-check"></i><b>8</b> Chlorophyll <em>a</em> and Primary Production</a><ul>
+<li class="chapter" data-level="8.1" data-path="chl-pp.html"><a href="chl-pp.html#methods-6"><i class="fa fa-check"></i><b>8.1</b> Methods</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-6"><i class="fa fa-check"></i><b>8.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chl-pp.html"><a href="chl-pp.html#data-extraction-5"><i class="fa fa-check"></i><b>8.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-5"><i class="fa fa-check"></i><b>8.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="8.1.4" data-path="chl-pp.html"><a href="chl-pp.html#data-processing-4"><i class="fa fa-check"></i><b>8.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="8.1.5" data-path="chl-pp.html"><a href="chl-pp.html#plotting-4"><i class="fa fa-check"></i><b>8.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html"><i class="fa fa-check"></i><b>9</b> Fishing Community Climate Vulnerability</a><ul>
+<li class="chapter" data-level="9.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#methods-7"><i class="fa fa-check"></i><b>9.1</b> Methods</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-sources-7"><i class="fa fa-check"></i><b>9.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-extraction-6"><i class="fa fa-check"></i><b>9.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-analysis-6"><i class="fa fa-check"></i><b>9.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#plotting-5"><i class="fa fa-check"></i><b>9.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conceptual-models.html"><a href="conceptual-models.html"><i class="fa fa-check"></i><b>10</b> Conceptual Models</a><ul>
+<li class="chapter" data-level="10.1" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-8"><i class="fa fa-check"></i><b>10.1</b> Methods</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-8"><i class="fa fa-check"></i><b>10.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="10.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-7"><i class="fa fa-check"></i><b>10.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="10.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-7"><i class="fa fa-check"></i><b>10.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>11</b> Fish Condition Indicator</a><ul>
+<li class="chapter" data-level="11.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-9"><i class="fa fa-check"></i><b>11.1</b> Methods</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-9"><i class="fa fa-check"></i><b>11.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-8"><i class="fa fa-check"></i><b>11.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="11.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-8"><i class="fa fa-check"></i><b>11.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="11.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-6"><i class="fa fa-check"></i><b>11.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>12</b> Ecological Production Units</a><ul>
+<li class="chapter" data-level="12.1" data-path="epu.html"><a href="epu.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="epu.html"><a href="epu.html#data-sources-10"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="epu.html"><a href="epu.html#data-extraction-9"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="12.1.3" data-path="epu.html"><a href="epu.html#data-analysis-9"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.4" data-path="epu.html"><a href="epu.html#data-processing-5"><i class="fa fa-check"></i><b>12.1.4</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>13</b> Gulf Stream Index</a><ul>
+<li class="chapter" data-level="13.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-11"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-11"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-10"><i class="fa fa-check"></i><b>13.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-6"><i class="fa fa-check"></i><b>13.1.3</b> Data Processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>14</b> Harbor Porpoise Bycatch</a><ul>
+<li class="chapter" data-level="14.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-12"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-10"><i class="fa fa-check"></i><b>14.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="14.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-11"><i class="fa fa-check"></i><b>14.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="14.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-7"><i class="fa fa-check"></i><b>14.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>15</b> Ichthyoplankton Diversity</a><ul>
+<li class="chapter" data-level="15.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-13"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-13"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-12"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-7"><i class="fa fa-check"></i><b>15.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="15.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-8"><i class="fa fa-check"></i><b>15.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>16</b> Commercial Landings Data</a><ul>
+<li class="chapter" data-level="16.1" data-path="comdat.html"><a href="comdat.html#methods-14"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-14"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-13"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="comdat.html"><a href="comdat.html#plotting-9"><i class="fa fa-check"></i><b>16.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>17</b> Long-term Sea Surface Temperature</a><ul>
+<li class="chapter" data-level="17.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-15"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-15"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-9"><i class="fa fa-check"></i><b>17.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="17.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-10"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>18</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="18.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-16"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-16"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-14"><i class="fa fa-check"></i><b>18.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> New England Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="19.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="19.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="19.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>20</b> Verified Records of Southern Kingfish</a><ul>
+<li class="chapter" data-level="20.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-18"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-18"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-16"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="20.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-11"><i class="fa fa-check"></i><b>20.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>21</b> Habitat Occupancy Models</a><ul>
+<li class="chapter" data-level="21.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-19"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-19"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-10"><i class="fa fa-check"></i><b>21.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="21.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-17"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-12"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>22</b> Fish Productivity Indicator</a><ul>
+<li class="chapter" data-level="22.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-20"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-20"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-17"><i class="fa fa-check"></i><b>22.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="22.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-18"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-11"><i class="fa fa-check"></i><b>22.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-13"><i class="fa fa-check"></i><b>22.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>23</b> Recreational Fishing Indicators</a><ul>
+<li class="chapter" data-level="23.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-21"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-21"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-19"><i class="fa fa-check"></i><b>23.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-12"><i class="fa fa-check"></i><b>23.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="23.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-14"><i class="fa fa-check"></i><b>23.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>24</b> Right Whale Abundance</a><ul>
+<li class="chapter" data-level="24.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-22"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-22"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-18"><i class="fa fa-check"></i><b>24.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="24.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-20"><i class="fa fa-check"></i><b>24.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-13"><i class="fa fa-check"></i><b>24.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="24.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-15"><i class="fa fa-check"></i><b>24.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>25</b> Seabird diet and productivity</a><ul>
+<li class="chapter" data-level="25.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-23"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-23"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-14"><i class="fa fa-check"></i><b>25.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="25.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-21"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>26</b> Seasonal SST Anomalies</a><ul>
+<li class="chapter" data-level="26.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-24"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-24"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-19"><i class="fa fa-check"></i><b>26.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="26.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-22"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="26.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-16"><i class="fa fa-check"></i><b>26.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>27</b> Single Species Status Indicator</a><ul>
+<li class="chapter" data-level="27.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-25"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-25"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-15"><i class="fa fa-check"></i><b>27.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="27.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-23"><i class="fa fa-check"></i><b>27.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="27.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-17"><i class="fa fa-check"></i><b>27.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>28</b> Species Density Estimates</a><ul>
+<li class="chapter" data-level="28.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-26"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-26"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-24"><i class="fa fa-check"></i><b>28.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="28.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-18"><i class="fa fa-check"></i><b>28.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>29</b> Species Distribution Indicators</a><ul>
+<li class="chapter" data-level="29.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-27"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-27"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-25"><i class="fa fa-check"></i><b>29.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="29.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-16"><i class="fa fa-check"></i><b>29.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="29.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-19"><i class="fa fa-check"></i><b>29.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>30</b> Survey Data</a><ul>
+<li class="chapter" data-level="30.1" data-path="survdat.html"><a href="survdat.html#methods-28"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-28"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-21"><i class="fa fa-check"></i><b>30.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="30.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-26"><i class="fa fa-check"></i><b>30.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.4" data-path="survdat.html"><a href="survdat.html#plotting-20"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>31</b> Thermal Habitat Projections</a><ul>
+<li class="chapter" data-level="31.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-29"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-29"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-27"><i class="fa fa-check"></i><b>31.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-21"><i class="fa fa-check"></i><b>31.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>32</b> Trend Analysis</a><ul>
+<li class="chapter" data-level="32.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-30"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
+<li class="chapter" data-level="32.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-30"><i class="fa fa-check"></i><b>32.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="32.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-22"><i class="fa fa-check"></i><b>32.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="32.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-28"><i class="fa fa-check"></i><b>32.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>33</b> Zooplankton</a><ul>
+<li class="chapter" data-level="33.1" data-path="zooabund.html"><a href="zooabund.html#methods-31"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
+<li class="chapter" data-level="33.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-31"><i class="fa fa-check"></i><b>33.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="33.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-23"><i class="fa fa-check"></i><b>33.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="33.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-29"><i class="fa fa-check"></i><b>33.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="33.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-17"><i class="fa fa-check"></i><b>33.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="33.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-22"><i class="fa fa-check"></i><b>33.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Technical Documentation, State of the Ecosystem Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fish-condition-indicator" class="section level1">
+<h1><span class="header-section-number">11</span> Fish Condition Indicator</h1>
+<p><strong>Description</strong>: Relative condition</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018,2019), State of the Ecosystem - Mid-Atlantic (2018,2019)</p>
+<p><strong>Indicator category</strong>: Database pull with analysis</p>
+<p><strong>Contributor(s)</strong>: Laurel Smith</p>
+<p><strong>Data steward</strong>: Laurel Smith, <a href="mailto:laurel.smith@noaa.gov">laurel.smith@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: Laurel Smith, <a href="mailto:laurel.smith@noaa.gov">laurel.smith@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: NEFSC survey data used in these analyses are available upon request (see <a href="https://inport.nmfs.noaa.gov/inport/item/22560">BTS metadata</a> for access procedures). Derived condition data are available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_soe_v1.html">here</a>.</p>
+<div id="methods-9" class="section level2">
+<h2><span class="header-section-number">11.1</span> Methods</h2>
+<p>Relative condition (Kn) was introduced by <span class="citation">Cren (<a href="#ref-Cren1951a">1951</a>)</span> as a way to remove the influence of length on condition, and <span class="citation">Blackwell, Brown, and Willis (<a href="#ref-Blackwell2000">2000</a>)</span> noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as <span class="math inline">\(Kn = W/W&#39;,\)</span> where W is the weight of an individual fish and W’ is the predicted length-specific mean weight for the fish population in a given region. “Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn and spring bottom trawl surveys, from 1992-present.</p>
+<p>Where data allowed, predicted length-weight parameters were calculated for W’ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.</p>
+<div id="data-sources-9" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Data sources</h3>
+<p>Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow (see <a href="survdat.html#survdat">Survdat</a>). A small number of outlier values were removed when calculating the length-weight parameters.</p>
+</div>
+<div id="data-extraction-8" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Data extraction</h3>
+<p>Data were extracted from NEFSC’s survey database (SVDBS) using SQL.</p>
+<p>SQL query:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> cruise6,stratum,tow,station,
+  <span class="dt">year</span>,<span class="dt">month</span>,<span class="dt">day</span>,<span class="dt">time</span>,beglat,beglon,setdepth,
+  surftemp,bottemp,
+  svspp,sex,<span class="fu">length</span>,age,maturity,indid,indwt,stom_volume,stom_wgt, expcatchwt, expcatchnum
+<span class="kw">from</span> connection <span class="kw">to</span> oracle
+(<span class="kw">select</span> b.cruise6,b.stratum,b.tow,b.station,
+  s.est_year <span class="dt">year</span>,est_month <span class="dt">month</span>,est_day <span class="dt">day</span>,
+  <span class="fu">substr</span>(est_time,<span class="dv">1</span>,<span class="dv">2</span>)||substr(est_time,<span class="dv">4</span>,<span class="dv">2</span>) <span class="dt">time</span>,
+  <span class="fu">round</span>(<span class="fu">substr</span>(beglat,<span class="dv">1</span>,<span class="dv">2</span>) + (<span class="fu">substr</span>(beglat,<span class="dv">3</span>,<span class="dv">7</span>)/<span class="dv">60</span>),<span class="dv">6</span>) beglat,
+  <span class="fu">round</span>(((<span class="fu">substr</span>(beglon,<span class="dv">1</span>,<span class="dv">2</span>) + (<span class="fu">substr</span>(beglon,<span class="dv">3</span>,<span class="dv">7</span>)/<span class="dv">60</span>)) * -<span class="dv">1</span>), <span class="dv">6</span>) beglon,
+  setdepth,surftemp, bottemp,
+  b.svspp,sex,<span class="fu">length</span>,age,maturity,indid,indwt,stom_volume,stom_wgt, expcatchwt, expcatchnum
+<span class="kw">from</span> union_fscs_svbio b, union_fscs_svcat p, union_fscs_svsta s, svdbs_cruises c
+<span class="kw">where</span> 
+  season = <span class="ch">&amp;sson</span> <span class="kw">and</span>
+    b.svspp <span class="kw">in</span> (<span class="st">&#39;013&#39;</span>,<span class="st">&#39;015&#39;</span>,<span class="st">&#39;023&#39;</span>,<span class="st">&#39;026&#39;</span>,<span class="st">&#39;028&#39;</span>,<span class="st">&#39;032&#39;</span>,<span class="st">&#39;072&#39;</span>,<span class="st">&#39;073&#39;</span>,<span class="st">&#39;074&#39;</span>,<span class="st">&#39;075&#39;</span>,<span class="st">&#39;076&#39;</span>,<span class="st">&#39;077&#39;</span>,<span class="st">&#39;078&#39;</span>,<span class="st">&#39;102&#39;</span>,<span class="st">&#39;103&#39;</span>,<span class="st">&#39;104&#39;</span>,<span class="st">&#39;105&#39;</span>,<span class="st">&#39;106&#39;</span>,<span class="st">&#39;107&#39;</span>,<span class="st">&#39;108&#39;</span>,<span class="st">&#39;121&#39;</span>,<span class="st">&#39;131&#39;</span>,<span class="st">&#39;135&#39;</span>,<span class="st">&#39;141&#39;</span>,<span class="st">&#39;143&#39;</span>,<span class="st">&#39;145&#39;</span>,<span class="st">&#39;155&#39;</span>,<span class="st">&#39;164&#39;</span>,<span class="st">&#39;193&#39;</span>,<span class="st">&#39;197&#39;</span>) <span class="kw">and</span>
+  (b.cruise6=s.cruise6) <span class="kw">and</span>
+  (c.cruise6=b.cruise6) <span class="kw">and</span>
+  (p.cruise6=c.cruise6) <span class="kw">and</span>
+  (p.stratum=b.stratum) <span class="kw">and</span>
+  (b.stratum=s.stratum) <span class="kw">and</span>
+  (p.station=b.station) <span class="kw">and</span>
+  (b.station=s.station) <span class="kw">and</span>
+  (p.svspp=b.svspp) <span class="kw">and</span>
+  (p.tow=b.tow) <span class="kw">and</span>
+  (b.tow=s.tow) );
+
+  %put <span class="ch">&amp;sqlxmsg</span>;
+  %put <span class="ch">&amp;sqlxrc</span>;
+
+<span class="kw">create</span> <span class="kw">view</span> spp <span class="kw">as</span>
+
+<span class="kw">select</span> comname, svspp
+<span class="kw">from</span> connection <span class="kw">to</span> oracle
+(<span class="kw">select</span> comname, svspp
+<span class="kw">from</span> svspecies_list);
+
+  %put <span class="ch">&amp;sqlxmsg</span>;
+  %put <span class="ch">&amp;sqlxrc</span>;
+
+<span class="kw">execute</span> (<span class="kw">commit</span>) <span class="kw">by</span> oracle;</code></pre></div>
+</div>
+<div id="data-analysis-8" class="section level3">
+<h3><span class="header-section-number">11.1.3</span> Data analysis</h3>
+<p>The following growth curve was fit through individual fish lengths and weights from the NEFSC bottom trawl survey data from 1992-2012 to produce reference length-weight parameters:</p>
+<p><span class="math display">\[\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},\]</span></p>
+<p>where length is in cm and weight is in kg. Fall survey data were used where sample sizes allowed for growth curve estimation, otherwise data from spring and fall seasons were combined.</p>
+<p>Individual fish lengths from NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition (Kn) was calculated annually by species and sex (for sexually dimorphic species) by dividing individual fish weights by the predicted weight.</p>
+<p>The following R code was used in the analysis:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Length-weight parameter calculation:</span>
+<span class="cf">function</span> (data, <span class="dt">min.n =</span> <span class="dv">25</span>, <span class="dt">min.range =</span> <span class="dv">5</span>, <span class="dt">data.avail =</span> <span class="ot">NA</span>, <span class="dt">data.avail.bigelow =</span> <span class="ot">NA</span>) 
+{
+    <span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">dim</span>(data.avail))) data.avail &lt;-<span class="st"> </span><span class="kw">lw.data.availability</span>(data, min.n, min.range)
+    data.avail &lt;-<span class="st"> </span>data.avail[<span class="kw">apply</span>(data.avail[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">1</span>, any),]
+    <span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">dim</span>(data.avail.bigelow)))data.avail.bigelow &lt;-<span class="st"> </span><span class="kw">lw.data.availability</span>(data[data<span class="op">$</span>data.source <span class="op">==</span><span class="st"> &quot;Bigelow&quot;</span>,], min.n, min.range)
+    data.avail.bigelow &lt;-<span class="st"> </span>data.avail.bigelow[<span class="kw">apply</span>(data.avail.bigelow[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">1</span>, any),]
+    data.spp &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">rownames</span>(data.avail[data.avail<span class="op">$</span>sex.season <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>,]))
+    lw.output &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="dt">ncol =</span> <span class="dv">12</span>))
+    <span class="kw">names</span>(lw.output) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;species.name&quot;</span>, <span class="st">&quot;species.code&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;season&quot;</span>, <span class="st">&quot;slope&quot;</span>, <span class="st">&quot;slope.p&quot;</span>, <span class="st">&quot;intercept&quot;</span>, <span class="st">&quot;intercept.p&quot;</span>, <span class="st">&quot;min.length&quot;</span>, <span class="st">&quot;max.length&quot;</span>, <span class="st">&quot;check.diff&quot;</span>)
+    <span class="cf">for</span>(sp <span class="cf">in</span> data.spp){
+        sp.data &lt;-<span class="st"> </span>lw.data[lw.data<span class="op">$</span>species <span class="op">==</span><span class="st"> </span>sp,]
+        sp.name &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">as.character</span>(species.names<span class="op">$</span>scientific_name[species.names<span class="op">$</span>svspp <span class="op">==</span><span class="st"> </span>sp]))
+        <span class="kw">print</span>(sp.name)
+<span class="co">#All model</span>
+        <span class="kw">print</span>(<span class="st">&quot;Species Level&quot;</span>)
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(sp.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], <span class="st">&quot;weight.log~length.log&quot;</span>, <span class="st">&quot;species&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log, <span class="dt">data =</span> this.data)
+            model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            length.range &lt;-<span class="st"> </span><span class="kw">range</span>(sp.data<span class="op">$</span>length)
+            length.log &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>))
+            species &lt;-<span class="st"> </span><span class="kw">rep</span>(sp, <span class="kw">length</span>(length.log))
+            predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(species, length.log)
+            check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;species&quot;</span>, sp.name, predict.length)
+            lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], check.diffs))
+        }
+<span class="co">#Sex model</span>
+        <span class="kw">print</span>(<span class="st">&quot;Sex Level&quot;</span>)
+        this.data &lt;-<span class="st"> </span>sp.data[sp.data<span class="op">$</span>sex <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,]
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(sex)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(this.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="st">&quot;sex&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(sex), <span class="dt">data =</span> this.data)
+            male.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            female.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])         
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;sex&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>)){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">2</span>)
+                sex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="dv">2</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, sex)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;sex&quot;</span>, sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], male.range[<span class="dv">1</span>], male.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>], model.summary[<span class="st">&quot;length.log:factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>], model.summary[<span class="st">&quot;factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], female.range[<span class="dv">1</span>], female.range[<span class="dv">2</span>], check.diffs[<span class="dv">2</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+<span class="co">#Season model</span>
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(season)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(sp.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="st">&quot;season&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(season), <span class="dt">data =</span> this.data)
+            fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span>])
+            spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span>])
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>)){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">2</span>)
+                season &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;FALL&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;SPRING&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, season)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;season&quot;</span>, sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="st">&quot;FALL&quot;</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], fall.range[<span class="dv">1</span>], fall.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="st">&quot;SPRING&quot;</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>], model.summary[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(season)SPRING&quot;</span>], model.summary[<span class="st">&quot;factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], spring.range[<span class="dv">1</span>], spring.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+<span class="co">#Sex-Season model</span>
+        this.data &lt;-<span class="st"> </span>sp.data[sp.data<span class="op">$</span>sex <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,]
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(sex) * factor(season)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(this.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;season&quot;</span>))
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(sex) <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(season), <span class="dt">data =</span> this.data)
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            male.fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            male.spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            female.fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])
+            female.spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span> <span class="op">|</span><span class="st"> </span><span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>))){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                male.fall.int &lt;-<span class="st"> </span>model.coefs[<span class="st">&quot;(Intercept)&quot;</span>]
+                male.fall.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.fall.slope &lt;-<span class="st"> </span>model.coefs[<span class="st">&quot;length.log&quot;</span>]
+                male.fall.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.spring.int &lt;-<span class="st"> </span>male.fall.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(season)SPRING&quot;</span>]
+                male.spring.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.spring.slope &lt;-<span class="st"> </span>male.fall.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>]
+                male.spring.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.fall.int &lt;-<span class="st"> </span>male.fall.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>]
+                female.fall.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.fall.slope &lt;-<span class="st"> </span>male.fall.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>]
+                female.fall.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.spring.int &lt;-<span class="st"> </span>male.spring.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2:factor(season)SPRING&quot;</span>]
+                female.spring.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(sex)2:factor(season)SPRING&quot;</span>,  <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.spring.slope &lt;-<span class="st"> </span>male.spring.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2:factor(season)SPRING&quot;</span>]
+                female.spring.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(sex)2:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">4</span>)
+                sex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;1&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;2&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                season &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;FALL&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">4</span>), <span class="kw">rep</span>(<span class="st">&quot;SPRING&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">4</span>)),<span class="dv">2</span>)
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, sex, season)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;season&quot;</span>), sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="st">&quot;FALL&quot;</span>, male.fall.slope, male.fall.slope.p, male.fall.int, male.fall.int.p, male.fall.range[<span class="dv">1</span>], male.fall.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="st">&quot;SPRING&quot;</span>, male.spring.slope, male.spring.slope.p, male.spring.int, male.spring.int.p, male.spring.range[<span class="dv">1</span>], male.spring.range[<span class="dv">2</span>],check.diffs[<span class="dv">2</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="st">&quot;FALL&quot;</span>, female.fall.slope, female.fall.slope.p, female.fall.int, female.fall.int.p, female.fall.range[<span class="dv">1</span>], female.fall.range[<span class="dv">2</span>],check.diffs[<span class="dv">3</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="st">&quot;SPRING&quot;</span>, female.spring.slope, female.spring.slope.p, female.spring.int, female.spring.int.p, female.spring.range[<span class="dv">1</span>], female.spring.range[<span class="dv">2</span>],check.diffs[<span class="dv">4</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+    }
+lw.output &lt;-<span class="st"> </span>lw.output[<span class="op">!</span><span class="kw">is.na</span>(lw.output<span class="op">$</span>species.code),]
+lw.output
+}
+<span class="co">#Relative Condition:</span>
+proc import datafile =<span class="st"> &quot;lw_parameters.csv&quot;</span>
+ out =<span class="st"> </span>LWparams
+ dbms =<span class="st"> </span>csv
+ replace;
+ getnames =<span class="st"> </span>yes;
+run;
+
+data LWparams; set LWparams;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">13</span> then svspp =<span class="st"> &#39;013&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">15</span> then svspp =<span class="st"> &#39;015&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">23</span> then svspp =<span class="st"> &#39;023&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">26</span> then svspp =<span class="st"> &#39;026&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">28</span> then svspp =<span class="st"> &#39;028&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">32</span> then svspp =<span class="st"> &#39;032&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">72</span> then svspp =<span class="st"> &#39;072&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">73</span> then svspp =<span class="st"> &#39;073&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">74</span> then svspp =<span class="st"> &#39;074&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">75</span> then svspp =<span class="st"> &#39;075&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">76</span> then svspp =<span class="st"> &#39;076&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">77</span> then svspp =<span class="st"> &#39;077&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">78</span> then svspp =<span class="st"> &#39;078&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP ge <span class="dv">100</span> then svspp =<span class="st"> </span>LW_SVSPP;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39;M&#39;</span> then sex =<span class="st"> &#39;1&#39;</span>;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39;F&#39;</span> then sex =<span class="st"> &#39;2&#39;</span>;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39; &#39;</span> then sex =<span class="st"> &#39;0&#39;</span>;
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then EXPONENT_FALL=SEASONLESS_EXPONENT;
+ <span class="cf">if</span> EXPONENT_SPRING =<span class="st"> </span>. then EXPONENT_SPRING=SEASONLESS_EXPONENT;
+ <span class="cf">if</span> COEFFICIENT_FALL =<span class="st"> </span>. then COEFFICIENT_FALL=SEASONLESS_COEFFICIENT;
+ <span class="cf">if</span> COEFFICIENT_SPRING =<span class="st"> </span>. then COEFFICIENT_SPRING=SEASONLESS_COEFFICIENT;
+
+proc sort data=LWparams;
+ by svspp sex;
+
+proc sort data=lenwt;
+ by svspp sex;
+
+data <span class="kw">lwdatpar</span> (<span class="dt">keep =</span>cruise6 stratum tow station year month day time beglat beglon setdepth
+  surftemp bottemp svspp sex length age maturity indid indwt stom_volume stom_wgt expcatchwt expcatchnum
+  COEFFICIENT_SPRING EXPONENT_SPRING COEFFICIENT_FALL EXPONENT_FALL SEASONLESS_COEFFICIENT 
+  SEASONLESS_EXPONENT);
+ merge <span class="kw">lenwt</span> (<span class="dt">in=</span>d) <span class="kw">LWparams</span> (<span class="dt">in=</span>p);
+ by svspp sex;
+
+data sortlw; set lwdatpar;
+ proc sort; by svspp sex year;
+
+data lwdata; set sortlw;
+ <span class="cf">if</span> indwt =<span class="st"> </span>. then delete;
+ <span class="cf">if</span> length =<span class="st"> </span>. then delete;
+ <span class="cf">if</span> indwt <span class="op">&gt;</span><span class="dv">0</span>;
+ svspp1 =<span class="st"> </span>svspp<span class="op">*</span><span class="dv">1</span>;
+ indwtg=indwt<span class="op">*</span><span class="fl">1000.0</span>;
+ cond=indwtg<span class="op">/</span>(length<span class="op">**</span><span class="dv">3</span>);
+ <span class="cf">if</span> EXPONENT_FALL gt <span class="dv">0</span> then predwt =<span class="st"> </span>(<span class="kw">exp</span>(COEFFICIENT_FALL))<span class="op">*</span>length<span class="op">**</span>EXPONENT_FALL;
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then predwt =<span class="st"> </span>(<span class="kw">exp</span>(SEASONLESS_COEFFICIENT))<span class="op">*</span>length<span class="op">**</span>SEASONLESS_EXPONENT;
+  <span class="cf">if</span> EXPONENT_FALL gt <span class="dv">0</span> then predwtPK =<span class="st"> </span><span class="kw">exp</span>(COEFFICIENT_FALL<span class="op">+</span>(EXPONENT_FALL<span class="op">*</span><span class="kw">log</span>(length)));
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then predwtPK =<span class="st"> </span><span class="kw">exp</span>(SEASONLESS_COEFFICIENT<span class="op">+</span>(SEASONLESS_EXPONENT<span class="op">*</span><span class="kw">log</span>(length)));
+
+<span class="op">**</span><span class="er">*</span>Relative condition;
+ RelWt =<span class="st"> </span>indwt<span class="op">/</span>predwt<span class="op">*</span><span class="dv">100</span>;
+
+proc sort data=lwdata;
+ by svspp1 sex year;
+run;</code></pre></div>
+</div>
+<div id="plotting-6" class="section level3">
+<h3><span class="header-section-number">11.1.4</span> Plotting</h3>
+<div class="figure"><span id="fig:condition-factor"></span>
+<img src="_main_files/figure-html/condition-factor-1.png" alt="Normalized condition factors of managed species in the Northeast Large Marine Ecosystem." width="768" />
+<p class="caption">
+Figure 11.1: Normalized condition factors of managed species in the Northeast Large Marine Ecosystem.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Blackwell2000">
+<p>Blackwell, Brian G., Michael L. Brown, and David W. Willis. 2000. “Relative Weight (Wr) Status and Current Use in Fisheries Assessment and Management.” <em>Reviews in Fisheries Science</em> 8 (1): 1–44. doi:<a href="https://doi.org/10.1080/10641260091129161">10.1080/10641260091129161</a>.</p>
+</div>
+<div id="ref-Cren1951a">
+<p>Cren, E. D. Le. 1951. “The Length-Weight Relationship and Seasonal Cycle in Gonad Weight and Condition in the Perch (Perca fluviatilis).” <em>The Journal of Animal Ecology</em> 20 (2): 201. doi:<a href="https://doi.org/10.2307/1540">10.2307/1540</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="conceptual-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="epu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/Condition_indicator.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

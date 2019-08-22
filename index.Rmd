@@ -110,7 +110,7 @@ Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
 ```{r neusmap, fig.align='center', fig.height=6, echo = F}
-knitr::include_graphics(file.path(image.dir, "journal.pone.0146756.g002.png"))
+knitr::include_graphics("images/journal.pone.0146756.g002.png")
 
 ```
 

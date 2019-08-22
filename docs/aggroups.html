@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Aggregate Groups | Technical Documentation, State of the Ecosystem Report</title>
+  <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Aggregate Groups | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Aggregate Groups | Technical Documentation, State of the Ecosystem Report" />
+  
+  <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  
+
+<meta name="author" content="Northeast Fisheries Science Center" />
+
+
+<meta name="date" content="2019-08-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="erddap.html">
+<link rel="next" href="annual-sst-cycles.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
+<li class="chapter" data-level="2.1" data-path="aggroups.html"><a href="aggroups.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="aggroups.html"><a href="aggroups.html#data-sources"><i class="fa fa-check"></i><b>2.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="2.1.2" data-path="aggroups.html"><a href="aggroups.html#data-extraction"><i class="fa fa-check"></i><b>2.1.2</b> Data extraction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html"><i class="fa fa-check"></i><b>3</b> Annual SST Cycles</a><ul>
+<li class="chapter" data-level="3.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#methods-1"><i class="fa fa-check"></i><b>3.1</b> Methods</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-sources-1"><i class="fa fa-check"></i><b>3.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="3.1.2" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-extraction-1"><i class="fa fa-check"></i><b>3.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="3.1.3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-analysis"><i class="fa fa-check"></i><b>3.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="3.1.4" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#plotting"><i class="fa fa-check"></i><b>3.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aquaculture.html"><a href="aquaculture.html"><i class="fa fa-check"></i><b>4</b> Aquaculture</a><ul>
+<li class="chapter" data-level="4.1" data-path="aquaculture.html"><a href="aquaculture.html#methods-2"><i class="fa fa-check"></i><b>4.1</b> Methods</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-2"><i class="fa fa-check"></i><b>4.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.1.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-2"><i class="fa fa-check"></i><b>4.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="aquaculture.html"><a href="aquaculture.html#data-processing"><i class="fa fa-check"></i><b>4.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="aquaculture.html"><a href="aquaculture.html#plotting-1"><i class="fa fa-check"></i><b>4.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a><ul>
+<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-3"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-2"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html"><i class="fa fa-check"></i><b>6</b> Catch and Fleet Diversity</a><ul>
+<li class="chapter" data-level="6.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#methods-4"><i class="fa fa-check"></i><b>6.1</b> Methods</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-sources-4"><i class="fa fa-check"></i><b>6.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="6.1.2" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-extraction-4"><i class="fa fa-check"></i><b>6.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-analysis-3"><i class="fa fa-check"></i><b>6.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="6.1.4" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-processing-2"><i class="fa fa-check"></i><b>6.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="6.1.5" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#plotting-3"><i class="fa fa-check"></i><b>6.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html"><i class="fa fa-check"></i><b>7</b> Chesapeake Bay Water Quality Standards Attainment</a><ul>
+<li class="chapter" data-level="7.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#methods-5"><i class="fa fa-check"></i><b>7.1</b> Methods</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-sources-5"><i class="fa fa-check"></i><b>7.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="7.1.2" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-analysis-4"><i class="fa fa-check"></i><b>7.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="7.1.3" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-processing-3"><i class="fa fa-check"></i><b>7.1.3</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chl-pp.html"><a href="chl-pp.html"><i class="fa fa-check"></i><b>8</b> Chlorophyll <em>a</em> and Primary Production</a><ul>
+<li class="chapter" data-level="8.1" data-path="chl-pp.html"><a href="chl-pp.html#methods-6"><i class="fa fa-check"></i><b>8.1</b> Methods</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-6"><i class="fa fa-check"></i><b>8.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chl-pp.html"><a href="chl-pp.html#data-extraction-5"><i class="fa fa-check"></i><b>8.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-5"><i class="fa fa-check"></i><b>8.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="8.1.4" data-path="chl-pp.html"><a href="chl-pp.html#data-processing-4"><i class="fa fa-check"></i><b>8.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="8.1.5" data-path="chl-pp.html"><a href="chl-pp.html#plotting-4"><i class="fa fa-check"></i><b>8.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html"><i class="fa fa-check"></i><b>9</b> Fishing Community Climate Vulnerability</a><ul>
+<li class="chapter" data-level="9.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#methods-7"><i class="fa fa-check"></i><b>9.1</b> Methods</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-sources-7"><i class="fa fa-check"></i><b>9.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-extraction-6"><i class="fa fa-check"></i><b>9.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-analysis-6"><i class="fa fa-check"></i><b>9.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#plotting-5"><i class="fa fa-check"></i><b>9.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conceptual-models.html"><a href="conceptual-models.html"><i class="fa fa-check"></i><b>10</b> Conceptual Models</a><ul>
+<li class="chapter" data-level="10.1" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-8"><i class="fa fa-check"></i><b>10.1</b> Methods</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-8"><i class="fa fa-check"></i><b>10.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="10.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-7"><i class="fa fa-check"></i><b>10.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="10.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-7"><i class="fa fa-check"></i><b>10.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>11</b> Fish Condition Indicator</a><ul>
+<li class="chapter" data-level="11.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-9"><i class="fa fa-check"></i><b>11.1</b> Methods</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-9"><i class="fa fa-check"></i><b>11.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-8"><i class="fa fa-check"></i><b>11.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="11.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-8"><i class="fa fa-check"></i><b>11.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="11.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-6"><i class="fa fa-check"></i><b>11.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>12</b> Ecological Production Units</a><ul>
+<li class="chapter" data-level="12.1" data-path="epu.html"><a href="epu.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="epu.html"><a href="epu.html#data-sources-10"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="epu.html"><a href="epu.html#data-extraction-9"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="12.1.3" data-path="epu.html"><a href="epu.html#data-analysis-9"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.4" data-path="epu.html"><a href="epu.html#data-processing-5"><i class="fa fa-check"></i><b>12.1.4</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>13</b> Gulf Stream Index</a><ul>
+<li class="chapter" data-level="13.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-11"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-11"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-10"><i class="fa fa-check"></i><b>13.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-6"><i class="fa fa-check"></i><b>13.1.3</b> Data Processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>14</b> Harbor Porpoise Bycatch</a><ul>
+<li class="chapter" data-level="14.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-12"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-10"><i class="fa fa-check"></i><b>14.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="14.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-11"><i class="fa fa-check"></i><b>14.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="14.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-7"><i class="fa fa-check"></i><b>14.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>15</b> Ichthyoplankton Diversity</a><ul>
+<li class="chapter" data-level="15.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-13"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-13"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-12"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-7"><i class="fa fa-check"></i><b>15.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="15.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-8"><i class="fa fa-check"></i><b>15.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>16</b> Commercial Landings Data</a><ul>
+<li class="chapter" data-level="16.1" data-path="comdat.html"><a href="comdat.html#methods-14"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-14"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-13"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="comdat.html"><a href="comdat.html#plotting-9"><i class="fa fa-check"></i><b>16.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>17</b> Long-term Sea Surface Temperature</a><ul>
+<li class="chapter" data-level="17.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-15"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-15"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-9"><i class="fa fa-check"></i><b>17.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="17.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-10"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>18</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="18.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-16"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-16"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-14"><i class="fa fa-check"></i><b>18.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> New England Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="19.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="19.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="19.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>20</b> Verified Records of Southern Kingfish</a><ul>
+<li class="chapter" data-level="20.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-18"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-18"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-16"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="20.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-11"><i class="fa fa-check"></i><b>20.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>21</b> Habitat Occupancy Models</a><ul>
+<li class="chapter" data-level="21.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-19"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-19"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-10"><i class="fa fa-check"></i><b>21.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="21.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-17"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-12"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>22</b> Fish Productivity Indicator</a><ul>
+<li class="chapter" data-level="22.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-20"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-20"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-17"><i class="fa fa-check"></i><b>22.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="22.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-18"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-11"><i class="fa fa-check"></i><b>22.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-13"><i class="fa fa-check"></i><b>22.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>23</b> Recreational Fishing Indicators</a><ul>
+<li class="chapter" data-level="23.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-21"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-21"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-19"><i class="fa fa-check"></i><b>23.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-12"><i class="fa fa-check"></i><b>23.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="23.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-14"><i class="fa fa-check"></i><b>23.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>24</b> Right Whale Abundance</a><ul>
+<li class="chapter" data-level="24.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-22"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-22"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-18"><i class="fa fa-check"></i><b>24.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="24.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-20"><i class="fa fa-check"></i><b>24.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-13"><i class="fa fa-check"></i><b>24.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="24.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-15"><i class="fa fa-check"></i><b>24.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>25</b> Seabird diet and productivity</a><ul>
+<li class="chapter" data-level="25.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-23"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-23"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-14"><i class="fa fa-check"></i><b>25.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="25.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-21"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>26</b> Seasonal SST Anomalies</a><ul>
+<li class="chapter" data-level="26.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-24"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-24"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-19"><i class="fa fa-check"></i><b>26.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="26.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-22"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="26.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-16"><i class="fa fa-check"></i><b>26.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>27</b> Single Species Status Indicator</a><ul>
+<li class="chapter" data-level="27.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-25"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-25"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-15"><i class="fa fa-check"></i><b>27.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="27.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-23"><i class="fa fa-check"></i><b>27.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="27.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-17"><i class="fa fa-check"></i><b>27.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>28</b> Species Density Estimates</a><ul>
+<li class="chapter" data-level="28.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-26"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-26"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-24"><i class="fa fa-check"></i><b>28.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="28.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-18"><i class="fa fa-check"></i><b>28.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>29</b> Species Distribution Indicators</a><ul>
+<li class="chapter" data-level="29.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-27"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-27"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-25"><i class="fa fa-check"></i><b>29.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="29.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-16"><i class="fa fa-check"></i><b>29.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="29.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-19"><i class="fa fa-check"></i><b>29.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>30</b> Survey Data</a><ul>
+<li class="chapter" data-level="30.1" data-path="survdat.html"><a href="survdat.html#methods-28"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-28"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-21"><i class="fa fa-check"></i><b>30.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="30.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-26"><i class="fa fa-check"></i><b>30.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.4" data-path="survdat.html"><a href="survdat.html#plotting-20"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>31</b> Thermal Habitat Projections</a><ul>
+<li class="chapter" data-level="31.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-29"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-29"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-27"><i class="fa fa-check"></i><b>31.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-21"><i class="fa fa-check"></i><b>31.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>32</b> Trend Analysis</a><ul>
+<li class="chapter" data-level="32.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-30"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
+<li class="chapter" data-level="32.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-30"><i class="fa fa-check"></i><b>32.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="32.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-22"><i class="fa fa-check"></i><b>32.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="32.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-28"><i class="fa fa-check"></i><b>32.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>33</b> Zooplankton</a><ul>
+<li class="chapter" data-level="33.1" data-path="zooabund.html"><a href="zooabund.html#methods-31"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
+<li class="chapter" data-level="33.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-31"><i class="fa fa-check"></i><b>33.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="33.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-23"><i class="fa fa-check"></i><b>33.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="33.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-29"><i class="fa fa-check"></i><b>33.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="33.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-17"><i class="fa fa-check"></i><b>33.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="33.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-22"><i class="fa fa-check"></i><b>33.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Technical Documentation, State of the Ecosystem Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aggroups" class="section level1">
+<h1><span class="header-section-number">2</span> Aggregate Groups</h1>
+<p><strong>Description</strong>: Mappings of species into aggregate group categories for different analyses</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)</p>
+<p><strong>Indicator category</strong>: Synthesis of published information</p>
+<p><strong>Contributor(s)</strong>: Geret DePiper, Sarah Gaichas, Sean Hardison, Sean Lucey</p>
+<p><strong>Data steward</strong>: Sean Lucey <a href="mailto:Sean.Lucey@noaa.gov">Sean.Lucey@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: Sean Lucey <a href="mailto:Sean.Lucey@noaa.gov">Sean.Lucey@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: Source data is available to the public (see Data Sources).</p>
+<div id="methods" class="section level2">
+<h2><span class="header-section-number">2.1</span> Methods</h2>
+<p>The State of the Ecosystem (SOE) reports are delivered to the New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) to provide ecosystems context. To better understand that broader ecosystem context, many of the indicators are reported at an aggregate level rather than at a single species level. Species were assigned to an aggregate group following the classification scheme of <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary">2000</a>)</span> and <span class="citation">Link et al. (<a href="#ref-link2006EMAX">2006</a>)</span>. Both works classified species into feeding guilds based on food habits data collected at the Northeast Fisheries Science Center (NEFSC). In 2017, the SOE used seven specific feeding guilds (plus an “other” category; Table <a href="aggroups.html#tab:soe2017class">2.1</a>). These seven were the same guilds used in <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary">2000</a>)</span>, which also distinguished ontogentic shifts in species diets.</p>
+<p>For the purposes of the SOE, species were only assigned to one category based on the most prevalent size available to commercial fisheries. However, several of those categories were confusing to the management councils, so in 2018 those categories were simplified to five (plus “other”; Table <a href="aggroups.html#tab:soe2018class">2.2</a>) along the lines of <span class="citation">Link et al. (<a href="#ref-link2006EMAX">2006</a>)</span>. In addition to feeding guilds, species managed by the councils have been identified. This is done to show the breadth of what a given council is responsible for within the broader ecosystem context.</p>
+<table>
+<caption>
+<span id="tab:soe2017class">Table 2.1: </span>Aggregate groups use in 2017 SOE. Classifications are based on Garrison and Link 2000. 
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Feeding.Guild
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Apex Predator
+</td>
+<td style="text-align:left;">
+Top of the food chain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Piscivore
+</td>
+<td style="text-align:left;">
+Fish eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Macrozoo-piscivore
+</td>
+<td style="text-align:left;">
+Shrimp and small fish eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Macroplanktivore
+</td>
+<td style="text-align:left;">
+Amphipod and shrimp eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mesoplanktivore
+</td>
+<td style="text-align:left;">
+Zooplankton eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Benthivore
+</td>
+<td style="text-align:left;">
+Bottom eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Benthos
+</td>
+<td style="text-align:left;">
+Things that live on the bottom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+Things not classified above
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:soe2018class">Table 2.2: </span>Aggregate groups use in 2018 SOE. Classifications are based on Link et al. 2006.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Feeding.Guild
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Apex Predator
+</td>
+<td style="text-align:left;">
+Top of the food chain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Piscivore
+</td>
+<td style="text-align:left;">
+Fish eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Planktivore
+</td>
+<td style="text-align:left;">
+Zooplankton eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Benthivore
+</td>
+<td style="text-align:left;">
+Bottom eaters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Benthos
+</td>
+<td style="text-align:left;">
+Things that live on the bottom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+Things not classified above
+</td>
+</tr>
+</tbody>
+</table>
+<div id="data-sources" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Data sources</h3>
+<p>In order to match aggregate groups with various data sources, a look-up table was generated which includes species’ common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.</p>
+<p>Management responsibilities for different species are listed under the column “Fed.managed” (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the “NEIEA” column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings <span class="citation">(Link et al. <a href="#ref-link2006EMAX">2006</a>)</span>, but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the NE-LME (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.</p>
+<div id="supplemental-information" class="section level4">
+<h4><span class="header-section-number">2.1.1.1</span> Supplemental information</h4>
+<p>See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:</p>
+<ul>
+<li><a href="https://www.itis.gov/" class="uri">https://www.itis.gov/</a><br />
+</li>
+<li><a href="https://inport.nmfs.noaa.gov/inport/item/22561" class="uri">https://inport.nmfs.noaa.gov/inport/item/22561</a><br />
+</li>
+<li><a href="https://inport.nmfs.noaa.gov/inport/item/22560" class="uri">https://inport.nmfs.noaa.gov/inport/item/22560</a><br />
+</li>
+<li><a href="https://inport.nmfs.noaa.gov/inport/item/27401" class="uri">https://inport.nmfs.noaa.gov/inport/item/27401</a></li>
+</ul>
+<p>More information about the NE-IEA program is available <a href="http://integratedecosystemassessment.noaa.gov">here</a>.</p>
+<p>More information about the New Engalnd Fisheries Management Council is available <a href="https://www.nefmc.org/">here</a>.</p>
+<p>More information about the Mid-Atlantic Fisheries Management Council is available <a href="http://www.mafmc.org/">here</a>.</p>
+</div>
+</div>
+<div id="data-extraction" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Data extraction</h3>
+<p>Species lists are pulled from SVDBS and CFDBS. They are merged using the ITIS code. Classifications from Garrison and Link <span class="citation">(Garrison and Link <a href="#ref-garrison2000dietary">2000</a>)</span> and Link et al. <span class="citation">(Link et al. <a href="#ref-link2006EMAX">2006</a>)</span> are added manually. The R code used in the extraction process is presented below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Species list</span>
+<span class="cf">if</span>(<span class="kw">Sys.info</span>()[<span class="st">&#39;sysname&#39;</span>]<span class="op">==</span><span class="st">&quot;Windows&quot;</span>){
+  data.dir &lt;-<span class="st"> &quot;L:</span><span class="ch">\\</span><span class="st">EcoAP</span><span class="ch">\\</span><span class="st">Data</span><span class="ch">\\</span><span class="st">survey&quot;</span>
+  out.dir  &lt;-<span class="st"> &quot;L:</span><span class="ch">\\</span><span class="st">EcoAP</span><span class="ch">\\</span><span class="st">Data</span><span class="ch">\\</span><span class="st">survey&quot;</span>
+  <span class="kw">memory.limit</span>(<span class="dv">4000</span>)
+}
+<span class="cf">if</span>(<span class="kw">Sys.info</span>()[<span class="st">&#39;sysname&#39;</span>]<span class="op">==</span><span class="st">&quot;Linux&quot;</span>){
+  data.dir  &lt;-<span class="st"> &quot;/home/slucey/slucey/EcoAP/Data/survey&quot;</span>
+  out.dir   &lt;-<span class="st"> &quot;/home/slucey/slucey/EcoAP/Data/survey&quot;</span>
+  out.dir.<span class="dv">2</span> &lt;-<span class="st"> &quot;/home/slucey/slucey/EcoAP/Data/Commercial&quot;</span>
+  uid       &lt;-<span class="st"> &#39;slucey&#39;</span>
+  <span class="kw">cat</span>(<span class="st">&quot;Oracle Password: &quot;</span>)
+  pwd &lt;-<span class="st"> </span><span class="kw">scan</span>(<span class="kw">stdin</span>(), <span class="kw">character</span>(), <span class="dt">n =</span> <span class="dv">1</span>)
+}
+
+<span class="kw">library</span>(RODBC); <span class="kw">library</span>(data.table)
+
+<span class="cf">if</span>(<span class="kw">Sys.info</span>()[<span class="st">&#39;sysname&#39;</span>]<span class="op">==</span><span class="st">&quot;Windows&quot;</span>){
+  channel &lt;-<span class="st"> </span><span class="kw">odbcDriverConnect</span>()
+} <span class="cf">else</span> {
+  channel &lt;-<span class="st"> </span><span class="kw">odbcConnect</span>(<span class="st">&#39;sole&#39;</span>, uid, pwd)
+}
+
+<span class="co">#Grab svspp code by itis code</span>
+svspp &lt;-<span class="st"> </span><span class="kw">as.data.table</span>(<span class="kw">sqlQuery</span>(channel, <span class="st">&quot;select SVSPP, ITISSPP, COMNAME, SCINAME </span>
+<span class="st">                                from ITIS_Lookup&quot;</span>))
+
+<span class="co">#Grab cfspp by itis code</span>
+cfspp &lt;-<span class="st"> </span><span class="kw">as.data.table</span>(<span class="kw">sqlQuery</span>(channel, <span class="st">&quot;select NESPP4, SPECIES_ITIS, </span>
+<span class="st">                                COMMON_NAME, SCIENTIFIC_NAME </span>
+<span class="st">                                from CFDBS.Species_itis_ne&quot;</span>))
+<span class="kw">setnames</span>(cfspp, <span class="st">&#39;SPECIES_ITIS&#39;</span>, <span class="st">&#39;ITISSPP&#39;</span>)
+cfspp[, NESPP3 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(<span class="kw">sprintf</span>(<span class="st">&#39;%04d&#39;</span>, NESPP4), <span class="dv">1</span>, <span class="dv">3</span>))]
+<span class="kw">setkey</span>(cfspp, NESPP3)
+cfspp &lt;-<span class="st"> </span><span class="kw">unique</span>(cfspp)
+cfspp[, NESPP4 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="ot">NULL</span>]
+
+<span class="kw">setkey</span>(cfspp, ITISSPP, NESPP3)
+cfspp &lt;-<span class="st"> </span><span class="kw">unique</span>(cfspp, <span class="dt">by =</span> <span class="kw">key</span>(cfspp))
+
+<span class="co">#Merge to master species list</span>
+spp &lt;-<span class="st"> </span><span class="kw">merge</span>(svspp, cfspp, <span class="dt">by =</span> <span class="st">&#39;ITISSPP&#39;</span>, <span class="dt">all =</span> T)
+spp &lt;-<span class="st"> </span>spp[<span class="op">!</span>(<span class="kw">is.na</span>(SVSPP) <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(NESPP3)), ]
+
+<span class="co">#Fix known issues</span>
+spp &lt;-<span class="st"> </span>spp[<span class="op">!</span>SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">193</span>, <span class="dv">310</span>), ]
+
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">630979</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">193</span>] <span class="co">#Ocean Pout</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">620992</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">310</span>] <span class="co">#Deepsea red crab</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">172783</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">104</span>] <span class="co">#Fourspot flounder</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">166283</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">112</span>] <span class="co">#John Dory</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">161731</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st">  </span><span class="dv">36</span>] <span class="co">#Menhaden</span>
+spp[ITISSPP <span class="op">==</span><span class="st">  </span><span class="dv">98671</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">311</span>] <span class="co">#Cancer Crabs unk</span>
+spp[ITISSPP <span class="op">==</span><span class="st">  </span><span class="dv">98455</span>, SVSPP  <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">317</span>] <span class="co">#Spider crabs</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">159772</span>, NESPP3 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">150</span>] <span class="co">#Hagfish</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">166284</span>, NESPP3 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">188</span>] <span class="co">#John Dory</span>
+spp[ITISSPP <span class="op">==</span><span class="st"> </span><span class="dv">98670</span>,  NESPP3 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">714</span>] <span class="co">#Cancer Crabs unk</span>
+
+spp[ITISSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">630979</span>, <span class="dv">620992</span>), COMNAME <span class="op">:</span><span class="er">=</span><span class="st"> </span>COMMON_NAME]
+spp[ITISSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">630979</span>, <span class="dv">620992</span>), SCINAME <span class="op">:</span><span class="er">=</span><span class="st"> </span>SCIENTIFIC_NAME]
+
+<span class="co">#Drop extra columns</span>
+spp[<span class="kw">is.na</span>(COMNAME), COMNAME <span class="op">:</span><span class="er">=</span><span class="st"> </span>COMMON_NAME]
+spp[<span class="kw">is.na</span>(SCINAME), SCINAME <span class="op">:</span><span class="er">=</span><span class="st"> </span>SCIENTIFIC_NAME]
+spp[, <span class="kw">c</span>(<span class="st">&#39;COMMON_NAME&#39;</span>, <span class="st">&#39;SCIENTIFIC_NAME&#39;</span>) <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="ot">NULL</span>]
+<span class="kw">setcolorder</span>(spp, <span class="kw">c</span>(<span class="st">&#39;ITISSPP&#39;</span>, <span class="st">&#39;SVSPP&#39;</span>, <span class="st">&#39;NESPP3&#39;</span>, <span class="st">&#39;COMNAME&#39;</span>, <span class="st">&#39;SCINAME&#39;</span>))
+<span class="kw">setkey</span>(spp, SVSPP, NESPP3)
+
+<span class="co">#-------------------------------------------------------------------------------</span>
+<span class="co">#Add management authority</span>
+mafmc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">103</span>, <span class="dv">121</span>, <span class="dv">131</span>, <span class="dv">135</span>, <span class="dv">141</span>, <span class="dv">143</span>, <span class="dv">151</span>, <span class="dv">403</span>, <span class="dv">409</span>, <span class="dv">502</span>, <span class="dv">503</span>, <span class="dv">621</span>)
+nefmc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span><span class="op">:</span><span class="dv">28</span>, <span class="dv">32</span>, <span class="dv">69</span>, <span class="dv">72</span><span class="op">:</span><span class="dv">77</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">105</span><span class="op">:</span><span class="dv">107</span>, <span class="dv">155</span>, <span class="dv">193</span>, <span class="dv">310</span>, <span class="dv">401</span>, <span class="dv">894</span>)
+joint &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">197</span>)
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span>mafmc, MANAGE <span class="op">:</span><span class="er">=</span><span class="st"> &#39;MAFMC&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span>nefmc, MANAGE <span class="op">:</span><span class="er">=</span><span class="st"> &#39;NEFMC&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span>joint, MANAGE <span class="op">:</span><span class="er">=</span><span class="st"> &#39;JOINT&#39;</span>]
+
+<span class="co">#-------------------------------------------------------------------------------</span>
+<span class="co">#Add functional groups</span>
+<span class="co">#From NEFMC EBFM PDT work</span>
+<span class="co">#See Functional_group_table_Mike.csv in slucey/EcoAP/EBFM_PDT</span>
+spp[, EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">factor</span>(<span class="ot">NA</span>, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&#39;Apex Predator&#39;</span>, <span class="st">&#39;Benthivore&#39;</span>, <span class="st">&#39;Benthos&#39;</span>,
+                                        <span class="st">&#39;Macroplanktivore&#39;</span>, <span class="st">&#39;Macrozoo-piscivore&#39;</span>,
+                                        <span class="st">&#39;Mesoplanktivore&#39;</span>, <span class="st">&#39;Piscivore&#39;</span>, <span class="st">&#39;Other&#39;</span>))]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">11</span>, <span class="dv">700</span>, <span class="dv">704</span>, <span class="dv">747</span>), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Apex Predator&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">74</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">106</span>, <span class="dv">107</span>, <span class="dv">141</span>, <span class="dv">143</span>, <span class="dv">151</span>, <span class="dv">164</span>, <span class="dv">172</span>,
+                   <span class="dv">176</span>, <span class="dv">177</span>, <span class="dv">192</span>, <span class="dv">193</span>, <span class="dv">301</span>, <span class="dv">310</span>, <span class="dv">312</span>, <span class="dv">314</span>, <span class="dv">317</span>, <span class="dv">322</span>, <span class="dv">501</span>),
+    EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">331</span>, <span class="dv">336</span>, <span class="dv">401</span>, <span class="dv">403</span>, <span class="dv">409</span>), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthos&#39;</span>]
+spp[NESPP3 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">775</span>, <span class="dv">781</span>, <span class="dv">805</span>, <span class="dv">806</span>), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthos&#39;</span>]  
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">76</span>, <span class="dv">163</span>, <span class="dv">168</span>, <span class="dv">171</span>, <span class="dv">502</span>, <span class="dv">503</span>), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Macroplanktivore&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">13</span>, <span class="dv">24</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">75</span>, <span class="dv">77</span>, <span class="dv">84</span>, <span class="dv">108</span>, <span class="dv">112</span>, <span class="dv">155</span>, <span class="dv">156</span>, <span class="dv">311</span>),
+    EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Macrozoo-piscivore&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">32</span>, <span class="dv">33</span>, <span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">121</span>, <span class="dv">131</span>), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Mesoplanktivore&#39;</span>]
+spp[SVSPP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">23</span>, <span class="dv">28</span>, <span class="dv">69</span>, <span class="dv">72</span>, <span class="dv">73</span>, <span class="dv">101</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">135</span>, <span class="dv">139</span>, <span class="dv">145</span>, <span class="dv">197</span>),
+    EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Piscivore&#39;</span>]
+spp[<span class="kw">is.na</span>(EBFM.PDT), EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Other&#39;</span>]
+
+<span class="co">#Fix known issues</span>
+spp[SVSPP <span class="op">==</span><span class="st"> </span><span class="dv">160</span>, EBFM.PDT <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Macroplanktivore&#39;</span>]
+
+<span class="co">#Add EMAX</span>
+<span class="kw">load</span>(<span class="kw">file.path</span>(data.dir, <span class="st">&#39;EMAX_groups.RData&#39;</span>))
+emax &lt;-<span class="st"> </span>emax[<span class="op">!</span><span class="kw">is.na</span>(SVSPP), ]
+spp &lt;-<span class="st"> </span><span class="kw">merge</span>(spp, emax[, <span class="kw">list</span>(SVSPP, EMAX, Fall.q, Spring.q)], <span class="dt">by =</span> <span class="st">&#39;SVSPP&#39;</span>, <span class="dt">all.x =</span> T)
+
+<span class="co">#reduce rows</span>
+<span class="kw">setkey</span>(spp, SVSPP, NESPP3)
+species &lt;-<span class="st"> </span><span class="kw">unique</span>(spp, <span class="dt">by =</span> <span class="kw">key</span>(spp))
+
+<span class="co">#Remove EMAX q&#39;s</span>
+species[, <span class="kw">c</span>(<span class="st">&#39;Fall.q&#39;</span>, <span class="st">&#39;Spring.q&#39;</span>) <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="ot">NULL</span>]
+
+<span class="co">#Expand EMAX abbreviations</span>
+species[EMAX <span class="op">==</span><span class="st"> &#39;BG&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Gadiformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;BE&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Elasmobranchs&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;BP&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Pleuronectiformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;BS&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Scorpaeniformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;BO&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Others&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;BC&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivore Perciformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;PG&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Piscivore Gadiformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;PE&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Piscivore Elasmobranchs&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;PO&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Piscivore Others&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;OE&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Omnivore Elasmobranchs&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;OO&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Omnivore Others&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;SC&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Southern Perciformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;SP&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Southern Pleuronectiformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;SE&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Southern Elasmobranchs&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;SG&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Southern Gadiformes&#39;</span>]
+species[EMAX <span class="op">==</span><span class="st"> &#39;SO&#39;</span>, EMAX <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Southern Others&#39;</span>]
+
+<span class="co">#Rename columns</span>
+<span class="kw">setnames</span>(species, <span class="kw">c</span>(<span class="st">&#39;MANAGE&#39;</span>, <span class="st">&#39;EBFM.PDT&#39;</span>, <span class="st">&#39;Feeding.guild&#39;</span>), <span class="kw">c</span>(<span class="st">&#39;Fed.Managed&#39;</span>, <span class="st">&#39;SOE.17&#39;</span>, <span class="st">&#39;SOE.18&#39;</span>))
+
+<span class="co">#Add classification from Garrison/Link 2000</span>
+size &lt;-<span class="st"> </span><span class="kw">data.table</span>(<span class="dt">COMNAME =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&#39;SMOOTH DOGFISH&#39;</span>,           <span class="dv">2</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;SPINY DOGFISH&#39;</span>,            <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;WINTER SKATE&#39;</span>,             <span class="dv">4</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;LITTLE SKATE&#39;</span>,             <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;SMOOTH SKATE&#39;</span>,             <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;THORNY SKATE&#39;</span>,             <span class="dv">4</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ATLANTIC HERRING&#39;</span>,         <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ALEWIFE&#39;</span>,                  <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;SILVER HAKE&#39;</span>,              <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ATLANTIC COD&#39;</span>,             <span class="dv">4</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;HADDOCK&#39;</span>,                  <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;POLLOCK&#39;</span>,                  <span class="dv">4</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;WHITE HAKE&#39;</span>,               <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;RED HAKE&#39;</span>,                 <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;SPOTTED HAKE&#39;</span>,             <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;AMERICAN PLAICE&#39;</span>,          <span class="dv">3</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;SUMMER FLOUNDER&#39;</span>,          <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;FOURSPOT FLOUNDER&#39;</span>,        <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;YELLOWTAIL FLOUNDER&#39;</span>,      <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;WINTER FLOUNDER&#39;</span>,          <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;WITCH FLOUNDER&#39;</span>,           <span class="dv">2</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;WINDOWPANE&#39;</span>,               <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;GULF STREAM FLOUNDER&#39;</span>,     <span class="dv">1</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;ATLANTIC MACKEREL&#39;</span>,        <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;BUTTERFISH&#39;</span>,               <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;BLUEFISH&#39;</span>,                 <span class="dv">3</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ATLANTIC CROAKER&#39;</span>,         <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;BLACK SEA BASS&#39;</span>,           <span class="dv">2</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;SCUP&#39;</span>,                     <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;WEAKFISH&#39;</span>,                 <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ACADIAN REDFISH&#39;</span>,          <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;LONGHORN SCULPIN&#39;</span>,         <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;SEA RAVEN&#39;</span>,                <span class="dv">2</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;NORTHERN SAND LANCE&#39;</span>,      <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;OCEAN POUT&#39;</span>,               <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;FAWN CUSK-EEL&#39;</span>,            <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;GOOSEFISH&#39;</span>,                <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;ATLANTIC SHARPNOSE SHARK&#39;</span>, <span class="dv">1</span>), 
+                               <span class="kw">rep</span>(<span class="st">&#39;NORTHERN SHORTFIN SQUID&#39;</span>,  <span class="dv">1</span>),
+                               <span class="kw">rep</span>(<span class="st">&#39;LONGFIN SQUID&#39;</span>,            <span class="dv">1</span>)),
+                   <span class="dt">SizeCat =</span> <span class="kw">c</span>(<span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;XL&#39;</span>, <span class="st">&#39;S&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;XL&#39;</span>, <span class="st">&#39;S&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;XL&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;XL&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>,  <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>,
+                               <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;S&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>,
+                               <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;M&#39;</span>, <span class="st">&#39;L&#39;</span>,
+                               <span class="st">&#39;L&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;L&#39;</span>),
+                   <span class="dt">Min.size =</span> <span class="kw">c</span>(<span class="dv">41</span>, <span class="dv">61</span>, <span class="dv">10</span>, <span class="dv">41</span>, <span class="dv">61</span>, <span class="dv">10</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">81</span>, <span class="dv">10</span>, <span class="dv">31</span>, <span class="dv">31</span>,
+                                <span class="dv">10</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">81</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">21</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, 
+                                <span class="dv">51</span>, <span class="dv">81</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">51</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">51</span>, <span class="dv">81</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, 
+                                <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, 
+                                <span class="dv">41</span>, <span class="dv">21</span>, <span class="dv">41</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">36</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">31</span>,
+                                <span class="dv">71</span>, <span class="dv">10</span>, <span class="dv">26</span>, <span class="dv">10</span>, <span class="dv">26</span>, <span class="dv">26</span>, <span class="dv">10</span>, <span class="dv">26</span>, <span class="dv">26</span>, <span class="dv">10</span>, <span class="dv">26</span>, <span class="dv">10</span>, 
+                                <span class="dv">26</span>, <span class="dv">11</span>, <span class="dv">61</span>, <span class="dv">61</span>, <span class="dv">61</span>, <span class="dv">61</span>, <span class="dv">31</span>, <span class="dv">31</span>),
+                   <span class="dt">Garrison.Link =</span> <span class="kw">as.character</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, 
+                                     <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, 
+                                     <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>,
+                                     <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>,
+                                     <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">3</span>, 
+                                     <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">2</span>))
+                                )
+
+<span class="co">#Give Garrison.link guilds meaniful names</span>
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Crab Eaters&#39;</span>]
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Planktivores&#39;</span>]
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">3</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Amphipod/Shrimp Eaters&#39;</span>]
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Shrimp/Small Fish Eaters&#39;</span>]
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Benthivores&#39;</span>]
+size[Garrison.Link <span class="op">==</span><span class="st"> </span><span class="dv">6</span>, Garrison.Link <span class="op">:</span><span class="er">=</span><span class="st"> &#39;Piscivores&#39;</span>]
+
+<span class="co">#Merge Garrison Link into species list</span>
+species &lt;-<span class="st"> </span><span class="kw">merge</span>(species, size, <span class="dt">by =</span> <span class="st">&#39;COMNAME&#39;</span>, <span class="dt">all =</span> T)
+
+<span class="co">#Set column order</span>
+<span class="kw">setcolorder</span>(species, <span class="kw">c</span>(<span class="st">&#39;ITISSPP&#39;</span>, <span class="st">&#39;SVSPP&#39;</span>, <span class="st">&#39;NESPP3&#39;</span>, <span class="st">&#39;COMNAME&#39;</span>, <span class="st">&#39;SCINAME&#39;</span>, 
+                       <span class="st">&#39;SizeCat&#39;</span>, <span class="st">&#39;Min.size&#39;</span>, <span class="st">&#39;Fed.Managed&#39;</span>, <span class="st">&#39;Garrison.Link&#39;</span>,
+                       <span class="st">&#39;SOE.17&#39;</span>, <span class="st">&#39;SOE.18&#39;</span>, <span class="st">&#39;EMAX&#39;</span>))
+
+<span class="co">#Add NE.IEA.web category</span>
+<span class="co">#get rerddap</span>
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;ropensci/rerddap&quot;</span>)
+<span class="kw">library</span>(rerddap) 
+
+<span class="co">#Set URL for COMET (server where NEFSC ERDDAP lives)</span>
+comet &lt;-<span class="st"> &#39;https://comet.nefsc.noaa.gov/erddap/&#39;</span>
+
+<span class="co">#List datasets on the NEFSC ERDDAP</span>
+tab_list &lt;-<span class="st"> </span><span class="kw">ed_datasets</span>(<span class="dt">url =</span> comet)
+
+<span class="co">#download a tabular dataset (input is dataset id; this works on vectors)</span>
+ed_spp &lt;-<span class="st"> </span><span class="kw">as.data.table</span>(<span class="kw">sprintf</span>(<span class="st">&quot;https://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv&quot;</span>, <span class="st">&quot;species_groups_2018&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>
+<span class="st">  </span>purrr<span class="op">::</span><span class="kw">map</span>(<span class="cf">function</span>(x) {
+    
+    readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="kw">url</span>(x))
+    
+  }))
+
+neiea &lt;-<span class="st"> </span><span class="kw">unique</span>(ed_spp[<span class="op">!</span><span class="kw">is.na</span>(NEIEA), <span class="kw">list</span>(COMNAME, NEIEA)])
+
+species &lt;-<span class="st"> </span><span class="kw">merge</span>(species, neiea, <span class="dt">by =</span> <span class="st">&#39;COMNAME&#39;</span>, <span class="dt">all =</span> T)
+
+<span class="kw">save</span>(species, <span class="dt">file =</span> <span class="kw">file.path</span>(out.dir, <span class="st">&#39;SOE_species_list.RData&#39;</span>))</code></pre></div>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-garrison2000dietary">
+<p>Garrison, Lance P, and Jason S Link. 2000. “Dietary guild structure of the fish community in the Northeast United States continental shelf ecosystem.” <em>Marine Ecology Progress Series</em> 202: 231–40.</p>
+</div>
+<div id="ref-link2006EMAX">
+<p>Link, Jason S, Carolyn A Griswold, Elizabeth T Methratta, Jessie Gunnard, Jon Kenton Tarsus Brodziak, Laurel A Col, David D Dow, et al. 2006. <em>Documentation for the energy modeling and analysis exercise (EMAX)</em>. US Department of Commerce, National Oceanic; Atmospheric Administration.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="erddap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="annual-sst-cycles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/aggregate_groups.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
