@@ -1,13 +1,5 @@
 # Chesapeake Bay Water Quality Standards Attainment
 
-
-```{r, echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: A multimetric indicator describing the attainment status of Chesapeake Bay with respect to three water quality standards criteria, namely, dissolved oxygen, chlorophyll-a, and water clarity/submerged aquatic vegetation. 
 
 **Indicator category**: Published method; Database pull with analysis

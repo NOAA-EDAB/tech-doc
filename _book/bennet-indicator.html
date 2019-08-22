@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Bennet Indicator | Technical Documentation, State of the Ecosystem Report</title>
+  <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Bennet Indicator | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Bennet Indicator | Technical Documentation, State of the Ecosystem Report" />
+  
+  <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  
+
+<meta name="author" content="Northeast Fisheries Science Center" />
+
+
+<meta name="date" content="2019-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aquaculture.html">
+<link rel="next" href="bottom-temperatures.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
+<li class="chapter" data-level="2.1" data-path="aggroups.html"><a href="aggroups.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="aggroups.html"><a href="aggroups.html#data-sources"><i class="fa fa-check"></i><b>2.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="2.1.2" data-path="aggroups.html"><a href="aggroups.html#data-extraction"><i class="fa fa-check"></i><b>2.1.2</b> Data extraction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html"><i class="fa fa-check"></i><b>3</b> Annual SST Cycles</a><ul>
+<li class="chapter" data-level="3.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#methods-1"><i class="fa fa-check"></i><b>3.1</b> Methods</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-sources-1"><i class="fa fa-check"></i><b>3.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="3.1.2" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-extraction-1"><i class="fa fa-check"></i><b>3.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="3.1.3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-analysis"><i class="fa fa-check"></i><b>3.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="3.1.4" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#plotting"><i class="fa fa-check"></i><b>3.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aquaculture.html"><a href="aquaculture.html"><i class="fa fa-check"></i><b>4</b> Aquaculture</a><ul>
+<li class="chapter" data-level="4.1" data-path="aquaculture.html"><a href="aquaculture.html#methods-2"><i class="fa fa-check"></i><b>4.1</b> Methods</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-2"><i class="fa fa-check"></i><b>4.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.1.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-2"><i class="fa fa-check"></i><b>4.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="aquaculture.html"><a href="aquaculture.html#data-processing"><i class="fa fa-check"></i><b>4.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="aquaculture.html"><a href="aquaculture.html#plotting-1"><i class="fa fa-check"></i><b>4.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a><ul>
+<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-3"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-2"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html"><i class="fa fa-check"></i><b>6</b> Bottom temperatures</a><ul>
+<li class="chapter" data-level="6.1" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#methods-4"><i class="fa fa-check"></i><b>6.1</b> Methods</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-sources-4"><i class="fa fa-check"></i><b>6.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="6.1.2" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-extraction-4"><i class="fa fa-check"></i><b>6.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-analysis-3"><i class="fa fa-check"></i><b>6.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="6.1.4" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#data-processing-2"><i class="fa fa-check"></i><b>6.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="6.1.5" data-path="bottom-temperatures.html"><a href="bottom-temperatures.html#plotting-3"><i class="fa fa-check"></i><b>6.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html"><i class="fa fa-check"></i><b>7</b> Catch and Fleet Diversity</a><ul>
+<li class="chapter" data-level="7.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#methods-5"><i class="fa fa-check"></i><b>7.1</b> Methods</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-sources-5"><i class="fa fa-check"></i><b>7.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="7.1.2" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-extraction-5"><i class="fa fa-check"></i><b>7.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="7.1.3" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-analysis-4"><i class="fa fa-check"></i><b>7.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="7.1.4" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-processing-3"><i class="fa fa-check"></i><b>7.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="7.1.5" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#plotting-4"><i class="fa fa-check"></i><b>7.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html"><i class="fa fa-check"></i><b>8</b> Chesapeake Bay Water Quality Standards Attainment</a><ul>
+<li class="chapter" data-level="8.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#methods-6"><i class="fa fa-check"></i><b>8.1</b> Methods</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-sources-6"><i class="fa fa-check"></i><b>8.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-analysis-5"><i class="fa fa-check"></i><b>8.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-processing-4"><i class="fa fa-check"></i><b>8.1.3</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chl-pp.html"><a href="chl-pp.html"><i class="fa fa-check"></i><b>9</b> Chlorophyll <em>a</em> and Primary Production</a><ul>
+<li class="chapter" data-level="9.1" data-path="chl-pp.html"><a href="chl-pp.html#methods-7"><i class="fa fa-check"></i><b>9.1</b> Methods</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-7"><i class="fa fa-check"></i><b>9.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="9.1.2" data-path="chl-pp.html"><a href="chl-pp.html#data-extraction-6"><i class="fa fa-check"></i><b>9.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="9.1.3" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-6"><i class="fa fa-check"></i><b>9.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="9.1.4" data-path="chl-pp.html"><a href="chl-pp.html#data-processing-5"><i class="fa fa-check"></i><b>9.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="9.1.5" data-path="chl-pp.html"><a href="chl-pp.html#plotting-5"><i class="fa fa-check"></i><b>9.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html"><i class="fa fa-check"></i><b>10</b> Fishing Community Climate Vulnerability</a><ul>
+<li class="chapter" data-level="10.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#methods-8"><i class="fa fa-check"></i><b>10.1</b> Methods</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-sources-8"><i class="fa fa-check"></i><b>10.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="10.1.2" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-extraction-7"><i class="fa fa-check"></i><b>10.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="10.1.3" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#data-analysis-7"><i class="fa fa-check"></i><b>10.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="10.1.4" data-path="fishing-community-climate-vulnerability.html"><a href="fishing-community-climate-vulnerability.html#plotting-6"><i class="fa fa-check"></i><b>10.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="conceptual-models.html"><a href="conceptual-models.html"><i class="fa fa-check"></i><b>11</b> Conceptual Models</a><ul>
+<li class="chapter" data-level="11.1" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-9"><i class="fa fa-check"></i><b>11.1</b> Methods</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-9"><i class="fa fa-check"></i><b>11.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-8"><i class="fa fa-check"></i><b>11.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="11.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-8"><i class="fa fa-check"></i><b>11.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>12</b> Fish Condition Indicator</a><ul>
+<li class="chapter" data-level="12.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-10"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-9"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="12.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-9"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-7"><i class="fa fa-check"></i><b>12.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>13</b> Ecological Production Units</a><ul>
+<li class="chapter" data-level="13.1" data-path="epu.html"><a href="epu.html#methods-11"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="epu.html"><a href="epu.html#data-sources-11"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="epu.html"><a href="epu.html#data-extraction-10"><i class="fa fa-check"></i><b>13.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="13.1.3" data-path="epu.html"><a href="epu.html#data-analysis-10"><i class="fa fa-check"></i><b>13.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.4" data-path="epu.html"><a href="epu.html#data-processing-6"><i class="fa fa-check"></i><b>13.1.4</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>14</b> Gulf Stream Index</a><ul>
+<li class="chapter" data-level="14.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-12"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-11"><i class="fa fa-check"></i><b>14.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="14.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-7"><i class="fa fa-check"></i><b>14.1.3</b> Data Processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>15</b> Harbor Porpoise Bycatch</a><ul>
+<li class="chapter" data-level="15.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-13"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-13"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-12"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-8"><i class="fa fa-check"></i><b>15.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>16</b> Ichthyoplankton Diversity</a><ul>
+<li class="chapter" data-level="16.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-14"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-14"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-13"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-8"><i class="fa fa-check"></i><b>16.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="16.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-9"><i class="fa fa-check"></i><b>16.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>17</b> Commercial Landings Data</a><ul>
+<li class="chapter" data-level="17.1" data-path="comdat.html"><a href="comdat.html#methods-15"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-15"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-14"><i class="fa fa-check"></i><b>17.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="17.1.4" data-path="comdat.html"><a href="comdat.html#plotting-10"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>18</b> Long-term Sea Surface Temperature</a><ul>
+<li class="chapter" data-level="18.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-16"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-16"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-10"><i class="fa fa-check"></i><b>18.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="18.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-11"><i class="fa fa-check"></i><b>18.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="19.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="19.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="19.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>20</b> New England Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="20.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-18"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-18"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-16"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>21</b> Verified Records of Southern Kingfish</a><ul>
+<li class="chapter" data-level="21.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-19"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-19"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-17"><i class="fa fa-check"></i><b>21.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="21.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-17"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-12"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>22</b> Habitat Occupancy Models</a><ul>
+<li class="chapter" data-level="22.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-20"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-20"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-11"><i class="fa fa-check"></i><b>22.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-18"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-13"><i class="fa fa-check"></i><b>22.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>23</b> Fish Productivity Indicator</a><ul>
+<li class="chapter" data-level="23.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-21"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-21"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-18"><i class="fa fa-check"></i><b>23.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="23.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-19"><i class="fa fa-check"></i><b>23.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-12"><i class="fa fa-check"></i><b>23.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="23.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-14"><i class="fa fa-check"></i><b>23.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>24</b> Recreational Fishing Indicators</a><ul>
+<li class="chapter" data-level="24.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-22"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-22"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-20"><i class="fa fa-check"></i><b>24.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-13"><i class="fa fa-check"></i><b>24.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="24.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-15"><i class="fa fa-check"></i><b>24.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>25</b> Right Whale Abundance</a><ul>
+<li class="chapter" data-level="25.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-23"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-23"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-19"><i class="fa fa-check"></i><b>25.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="25.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-21"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="25.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-14"><i class="fa fa-check"></i><b>25.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="25.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-16"><i class="fa fa-check"></i><b>25.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>26</b> Seabird diet and productivity</a><ul>
+<li class="chapter" data-level="26.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-24"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-24"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-15"><i class="fa fa-check"></i><b>26.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="26.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-22"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>27</b> Seasonal SST Anomalies</a><ul>
+<li class="chapter" data-level="27.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-25"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-25"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-23"><i class="fa fa-check"></i><b>27.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="27.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-17"><i class="fa fa-check"></i><b>27.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>28</b> Single Species Status Indicator</a><ul>
+<li class="chapter" data-level="28.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-26"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-26"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-21"><i class="fa fa-check"></i><b>28.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="28.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-16"><i class="fa fa-check"></i><b>28.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="28.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-24"><i class="fa fa-check"></i><b>28.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="28.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-18"><i class="fa fa-check"></i><b>28.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html"><i class="fa fa-check"></i><b>29</b> Slopewater proportions</a><ul>
+<li class="chapter" data-level="29.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#methods-27"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-sources-27"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-extraction-22"><i class="fa fa-check"></i><b>29.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="29.1.3" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-analysis-25"><i class="fa fa-check"></i><b>29.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="29.1.4" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-processing-17"><i class="fa fa-check"></i><b>29.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="29.1.5" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#plotting-19"><i class="fa fa-check"></i><b>29.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>30</b> Species Density Estimates</a><ul>
+<li class="chapter" data-level="30.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-28"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-28"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-26"><i class="fa fa-check"></i><b>30.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-20"><i class="fa fa-check"></i><b>30.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>31</b> Species Distribution Indicators</a><ul>
+<li class="chapter" data-level="31.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-29"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-29"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-27"><i class="fa fa-check"></i><b>31.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-18"><i class="fa fa-check"></i><b>31.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="31.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-21"><i class="fa fa-check"></i><b>31.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>32</b> Survey Data</a><ul>
+<li class="chapter" data-level="32.1" data-path="survdat.html"><a href="survdat.html#methods-30"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
+<li class="chapter" data-level="32.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-30"><i class="fa fa-check"></i><b>32.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="32.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-23"><i class="fa fa-check"></i><b>32.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="32.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-28"><i class="fa fa-check"></i><b>32.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="32.1.4" data-path="survdat.html"><a href="survdat.html#plotting-22"><i class="fa fa-check"></i><b>32.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>33</b> Thermal Habitat Projections</a><ul>
+<li class="chapter" data-level="33.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-31"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
+<li class="chapter" data-level="33.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-31"><i class="fa fa-check"></i><b>33.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="33.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-29"><i class="fa fa-check"></i><b>33.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="33.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-23"><i class="fa fa-check"></i><b>33.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="34" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>34</b> Trend Analysis</a><ul>
+<li class="chapter" data-level="34.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-32"><i class="fa fa-check"></i><b>34.1</b> Methods</a><ul>
+<li class="chapter" data-level="34.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-32"><i class="fa fa-check"></i><b>34.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="34.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-24"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="34.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-30"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="35" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>35</b> Zooplankton</a><ul>
+<li class="chapter" data-level="35.1" data-path="zooabund.html"><a href="zooabund.html#methods-33"><i class="fa fa-check"></i><b>35.1</b> Methods</a><ul>
+<li class="chapter" data-level="35.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-33"><i class="fa fa-check"></i><b>35.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="35.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-25"><i class="fa fa-check"></i><b>35.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="35.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-31"><i class="fa fa-check"></i><b>35.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="35.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-19"><i class="fa fa-check"></i><b>35.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="35.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-24"><i class="fa fa-check"></i><b>35.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Technical Documentation, State of the Ecosystem Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bennet-indicator" class="section level1">
+<h1><span class="header-section-number">5</span> Bennet Indicator</h1>
+<p><strong>Description</strong>: Bennet Indicator</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)</p>
+<p><strong>Indicator category</strong>: Database pull with analysis</p>
+<p><strong>Contributor(s)</strong>: John Walden</p>
+<p><strong>Data steward</strong>: Sean Hardison, <a href="mailto:sean.hardison@noaa.gov">sean.hardison@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: John Walden, <a href="mailto:john.walden@noaa.gov">john.walden@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: Derived CFDBS data are available for this analysis (see <a href="comdat.html#comdat">Comland</a>).</p>
+<div id="methods-3" class="section level2">
+<h2><span class="header-section-number">5.1</span> Methods</h2>
+<div id="data-sources-3" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Data sources</h3>
+<p>Data used in the Bennet Indicator were derived from the Comland data set; a processed subset of the Commercial Fisheries Database Biological Sample (CFDBS). The derived Comland data set is available for download <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html">here</a></p>
+</div>
+<div id="data-extraction-3" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Data extraction</h3>
+<p>For information regarding processing of CFDBS, please see <a href="comdat.html#comdat">Comland</a> methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was <span class="math inline">\(\geq\)</span> 0 for each EPU (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. </span>
+
+drake<span class="op">::</span><span class="kw">readd</span>(proc_get_mass_inshore_survey.R)
+
+<span class="co">#Packages</span>
+PKG &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;data.table&quot;</span>,<span class="st">&quot;plyr&quot;</span>,<span class="st">&quot;RColorBrewer&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>,<span class="st">&quot;cowplot&quot;</span>,<span class="st">&quot;gridExtra&quot;</span>,<span class="st">&quot;grid&quot;</span>)
+<span class="cf">for</span> (p <span class="cf">in</span> PKG) {
+  <span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(p,<span class="dt">character.only =</span> <span class="ot">TRUE</span>)) {  
+    <span class="kw">install.packages</span>(p)
+    <span class="kw">require</span>(p,<span class="dt">character.only =</span> <span class="ot">TRUE</span>)}
+}
+<span class="co"># #Setting Save path</span>
+
+
+<span class="co">#load &quot;comland&quot; data - These data are unavailble due to PII concerns. See aggregated data load below</span>
+ecosys2&lt;-<span class="kw">subset</span>(comland, US<span class="op">==</span><span class="st">&#39;TRUE&#39;</span> <span class="op">&amp;</span><span class="st"> </span>YEAR<span class="op">&gt;=</span><span class="dv">1964</span> <span class="op">&amp;</span><span class="st"> </span>SPPVALUE <span class="op">&gt;=</span><span class="dv">0</span>)
+
+<span class="co">#Load species and PDT codes</span>
+<span class="kw">load</span>(<span class="kw">file.path</span>(data.dir, <span class="st">&quot;Species_codes.RData&quot;</span>))
+
+<span class="co">#Set EPU</span>
+epu &lt;-<span class="st"> &quot;GB&quot;</span>
+
+<span class="co">#processing</span>
+spp&lt;-<span class="kw">subset</span>(spp, NESPP3<span class="op">&gt;</span><span class="dv">0</span>)
+spp2&lt;-<span class="kw">unique</span>(spp[,<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">12</span>)], <span class="dt">by=</span><span class="st">&#39;NESPP3&#39;</span>)
+spp2&lt;-spp2[<span class="kw">which</span>(<span class="op">!</span><span class="kw">duplicated</span>(spp2<span class="op">$</span>NESPP3)),]
+sp_combine&lt;-<span class="kw">merge</span>(ecosys2, spp2, <span class="dt">by=</span><span class="st">&quot;NESPP3&quot;</span>, <span class="dt">all.x=</span><span class="ot">TRUE</span>)
+add.apex &lt;-<span class="st"> </span><span class="kw">data.table</span>(<span class="dt">NESPP3 =</span> <span class="dv">000</span>, <span class="dt">YEAR =</span> <span class="dv">1971</span>, <span class="dt">QY =</span> <span class="dv">1</span>, <span class="dt">GEAR =</span> <span class="st">&#39;other&#39;</span>,
+                       <span class="dt">SIZE =</span> <span class="st">&#39;small&#39;</span>, <span class="dt">EPU =</span> epu, <span class="dt">UTILCD =</span> <span class="dv">0</span>, <span class="dt">SPPLIVMT =</span> <span class="dv">0</span>,
+                       <span class="dt">SPPVALUE =</span> <span class="dv">0</span>, <span class="dt">US =</span> <span class="ot">TRUE</span>, <span class="dt">Feeding.guild =</span> <span class="st">&#39;Apex Predator&#39;</span>)
+sp_combine &lt;-<span class="st"> </span><span class="kw">rbindlist</span>(<span class="kw">list</span>(sp_combine, add.apex))
+
+<span class="co">#Subset data into Georges Bank group</span>
+LANDINGS&lt;-<span class="kw">subset</span>(sp_combine)
+LANDINGS&lt;-LANDINGS[<span class="kw">which</span>(<span class="op">!</span><span class="kw">is.na</span>(LANDINGS<span class="op">$</span>Feeding.guild)),]
+
+<span class="co">#Set Up data Table</span>
+landsum&lt;-<span class="kw">data.table</span>(LANDINGS)
+<span class="co"># setkey(landsum,  &quot;EPU&quot;, &quot;YEAR&quot;,&quot;Feeding.guild&quot;)</span>
+<span class="kw">setkey</span>(landsum,<span class="st">&quot;EPU&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Feeding.guild&quot;</span>)
+
+
+<span class="co">#Sum by feeding guild</span>
+landsum[,<span class="kw">lapply</span>(.SD, sum, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), by=<span class="kw">key</span>(landsum), .SDcols=<span class="kw">c</span>(<span class="st">&quot;SPPLIVMT&quot;</span>,<span class="st">&quot;SPPVALUE&quot;</span>)]</code></pre></div>
+</div>
+<div id="data-analysis-2" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Data analysis</h3>
+<p>Revenue earned by harvesting resources from an LME at time <em>t</em> is a function of both the quantity landed of each species and the prices paid for landings. Changes in revenue between any two years depends on both prices and quantities in each year, and both may be changing simultaneously. For example, an increase in the harvest of higher priced species, such as scallops can lead to an overall increase in total revenue from an LME between time periods even if quantities landed of other species decline. Although measurement of revenue change is useful, the ability to see what drives revenue change, whether it is changing harvest levels, the mix of species landed, or price changes provides additional valuable information. Therefore, it is useful to decompose revenue change into two parts, one which is due to changing quantities (or volumes), and a second which is due to changing prices. In an LME, the quantity component will yield useful information about how the species mix of harvests are changing through time.</p>
+<p>A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator <span class="citation">(Cross and Färe <a href="#ref-Cross2009">2009</a>)</span>. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index <span class="citation">(Balk <a href="#ref-Balk2010">2010</a>)</span>, and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads <span class="citation">(Lim and Lovell <a href="#ref-lim2009">2009</a>)</span>, and dividend changes in banking operations <span class="citation">(Grifell-Tatjé and Lovell <a href="#ref-Grifell-Tatje2004">2004</a>)</span>. An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents <span class="citation">(Balk <a href="#ref-Balk2010">2010</a>)</span>. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964 and 2015.</p>
+<p>Revenue in a given year for any species group is the product of quantity landed times price, and the sum of revenue from all groups is total revenue from the LME. In any year, both prices and quantities can change from prior years, leading to total revenue change. At time t, revenue (R) is defined as <span class="math display">\[R^{t} = \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t},\]</span> where <span class="math inline">\(p_{j}\)</span> is the price for species group <span class="math inline">\(j\)</span>, and <span class="math inline">\(y_{j}\)</span> is the quantity landed of species group <span class="math inline">\(j\)</span>. Revenue change between any two time periods, say <span class="math inline">\(t+1\)</span> and <span class="math inline">\(t\)</span>, is then <span class="math inline">\(R^{t+1}-R^{t}\)</span>, which can also be expressed as: <span class="math display">\[\Delta R = \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1}-\sum_{j=1}^{J}p_{j}^{t}y_{j}^{t}.\]</span> This change can be decomposed further, yielding a VI and PI. The VI is calculated using the following formula <span class="citation">(Moosberg et al. <a href="#ref-Moosberg2007">2007</a>)</span>:</p>
+<p><span class="math display">\[VI = \frac{1}{2}(\sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t} + \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t})\]</span> The price indicator (PI) is calculated as follows: <span class="math display">\[PI = \frac{1}{2}(\sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t} + \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t})\]</span> Total revenue change between time <span class="math inline">\(t\)</span> and <span class="math inline">\(t+1\)</span> is the sum of the VI and PI. Since revenue change is being driven by changes in the individual prices and quantities landed of each species group, changes at the species group level can be examined separately by taking advantage of the additive property of the indicator. For example, if there are five different species groups, the sum of the VI for each group will equal the overall VI, and the sum of the PI for each group will equal the overall PI.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#R code to construct Bennet Indicator for Ecosystem Project</span>
+<span class="co">#Author: John Walden</span>
+<span class="co">#Date: October 4, 2017</span>
+<span class="co">#</span>
+<span class="co">#Revised January 18, 2018 to calculate the indicator relative to average conditions</span>
+<span class="co">#during each time period. Set EPU in extraction/processing code chunk above.</span>
+
+
+<span class="co">#filter by specific EPU</span>
+epu =<span class="st"> &quot;GB&quot;</span>
+value &lt;-<span class="st"> </span><span class="kw">subset</span>(landsum, EPU <span class="op">==</span><span class="st"> </span>epu)
+
+<span class="co">#Calculate price</span>
+value<span class="op">$</span>PRICE=value<span class="op">$</span>SPPVALUE<span class="op">/</span>value<span class="op">$</span>SPPLIVMT
+value[<span class="kw">is.na</span>(value)]&lt;-<span class="dv">0</span>
+
+
+<span class="co">#Next two lines are to calculate mean values for landings</span>
+<span class="co">#and value for the time series by feeding guild</span>
+
+meanval&lt;-<span class="kw">as.data.frame</span>(value[,<span class="dt">j=</span><span class="kw">list</span>(<span class="kw">mean</span>(SPPVALUE,<span class="dt">na.rm=</span><span class="ot">TRUE</span>), <span class="kw">mean</span>(SPPLIVMT,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)), <span class="dt">by=</span>Feeding.guild])
+meanval&lt;-<span class="kw">rename</span>(meanval, <span class="kw">c</span>(<span class="st">&quot;V1&quot;</span>=<span class="st">&quot;BASEV&quot;</span>, <span class="st">&quot;V2&quot;</span>=<span class="st">&quot;BASEQ&quot;</span>))
+meanval<span class="op">$</span>BASEP=meanval<span class="op">$</span>BASEV<span class="op">/</span>meanval<span class="op">$</span>BASEQ;
+
+<span class="co">#order by feeding guild</span>
+
+value&lt;-value[<span class="kw">order</span>(value<span class="op">$</span>Feeding.guild),]
+meanval&lt;-meanval[<span class="kw">order</span>(meanval<span class="op">$</span>Feeding.guild),]
+
+<span class="co">#Merge Value data frame with Base Year Value Data Frame</span>
+value&lt;-<span class="kw">merge</span>(value, meanval, <span class="dt">by=</span><span class="st">&quot;Feeding.guild&quot;</span>)
+
+<span class="co">#Construct price and Volume Indicators</span>
+<span class="co">#NOTE: ALL values are normalized to $1,000,000</span>
+
+value<span class="op">$</span>VI=((<span class="fl">0.5</span><span class="op">*</span>(value<span class="op">$</span>BASEP<span class="op">+</span>value<span class="op">$</span>PRICE))<span class="op">*</span>(value<span class="op">$</span>SPPLIVMT<span class="op">-</span>value<span class="op">$</span>BASEQ))<span class="op">/</span><span class="dv">1000000</span>
+value<span class="op">$</span>PI=((<span class="fl">0.5</span><span class="op">*</span>(value<span class="op">$</span>BASEQ<span class="op">+</span>value<span class="op">$</span>SPPLIVMT))<span class="op">*</span>(value<span class="op">$</span>PRICE<span class="op">-</span>value<span class="op">$</span>BASEP))<span class="op">/</span><span class="dv">1000000</span>
+
+value&lt;-value[<span class="kw">order</span>(value<span class="op">$</span>YEAR),]
+
+<span class="co">#The next Data table sets up the yearly aggregate Bennet PI and VI</span>
+
+biyear&lt;-<span class="kw">data.table</span>(value)
+<span class="kw">setkey</span>(biyear, <span class="st">&quot;YEAR&quot;</span>)
+biyear&lt;-biyear[,<span class="kw">lapply</span>(.SD, sum), by=<span class="kw">key</span>(biyear), .SDcols=<span class="kw">c</span>(<span class="st">&quot;VI&quot;</span>,<span class="st">&quot;PI&quot;</span>,<span class="st">&quot;BASEV&quot;</span>,<span class="st">&quot;SPPVALUE&quot;</span>)]
+biyear<span class="op">$</span>revchange&lt;-(biyear<span class="op">$</span>VI<span class="op">+</span>biyear<span class="op">$</span>PI)
+biyear<span class="op">$</span>BI&lt;-(biyear<span class="op">$</span>VI <span class="op">+</span><span class="st"> </span>biyear<span class="op">$</span>PI)
+
+<span class="co">#The Next Steps restructure the year data frame so the yearly</span>
+<span class="co">#Bennet Indicator can be plotted. Negative values are difficult in GGPLOT.</span>
+<span class="co">#Since the Bennet indicator can have a negative value, separate data frames</span>
+<span class="co">#need to be created. First, the data needs to be restructured to use the </span>
+<span class="co">#stacked bar function in ggplot. GGPLOT is used because it can graph differen#t data layers on the same graph.</span>
+
+y1&lt;-biyear[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]
+y1<span class="op">$</span>indicator=<span class="st">&#39;VI&#39;</span>
+y2&lt;-biyear[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]
+y2<span class="op">$</span>indicator=<span class="st">&#39;PI&#39;</span>
+
+<span class="kw">colnames</span>(y1)[<span class="dv">2</span>]&lt;-<span class="st">&quot;value&quot;</span>
+<span class="kw">colnames</span>(y2)[<span class="dv">2</span>]&lt;-<span class="st">&quot;value&quot;</span>
+ytotal&lt;-<span class="kw">rbind</span>(y1,y2)</code></pre></div>
+</div>
+<div id="data-processing-1" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Data processing</h3>
+<p>Bennet indicator time series were formatted for inclusion in the ecodata R package using the following R code.</p>
+<!-- {{ProcessStart}} -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process Bennet indicator; price and volume indicators</span>
+
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(magrittr)
+
+raw.dir &lt;-<span class="st"> </span>here<span class="op">::</span><span class="kw">here</span>(<span class="st">&#39;inst&#39;</span>,<span class="st">&#39;extdata&#39;</span>)
+
+get_bennet &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">save_clean =</span> F){
+  
+  <span class="co"># Find relevant files and load them into workspace</span>
+  files =<span class="st"> </span><span class="kw">list.files</span>(raw.dir, <span class="dt">pattern=</span><span class="st">&quot;_vi|_pi|_bennet&quot;</span>)
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(files)) <span class="kw">assign</span>(files[i], <span class="kw">read.csv</span>(<span class="kw">file.path</span>(raw.dir,files[i])))
+  
+  <span class="co">#Process Bennet indicator data aggregated to the level of EPU (all feeding guilds)</span>
+  bennet &lt;-<span class="st"> </span><span class="ot">NULL</span>
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">ls</span>()){
+    <span class="cf">if</span> (stringr<span class="op">::</span><span class="kw">str_detect</span>(i, <span class="st">&quot;_bennet_&quot;</span>)){
+      epu &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(i, <span class="st">&quot;gb|gom|mab&quot;</span>) <span class="co">#Extract EPU</span>
+      
+      <span class="co">#Process into SOE format</span>
+      out &lt;-<span class="st"> </span><span class="kw">get</span>(i) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">EPU =</span> epu,
+                               <span class="dt">Units =</span> <span class="st">&quot;million USD ($2015)&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>X) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">gather</span>(.,Var, Value,<span class="op">-</span>YEAR,<span class="op">-</span>EPU, <span class="op">-</span>Units) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">Var =</span> <span class="kw">paste</span>(Var, <span class="st">&quot;EPU aggregate&quot;</span>),
+               <span class="dt">EPU =</span> <span class="kw">toupper</span>(EPU)) <span class="op">%&gt;%</span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Time =</span> YEAR) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">as.data.frame</span>()
+      
+      <span class="kw">assign</span>(<span class="st">&#39;bennet&#39;</span>,<span class="kw">rbind</span>(bennet, out))
+      
+    }
+  }
+  
+  pi.vi &lt;-<span class="st"> </span><span class="ot">NULL</span>
+  
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">ls</span>()){
+    <span class="cf">if</span> (stringr<span class="op">::</span><span class="kw">str_detect</span>(i, <span class="st">&quot;_pi|_vi&quot;</span>)){
+      epu &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(i, <span class="st">&quot;gb|gom|mab&quot;</span>)
+      indicator &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(i, <span class="st">&quot;vi|pi&quot;</span>)
+      
+      out &lt;-<span class="st"> </span><span class="kw">get</span>(i) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">EPU =</span> <span class="kw">toupper</span>(epu),
+               <span class="dt">class =</span> <span class="kw">toupper</span>(indicator),
+               <span class="dt">Units =</span> <span class="st">&quot;million USD ($2015)&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">gather</span>(.,Var,Value,<span class="op">-</span>YEAR, <span class="op">-</span>class, <span class="op">-</span>EPU,<span class="op">-</span>Units) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">unite</span>(., <span class="st">&quot;Var&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;Var&quot;</span>,<span class="st">&quot;class&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Time =</span> YEAR) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">as.data.frame</span>()
+      
+      <span class="kw">assign</span>(<span class="st">&#39;pi.vi&#39;</span>, <span class="kw">rbind</span>(pi.vi, out))
+      
+    }
+  }
+  
+  bennet &lt;-<span class="st"> </span><span class="kw">rbind</span>(pi.vi, bennet)
+  
+  <span class="cf">if</span> (save_clean){
+    usethis<span class="op">::</span><span class="kw">use_data</span>(bennet, <span class="dt">overwrite =</span> T)
+  } <span class="cf">else</span> {
+    <span class="kw">return</span>(bennet)
+  }
+  
+}</code></pre></div>
+<!-- {{ProcessEnd}} -->
+</div>
+<div id="plotting-2" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Plotting</h3>
+<p><img src="_main_files/figure-html/bennet-plot1-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Balk2010">
+<p>Balk, Bert M. 2010. “An assumption-free framework for measuring productivity change.” <em>Review of Income and Wealth</em> 56 (s1): S224–S256.</p>
+</div>
+<div id="ref-Cross2009">
+<p>Cross, Robin M, and Rolf Färe. 2009. “Value data and the Bennet price and quantity indicators.” <em>Economics Letters</em> 102 (1): 19–21.</p>
+</div>
+<div id="ref-Grifell-Tatje2004">
+<p>Grifell-Tatjé, Emili, and CA Knox Lovell. 2004. “Decomposing the dividend.” <em>Journal of Comparative Economics</em> 32 (3): 500–518.</p>
+</div>
+<div id="ref-lim2009">
+<p>Lim, Siew Hoon, and CA Knox Lovell. 2009. “Profit and productivity of US Class I railroads.” <em>Managerial and Decision Economics</em> 30 (7). Wiley Online Library: 423–42.</p>
+</div>
+<div id="ref-Moosberg2007">
+<p>Moosberg, H. Jason, Rolf Färe, Shawna Grosskopf, and Pontus Roos. 2007. “Volume and Price Indicators: Decomposition and revenue with an application to Swedish pharmacies.”</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aquaculture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bottom-temperatures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/Bennet_indicator.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
