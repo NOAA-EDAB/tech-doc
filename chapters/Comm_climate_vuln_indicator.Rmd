@@ -196,7 +196,7 @@ If a community received a dominant score (50% or more) for any of the above cate
 ### Plotting
 
 ```{r species-vulnerability, fig.cap="Commercial species vulnerability to climate change in in New England fishing communities.",fig.align = 'center', echo = F, eval = T}
-knitr::include_graphics(file.path(image.dir, 'Species_vulnerability_NE.jpg'))
+knitr::include_graphics(file.path(image.dir, 'Species_vulnerability_NE.JPG'))
 ```
 
 

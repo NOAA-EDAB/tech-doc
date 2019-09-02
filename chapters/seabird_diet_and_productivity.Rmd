@@ -14,6 +14,11 @@
   
 **Public availability statement**: Please email dlyons@audubon.org for further information and queries on this indicator source data.
 
+
+The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports.
+
+Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
+
 ## Methods
 
 **Chick diet**
@@ -111,7 +116,7 @@ diet_div <- ecodata::common_tern %>%
 ```
 
 
-```{r tern-prod-div, fig.cap = "a. Mean common tern productivity at nesting sites in Gulf of Maine. Error bars show +/- 1 SE of the mean. b. Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006.",fig.width = 8, fig.asp = 0.25, echo = T}
+```{r tern-prod-div, fig.cap = "a. Mean common tern productivity at nesting sites in Gulf of Maine. Error bars show +/- 1 SE of the mean. b. Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006.",fig.width = 8, fig.asp = 0.25, echo = T, fig.align='center'}
 aggregate_prod <- ecodata::common_tern %>% 
     filter(!str_detect(Var, "Diet|Sum"))  %>% 
   mutate(Island = word(Var, 1),
@@ -151,8 +156,7 @@ prodplot <- aggregate_prod %>% ggplot() +
            alpha = hline.alpha,
            linetype = hline.lty) +
   labs(tag = "a")  +
-  theme_ts() +
-  theme(title = element_text(size = 7))
+  theme_ts()
 
 shannon <- diet_div %>% 
   filter(Var == "shannon") %>% 
@@ -172,15 +176,14 @@ ggplot(aes(x = Time, y = Value)) +
            alpha = hline.alpha,
            linetype = hline.lty) +
   labs(tag = "b")  +
-  theme_ts() +
-  theme(title = element_text(size = 7))
+  theme_ts()
 
 prodplot + shannon + plot_layout(ncol = 2, widths=c(4,4))
 ```
 
 Along with nest productivity and diet diversity indices, we presented maps of sampling sites in Gulf of Maine and mean prey frequencies across sites. Prey occurring in less than 5\\% of common tern diets was excluded for visual clarity. 
 
-```{r map-and-prey, fig.cap = "Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5\\% of common tern diets were excluded for clarity.", fig.height = 4}
+```{r map-and-prey, fig.cap = "Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5\\% of common tern diets were excluded for clarity.", fig.height = 4, fig.align='center'}
 
 #Map subfig
 # Set lat/lon window for maps
@@ -213,8 +216,7 @@ islands <- ggplot() +
         axis.title = element_text(size = 11),
         strip.background = element_blank(),
         strip.text=element_text(hjust=0),
-        axis.text = element_text(size = 6),
-        title = element_text(size = 7))
+        axis.text = element_text(size = 6))
 # inset_states <- new_england %>% filter(STATE_NAME %in% c("Maine",
 #                                                          "New Hampshire",
 #                                                          "Massachusetts"))
@@ -271,8 +273,7 @@ diet_freq_bar <- prey_freq %>%
   ggtitle("Prey composition") +
   ylab("Proportion of prey items") +
   labs(tag = "b")  +
-  theme_ts() +
-  theme(title = element_text(size = 7))
+  theme_ts()
 
 
 # diet_freq_bar <- girafe(ggobj = diet_freq_bar)
