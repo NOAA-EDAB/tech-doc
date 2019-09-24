@@ -2151,41 +2151,10 @@ save(comland, file = file.path(out.dir, file.name))
 #### Data Processing
 
 The landings data were formatted for inclusion in the ecodata R package with the following R code.
-
-<!-- {{ProcessStart}} -->
-```{r, eval = F, echo = T}
-# Process commerical data
-
-
-# These data were derived from the Commercial Fisheries Database Biological Sample. More information about
-# these data are available at https://noaa-edab.github.io/tech-doc/comdat.html
-
-library(dplyr)
-
-
-raw.dir <- here::here("data-raw")
-
-get_comdat <- function(save_clean = F){
-  
-  load(file.path(raw.dir,"Commercial_data_pull_19.RData"))
-  
-  commercial <- commercial %>% 
-    dplyr::rename(EPU = Region) %>% 
-    dplyr::select(-Source)
-  
-  if (save_clean){
-    usethis::use_data(comdat, overwrite = T)
-  } else {
-    return(comdat)
-  }
-
-}
-
-
-
+```{r, code = readLines(here::here("source/get_comdat.R")), eval = F, echo = T}
 
 ```
-<!-- {{ProcessEnd}} -->
+
 
 ### Data analysis
 

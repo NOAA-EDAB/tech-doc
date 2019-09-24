@@ -75,30 +75,7 @@ knitr::include_graphics(file.path(image.dir, "cb_water_quality_attainment.png"))
 ### Data processing
 
 The indicator data set was formatted for inclusion in the ecodata R package using the following R script. 
-
-<!-- {{ProcessStart}} -->
-```{r, eval = F, echo = T}
-#Chesapeake bay water quality attainment indicator
-
-library(dplyr)
-library(tidyr)
-
-
-raw.dir <- here::here("data-raw")
-
-get_ches_bay_wq <- function(save_clean =F){
-  ches_bay_wq <- read.csv(file.path(raw.dir, "Attainment_indicator.csv")) %>% 
-    dplyr::select(Time = Year.1, Value = Total) %>% 
-    mutate(Var = "chesapeake bay water quality attainment",
-           Units = "estimated attainment, percent",
-           EPU = "MAB")
-  
-  if (save_clean){
-    usethis::use_data(ches_bay_wq, overwrite = T)
-  } else {
-    return(ches_bay_wq)
-  }
-}
+```{r, code = readLines(here::here("source/get_ches_bay_wq.R")), eval = F, echo = T}
 
 ```
-<!-- {{ProcessEnd}} -->
+
