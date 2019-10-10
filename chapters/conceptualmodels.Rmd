@@ -100,7 +100,7 @@ Information was synthesized entirely from published sources and expert knowledge
 #### Human dimensions submodels
 Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data/top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
 
-Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical memo. In addition, the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used as the basis for the strength of the employment linkages.
+Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used as the basis for the strength of the employment linkages.
 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->

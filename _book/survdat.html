@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>32 Survey Data | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="32 Survey Data | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="species-distribution-indicators.html">
-<link rel="next" href="thermal-habitat-projections.html">
+<link rel="prev" href="species-distribution-indicators.html"/>
+<link rel="next" href="thermal-habitat-projections.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -751,7 +751,6 @@ bs.spp &lt;-<span class="st"> </span>big.spring[pw <span class="op">!=</span><sp
 <h3><span class="header-section-number">32.1.3</span> Data analysis</h3>
 <p>The fisheries independent data contained within the Survdat is used in a variety of products; the more complicated analyses are detailed in their own sections. The most straightforward use of this data is for the resource species aggregate biomass indicators. For the purposes of the aggregate biomass indicators, fall and spring survey data are treated separately. Additionally, all length data is dropped and species seperated by sex at the catch level are merged back together.</p>
 <p>For the aggregate biomass indicators, Survdat is first post stratified into <a href="epu.html#epu">Ecological Production Units</a>. Stations are labeled by the EPU they fall within using the <em>over</em> function from the <em>rdgal</em> R package <span class="citation">(Bivand, Keitt, and Rowlingson <a href="#ref-rgdal">2018</a>)</span>. Next, the total number of stations within each EPU per year is counted using unique station records. Biomass is summed by species per year per EPU. Those sums are divided by the appropriate station count to get the EPU mean. Finally, the mean biomasses are summed by <a href="aggroups.html#aggroups">aggregate groups</a>. These steps are encompassed in the processing code shown below, which also includes steps taken to format the data set for inclusion in the ecodata R package.</p>
-<!-- {{ProcessStart}} -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Set up for finding survey proportions</span>
 
 <span class="co">#This script was adapted from code written by Sean Lucey at the NEFSC. Note that you </span>
@@ -904,7 +903,6 @@ nefsc_survey &lt;-<span class="st"> </span>agg_survey <span class="op">%&gt;%</s
            <span class="kw">nesting</span>(EPU,Var))
 
 usethis<span class="op">::</span><span class="kw">use_data</span>(nefsc_survey, <span class="dt">overwrite =</span> T)</code></pre></div>
-<!-- {{ProcessEnd}} -->
 </div>
 <div id="plotting-22" class="section level3">
 <h3><span class="header-section-number">32.1.4</span> Plotting</h3>
@@ -949,7 +947,7 @@ opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">
 <span class="kw">soe.stacked.axis</span>(<span class="st">&quot;Year&quot;</span>, <span class="kw">expression</span>(<span class="st">&quot;Biomass, kg tow&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&#39;&#39;</span>), <span class="dt">y.line =</span> <span class="fl">3.0</span>,
                  <span class="dt">x.line =</span> <span class="fl">2.7</span>)</code></pre></div>
 <div class="figure"><span id="fig:fall-survey-MAB"></span>
-<img src="docs/main_files/fall-survey-MAB-1.png" alt="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos)." width="50%" /><img src="docs/main_files/fall-survey-MAB-2.png" alt="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos)." width="50%" />
+<img src="imagesfall-survey-MAB-1.png" alt="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos)." width="50%" /><img src="imagesfall-survey-MAB-2.png" alt="Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos)." width="50%" />
 <p class="caption">
 Figure 32.1: Fall (left) and spring (right) MAB Survey Biomass (A: Piscivore, B: Planktivore, C: Benthivore, D: Benthos).
 </p>
@@ -1013,7 +1011,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -1031,8 +1029,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

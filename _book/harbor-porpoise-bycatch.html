@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Harbor Porpoise Bycatch | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Harbor Porpoise Bycatch | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gulf-stream-index.html">
-<link rel="next" href="ichthyoplankton-diversity.html">
+<link rel="prev" href="gulf-stream-index.html"/>
+<link rel="next" href="ichthyoplankton-diversity.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -427,7 +427,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">15.1.3</span> Data analysis</h3>
 <p>Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution (<span class="math inline">\(\sigma = \mu CV\)</span>; <span class="math inline">\(CI = \bar{x} \pm \sigma * 1.96\)</span>).</p>
 <p>Data were analyzed and formatted for inclusion in the ecodata R package using the following R code.</p>
-<!-- {{ProcessStart}} -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process harbor porpoise bycatch estimates</span>
 
 <span class="co"># Time series figure is 5-yr running mean for harbor porpoise bycatch estimates for the Northeast US across all fisheries.</span>
@@ -466,7 +465,6 @@ get_harborporpoise &lt;-<span class="st"> </span><span class="cf">function</span
     <span class="kw">return</span>(harborporpoise)
   }
 }</code></pre></div>
-<!-- {{ProcessEnd}} -->
 </div>
 <div id="plotting-8" class="section level3">
 <h3><span class="header-section-number">15.1.4</span> Plotting</h3>
@@ -504,7 +502,7 @@ pbi   &lt;-<span class="st"> </span>SOE.data[Var <span class="op">==</span><span
 <span class="kw">points</span>(lw_CI, <span class="dt">type  =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">adjustcolor</span>(<span class="st">&quot;darkorange&quot;</span>, .<span class="dv">9</span>), <span class="dt">lwd =</span> <span class="fl">2.5</span>)
 <span class="kw">points</span>(up_CI, <span class="dt">type  =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">adjustcolor</span>(<span class="st">&quot;darkorange&quot;</span>, .<span class="dv">9</span>), <span class="dt">lwd =</span> <span class="fl">2.5</span>)</code></pre></div>
 <div class="figure"><span id="fig:harbor-porpoise"></span>
-<img src="docs/main_files/harbor-porpoise-1.png" alt="Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange)." width="672" />
+<img src="imagesharbor-porpoise-1.png" alt="Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange)." width="672" />
 <p class="caption">
 Figure 15.1: Harbor porpoise bycatch estimated shown with Potential Biological Removal (red) and confidence intervals (orange).
 </p>
@@ -556,7 +554,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -574,8 +572,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

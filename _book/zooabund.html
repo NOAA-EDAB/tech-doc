@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>35 Zooplankton | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="35 Zooplankton | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="trend-analysis.html">
-<link rel="next" href="references.html">
+<link rel="prev" href="trend-analysis.html"/>
+<link rel="next" href="references.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -640,7 +640,6 @@ anom.scs=<span class="kw">rowMeans</span>(dataTsm)<span class="op">-</span>(data
 <h3><span class="header-section-number">35.1.4</span> Data processing</h3>
 <p>Zooplankton abundances indicators were formatted for inclusion in the ecodata R package using the following code.</p>
 <p><strong>Abundance anomaly</strong></p>
-<!-- {{ProcessAbundAnomStart}} -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process zooplankton abundance anomalies and small-large index </span>
 
 <span class="kw">library</span>(dplyr)
@@ -675,9 +674,7 @@ get_zoo_anom_sli &lt;-<span class="st"> </span><span class="cf">function</span>(
   }
 }
 <span class="kw">get_zoo_anom_sli</span>(<span class="dt">save_clean =</span> T)</code></pre></div>
-<!-- {{ProcessAbundAnomEnd}} -->
 <p><strong>Seasonal abundance</strong></p>
-<!-- {{ProcessSeasAbund1Start}} -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A general function to process various OI data sets</span>
 
 <span class="kw">library</span>(dplyr)
@@ -724,7 +721,7 @@ process_oi &lt;-<span class="st"> </span><span class="cf">function</span>(variab
     <span class="co">#load raster by year</span>
     
     <span class="co">#get file information from title</span>
-    layer_id &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(<span class="kw">names</span>(ecsa_dat)[[i]], <span class="st">&quot;\d.*&quot;</span>)
+    layer_id &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_extract</span>(<span class="kw">names</span>(ecsa_dat)[[i]], <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d.*&quot;</span>)
     layer_id &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_split</span>(layer_id, <span class="st">&quot;_&quot;</span>)
     data[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>layer_id[[<span class="dv">1</span>]][[<span class="dv">1</span>]]
     data[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>layer_id[[<span class="dv">1</span>]][[<span class="dv">2</span>]]
@@ -780,13 +777,11 @@ process_oi &lt;-<span class="st"> </span><span class="cf">function</span>(variab
   <span class="kw">return</span>(out)
   
   }</code></pre></div>
-<!-- {{ProcessSeasAbund1End}} -->
-<!-- {{ProcessSeasAbund2Start}} -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process optimally interpolated EcoMon zooplankton data</span>
 <span class="co"># </span>
 <span class="co"># These data show estimated zooplankton abundances on the NE Shelf derived from Ecosystem Monitoring Program (EcoMon) </span>
 <span class="co"># sampling. EcoMon conducts shelf-wide bimonthly surveys of the Northeast Large Marine Ecosystem, collecting </span>
-<span class="co"># and ichthyoplankton to a depth of 200 m using paired Bongo samplers with 333 $mu$m mesh netting. Zooplankton </span>
+<span class="co"># and ichthyoplankton to a depth of 200 m using paired Bongo samplers with 333 $\mu$m mesh netting. Zooplankton </span>
 <span class="co"># abundance data were interpolated across sampling locations using ordinary kriging to create a complete field. </span>
 <span class="co"># Here we present abundance time series for three species: *Centropages typicus*, *Temora longicornis*, and</span>
 <span class="co"># *Pseudocalanus* spp. These data are processed in a similar manner to optimally interpolated ocean temperature and</span>
@@ -879,20 +874,19 @@ get_zoo_oi &lt;-<span class="st"> </span><span class="cf">function</span>(<span 
   }
   
 }</code></pre></div>
-<!-- {{ProcessSeasAbund2End}} -->
 </div>
 <div id="plotting-24" class="section level3">
 <h3><span class="header-section-number">35.1.5</span> Plotting</h3>
 <p><strong>Abundance anomaly</strong></p>
 <div class="figure"><span id="fig:zooplankton-abundance"></span>
-<img src="docs/main_files/zooplankton-abundance-1.png" alt="*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight." width="672" />
+<img src="imageszooplankton-abundance-1.png" alt="*Centropages typicus* abundance anomaly in the Mid-Atlantic Bight." width="672" />
 <p class="caption">
 Figure 35.1: <em>Centropages typicus</em> abundance anomaly in the Mid-Atlantic Bight.
 </p>
 </div>
 <p><strong>Seasonal Abundance</strong></p>
 <div class="figure"><span id="fig:MAB-oi-zoo"></span>
-<img src="docs/main_files/MAB-oi-zoo-1.png" alt="Seasonal abundance of key zooplankton species in the MAB." width="768" />
+<img src="imagesMAB-oi-zoo-1.png" alt="Seasonal abundance of key zooplankton species in the MAB." width="768" />
 <p class="caption">
 Figure 35.2: Seasonal abundance of key zooplankton species in the MAB.
 </p>
@@ -959,7 +953,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -977,8 +971,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

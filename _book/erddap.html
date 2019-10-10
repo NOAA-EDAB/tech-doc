@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Data and Code Access | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Data and Code Access | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="aggroups.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="aggroups.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -409,10 +409,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">1.0.1</span> About</h3>
 <p>The Technical Documentation for the State of the Ecosystem reports is a <a href="https://bookdown.org">bookdown</a> document; hosted on the NOAA Northeast Fisheries Science Center Ecosystems Dynamics and Assessment Branch <a href="https://github.com/NOAA-EDAB">Github page</a>, and developed in R. Derived data used to populate figures in this document are queried directly from the <a href="https://github.com/NOAA-EDAB/ecodata">ecodata</a> R package or the NEFSC <a href="https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&amp;itemsPerPage=1000">ERDDAP server</a>. ERDDAP queries are made using the R package <a href="https://cran.r-project.org/web/packages/rerddap/vignettes/Using_rerddap.html">rerddap</a>.</p>
 </div>
-<div id="accessing-source-data-and-build-code" class="section level3">
-<h3><span class="header-section-number">1.0.2</span> Accessing source data and build code</h3>
-<p>In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled “Plotting”, and these code chunks can be used to recreate the figures presented in State of the Ecosystem reports<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
-<p>Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators present in the State of the Ecosystem reports, and these data sets are available for download through the <a href="https://github.com/NOAA-EDAB/ecodata">ecodata</a> R package.</p>
+<div id="accessing-data-and-build-code" class="section level3">
+<h3><span class="header-section-number">1.0.2</span> Accessing data and build code</h3>
+<p>In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled “Plotting”, and these code chunks can be used to recreate the figures found in ecosystem reporting documents where each respective indicator was included<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators presented in ecosystem reporting documents, and these data sets are available for download through the <a href="https://github.com/NOAA-EDAB/ecodata">ecodata</a> R package.</p>
 </div>
 <div id="building-the-document" class="section level3">
 <h3><span class="header-section-number">1.0.3</span> Building the document</h3>
@@ -519,7 +519,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -537,8 +537,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

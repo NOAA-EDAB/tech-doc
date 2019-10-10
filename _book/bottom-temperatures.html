@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Bottom temperatures | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Bottom temperatures | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bennet-indicator.html">
-<link rel="next" href="catch-and-fleet-diversity.html">
+<link rel="prev" href="bennet-indicator.html"/>
+<link rel="next" href="catch-and-fleet-diversity.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -415,7 +415,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">6.1</span> Methods</h2>
 <div id="data-sources-4" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Data sources</h3>
-<p>The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.</p>
+<p>The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, including the Gulf of Maine and Georges Bank.</p>
 </div>
 <div id="data-extraction-4" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Data extraction</h3>
@@ -423,11 +423,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="data-analysis-3" class="section level3">
 <h3><span class="header-section-number">6.1.3</span> Data analysis</h3>
-<p>Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four ecoregions: Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each sub-region, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated for each. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by <span class="citation">Mountain (<a href="#ref-mountain1991">1991</a>)</span>. The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.</p>
+<p>Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four <a href="epu.html#epu">Ecological Production Units</a> (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by <span class="citation">Mountain (<a href="#ref-mountain1991">1991</a>)</span>. The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.</p>
 </div>
 <div id="data-processing-2" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> Data processing</h3>
-<p>Source data were formatted for inclusion in the ecodata R package using the following R code.</p>
+<p>Derived bottom temperature data were formatted for inclusion in the ecodata R package using the following R code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Process ocean temperature anomaly data</span>
 
 <span class="co"># These data include in situ regional time series of both surface and bottom water temperature anomalies</span>
@@ -473,7 +473,7 @@ get_oceantemp_insitu &lt;-<span class="st"> </span><span class="cf">function</sp
 <div id="plotting-3" class="section level3">
 <h3><span class="header-section-number">6.1.5</span> Plotting</h3>
 <div class="figure" style="text-align: center"><span id="fig:NE-bot-temp"></span>
-<img src="docs/main_files/NE-bot-temp-1.png" alt="GOM and GB annual bottom temperature anomalies." width="768" />
+<img src="imagesNE-bot-temp-1.png" alt="GOM and GB annual bottom temperature anomalies." width="768" />
 <p class="caption">
 Figure 6.1: GOM and GB annual bottom temperature anomalies.
 </p>
@@ -531,7 +531,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -549,8 +549,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
