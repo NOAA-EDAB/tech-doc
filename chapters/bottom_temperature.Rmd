@@ -17,7 +17,11 @@ Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019); State of
 
 ### Data sources
 
+<<<<<<< HEAD
 The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical  bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+=======
+The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical  bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, including the Gulf of Maine and Georges Bank.
+>>>>>>> d5a4276898bad9c96a562ef290d5bebb50dada22
 
 ### Data extraction
 
@@ -25,17 +29,78 @@ While all processed hydrographic data are archived in an Oracle database (OCDBS)
 
 ### Data analysis
 
+<<<<<<< HEAD
 Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales.  Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four ecoregions: Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each sub-region, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated for each. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010.  The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by @mountain1991.  The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.
+=======
+Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales.  Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four [Ecological Production Units](#epu) (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010.  The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by @mountain1991.  The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.
+>>>>>>> d5a4276898bad9c96a562ef290d5bebb50dada22
 
 ### Data processing
 
 Derived bottom temperature data were formatted for inclusion in the ecodata R package using the following R code. 
 
+<<<<<<< HEAD
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_oceantemp_insitu.R"), eval =F, echo = T}
+=======
+```{r, code = readLines(here::here("source/get_oceantemp_insitu.R")), eval =F, echo = T}
+>>>>>>> d5a4276898bad9c96a562ef290d5bebb50dada22
 ```
 
 ### Plotting
 
+<<<<<<< HEAD
 ```{r, eval = T, echo=T, fig.width = 8, fig.asp = .25, fig.cap = "GOM and GB annual bottom temperature anomalies.", fig.align='center', code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-NE-bot-temp.R")}
 
+=======
+```{r NE-bot-temp, fig.width = 8, fig.asp = .25, fig.cap = "GOM and GB annual bottom temperature anomalies.", fig.align='center'}
+bot_temp_insitu_gom <- ecodata::oceantemp_insitu %>%
+  filter(EPU == "GOM",
+         Var == "bottom temp anomaly in situ") %>% 
+  mutate(hline = 0) %>% 
+    ggplot()+ #plot
+     annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_line(aes(x = Time, y = Value)) +
+  geom_gls(aes(x = Time, y = Value)) +
+  geom_point(aes(x = Time, y = Value), size = 1) +
+  ylab("Temp. Anomaly (°C)") +
+  ggtitle("GOM Bottom Temperature Anomaly") +
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+    geom_hline(aes(yintercept = hline),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts() +
+  theme(strip.text=element_text(hjust=0),
+        plot.title = element_text(size = 12))
+
+
+bot_temp_insitu_gb <- oceantemp_insitu %>%
+  filter(EPU == "GB",
+         Var == "bottom temp anomaly in situ") %>%
+   mutate(hline = 0) %>% 
+    ggplot()+ #plot
+     annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_line(aes(x = Time, y = Value)) +
+  geom_gls(aes(x = Time, y = Value)) +
+  geom_point(aes(x = Time, y = Value), size = 1) +
+  ylab("Temp. Anomaly (°C)") +
+  ggtitle("GB Bottom Temperature Anomaly") +
+  scale_x_continuous(expand = c(0.01, 0.01)) +
+    geom_hline(aes(yintercept = hline),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  theme_ts() +
+  theme(strip.text=element_text(hjust=0),
+        plot.title = element_text(size = 12))
+
+bot_temp_insitu_gom +
+ bot_temp_insitu_gb + plot_layout(nrow = 1)
+  #plot_layout(ncol =  1) &
+  #theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
+>>>>>>> d5a4276898bad9c96a562ef290d5bebb50dada22
 ```
