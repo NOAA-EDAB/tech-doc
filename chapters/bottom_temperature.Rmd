@@ -31,59 +31,11 @@ Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal t
 
 Derived bottom temperature data were formatted for inclusion in the ecodata R package using the following R code. 
 
-```{r, code = readLines(here::here("source/get_oceantemp_insitu.R")), eval =F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_oceantemp_insitu.R"), eval =F, echo = T}
 ```
 
 ### Plotting
 
-```{r NE-bot-temp, fig.width = 8, fig.asp = .25, fig.cap = "GOM and GB annual bottom temperature anomalies.", fig.align='center'}
-bot_temp_insitu_gom <- ecodata::oceantemp_insitu %>%
-  filter(EPU == "GOM",
-         Var == "bottom temp anomaly in situ") %>% 
-  mutate(hline = 0) %>% 
-    ggplot()+ #plot
-     annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  geom_line(aes(x = Time, y = Value)) +
-  geom_gls(aes(x = Time, y = Value)) +
-  geom_point(aes(x = Time, y = Value), size = 1) +
-  ylab("Temp. Anomaly (°C)") +
-  ggtitle("GOM Bottom Temperature Anomaly") +
-  scale_x_continuous(expand = c(0.01, 0.01)) +
-    geom_hline(aes(yintercept = hline),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty) +
-  theme_ts() +
-  theme(strip.text=element_text(hjust=0),
-        plot.title = element_text(size = 12))
+```{r, eval = T, echo=T, fig.width = 8, fig.asp = .25, fig.cap = "GOM and GB annual bottom temperature anomalies.", fig.align='center', code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-NE-bot-temp.R")}
 
-
-bot_temp_insitu_gb <- oceantemp_insitu %>%
-  filter(EPU == "GB",
-         Var == "bottom temp anomaly in situ") %>%
-   mutate(hline = 0) %>% 
-    ggplot()+ #plot
-     annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  geom_line(aes(x = Time, y = Value)) +
-  geom_gls(aes(x = Time, y = Value)) +
-  geom_point(aes(x = Time, y = Value), size = 1) +
-  ylab("Temp. Anomaly (°C)") +
-  ggtitle("GB Bottom Temperature Anomaly") +
-  scale_x_continuous(expand = c(0.01, 0.01)) +
-    geom_hline(aes(yintercept = hline),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty) +
-  theme_ts() +
-  theme(strip.text=element_text(hjust=0),
-        plot.title = element_text(size = 12))
-
-bot_temp_insitu_gom +
- bot_temp_insitu_gb + plot_layout(nrow = 1)
-  #plot_layout(ncol =  1) &
-  #theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
 ```

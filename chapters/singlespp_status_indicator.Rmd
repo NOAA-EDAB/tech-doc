@@ -45,7 +45,7 @@ Each assessment document was searched to find the following information (often b
 ### Data processing
 
 The following R code was used to process the stock status data set for inclusion in the ecodata R package.
-```{r, code = readLines(here::here("source/get_stocks.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_stocks.R"), eval = F, echo = T}
 
 ```
 
@@ -75,94 +75,7 @@ library(ncdf4);library(marmap); library(magick)
 
 The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
-```{r NE-stock-status, warning=F, fig.cap = "Summary of single species status for NEFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-NE-stock-status.R"), warning=F, fig.cap = "Summary of single species status for NEFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=T}
 
-#Get data, spread for plotting, and filter
-stock_status <- ecodata::stock_status %>%
-  spread(.,Var,Value) %>% 
-  filter(Council %in% c("NEFMC","Both"))
-
-#Plot constants
-y.max <- 4.5
-x.max <- 7.5
-
-all_missing <- stock_status %>%
-  filter(is.na(B.Bmsy),is.na(F.Fmsy)) %>% 
-  dplyr::select(Code, Council)
-
-b_missing <- stock_status %>%
-  filter(is.na(B.Bmsy), !is.na(F.Fmsy)) %>% 
-  dplyr::select(Code, Council)
-
-f_missing <- stock_status %>%
-  filter(is.na(F.Fmsy), !is.na(B.Bmsy)) %>% 
-  dplyr::select(Code, Council)
-
-#A dataframe that defines custom legend for stocks with unknown status
-
-all.df <- data.frame(text = all_missing$Code,
-                    x = rep(x.max,length(all_missing$Code)),
-                    y = seq(4.35,2.85,-0.22),
-                    color = all_missing$Council)
-
-b.df <- data.frame(text = b_missing$Code,
-                    x = rep(x.max*0.8,length(b_missing$Code)),
-                    y = c(4.35,4.14),
-                    color = b_missing$Council)
-
-f.df <- data.frame(text = f_missing$Code,
-                    x = rep(x.max*0.6,length(f_missing$Code)),
-                    y = seq(4.35,2.85,-0.22),
-                    color = f_missing$Council)
-
-
-#Plotting code
-ggplot(data = stock_status) +
-  geom_vline(xintercept = 1, linetype = "dotted", color = "grey60")+
-  geom_vline(xintercept = 0.5, linetype = "dashed", color = "grey60")+
-  geom_hline(yintercept = 1, linetype = "dashed", color = "grey60") +
-  geom_point(aes(x = B.Bmsy,
-                 y = F.Fmsy,
-                 color = Council,
-                 shape = Council)) +
-  geom_text_repel(aes(x = B.Bmsy, #geom_text_repel auto-jitters text around points
-                      y = F.Fmsy,
-                      label = Code,
-                      color = Council), show.legend = FALSE,nudge_y = 0.05, nudge_x = 0.05) +
-  ylim(0,y.max) +
-  xlim(0,x.max*1.1) +
-  geom_text(data = all.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
-  geom_text(data = b.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
-  geom_text(data = f.df, aes(x = x, y = y, label = text, color = color),show.legend = FALSE, size = 3)+
-  scale_color_manual(values = c("purple","blue"),#c("purple","blue"), #Change legend labels for clarity
-                   name = "Managed by",
-                   breaks = c("Both","NEFMC"),
-                   labels = c("MAFMC/NEFMC","NEFMC"))+
-  scale_shape_manual(values = c(1, 19), #Change legend labels for clarity
-                     name = "Managed by",
-                     breaks = c("Both","NEFMC"),
-                     labels = c("MAFMC/NEFMC","NEFMC"))+
-  annotate("rect", xmin = 0.924*x.max,
-           xmax = 1.08*x.max,
-           ymin = 0.645*y.max,
-           ymax = 0.98*y.max,
-           alpha = 0.01) +
-  annotate("text", x = 7.5, y = 4.5, label = "F and B missing", fontface =2, size = 3)+
-    annotate("rect", 
-             xmin = 0.729*x.max,
-           xmax = 0.871*x.max,
-           ymin = 0.905*y.max,
-           ymax = 0.98*y.max,
-           alpha = 0.01) +
-  annotate("text", x = 6, y = 4.5, label = "B missing", fontface =2, size = 3)+
-    annotate("rect", xmin = 0.509*x.max,
-           xmax = 0.681*x.max,
-           ymin = 0.65*y.max,
-           ymax = 0.98*y.max,
-           alpha = 0.01) +
-  annotate("text", x = 4.5, y = 4.5, label = "F missing", fontface =2, size = 3)+
-  xlab(expression(~B/B[msy])) +
-  ylab(expression(~F/F[msy])) +
-  theme_ts()
 ```
 

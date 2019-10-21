@@ -260,18 +260,18 @@ Time series of zooplankton abundance in the spring and fall months have been pre
 Zooplankton abundances indicators were formatted for inclusion in the ecodata R package using the following code.
 
 **Abundance anomaly**
-```{r, code = readLines(here::here("source/get_zoo_anom_sli.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_zoo_anom_sli.R"), eval = F, echo = T}
 
 ```
 
 
 **Seasonal abundance**
-```{r, code = readLines(here::here("source/process_oi.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/process_oi.R"), eval = F, echo = T}
 
 ```
 
 
-```{r, code = readLines(here::here("source/get_zoo_oi.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_zoo_oi.R"), eval = F, echo = T}
 
 ```
 

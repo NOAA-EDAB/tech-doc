@@ -39,31 +39,8 @@ actions implemented to reduce nutrients.
 
 Patterns of attainment of individual DUs are variable (Figure 2). Improvements in OW-DO, DC-DO, and water clarity/SAV have shown long-term improvements, which have contributed to the improvement in the overall attainment indicator. By contrast, the MSN-DO attainment experienced a sharp spike in the first few assessment periods but generally degraded after the 1997-1999, which has implications to the survival, growth, and reproduction of the migratory and resident tidal freshwater fish during spawning and nursery season in the tidal freshwater to low-salinity habitats. The status and trends of tidal segments’ attainment may be used to inform siting decisions of aquaculture operations in Chesapeake Bay.
 
-```{r cb-attainment,fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2015-2017. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-cb-attainment.R"),fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2015-2017. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
 
-minlab <- seq(1985,2015,5)
-maxlab <- seq(1987,2017,5)
-
-
-ches_bay_wq %>% 
-  mutate(hline = mean(Value)) %>% 
-  ggplot(aes(x = Time, y = Value)) +
-       annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  geom_line() +
-  geom_point() +
-  geom_gls() +
-      ylab("Estimated attainment (%)") +
-  ggtitle("Chesapeake Bay Estimated Water Quality Standards Attainment") +
-  scale_x_continuous(breaks = minlab,labels = paste0(minlab,"-",maxlab),expand = c(0.01, 0.01)) +
-    geom_hline(aes(yintercept = hline),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty) +
-  theme_ts() +
-  theme(axis.text.x = element_text(angle = 20, vjust = 0.65),
-          plot.title = element_text(size = 10))
 ```
 
 ```{r,,fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017."}
@@ -75,7 +52,7 @@ knitr::include_graphics(file.path(image.dir, "cb_water_quality_attainment.png"))
 ### Data processing
 
 The indicator data set was formatted for inclusion in the ecodata R package using the following R script. 
-```{r, code = readLines(here::here("source/get_ches_bay_wq.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_ches_bay_wq.R"), eval = F, echo = T}
 
 ```
 

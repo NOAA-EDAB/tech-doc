@@ -67,37 +67,12 @@ m3=(T.*(S1-S2)+S.*(T2-T1)+T1*S2-T2*S1)./delta;
 
 Source data were formatted for inclusion in the ecodata R package using the following R code.
 
-```{r, code = readLines(here::here("source/get_slopewater.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_slopewater.R"), eval = F, echo = T}
 
 ```
 
 ### Plotting
 
-```{r wsw-prop, fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", echo = T, fig.align="center"}
-
-sw.df <- slopewater %>% 
-  mutate(Var, Var = plyr::mapvalues(Var, from = c("WSW proportion ne channel",
-                                                  "LSLW proportion ne channel"),
-                                    to = c("WSW","LSLW"))) %>% 
-  dplyr::rename(Origin  = Var) %>% 
-  group_by(Origin) %>% 
-  mutate(hline = mean(Value)) 
-
-sw.df$Origin <- factor(sw.df$Origin, levels = c("WSW","LSLW"))
-
-ggplot(data = sw.df) +
-  geom_line(aes(x = Time, y = Value, color = Origin))+
-  geom_point(aes(x = Time, y = Value, color = Origin)) +
-  ylab("Percent of Total Slopewater") +
-  ggtitle("Slopewater Proportions in NE Channel")+
-    scale_x_continuous(expand = c(0.01, 0.01))+
-      geom_hline(aes(yintercept = hline,
-                     color = Origin),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty)+
-  theme_ts() +
-  theme(strip.text=element_text(hjust=0,
-                                face = "italic"))
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-wsw-prop.R"), fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", echo = T, fig.align="center", eval=T, echo=T}
 
 ```

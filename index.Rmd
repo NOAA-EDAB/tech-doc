@@ -27,14 +27,11 @@ The purpose of this document is to collate the methods used to access, collect, 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with pratical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
 ```{r setup, echo=F, message = F ,warning = F}
-
 knitr::opts_chunk$set(echo = F, message = F ,warning = F, fig.path = here::here("images/")) 
-
 #source directories
 image.dir <- here::here("images")
 r.dir <- here::here("R")
 gis.dir <- here::here("gis")
-
 #Plotting and data libraries
 library(ggplot2)
 library(dplyr)
@@ -52,13 +49,11 @@ library(knitr)
 library(rmarkdown)
 library(magick)
 library(readr)
-
 #GIS libraries
 library(sf)
 library(rgdal)
 library(raster)
 library(rnaturalearth)
-
 #Time series constants
 shade.alpha <- 0.3
 shade.fill <- "lightgrey"
@@ -75,37 +70,30 @@ letter_size <- 4
 feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
 x.shade.min <- 2009
 x.shade.max <- 2018
-
 #Function for custom ggplot facet labels
 label <- function(variable,value){
   return(facet_names[value])
 }
 
+
 #Map line parameters
 map.lwd <- 0.4
-
 #CRS
 crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
-
 #Coastline shapefile
 coast <- ne_countries(scale = 10,
                           continent = "North America",
                           returnclass = "sf") %>%
              sf::st_transform(crs = crs)
-
 #State polygons
 ne_states <- ne_states(country = "united states of america",
                                       returnclass = "sf") %>%
   sf::st_transform(crs = crs)
-
 #high-res polygon of Maine
 #new_england <- read_sf(gis.dir,"new_england")
-
 #EPU shapefile
 epu_sf <- ecodata::epu_sf %>% 
   filter(EPU %in% c("MAB","GB","GOM"))
-
-
 ```
 Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 

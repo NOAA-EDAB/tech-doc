@@ -30,7 +30,7 @@ For detailed analytical methods, see @joyce2019.
 
 The Gulf Stream index data set was formatted for inclusion in the ecodata R package with the following code.
 
-```{r, code = readLines(here::here("source/get_gsi.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_gsi.R"), eval = F, echo = T}
 
 ```
 

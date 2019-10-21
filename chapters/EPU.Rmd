@@ -54,7 +54,7 @@ tab <- '
 |Primary Production span|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
 '
 #cat(tab)
-df<-read_delim(tab, delim="|")
+df<-readr::read_delim(tab, delim="|")
 df<-df[-c(1,2) ,c("Variables","Sampling Method","Units")]
 knitr::kable(
   df, booktabs = TRUE,
@@ -96,7 +96,7 @@ knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 Shapefiles were converted to `sf` objects for inclusion in the ecodata R package using the following R code.
 
-```{r, code = readLines(here::here("source/get_epu_sf.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R"), eval = F, echo = T}
 
 ```
 

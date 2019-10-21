@@ -423,7 +423,7 @@ write.csv(out_data,file=outfile )
 ### Data processing
 
 Distribution indicators were further formatted for inclusion in the ecodata R package using the following R code.
-```{r, code = readLines(here::here("source/get_species_dist.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_species_dist.R"), eval = F, echo = T}
 
 ```
 

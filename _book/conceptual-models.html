@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 Conceptual Models | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 Conceptual Models | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2019-08-22" />
+<meta name="date" content="2019-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="fishing-community-climate-vulnerability.html">
-<link rel="next" href="fish-condition-indicator.html">
+<link rel="prev" href="fishing-community-climate-vulnerability.html"/>
+<link rel="next" href="epu.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,9 @@
 <link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -88,7 +91,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -107,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a><ul>
 <li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
-<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-source-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing source data and build code</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
 <li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a><ul>
@@ -190,196 +193,194 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-8"><i class="fa fa-check"></i><b>11.1.2</b> Data extraction</a></li>
 <li class="chapter" data-level="11.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-8"><i class="fa fa-check"></i><b>11.1.3</b> Data analysis</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>12</b> Fish Condition Indicator</a><ul>
-<li class="chapter" data-level="12.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
-<li class="chapter" data-level="12.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-10"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="12.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-9"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="12.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-9"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="12.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-7"><i class="fa fa-check"></i><b>12.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="11.2" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-10"><i class="fa fa-check"></i><b>11.2</b> Methods</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-10"><i class="fa fa-check"></i><b>11.2.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.2.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-9"><i class="fa fa-check"></i><b>11.2.2</b> Data extraction</a></li>
+<li class="chapter" data-level="11.2.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-9"><i class="fa fa-check"></i><b>11.2.3</b> Data analysis</a></li>
+<li class="chapter" data-level="11.2.4" data-path="conceptual-models.html"><a href="conceptual-models.html#plotting-7"><i class="fa fa-check"></i><b>11.2.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>13</b> Ecological Production Units</a><ul>
-<li class="chapter" data-level="13.1" data-path="epu.html"><a href="epu.html#methods-11"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="epu.html"><a href="epu.html#data-sources-11"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="13.1.2" data-path="epu.html"><a href="epu.html#data-extraction-10"><i class="fa fa-check"></i><b>13.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="13.1.3" data-path="epu.html"><a href="epu.html#data-analysis-10"><i class="fa fa-check"></i><b>13.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="13.1.4" data-path="epu.html"><a href="epu.html#data-processing-6"><i class="fa fa-check"></i><b>13.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="12" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>12</b> Ecological Production Units</a><ul>
+<li class="chapter" data-level="12.1" data-path="epu.html"><a href="epu.html#methods-11"><i class="fa fa-check"></i><b>12.1</b> Methods</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="epu.html"><a href="epu.html#data-sources-11"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="epu.html"><a href="epu.html#data-extraction-10"><i class="fa fa-check"></i><b>12.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="12.1.3" data-path="epu.html"><a href="epu.html#data-analysis-10"><i class="fa fa-check"></i><b>12.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.4" data-path="epu.html"><a href="epu.html#data-processing-6"><i class="fa fa-check"></i><b>12.1.4</b> Data processing</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>14</b> Gulf Stream Index</a><ul>
-<li class="chapter" data-level="14.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-12"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="14.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-11"><i class="fa fa-check"></i><b>14.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="14.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-7"><i class="fa fa-check"></i><b>14.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="13" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>13</b> Gulf Stream Index</a><ul>
+<li class="chapter" data-level="13.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-12"><i class="fa fa-check"></i><b>13.1</b> Methods</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-12"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-11"><i class="fa fa-check"></i><b>13.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-7"><i class="fa fa-check"></i><b>13.1.3</b> Data Processing</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>15</b> Harbor Porpoise Bycatch</a><ul>
-<li class="chapter" data-level="15.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-13"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-13"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="15.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="15.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-12"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="15.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-8"><i class="fa fa-check"></i><b>15.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="14" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html"><i class="fa fa-check"></i><b>14</b> Harbor Porpoise Bycatch</a><ul>
+<li class="chapter" data-level="14.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#methods-13"><i class="fa fa-check"></i><b>14.1</b> Methods</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-sources-13"><i class="fa fa-check"></i><b>14.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-extraction-11"><i class="fa fa-check"></i><b>14.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="14.1.3" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#data-analysis-12"><i class="fa fa-check"></i><b>14.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="14.1.4" data-path="harbor-porpoise-bycatch.html"><a href="harbor-porpoise-bycatch.html#plotting-8"><i class="fa fa-check"></i><b>14.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>16</b> Ichthyoplankton Diversity</a><ul>
-<li class="chapter" data-level="16.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-14"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-14"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="16.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="16.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-13"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="16.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-8"><i class="fa fa-check"></i><b>16.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="16.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-9"><i class="fa fa-check"></i><b>16.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="15" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html"><i class="fa fa-check"></i><b>15</b> Ichthyoplankton Diversity</a><ul>
+<li class="chapter" data-level="15.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#methods-14"><i class="fa fa-check"></i><b>15.1</b> Methods</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-sources-14"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-extraction-12"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-analysis-13"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#data-processing-8"><i class="fa fa-check"></i><b>15.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="15.1.5" data-path="ichthyoplankton-diversity.html"><a href="ichthyoplankton-diversity.html#plotting-9"><i class="fa fa-check"></i><b>15.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>17</b> Commercial Landings Data</a><ul>
-<li class="chapter" data-level="17.1" data-path="comdat.html"><a href="comdat.html#methods-15"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
-<li class="chapter" data-level="17.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-15"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="17.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="17.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-14"><i class="fa fa-check"></i><b>17.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="17.1.4" data-path="comdat.html"><a href="comdat.html#plotting-10"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="16" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>16</b> Commercial Landings Data</a><ul>
+<li class="chapter" data-level="16.1" data-path="comdat.html"><a href="comdat.html#methods-15"><i class="fa fa-check"></i><b>16.1</b> Methods</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-15"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-13"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-14"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="comdat.html"><a href="comdat.html#plotting-10"><i class="fa fa-check"></i><b>16.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>18</b> Long-term Sea Surface Temperature</a><ul>
-<li class="chapter" data-level="18.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-16"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
-<li class="chapter" data-level="18.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-16"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="18.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="18.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-10"><i class="fa fa-check"></i><b>18.1.3</b> Data Processing</a></li>
-<li class="chapter" data-level="18.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-11"><i class="fa fa-check"></i><b>18.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="17" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>17</b> Long-term Sea Surface Temperature</a><ul>
+<li class="chapter" data-level="17.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-16"><i class="fa fa-check"></i><b>17.1</b> Methods</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-16"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-14"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-10"><i class="fa fa-check"></i><b>17.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="17.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-11"><i class="fa fa-check"></i><b>17.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
-<li class="chapter" data-level="19.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
-<li class="chapter" data-level="19.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="19.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="19.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="18" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>18</b> Mid-Atlantic Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="18.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-17"><i class="fa fa-check"></i><b>18.1</b> Methods</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-17"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-15"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-15"><i class="fa fa-check"></i><b>18.1.3</b> Data analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>20</b> New England Harmful Algal Bloom Indicator</a><ul>
-<li class="chapter" data-level="20.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-18"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
-<li class="chapter" data-level="20.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-18"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="20.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="20.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-16"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="19" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>19</b> New England Harmful Algal Bloom Indicator</a><ul>
+<li class="chapter" data-level="19.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-18"><i class="fa fa-check"></i><b>19.1</b> Methods</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-18"><i class="fa fa-check"></i><b>19.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="19.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-16"><i class="fa fa-check"></i><b>19.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="19.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-16"><i class="fa fa-check"></i><b>19.1.3</b> Data analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>21</b> Verified Records of Southern Kingfish</a><ul>
-<li class="chapter" data-level="21.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-19"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
-<li class="chapter" data-level="21.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-19"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="21.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-17"><i class="fa fa-check"></i><b>21.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="21.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-17"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="21.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-12"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="20" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>20</b> Verified Records of Southern Kingfish</a><ul>
+<li class="chapter" data-level="20.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-19"><i class="fa fa-check"></i><b>20.1</b> Methods</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-19"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-17"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-17"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="20.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-12"><i class="fa fa-check"></i><b>20.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>22</b> Habitat Occupancy Models</a><ul>
-<li class="chapter" data-level="22.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-20"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
-<li class="chapter" data-level="22.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-20"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="22.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-11"><i class="fa fa-check"></i><b>22.1.2</b> Data processing</a></li>
-<li class="chapter" data-level="22.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-18"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="22.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-13"><i class="fa fa-check"></i><b>22.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="21" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html"><i class="fa fa-check"></i><b>21</b> Habitat Occupancy Models</a><ul>
+<li class="chapter" data-level="21.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#methods-20"><i class="fa fa-check"></i><b>21.1</b> Methods</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-sources-20"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-processing-11"><i class="fa fa-check"></i><b>21.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="21.1.3" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#data-analysis-18"><i class="fa fa-check"></i><b>21.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.4" data-path="habitat-occupancy-models.html"><a href="habitat-occupancy-models.html#plotting-13"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>23</b> Fish Productivity Indicator</a><ul>
-<li class="chapter" data-level="23.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-21"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
-<li class="chapter" data-level="23.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-21"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="23.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-18"><i class="fa fa-check"></i><b>23.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="23.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-19"><i class="fa fa-check"></i><b>23.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="23.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-12"><i class="fa fa-check"></i><b>23.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="23.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-14"><i class="fa fa-check"></i><b>23.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="22" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>22</b> Fish Productivity Indicator</a><ul>
+<li class="chapter" data-level="22.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-21"><i class="fa fa-check"></i><b>22.1</b> Methods</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-21"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-18"><i class="fa fa-check"></i><b>22.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="22.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-19"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-12"><i class="fa fa-check"></i><b>22.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-14"><i class="fa fa-check"></i><b>22.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>24</b> Recreational Fishing Indicators</a><ul>
-<li class="chapter" data-level="24.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-22"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
-<li class="chapter" data-level="24.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-22"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="24.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-20"><i class="fa fa-check"></i><b>24.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="24.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-13"><i class="fa fa-check"></i><b>24.1.3</b> Data processing</a></li>
-<li class="chapter" data-level="24.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-15"><i class="fa fa-check"></i><b>24.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="23" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>23</b> Recreational Fishing Indicators</a><ul>
+<li class="chapter" data-level="23.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-22"><i class="fa fa-check"></i><b>23.1</b> Methods</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-22"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-20"><i class="fa fa-check"></i><b>23.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-13"><i class="fa fa-check"></i><b>23.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="23.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-15"><i class="fa fa-check"></i><b>23.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="25" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>25</b> Right Whale Abundance</a><ul>
-<li class="chapter" data-level="25.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-23"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
-<li class="chapter" data-level="25.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-23"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="25.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-19"><i class="fa fa-check"></i><b>25.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="25.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-21"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="25.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-14"><i class="fa fa-check"></i><b>25.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="25.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-16"><i class="fa fa-check"></i><b>25.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="24" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>24</b> Right Whale Abundance</a><ul>
+<li class="chapter" data-level="24.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-23"><i class="fa fa-check"></i><b>24.1</b> Methods</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-23"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-19"><i class="fa fa-check"></i><b>24.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="24.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-21"><i class="fa fa-check"></i><b>24.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-14"><i class="fa fa-check"></i><b>24.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="24.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-16"><i class="fa fa-check"></i><b>24.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="26" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>26</b> Seabird diet and productivity</a><ul>
-<li class="chapter" data-level="26.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-24"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
-<li class="chapter" data-level="26.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-24"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="26.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-15"><i class="fa fa-check"></i><b>26.1.2</b> Data processing</a></li>
-<li class="chapter" data-level="26.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-22"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="25" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>25</b> Seabird diet and productivity</a><ul>
+<li class="chapter" data-level="25.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#methods-24"><i class="fa fa-check"></i><b>25.1</b> Methods</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-sources-24"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-processing-15"><i class="fa fa-check"></i><b>25.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="25.1.3" data-path="seabird-diet-and-productivity.html"><a href="seabird-diet-and-productivity.html#data-analysis-22"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="27" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>27</b> Seasonal SST Anomalies</a><ul>
-<li class="chapter" data-level="27.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-25"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
-<li class="chapter" data-level="27.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-25"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="27.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="27.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-23"><i class="fa fa-check"></i><b>27.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="27.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-17"><i class="fa fa-check"></i><b>27.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="26" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>26</b> Seasonal SST Anomalies</a><ul>
+<li class="chapter" data-level="26.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-25"><i class="fa fa-check"></i><b>26.1</b> Methods</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-25"><i class="fa fa-check"></i><b>26.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-20"><i class="fa fa-check"></i><b>26.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="26.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-23"><i class="fa fa-check"></i><b>26.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="26.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-17"><i class="fa fa-check"></i><b>26.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="28" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>28</b> Single Species Status Indicator</a><ul>
-<li class="chapter" data-level="28.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-26"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
-<li class="chapter" data-level="28.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-26"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="28.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-21"><i class="fa fa-check"></i><b>28.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="28.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-16"><i class="fa fa-check"></i><b>28.1.3</b> Data processing</a></li>
-<li class="chapter" data-level="28.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-24"><i class="fa fa-check"></i><b>28.1.4</b> Data analysis</a></li>
-<li class="chapter" data-level="28.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-18"><i class="fa fa-check"></i><b>28.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="27" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>27</b> Single Species Status Indicator</a><ul>
+<li class="chapter" data-level="27.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-26"><i class="fa fa-check"></i><b>27.1</b> Methods</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-26"><i class="fa fa-check"></i><b>27.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-21"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-16"><i class="fa fa-check"></i><b>27.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="27.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-24"><i class="fa fa-check"></i><b>27.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="27.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-18"><i class="fa fa-check"></i><b>27.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="29" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html"><i class="fa fa-check"></i><b>29</b> Slopewater proportions</a><ul>
-<li class="chapter" data-level="29.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#methods-27"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
-<li class="chapter" data-level="29.1.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-sources-27"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="29.1.2" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-extraction-22"><i class="fa fa-check"></i><b>29.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="29.1.3" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-analysis-25"><i class="fa fa-check"></i><b>29.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="29.1.4" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-processing-17"><i class="fa fa-check"></i><b>29.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="29.1.5" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#plotting-19"><i class="fa fa-check"></i><b>29.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="28" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html"><i class="fa fa-check"></i><b>28</b> Slopewater proportions</a><ul>
+<li class="chapter" data-level="28.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#methods-27"><i class="fa fa-check"></i><b>28.1</b> Methods</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-sources-27"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-extraction-22"><i class="fa fa-check"></i><b>28.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="28.1.3" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-analysis-25"><i class="fa fa-check"></i><b>28.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="28.1.4" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-processing-17"><i class="fa fa-check"></i><b>28.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="28.1.5" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#plotting-19"><i class="fa fa-check"></i><b>28.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="30" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>30</b> Species Density Estimates</a><ul>
-<li class="chapter" data-level="30.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-28"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
-<li class="chapter" data-level="30.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-28"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="30.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-26"><i class="fa fa-check"></i><b>30.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="30.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-20"><i class="fa fa-check"></i><b>30.1.3</b> Plotting</a></li>
+<li class="chapter" data-level="29" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>29</b> Species Density Estimates</a><ul>
+<li class="chapter" data-level="29.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-28"><i class="fa fa-check"></i><b>29.1</b> Methods</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-28"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-26"><i class="fa fa-check"></i><b>29.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="29.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-20"><i class="fa fa-check"></i><b>29.1.3</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="31" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>31</b> Species Distribution Indicators</a><ul>
-<li class="chapter" data-level="31.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-29"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
-<li class="chapter" data-level="31.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-29"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="31.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-27"><i class="fa fa-check"></i><b>31.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="31.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-18"><i class="fa fa-check"></i><b>31.1.3</b> Data processing</a></li>
-<li class="chapter" data-level="31.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-21"><i class="fa fa-check"></i><b>31.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="30" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>30</b> Species Distribution Indicators</a><ul>
+<li class="chapter" data-level="30.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-29"><i class="fa fa-check"></i><b>30.1</b> Methods</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-29"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-27"><i class="fa fa-check"></i><b>30.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-18"><i class="fa fa-check"></i><b>30.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="30.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-21"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="32" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>32</b> Survey Data</a><ul>
-<li class="chapter" data-level="32.1" data-path="survdat.html"><a href="survdat.html#methods-30"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
-<li class="chapter" data-level="32.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-30"><i class="fa fa-check"></i><b>32.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="32.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-23"><i class="fa fa-check"></i><b>32.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="32.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-28"><i class="fa fa-check"></i><b>32.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="32.1.4" data-path="survdat.html"><a href="survdat.html#plotting-22"><i class="fa fa-check"></i><b>32.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="31" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>31</b> Survey Data</a><ul>
+<li class="chapter" data-level="31.1" data-path="survdat.html"><a href="survdat.html#methods-30"><i class="fa fa-check"></i><b>31.1</b> Methods</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-30"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-23"><i class="fa fa-check"></i><b>31.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="31.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-28"><i class="fa fa-check"></i><b>31.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.4" data-path="survdat.html"><a href="survdat.html#plotting-22"><i class="fa fa-check"></i><b>31.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="33" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>33</b> Thermal Habitat Projections</a><ul>
-<li class="chapter" data-level="33.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-31"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
-<li class="chapter" data-level="33.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-31"><i class="fa fa-check"></i><b>33.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="33.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-29"><i class="fa fa-check"></i><b>33.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="33.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-23"><i class="fa fa-check"></i><b>33.1.3</b> Plotting</a></li>
+<li class="chapter" data-level="32" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>32</b> Thermal Habitat Projections</a><ul>
+<li class="chapter" data-level="32.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-31"><i class="fa fa-check"></i><b>32.1</b> Methods</a><ul>
+<li class="chapter" data-level="32.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-31"><i class="fa fa-check"></i><b>32.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="32.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-29"><i class="fa fa-check"></i><b>32.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="32.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-23"><i class="fa fa-check"></i><b>32.1.3</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="34" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>34</b> Trend Analysis</a><ul>
-<li class="chapter" data-level="34.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-32"><i class="fa fa-check"></i><b>34.1</b> Methods</a><ul>
-<li class="chapter" data-level="34.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-32"><i class="fa fa-check"></i><b>34.1.1</b> Data source(s)</a></li>
-<li class="chapter" data-level="34.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-24"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="34.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-30"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="33" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>33</b> Trend Analysis</a><ul>
+<li class="chapter" data-level="33.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-32"><i class="fa fa-check"></i><b>33.1</b> Methods</a><ul>
+<li class="chapter" data-level="33.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-32"><i class="fa fa-check"></i><b>33.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="33.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-24"><i class="fa fa-check"></i><b>33.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="33.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-30"><i class="fa fa-check"></i><b>33.1.3</b> Data analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="35" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>35</b> Zooplankton</a><ul>
-<li class="chapter" data-level="35.1" data-path="zooabund.html"><a href="zooabund.html#methods-33"><i class="fa fa-check"></i><b>35.1</b> Methods</a><ul>
-<li class="chapter" data-level="35.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-33"><i class="fa fa-check"></i><b>35.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="35.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-25"><i class="fa fa-check"></i><b>35.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="35.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-31"><i class="fa fa-check"></i><b>35.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="35.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-19"><i class="fa fa-check"></i><b>35.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="35.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-24"><i class="fa fa-check"></i><b>35.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="34" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>34</b> Zooplankton</a><ul>
+<li class="chapter" data-level="34.1" data-path="zooabund.html"><a href="zooabund.html#methods-33"><i class="fa fa-check"></i><b>34.1</b> Methods</a><ul>
+<li class="chapter" data-level="34.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-33"><i class="fa fa-check"></i><b>34.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="34.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-25"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="34.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-31"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="34.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-19"><i class="fa fa-check"></i><b>34.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="34.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-24"><i class="fa fa-check"></i><b>34.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -606,7 +607,7 @@ GB
 Benthos
 </td>
 <td style="text-align:left;">
-Sum of Macrobenthos—polychaetes, crustaceans, molluscs, other and Megabenthos—other
+Sum of Macrobenthosâ€”polychaetes, crustaceans, molluscs, other and Megabenthosâ€”other
 </td>
 <td style="text-align:left;">
 </td>
@@ -766,7 +767,7 @@ GOM
 Benthos
 </td>
 <td style="text-align:left;">
-Sum of Macrobenthos—polychaetes, crustaceans, molluscs, other and Megabenthos—other
+Sum of Macrobenthosâ€”polychaetes, crustaceans, molluscs, other and Megabenthosâ€”other
 </td>
 <td style="text-align:left;">
 </td>
@@ -959,7 +960,7 @@ MAB
 Benthos
 </td>
 <td style="text-align:left;">
-Sum of Macrobenthos—polychaetes, crustaceans, molluscs, other
+Sum of Macrobenthosâ€”polychaetes, crustaceans, molluscs, other
 </td>
 <td style="text-align:left;">
 </td>
@@ -1039,7 +1040,7 @@ MAB
 Sharks
 </td>
 <td style="text-align:left;">
-Sum of Sharks—pelagic and coastal
+Sum of Sharksâ€”pelagic and coastal
 </td>
 <td style="text-align:left;">
 </td>
@@ -1102,13 +1103,13 @@ Figure 11.6: Mid-Atlantic Bight conceptual model
 <h4><span class="header-section-number">11.1.3.5</span> Communication tools</h4>
 <p>The merged models were redrawn for use in communications with the public. These versions lead off the State of the Ecosystem reports for both Fishery Management Councils to provide an overview of linkages between environmental drivers, ecological, and human systems.</p>
 <div class="figure"><span id="fig:prettyNE"></span>
-<img src="images/GOM_GB_conmod_overview.jpg" alt="New England conceptual model for public communication" width="3249" />
+<img src="images/GOM_GB_conmod_overview.jpg" alt="New England conceptual model for public communication"  />
 <p class="caption">
 Figure 11.7: New England conceptual model for public communication
 </p>
 </div>
 <div class="figure"><span id="fig:prettyMA"></span>
-<img src="images/MAB_conmod_overview.jpg" alt="Mid-Atlantic conceptual model for public communication" width="3249" />
+<img src="images/MAB_conmod_overview.jpg" alt="Mid-Atlantic conceptual model for public communication"  />
 <p class="caption">
 Figure 11.8: Mid-Atlantic conceptual model for public communication
 </p>
@@ -1121,75 +1122,79 @@ sessionInfo(package = NULL)
 ```
 
 ```
-## R version 3.6.0 (2019-04-26)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Mojave 10.14.6
+## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 17763)
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## [1] LC_COLLATE=English_United States.1252 
+## [2] LC_CTYPE=English_United States.1252   
+## [3] LC_MONETARY=English_United States.1252
+## [4] LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.1252    
 ## 
 ## attached base packages:
 ## [1] grid      stats     graphics  grDevices utils     datasets  methods  
 ## [8] base     
 ## 
 ## other attached packages:
-##  [1] zoo_1.8-5           marmap_1.0.2        ncdf4_1.16.1       
+##  [1] zoo_1.8-6           marmap_1.0.3        ncdf4_1.16.1       
 ##  [4] png_0.1-7           mapdata_2.3.0       maps_3.3.0         
 ##  [7] Hmisc_4.2-0         Formula_1.2-3       survival_2.44-1.1  
-## [10] colorRamps_2.3      AICcmodavg_2.2-2    nlme_3.1-139       
-## [13] data.table_1.12.2   Kendall_2.2         rnaturalearth_0.1.0
-## [16] raster_2.9-23       rgdal_1.4-4         sp_1.3-1           
-## [19] sf_0.7-4            readr_1.3.1         magick_2.0         
-## [22] rmarkdown_1.12      knitr_1.22          rpart_4.1-15       
-## [25] vegan_2.5-5         lattice_0.20-38     permute_0.9-5      
-## [28] patchwork_0.0.1     stringr_1.4.0       ggrepel_0.8.0      
+## [10] colorRamps_2.3      AICcmodavg_2.2-2    nlme_3.1-141       
+## [13] data.table_1.12.4   Kendall_2.2         rnaturalearth_0.1.0
+## [16] raster_3.0-7        rgdal_1.4-6         sp_1.3-1           
+## [19] sf_0.8-0            readr_1.3.1         magick_2.2         
+## [22] rmarkdown_1.16      knitr_1.25          rpart_4.1-15       
+## [25] vegan_2.5-6         lattice_0.20-38     permute_0.9-5      
+## [28] patchwork_0.0.1     stringr_1.4.0       ggrepel_0.8.1      
 ## [31] kableExtra_1.1.0    here_0.1            ecodata_0.1.0      
-## [34] tidyr_0.8.3         dplyr_0.8.1         ggplot2_3.2.1      
+## [34] tidyr_1.0.0         dplyr_0.8.3         ggplot2_3.2.1      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bit64_0.9-7              RColorBrewer_1.1-2      
-##  [3] webshot_0.5.1            httr_1.4.0              
-##  [5] rprojroot_1.3-2          tools_3.6.0             
-##  [7] backports_1.1.4          R6_2.4.0                
-##  [9] KernSmooth_2.23-15       rgeos_0.4-3             
-## [11] DBI_1.0.0                lazyeval_0.2.2          
-## [13] mgcv_1.8-28              colorspace_1.4-1        
-## [15] nnet_7.3-12              withr_2.1.2             
-## [17] gridExtra_2.3            tidyselect_0.2.5        
-## [19] bit_1.1-14               compiler_3.6.0          
-## [21] rvest_0.3.3              htmlTable_1.13.1        
-## [23] xml2_1.2.0               unmarked_0.12-3         
-## [25] labeling_0.3             bookdown_0.12           
-## [27] checkmate_1.9.3          scales_1.0.0            
-## [29] classInt_0.3-3           digest_0.6.20           
-## [31] foreign_0.8-71           jpeg_0.1-8              
-## [33] base64enc_0.1-3          pkgconfig_2.0.2         
-## [35] htmltools_0.3.6          highr_0.8               
-## [37] htmlwidgets_1.3          rlang_0.4.0             
-## [39] RSQLite_2.1.1            rstudioapi_0.10         
-## [41] VGAM_1.1-1               shape_1.4.4             
-## [43] adehabitatMA_0.3.13      acepack_1.4.1           
-## [45] magrittr_1.5             Matrix_1.2-17           
-## [47] Rcpp_1.0.2               munsell_0.5.0           
-## [49] stringi_1.4.3            yaml_2.2.0              
-## [51] MASS_7.3-51.4            plyr_1.8.4              
-## [53] blob_1.1.1               parallel_3.6.0          
-## [55] crayon_1.3.4             splines_3.6.0           
-## [57] hms_0.4.2                pillar_1.4.2            
-## [59] boot_1.3-22              reshape2_1.4.3          
-## [61] codetools_0.2-16         stats4_3.6.0            
-## [63] glue_1.3.1               evaluate_0.13           
-## [65] latticeExtra_0.6-28      gtable_0.3.0            
-## [67] purrr_0.3.2              assertthat_0.2.1        
-## [69] xfun_0.6                 xtable_1.8-4            
-## [71] e1071_1.7-2              rnaturalearthhires_0.2.0
-## [73] class_7.3-15             viridisLite_0.3.0       
-## [75] tibble_2.1.3             memoise_1.1.0           
-## [77] units_0.6-3              cluster_2.0.8
+##  [1] VGAM_1.1-1               colorspace_1.4-1        
+##  [3] ellipsis_0.3.0           class_7.3-15            
+##  [5] rprojroot_1.3-2          htmlTable_1.13.2        
+##  [7] base64enc_0.1-3          rstudioapi_0.10         
+##  [9] bit64_0.9-7              xml2_1.2.2              
+## [11] codetools_0.2-16         splines_3.6.1           
+## [13] zeallot_0.1.0            cluster_2.1.0           
+## [15] rgeos_0.5-2              compiler_3.6.1          
+## [17] httr_1.4.1               backports_1.1.5         
+## [19] assertthat_0.2.1         Matrix_1.2-17           
+## [21] lazyeval_0.2.2           acepack_1.4.1           
+## [23] htmltools_0.4.0          tools_3.6.1             
+## [25] gtable_0.3.0             glue_1.3.1              
+## [27] reshape2_1.4.3           Rcpp_1.0.2              
+## [29] vctrs_0.2.0              xfun_0.10               
+## [31] rvest_0.3.4              lifecycle_0.1.0         
+## [33] rnaturalearthhires_0.2.0 MASS_7.3-51.4           
+## [35] scales_1.0.0             hms_0.5.1               
+## [37] parallel_3.6.1           RColorBrewer_1.1-2      
+## [39] yaml_2.2.0               memoise_1.1.0           
+## [41] gridExtra_2.3            latticeExtra_0.6-28     
+## [43] stringi_1.4.3            RSQLite_2.1.2           
+## [45] highr_0.8                e1071_1.7-2             
+## [47] checkmate_1.9.4          boot_1.3-23             
+## [49] shape_1.4.4              rlang_0.4.0             
+## [51] pkgconfig_2.0.3          evaluate_0.14           
+## [53] purrr_0.3.2              htmlwidgets_1.5.1       
+## [55] labeling_0.3             bit_1.1-14              
+## [57] tidyselect_0.2.5         plyr_1.8.4              
+## [59] magrittr_1.5             bookdown_0.14           
+## [61] R6_2.4.0                 DBI_1.0.0               
+## [63] pillar_1.4.2             foreign_0.8-72          
+## [65] withr_2.1.2              mgcv_1.8-29             
+## [67] units_0.6-5              nnet_7.3-12             
+## [69] tibble_2.1.3             crayon_1.3.4            
+## [71] KernSmooth_2.23-15       blob_1.2.0              
+## [73] digest_0.6.21            classInt_0.4-1          
+## [75] webshot_0.5.1            xtable_1.8-4            
+## [77] adehabitatMA_0.3.13      stats4_3.6.1            
+## [79] munsell_0.5.0            unmarked_0.12-3         
+## [81] viridisLite_0.3.0
 ```
 
 ```r
@@ -1201,8 +1206,8 @@ current.session$otherPkgs
 ```
 ## $zoo
 ## Package: zoo
-## Version: 1.8-5
-## Date: 2019-03-19
+## Version: 1.8-6
+## Date: 2019-05-27
 ## Title: S3 Infrastructure for Regular and Irregular Time Series
 ##        (Z's Ordered Observations)
 ## Authors@R: c(person(given = "Achim", family = "Zeileis", role =
@@ -1228,25 +1233,25 @@ current.session$otherPkgs
 ## License: GPL-2 | GPL-3
 ## URL: http://zoo.R-Forge.R-project.org/
 ## NeedsCompilation: yes
-## Packaged: 2019-03-19 09:21:57 UTC; zeileis
+## Packaged: 2019-05-27 10:36:45 UTC; zeileis
 ## Author: Achim Zeileis [aut, cre]
 ##        (<https://orcid.org/0000-0003-0918-3766>), Gabor
 ##        Grothendieck [aut], Jeffrey A. Ryan [aut], Joshua M. Ulrich
 ##        [ctb], Felix Andrews [ctb]
 ## Maintainer: Achim Zeileis <Achim.Zeileis@R-project.org>
 ## Repository: CRAN
-## Date/Publication: 2019-03-21 10:18:54 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:52:31
-##        UTC; unix
+## Date/Publication: 2019-05-28 08:00:53 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-05 18:00:19 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/zoo/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/zoo/Meta/package.rds 
 ## 
 ## $marmap
 ## Package: marmap
 ## Type: Package
 ## Title: Import, Plot and Analyze Bathymetric and Topographic Data
-## Version: 1.0.2
-## Date: 2018-10-15
+## Version: 1.0.3
+## Date: 2019-07-03
 ## Author: Eric Pante, Benoit Simon-Bouhet, and Jean-Olivier Irisson
 ## Maintainer: Benoit Simon-Bouhet <besibo@gmail.com>
 ## Depends: R (>= 2.10)
@@ -1264,14 +1269,14 @@ current.session$otherPkgs
 ##        least-cost paths.
 ## License: GPL (>= 3)
 ## URL: https://github.com/ericpante/marmap
-## Packaged: 2018-10-15 17:02:38 UTC; bsimonbo
+## Packaged: 2019-07-03 12:58:17 UTC; bsimonbo
 ## VignetteBuilder: R.rsp
 ## NeedsCompilation: no
 ## Repository: CRAN
-## Date/Publication: 2018-10-15 17:40:02 UTC
-## Built: R 3.6.0; ; 2019-04-27 03:37:27 UTC; unix
+## Date/Publication: 2019-07-03 15:40:03 UTC
+## Built: R 3.6.1; ; 2019-08-05 22:05:32 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/marmap/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/marmap/Meta/package.rds 
 ## 
 ## $ncdf4
 ## Package: ncdf4
@@ -1307,10 +1312,10 @@ current.session$otherPkgs
 ## Packaged: 2019-03-11 08:43:47 UTC; ripley
 ## Repository: CRAN
 ## Date/Publication: 2019-03-11 11:39:16 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 20:03:28
-##        UTC; unix
+## Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-28 20:59:11 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/ncdf4/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/ncdf4/Meta/package.rds 
 ## 
 ## $png
 ## Package: png
@@ -1329,10 +1334,10 @@ current.session$otherPkgs
 ## NeedsCompilation: yes
 ## Repository: CRAN
 ## Date/Publication: 2013-12-03 22:25:05
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:51:32
-##        UTC; unix
+## Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-28 20:43:20 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/png/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/png/Meta/package.rds 
 ## 
 ## $mapdata
 ## Package: mapdata
@@ -1351,10 +1356,10 @@ current.session$otherPkgs
 ## Packaged: 2018-03-30 10:58:56 UTC; dalex
 ## Repository: CRAN
 ## Date/Publication: 2018-03-30 13:12:08 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 20:12:53
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-05 16:02:09 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/mapdata/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/mapdata/Meta/package.rds 
 ## 
 ## $maps
 ## Package: maps
@@ -1377,10 +1382,9 @@ current.session$otherPkgs
 ## Repository: CRAN
 ## Packaged: 2018-04-03 07:33:40 UTC; dalex
 ## Date/Publication: 2018-04-03 08:24:49 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:58:07
-##        UTC; unix
+## Built: R 3.6.1; i386-w64-mingw32; 2019-08-05 15:57:32 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/maps/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/maps/Meta/package.rds 
 ## 
 ## $Hmisc
 ## Package: Hmisc
@@ -1413,10 +1417,10 @@ current.session$otherPkgs
 ## Packaged: 2019-01-25 22:28:42 UTC; harrelfe
 ## Repository: CRAN
 ## Date/Publication: 2019-01-26 23:20:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-27 05:13:55
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-06 00:09:07 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/Hmisc/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/Hmisc/Meta/package.rds 
 ## 
 ## $Formula
 ## Package: Formula
@@ -1441,9 +1445,9 @@ current.session$otherPkgs
 ## Maintainer: Achim Zeileis <Achim.Zeileis@R-project.org>
 ## Repository: CRAN
 ## Date/Publication: 2018-05-03 07:53:28 UTC
-## Built: R 3.6.0; ; 2019-04-26 19:51:06 UTC; unix
+## Built: R 3.6.0; ; 2019-05-28 20:42:05 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/Formula/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/Formula/Meta/package.rds 
 ## 
 ## $survival
 ## Title: Survival Analysis
@@ -1473,10 +1477,10 @@ current.session$otherPkgs
 ##        (original S->R port and R maintainer until 2009)
 ## Repository: CRAN
 ## Date/Publication: 2019-04-01 08:42:36 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 16:34:18
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-07-05 08:11:55 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/survival/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/survival/Meta/package.rds 
 ## 
 ## $colorRamps
 ## Package: colorRamps
@@ -1493,9 +1497,9 @@ current.session$otherPkgs
 ## Packaged: 2012-10-29 08:58:26 UTC; ripley
 ## Repository: CRAN
 ## Date/Publication: 2012-10-29 08:58:26
-## Built: R 3.6.0; ; 2019-04-26 20:04:29 UTC; unix
+## Built: R 3.6.0; ; 2019-05-28 20:48:37 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/colorRamps/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/colorRamps/Meta/package.rds 
 ## 
 ## $AICcmodavg
 ## Package: AICcmodavg
@@ -1536,14 +1540,14 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Packaged: 2019-05-29 19:23:10 UTC; mazerolm
 ## Date/Publication: 2019-05-29 21:20:03 UTC
-## Built: R 3.6.0; ; 2019-05-30 14:13:37 UTC; unix
+## Built: R 3.6.1; ; 2019-08-03 03:03:43 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/AICcmodavg/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/AICcmodavg/Meta/package.rds 
 ## 
 ## $nlme
 ## Package: nlme
-## Version: 3.1-139
-## Date: 2019-04-09
+## Version: 3.1-141
+## Date: 2019-08-01
 ## Priority: recommended
 ## Title: Linear and Nonlinear Mixed Effects Models
 ## Authors@R: c(person("José", "Pinheiro", role = "aut", comment = "S
@@ -1568,7 +1572,7 @@ current.session$otherPkgs
 ## BugReports: https://bugs.r-project.org
 ## URL: https://svn.r-project.org/R-packages/trunk/nlme
 ## NeedsCompilation: yes
-## Packaged: 2019-04-09 07:36:00 UTC; ripley
+## Packaged: 2019-08-01 03:39:13 UTC; hornik
 ## Author: José Pinheiro [aut] (S version), Douglas Bates [aut] (up
 ##        to 2007), Saikat DebRoy [ctb] (up to 2002), Deepayan Sarkar
 ##        [ctb] (up to 2005), EISPACK authors [ctb] (src/rs.f), Siem
@@ -1576,15 +1580,15 @@ current.session$otherPkgs
 ##        [ctb] (Programmer fixed sigma), R-core [aut, cre]
 ## Maintainer: R-core <R-core@R-project.org>
 ## Repository: CRAN
-## Date/Publication: 2019-04-09 20:31:34 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 16:32:46
-##        UTC; unix
+## Date/Publication: 2019-08-01 06:04:26 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 18:17:01 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/nlme/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/nlme/Meta/package.rds 
 ## 
 ## $data.table
 ## Package: data.table
-## Version: 1.12.2
+## Version: 1.12.4
 ## Title: Extension of `data.frame`
 ## Authors@R: c( person("Matt","Dowle", role=c("aut","cre"),
 ##        email="mattjdowle@gmail.com"), person("Arun","Srinivasan",
@@ -1622,22 +1626,29 @@ current.session$otherPkgs
 ##        person("Martin","Morgan", role="ctb"),
 ##        person("Michael","Quinn", role="ctb"),
 ##        person("@javrucebo","", role="ctb"),
-##        person("@marc-outins","", role="ctb"))
+##        person("@marc-outins","", role="ctb"),
+##        person("Roy","Storey", role="ctb"),
+##        person("Manish","Saraswat", role="ctb"),
+##        person("Morgan","Jacob", role="ctb"),
+##        person("Michael","Schubmehl", role="ctb"))
 ## Depends: R (>= 3.1.0)
 ## Imports: methods
-## Suggests: bit64, curl, R.utils, knitr, xts, nanotime, zoo
+## Suggests: bit64, curl, R.utils, knitr, xts, nanotime, zoo, yaml
+## SystemRequirements: zlib
 ## Description: Fast aggregation of large data (e.g. 100GB in RAM),
 ##        fast ordered joins, fast add/modify/delete of columns by
 ##        group using no copies at all, list columns, friendly and
 ##        fast character-separated-value read/write. Offers a natural
 ##        and flexible syntax, for faster development.
 ## License: MPL-2.0 | file LICENSE
-## URL: http://r-datatable.com
+## URL: http://r-datatable.com,
+##        https://Rdatatable.gitlab.io/data.table,
+##        https://github.com/Rdatatable/data.table
 ## BugReports: https://github.com/Rdatatable/data.table/issues
 ## VignetteBuilder: knitr
 ## ByteCompile: TRUE
 ## NeedsCompilation: yes
-## Packaged: 2019-03-28 19:54:17.679 UTC; mdowle
+## Packaged: 2019-10-02 15:32:18.031 UTC; mdowle
 ## Author: Matt Dowle [aut, cre], Arun Srinivasan [aut], Jan Gorecki
 ##        [ctb], Michael Chirico [ctb], Pasha Stetsenko [ctb], Tom
 ##        Short [ctb], Steve Lianoglou [ctb], Eduard Antonyan [ctb],
@@ -1651,14 +1662,16 @@ current.session$otherPkgs
 ##        Daniel Possenriede [ctb], Felipe Parages [ctb], Denes Toth
 ##        [ctb], Mus Yaramaz-David [ctb], Ayappan Perumal [ctb],
 ##        James Sams [ctb], Martin Morgan [ctb], Michael Quinn [ctb],
-##        @javrucebo [ctb], @marc-outins [ctb]
+##        @javrucebo [ctb], @marc-outins [ctb], Roy Storey [ctb],
+##        Manish Saraswat [ctb], Morgan Jacob [ctb], Michael
+##        Schubmehl [ctb]
 ## Maintainer: Matt Dowle <mattjdowle@gmail.com>
 ## Repository: CRAN
-## Date/Publication: 2019-04-07 10:05:02 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:51:16
-##        UTC; unix
+## Date/Publication: 2019-10-03 09:10:14 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 16:28:39 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/data.table/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/data.table/Meta/package.rds 
 ## 
 ## $Kendall
 ## Package: Kendall
@@ -1681,10 +1694,10 @@ current.session$otherPkgs
 ## Repository: CRAN
 ## Date/Publication: 2011-05-18 04:53:55
 ## Packaged: 2011-05-17 19:08:07 UTC; aim
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 20:28:30
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-05 16:06:33 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/Kendall/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/Kendall/Meta/package.rds 
 ## 
 ## $rnaturalearth
 ## Package: rnaturalearth
@@ -1714,16 +1727,16 @@ current.session$otherPkgs
 ## Maintainer: Andy South <southandy@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2017-03-21 21:58:11 UTC
-## Built: R 3.6.0; ; 2019-04-26 22:53:16 UTC; unix
+## Built: R 3.6.1; ; 2019-08-20 01:16:56 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rnaturalearth/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/rnaturalearth/Meta/package.rds 
 ## 
 ## $raster
 ## Package: raster
 ## Type: Package
 ## Title: Geographic Data Analysis and Modeling
-## Version: 2.9-23
-## Date: 2019-07-10
+## Version: 3.0-7
+## Date: 2019-09-22
 ## Depends: sp (>= 1.2-0), R (>= 3.0.0)
 ## Suggests: rgdal (>= 0.9-1), rgeos (>= 0.3-8), ncdf4, igraph,
 ##        tcltk, parallel, rasterVis, MASS, sf, testthat
@@ -1763,7 +1776,7 @@ current.session$otherPkgs
 ##        person("Bill", "Venables", role = "ctb"), person("Rafael",
 ##        "Wueest", role = "ctb") )
 ## NeedsCompilation: yes
-## Packaged: 2019-07-11 05:48:54 UTC; rhijm
+## Packaged: 2019-09-22 16:57:11 UTC; rhijm
 ## Author: Robert J. Hijmans [cre, aut]
 ##        (<https://orcid.org/0000-0001-5872-2872>), Jacob van Etten
 ##        [ctb], Michael Sumner [ctb], Joe Cheng [ctb], Andrew Bevan
@@ -1779,18 +1792,18 @@ current.session$otherPkgs
 ##        Wueest [ctb]
 ## Maintainer: Robert J. Hijmans <r.hijmans@gmail.com>
 ## Repository: CRAN
-## Date/Publication: 2019-07-11 13:43:08 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-12 12:20:15
-##        UTC; unix
+## Date/Publication: 2019-09-24 15:40:02 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 18:18:33 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/raster/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/raster/Meta/package.rds 
 ## 
 ## $rgdal
 ## Package: rgdal
 ## Title: Bindings for the 'Geospatial' Data Abstraction Library
-## Version: 1.4-4
-## Date: 2019-05-03
-## Depends: R (>= 3.3.0), methods, sp (>= 1.1-0)
+## Version: 1.4-6
+## Date: 2019-10-01
+## Depends: R (>= 3.5.0), methods, sp (>= 1.1-0)
 ## Imports: grDevices, graphics, stats, utils
 ## LinkingTo: sp
 ## NeedsCompilation: yes
@@ -1821,7 +1834,7 @@ current.session$otherPkgs
 ##        "ctb"))
 ## License: GPL (>= 2)
 ## URL: http://rgdal.r-forge.r-project.org, https://www.gdal.org,
-##        https://proj4.org,
+##        https://proj.org,
 ##        https://r-forge.r-project.org/projects/rgdal/
 ## SystemRequirements: for building from source: GDAL >= 1.11.4,
 ##        library from
@@ -1836,7 +1849,7 @@ current.session$otherPkgs
 ##        with installed external dependencies, for example
 ##        rgdal_0.8-7 for PROJ4 4.8.0 (March 2012).
 ## RoxygenNote: 6.1.1
-## Packaged: 2019-05-28 11:02:46 UTC; rsb
+## Packaged: 2019-10-01 12:01:15 UTC; rsb
 ## Author: Roger Bivand [cre, aut]
 ##        (<https://orcid.org/0000-0003-2392-6140>), Tim Keitt [aut],
 ##        Barry Rowlingson [aut, ctb], Edzer Pebesma [ctb], Michael
@@ -1845,11 +1858,11 @@ current.session$otherPkgs
 ##        Rundel [ctb]
 ## Maintainer: Roger Bivand <Roger.Bivand@nhh.no>
 ## Repository: CRAN
-## Date/Publication: 2019-05-29 14:30:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-05-30 14:00:20
-##        UTC; unix
+## Date/Publication: 2019-10-01 19:30:02 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 19:53:21 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/rgdal/Meta/package.rds 
 ## 
 ## $sp
 ## Package: sp
@@ -1889,14 +1902,14 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2018-06-05 13:58:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:51:34
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-02 23:29:50 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/sp/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/sp/Meta/package.rds 
 ## 
 ## $sf
 ## Package: sf
-## Version: 0.7-4
+## Version: 0.8-0
 ## Title: Simple Features for R
 ## Authors@R: c(person(given = "Edzer", family = "Pebesma", role =
 ##        c("aut", "cre"), email = "edzer.pebesma@uni-muenster.de",
@@ -1912,25 +1925,27 @@ current.session$otherPkgs
 ##        = "Ooms", role = "ctb", comment = c(ORCID =
 ##        "0000-0002-4035-0289")), person(given = "Kirill", family =
 ##        "Müller", role = "ctb"), person(given = "Thomas Lin",
-##        family = "Pedersen", role = "ctb"))
+##        family = "Pedersen", role = "ctb"), person(given = "Dan",
+##        family = "Baston", role = "ctb"))
 ## Description: Support for simple features, a standardized way to
 ##        encode spatial vector data. Binds to 'GDAL' for reading and
 ##        writing data, to 'GEOS' for geometrical operations, and to
 ##        'PROJ' for projection conversions and datum
 ##        transformations.
 ## License: GPL-2 | MIT + file LICENSE
-## URL: https://github.com/r-spatial/sf/
+## URL: https://github.com/r-spatial/sf/,
+##        https://r-spatial.github.io/sf/
 ## BugReports: https://github.com/r-spatial/sf/issues/
 ## Depends: methods, R (>= 3.3.0)
-## Imports: classInt (>= 0.2-1), DBI (>= 0.8), graphics, grDevices,
+## Imports: classInt (>= 0.4-1), DBI (>= 0.8), graphics, grDevices,
 ##        grid, magrittr, Rcpp (>= 0.12.18), stats, tools, units (>=
 ##        0.6-0), utils
-## Suggests: blob, covr, dplyr (>= 0.8-0), ggplot2, knitr, lwgeom (>=
+## Suggests: blob, covr, dplyr (>= 0.8-3), ggplot2, knitr, lwgeom (>=
 ##        0.1-5), maps, maptools, mapview, microbenchmark, odbc,
 ##        pillar, pool, raster, rgdal, rgeos, rlang, rmarkdown,
 ##        RPostgres (>= 1.1.0), RPostgreSQL, RSQLite, sp (>= 1.2-4),
 ##        spatstat, stars (>= 0.2-0), testthat, tibble (>= 1.4.1),
-##        tidyr (>= 0.7-2), tidyselect, tmap (>= 2.0)
+##        tidyr (>= 1.0-0), tmap (>= 2.0), vctrs
 ## LinkingTo: Rcpp
 ## VignetteBuilder: knitr
 ## Encoding: UTF-8
@@ -1940,7 +1955,7 @@ current.session$otherPkgs
 ## Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
 ##        'sfc.R' .....
 ## NeedsCompilation: yes
-## Packaged: 2019-04-25 17:51:47 UTC; edzer
+## Packaged: 2019-09-16 20:18:14 UTC; edzer
 ## Author: Edzer Pebesma [aut, cre]
 ##        (<https://orcid.org/0000-0001-8049-7069>), Roger Bivand
 ##        [ctb] (<https://orcid.org/0000-0003-2392-6140>), Etienne
@@ -1948,14 +1963,14 @@ current.session$otherPkgs
 ##        Keitt [ctb], Robin Lovelace [ctb], Hadley Wickham [ctb],
 ##        Jeroen Ooms [ctb]
 ##        (<https://orcid.org/0000-0002-4035-0289>), Kirill Müller
-##        [ctb], Thomas Lin Pedersen [ctb]
+##        [ctb], Thomas Lin Pedersen [ctb], Dan Baston [ctb]
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
-## Date/Publication: 2019-04-25 22:30:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 22:30:26
-##        UTC; unix
+## Date/Publication: 2019-09-17 04:40:03 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 18:19:23 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/sf/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/sf/Meta/package.rds 
 ## 
 ## $readr
 ## Package: readr
@@ -2000,16 +2015,16 @@ current.session$otherPkgs
 ## Maintainer: Jim Hester <james.hester@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2018-12-21 09:40:02 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-27 02:50:56
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-03 03:48:21 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/readr/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/readr/Meta/package.rds 
 ## 
 ## $magick
 ## Package: magick
 ## Type: Package
 ## Title: Advanced Graphics and Image-Processing in R
-## Version: 2.0
+## Version: 2.2
 ## Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email
 ##        = "jeroen@berkeley.edu", comment = c(ORCID =
 ##        "0000-0002-4035-0289"))
@@ -2026,36 +2041,37 @@ current.session$otherPkgs
 ##        graphics device for creating in-memory graphics or drawing
 ##        onto images using pixel coordinates.
 ## License: MIT + file LICENSE
-## URL: https://github.com/ropensci/magick#readme
+## URL: https://docs.ropensci.org/magick (website)
+##        https://github.com/ropensci/magick (devel)
 ## BugReports: https://github.com/ropensci/magick/issues
 ## SystemRequirements: ImageMagick++: ImageMagick-c++-devel (rpm) or
 ##        libmagick++-dev (deb)
 ## VignetteBuilder: knitr
 ## Imports: Rcpp (>= 0.12.12), magrittr, curl
 ## LinkingTo: Rcpp
-## Suggests: av, spelling, jsonlite, methods, knitr, rmarkdown, rsvg,
-##        webp, pdftools, ggplot2, raster, rgdal, gapminder,
-##        IRdisplay, tesseract (>= 2.0), gifski
+## Suggests: av (>= 0.3), spelling, jsonlite, methods, knitr,
+##        rmarkdown, rsvg, webp, pdftools, ggplot2, raster, rgdal,
+##        gapminder, IRdisplay, tesseract (>= 2.0), gifski
 ## Encoding: UTF-8
-## RoxygenNote: 6.1.0
+## RoxygenNote: 6.1.1
 ## Language: en-US
 ## NeedsCompilation: yes
-## Packaged: 2018-10-04 23:21:28 UTC; jeroen
+## Packaged: 2019-08-25 20:53:45 UTC; jeroen
 ## Author: Jeroen Ooms [aut, cre]
 ##        (<https://orcid.org/0000-0002-4035-0289>)
 ## Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 ## Repository: CRAN
-## Date/Publication: 2018-10-05 10:00:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 20:07:03
-##        UTC; unix
+## Date/Publication: 2019-08-26 07:10:03 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 16:35:30 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/magick/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/magick/Meta/package.rds 
 ## 
 ## $rmarkdown
 ## Package: rmarkdown
 ## Type: Package
 ## Title: Dynamic Documents for R
-## Version: 1.12
+## Version: 1.16
 ## Authors@R: c( person("JJ", "Allaire", role = "aut", email =
 ##        "jj@rstudio.com"), person("Yihui", "Xie", role = c("aut",
 ##        "cre"), email = "xie@yihui.name", comment = c(ORCID =
@@ -2070,24 +2086,27 @@ current.session$otherPkgs
 ##        email = "joe@rstudio.com"), person("Winston", "Chang", role
 ##        = "aut", email = "winston@rstudio.com"), person("Richard",
 ##        "Iannone", role = "aut", email = "rich@rstudio.com",
-##        comment = c(ORCID = "0000-0003-3925-190X")), person("Jeff",
-##        "Allen", role = "ctb", email = "jeff@rstudio.com"),
-##        person("Barret", "Schloerke", role = "ctb"), person("Roy",
-##        "Storey", role = "ctb"), person("Rob", "Hyndman", role =
-##        "ctb", email = "Rob.Hyndman@monash.edu"), person("Ruben",
-##        "Arslan", role = "ctb", email =
-##        "ruben.arslan@uni-goettingen.de"), person("Frederik",
-##        "Aust", role = "ctb", email = "frederik.aust@uni-koeln.de",
-##        comment = c(ORCID = "0000-0003-4900-788X")),
-##        person("Christophe", "Dervieux", role = "ctb"),
-##        person("Malcolm", "Barrett", role = "ctb"), person(family =
-##        "RStudio, Inc.", role = "cph"), person(family = "jQuery
-##        Foundation", role = "cph", comment = "jQuery library"),
-##        person(family = "jQuery contributors", role = c("ctb",
-##        "cph"), comment = "jQuery library; authors listed in
-##        inst/rmd/h/jquery-AUTHORS.txt"), person(family = "jQuery UI
-##        contributors", role = c("ctb", "cph"), comment = "jQuery UI
-##        library; authors listed in
+##        comment = c(ORCID = "0000-0003-3925-190X")), # #
+##        Contributors, ordered alphabetically by first name
+##        person("Atsushi", "Yasumoto", role = "ctb", comment =
+##        c(ORCID = "0000-0002-8335-495X")), person("Barret",
+##        "Schloerke", role = "ctb"), person("Christophe",
+##        "Dervieux", role = "ctb"), person("Frederik", "Aust", role
+##        = "ctb", email = "frederik.aust@uni-koeln.de", comment =
+##        c(ORCID = "0000-0003-4900-788X")), person("Jeff", "Allen",
+##        role = "ctb", email = "jeff@rstudio.com"),
+##        person("Malcolm", "Barrett", role = "ctb"), person("Rob",
+##        "Hyndman", role = "ctb", email = "Rob.Hyndman@monash.edu"),
+##        person("Romain", "Lesur", role = "ctb"), person("Roy",
+##        "Storey", role = "ctb"), person("Ruben", "Arslan", role =
+##        "ctb", email = "ruben.arslan@uni-goettingen.de"), # #
+##        Copyright holders person(family = "RStudio, Inc.", role =
+##        "cph"), person(family = "jQuery Foundation", role = "cph",
+##        comment = "jQuery library"), person(family = "jQuery
+##        contributors", role = c("ctb", "cph"), comment = "jQuery
+##        library; authors listed in inst/rmd/h/jquery-AUTHORS.txt"),
+##        person(family = "jQuery UI contributors", role = c("ctb",
+##        "cph"), comment = "jQuery UI library; authors listed in
 ##        inst/rmd/h/jqueryui-AUTHORS.txt"), person("Mark", "Otto",
 ##        role = "ctb", comment = "Bootstrap library"),
 ##        person("Jacob", "Thornton", role = "ctb", comment =
@@ -2110,40 +2129,46 @@ current.session$otherPkgs
 ##        "Font-Awesome"), person("Ben", "Sperry", role = "ctb",
 ##        comment = "Ionicons"), person(family = "Drifty", role =
 ##        "cph", comment = "Ionicons"), person("Aidan", "Lister",
-##        role = c("ctb", "cph"), comment = "jQuery StickyTabs") )
+##        role = c("ctb", "cph"), comment = "jQuery StickyTabs"),
+##        person("Benct Philip", "Jonsson", role = c("ctb", "cph"),
+##        comment = "pagebreak lua filter"), person("Albert",
+##        "Krewinkel", role = c("ctb", "cph"), comment = "pagebreak
+##        lua filter") )
 ## Maintainer: Yihui Xie <xie@yihui.name>
 ## Description: Convert R Markdown documents into a variety of
 ##        formats.
 ## Depends: R (>= 3.0)
 ## Imports: tools, utils, knitr (>= 1.22), yaml (>= 2.1.19),
 ##        htmltools (>= 0.3.5), evaluate (>= 0.13), base64enc,
-##        jsonlite, mime, tinytex (>= 0.11), methods, stringr (>=
-##        1.2.0)
+##        jsonlite, mime, tinytex (>= 0.11), xfun, methods, stringr
+##        (>= 1.2.0)
 ## Suggests: shiny (>= 0.11), tufte, testthat, digest, dygraphs,
-##        tibble, fs, callr (>= 2.0.0)
+##        tibble, fs, pkgdown, callr (>= 2.0.0)
 ## SystemRequirements: pandoc (>= 1.12.3) - http://pandoc.org
-## URL: https://rmarkdown.rstudio.com
+## URL: https://github.com/rstudio/rmarkdown
 ## BugReports: https://github.com/rstudio/rmarkdown/issues
 ## License: GPL-3
 ## RoxygenNote: 6.1.1
 ## Encoding: UTF-8
+## VignetteBuilder: knitr
 ## NeedsCompilation: no
-## Packaged: 2019-03-14 05:24:03 UTC; yihui
+## Packaged: 2019-10-01 17:58:00 UTC; yihui
 ## Author: JJ Allaire [aut], Yihui Xie [aut, cre]
 ##        (<https://orcid.org/0000-0003-0645-5666>), Jonathan
 ##        McPherson [aut], Javier Luraschi [aut], Kevin Ushey [aut],
 ##        Aron Atkins [aut], Hadley Wickham [aut], Joe Cheng [aut],
 ##        Winston Chang [aut], Richard Iannone [aut]
-##        (<https://orcid.org/0000-0003-3925-190X>), Jeff Allen
-##        [ctb], Barret Schloerke [ctb], Roy Storey [ctb], Rob
-##        Hyndman [ctb], Ruben Arslan [ctb], Frederik Aust [ctb]
-##        (<https://orcid.org/0000-0003-4900-788X>), Christophe
-##        Dervieux [ctb], Malcolm Barrett [ctb], RStudio, Inc. [cph],
-##        jQuery Foundation [cph] (jQuery library), jQuery
-##        contributors [ctb, cph] (jQuery library; authors listed in
-##        inst/rmd/h/jquery-AUTHORS.txt), jQuery UI contributors
-##        [ctb, cph] (jQuery UI library; authors listed in
-##        inst/rmd/h/jqueryui-AUTHORS.txt), Mark Otto [ctb]
+##        (<https://orcid.org/0000-0003-3925-190X>), Atsushi Yasumoto
+##        [ctb] (<https://orcid.org/0000-0002-8335-495X>), Barret
+##        Schloerke [ctb], Christophe Dervieux [ctb], Frederik Aust
+##        [ctb] (<https://orcid.org/0000-0003-4900-788X>), Jeff Allen
+##        [ctb], Malcolm Barrett [ctb], Rob Hyndman [ctb], Romain
+##        Lesur [ctb], Roy Storey [ctb], Ruben Arslan [ctb], RStudio,
+##        Inc. [cph], jQuery Foundation [cph] (jQuery library),
+##        jQuery contributors [ctb, cph] (jQuery library; authors
+##        listed in inst/rmd/h/jquery-AUTHORS.txt), jQuery UI
+##        contributors [ctb, cph] (jQuery UI library; authors listed
+##        in inst/rmd/h/jqueryui-AUTHORS.txt), Mark Otto [ctb]
 ##        (Bootstrap library), Jacob Thornton [ctb] (Bootstrap
 ##        library), Bootstrap contributors [ctb] (Bootstrap library),
 ##        Twitter, Inc [cph] (Bootstrap library), Alexander Farkas
@@ -2155,19 +2180,21 @@ current.session$otherPkgs
 ##        [ctb] (slidy library), W3C [cph] (slidy library), Dave
 ##        Gandy [ctb, cph] (Font-Awesome), Ben Sperry [ctb]
 ##        (Ionicons), Drifty [cph] (Ionicons), Aidan Lister [ctb,
-##        cph] (jQuery StickyTabs)
+##        cph] (jQuery StickyTabs), Benct Philip Jonsson [ctb, cph]
+##        (pagebreak lua filter), Albert Krewinkel [ctb, cph]
+##        (pagebreak lua filter)
 ## Repository: CRAN
-## Date/Publication: 2019-03-14 08:50:03 UTC
-## Built: R 3.6.0; ; 2019-04-27 00:16:10 UTC; unix
+## Date/Publication: 2019-10-01 19:10:09 UTC
+## Built: R 3.6.1; ; 2019-10-07 21:47:43 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rmarkdown/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/rmarkdown/Meta/package.rds 
 ## 
 ## $knitr
 ## Package: knitr
 ## Type: Package
 ## Title: A General-Purpose Package for Dynamic Report Generation in
 ##        R
-## Version: 1.22
+## Version: 1.25
 ## Authors@R: c( person("Yihui", "Xie", role = c("aut", "cre"), email
 ##        = "xie@yihui.name", comment = c(ORCID =
 ##        "0000-0003-0645-5666")), person("Adam", "Vogt", role =
@@ -2177,44 +2204,44 @@ current.session$otherPkgs
 ##        inst/themes/ were derived from the Highlight package
 ##        http://www.andre-simon.de"), person("Aron", "Atkins", role
 ##        = "ctb"), person("Aaron", "Wolen", role = "ctb"),
-##        person("Ashley", "Manton", role = "ctb"), person("Ben",
-##        "Baumer", role = "ctb"), person("Brian", "Diggs", role =
-##        "ctb"), person("Brian", "Zhang", role = "ctb"),
-##        person("Cassio", "Pereira", role = "ctb"),
-##        person("Christophe", "Dervieux", role = "ctb"),
-##        person("David", "Hugh-Jones", role = "ctb"),
-##        person("David", "Robinson", role = "ctb"), person("Donald",
-##        "Arseneau", role = c("ctb", "cph"), comment = "the framed
-##        package at inst/misc/framed.sty"), person("Doug", "Hemken",
-##        role = "ctb"), person("Duncan", "Murdoch", role = "ctb"),
-##        person("Elio", "Campitelli", role = "ctb"), person("Emily",
-##        "Riederer", role = "ctb"), person("Fabian", "Hirschmann",
-##        role = "ctb"), person("Fitch", "Simeon", role = "ctb"),
-##        person("Forest", "Fang", role = "ctb"), person(c("Frank",
-##        "E", "Harrell", "Jr"), role = "ctb", comment = "the Sweavel
-##        package at inst/misc/Sweavel.sty"), person("Garrick",
-##        "Aden-Buie", role = "ctb"), person("Gregoire", "Detrez",
-##        role = "ctb"), person("Hadley", "Wickham", role = "ctb"),
-##        person("Hao", "Zhu", role = "ctb"), person("Heewon",
-##        "Jeon", role = "ctb"), person("Henrik", "Bengtsson", role =
-##        "ctb"), person("Hiroaki", "Yutani", role = "ctb"),
-##        person("Ian", "Lyttle", role = "ctb"), person("Hodges",
-##        "Daniel", role = "ctb"), person("Jake", "Burkhead", role =
-##        "ctb"), person("James", "Manton", role = "ctb"),
-##        person("Jared", "Lander", role = "ctb"), person("Jason",
-##        "Punyon", role = "ctb"), person("Javier", "Luraschi", role
-##        = "ctb"), person("Jeff", "Arnold", role = "ctb"),
-##        person("Jenny", "Bryan", role = "ctb"), person("Jeremy",
-##        "Ashkenas", role = c("ctb", "cph"), comment = "the CSS file
-##        at inst/misc/docco-classic.css"), person("Jeremy",
-##        "Stephens", role = "ctb"), person("Jim", "Hester", role =
-##        "ctb"), person("Joe", "Cheng", role = "ctb"),
-##        person("Johannes", "Ranke", role = "ctb"), person("John",
-##        "Honaker", role = "ctb"), person("John", "Muschelli", role
-##        = "ctb"), person("Jonathan", "Keane", role = "ctb"),
-##        person("JJ", "Allaire", role = "ctb"), person("Johan",
-##        "Toloe", role = "ctb"), person("Jonathan", "Sidi", role =
-##        "ctb"), person("Joseph", "Larmarange", role = "ctb"),
+##        person("Ashley", "Manton", role = "ctb"), person("Atsushi",
+##        "Yasumoto", role = "ctb", comment = c(ORCID =
+##        "0000-0002-8335-495X")), person("Ben", "Baumer", role =
+##        "ctb"), person("Brian", "Diggs", role = "ctb"),
+##        person("Brian", "Zhang", role = "ctb"), person("Cassio",
+##        "Pereira", role = "ctb"), person("Christophe", "Dervieux",
+##        role = "ctb"), person("David", "Hugh-Jones", role = "ctb"),
+##        person("David", "Robinson", role = "ctb"), person("Doug",
+##        "Hemken", role = "ctb"), person("Duncan", "Murdoch", role =
+##        "ctb"), person("Elio", "Campitelli", role = "ctb"),
+##        person("Emily", "Riederer", role = "ctb"), person("Fabian",
+##        "Hirschmann", role = "ctb"), person("Fitch", "Simeon", role
+##        = "ctb"), person("Forest", "Fang", role = "ctb"),
+##        person(c("Frank", "E", "Harrell", "Jr"), role = "ctb",
+##        comment = "the Sweavel package at inst/misc/Sweavel.sty"),
+##        person("Garrick", "Aden-Buie", role = "ctb"),
+##        person("Gregoire", "Detrez", role = "ctb"),
+##        person("Hadley", "Wickham", role = "ctb"), person("Hao",
+##        "Zhu", role = "ctb"), person("Heewon", "Jeon", role =
+##        "ctb"), person("Henrik", "Bengtsson", role = "ctb"),
+##        person("Hiroaki", "Yutani", role = "ctb"), person("Ian",
+##        "Lyttle", role = "ctb"), person("Hodges", "Daniel", role =
+##        "ctb"), person("Jake", "Burkhead", role = "ctb"),
+##        person("James", "Manton", role = "ctb"), person("Jared",
+##        "Lander", role = "ctb"), person("Jason", "Punyon", role =
+##        "ctb"), person("Javier", "Luraschi", role = "ctb"),
+##        person("Jeff", "Arnold", role = "ctb"), person("Jenny",
+##        "Bryan", role = "ctb"), person("Jeremy", "Ashkenas", role =
+##        c("ctb", "cph"), comment = "the CSS file at
+##        inst/misc/docco-classic.css"), person("Jeremy", "Stephens",
+##        role = "ctb"), person("Jim", "Hester", role = "ctb"),
+##        person("Joe", "Cheng", role = "ctb"), person("Johannes",
+##        "Ranke", role = "ctb"), person("John", "Honaker", role =
+##        "ctb"), person("John", "Muschelli", role = "ctb"),
+##        person("Jonathan", "Keane", role = "ctb"), person("JJ",
+##        "Allaire", role = "ctb"), person("Johan", "Toloe", role =
+##        "ctb"), person("Jonathan", "Sidi", role = "ctb"),
+##        person("Joseph", "Larmarange", role = "ctb"),
 ##        person("Julien", "Barnier", role = "ctb"), person("Kaiyin",
 ##        "Zhong", role = "ctb"), person("Kamil", "Slowikowski", role
 ##        = "ctb"), person("Karl", "Forner", role = "ctb"),
@@ -2222,17 +2249,20 @@ current.session$otherPkgs
 ##        person("Kirill", "Mueller", role = "ctb"), person("Kohske",
 ##        "Takahashi", role = "ctb"), person("Lorenz", "Walthert",
 ##        role = "ctb"), person("Lucas", "Gallindo", role = "ctb"),
-##        person("Martin", "Modrák", role = "ctb"), person("Michael",
-##        "Chirico", role = "ctb"), person("Michael", "Friendly",
-##        role = "ctb"), person("Michal", "Bojanowski", role =
-##        "ctb"), person("Michel", "Kuhlmann", role = "ctb"),
-##        person("Nacho", "Caballero", role = "ctb"), person("Nick",
-##        "Salkowski", role = "ctb"), person("Noam", "Ross", role =
-##        "ctb"), person("Obada", "Mahdi", role = "ctb"),
-##        person("Qiang", "Li", role = "ctb"), person("Ramnath",
-##        "Vaidyanathan", role = "ctb"), person("Richard", "Cotton",
-##        role = "ctb"), person("Robert", "Krzyzanowski", role =
-##        "ctb"), person("Romain", "Francois", role = "ctb"),
+##        person("Marius", "Hofert", role = "ctb"), person("Martin",
+##        "Modrák", role = "ctb"), person("Michael", "Chirico", role
+##        = "ctb"), person("Michael", "Friendly", role = "ctb"),
+##        person("Michal", "Bojanowski", role = "ctb"),
+##        person("Michel", "Kuhlmann", role = "ctb"),
+##        person("Miller", "Patrick", role = "ctb"), person("Nacho",
+##        "Caballero", role = "ctb"), person("Nick", "Salkowski",
+##        role = "ctb"), person("Niels Richard", "Hansen", role =
+##        "ctb"), person("Noam", "Ross", role = "ctb"),
+##        person("Obada", "Mahdi", role = "ctb"), person("Qiang",
+##        "Li", role = "ctb"), person("Ramnath", "Vaidyanathan", role
+##        = "ctb"), person("Richard", "Cotton", role = "ctb"),
+##        person("Robert", "Krzyzanowski", role = "ctb"),
+##        person("Romain", "Francois", role = "ctb"),
 ##        person("Ruaridh", "Williamson", role = "ctb"),
 ##        person("Scott", "Kostyshak", role = "ctb"),
 ##        person("Sebastian", "Meyer", role = "ctb"),
@@ -2251,14 +2281,14 @@ current.session$otherPkgs
 ## Maintainer: Yihui Xie <xie@yihui.name>
 ## Description: Provides a general-purpose tool for dynamic report
 ##        generation in R using Literate Programming techniques.
-## Depends: R (>= 3.1.0)
+## Depends: R (>= 3.2.3)
 ## Imports: evaluate (>= 0.10), highr, markdown, stringr (>= 0.6),
 ##        yaml (>= 2.1.19), methods, xfun, tools
 ## Suggests: formatR, testit, digest, rgl (>= 0.95.1201), codetools,
 ##        rmarkdown, htmlwidgets (>= 0.7), webshot, tikzDevice (>=
 ##        0.10), tinytex, reticulate (>= 1.4), JuliaCall (>= 0.11.1),
 ##        magick, png, jpeg, gifski, xml2 (>= 1.2.0), httr, DBI (>=
-##        0.4-1), showtext, tibble, styler
+##        0.4-1), showtext, tibble, sass, styler
 ## License: GPL
 ## URL: https://yihui.name/knitr/
 ## BugReports: https://github.com/yihui/knitr/issues
@@ -2272,28 +2302,28 @@ current.session$otherPkgs
 ##        .....
 ## RoxygenNote: 6.1.1
 ## NeedsCompilation: no
-## Packaged: 2019-03-08 22:57:11 UTC; yihui
+## Packaged: 2019-09-17 13:24:32 UTC; yihui
 ## Author: Yihui Xie [aut, cre]
 ##        (<https://orcid.org/0000-0003-0645-5666>), Adam Vogt [ctb],
 ##        Alastair Andrew [ctb], Alex Zvoleff [ctb], Andre Simon
 ##        [ctb] (the CSS files under inst/themes/ were derived from
 ##        the Highlight package http://www.andre-simon.de), Aron
-##        Atkins [ctb], Aaron Wolen [ctb], Ashley Manton [ctb], Ben
-##        Baumer [ctb], Brian Diggs [ctb], Brian Zhang [ctb], Cassio
-##        Pereira [ctb], Christophe Dervieux [ctb], David Hugh-Jones
-##        [ctb], David Robinson [ctb], Donald Arseneau [ctb, cph]
-##        (the framed package at inst/misc/framed.sty), Doug Hemken
-##        [ctb], Duncan Murdoch [ctb], Elio Campitelli [ctb], Emily
-##        Riederer [ctb], Fabian Hirschmann [ctb], Fitch Simeon
-##        [ctb], Forest Fang [ctb], Frank E Harrell Jr [ctb] (the
-##        Sweavel package at inst/misc/Sweavel.sty), Garrick
-##        Aden-Buie [ctb], Gregoire Detrez [ctb], Hadley Wickham
-##        [ctb], Hao Zhu [ctb], Heewon Jeon [ctb], Henrik Bengtsson
-##        [ctb], Hiroaki Yutani [ctb], Ian Lyttle [ctb], Hodges
-##        Daniel [ctb], Jake Burkhead [ctb], James Manton [ctb],
-##        Jared Lander [ctb], Jason Punyon [ctb], Javier Luraschi
-##        [ctb], Jeff Arnold [ctb], Jenny Bryan [ctb], Jeremy
-##        Ashkenas [ctb, cph] (the CSS file at
+##        Atkins [ctb], Aaron Wolen [ctb], Ashley Manton [ctb],
+##        Atsushi Yasumoto [ctb]
+##        (<https://orcid.org/0000-0002-8335-495X>), Ben Baumer
+##        [ctb], Brian Diggs [ctb], Brian Zhang [ctb], Cassio Pereira
+##        [ctb], Christophe Dervieux [ctb], David Hugh-Jones [ctb],
+##        David Robinson [ctb], Doug Hemken [ctb], Duncan Murdoch
+##        [ctb], Elio Campitelli [ctb], Emily Riederer [ctb], Fabian
+##        Hirschmann [ctb], Fitch Simeon [ctb], Forest Fang [ctb],
+##        Frank E Harrell Jr [ctb] (the Sweavel package at
+##        inst/misc/Sweavel.sty), Garrick Aden-Buie [ctb], Gregoire
+##        Detrez [ctb], Hadley Wickham [ctb], Hao Zhu [ctb], Heewon
+##        Jeon [ctb], Henrik Bengtsson [ctb], Hiroaki Yutani [ctb],
+##        Ian Lyttle [ctb], Hodges Daniel [ctb], Jake Burkhead [ctb],
+##        James Manton [ctb], Jared Lander [ctb], Jason Punyon [ctb],
+##        Javier Luraschi [ctb], Jeff Arnold [ctb], Jenny Bryan
+##        [ctb], Jeremy Ashkenas [ctb, cph] (the CSS file at
 ##        inst/misc/docco-classic.css), Jeremy Stephens [ctb], Jim
 ##        Hester [ctb], Joe Cheng [ctb], Johannes Ranke [ctb], John
 ##        Honaker [ctb], John Muschelli [ctb], Jonathan Keane [ctb],
@@ -2301,25 +2331,26 @@ current.session$otherPkgs
 ##        Joseph Larmarange [ctb], Julien Barnier [ctb], Kaiyin Zhong
 ##        [ctb], Kamil Slowikowski [ctb], Karl Forner [ctb], Kevin K.
 ##        Smith [ctb], Kirill Mueller [ctb], Kohske Takahashi [ctb],
-##        Lorenz Walthert [ctb], Lucas Gallindo [ctb], Martin Modrák
-##        [ctb], Michael Chirico [ctb], Michael Friendly [ctb],
-##        Michal Bojanowski [ctb], Michel Kuhlmann [ctb], Nacho
-##        Caballero [ctb], Nick Salkowski [ctb], Noam Ross [ctb],
-##        Obada Mahdi [ctb], Qiang Li [ctb], Ramnath Vaidyanathan
-##        [ctb], Richard Cotton [ctb], Robert Krzyzanowski [ctb],
-##        Romain Francois [ctb], Ruaridh Williamson [ctb], Scott
-##        Kostyshak [ctb], Sebastian Meyer [ctb], Sietse Brouwer
-##        [ctb], Simon de Bernard [ctb], Sylvain Rousseau [ctb],
-##        Taiyun Wei [ctb], Thibaut Assus [ctb], Thibaut Lamadon
-##        [ctb], Thomas Leeper [ctb], Tim Mastny [ctb], Tom
-##        Torsney-Weir [ctb], Trevor Davis [ctb], Viktoras Veitas
-##        [ctb], Weicheng Zhu [ctb], Wush Wu [ctb], Zachary Foster
-##        [ctb]
+##        Lorenz Walthert [ctb], Lucas Gallindo [ctb], Marius Hofert
+##        [ctb], Martin Modrák [ctb], Michael Chirico [ctb], Michael
+##        Friendly [ctb], Michal Bojanowski [ctb], Michel Kuhlmann
+##        [ctb], Miller Patrick [ctb], Nacho Caballero [ctb], Nick
+##        Salkowski [ctb], Niels Richard Hansen [ctb], Noam Ross
+##        [ctb], Obada Mahdi [ctb], Qiang Li [ctb], Ramnath
+##        Vaidyanathan [ctb], Richard Cotton [ctb], Robert
+##        Krzyzanowski [ctb], Romain Francois [ctb], Ruaridh
+##        Williamson [ctb], Scott Kostyshak [ctb], Sebastian Meyer
+##        [ctb], Sietse Brouwer [ctb], Simon de Bernard [ctb],
+##        Sylvain Rousseau [ctb], Taiyun Wei [ctb], Thibaut Assus
+##        [ctb], Thibaut Lamadon [ctb], Thomas Leeper [ctb], Tim
+##        Mastny [ctb], Tom Torsney-Weir [ctb], Trevor Davis [ctb],
+##        Viktoras Veitas [ctb], Weicheng Zhu [ctb], Wush Wu [ctb],
+##        Zachary Foster [ctb]
 ## Repository: CRAN
-## Date/Publication: 2019-03-08 23:50:03 UTC
-## Built: R 3.6.0; ; 2019-04-27 00:13:33 UTC; unix
+## Date/Publication: 2019-09-18 09:10:07 UTC
+## Built: R 3.6.1; ; 2019-10-07 19:53:37 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/knitr/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/knitr/Meta/package.rds 
 ## 
 ## $rpart
 ## Package: rpart
@@ -2353,16 +2384,15 @@ current.session$otherPkgs
 ## BugReports: https://github.com/bethatkinson/rpart/issues
 ## Packaged: 2019-04-11 15:59:38 UTC; atkinson
 ## Date/Publication: 2019-04-12 14:32:39 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 16:32:29
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-07-05 08:12:53 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rpart/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/rpart/Meta/package.rds 
 ## 
 ## $vegan
 ## Package: vegan
 ## Title: Community Ecology Package
-## Version: 2.5-5
-## Date: 2019-05-08
+## Version: 2.5-6
 ## Author: Jari Oksanen, F. Guillaume Blanchet, Michael Friendly,
 ##        Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R.
 ##        Minchin, R. B. O'Hara, Gavin L. Simpson, Peter Solymos, M.
@@ -2379,13 +2409,13 @@ current.session$otherPkgs
 ## URL: https://cran.r-project.org,
 ##        https://github.com/vegandevs/vegan
 ## NeedsCompilation: yes
-## Packaged: 2019-05-11 14:15:58 UTC; jarioksa
+## Packaged: 2019-08-31 07:21:37 UTC; jarioksa
 ## Repository: CRAN
-## Date/Publication: 2019-05-12 14:50:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-05-13 10:47:44
-##        UTC; unix
+## Date/Publication: 2019-09-01 14:30:02 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 19:55:28 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/vegan/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/vegan/Meta/package.rds 
 ## 
 ## $lattice
 ## Package: lattice
@@ -2414,10 +2444,10 @@ current.session$otherPkgs
 ## Packaged: 2018-11-04 11:39:05 UTC; deepayan
 ## Repository: CRAN
 ## Date/Publication: 2018-11-04 12:50:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 16:32:29
-##        UTC; unix
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-07-05 08:09:24 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/lattice/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/lattice/Meta/package.rds 
 ## 
 ## $permute
 ## Package: permute
@@ -2454,9 +2484,9 @@ current.session$otherPkgs
 ## Maintainer: Gavin L. Simpson <ucfagls@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-03-12 09:40:08 UTC
-## Built: R 3.6.0; ; 2019-04-26 19:56:54 UTC; unix
+## Built: R 3.6.1; ; 2019-08-05 15:59:04 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/permute/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/permute/Meta/package.rds 
 ## 
 ## $patchwork
 ## Package: patchwork
@@ -2494,11 +2524,11 @@ current.session$otherPkgs
 ## GithubRef: master
 ## GithubSHA1: fd7958bae3e7a1e30237c751952e412a0a1d1242
 ## NeedsCompilation: no
-## Packaged: 2019-08-01 19:50:12 UTC; seanhardison
+## Packaged: 2019-08-08 13:38:04 UTC; kimberly.bastille
 ## Author: Thomas Lin Pedersen [cre, aut]
-## Built: R 3.6.0; ; 2019-08-01 19:50:12 UTC; unix
+## Built: R 3.6.1; ; 2019-08-08 13:38:05 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/patchwork/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/patchwork/Meta/package.rds 
 ## 
 ## $stringr
 ## Package: stringr
@@ -2530,13 +2560,13 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-02-10 03:40:03 UTC
-## Built: R 3.6.0; ; 2019-04-26 22:26:53 UTC; unix
+## Built: R 3.6.1; ; 2019-09-21 03:02:53 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/stringr/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/stringr/Meta/package.rds 
 ## 
 ## $ggrepel
 ## Package: ggrepel
-## Version: 0.8.0
+## Version: 0.8.1
 ## Authors@R: c( person("Kamil", "Slowikowski", email =
 ##        "kslowikowski@gmail.com", role = c("aut", "cre"), comment =
 ##        c(ORCID = "0000-0002-2843-6370")), person("Alicia",
@@ -2567,8 +2597,9 @@ current.session$otherPkgs
 ## BugReports: http://github.com/slowkow/ggrepel/issues
 ## RoxygenNote: 6.0.1
 ## LinkingTo: Rcpp
+## Encoding: UTF-8
 ## NeedsCompilation: yes
-## Packaged: 2018-05-09 13:53:18 UTC; slowikow
+## Packaged: 2019-05-07 02:07:00 UTC; slowikow
 ## Author: Kamil Slowikowski [aut, cre]
 ##        (<https://orcid.org/0000-0002-2843-6370>), Alicia Schep
 ##        [ctb] (<https://orcid.org/0000-0002-3915-0618>), Sean
@@ -2581,11 +2612,11 @@ current.session$otherPkgs
 ##        Yutani Hiroaki [ctb], Pierre Gramme [ctb]
 ## Maintainer: Kamil Slowikowski <kslowikowski@gmail.com>
 ## Repository: CRAN
-## Date/Publication: 2018-05-09 15:30:45 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-27 04:16:04
-##        UTC; unix
+## Date/Publication: 2019-05-07 08:00:06 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-05 22:01:14 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/ggrepel/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/ggrepel/Meta/package.rds 
 ## 
 ## $kableExtra
 ## Package: kableExtra
@@ -2638,9 +2669,9 @@ current.session$otherPkgs
 ## Maintainer: Hao Zhu <haozhu233@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-03-16 20:10:03 UTC
-## Built: R 3.6.0; ; 2019-04-27 03:07:26 UTC; unix
+## Built: R 3.6.1; ; 2019-08-20 06:01:39 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/kableExtra/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/kableExtra/Meta/package.rds 
 ## 
 ## $here
 ## Package: here
@@ -2668,9 +2699,9 @@ current.session$otherPkgs
 ## Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 ## Repository: CRAN
 ## Date/Publication: 2017-05-28 06:13:04 UTC
-## Built: R 3.6.0; ; 2019-04-26 21:09:17 UTC; unix
+## Built: R 3.6.1; ; 2019-08-19 23:18:11 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/here/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/here/Meta/package.rds 
 ## 
 ## $ecodata
 ## Package: ecodata
@@ -2685,70 +2716,78 @@ current.session$otherPkgs
 ## LazyData: true
 ## Roxygen: list(markdown = TRUE)
 ## Date: 2018-10-24
-## Suggests: knitr, rmarkdown, dplyr, stringr, tidyr, ggplot2,
-##        lubridate, tufte, here, usethis, zoo
+## Suggests: knitr, rmarkdown, dplyr, stringr, tidyr, lubridate,
+##        tufte, here, usethis, zoo
 ## VignetteBuilder: knitr
 ## RoxygenNote: 6.1.1
+## Imports: ggplot2
 ## RemoteType: github
 ## RemoteHost: api.github.com
 ## RemoteRepo: ecodata
 ## RemoteUsername: noaa-edab
 ## RemoteRef: master
-## RemoteSha: 4efc6c5cc284ee2c6e8855a14b54ffffb0bb9876
+## RemoteSha: 008dbb556fb6343cb275f1f72a00951765ea0ba0
 ## GithubRepo: ecodata
 ## GithubUsername: noaa-edab
 ## GithubRef: master
-## GithubSHA1: 4efc6c5cc284ee2c6e8855a14b54ffffb0bb9876
+## GithubSHA1: 008dbb556fb6343cb275f1f72a00951765ea0ba0
 ## NeedsCompilation: no
-## Packaged: 2019-05-06 13:51:14 UTC; seanhardison
+## Packaged: 2019-08-07 15:02:39 UTC; kimberly.bastille
 ## Author: Sean Hardison [aut, cre]
 ## Maintainer: Sean Hardison <sean.hardison@noaa.gov>
-## Built: R 3.6.0; ; 2019-05-06 13:51:16 UTC; unix
+## Built: R 3.6.1; ; 2019-08-07 15:02:53 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/ecodata/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/ecodata/Meta/package.rds 
 ## 
 ## $tidyr
 ## Package: tidyr
-## Title: Easily Tidy Data with 'spread()' and 'gather()' Functions
-## Version: 0.8.3
+## Title: Tidy Messy Data
+## Version: 1.0.0
 ## Authors@R: c(person(given = "Hadley", family = "Wickham", role =
 ##        c("aut", "cre"), email = "hadley@rstudio.com"),
 ##        person(given = "Lionel", family = "Henry", role = "aut",
 ##        email = "lionel@rstudio.com"), person(given = "RStudio",
 ##        role = "cph"))
-## Description: An evolution of 'reshape2'. It's designed
-##        specifically for data tidying (not general reshaping or
-##        aggregating) and works well with 'dplyr' data pipelines.
+## Description: Tools to help to create tidy data, where each column
+##        is a variable, each row is an observation, and each cell
+##        contains a single value.  'tidyr' contains tools for
+##        changing the shape (pivoting) and hierarchy (nesting and
+##        'unnesting') of a dataset, turning deeply nested lists into
+##        rectangular data frames ('rectangling'), and extracting
+##        values out of string columns. It also includes tools for
+##        working with missing values (both implicit and explicit).
 ## License: MIT + file LICENSE
-## URL: http://tidyr.tidyverse.org,
+## URL: https://tidyr.tidyverse.org,
 ##        https://github.com/tidyverse/tidyr
 ## BugReports: https://github.com/tidyverse/tidyr/issues
 ## Depends: R (>= 3.1)
-## Imports: dplyr (>= 0.7.0), glue, magrittr, purrr, Rcpp, rlang,
-##        stringi, tibble, tidyselect (>= 0.2.5), utils
-## Suggests: covr, gapminder, knitr, rmarkdown, testthat
+## Imports: dplyr (>= 0.8.2), ellipsis (>= 0.1.0), glue, magrittr,
+##        purrr, Rcpp, rlang, stringi, tibble (>= 2.1.1), tidyselect
+##        (>= 0.2.5), utils, vctrs (>= 0.2.0), lifecycle
+## Suggests: covr, jsonlite, knitr, repurrrsive (>= 1.0.0),
+##        rmarkdown, readr, testthat (>= 2.1.0)
 ## LinkingTo: Rcpp
 ## VignetteBuilder: knitr
 ## Encoding: UTF-8
 ## LazyData: true
 ## RoxygenNote: 6.1.1
 ## NeedsCompilation: yes
-## Packaged: 2019-02-28 16:04:27 UTC; hadley
+## Packaged: 2019-09-10 12:06:26 UTC; hadley
 ## Author: Hadley Wickham [aut, cre], Lionel Henry [aut], RStudio
 ##        [cph]
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
-## Date/Publication: 2019-03-01 23:00:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-27 04:16:04
-##        UTC; unix
+## Date/Publication: 2019-09-11 23:00:03 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-07 23:46:46 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/tidyr/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/tidyr/Meta/package.rds 
 ## 
 ## $dplyr
 ## Type: Package
 ## Package: dplyr
 ## Title: A Grammar of Data Manipulation
-## Version: 0.8.1
+## Version: 0.8.3
 ## Authors@R: c( person("Hadley", "Wickham", , "hadley@rstudio.com",
 ##        c("aut", "cre"), comment = c(ORCID =
 ##        "0000-0003-4757-117X")), person("Romain", "Fran\u00e7ois",
@@ -2764,26 +2803,20 @@ current.session$otherPkgs
 ##        https://github.com/tidyverse/dplyr
 ## BugReports: https://github.com/tidyverse/dplyr/issues
 ## Depends: R (>= 3.2.0)
-## Imports: assertthat (>= 0.2.1), glue (>= 1.3.1), magrittr (>=
-##        1.5), methods, pkgconfig (>= 2.0.2), R6 (>= 2.4.0), Rcpp
-##        (>= 1.0.1), rlang (>= 0.3.4), tibble (>= 2.1.1), tidyselect
-##        (>= 0.2.5), utils
-## Suggests: bit64 (>= 0.9-7), callr (>= 3.2.0), covr (>= 3.2.1), DBI
-##        (>= 1.0.0), dbplyr (>= 1.4.0), dtplyr (>= 0.0.3), ggplot2
-##        (>= 3.1.1), hms (>= 0.4.2), knitr (>= 1.22), Lahman (>=
-##        6.0-0), lubridate (>= 1.7.4), MASS, mgcv (>= 1.8.23),
-##        microbenchmark (>= 1.4-6), nycflights13 (>= 1.0.0),
-##        rmarkdown (>= 1.12), RMySQL (>= 0.10.17), RPostgreSQL (>=
-##        0.6-2), RSQLite (>= 2.1.1), testthat (>= 2.1.1), withr (>=
-##        2.1.2), broom (>= 0.5.2), purrr (>= 0.3.2), readr (>=
-##        1.3.1), crayon (>= 1.3.4)
-## LinkingTo: BH (>= 1.69.0-1), plogr (>= 0.2.0), Rcpp (>= 1.0.1)
+## Imports: assertthat (>= 0.2.0), glue (>= 1.3.0), magrittr (>=
+##        1.5), methods, pkgconfig, R6, Rcpp (>= 1.0.1), rlang (>=
+##        0.4.0), tibble (>= 2.0.0), tidyselect (>= 0.2.5), utils
+## Suggests: bit64, callr, covr, crayon (>= 1.3.4), DBI, dbplyr,
+##        dtplyr, ggplot2, hms, knitr, Lahman, lubridate, MASS, mgcv,
+##        microbenchmark, nycflights13, rmarkdown, RMySQL,
+##        RPostgreSQL, RSQLite, testthat, withr, broom, purrr, readr
+## LinkingTo: BH, plogr (>= 0.2.0), Rcpp (>= 1.0.1)
 ## VignetteBuilder: knitr
 ## Encoding: UTF-8
 ## LazyData: yes
 ## RoxygenNote: 6.1.1
 ## NeedsCompilation: yes
-## Packaged: 2019-05-08 09:12:13 UTC; romainfrancois
+## Packaged: 2019-07-04 05:04:15 UTC; romainfrancois
 ## Author: Hadley Wickham [aut, cre]
 ##        (<https://orcid.org/0000-0003-4757-117X>), Romain François
 ##        [aut] (<https://orcid.org/0000-0002-2444-4226>), Lionel
@@ -2792,11 +2825,11 @@ current.session$otherPkgs
 ##        fnd]
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
-## Date/Publication: 2019-05-14 12:20:03 UTC
-## Built: R 3.6.0; x86_64-apple-darwin15.6.0; 2019-05-15 12:34:07
-##        UTC; unix
+## Date/Publication: 2019-07-04 15:50:02 UTC
+## Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-03 03:48:18 UTC;
+##        windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/dplyr/Meta/package.rds 
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/dplyr/Meta/package.rds 
 ## 
 ## $ggplot2
 ## Package: ggplot2
@@ -2845,9 +2878,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-08-10 22:30:13 UTC
-## Built: R 3.6.0; ; 2019-08-11 11:45:27 UTC; unix
+## Built: R 3.6.1; ; 2019-08-10 22:34:53 UTC; windows
 ## 
-## -- File: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/ggplot2/Meta/package.rds
+## -- File: C:/Users/kimberly.bastille/Documents/R/R-3.6.1/library/ggplot2/Meta/package.rds
 ```
 
 
@@ -2858,7 +2891,280 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 ```
 -->
 
+<p>ca# Fish Condition Indicator</p>
+<p><strong>Description</strong>: Relative condition</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018,2019), State of the Ecosystem - Mid-Atlantic (2018,2019)</p>
+<p><strong>Indicator category</strong>: Database pull with analysis</p>
+<p><strong>Contributor(s)</strong>: Laurel Smith</p>
+<p><strong>Data steward</strong>: Laurel Smith, <a href="mailto:laurel.smith@noaa.gov">laurel.smith@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: Laurel Smith, <a href="mailto:laurel.smith@noaa.gov">laurel.smith@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: NEFSC survey data used in these analyses are available upon request (see <a href="https://inport.nmfs.noaa.gov/inport/item/22560">BTS metadata</a> for access procedures). Derived condition data are available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_soe_v1.html">here</a>.</p>
 </div>
+</div>
+</div>
+<div id="methods-10" class="section level2">
+<h2><span class="header-section-number">11.2</span> Methods</h2>
+<p>Relative condition (Kn) was introduced by <span class="citation">Cren (<a href="#ref-Cren1951a">1951</a>)</span> as a way to remove the influence of length on condition, and <span class="citation">Blackwell, Brown, and Willis (<a href="#ref-Blackwell2000">2000</a>)</span> noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as <span class="math inline">\(Kn = W/W&#39;,\)</span> where W is the weight of an individual fish and W’ is the predicted length-specific mean weight for the fish population in a given region. “Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn and spring bottom trawl surveys, from 1992-present.</p>
+<p>Where data allowed, predicted length-weight parameters were calculated for W’ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.</p>
+<div id="data-sources-10" class="section level3">
+<h3><span class="header-section-number">11.2.1</span> Data sources</h3>
+<p>Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow (see <a href="survdat.html#survdat">Survdat</a>). A small number of outlier values were removed when calculating the length-weight parameters.</p>
+</div>
+<div id="data-extraction-9" class="section level3">
+<h3><span class="header-section-number">11.2.2</span> Data extraction</h3>
+<p>Data were extracted from NEFSC’s survey database (SVDBS) using SQL.</p>
+<p>SQL query:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> cruise6,stratum,tow,station,
+  <span class="dt">year</span>,<span class="dt">month</span>,<span class="dt">day</span>,<span class="dt">time</span>,beglat,beglon,setdepth,
+  surftemp,bottemp,
+  svspp,sex,<span class="fu">length</span>,age,maturity,indid,indwt,stom_volume,stom_wgt, expcatchwt, expcatchnum
+<span class="kw">from</span> connection <span class="kw">to</span> oracle
+(<span class="kw">select</span> b.cruise6,b.stratum,b.tow,b.station,
+  s.est_year <span class="dt">year</span>,est_month <span class="dt">month</span>,est_day <span class="dt">day</span>,
+  <span class="fu">substr</span>(est_time,<span class="dv">1</span>,<span class="dv">2</span>)||substr(est_time,<span class="dv">4</span>,<span class="dv">2</span>) <span class="dt">time</span>,
+  <span class="fu">round</span>(<span class="fu">substr</span>(beglat,<span class="dv">1</span>,<span class="dv">2</span>) + (<span class="fu">substr</span>(beglat,<span class="dv">3</span>,<span class="dv">7</span>)/<span class="dv">60</span>),<span class="dv">6</span>) beglat,
+  <span class="fu">round</span>(((<span class="fu">substr</span>(beglon,<span class="dv">1</span>,<span class="dv">2</span>) + (<span class="fu">substr</span>(beglon,<span class="dv">3</span>,<span class="dv">7</span>)/<span class="dv">60</span>)) * -<span class="dv">1</span>), <span class="dv">6</span>) beglon,
+  setdepth,surftemp, bottemp,
+  b.svspp,sex,<span class="fu">length</span>,age,maturity,indid,indwt,stom_volume,stom_wgt, expcatchwt, expcatchnum
+<span class="kw">from</span> union_fscs_svbio b, union_fscs_svcat p, union_fscs_svsta s, svdbs_cruises c
+<span class="kw">where</span> 
+  season = <span class="ch">&amp;sson</span> <span class="kw">and</span>
+    b.svspp <span class="kw">in</span> (<span class="st">&#39;013&#39;</span>,<span class="st">&#39;015&#39;</span>,<span class="st">&#39;023&#39;</span>,<span class="st">&#39;026&#39;</span>,<span class="st">&#39;028&#39;</span>,<span class="st">&#39;032&#39;</span>,<span class="st">&#39;072&#39;</span>,<span class="st">&#39;073&#39;</span>,<span class="st">&#39;074&#39;</span>,<span class="st">&#39;075&#39;</span>,<span class="st">&#39;076&#39;</span>,<span class="st">&#39;077&#39;</span>,<span class="st">&#39;078&#39;</span>,<span class="st">&#39;102&#39;</span>,<span class="st">&#39;103&#39;</span>,<span class="st">&#39;104&#39;</span>,<span class="st">&#39;105&#39;</span>,<span class="st">&#39;106&#39;</span>,<span class="st">&#39;107&#39;</span>,<span class="st">&#39;108&#39;</span>,<span class="st">&#39;121&#39;</span>,<span class="st">&#39;131&#39;</span>,<span class="st">&#39;135&#39;</span>,<span class="st">&#39;141&#39;</span>,<span class="st">&#39;143&#39;</span>,<span class="st">&#39;145&#39;</span>,<span class="st">&#39;155&#39;</span>,<span class="st">&#39;164&#39;</span>,<span class="st">&#39;193&#39;</span>,<span class="st">&#39;197&#39;</span>) <span class="kw">and</span>
+  (b.cruise6=s.cruise6) <span class="kw">and</span>
+  (c.cruise6=b.cruise6) <span class="kw">and</span>
+  (p.cruise6=c.cruise6) <span class="kw">and</span>
+  (p.stratum=b.stratum) <span class="kw">and</span>
+  (b.stratum=s.stratum) <span class="kw">and</span>
+  (p.station=b.station) <span class="kw">and</span>
+  (b.station=s.station) <span class="kw">and</span>
+  (p.svspp=b.svspp) <span class="kw">and</span>
+  (p.tow=b.tow) <span class="kw">and</span>
+  (b.tow=s.tow) );
+
+  %put <span class="ch">&amp;sqlxmsg</span>;
+  %put <span class="ch">&amp;sqlxrc</span>;
+
+<span class="kw">create</span> <span class="kw">view</span> spp <span class="kw">as</span>
+
+<span class="kw">select</span> comname, svspp
+<span class="kw">from</span> connection <span class="kw">to</span> oracle
+(<span class="kw">select</span> comname, svspp
+<span class="kw">from</span> svspecies_list);
+
+  %put <span class="ch">&amp;sqlxmsg</span>;
+  %put <span class="ch">&amp;sqlxrc</span>;
+
+<span class="kw">execute</span> (<span class="kw">commit</span>) <span class="kw">by</span> oracle;</code></pre></div>
+</div>
+<div id="data-analysis-9" class="section level3">
+<h3><span class="header-section-number">11.2.3</span> Data analysis</h3>
+<p>The following growth curve was fit through individual fish lengths and weights from the NEFSC bottom trawl survey data from 1992-2012 to produce reference length-weight parameters:</p>
+<p><span class="math display">\[\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},\]</span></p>
+<p>where length is in cm and weight is in kg. Fall survey data were used where sample sizes allowed for growth curve estimation, otherwise data from spring and fall seasons were combined.</p>
+<p>Individual fish lengths from NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition (Kn) was calculated annually by species and sex (for sexually dimorphic species) by dividing individual fish weights by the predicted weight.</p>
+<p>The following R code was used in the analysis:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Length-weight parameter calculation:</span>
+<span class="cf">function</span> (data, <span class="dt">min.n =</span> <span class="dv">25</span>, <span class="dt">min.range =</span> <span class="dv">5</span>, <span class="dt">data.avail =</span> <span class="ot">NA</span>, <span class="dt">data.avail.bigelow =</span> <span class="ot">NA</span>) 
+{
+    <span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">dim</span>(data.avail))) data.avail &lt;-<span class="st"> </span><span class="kw">lw.data.availability</span>(data, min.n, min.range)
+    data.avail &lt;-<span class="st"> </span>data.avail[<span class="kw">apply</span>(data.avail[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">1</span>, any),]
+    <span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">dim</span>(data.avail.bigelow)))data.avail.bigelow &lt;-<span class="st"> </span><span class="kw">lw.data.availability</span>(data[data<span class="op">$</span>data.source <span class="op">==</span><span class="st"> &quot;Bigelow&quot;</span>,], min.n, min.range)
+    data.avail.bigelow &lt;-<span class="st"> </span>data.avail.bigelow[<span class="kw">apply</span>(data.avail.bigelow[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">1</span>, any),]
+    data.spp &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">rownames</span>(data.avail[data.avail<span class="op">$</span>sex.season <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>,]))
+    lw.output &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="dt">ncol =</span> <span class="dv">12</span>))
+    <span class="kw">names</span>(lw.output) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;species.name&quot;</span>, <span class="st">&quot;species.code&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;season&quot;</span>, <span class="st">&quot;slope&quot;</span>, <span class="st">&quot;slope.p&quot;</span>, <span class="st">&quot;intercept&quot;</span>, <span class="st">&quot;intercept.p&quot;</span>, <span class="st">&quot;min.length&quot;</span>, <span class="st">&quot;max.length&quot;</span>, <span class="st">&quot;check.diff&quot;</span>)
+    <span class="cf">for</span>(sp <span class="cf">in</span> data.spp){
+        sp.data &lt;-<span class="st"> </span>lw.data[lw.data<span class="op">$</span>species <span class="op">==</span><span class="st"> </span>sp,]
+        sp.name &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">as.character</span>(species.names<span class="op">$</span>scientific_name[species.names<span class="op">$</span>svspp <span class="op">==</span><span class="st"> </span>sp]))
+        <span class="kw">print</span>(sp.name)
+<span class="co">#All model</span>
+        <span class="kw">print</span>(<span class="st">&quot;Species Level&quot;</span>)
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(sp.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], <span class="st">&quot;weight.log~length.log&quot;</span>, <span class="st">&quot;species&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log, <span class="dt">data =</span> this.data)
+            model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            length.range &lt;-<span class="st"> </span><span class="kw">range</span>(sp.data<span class="op">$</span>length)
+            length.log &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>))
+            species &lt;-<span class="st"> </span><span class="kw">rep</span>(sp, <span class="kw">length</span>(length.log))
+            predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(species, length.log)
+            check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;species&quot;</span>, sp.name, predict.length)
+            lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], check.diffs))
+        }
+<span class="co">#Sex model</span>
+        <span class="kw">print</span>(<span class="st">&quot;Sex Level&quot;</span>)
+        this.data &lt;-<span class="st"> </span>sp.data[sp.data<span class="op">$</span>sex <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,]
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(sex)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(this.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="st">&quot;sex&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(sex), <span class="dt">data =</span> this.data)
+            male.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            female.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])         
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;sex&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>)){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">2</span>)
+                sex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="dv">2</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, sex)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;sex&quot;</span>, sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], male.range[<span class="dv">1</span>], male.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="ot">NA</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>], model.summary[<span class="st">&quot;length.log:factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>], model.summary[<span class="st">&quot;factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], female.range[<span class="dv">1</span>], female.range[<span class="dv">2</span>], check.diffs[<span class="dv">2</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+<span class="co">#Season model</span>
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(season)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(sp.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="st">&quot;season&quot;</span>)
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(season), <span class="dt">data =</span> this.data)
+            fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span>])
+            spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span>])
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>)){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">2</span>)
+                season &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;FALL&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;SPRING&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, season)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="st">&quot;season&quot;</span>, sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="st">&quot;FALL&quot;</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>], model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>], model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], fall.range[<span class="dv">1</span>], fall.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="ot">NA</span>, <span class="st">&quot;SPRING&quot;</span>, model.coefs[<span class="st">&quot;length.log&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>], model.summary[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], model.coefs[<span class="st">&quot;(Intercept)&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(season)SPRING&quot;</span>], model.summary[<span class="st">&quot;factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>], spring.range[<span class="dv">1</span>], spring.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+<span class="co">#Sex-Season model</span>
+        this.data &lt;-<span class="st"> </span>sp.data[sp.data<span class="op">$</span>sex <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,]
+        model.definition &lt;-<span class="st"> &quot;weight.log~length.log * factor(sex) * factor(season)&quot;</span>
+        this.data &lt;-<span class="st"> </span><span class="kw">bigelow.test</span>(this.data, data.avail[<span class="kw">as.character</span>(sp),], data.avail.bigelow[<span class="kw">as.character</span>(sp),], model.definition, <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;season&quot;</span>))
+        ds &lt;-<span class="st"> </span>this.data[[<span class="dv">2</span>]]
+        this.data &lt;-<span class="st"> </span>this.data[[<span class="dv">1</span>]]
+        <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.null</span>(<span class="kw">dim</span>(this.data))){
+            this.model &lt;-<span class="st"> </span><span class="kw">lm</span>(weight.log<span class="op">~</span>length.log <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(sex) <span class="op">*</span><span class="st"> </span><span class="kw">factor</span>(season), <span class="dt">data =</span> this.data)
+            model.summary &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(this.model))
+            male.fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            male.spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>])
+            female.fall.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;FALL&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])
+            female.spring.range &lt;-<span class="st"> </span><span class="kw">range</span>(this.data<span class="op">$</span>length[this.data<span class="op">$</span>season <span class="op">==</span><span class="st"> &quot;SPRING&quot;</span> <span class="op">&amp;</span><span class="st"> </span>this.data<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>])
+            <span class="cf">if</span>(<span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span> <span class="op">|</span><span class="st"> </span><span class="kw">any</span>(model.summary[<span class="kw">grep</span>(<span class="st">&quot;season&quot;</span>, <span class="kw">rownames</span>(model.summary)), <span class="st">&quot;Pr(&gt;|t|)&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span>.<span class="dv">05</span>))){
+                model.coefs &lt;-<span class="st"> </span><span class="kw">coef</span>(this.model)
+                male.fall.int &lt;-<span class="st"> </span>model.coefs[<span class="st">&quot;(Intercept)&quot;</span>]
+                male.fall.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.fall.slope &lt;-<span class="st"> </span>model.coefs[<span class="st">&quot;length.log&quot;</span>]
+                male.fall.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.spring.int &lt;-<span class="st"> </span>male.fall.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(season)SPRING&quot;</span>]
+                male.spring.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                male.spring.slope &lt;-<span class="st"> </span>male.fall.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>]
+                male.spring.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.fall.int &lt;-<span class="st"> </span>male.fall.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>]
+                female.fall.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.fall.slope &lt;-<span class="st"> </span>male.fall.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>]
+                female.fall.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(sex)2&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.spring.int &lt;-<span class="st"> </span>male.spring.int <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;factor(sex)2:factor(season)SPRING&quot;</span>]
+                female.spring.int.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;factor(sex)2:factor(season)SPRING&quot;</span>,  <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                female.spring.slope &lt;-<span class="st"> </span>male.spring.slope <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2&quot;</span>] <span class="op">+</span><span class="st"> </span>model.coefs[<span class="st">&quot;length.log:factor(sex)2:factor(season)SPRING&quot;</span>]
+                female.spring.slope.p &lt;-<span class="st"> </span>model.summary[<span class="st">&quot;length.log:factor(sex)2:factor(season)SPRING&quot;</span>, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]
+                length.log &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">log</span>(<span class="kw">seq</span>(length.range[<span class="dv">1</span>], length.range[<span class="dv">2</span>], <span class="dt">by=</span>.<span class="dv">5</span>)),<span class="dv">4</span>)
+                sex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;1&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;2&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">2</span>))
+                season &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;FALL&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">4</span>), <span class="kw">rep</span>(<span class="st">&quot;SPRING&quot;</span>, <span class="kw">length</span>(length.log)<span class="op">/</span><span class="dv">4</span>)),<span class="dv">2</span>)
+                predict.length &lt;-<span class="st"> </span><span class="kw">data.frame</span>(length.log, sex, season)
+                check.diffs &lt;-<span class="st"> </span><span class="kw">plot.lw</span>(this.data, this.model, <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;season&quot;</span>), sp.name, predict.length)
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="st">&quot;FALL&quot;</span>, male.fall.slope, male.fall.slope.p, male.fall.int, male.fall.int.p, male.fall.range[<span class="dv">1</span>], male.fall.range[<span class="dv">2</span>], check.diffs[<span class="dv">1</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">1</span>, <span class="st">&quot;SPRING&quot;</span>, male.spring.slope, male.spring.slope.p, male.spring.int, male.spring.int.p, male.spring.range[<span class="dv">1</span>], male.spring.range[<span class="dv">2</span>],check.diffs[<span class="dv">2</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="st">&quot;FALL&quot;</span>, female.fall.slope, female.fall.slope.p, female.fall.int, female.fall.int.p, female.fall.range[<span class="dv">1</span>], female.fall.range[<span class="dv">2</span>],check.diffs[<span class="dv">3</span>]))
+                lw.output &lt;-<span class="st"> </span><span class="kw">rbind</span>(lw.output, <span class="kw">c</span>(sp.name, sp, ds, <span class="dv">2</span>, <span class="st">&quot;SPRING&quot;</span>, female.spring.slope, female.spring.slope.p, female.spring.int, female.spring.int.p, female.spring.range[<span class="dv">1</span>], female.spring.range[<span class="dv">2</span>],check.diffs[<span class="dv">4</span>]))
+            }
+            <span class="cf">else</span>{
+                <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Model parameters not significantly different for&quot;</span>, model.definition))
+            }
+        }
+    }
+lw.output &lt;-<span class="st"> </span>lw.output[<span class="op">!</span><span class="kw">is.na</span>(lw.output<span class="op">$</span>species.code),]
+lw.output
+}
+<span class="co">#Relative Condition:</span>
+proc import datafile =<span class="st"> &quot;lw_parameters.csv&quot;</span>
+ out =<span class="st"> </span>LWparams
+ dbms =<span class="st"> </span>csv
+ replace;
+ getnames =<span class="st"> </span>yes;
+run;
+
+data LWparams; set LWparams;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">13</span> then svspp =<span class="st"> &#39;013&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">15</span> then svspp =<span class="st"> &#39;015&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">23</span> then svspp =<span class="st"> &#39;023&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">26</span> then svspp =<span class="st"> &#39;026&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">28</span> then svspp =<span class="st"> &#39;028&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">32</span> then svspp =<span class="st"> &#39;032&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">72</span> then svspp =<span class="st"> &#39;072&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">73</span> then svspp =<span class="st"> &#39;073&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">74</span> then svspp =<span class="st"> &#39;074&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">75</span> then svspp =<span class="st"> &#39;075&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">76</span> then svspp =<span class="st"> &#39;076&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">77</span> then svspp =<span class="st"> &#39;077&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP =<span class="st"> </span><span class="dv">78</span> then svspp =<span class="st"> &#39;078&#39;</span>;
+ <span class="cf">if</span> LW_SVSPP ge <span class="dv">100</span> then svspp =<span class="st"> </span>LW_SVSPP;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39;M&#39;</span> then sex =<span class="st"> &#39;1&#39;</span>;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39;F&#39;</span> then sex =<span class="st"> &#39;2&#39;</span>;
+ <span class="cf">if</span> sexMF =<span class="st"> &#39; &#39;</span> then sex =<span class="st"> &#39;0&#39;</span>;
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then EXPONENT_FALL=SEASONLESS_EXPONENT;
+ <span class="cf">if</span> EXPONENT_SPRING =<span class="st"> </span>. then EXPONENT_SPRING=SEASONLESS_EXPONENT;
+ <span class="cf">if</span> COEFFICIENT_FALL =<span class="st"> </span>. then COEFFICIENT_FALL=SEASONLESS_COEFFICIENT;
+ <span class="cf">if</span> COEFFICIENT_SPRING =<span class="st"> </span>. then COEFFICIENT_SPRING=SEASONLESS_COEFFICIENT;
+
+proc sort data=LWparams;
+ by svspp sex;
+
+proc sort data=lenwt;
+ by svspp sex;
+
+data <span class="kw">lwdatpar</span> (<span class="dt">keep =</span>cruise6 stratum tow station year month day time beglat beglon setdepth
+  surftemp bottemp svspp sex length age maturity indid indwt stom_volume stom_wgt expcatchwt expcatchnum
+  COEFFICIENT_SPRING EXPONENT_SPRING COEFFICIENT_FALL EXPONENT_FALL SEASONLESS_COEFFICIENT 
+  SEASONLESS_EXPONENT);
+ merge <span class="kw">lenwt</span> (<span class="dt">in=</span>d) <span class="kw">LWparams</span> (<span class="dt">in=</span>p);
+ by svspp sex;
+
+data sortlw; set lwdatpar;
+ proc sort; by svspp sex year;
+
+data lwdata; set sortlw;
+ <span class="cf">if</span> indwt =<span class="st"> </span>. then delete;
+ <span class="cf">if</span> length =<span class="st"> </span>. then delete;
+ <span class="cf">if</span> indwt <span class="op">&gt;</span><span class="dv">0</span>;
+ svspp1 =<span class="st"> </span>svspp<span class="op">*</span><span class="dv">1</span>;
+ indwtg=indwt<span class="op">*</span><span class="fl">1000.0</span>;
+ cond=indwtg<span class="op">/</span>(length<span class="op">**</span><span class="dv">3</span>);
+ <span class="cf">if</span> EXPONENT_FALL gt <span class="dv">0</span> then predwt =<span class="st"> </span>(<span class="kw">exp</span>(COEFFICIENT_FALL))<span class="op">*</span>length<span class="op">**</span>EXPONENT_FALL;
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then predwt =<span class="st"> </span>(<span class="kw">exp</span>(SEASONLESS_COEFFICIENT))<span class="op">*</span>length<span class="op">**</span>SEASONLESS_EXPONENT;
+  <span class="cf">if</span> EXPONENT_FALL gt <span class="dv">0</span> then predwtPK =<span class="st"> </span><span class="kw">exp</span>(COEFFICIENT_FALL<span class="op">+</span>(EXPONENT_FALL<span class="op">*</span><span class="kw">log</span>(length)));
+ <span class="cf">if</span> EXPONENT_FALL =<span class="st"> </span>. then predwtPK =<span class="st"> </span><span class="kw">exp</span>(SEASONLESS_COEFFICIENT<span class="op">+</span>(SEASONLESS_EXPONENT<span class="op">*</span><span class="kw">log</span>(length)));
+
+<span class="op">**</span><span class="er">*</span>Relative condition;
+ RelWt =<span class="st"> </span>indwt<span class="op">/</span>predwt<span class="op">*</span><span class="dv">100</span>;
+
+proc sort data=lwdata;
+ by svspp1 sex year;
+run;</code></pre></div>
+</div>
+<div id="plotting-7" class="section level3">
+<h3><span class="header-section-number">11.2.4</span> Plotting</h3>
+<div class="figure"><span id="fig:condition-factor"></span>
+<img src="imagescondition-factor-1.png" alt="Normalized condition factors of managed species in the Northeast Large Marine Ecosystem." width="768" />
+<p class="caption">
+Figure 11.9: Normalized condition factors of managed species in the Northeast Large Marine Ecosystem.
+</p>
+</div>
+
 </div>
 </div>
 </div>
@@ -2875,6 +3181,9 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 </div>
 <div id="ref-bisack_measuring_2014">
 <p>Bisack, K.D., and G. Magnusson. 2014. “Measuring the Economic Value of Increased Precision in Scientific Estimates of Marine Mammal Abundance and Bycatch.” <em>North American Journal of Fisheries Management</em> 34 (2): 311–21.</p>
+</div>
+<div id="ref-Blackwell2000">
+<p>Blackwell, Brian G., Michael L. Brown, and David W. Willis. 2000. “Relative Weight (Wr) Status and Current Use in Fisheries Assessment and Management.” <em>Reviews in Fisheries Science</em> 8 (1): 1–44. doi:<a href="https://doi.org/10.1080/10641260091129161">10.1080/10641260091129161</a>.</p>
 </div>
 <div id="ref-blasiak_paradigms_2014">
 <p>Blasiak, Robert, James L. Anderson, Peter Bridgewater, Ken Furuya, Benjamin S. Halpern, Hisashi Kurokura, Joji Morishita, Nobuyuki Yagi, and Akane Minohara. 2014. “Paradigms of Sustainable Ocean Management.” <em>Marine Policy</em> 48: 206–11.</p>
@@ -2902,6 +3211,9 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 </div>
 <div id="ref-cortes-vazquez_identity_2013">
 <p>Cortes-Vazquez, Jose A., and Morgan Zedalis. 2013. “Identity and Native Species Conservation: Similar Historical Ecologies from Idaho to Spain.” <em>Human Ecology</em> 41 (6): 937–45.</p>
+</div>
+<div id="ref-Cren1951a">
+<p>Cren, E. D. Le. 1951. “The Length-Weight Relationship and Seasonal Cycle in Gonad Weight and Condition in the Perch (Perca fluviatilis).” <em>The Journal of Animal Ecology</em> 20 (2): 201. doi:<a href="https://doi.org/10.2307/1540">10.2307/1540</a>.</p>
 </div>
 <div id="ref-das_chhandita_northeast_2013">
 <p>Das, Chhandita. 2013. “Northeast Trip Cost Data - Overview, Estimation, and Predictions.” <em>NOAA Tehnical Memorandum</em> NMFS_NE_227: 20.</p>
@@ -3090,16 +3402,18 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
         </div>
       </div>
 <a href="fishing-community-climate-vulnerability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="fish-condition-indicator.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="epu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
 <script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -3127,7 +3441,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -3145,8 +3459,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

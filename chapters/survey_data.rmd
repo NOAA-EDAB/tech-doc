@@ -337,7 +337,7 @@ of stations within each EPU per year is counted using unique station records. Bi
 is summed by species per year per EPU.  Those sums are divided by the appropriate
 station count to get the EPU mean.  Finally, the mean biomasses are summed by [aggregate groups](#aggroups). These steps are encompassed in the processing code shown below, which also includes steps taken to format the data set for inclusion in the ecodata R package.
 
-```{r, code = readLines(here::here("source/get_nefsc_survey.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_nefsc_survey.R"), eval = F, echo = T}
 
 ```
 

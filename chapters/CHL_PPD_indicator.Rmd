@@ -84,7 +84,7 @@ The ecological production unit (EPU) shapefile that excludes the estuaries was u
 
 CHL and PPD time series were formatted for inclusion in the ecodata R package using the following R code.
 
-```{r, code = readLines(here::here("source/get_chl_pp.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_chl_pp.R"), eval = F, echo = T}
 
 ```
 
@@ -94,173 +94,18 @@ CHL and PPD time series were formatted for inclusion in the ecodata R package us
 
 The following figures show examples of how Chlorophyll *a* and primary production data have been included into State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight. 
 
-```{r, MAB-zooplankton, fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F}
-
-epu_abbr <- "MAB"
-
-sli <- ecodata::zoo_anom_sli %>% 
-  filter(EPU == epu_abbr,
-         str_detect(Var, "small-large")) %>% 
-  mutate(hline = 0) 
-
-pp_anom <- ecodata::chl_pp %>% 
-  filter(str_detect(Var, "ANNUAL_PPD_RATIO_ANOMALY"),
-         EPU == "MAB") %>% 
-  mutate(hline = 1,
-         Time = as.numeric(as.character(Time)),
-         Var = "ANNUAL_PPD_RATIO_ANOMALY")
-
-sli_plt <- sli %>% 
-  ggplot(aes(x = Time, y = Value, group = Var)) +
-         annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  geom_line() +
-  geom_point() +
-  guides(color = F) +
-  xlab("")+
-  ylab("Small-large abundance") +
-  ggtitle("Small-large copepod abundance") +
-    scale_x_continuous(expand = c(0.01, 0.01), limits = c(1988, 2018))+
-      geom_hline(aes(yintercept = hline,
-                     group = Var),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty)+
-  theme_ts() +
-  theme(strip.text=element_text(hjust=0,
-                                face = "italic"))
-
-pp_anom_plt <- pp_anom %>% 
-    ggplot(aes(x = Time, y = Value, group = Var)) +
-         annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  geom_line() +
-  geom_point() +
-  guides(color = F) +
-  ylab("Anomaly ratio") +
-  ggtitle("Primary production anomaly ratio") +
-    scale_x_continuous(expand = c(0.01, 0.01), limits = c(1988, 2018))+
-    scale_y_continuous(limits = c(0.8,1.2)) +
-      geom_hline(aes(yintercept = hline,
-                     group = Var),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty)+
-  theme_ts() +
-  theme(strip.text=element_text(hjust=0,
-                                face = "italic"))
-
-
-sli_plt + pp_anom_plt + plot_layout(ncol = 1) & theme(plot.margin = margin(t = 0))
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-MAB-sli.R"), fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F}
 
 ```
 
 Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figure below shows data specific to the Mid-Atlantic Bight. 
 
-```{r SST-PPD-CHL-MAB, fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2018. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
-
-interp_chl_pp <- function(epu, year = 2018, Variable){
-  out <- ecodata::chl_pp %>% 
-    filter(str_detect(Var,Variable),
-           EPU == epu) %>% 
-    separate(.,Time, c("Year","Week"),sep = 4) %>% 
-    filter(Year == year) %>% 
-    group_by(EPU) %>% 
-    mutate(Time = 1:length(Year))
-  
-  ltm_out <- ecodata::chl_pp %>% 
-    filter(str_detect(Var,Variable),
-           EPU == epu) %>% 
-    separate(.,Time, c("Year","Week"),sep = 4) %>% 
-    group_by(Week) %>% 
-    dplyr::summarise(LTM = mean(Value, na.rm = T),
-                     SD = sd(Value, na.rm = T)) %>% 
-    mutate(Time = 1:length(Week),
-           sd.low = LTM - SD,
-           sd.high = LTM + SD) %>% 
-    left_join(.,out, by = c("Time")) %>% 
-    mutate(status = ifelse(Value < sd.high & Value > sd.low, "near_mean",
-                           ifelse(Value > sd.high, "high",
-                                  ifelse(Value < sd.low,"low",NA))),
-           group = "PLOT")
-  
-  return(ltm_out)
-}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-mab-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2018. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
 
 
-MAB_chl <- interp_chl_pp(epu = "MAB", Variable = "WEEKLY_CHLOR_A_MEDIAN MODIS-Aqua PAN")
-
-MAB_chl_weekly <- ggplot(data = MAB_chl) +
-  geom_line(aes(x = Time, y = LTM)) +
-  geom_ribbon(aes(x = Time, ymin = sd.low, ymax = sd.high), 
-              alpha = 0.1,
-              fill = "grey1") +
-  geom_line(aes(x = Time, y = Value),
-            size = 1,color = "#33a02c") +
-  ggtitle(expression("Chlorophyll"~italic(a)~"")) +
-  guides(color = F) +
-  xlab("")+
-  ylab(expression("CHL (mg m"^-3*")")) +
-  scale_x_continuous(breaks = seq(1,52,10),
-                   labels = c("Jan.","Mar.","May","July","Oct.","Dec."),
-                   expand = c(0.01,0.01)) +
-  scale_color_manual(values = c("#ef8a62","#2c7fb8","#a1d99b"))+
-  theme_ts()
-
-MAB_pp <- interp_chl_pp(epu = "MAB", Variable =  "WEEKLY_PPD_MEDIAN")
-
-MAB_pp_weekly <- ggplot(data = MAB_pp) +
-  geom_line(aes(x = Time, y = LTM)) +
-  geom_ribbon(aes(x = Time, ymin = sd.low, ymax = sd.high),
-              alpha = 0.1,
-              fill = "grey1") +
-  geom_line(aes(x = Time, y = Value),
-            size = 1,color = "#33a02c") +
-  ggtitle(expression("Primary production")) +
-  guides(color = F) +
-  xlab("")+
-  ylab(expression("PP (gC m"^-2*" d"^-1*")")) +
-  scale_x_continuous(breaks = seq(1,52,10),
-                   labels = c("Jan.","Mar.","May","July","Oct.","Dec."),
-                   expand = c(0.01,0.01)) +
-  scale_color_manual(values = c("#ef8a62","#2c7fb8","#a1d99b"))+
-  theme_ts()
-
-#MAB_chl_weekly + MAB_pp_weekly + plot_layout(ncol = 1)
-MAB_chl_weekly
 ```
 
 In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. 
 
-```{r PP-OCCI, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
-out_pp <- ecodata::chl_pp %>% 
-  filter(EPU == epu_abbr,
-         str_detect(Var, "MONTHLY_PPD_MEDIAN")) %>% 
-  separate(.,Time, into = c("Year","Month"), sep = 4) %>% 
-    mutate(Month = plyr::mapvalues(Month, from = c("01","02","03","04","05","06",
-                                                   "07","08","09","10","11","12"),
-                                   to = c(month.abb))) %>% 
-  group_by(Month) %>% 
-  mutate(hline = mean(Value))
-out_pp$Month <- factor(out_pp$Month, levels = month.abb)
-
-
-(pp_cci <- ggplot(out_pp) +  
-   # geom_gls(aes(x = Year, y = Value, group = Month))+
-    geom_point(aes(x = Year, y = Value, group = Month)) +
-    geom_line(aes(x = Year, y = Value, group = Month)) +
-    scale_x_discrete(name = "Time", breaks = seq(min(out_pp$Year),max(out_pp$Year),10)) +  
-        geom_hline(aes(yintercept = hline),
-           size = hline.size,
-           alpha = hline.alpha,
-           linetype = hline.lty) +
-    facet_wrap(Month~., ncol = 6) +
-    ggtitle("Monthly median PPD") +
-    ylab(expression("PP (gC m"^-2*" d"^-1*")")) +
-    theme_facet() +
-    theme(axis.text.x = element_text(angle=45, hjust = 1),
-          panel.spacing = unit(1, "lines"),
-          plot.margin = unit(c(0.1, 0, 0, 0), "cm")))
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-PP-OCCI.R"), eval = T, echo = T, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
 ```

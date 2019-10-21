@@ -37,7 +37,7 @@ Analysis for right whale abundance estimates is provided by @Pace2017, and code 
 ### Data processing
 
 Time series of right whale abundance estimates were formatted for inclusion in the ecodata R package using the following R code.
-```{r, code = readLines(here::here("source/get_narw.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_narw.R"), eval = F, echo = T}
 
 ```
 

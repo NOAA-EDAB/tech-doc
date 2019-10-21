@@ -158,7 +158,7 @@ clear ii yy
 ### Data processing
 
 Ichthyoplankton diversity data sets were formatted for inclusion in the ecodata R package using the following R code.
-```{r, code = readLines(here::here("source/get_ichthyoplankton.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_ichthyoplankton.R"), eval = F, echo = T}
 
 ```
 

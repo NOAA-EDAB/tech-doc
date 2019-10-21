@@ -253,7 +253,7 @@ nc_close(ersst)
 ### Data Processing
 
 Data were formatted for inclusion in the ecodata R package with the following R code.
-```{r, code = readLines(here::here("source/get_long_term_sst.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_long_term_sst.R"), eval = F, echo = T}
 
 ```
 

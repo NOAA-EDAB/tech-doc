@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Commercial Landings Data {#comdat}
 
 **Description**: Commercial landings data pull
@@ -39,13 +44,16 @@ During the first section, the Comlands script pulls the temporal and spatial inf
 
 
 ```{r gears, eval = T, echo = F}
-gear.table <- data.frame('Major gear' = c('Otter Trawls', 'Scallop Dredges', 
+library(magrittr)
+gear.table <- data.frame('gear code' = c(1,2,3,4,5,6,7,8,9),
+                         'Major gear' = c('Otter Trawls', 'Scallop Dredges',
                                         'Other Dredges', 'Gillnets', 'Longlines',
                                         'Seines', 'Pots/Traps', 'Midwater', 'Other'))
-names(gear.table) <- "Major gear"
-knitr::kable(gear.table,
-      caption="Gear types") %>% 
-  kable_styling(full_width = F, position = "float_right")
+names(gear.table) <- c("","Major gear")
+
+
+knitr::kable(gear.table, format="latex", booktabs=T) %>%
+  kableExtra::kable_styling(full_width = F, position = "float_right")
 ```
 
 Several species have additional steps after the data is pulled from CFDBS.  Skates are typically landed as a species complex.  In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another.  Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine.  Comlands pulls from the State database and replaces the less accurate numbers from the federal database.
@@ -57,8 +65,9 @@ area.table <- data.frame(EPU = c('Gulf of Maine', 'Georges Bank', 'Mid-Atlantic'
                          'Stat Areas' = c('500, 510, 512, 513, 514, 515',
                                         '521, 522, 523, 524, 525, 526, 551, 552, 561, 562',
                                         '537, 539, 600, 612, 613, 614, 615, 616, 621, 622, 625, 626, 631, 632'))
-names(area.table)[2] <- "Stat Areas"
-kable(area.table, caption = "Statistical areas making up each EPU")
+names(area.table) [2]<-  "Stat Areas"
+kable(area.table, caption = "Statistical areas making up each EPU") %>% 
+  kable_styling(latex_options = "HOLD_position")
 ```
 
 The final step of Comlands is to pull the foreign landings from the [NAFO database](https://www.nafo.int/Data/frames).  US landings are removed from this extraction so as not to be double counted.  NAFO codes and CFDBS codes differ so the script rectifies those codes to ensure that the data is seamlessly merged into the domestic landings.  Foreign landings are flagged so that they can be removed if so desired.
@@ -2151,7 +2160,7 @@ save(comland, file = file.path(out.dir, file.name))
 #### Data Processing
 
 The landings data were formatted for inclusion in the ecodata R package with the following R code.
-```{r, code = readLines(here::here("source/get_comdat.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_comdat.R")  , eval = F, echo = T}
 
 ```
 

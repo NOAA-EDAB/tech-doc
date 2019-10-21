@@ -181,7 +181,7 @@ The indicators were developed using the methodology described in @Jacob2010, @Ja
 ### Data processing
 
 Data were formatted for inclusion in the ecodata R package using the following R script.
-```{r, code = readLines(here::here("source/get_engagement_reliance.R")), eval = F, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_engagement_reliance.R", eval = F, echo = T}
 
 ```
 
