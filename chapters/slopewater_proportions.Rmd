@@ -65,7 +65,7 @@ m3=(T.*(S1-S2)+S.*(T2-T1)+T1*S2-T2*S1)./delta;
 
 ### Data processing
 
-Source data were formatted for inclusion in the ecodata R package using the following R code.
+Source data were formatted for inclusion in the `ecodata` R package using the following R code.
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_slopewater.R"), eval = F, echo = T}
 

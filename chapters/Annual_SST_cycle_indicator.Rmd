@@ -17,7 +17,7 @@
 ## Methods
 
 ### Data sources
-Data for annual sea surface tempature cycles were derived from the NOAA optimum interpolation sea surface temperature high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
+Data for annual sea surface tempature (SST) cycles were derived from the NOAA optimum interpolation sea surface temperature (OISST) high resolution dataset ([NOAA OISST V2 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA's Earth System Research Laboratory's Physical Sciences Devision, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. Gridded SST data were masked according to the extent of Ecological Production Units (EPU) in the Northeast Large Marine Ecosystem (NE-LME) (See ["EPU_Extended" shapefiles](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis)).
 
 
 ### Data extraction 

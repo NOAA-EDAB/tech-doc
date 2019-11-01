@@ -16,7 +16,7 @@
 
 
 ## Methods
-Aquaculture data included in the SOE report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
+Aquaculture data included in the State of the Ecosystem (SOE) report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
 
 
 ### Data sources

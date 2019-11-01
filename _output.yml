@@ -1,7 +1,5 @@
 bookdown::gitbook:
-  lib_dir: assets
-  #pandoc_args: [ "--csl",
-#"your-csl-file.csl" ] ### ADD in appropriate csl from Jarita's email
+  lib_dir: asset
   css: css/style.css
   split_by: chapter
   config:

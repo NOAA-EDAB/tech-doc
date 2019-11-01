@@ -43,7 +43,7 @@ for all $k$, where $p_{kt}$ represents the proportion of total revenue generated
 
 ### Data processing
 
-Catch and fleet diversity indicators were formatted for inclusion in the ecodata R package using the following R script.
+Catch and fleet diversity indicators were formatted for inclusion in the `ecodata` R package using the following R script.
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_commercial_div.R"), eval = F, echo = T}
 

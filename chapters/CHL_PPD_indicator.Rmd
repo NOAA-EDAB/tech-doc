@@ -82,7 +82,7 @@ The ecological production unit (EPU) shapefile that excludes the estuaries was u
 
 ### Data processing
 
-CHL and PPD time series were formatted for inclusion in the ecodata R package using the following R code.
+CHL and PPD time series were formatted for inclusion in the `ecodata` R package using the following R code.
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_chl_pp.R"), eval = F, echo = T}
 

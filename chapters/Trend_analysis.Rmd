@@ -17,13 +17,13 @@ library(rmarkdown)
 
 **Data steward**: NA
 
-**Point of contact**: Sean Hardison, sean.hardison@noaa.gov
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
 
 **Public availability statement**: NA
 
 
 ## Methods
-Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations [see @Nicholson2004; @Wagner2013; @VonStorch1999a].  Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p < 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in SOE indicators.
+Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations [see @Nicholson2004; @Wagner2013; @VonStorch1999a].  Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p < 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in State of the Ecosystem (SOE) indicators.
 
 In a simulation study [@hardison2019], we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods: a generalized least squares model selection approach, the Mann-Kendall test, and Mann-Kendall test with trend-free pre-whitening. Methods were applied to simulated time series of varying trend and autocorrelation strengths. Overall, when sample size was low (N = 10) there were high rates of false trend detection, and similarly, low rates of true trend detection. Both of these forms of error were further amplified by autocorrelation in the trend residuals. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend.
 
@@ -36,7 +36,7 @@ $$w_t \sim N(0, \sigma^2)$$
 
 Where $Y_t$ is the observation in time $t$, $X_t$ is the time index, $\epsilon_t$ is the residual in time $t$, and $\omega_t$ is a normally distributed random variable. Setting $\alpha_2 = 0$ yields the linear trend model, and $\rho = 0$ yields the uncorrelated residuals model.
 
-The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p < 0.05). All models were fit using the R package *nlme* [@Pinheiro2017] and AICc was calculated using the R package *AICcmodavg* [@Mazerolle2017a]. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
+The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p < 0.05). All models were fit using the R package `nlme` [@Pinheiro2017] and AICc was calculated using the R package `AICcmodavg` [@Mazerolle2017a]. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
 
 ### Data source(s)
 NA

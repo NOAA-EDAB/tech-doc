@@ -25,10 +25,10 @@ library(rmarkdown)
 ## Methods
 
 ### Data sources
-Zooplankton data are from the NOAA MARMAP and EcoMon cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
+Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
 
 ### Data extraction 
-Data are from the publicly available zooplankton dataset on the NOAA FTP server. The excel file has a list of excluded samples and cruises based on @Kane2007 and @Kane2011.
+Data are from the publicly available zooplankton dataset on the NOAA File Transfer Protocol (FTP) server. The excel file has a list of excluded samples and cruises based on @Kane2007 and @Kane2011.
 
 R code used in extraction process.
 ```{r, echo = T, eval = F}
@@ -41,9 +41,9 @@ ZPD=openxlsx::read.xlsx(URL, sheet='Data')
 
 **Annual abundance anomalies**
 
-Data are processed similarly to @Kane2007 and @Perretti2017a, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
+Data are processed similarly to @Kane2007 and @Perretti2017, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
 
-Abundance anomalies (Figure \@ref(fig:zooplankton-abundance)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the NEUS region, *Calanus finmarchicus*.
+Abundance anomalies (Figure \@ref(fig:zooplankton-abundance)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, *Calanus finmarchicus*.
 
 ```{r, echo = T, eval = F}
 
@@ -257,7 +257,7 @@ Time series of zooplankton abundance in the spring and fall months have been pre
 
 ### Data processing
 
-Zooplankton abundances indicators were formatted for inclusion in the ecodata R package using the following code.
+Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the following code.
 
 **Abundance anomaly**
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_zoo_anom_sli.R"), eval = F, echo = T}

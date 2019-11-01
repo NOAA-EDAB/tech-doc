@@ -32,7 +32,7 @@ soe.17.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore',
                                            'Things not classified above'))
 
 kable(soe.17.class, booktabs = TRUE,
-      caption = "Aggregate groups use in 2017 SOE.  Classifications are based on Garrison and Link 2000. \\label{}")
+      caption = "Aggregate groups use in 2017 SOE.  Classifications are based on @garrison2000dietary . \\label{}")
 ```
 
 ```{r soe2018class, eval = T, echo = F}
@@ -45,14 +45,14 @@ soe.18.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore',
                                            'Things not classified above'))
 
 kable(soe.18.class, booktabs = TRUE,
-      caption = "Aggregate groups use in 2018 SOE.  Classifications are based on Link et al. 2006.")
+      caption = "Aggregate groups use in 2018 SOE.  Classifications are based on @link2006EMAX.")
 ```
 
 ### Data sources
 
-In order to match aggregate groups with various data sources, a look-up table was generated which includes species' common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.
+In order to match aggregate groups with various data sources, a look-up table was generated which includes species' common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch (ESB) in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.
 
-Management responsibilities for different species are listed under the column "Fed.managed" (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the "NEIEA" column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings [@link2006EMAX], but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the NE-LME (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.
+Management responsibilities for different species are listed under the column "Fed.managed" (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the "NEIEA" column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings [@link2006EMAX], but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the Northeast Large Marine Ecosystem (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.
 
 #### Supplemental information
 

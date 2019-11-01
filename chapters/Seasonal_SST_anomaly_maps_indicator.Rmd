@@ -8,16 +8,16 @@
 
 **Contributor(s)**: Sean Hardison, Vincent Saba
   
-**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
   
-**Point of contact**: Sean Hardison, <sean.hardison@noaa.gov>
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
   
 **Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 
 
 ## Methods
 ### Data sources
-Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST-insitu)) were derived from the NOAA optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
+Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST)) were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA Earth System Research Laboratory's Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
 
 ### Data extraction 
 Individual files containing daily mean SST data for each year during the period of 1981-present were downloaded from the [OI SST V5 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html). Yearly data provided as layered rasters were masked according to the extent of Northeast US Continental Shelf. Data were split into three month seasons for (Winter = Jan, Feb, Mar; Spring = Apr, May, Jun; Summer = July, August, September; Fall = Oct, Nov, Dec).  

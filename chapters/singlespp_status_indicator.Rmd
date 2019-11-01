@@ -44,7 +44,7 @@ Each assessment document was searched to find the following information (often b
 
 ### Data processing
 
-The following R code was used to process the stock status data set for inclusion in the ecodata R package.
+The following R code was used to process the stock status data set for inclusion in the `ecodata` R package.
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_stocks.R"), eval = F, echo = T}
 
 ```
@@ -73,7 +73,7 @@ library(ncdf4);library(marmap); library(magick)
 
 ### Plotting
 
-The script used to develop the figure in the SOE is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
+The script used to develop the figure in the State of the Ecosystem report is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-NE-stock-status.R"), warning=F, fig.cap = "Summary of single species status for NEFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=T}
 

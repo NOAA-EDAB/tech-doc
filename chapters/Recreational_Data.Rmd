@@ -16,16 +16,16 @@
 
 
 ## Methods
-We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in managed species (MAFMC, NEFMC, and ASMFC) and fleet effort diversity using the effective Shannon index. 
+We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in species manages by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC) and fleet effort diversity using the effective Shannon index. 
 
 ### Data sources
-All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were downloaded from the [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
+All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
 
-Data sets were queried by region on the MRIP site, and for the purposes of the SOE, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+Data sets were queried by region on the MRIP site, and for the purposes of the State of the Ecosystem reports, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
 
-The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis included American eel, Atlantic cod, Atlantic mackerel, Atlantic sturgeon, black drum, black sea bass, bluefish, cobia, haddock, pollock, red drum, scup, Spanish mackerel, spiny dogfish, spot, spotted seatrout, striped bass, summer flounder, tautog, tilefish, weakfish, winter flounder, and "All Other Species".
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis included American eel *Anguilla rostrata*, Atlantic cod *Gadus morhua*, Atlantic mackerel *Scomber scombrus*, Atlantic sturgeon *Acipenser oxyrinchus*, black drum *Pogonias cromis*, black sea bass *Centropristis striata *, bluefish *Pomatomus saltatrix *, cobia *Rachycentron canadum*, haddock *Melanogrammus aeglefinus* , pollock *Pollachius virens*, red drum *Sciaenops ocellatus*, scup *Stenotomus chrysops*, Spanish mackerel *Scomberomorus maculatus*, spiny dogfish *Squalus acanthias*, spot *Leiostomus xanthurus *, spotted seatrout *Cynoscion nebulosus*, striped bass *Morone saxatilis*, summer flounder *Paralichthys dentatus*, tautog *Tautoga onitis *, tilefish *Lopholatilus chamaeleonticeps*, weakfish *Cynoscion regalis*, winter flounder *Pseudopleuronectes americanus*, and "All Other Species".
 
-Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the MRFSS Participation Time Series Query, and includes data from 1981 - 2016. 
+Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the Marine Recreational Fishery Statistics Survey (MRFSS) Participation Time Series Query, and includes data from 1981 - 2016. 
 
 ### Data analysis
 
@@ -90,7 +90,7 @@ REC_CATCH$Source <- 'MRIP catch time series.'
 
 ### Data processing
 
-Recreational fishing indicators were formatted for inclusion in the ecodata R package using the following code.
+Recreational fishing indicators were formatted for inclusion in the `ecodata` R package using the following code.
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_rec.R"), eval = F, echo = T}
 
 ```

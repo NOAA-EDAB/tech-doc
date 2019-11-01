@@ -23,7 +23,7 @@ library(rmarkdown)
 
 
 ## Methods
-Data from the NOAA NEFSC Oceans and Climate branch public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
+Data from the NOAA Northeast Fisheries Science Center (NEFSC) Oceans and Climate branch (OCB) public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
 
 ### Data sources
 Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year.  A random-stratified design based on the NEFSC bottom trawl survey design [@Azarovitz1981] is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design. 
@@ -157,7 +157,7 @@ clear ii yy
 
 ### Data processing
 
-Ichthyoplankton diversity data sets were formatted for inclusion in the ecodata R package using the following R code.
+Ichthyoplankton diversity data sets were formatted for inclusion in the `ecodata` R package using the following R code.
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_ichthyoplankton.R"), eval = F, echo = T}
 
 ```

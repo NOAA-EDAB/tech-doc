@@ -25,7 +25,7 @@ library(rmarkdown)
 ## Methods
 
 ### Data sources
-The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 NOAA marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
+The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 National Oceanographic and Atmospheric Administration marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
 
 
 ### Data extraction 
@@ -36,7 +36,7 @@ Analysis for right whale abundance estimates is provided by @Pace2017, and code 
 
 ### Data processing
 
-Time series of right whale abundance estimates were formatted for inclusion in the ecodata R package using the following R code.
+Time series of right whale abundance estimates were formatted for inclusion in the `ecodata` R package using the following R code.
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_narw.R"), eval = F, echo = T}
 
 ```
