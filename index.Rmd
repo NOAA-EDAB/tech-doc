@@ -50,7 +50,6 @@ library(rmarkdown)
 library(magick)
 library(readr)
 library(RColorBrewer)
-library(ggiraph)
 library(ks)
 #GIS libraries
 library(sf)
