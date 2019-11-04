@@ -12,5 +12,6 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
     edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+    download: ["pdf"]
 bookdown::pdf_book:
   keep_tex: yes
