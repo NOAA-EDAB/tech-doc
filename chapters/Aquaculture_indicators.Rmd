@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Sean Hardison, Lisa Calvo, Karl Roscher
   
-**Data steward**: Sean Hardison <sean.hardison@noaa.gov>
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Point of contact**: Sean Hardison <sean.hardison@noaa.gov> 
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov> 
   
 **Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_soe_v1.html). 
 

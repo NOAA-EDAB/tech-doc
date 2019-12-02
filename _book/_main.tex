@@ -122,7 +122,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{21 October 2019}
+    \date{28 October 2019}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -197,13 +197,14 @@ et al. (\protect\hyperlink{ref-Hare2016}{2016}).
 
 \subsection{About}\label{about}
 
-The Technical Documentation for the State of the Ecosystem reports is a
-\href{https://bookdown.org}{bookdown} document; hosted on the NOAA
-Northeast Fisheries Science Center Ecosystems Dynamics and Assessment
-Branch \href{https://github.com/NOAA-EDAB}{Github page}, and developed
-in R. Derived data used to populate figures in this document are queried
-directly from the \href{https://github.com/NOAA-EDAB/ecodata}{ecodata} R
-package or the NEFSC
+The Technical Documentation for the State of the Ecosystem (SOE) reports
+is a \href{https://bookdown.org}{bookdown} document; hosted on the NOAA
+Northeast Fisheries Science Center (NEFSC) Ecosystems Dynamics and
+Assessment Branch \href{https://github.com/NOAA-EDAB}{Github page}, and
+developed in R. Derived data used to populate figures in this document
+are queried directly from the
+\href{https://github.com/NOAA-EDAB/ecodata}{ecodata} R package or the
+NEFSC
 \href{https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1\&itemsPerPage=1000}{ERDDAP
 server}. ERDDAP queries are made using the R package
 \href{https://cran.r-project.org/web/packages/rerddap/vignettes/Using_rerddap.html}{rerddap}.
@@ -365,7 +366,7 @@ within the broader ecosystem context.
 
 \begin{table}
 
-\caption{\label{tab:soe2017class}Aggregate groups use in 2017 SOE.  Classifications are based on Garrison and Link 2000. \label{}}
+\caption{\label{tab:soe2017class}Aggregate groups use in 2017 SOE.  Classifications are based on @garrison2000dietary . \label{}}
 \centering
 \begin{tabular}[t]{ll}
 \toprule
@@ -386,7 +387,7 @@ Other & Things not classified above\\
 
 \begin{table}
 
-\caption{\label{tab:soe2018class}Aggregate groups use in 2018 SOE.  Classifications are based on Link et al. 2006.}
+\caption{\label{tab:soe2018class}Aggregate groups use in 2018 SOE.  Classifications are based on @link2006EMAX.}
 \centering
 \begin{tabular}[t]{ll}
 \toprule
@@ -408,7 +409,7 @@ Other & Things not classified above\\
 In order to match aggregate groups with various data sources, a look-up
 table was generated which includes species' common names (COMNAME) along
 with their scientific names (SCINAME) and several species codes. SVSPP
-codes are used by the NEFSC Ecosystems Surveys Branch in their
+codes are used by the NEFSC Ecosystems Surveys Branch (ESB) in their
 fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to
 the codes used by the Commercial Fisheries Database System (CFDBS) for
 fishery-dependent data. A third species code provided is the ITISSPP,
@@ -426,10 +427,10 @@ were developed for presentation on the Northeast Integrated Ecosystem
 Assessment (NE-IEA) website. These groupings are based on EMAX groupings
 (Link et al. \protect\hyperlink{ref-link2006EMAX}{2006}), but were
 adjusted based on conceptual models developed for the NE-IEA program
-that highlight focal components in the NE-LME (i.e.~those components
-with the largest potential for perturbing ecosystem dynamics). NE-IEA
-groupings were further simplified to allow for effective communication
-through the NE-IEA website.
+that highlight focal components in the Northeast Large Marine Ecosystem
+(i.e.~those components with the largest potential for perturbing
+ecosystem dynamics). NE-IEA groupings were further simplified to allow
+for effective communication through the NE-IEA website.
 
 \subsubsection{Supplemental information}\label{supplemental-information}
 
@@ -734,15 +735,16 @@ Bank (2018), State of the Ecosystem - Mid-Atlantic (2018)
 
 \subsection{Data sources}\label{data-sources-1}
 
-Data for annual sea surface tempature cycles were derived from the NOAA
-optimum interpolation sea surface temperature high resolution dataset
+Data for annual sea surface tempature (SST) cycles were derived from the
+NOAA optimum interpolation sea surface temperature (OISST) high
+resolution dataset
 (\href{https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html}{NOAA
-OISST V2 dataset}) provided by NOAA/OAR/ESRL PSD, Boulder, CO. The data
-extend from 1981 to present, and provide a 0.25° x 0.25° global grid of
-SST measurements (Reynolds et al.
-\protect\hyperlink{ref-Reynolds2007}{2007}). Gridded SST data were
-masked according to the extent of Ecological Production Units in the
-Northeast Large Marine Ecosystem (NE-LME) (See
+OISST V2 dataset}) provided by NOAA's Earth System Research Laboratory's
+Physical Sciences Devision, Boulder, CO. The data extend from 1981 to
+present, and provide a 0.25° x 0.25° global grid of SST measurements
+(Reynolds et al. \protect\hyperlink{ref-Reynolds2007}{2007}). Gridded
+SST data were masked according to the extent of Ecological Production
+Units (EPU) in the Northeast Large Marine Ecosystem (NE-LME) (See
 \href{https://github.com/NOAA-EDAB/tech-doc/tree/master/gis}{``EPU\_Extended''
 shapefiles}).
 
@@ -1239,8 +1241,9 @@ available in referenced reports, and are also available for download
 
 \section{Methods}\label{methods-2}
 
-Aquaculture data included in the SOE report were time series of number
-of oysters sold in Virginia, Maryland, and New Jersey.
+Aquaculture data included in the State of the Ecosystem (SOE) report
+were time series of number of oysters sold in Virginia, Maryland, and
+New Jersey.
 
 \subsection{Data sources}\label{data-sources-2}
 
@@ -1397,9 +1400,10 @@ set; a processed subset of the Commercial Fisheries Database System
 For information regarding processing of CFDBS, please see
 \protect\hyperlink{comdat}{Comland} methods. The Comland dataset
 containing seafood landings data was subsetted to US landings after 1964
-where revenue was \(\geq\) 0 for each EPU (i.e.~Mid-Atlantic Bight,
-Georges Bank, and Gulf of Maine). Each EPU was run in an individual R
-script, and the code specific to Georges Bank is shown below.
+where revenue was \(\geq\) 0 for each Ecological Production Unit
+(i.e.~Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was
+run in an individual R script, and the code specific to Georges Bank is
+shown below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1453,21 +1457,21 @@ script, and the code specific to Georges Bank is shown below.
 
 \subsection{Data analysis}\label{data-analysis-2}
 
-Revenue earned by harvesting resources from an LME at time \emph{t} is a
-function of both the quantity landed of each species and the prices paid
-for landings. Changes in revenue between any two years depends on both
-prices and quantities in each year, and both may be changing
-simultaneously. For example, an increase in the harvest of higher priced
-species, such as scallops can lead to an overall increase in total
-revenue from an LME between time periods even if quantities landed of
-other species decline. Although measurement of revenue change is useful,
-the ability to see what drives revenue change, whether it is changing
-harvest levels, the mix of species landed, or price changes provides
-additional valuable information. Therefore, it is useful to decompose
-revenue change into two parts, one which is due to changing quantities
-(or volumes), and a second which is due to changing prices. In an LME,
-the quantity component will yield useful information about how the
-species mix of harvests are changing through time.
+Revenue earned by harvesting resources from a Large Marine Ecosystem
+(LME) at time \emph{t} is a function of both the quantity landed of each
+species and the prices paid for landings. Changes in revenue between any
+two years depends on both prices and quantities in each year, and both
+may be changing simultaneously. For example, an increase in the harvest
+of higher priced species, such as scallops can lead to an overall
+increase in total revenue from an LME between time periods even if
+quantities landed of other species decline. Although measurement of
+revenue change is useful, the ability to see what drives revenue change,
+whether it is changing harvest levels, the mix of species landed, or
+price changes provides additional valuable information. Therefore, it is
+useful to decompose revenue change into two parts, one which is due to
+changing quantities (or volumes), and a second which is due to changing
+prices. In an LME, the quantity component will yield useful information
+about how the species mix of harvests are changing through time.
 
 A Bennet indicator (BI) is used to examine revenue change between 1964
 and 2015 for two major LME regions. It is composed of a volume indicator
@@ -1502,8 +1506,8 @@ time periods, say \(t+1\) and \(t\), is then \(R^{t+1}-R^{t}\), which
 can also be expressed as:
 \[\Delta R = \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1}-\sum_{j=1}^{J}p_{j}^{t}y_{j}^{t}.\]
 This change can be decomposed further, yielding a VI and PI. The VI is
-calculated using the following formula (Moosberg et al.
-\protect\hyperlink{ref-Moosberg2007}{2007}):
+calculated using the following formula (Georgianna, Lee, and Walden
+\protect\hyperlink{ref-Georgianna2017}{2017}):
 
 \[VI = \frac{1}{2}(\sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t} + \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t})\]
 The price indicator (PI) is calculated as follows:
@@ -1740,15 +1744,16 @@ institute code number 258.
 \subsection{Data sources}\label{data-sources-4}
 
 The bottom temperature index incorporates near-bottom temperature
-measurements collected on Northeast Fisheries Science Center surveys
-between 1977-present. Early measurements were made using surface bucket
-samples, mechanical bathythermographs and expendable bathythermograph
-probes, but by 1991 the CTD -- an acronym for conductivity temperature
-and depth -- became standard equipment on all NEFSC surveys. Near-bottom
-refers to the deepest observation at each station that falls within 10 m
-of the reported water depth. Observations encompass the entire
-continental shelf area extending from Cape Hatteras, NC to Nova Scotia,
-Canada, inclusive of the Gulf of Maine and Georges Bank.
+measurements collected on Northeast Fisheries Science Center (NEFSC)
+surveys between 1977-present. Early measurements were made using surface
+bucket samples, mechanical bathythermographs and expendable
+bathythermograph probes, but by 1991 the CTD -- an acronym for
+conductivity temperature and depth -- became standard equipment on all
+NEFSC surveys. Near-bottom refers to the deepest observation at each
+station that falls within 10 m of the reported water depth. Observations
+encompass the entire continental shelf area extending from Cape
+Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and
+Georges Bank.
 
 \subsection{Data extraction}\label{data-extraction-4}
 
@@ -1765,19 +1770,19 @@ hydrographic surveys conform to a random stratified sampling design
 meaning that stations are not repeated at fixed locations year after
 year so that temperature variability cannot be assessed at fixed station
 locations. Instead, we consider the variation of the average bottom
-temperature within four ecoregions: Middle Atlantic Bight, Georges Bank,
-Gulf of Maine and Scotian Shelf. Within each sub-region, ocean
-temperature observations are extracted from the collection of
-measurements made within 10 m of the bottom on each survey and an
-area-weighted average temperature is calculated for each. The result of
-this calculation is a timeseries of regional average near-bottom
-temperature having a temporal resolution that matches the survey
-frequency in the database. Anomalies are subsequently calculated
-relative to a reference annual cycle, estimated using a multiple linear
-regression model to fit an annual harmonic (365-day period) to
-historical regional average temperatures from 1981-2010. The curve
-fitting technique to formulate the reference annual cycle follows the
-methodologies outlined by Mountain
+temperature within four \protect\hyperlink{epu}{Ecological Production
+Units} (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and
+Scotian Shelf. Within each EPU, ocean temperature observations are
+extracted from the collection of measurements made within 10 m of the
+bottom on each survey and an area-weighted average temperature is
+calculated. The result of this calculation is a timeseries of regional
+average near-bottom temperature having a temporal resolution that
+matches the survey frequency in the database. Anomalies are subsequently
+calculated relative to a reference annual cycle, estimated using a
+multiple linear regression model to fit an annual harmonic (365-day
+period) to historical regional average temperatures from 1981-2010. The
+curve fitting technique to formulate the reference annual cycle follows
+the methodologies outlined by Mountain
 (\protect\hyperlink{ref-mountain1991}{1991}). The reference period was
 chosen because it is the standard climatological period adopted by the
 World Meteorological Organization. The resulting anomaly time series
@@ -1791,7 +1796,7 @@ convert temperature anomalies back to ocean bottom temperature.
 \subsection{Data processing}\label{data-processing-2}
 
 Derived bottom temperature data were formatted for inclusion in the
-ecodata R package using the following R code.
+\texttt{ecodata} R package using the following R code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2023,7 +2028,7 @@ published in Gaichas et al.
 \subsection{Data processing}\label{data-processing-3}
 
 Catch and fleet diversity indicators were formatted for inclusion in the
-ecodata R package using the following R script.
+\texttt{ecodata} R package using the following R script.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2132,9 +2137,10 @@ oxygen, chlorophyll-a, and water clarity/submerged aquatic vegetation
 consistent assessment over time and between jurisdictions, a multimetric
 indicator was proposed by the CBP partnership to provide a means for
 tracking the progress in all 92 management segments of Chesapeake Bay
-(USEPA 20`7`). This indicator has been computed for each three-year
-assessment period since 1985-1987, providing an integrated measure of
-Chesapeake Bay's water quality condition over the last three decades.
+(USEPA \protect\hyperlink{ref-usepa2017}{2017}). This indicator has been
+computed for each three-year assessment period since 1985-1987,
+providing an integrated measure of Chesapeake Bay's water quality
+condition over the last three decades.
 
 \subsection{Data sources}\label{data-sources-6}
 
@@ -2190,7 +2196,8 @@ the multimetric index score. This weighting scheme was adopted for two
 reasons: (1) segments vary in size over four orders of magnitude, and
 (2) surface area of each segment does not change with time or DUs,
 unlike seasonally variable habitat volume or bottom water area (USEPA
-20`7`). For more details, refer to the Methods section of Zhang et al.
+\protect\hyperlink{ref-usepa2017}{2017}). For more details, refer to the
+Methods section of Zhang et al.
 (\protect\hyperlink{ref-zhang2018}{2018}).
 
 The indicator provides an integrated measure of Chesapeake Bay's water
@@ -2202,19 +2209,7 @@ statistically significant trend from 1985 to 2017, which shows that
 Chesapeake Bay is on a positive trajectory toward recovery. This pattern
 was statistically linked to total nitrogen reduction, indicating
 responsiveness of attainment status to management actions implemented to
-reduce nutrients.
-
-Patterns of attainment of individual DUs are variable (Figure 2).
-Improvements in OW-DO, DC-DO, and water clarity/SAV have shown long-term
-improvements, which have contributed to the improvement in the overall
-attainment indicator. By contrast, the MSN-DO attainment experienced a
-sharp spike in the first few assessment periods but generally degraded
-after the 1997-1999, which has implications to the survival, growth, and
-reproduction of the migratory and resident tidal freshwater fish during
-spawning and nursery season in the tidal freshwater to low-salinity
-habitats. The status and trends of tidal segments' attainment may be
-used to inform siting decisions of aquaculture operations in Chesapeake
-Bay.
+reduce nutrients in the system.
 
 \begin{figure}
 \centering
@@ -2225,6 +2220,18 @@ attainment for each 3-year assessment period between 1985-1987 and
 2015-2017. A significant positive trend for the time series is shown by
 the orange line (p \textless{} 0.05).}
 \end{figure}
+
+Patterns of attainment of individual DUs are variable (Figure 2).
+Changes in OW-DO, DC-DO, and water clarity/SAV have shown long-term
+improvements, which have contributed to overall attainment indicator
+improvement. By contrast, the MSN-DO attainment experienced a sharp
+spike in the first few assessment periods but generally degraded after
+the 1997-1999, which has implications to the survival, growth, and
+reproduction of the migratory and resident tidal freshwater fish during
+spawning and nursery season in the tidal freshwater to low-salinity
+habitats. The status and trends of tidal segments' attainment may be
+used to inform siting decisions of aquaculture operations in Chesapeake
+Bay.
 
 \begin{figure}
 \includegraphics[width=12.49in]{C:/Users/kimberly.bastille/Desktop/tech-doc/images/cb_water_quality_attainment} \caption{Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017.}\label{fig:unnamed-chunk-13}
@@ -2523,8 +2530,8 @@ MUR SST in subsequent years.
 
 \subsection{Data processing}\label{data-processing-5}
 
-CHL and PPD time series were formatted for inclusion in the ecodata R
-package using the following R code.
+CHL and PPD time series were formatted for inclusion in the
+\texttt{ecodata} R package using the following R code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2973,8 +2980,9 @@ vulnerability ranking.
 \setcounter{enumi}{1}
 \tightlist
 \item
-  \emph{Pie charts} - The pie charts were created using the NMFS
-  landings data pulled from NEFSC databases in Woods Hole, MA. The
+  \emph{Pie charts} - The pie charts were created using the National
+  Marine Fisheries Service (NMFS) landings data pulled from New England
+  Fisheries Science Center (NEFSC) databases in Woods Hole, MA. The
   percent contribution of each species was calculated by dividing the
   total value of landings in each port by each species' landed value.
   Data was calculated and graphed in a pie chart in Excel and given the
@@ -3312,8 +3320,8 @@ England or Mid-Atlantic as defined by states).
 Commercial fishing data was developed as part of the State of the
 Ecosystem Report, including revenue and food production estimates, with
 data extraction metodology discussed in the relevant sections of the
-technical memo. In addition, the Northeast Regional Input/Output Model
-(Steinback and Thunberg
+technical document. In addition, the Northeast Regional Input/Output
+Model (Steinback and Thunberg
 \protect\hyperlink{ref-steinback_scott_northeast_2006}{2006}) was used
 as the basis for the strength of the employment linkages.
 
@@ -3546,7 +3554,7 @@ communication}
 communication}
 \end{figure}
 
-ca\# Fish Condition Indicator
+\chapter{Fish Condition Indicator}\label{fish-condition-indicator}
 
 \textbf{Description}: Relative condition
 
@@ -3576,7 +3584,7 @@ Relative condition (Kn) was introduced by Cren
 influence of length on condition, and Blackwell, Brown, and Willis
 (\protect\hyperlink{ref-Blackwell2000}{2000}) noted that Kn may be
 useful in detecting prolonged physical stress on a fish populations.
-Relative condition is calculated as \(Kn = W/W',\) where W is the weight
+Relative condition is calculated as \[Kn = W/W',\] where W is the weight
 of an individual fish and W' is the predicted length-specific mean
 weight for the fish population in a given region. ``Here, relative
 condition was calculated for finfish stocks commonly caught on the
@@ -4125,15 +4133,16 @@ available
 \section{Methods}\label{methods-12}
 
 Summarized from Joyce et al. (\protect\hyperlink{ref-joyce2019}{2019}),
-ocean temperature data from NOAA NODC were sorted by latitude,
-longitude, and time using a resolution of 1\textdegree of longitude,
-latitude, and 3 months of time, respectively, with a Gaussian squared
-weighting from the selected desired point in a window twice the size of
-the desired resolution. Editing was used to reject duplicate samples and
-3\(\sigma\) outliers from each selected sample point prior to performing
-the weighting and averaging; the latter was only carried out when there
-were at least three data points in the selected interval for each sample
-point. Typically, 50 or more data values were available. The resulting
+ocean temperature data from NOAA's National Centers for Environmental
+Information (NCEI) were sorted by latitude, longitude, and time using a
+resolution of 1\textdegree of longitude, latitude, and 3 months of time,
+respectively, with a Gaussian squared weighting from the selected
+desired point in a window twice the size of the desired resolution.
+Editing was used to reject duplicate samples and 3\(\sigma\) outliers
+from each selected sample point prior to performing the weighting and
+averaging; the latter was only carried out when there were at least
+three data points in the selected interval for each sample point.
+Typically, 50 or more data values were available. The resulting
 temperature field was therefore smoothed. Data along the Gulf Stream
 north wall at nine data points were used to assemble a spatial/temporal
 sampling of the temperature at 200m data along the north wall from
@@ -9075,59 +9084,20 @@ Schubel
 \href{mailto:dlyons@audubon.org}{\nolinkurl{dlyons@audubon.org}} for
 further information and queries on this indicator source data.
 
-The purpose of this document is to collate the methods used to access,
-collect, process, and analyze derived data (``indicators'') used to
-describe the status and trend of social, economical, ecological, and
-biological conditions in the Northeast Shelf Large Marine Ecosystem (see
-figure, below). These indicators are further synthesized in State of the
-Ecosystem Reports produced annually by the
-\href{https://www.nefsc.noaa.gov/}{Northeast Fisheries Science Center}
-for the \href{https://www.nefmc.org/}{New England Fisheries Management
-Council} and the \href{http://www.mafmc.org/}{Mid-Atlantic Fisheries
-Management Council}. The metadata for each indicator (in accordance with
-the
-\href{http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf}{Public
-Access to Research Results (PARR) directive}) and the methods used to
-construct each indicator are described in the subsequent chapters, with
-each chapter title corresponding to an indicator or analysis present in
-State of the Ecosystem Reports.
-
-Indicators included in this document were selected to clearly align with
-management objectives, which is required for integrated ecosystem
-assessment (Levin et al.
-\protect\hyperlink{ref-levin_integrated_2009}{2009}), and has been
-advised many times in the literature (Degnbol and Jarre
-\protect\hyperlink{ref-degnbol_review_2004}{2004}; Jennings
-\protect\hyperlink{ref-jennings_indicators_2005}{2005}; Rice and Rochet
-\protect\hyperlink{ref-rice_framework_2005}{2005}; Link
-\protect\hyperlink{ref-link_translating_2005}{2005}). A difficulty with
-pratical implementation of this in ecosystem reporting can be the lack
-of clearly specified ecosystem-level management objectives (although
-some have been suggested (Murawski
-\protect\hyperlink{ref-murawski_definitions_2000}{2000})). In our case,
-considerable effort had already been applied to derive both general
-goals and operational objectives from both US legislation such as the
-Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and
-regional sources (DePiper et al.
-\protect\hyperlink{ref-depiper_operationalizing_2017}{2017}). These
-objectives are somewhat general and would need refinement together with
-managers and stakeholders, however, they serve as a useful starting
-point to structure ecosystem reporting.
-
 \section{Methods}\label{methods-24}
 
 \textbf{Chick diet}
 
-Common tern chick diet was quantified at each of the seven nesting sites
-(Fig. \ref{fig:map-and-prey}a) by observing chick provisioning from
-portable observation blinds. The locations of observation blinds within
-each site were chosen to maximize the number of visible nests, and
-provisioning observations took place between mid-June and early August
-annually. Observations of chick diet were made during one or two three
-to four hour periods throughout the day, but typically proceed according
-to nest activity levels (moreso in the morning hours). Observations
-began with chicks as soon as they hatched, and continue until the chicks
-fledged or died.
+Common tern (\emph{Sterna hirundo}) chick diet was quantified at each of
+the seven nesting sites (Fig. \ref{fig:map-and-prey}a) by observing
+chick provisioning from portable observation blinds. The locations of
+observation blinds within each site were chosen to maximize the number
+of visible nests, and provisioning observations took place between
+mid-June and early August annually. Observations of chick diet were made
+during one or two, three to four hour periods throughout the day, but
+typically proceed according to nest activity levels (moreso in the
+morning hours). Observations began with chicks as soon as they hatched,
+and continue until the chicks fledged or died.
 
 Most common tern prey species were identifiable to the species level due
 to distinct size, color and shape. However, when identification was not
@@ -9348,8 +9318,8 @@ is presented along with nest productivity (+/- 1 SE) below.
 
 Along with nest productivity and diet diversity indices, we presented
 maps of sampling sites in Gulf of Maine and mean prey frequencies across
-sites. Prey occurring in less than 5\textbackslash{}\% of common tern
-diets was excluded for visual clarity.
+sites. Prey occurring in less than 5\% of common tern diets was excluded
+for visual clarity.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -12166,7 +12136,7 @@ R code used in extraction process.
 
 Data are processed similarly to Kane
 (\protect\hyperlink{ref-Kane2007}{2007}) and Perretti et al.
-(\protect\hyperlink{ref-Perretti2017a}{2017}\protect\hyperlink{ref-Perretti2017a}{b}),
+(\protect\hyperlink{ref-Perretti2017}{2017}\protect\hyperlink{ref-Perretti2017}{b}),
 where a mean annual abundance by date is computed by area for each
 species meeting inclusion metrics set in Morse et al.
 (\protect\hyperlink{ref-Morse2017}{2017}). This is accomplished by
@@ -12710,6 +12680,7 @@ Bank}. Cambridge, MA: The MIT Press.
 Balk, Bert M. 2010. ``An assumption-free framework for measuring
 productivity change.'' \emph{Review of Income and Wealth} 56 (s1):
 S224--S256.
+doi:\href{https://doi.org/10.1111/j.1475-4991.2010.00388.x}{10.1111/j.1475-4991.2010.00388.x}.
 
 \hypertarget{ref-beardsley_nantucket_1985}{}
 Beardsley, Robert C., David C. Chapman, Kenneth H. Brink, Steven R.
@@ -12722,12 +12693,14 @@ doi:\href{https://doi.org/10.1175/1520-0485(1985)015\%3C0713:TNSFEP\%3E2.0.CO;2}
 Behrenfeld, Michael J., and Paul G. Falkowski. 1997. ``Photosynthetic
 Rates Derived from Satellite-Based Chlorophyll Concentration.''
 \emph{Limnology and Oceanography} 42 (1): 1--20.
+doi:\href{https://doi.org/10.4319/lo.1997.42.1.0001}{10.4319/lo.1997.42.1.0001}.
 
 \hypertarget{ref-bisack_measuring_2014}{}
 Bisack, K.D., and G. Magnusson. 2014. ``Measuring the Economic Value of
 Increased Precision in Scientific Estimates of Marine Mammal Abundance
 and Bycatch.'' \emph{North American Journal of Fisheries Management} 34
 (2): 311--21.
+doi:\href{https://doi.org/10.1080/02755947.2013.869281}{10.1080/02755947.2013.869281}.
 
 \hypertarget{ref-rgdal}{}
 Bivand, Roger, Tim Keitt, and Barry Rowlingson. 2018. \emph{Rgdal:
@@ -12750,6 +12723,7 @@ Blasiak, Robert, James L. Anderson, Peter Bridgewater, Ken Furuya,
 Benjamin S. Halpern, Hisashi Kurokura, Joji Morishita, Nobuyuki Yagi,
 and Akane Minohara. 2014. ``Paradigms of Sustainable Ocean Management.''
 \emph{Marine Policy} 48: 206--11.
+doi:\href{https://doi.org/10.1016/j.marpol.2014.03.021}{10.1016/j.marpol.2014.03.021}.
 
 \hypertarget{ref-Boundy2015}{}
 Boundy, Michael J., Andrew I. Selwood, D. Tim Harwood, Paul S. McNabb,
@@ -12763,7 +12737,7 @@ doi:\href{https://doi.org/10.1016/j.chroma.2015.01.086}{10.1016/j.chroma.2015.01
 Brown, Shandel Marie. 2015. ```We Have the Best Life There Ever Was':
 Linking Sense of Place and Adaptive Capacity in Nova Scotia's Coastal
 Communities.'' In \emph{Thesis, Masters in Environmental Affairs}.
-University of Waterloo.
+University of Waterloo. \url{http://hdl.handle.net/10012/9408}.
 
 \hypertarget{ref-Calvo2017}{}
 Calvo, Lisa M. 2017. ``New Jersey Shellfish Aquaculture Situation and
@@ -12775,6 +12749,7 @@ Haskin Shellfish Research Laboratory, Rutgers University.
 Campbell, Janet W. 1995. ``The Lognormal Distribution as a Model for
 Bio-Optical Variability in the Sea.'' \emph{Journal of Geophysical
 Research: Oceans} 100 (C7): 13237--54.
+doi:\href{https://doi.org/10.1029/95JC00458}{10.1029/95JC00458}.
 
 \hypertarget{ref-Casey2010}{}
 Casey, Kenneth S., Tess B. Brandon, Peter Cornillon, and Robert Evans.
@@ -12799,16 +12774,19 @@ doi:\href{https://doi.org/10.1029/2007GL032335}{10.1029/2007GL032335}.
 Chin, Toshio Michael, Jorge Vazquez-Cuervo, and Edward M. Armstrong.
 2017. ``A Multi-Scale High-Resolution Analysis of Global Sea Surface
 Temperature.'' \emph{Remote Sensing of Environment} 200: 154--69.
+doi:\href{https://doi.org/10.1016/j.rse.2017.07.029}{10.1016/j.rse.2017.07.029}.
 
 \hypertarget{ref-clay_defining_2007}{}
 Clay, Patricia M., and Julia Olson. 2007. ``Defining Fishing
 Communities: Issues in Theory and Practice.'' \emph{Napa Bulletin} 28
 (1): 27--42.
+doi:\href{https://doi.org/10.1525/napa.2007.28.1.27}{10.1525/napa.2007.28.1.27}.
 
 \hypertarget{ref-clay_definingfishing_2008}{}
 ---------. 2008. ``Defining`Fishing Communities': Vulnerability and the
 Magnuson-Stevens Fishery Conservation and Management Act.'' \emph{Human
 Ecology Review} 15 (2): 143.
+\url{https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf}.
 
 \hypertarget{ref-colburn_social_2012}{}
 Colburn, Lisa L., and Michael Jepson. 2012. ``Social Indicators of
@@ -12828,6 +12806,7 @@ doi:\href{https://doi.org/10.1016/j.marpol.2016.04.030}{10.1016/j.marpol.2016.04
 Cortes-Vazquez, Jose A., and Morgan Zedalis. 2013. ``Identity and Native
 Species Conservation: Similar Historical Ecologies from Idaho to
 Spain.'' \emph{Human Ecology} 41 (6): 937--45.
+doi:\href{https://doi.org/10.1007/s10745-013-9570-3}{10.1007/s10745-013-9570-3}.
 
 \hypertarget{ref-Cren1951a}{}
 Cren, E. D. Le. 1951. ``The Length-Weight Relationship and Seasonal
@@ -12838,6 +12817,7 @@ doi:\href{https://doi.org/10.2307/1540}{10.2307/1540}.
 \hypertarget{ref-Cross2009}{}
 Cross, Robin M, and Rolf Färe. 2009. ``Value data and the Bennet price
 and quantity indicators.'' \emph{Economics Letters} 102 (1): 19--21.
+doi:\href{https://doi.org/10.1016/j.econlet.2008.10.003}{10.1016/j.econlet.2008.10.003}.
 
 \hypertarget{ref-das_chhandita_northeast_2013}{}
 Das, Chhandita. 2013. ``Northeast Trip Cost Data - Overview, Estimation,
@@ -12866,11 +12846,13 @@ doi:\href{https://doi.org/10.1093/icesjms/fsx038}{10.1093/icesjms/fsx038}.
 Donatuto, Jamie, and Melissa R. Poe. 2015. ``Evaluating Sense of Place
 as a Domain of Human Wellbeing for Puget Sound Restoration.'' Final
 Report. Tacoma, WA: Puget Sound Institute.
+\url{https://www.eopugetsound.org/sites/default/files/Donatuto\%26Poe2015_Evaluating\%20Sense\%20of\%20Place\%20Final\%20Report.pdf}.
 
 \hypertarget{ref-donkersloot_politics_2010}{}
 Donkersloot, Rachel. 2010. ``The Politics of Place and Identity in an
 Irish Fishing Locale.'' \emph{Journal of Maritime Studies} 9 (2):
 33--53.
+\url{http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf}.
 
 \hypertarget{ref-Duan1983}{}
 Duan, Naihua. 1983. ``Smearing estimate: A nonparametric
@@ -12886,6 +12868,7 @@ Evans, Jeffrey S., and Melanie A. Murphy. 2018. \emph{RfUtilities}.
 Everett, Sally, and Cara Aitchison. 2008. ``The Role of Food Tourism in
 Sustaining Regional Identity: A Case Study of Cornwall, South West
 England.'' \emph{Journal of Sustainable Tourism} 16 (2): 150--67.
+doi:\href{https://doi.org/10.2167/jost696.0}{10.2167/jost696.0}.
 
 \hypertarget{ref-fare_adjusting_2006}{}
 Färe, Rolf, James E. Kirkley, and John B. Walden. 2006. ``Adjusting
@@ -12914,12 +12897,14 @@ Friedland, Kevin D, M Conor McManus, Ryan E Morse, and Jason S Link.
 2018. ``Event Scale and Persistent Drivers of Fish and Macroinvertebrate
 Distributions on the Northeast Us Shelf.'' \emph{ICES Journal of Marine
 Science}.
+doi:\href{https://doi.org/10.1093/icesjms/fsy167}{10.1093/icesjms/fsy167}.
 
 \hypertarget{ref-Friedland2007}{}
 Friedland, Kevin D., and Jon A. Hare. 2007. ``Long-term trends and
 regime shifts in sea surface temperature on the continental shelf of the
 northeast United States.'' \emph{Continental Shelf Research} 27:
 2313--28.
+doi:\href{https://doi.org/10.1016/j.csr.2007.06.001}{10.1016/j.csr.2007.06.001}.
 
 \hypertarget{ref-gaichas_framework_2016}{}
 Gaichas, Sarah K., Richard J. Seagraves, Jessica M. Coakley, Geret S.
@@ -12938,6 +12923,7 @@ Agreement}. \url{https://CRAN.R-project.org/package=irr}.
 Garrison, Lance P, and Jason S Link. 2000. ``Dietary guild structure of
 the fish community in the Northeast United States continental shelf
 ecosystem.'' \emph{Marine Ecology Progress Series} 202: 231--40.
+doi:\href{https://doi.org/10.3354/meps202231}{10.3354/meps202231}.
 
 \hypertarget{ref-gawarkiewicz_direct_2012}{}
 Gawarkiewicz, Glen G., Robert E. Todd, Albert J. Plueddemann, Magdalena
@@ -12945,6 +12931,12 @@ Andres, and James P. Manning. 2012. ``Direct Interaction Between the
 Gulf Stream and the Shelfbreak South of New England.'' \emph{Scientific
 Reports} 2 (August): 553.
 doi:\href{https://doi.org/10.1038/srep00553}{10.1038/srep00553}.
+
+\hypertarget{ref-Georgianna2017}{}
+Georgianna, Daniel, Min-Yang Lee, and John Walden. 2017. ``Contrasting
+trends in the Northeast United States groundfish and scallop processing
+industries.'' \emph{Marine Policy}.
+doi:\href{https://doi.org/10.1016/j.marpol.2017.08.025}{10.1016/j.marpol.2017.08.025}.
 
 \hypertarget{ref-glenn_biogeochemical_2004}{}
 Glenn, Scott, Robert Arnone, Trisha Bergmann, W. Paul Bissett, Michael
@@ -12968,27 +12960,32 @@ doi:\href{https://doi.org/10.1109/HICSS.2013.399}{10.1109/HICSS.2013.399}.
 \hypertarget{ref-Grifell-Tatje2004}{}
 Grifell-Tatjé, Emili, and CA Knox Lovell. 2004. ``Decomposing the
 dividend.'' \emph{Journal of Comparative Economics} 32 (3): 500--518.
+doi:\href{https://doi.org/10.1016/j.jce.2004.05.002}{10.1016/j.jce.2004.05.002}.
 
 \hypertarget{ref-hall2004}{}
 Hall, C Scott, and Stephen W Kress. 2004. ``Comparison of Common Tern
 Reproductive Performance at Four Restored Colonies Along the Maine
 Coast, 1991-2002.'' \emph{Waterbirds} 27 (4). BioOne: 424--34.
+doi:\href{https://doi.org/\%2010.1675/1524-4695(2004)027\%5B0424:COCTRP\%5D2.0.CO;2}{ 10.1675/1524-4695(2004)027{[}0424:COCTRP{]}2.0.CO;2}.
 
 \hypertarget{ref-hall2000}{}
 Hall, C Scott, Stephen W Kress, and Curtice R Griffin. 2000.
 ``Composition, Spatial and Temporal Variation of Common and Arctic Tern
 Chick Diets in the Gulf of Maine.'' \emph{Waterbirds}. JSTOR, 430--39.
+doi:\href{https://doi.org/10.1675/1524-4695(2004)027\%5B0424:COCTRP\%5D2.0.CO;2}{10.1675/1524-4695(2004)027{[}0424:COCTRP{]}2.0.CO;2}.
 
 \hypertarget{ref-halpern_index_2012}{}
 Halpern, Benjamin S, Catherine Longo, Darren Hardy, Karen L McLeod,
 Jameal F Samhouri, Steven K Katona, Kristin Kleisner, et al. 2012. ``An
 Index to Assess the Health and Benefits of the Global Ocean.''
 \emph{Nature} 488 (7413): 615--20.
+doi:\href{https://doi.org/10.1038/nature11397}{10.1038/nature11397}.
 
 \hypertarget{ref-hardison2019}{}
 Hardison, Sean, Charles T Perretti, Geret S DePiper, and Andrew Beet.
 2019. ``A Simulation Study of Trend Detection Methods for Integrated
 Ecosystem Assessment.'' \emph{ICES Journal of Marine Science}.
+doi:\href{https://doi.org/10.1093/icesjms/fsz097}{10.1093/icesjms/fsz097}.
 
 \hypertarget{ref-Hare2016}{}
 Hare, Jonathan A., Wendy E. Morrison, Mark W. Nelson, Megan M. Stachura,
@@ -13008,17 +13005,20 @@ E Rosel, Barbie L Byrd, Timothy VN Cole, Laura Engleby, et al. 2017.
 Health, Virginia Department of. 2011. ``Virginia Recreational Water
 Guidance for Microcystin and Microcystis Blooms: Provisional Guidance.''
 Richmond, VA: Virginia Department of Health.
+\url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955\&rep=rep1\&type=pdf}.
 
 \hypertarget{ref-hess_climate_2008}{}
 Hess, Jeremy J., Josephine N. Malilay, and Alan J. Parkinson. 2008.
 ``Climate Change: The Importance of Place.'' \emph{American Journal of
 Preventive Medicine} 35 (5): 468--78.
+doi:\href{https://doi.org/10.1016/j.amepre.2008.08.024}{10.1016/j.amepre.2008.08.024}.
 
 \hypertarget{ref-automap}{}
 Hiemstra, P.H., E.J. Pebesma, C.J.W. Twenh"ofel, and G.B.M. Heuvelink.
 2008. ``Real-time automatic interpolation of ambient gamma dose rates
 from the Dutch Radioactivity Monitoring Network.'' \emph{Computers \&
 Geosciences}.
+doi:\href{https://doi.org/10.1016/j.cageo.2008.10.011}{10.1016/j.cageo.2008.10.011}.
 
 \hypertarget{ref-hoagland_demand_2000}{}
 Hoagland, P., and A. Meeks. 2000. ```The Demand for Whalewatching at
@@ -13045,6 +13045,7 @@ Hu, Chuanmin, Zhongping Lee, and Bryan Franz. 2012. ``Chlorophyll a
 Algorithms for Oligotrophic Oceans: A Novel Approach Based on Three-Band
 Reflectance Difference.'' \emph{Journal of Geophysical Research} 117
 (C1): C01011.
+doi:\href{https://doi.org/10.1029/2011JC007395}{10.1029/2011JC007395}.
 
 \hypertarget{ref-huang2017extended}{}
 Huang, Boyin, Peter W Thorne, Viva F Banzon, Tim Boyer, Gennady
@@ -13052,6 +13053,7 @@ Chepurin, Jay H Lawrimore, Matthew J Menne, Thomas M Smith, Russell S
 Vose, and Huai-Min Zhang. 2017a. ``Extended Reconstructed Sea Surface
 Temperature, Version 5 (Ersstv5): Upgrades, Validations, and
 Intercomparisons.'' \emph{Journal of Climate} 30 (20): 8179--8205.
+doi:\href{https://doi.org/10.1175/JCLI-D-16-0836.1}{10.1175/JCLI-D-16-0836.1}.
 
 \hypertarget{ref-Huang2017}{}
 Huang, Boyin, Peter W. Thorne, Viva F. Banzon, Tim Boyer, Gennady
@@ -13096,6 +13098,7 @@ Joyce, Terrence M, Young-Oh Kwon, Hyodae Seo, and Caroline C Ummenhofer.
 Variability in the North Atlantic Storm Track and Greenland Blocking.''
 \emph{Geophysical Research Letters} 46 (3). Wiley Online Library:
 1702--8.
+doi:\href{https://doi.org/10.1029/2018GL081087}{10.1029/2018GL081087}.
 
 \hypertarget{ref-Kane2007}{}
 Kane, Joseph. 2007. ``Zooplankton abundance trends on Georges Bank,
@@ -13113,6 +13116,7 @@ Khakzad, Sorna, and David Griffith. 2016. ``The Role of Fishing Material
 Culture in Communities' Sense of Place as an Added-Value in Management
 of Coastal Areas.'' \emph{Journal of Marine and Island Cultures} 5 (2):
 95--117.
+doi:\href{https://doi.org/10.1016/j.imic.2016.09.002}{10.1016/j.imic.2016.09.002}.
 
 \hypertarget{ref-SOE6}{}
 Kirk, John T.O. 1994. \emph{Light and Photosynthesis in Aquatic
@@ -13122,6 +13126,7 @@ Ecosystems}. Cambridge, UK: Cambridge University Press.
 Klain, Sarah C., Terre A. Satterfield, and Kai M. A. Chan. 2014. ``What
 Matters and Why? Ecosystem Services and Their Bundled Qualities.''
 \emph{Ecological Economics} 107: 310--20.
+doi:\href{https://doi.org/10.1016/j.ecolecon.2014.09.003}{10.1016/j.ecolecon.2014.09.003}.
 
 \hypertarget{ref-Kleisner2017}{}
 Kleisner, Kristin M., Michael J. Fogarty, Sally McGee, Jonathan A. Hare,
@@ -13135,21 +13140,25 @@ doi:\href{https://doi.org/10.1016/j.pocean.2017.04.001}{10.1016/j.pocean.2017.04
 Koehn, J. Zachary, Daniel R. Reineman, and John N. Kittinger. 2013.
 ``Progress and Promise in Spatial Human Dimensions Research for
 Ecosystem-Based Ocean Planning.'' \emph{Marine Policy} 42: 31--38.
+doi:\href{https://doi.org/10.1016/j.marpol.2013.01.015}{10.1016/j.marpol.2013.01.015}.
 
 \hypertarget{ref-lee_economic_2010}{}
 Lee, Min-Yang. 2010. ``Economic Tradeoffs in the Gulf of Maine
 Ecosystem: Herring and Whale-Watching.'' \emph{Marine Policy} 34:
 156--62.
+doi:\href{https://doi.org/10.1016/j.marpol.2009.06.001}{10.1016/j.marpol.2009.06.001}.
 
 \hypertarget{ref-lee_hedonic_2014}{}
 ---------. 2014. ``Hedonic Pricing of Atlantic Cod: Effects of Size,
 Freshness, and Gear.'' \emph{Marine Resource Economics} 29 (3).
+doi:\href{https://doi.org/10.1086/677769}{10.1086/677769}.
 
 \hypertarget{ref-lee_inverse_2013}{}
 Lee, Min-Yang, and Eric M. Thunberg. 2013. ``An Inverse Demand System
 for New England Groundfish: Welfare Analysis of the Transition to Catch
 Share Management.'' \emph{American Journal of Agricultural Economics} 95
 (5).
+doi:\href{https://doi.org/10.1093/ajae/aat061}{10.1093/ajae/aat061}.
 
 \hypertarget{ref-lee_applying_2017}{}
 Lee, Min-Yang, Scott Steinback, and Kristy Wallmo. 2017. ``Applying a
@@ -13188,6 +13197,7 @@ randomForest.'' \emph{R News} 2 (3): 18--22.
 Lim, Siew Hoon, and CA Knox Lovell. 2009. ``Profit and productivity of
 US Class I railroads.'' \emph{Managerial and Decision Economics} 30 (7).
 Wiley Online Library: 423--42.
+doi:\href{https://doi.org/10.1002/mde.1462}{10.1002/mde.1462}.
 
 \hypertarget{ref-link_documentation_2006}{}
 Link, J.S., C.T. Griswold, E.T. Methratta, and J. Gunnard, eds. 2006.
@@ -13198,8 +13208,8 @@ Fisheries Service.
 
 \hypertarget{ref-link2006EMAX}{}
 Link, Jason S, Carolyn A Griswold, Elizabeth T Methratta, Jessie
-Gunnard, Jon Kenton Tarsus Brodziak, Laurel A Col, David D Dow, et al.
-2006. \emph{Documentation for the energy modeling and analysis exercise
+Gunnard, Jon Brodziak, Tarsus Kenton, Laurel A Col, et al. 2006.
+\emph{Documentation for the energy modeling and analysis exercise
 (EMAX)}. US Department of Commerce, National Oceanic; Atmospheric
 Administration.
 
@@ -13224,6 +13234,7 @@ doi:\href{https://doi.org/10.1016/B978-0-12-455521-1.X5000-1}{10.1016/B978-0-12-
 Lord, Fabienne. 2011. ``Understanding Social Impacts by Using New
 Variables and a Causal Model Diagram in New England Fisheries.''
 \emph{Impact Assessment and Project Appraisal} 1: 59--68.
+doi:\href{https://doi.org/10.3152/146155111X12913679730476}{10.3152/146155111X12913679730476}.
 
 \hypertarget{ref-Maritorena2010}{}
 Maritorena, Stéphane, Odile Hembise Fanton D'Andon, Antoine Mangin, and
@@ -13252,6 +13263,7 @@ Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M.
 Legault, R. W. Brown, and P. J. Rago. 2010. ``Estimation of Albatross IV
 to Henry B. Bigelow Calibration Factors.'' 10-05. Woods Hole, MA:
 National Marine Fisheries Service.
+\url{https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf}.
 
 \hypertarget{ref-miller_state-space_2016}{}
 Miller, Timothy J., Jonathan A. Hare, and Larry A. Alade. 2016. ``A
@@ -13267,21 +13279,18 @@ procedures for determining the number of clusters in a data set.''
 \emph{Psychometrika} 50 (2): 159--79.
 doi:\href{https://doi.org/10.1007/BF02294245}{10.1007/BF02294245}.
 
-\hypertarget{ref-Moosberg2007}{}
-Moosberg, H. Jason, Rolf Färe, Shawna Grosskopf, and Pontus Roos. 2007.
-``Volume and Price Indicators: Decomposition and revenue with an
-application to Swedish pharmacies.''
-
 \hypertarget{ref-SOE7}{}
 Morel, André. 1991. ``Light and Marine Photosynthesis: A Spectral Model
 with Geochemical and Climatological Implications.'' \emph{Progress in
 Oceanography} 26 (3): 263--306.
+doi:\href{https://doi.org/10.1016/0079-6611(91)90004-6}{10.1016/0079-6611(91)90004-6}.
 
 \hypertarget{ref-SOE8}{}
 Morel, André, and Jean-François Berthon. 1989. ``Surface Pigments, Algal
 Biomass Profiles, and Potential Production of the Euphotic Layer:
 Relationships Reinvestigated in View of Remote-Sensing Applications.''
 \emph{Limnology and Oceanography} 34 (8): 1545--62.
+doi:\href{https://doi.org/10.4319/lo.1989.34.8.1545}{10.4319/lo.1989.34.8.1545}.
 
 \hypertarget{ref-Morse2017}{}
 Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017.
@@ -13294,11 +13303,13 @@ doi:\href{https://doi.org/10.1016/j.jmarsys.2016.09.011}{10.1016/j.jmarsys.2016.
 Mountain, David G. 1991. ``The Volume of Shelf Water in the Middle
 Atlantic Bight: Seasonal and Interannual Variability, 1977--1987.''
 \emph{Continental Shelf Research} 11 (3). Elsevier: 251--67.
+doi:\href{https://doi.org/10.1016/0278-4343(91)90068-H}{10.1016/0278-4343(91)90068-H}.
 
 \hypertarget{ref-mountain2012}{}
 ---------. 2012. ``Labrador Slope Water Entering the Gulf of
 Maine---response to the North Atlantic Oscillation.'' \emph{Continental
 Shelf Research} 47. Elsevier: 150--55.
+doi:\href{https://doi.org/10.1016/j.csr.2012.07.008}{10.1016/j.csr.2012.07.008}.
 
 \hypertarget{ref-mountain_variability_2003}{}
 Mountain, David G. 2003. ``Variability in the Properties of Shelf Water
@@ -13352,6 +13363,7 @@ doi:\href{https://doi.org/10.1016/j.icesjms.2003.09.004}{10.1016/j.icesjms.2003.
 Norris-Raynbird, Carla. 2004. ```For Hire' in the US Gulf of Mexico: A
 Typology of Offshore Charter and Party Boat Operations.'' \emph{MAST
 (Maritime Studies)} 1 (51 -- 65).
+\url{http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf}.
 
 \hypertarget{ref-oberg_surviving_2016}{}
 Oberg, Angela, Julia Flagg, Bonnie McCay, and Lisa L. Colburn. 2016.
@@ -13359,6 +13371,7 @@ Oberg, Angela, Julia Flagg, Bonnie McCay, and Lisa L. Colburn. 2016.
 Fishing Community.'' In \emph{Taking Chances on the Coast After
 Hurricane Sandy}, edited by Dan Van Abs and Karen O.'Neill. New
 Brunswick, NJ: The Rutgers University Press.
+\url{muse.jhu.edu/book/45532}.
 
 \hypertarget{ref-R-vegan}{}
 Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt,
@@ -13376,6 +13389,7 @@ O'Reilly, John E., Stéphane Maritorena, B. Greg Mitchell, David A.
 Siegel, Kendall L. Carder, Sara A. Garver, Mati Kahru, and Charles
 McClain. 1998. ``Ocean Color Chlorophyll Algorithms for Seawifs.''
 \emph{Journal of Geophysical Research: Oceans} 103 (C11): 24937--53.
+doi:\href{https://doi.org/10.1029/98JC02160}{10.1029/98JC02160}.
 
 \hypertarget{ref-Pace2017}{}
 Pace, Richard M., Peter J. Corkeron, and Scott D. Kraus. 2017.
@@ -13396,12 +13410,14 @@ Pan, Xiaoju, Antonio Mannino, Mary E. Russ, and Stanford B. Hooker.
 Concentration in the United States Southern Middle Atlantic Bight from
 Seawifs and Modis-Aqua.'' \emph{Journal of Geophysical Research} 113
 (C11): C11022.
+doi:\href{https://doi.org/10.1029/2008JC004852}{10.1029/2008JC004852}.
 
 \hypertarget{ref-SOE13}{}
 Pan, Xiaoju, Antonio Mannino, Mary E. Russ, Stanford B. Hooker, and
 Lawrence W. Harding Jr. 2010. ``Remote Sensing of Phytoplankton Pigment
 Distribution in the United States Northeast Coast.'' \emph{Remote
 Sensing of Environment} 114 (11): 2403--16.
+doi:\href{https://doi.org/10.1016/j.rse.2010.05.015}{10.1016/j.rse.2010.05.015}.
 
 \hypertarget{ref-pauly_putting_1997}{}
 Pauly, Daniel. 1997. ``Putting Fisheries Management Back in Places.''
@@ -13412,8 +13428,9 @@ Perretti, Charles T., Michael J. Fogarty, Kevin D. Friedland, Jon A.
 Hare, Sean M. Lucey, Richard S. McBride, Timothy J. Miller, et al.
 2017a. ``Regime Shifts in Fish Recruitment on the Northeast US
 Continental Shelf.'' \emph{Marine Ecology Progress Series} 574: 1--11.
+doi:\href{https://doi.org/10.3354/meps12183}{10.3354/meps12183}.
 
-\hypertarget{ref-Perretti2017a}{}
+\hypertarget{ref-Perretti2017}{}
 ---------. 2017b. ``Regime shifts in fish recruitment on the Northeast
 US Continental Shelf.'' \emph{Marine Ecology Progress Series} 574:
 1--11. doi:\href{https://doi.org/10.3354/meps12183}{10.3354/meps12183}.
@@ -13425,7 +13442,7 @@ A Primer on Classification and Ordination}. John Wiley \& Sons.
 \hypertarget{ref-Pinheiro2017}{}
 Pinheiro, J, D Bates, S DebRoy, D Sarkar, and R Core Team. 2017. ``nlme:
 Linear and Nonlinear Mixed Effects Models.'' \emph{R Package Version
-3.1-131, Https://CRAN.R-Project.org/Package=nlme}.
+3.1-131}. \url{https://CRAN.R-project.org/package=nlme}.
 
 \hypertarget{ref-Pinsky2013}{}
 Pinsky, Malin L., Boris Worm, Michael J. Fogarty, Jorge L. Sarmiento,
@@ -13438,17 +13455,19 @@ Poe, Melissa R., Karma C. Norman, and Phillip S. Levin. 2014. ``Cultural
 Dimensions of Socioecological Systems: Key Connections and Guiding
 Principles for Conservation in Coastal Environments.''
 \emph{Conservation Letters} 7 (3): 166--75.
+\url{https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf}.
 
 \hypertarget{ref-pollnac_toward_2006}{}
 Pollnac, Richard B., Susan Abbott-Jamieson, Courtland Smith, Marc L.
 Miller, Patricia M. Clay, and Bryan Oles. 2006. ``Toward a Model for
 Fisheries Social Impact Assessment.'' \emph{Marine Fisheries Review} 68:
-1--4.
+1--4. \url{http://aquaticcommons.org/866/1/Pollnac_Toward.pdf}.
 
 \hypertarget{ref-potschin_landscapes_2013}{}
 Potschin, Marion, and Roy Haines-Young. 2013. ``Landscapes,
 Sustainability and the Place-Based Analysis of Ecosystem Services.''
 \emph{Landscape Ecology} 28 (6): 1053--65.
+doi:\href{https://doi.org/10.1007/s10980-012-9756-x}{10.1007/s10980-012-9756-x}.
 
 \hypertarget{ref-SOE14}{}
 Project, JPL MUR MEaSUREs. 2015. ``GHRSST Level 4 Mur Global Foundation
@@ -13465,6 +13484,7 @@ unsalted seafood.'' \emph{Journal of AOAC International} 78 (JANUARY
 Reed, Matt, Paul Courtney, Julie Urquhart, and Natalie Ross. 2013.
 ``Beyond Fish as Commodities: Understanding the Socio-Cultural Role of
 Inshore Fisheries in England.'' \emph{Marine Policy} 37: 62--68.
+doi:\href{https://doi.org/10.1016/j.marpol.2012.04.009}{10.1016/j.marpol.2012.04.009}.
 
 \hypertarget{ref-Reynolds2007}{}
 Reynolds, Richard W., Thomas M. Smith, Chunying Liu, Dudley B. Chelton,
@@ -13506,11 +13526,13 @@ doi:\href{https://doi.org/doi:10.7289/V52J68XX\%20Accessed\%20in\%202016\%20and\
 Scott, D., G McBoyle, and M. Schwartzentruber. 2004. ``Climate Change
 and the Distribution of Climatic Resources for Tourism in North
 America.'' \emph{Climate Research} 27: 105--17.
+doi:\href{https://doi.org/10.3354/cr027105}{10.3354/cr027105}.
 
 \hypertarget{ref-seara_perceived_2016}{}
 Seara, Tarsila, Patricia M. Clay, and Lisa L. Colburn. 2016. ``Perceived
 Adaptive Capacity and Natural Disasters: A Fisheries Case Study.''
 \emph{Global Environmental Change} 38: 49--57.
+doi:\href{https://doi.org/10.1016/j.gloenvcha.2016.01.006}{10.1016/j.gloenvcha.2016.01.006}.
 
 \hypertarget{ref-shearman_long-term_2009}{}
 Shearman, R. Kipp, and Steven J. Lentz. 2009. ``Long-Term Sea Surface
@@ -13561,11 +13583,13 @@ doi:\href{https://doi.org/10.1016/S0967-0645(00)00081-3}{10.1016/S0967-0645(00)0
 St Martin, Kevin. 2001. ``Making Space for Community Resource Management
 in Fisheries.'' \emph{Annals of the Association of American Geographers}
 91 (1): 122--42.
+doi:\href{https://doi.org/10.1111/0004-5608.00236}{10.1111/0004-5608.00236}.
 
 \hypertarget{ref-steinback_scott_northeast_2006}{}
 Steinback, Scott, and Eric Thunberg. 2006. ``Northeast Regional
 Commercial Fishing Input-Output Model.'' \emph{NOAA Technical
 Memorandum} NMFS-NE-188: 54.
+\url{https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf}.
 
 \hypertarget{ref-VonStorch1999a}{}
 Storch, Hans von. 1999. ``Misuses of Statistical Analysis in Climate
@@ -13605,11 +13629,13 @@ and John A Qunilan. 2006. ``Oceanography of the Northwest Atlantic
 Continental Shelf (1,W).'' In \emph{The Sea, Volume 14a}, edited by
 Allan R Robinson and Kenneth H Brink, 119--68. Cambridge, MA: Harvard
 University Press.
+\url{https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf}.
 
 \hypertarget{ref-urquhart_constructing_2013}{}
 Urquhart, Julie, and Tim Acott. 2013. ``Constructing `the Stade':
 Fishers' and Non-Fishers' Identity and Place Attachment in Hastings,
 South-East England.'' \emph{Marine Policy} 37: 45--54.
+doi:\href{https://doi.org/10.1016/j.marpol.2012.04.004}{10.1016/j.marpol.2012.04.004}.
 
 \hypertarget{ref-usepa2003}{}
 USEPA. 2003. ``Ambient Water Quality Criteria for Dissolve Oxygen, Water
@@ -13619,7 +13645,7 @@ Tributaries.'' USEPA Region III Chesapeake Bay Program Office EPA
 \url{https://www.chesapeakebay.net/content/publications/cbp_13142.pdf}.
 
 \hypertarget{ref-usepa2017}{}
----------. 20`7`. ``Ambient Water Quality Criteria for Dissolve Oxygen,
+---------. 2017. ``Ambient Water Quality Criteria for Dissolve Oxygen,
 Water Clarity and Chlorophyll a for the Chesapeake Bay and Its Tidal
 Tributaries: 2017 addendum.'' USEPA Region III Chesapeake Bay Program
 Office EPA 903-R-03-002, Annapolis, Maryland.
@@ -13651,12 +13677,14 @@ Waring, Gordon T., Elizabeth Josephson, Katherine Maze-Foley, and
 Patricia E. Rosel, eds. 2015. \emph{US Atlantic and Gulf of Mexico
 Marine Mammal Stock Assessments -- 2014. NOAA Tech Memo NMFS NE 231}. US
 Dep. Commer., National Marine Fisheries Service.
+doi:\href{https://doi.org/10.7289/V5TQ5ZH0}{10.7289/V5TQ5ZH0}.
 
 \hypertarget{ref-wigley_length-weight_2003}{}
 Wigley, S. E., H. M. McBride, and N. J. McHugh. 2003. ``Length-Weight
 Relationships for 74 Fish Species Collected During NEFSC Research Vessel
 Bottom Trawl Surveys, 1992-99.'' NOAA Technical Memorandum 171. National
 Marine Fisheries Service.
+\url{https://www.nefsc.noaa.gov/publications/tm/tm171/tm171.pdf}.
 
 \hypertarget{ref-winton_has_2014}{}
 Winton, Michael, Whit G. Anderson, Thomas L. Delworth, Stephen M.
@@ -13679,6 +13707,7 @@ Wynveen, Christopher J., Gerard T. Kyle, and Stephen G. Sutton. 2012.
 ``Natural Area Visitors' Place Meaning and Place Attachment Ascribed to
 a Marine Setting.'' \emph{Journal of Environmental Psychology} 32 (4):
 287--96.
+doi:\href{https://doi.org/10.1016/j.jenvp.2012.05.001}{10.1016/j.jenvp.2012.05.001}.
 
 \hypertarget{ref-zhang2018}{}
 Zhang, Qian, Rebecca R Murphy, Richard Tian, Melinda K Forsyth, Emily M
@@ -13686,6 +13715,7 @@ Trentacoste, Jennifer Keisman, and Peter J Tango. 2018. ``Chesapeake
 Bay's water quality condition has been recovering: Insights from a
 multimetric indicator assessment of thirty years of tidal monitoring
 data.'' \emph{Science of the Total Environment} 637. Elsevier: 1617--25.
+doi:\href{https://doi.org/10.1016/j.scitotenv.2018.05.025}{10.1016/j.scitotenv.2018.05.025}.
 
 \hypertarget{ref-zhang_dynamics_2015}{}
 Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. ``Dynamics of the
