@@ -5,8 +5,11 @@
 # Remove derived stuff
 .docx
 .html
-.pdf
+*.pdf
 .eps
+*.png
+*.log
+
 
 # Session Data files
 .RData
@@ -43,5 +46,5 @@ rsconnect/
 .Rproj.user
 
 # bookdown files
-_book
+/_book/
 _bookdown_files
