@@ -205,9 +205,9 @@ soe.plot <- function(data, x.var, y.var, x.label = '', y.label = '', tol = 0.1,
   y.sd <- sd(x[, Value])
   
   #Plot blank plot
-  plot(x[X >= x.start, list(X, Var)], xlim = c(x.start, x.end),
-       ylim = c(y.min,y.max), xlab = '', ylab = '', axes = F, ty = 'n')
-
+  plot(x[X >= x.start, list(X)], xlim = c(x.start, x.end),
+        ylim = c(y.min,y.max), xlab = '', ylab = '', axes = F)
+ 
 
   #Add background
   u <- par('usr')

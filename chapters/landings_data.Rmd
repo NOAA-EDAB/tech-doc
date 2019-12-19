@@ -23,9 +23,9 @@ available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe
 
 ## Methods
 
-Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by National Marine Fisheries Service (NMFS) Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table \@ref(tab:calibration) below.  
+Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by National Marine Fisheries Service (NMFS) Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table \@ref(tab:calibration_com) below.  
 
-```{r calibration, eval = T, echo = F}
+```{r calibration_com, eval = T, echo = F}
 com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
                          Years = c('1964 - 1981', '1982 - 1993', '> 1994'))
 kable(com.tables,caption="Data formats")

@@ -45,7 +45,7 @@ either the NOAA Ship *Delaware II* or NOAA Ship *Henry Bigelow* to the NOAA Ship
 the primary vessel for most of the time series.  The Albatross was decommisioned in 2009 and the Bigelow is 
 now the primary vessel for the bottom trawl survey.
 
-```{r, eval = T, echo = F}
+```{r calibration, eval = T, echo = F}
 cal.factors <- data.frame(Name = c('Door Conversion', 'Net Conversion', 'Vessel Conversion I', 'Vessel Conversion II'),
                           Code = c('DCF', 'GCF', 'VCF', 'BCF'),
                           Applied = c('<1985', '1973 - 1981 (Spring)', 'Delaware II records', 'Henry Bigelow records'))

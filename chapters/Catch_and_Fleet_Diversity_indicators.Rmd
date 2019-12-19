@@ -26,90 +26,105 @@ The following describes both the permit-level species and fleet diversity data g
 
 <!-- For NOAA personnel: Code currently archived in the \\\\net\\home2\\mlee\\diversity\\code folder, while data is currently archived in \\\\net\\home2\\mlee\\diversity folder. -->
 
-Output data was then matched to vessel characteristics from the VPS VESSEL data set. For the permit-level estimate, species groups are based off of a slightly refined NESPP3 code \@ref(tab:spp_groupings), defined in the data as "myspp", which is further developed in the script to rectify inconsistencies in the data.
+Output data was then matched to vessel characteristics from the VPS VESSEL data set. For the permit-level estimate, species groups are based off of a slightly refined NESPP3 code (Table \@ref(tab:spp-groupings)), defined in the data as "myspp", which is further developed in the script to rectify inconsistencies in the data.
 
 
-```{r spp_groupings, eval = T, echo = F}
-library(tidyverse)
-spp.table <- data.frame(Group = c(rep('Highly Migratory Species', 19), rep('Monkfish in Mid-Atlantic waters',2), #21
-                                  'Atlantic Scallops', rep('Shrimp', 5), rep('Skates',9),'Herring','Ocean Quahog', #17
-                                  'Surf Clam', rep('Tilefish', 4), rep('Fluke & Black Seabass',2), #7
-                                  rep('Butterfish & Hake',3),'Bluefish in Mid-Atlantic waters','Spiny Dogfish',#5
-                                  'Northern Shortfin Squid','American Lobster', 'Longfin Squid', 'Menhaden',#4
-                                  'Offshore Hake','Scup in Mid-Atlantic waters',#2
-                                  'Windowpane Flounder in New England waters',#1
-                                  'Ocean Pout in New England waters','Wolffish',#2
-                                  'Winter Flounder in Mid-Atlnatic waters',#1
-                                  'Yellowtail Flounder in Mid-Atlantic waters','Unclassified Hake',#2
-                                  'White Hake in Mid-Atlantic waters',rep('Bluefish & Scup in New England waters', 2),#3
-                                  'Halibut in New England waters',rep('Groundfish in New England waters', 11),#12
-                                  rep('Groundfish in Mid-Atlantic waters',9),#9
-                                  rep('Windowpane Flounder & Ocean Pout in Mid-Atlantic waters',2)), #2  ##88
-                        NESPP3 = c('470','494','354','469','487','493','467','468','358','481',
-                                   '349','482','359','355','466','432','353','491','471','11',
-                                   '12','800','737','737','736','738','735','368','372','366',
-                                   '365','365','373','369','370','367','168','754','769','444',
-                                   '445','446','447','335','121','51','152','509','23','352',
-                                   '802','727','801','221','508','329','125','250','512','120',
-                                   '123','155','153','23','329','159','240','124','81','11',
-                                   '12','147','269','153','120','122','123','240','124','81',
-                                   '159','512','147','269','122','155','250','125'), ## 88?
-                        Common = c('Albacore','Atlantic Sharpnose Shark','Bigeye Thresher Shark','Bigeye Tuna', #4
-                                   'Blacktip Shark','Blue Shark','Bluefin Tuna','Little Tunny','Longfin Mako',#5
-                                   'Porbeagle Shark','Sand Tiger','Sandbar Shark','Unclassified Shark',#4
-                                   'Shortfin Mako','Skipjack Tuna','Swordfish','Thresher Shark','Tiger Shark',#5
-                                   'Yellowfin Tuna','Goosefish','Goosefish','Sea Scallop',#4
-                                   'Unclassified Mantis Shrimp','Mantis Shrimps','Northern Shrimp',#3
-                                   'Atlantic & Gulf Brown Shrimp','Unclassified Shrimp(Caridea)',#2
-                                   'Barndoor Skate','Clearnose Skate','Little Skate','Ocellate Skates','Skates',#5
-                                   'Skates Little/Winter Mixed','Smooth Skate','Thorny Skate','Winter Skate', #4
-                                   'Atlantic Herring','Ocean Quahog','Atlantic Surfclam','Blueline Tilefish',#4
-                                   'Sand Tilefish','Tilefish','Unclassified Tilefish','Black Sea Bass',#4
-                                   'Summer Flounder','Butterfish','Red Hake','Silver Hake','Bluefish',#5
-                                   'Spiny Dogfish','Northern Shortfin Squid','American Lobster',#3
-                                   'Longfin Squid','Menhaden','Offshore Hake','Scup','Windowpane','Ocean Pout',#6
-                                   'Atlantic Wolffish','Winter Flounder','Yellowtail Flounder',#3
-                                   'Unclassified Hake','White Hake','Bluefish','Scup','Atlantic Halibut',#5
-                                   'Acadian Redfish','American Plaice','Atlantic Cod','Goosefish','Gossefish',#5
-                                   'Haddock', 'Pollock', 'White Hake', 'Winter Flounder','Witch Flounder', #5
-                                   'Yellowtail Flounder','Acadian Redfish','American Plaice','Atlantic Cod',#4
-                                   'Atlantic Halibut','Atlantic Wolffish','Haddock','Pollock',#4
-                                   'Witch Flounder','Unclassified Hake','Ocean Pout','Windowpane'),#4
-                        Scientific = c('Thunnus alalunga','Rhizoprionodon terranovae','Alopias superciliosus',#3
-                                       'Thunnus obesus','Carcharhinus limbatus','Prionace glauca',#3
-                                       'Thunnus thynnus','Euthynnus alletteratus','Isurus paucus',#3
-                                       'Lamna nasus','Carcharias taurus', 'Carcharhinus plumbeus',#3
-                                       'Chondrichthyes','Isurus oxyrhinchus','Katsuwonus pelamis',#3
-                                       'Xiphias gladius','Alopias vulpinus','Galeocerdo cuvier',#3
-                                       'Thunnus albacares','Lophius americanus','Lophius americanus',#3
-                                       'Placopecten magellanicus','Stomatopoda','Stomatopoda',#3
-                                       'Pandalus borealis','Panaeidae','Caridea','Dipturus laevis',#4
-                                       'Raja eglanteria','Leucoraja erinacea','Raja','Rajidae','Leucoraja',#5
-                                       'Malacoraja senta','Amblyraja radiata','Leucoraja ocellata',#3
-                                       'Clupea harengus','Arctica islandica','Spisula solidissima',#3
-                                       'Caulolatilus microps','Malacanthius plumieri',#2
-                                       'Lopholatilus chamaeleonticeps','Malacanthidae',#2
-                                       'Centropristis striata','Paralichthys dentatus','Peprilus triacanthus',#3
-                                       'Urophycis chuss','Merluccius bilinearis',#2
-                                       'Pomatomus saltatrix','Squalus acanthias','Illex illecebrosus',#3
-                                       'Homarus americanus','Loligo pealeii','Brevoortia',#3
-                                       'Merluccius albidus','Stenotomus chrysops','Scophthalmus aquosus',
-                                       'Zoarces americanus',
-                                       'Anaphichias lupus','Pseudopleuronectes americanus',
-                                       'Limanda ferruginea','','Urophycis tenuis','Pomatomus saltatrix',
-                                       'Stenotomus chrysops','Hippoglossus hippoglossus',
-                                       'Sebastes fasciatus','Hippoglossus platessoides','Gadus morhua', 
-                                       'Lophius americanus','Lophius americanus','Melanogrammus aeglefinus',
-                                       'Pollachius virens','Urophycis tenuis',
-                                       'Pseudopleuronectes americanus','Glyptocephalus cynoglossus',
-                                       'Limanda ferruginea','Sebastes Fasciatus','Hippoglossus platessoides',
-                                       'Gadus morhua','Hippoglossus hippoglossus','Anarhichas lupus',
-                                       'Melanogrammus aeglefinus','Pollachius virens',
-                                       'Glyptocephalus cynoglossus','','Zoarces americanus','Scophthalmus aquosus'))
-knitr::kable(spp.table, caption="Species grouping", booktabs=T) %>%
-  kableExtra::kable_styling(full_width = F, position = "float_right") %>% 
+```{r spp-groupings, eval = T}
+raw.dir <- here::here("data")
+spp <- read.csv(file.path(raw.dir,"spp_groupings.csv"),stringsAsFactors = F)
+spp <- spp %>%
+  dplyr::rename( 'Common Name' = COMNAME,
+          'Scientific Name' = SCINAME) %>%
+  dplyr::select(Group, NESPP3, 'Common Name', 'Scientific Name')
+ 
+knitr::kable(spp, caption="Species grouping", booktabs=T) %>%
+  kableExtra::kable_styling(full_width = F, position = "float_right") %>%
   kableExtra::collapse_rows(columns = 1)
 ```
+
+
+<!-- ```{r spp_groupings, eval = T, echo = F} -->
+<!-- library(tidyverse) -->
+<!-- spp.table <- data.frame(Group = c(rep("Highly Migratory Species", 19), rep("Monkfish in Mid-Atlantic waters",2), #21 -->
+<!--                                   "Atlantic Scallops", rep("Shrimp", 5), rep("Skates",9),"Herring","Ocean Quahog", #17 -->
+<!--                                   "Surf Clam", rep("Tilefish", 4), rep("Fluke & Black Seabass",2), #7 -->
+<!--                                   rep("Butterfish & Hake",3),"Bluefish in Mid-Atlantic waters","Spiny Dogfish",#5 -->
+<!--                                   "Northern Shortfin Squid","American Lobster", "Longfin Squid", "Menhaden",#4 -->
+<!--                                   "Offshore Hake","Scup in Mid-Atlantic waters",#2 -->
+<!--                                   "Windowpane Flounder in New England waters",#1 -->
+<!--                                   "Ocean Pout in New England waters","Wolffish",#2 -->
+<!--                                   "Winter Flounder in Mid-Atlnatic waters",#1 -->
+<!--                                   "Yellowtail Flounder in Mid-Atlantic waters","Unclassified Hake",#2 -->
+<!--                                   "White Hake in Mid-Atlantic waters",rep("Bluefish & Scup in New England waters", 2),#3 -->
+<!--                                   "Halibut in New England waters",rep("Groundfish in New England waters", 11),#12 -->
+<!--                                   rep("Groundfish in Mid-Atlantic waters",9),#9 -->
+<!--                                   rep("Windowpane Flounder & Ocean Pout in Mid-Atlantic waters",2)), #2  ##88 -->
+<!--                         NESPP3 = c("470","494","354","469","487","493","467","468","358","481", -->
+<!--                                    "349","482","359","355","466","432","353","491","471","11", -->
+<!--                                    "12","800","737","737","736","738","735","368","372","366", -->
+<!--                                    "365","365","373","369","370","367","168","754","769","444", -->
+<!--                                    "445","446","447","335","121","51","152","509","23","352", -->
+<!--                                    "802","727","801","221","508","329","125","250","512","120", -->
+<!--                                    "123","155","153","23","329","159","240","124","81","11", -->
+<!--                                    "12","147","269","153","120","122","123","240","124","81", -->
+<!--                                    "159","512","147","269","122","155","250","125"), ## 88? -->
+<!--                         Common = c("Albacore","Atlantic Sharpnose Shark","Bigeye Thresher Shark","Bigeye Tuna", #4 -->
+<!--                                    "Blacktip Shark","Blue Shark","Bluefin Tuna","Little Tunny","Longfin Mako",#5 -->
+<!--                                    "Porbeagle Shark","Sand Tiger","Sandbar Shark","Unclassified Shark",#4 -->
+<!--                                    "Shortfin Mako","Skipjack Tuna","Swordfish","Thresher Shark","Tiger Shark",#5 -->
+<!--                                    "Yellowfin Tuna","Goosefish","Goosefish","Sea Scallop",#4 -->
+<!--                                    "Unclassified Mantis Shrimp","Mantis Shrimps","Northern Shrimp",#3 -->
+<!--                                    "Atlantic & Gulf Brown Shrimp","Unclassified Shrimp(Caridea)",#2 -->
+<!--                                    "Barndoor Skate","Clearnose Skate","Little Skate","Ocellate Skates","Skates",#5 -->
+<!--                                    "Skates Little/Winter Mixed","Smooth Skate","Thorny Skate","Winter Skate", #4 -->
+<!--                                    "Atlantic Herring","Ocean Quahog","Atlantic Surfclam","Blueline Tilefish",#4 -->
+<!--                                    "Sand Tilefish","Tilefish","Unclassified Tilefish","Black Sea Bass",#4 -->
+<!--                                    "Summer Flounder","Butterfish","Red Hake","Silver Hake","Bluefish",#5 -->
+<!--                                    "Spiny Dogfish","Northern Shortfin Squid","American Lobster",#3 -->
+<!--                                    "Longfin Squid","Menhaden","Offshore Hake","Scup","Windowpane","Ocean Pout",#6 -->
+<!--                                    "Atlantic Wolffish","Winter Flounder","Yellowtail Flounder",#3 -->
+<!--                                    "Unclassified Hake","White Hake","Bluefish","Scup","Atlantic Halibut",#5 -->
+<!--                                    "Acadian Redfish","American Plaice","Atlantic Cod","Goosefish","Gossefish",#5 -->
+<!--                                    "Haddock", "Pollock", "White Hake", "Winter Flounder","Witch Flounder", #5 -->
+<!--                                    "Yellowtail Flounder","Acadian Redfish","American Plaice","Atlantic Cod",#4 -->
+<!--                                    "Atlantic Halibut","Atlantic Wolffish","Haddock","Pollock",#4 -->
+<!--                                    "Witch Flounder","Unclassified Hake","Ocean Pout","Windowpane"),#4 -->
+<!--                         Scientific = c("Thunnus alalunga","Rhizoprionodon terranovae","Alopias superciliosus",#3 -->
+<!--                                        "Thunnus obesus","Carcharhinus limbatus","Prionace glauca",#3 -->
+<!--                                        "Thunnus thynnus","Euthynnus alletteratus","Isurus paucus",#3 -->
+<!--                                        "Lamna nasus","Carcharias taurus", "Carcharhinus plumbeus",#3 -->
+<!--                                        "Chondrichthyes","Isurus oxyrhinchus","Katsuwonus pelamis",#3 -->
+<!--                                        "Xiphias gladius","Alopias vulpinus","Galeocerdo cuvier",#3 -->
+<!--                                        "Thunnus albacares","Lophius americanus","Lophius americanus",#3 -->
+<!--                                        "Placopecten magellanicus","Stomatopoda","Stomatopoda",#3 -->
+<!--                                        "Pandalus borealis","Panaeidae","Caridea","Dipturus laevis",#4 -->
+<!--                                        "Raja eglanteria","Leucoraja erinacea","Raja","Rajidae","Leucoraja",#5 -->
+<!--                                        "Malacoraja senta","Amblyraja radiata","Leucoraja ocellata",#3 -->
+<!--                                        "Clupea harengus","Arctica islandica","Spisula solidissima",#3 -->
+<!--                                        "Caulolatilus microps","Malacanthius plumieri",#2 -->
+<!--                                        "Lopholatilus chamaeleonticeps","Malacanthidae",#2 -->
+<!--                                        "Centropristis striata","Paralichthys dentatus","Peprilus triacanthus",#3 -->
+<!--                                        "Urophycis chuss","Merluccius bilinearis",#2 -->
+<!--                                        "Pomatomus saltatrix","Squalus acanthias","Illex illecebrosus",#3 -->
+<!--                                        "Homarus americanus","Loligo pealeii","Brevoortia",#3 -->
+<!--                                        "Merluccius albidus","Stenotomus chrysops","Scophthalmus aquosus", -->
+<!--                                        "Zoarces americanus", -->
+<!--                                        "Anaphichias lupus","Pseudopleuronectes americanus", -->
+<!--                                        "Limanda ferruginea","","Urophycis tenuis","Pomatomus saltatrix", -->
+<!--                                        "Stenotomus chrysops","Hippoglossus hippoglossus", -->
+<!--                                        "Sebastes fasciatus","Hippoglossus platessoides","Gadus morhua", -->
+<!--                                        "Lophius americanus","Lophius americanus","Melanogrammus aeglefinus", -->
+<!--                                        "Pollachius virens","Urophycis tenuis", -->
+<!--                                        "Pseudopleuronectes americanus","Glyptocephalus cynoglossus", -->
+<!--                                        "Limanda ferruginea","Sebastes Fasciatus","Hippoglossus platessoides", -->
+<!--                                        "Gadus morhua","Hippoglossus hippoglossus","Anarhichas lupus", -->
+<!--                                        "Melanogrammus aeglefinus","Pollachius virens", -->
+<!--                                        "Glyptocephalus cynoglossus","","Zoarces americanus","Scophthalmus aquosus")) -->
+
+<!-- knitr::kable(spp.table, caption="Species grouping", booktabs=T) %>% -->
+<!--   kableExtra::kable_styling(full_width = F, position = "float_right") %>% -->
+<!--   kableExtra::collapse_rows(columns = 1) -->
+<!-- ``` -->
 
 For the fleet diversity metric, gears include scallop dredge (gearcodes DRS, DSC, DTC, and DTS), other dredges (gearcodes DRM, DRO, and DRU), gillnet (gearcodes GND, GNT, GNO, GNR, and GNS), hand (gearcode HND), longline (gearcodes LLB and LLP), bottom trawl (gearcodes OTB, OTF, OTO, OTC. OTS, OHS, OTR, OTT, and PTB), midwater trawls (gearcode OTM and PTM), pot (gearcodes PTL, PTW, PTC, PTE, PTF, PTH, PTL, PTO, PTS, and PTX), purse seine (gearcode PUR), and hydraulic clam dredge (gearcode DRC).Vessels were further grouped by length categories of less than 30 feet, 30 to 50 feet, 50 to 75 feet, and 75 feet and above. All revenue was deflated to real dollars using the "WPU0223" Producer Price Index with a base of January 2015. Stata code for data processing is available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/data/Human_Dimensions_code).
 
@@ -132,11 +147,11 @@ Catch and fleet diversity indicators were formatted for inclusion in the `ecodat
 
 ### Plotting
 
-```{r fleet-diversity, fig.cap="Fleet diversity (A) and fleet count (B) in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE, fig.align='center', eval = T}
+```{r fleet-diversity, fig.cap="Fleet diversity (A) and fleet count (B) in the Mid Atlantic Bight.", echo=T, message=FALSE, warning=FALSE, fig.align="center", eval = T}
 
 # Relative working directories
-data.dir  <- here::here('data')
-r.dir <- here::here('R')
+data.dir  <- here::here("data")
+r.dir <- here::here("R")
 
 # Load data
 load(file.path(data.dir,"SOE_data_erddap.Rdata"))
@@ -148,12 +163,12 @@ opar <- par(mfrow = c(2, 1), mar = c(0, 0, 0, 0), oma = c(4, 6, 2, 6))
 
 soe.plot(SOE.data, "Time", "Mid-Atlantic average fleet diversity", stacked = "A",
          rel.y.num = 0.9, end.start = 2008, tol = 0.15, full.trend = F, cex.stacked = 1.5)
-soe.stacked.axis('Year', 'Fleet diversity', y.line = 2.5, outer = F,
+soe.stacked.axis("Year", "Fleet diversity", y.line = 2.5, outer = F,
                  rel.x.text = 1, rel.y.text = 1)
 soe.plot(SOE.data,"Time", "Mid-Atlantic fleet count", stacked = "B",
          rel.y.num = 0.9, end.start = 2008, full.trend = F, cex.stacked = 1.5)
 
-soe.stacked.axis('Year', 'Fleet count', y.line = 2.5, outer = F,
+soe.stacked.axis("Year", "Fleet count", y.line = 2.5, outer = F,
                  rel.x.text = 1, rel.y.text = 0.95)
 
 ```
