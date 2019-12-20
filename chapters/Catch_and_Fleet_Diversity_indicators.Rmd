@@ -37,10 +37,12 @@ spp <- spp %>%
           'Scientific Name' = SCINAME) %>%
   dplyr::select(Group, NESPP3, 'Common Name', 'Scientific Name')
  
-knitr::kable(spp, caption="Species grouping", booktabs=T) %>%
-  kableExtra::kable_styling(full_width = F, position = "float_right") %>%
+knitr::kable(spp, caption="Species grouping", booktabs=T, longtable = T) %>%
+  kableExtra::kable_styling(full_width = T,  latex_options = c("repeat_header"), font_size = 8) %>%
   kableExtra::collapse_rows(columns = 1)
+
 ```
+
 
 
 <!-- ```{r spp_groupings, eval = T, echo = F} -->
