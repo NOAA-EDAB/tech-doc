@@ -284,9 +284,8 @@ axis(1,at = seq(1250,18500,length.out = 8),labels = c("2010","2011","2012","2013
                                             "2014","2015","2016","2017"), cex.axis=1)
 ```
 
-```{r SK-plot, fig.align='center', echo = F, fig.cap = "Verified records of Southern Kingfish occurrence in the Mid-Atlantic."}
+```{r SK-plot, fig.align='center', echo = F, fig.cap = "Verified records of Southern Kingfish occurrence in the Mid-Atlantic.", out.width='80%'}
 image.dir <- here::here('images')
 
 knitr::include_graphics(file.path(image.dir, 'southern_kingfish.PNG'))
 ```
-

@@ -233,4 +233,3 @@ plot_stackbarcpts(YEAR = dat2plot$Time,
                   ylab = "Small fish per Large fish biomass (anomaly)")
 
 ```
-

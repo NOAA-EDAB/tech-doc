@@ -60,8 +60,8 @@ df<-readr::read_delim(tab, delim="|")
 df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
 knitr::kable(
   df, booktabs = TRUE,
-  caption = 'Habitat descriptors used in model parameterization.'
-)
+  caption = 'Habitat descriptors used in model parameterization.') %>% 
+  kableExtra::kable_styling(font_size = 8)
 ```
 
 #### Zooplankton
@@ -118,4 +118,3 @@ soe.plot(SOE.data, "Time", "sumflo fall habitat occupancy", stacked = "B",
 soe.stacked.axis("Year", expression("Habitat Area, 10"^3*" km"^2), y.line = 2.5)
 
 ```
-

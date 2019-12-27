@@ -25,6 +25,7 @@ Indicators included in this document were selected to clearly align with managem
 
 ```{r setup, echo=F, message = F ,warning = F}
 knitr::opts_chunk$set(echo = F, message = F ,warning = F, fig.path = here::here("images/")) 
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 #source directories
 image.dir <- here::here("images")
 r.dir <- here::here("R")
@@ -96,10 +97,11 @@ ne_states <- ne_states(country = "united states of america",
 epu_sf <- ecodata::epu_sf %>% 
   filter(EPU %in% c("MAB","GB","GOM"))
 ```
-Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
+
+(ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
-```{r neusmap, fig.align='center', fig.height=6, echo = F}
+```{r neusmap, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap)'}
 knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 
 ```

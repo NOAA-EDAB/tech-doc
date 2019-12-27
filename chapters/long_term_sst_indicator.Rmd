@@ -42,11 +42,8 @@ df <- data.frame(
   )
 
 knitr::kable(df,
-      caption="Coordinates used in NOAA ERSST V5 data extraction.",
-      format = "html",
-      align = "c") %>%
-  kableExtra::kable_styling(full_width = F) %>% 
-  kableExtra::column_spec(c(1,2), width =  "4cm")
+      caption="Coordinates used in NOAA ERSST V5 data extraction.",  booktabs=T) %>%
+  kableExtra::kable_styling(full_width = F) 
 ```
 
 R code used in extracting time series of long-term SST data.

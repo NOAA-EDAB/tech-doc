@@ -43,7 +43,9 @@ library(tidyr)
 library(stringr)
 ```
 
-```{r r-extract,fig.align = "center", eval = T,fig.cap="All reported algal blooms >5000 cells ml <sup>-1</sup> (black), and reports of <i>C. polykrikoides</i> blooms >300 cells ml <sup>-1</sup> (red) between 2007-2017.", echo = T, eval = T, message=F, warning=F}
+(ref:r-extract) All reported algal blooms >5000 cells ml ^-1^ (black), and reports of *C. polykrikoides* blooms >300 cells ml ^-1^ (red) between 2007-2017.
+
+```{r r-extract,fig.align = "center", eval = T, fig.cap='(ref:r-extract)', echo = T, eval = T, message=F, warning=F}
 data.dir <- "data/CB_HAB"
 
 #Function to process data - cpm specifies cells per ml filter
@@ -113,8 +115,7 @@ fixer <- function(cpm){
   #No data
   
   #2016---------------------------------------------------------
-  HAB_2016 <- hab_2016 %>% mutate(species= 
-                                    plyr::mapvalues(species, 
+  HAB_2016 <- hab_2016 %>% mutate(species= plyr::mapvalues(species, 
                                                     from = c("Eugelna sanguinea",
                                                              "Microcystin aeruginosa",
                                                              "Microcystis aeruginosa",
