@@ -187,11 +187,6 @@ ltm <- d %>% group_by(EPU, day) %>% dplyr::summarise(mean  = mean(Value),
 ### Plotting
 ```{r plotting, echo = T, eval = T, fig.cap = "Long-term mean SSTs for the Mid-Atlantic Bight (A), Georges Bank (B), and Gulf of Maine (C). Orange and cyan shading show where the 2017 daily SST values were above or below the long-term mean respectively; red and dark blue shades indicate days when the 2017 mean exceeded +/- 1 standard deviation from the long-term mean.", fig.width=8, fig.height=3.25, fig.align='center'}
 
-
-# Relative working directories
-data.dir  <- here::here('data')
-r.dir <- here::here('R')
-
 # Load data
 load(file.path(data.dir,"SOE_data_erddap.Rdata"))
 
