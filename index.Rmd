@@ -30,6 +30,7 @@ knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 image.dir <- here::here("images")
 r.dir <- here::here("R")
 gis.dir <- here::here("gis")
+data.dir <- here::here("data")
 #Plotting and data libraries
 install.packages("ecodata")
 library(ggplot2)
