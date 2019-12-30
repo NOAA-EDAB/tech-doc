@@ -111,7 +111,7 @@ Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwat
 
 EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table \@ref(tab:groups). "Linked groups" directly support or impact the Focal groups as described above.
 
-```{r groups, eval = T, echo = F}
+```{r groups, eval = F, echo = F}
 #read in EMAXconceptualmodgroups.csv and kable it
 emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"),stringsAsFactors=F)
 names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
