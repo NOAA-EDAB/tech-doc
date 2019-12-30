@@ -31,6 +31,7 @@ image.dir <- here::here("images")
 r.dir <- here::here("R")
 gis.dir <- here::here("gis")
 #Plotting and data libraries
+install.packages("ecodata")
 library(ggplot2)
 library(magrittr)
 library(dplyr)
