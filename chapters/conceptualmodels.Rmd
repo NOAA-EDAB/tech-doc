@@ -115,7 +115,7 @@ EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gul
 #read in EMAXconceptualmodgroups.csv and kable it
 # emaxgroups <- read.csv(file.path(data.dir, "EMAXconceptualmodgroups.csv"),stringsAsFactors=F)
 # names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
-emaxgroups <- readRDS(file.path(data.dir,"EMAXconceptualmodgroups.RDS"))
+emaxgroups <- readRDS(here::here("data","EMAXconceptualmodgroups.RDS"))
 knitr::kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups", booktabs = T) %>% 
   kableExtra::kable_styling(font_size = 9)
 ```
