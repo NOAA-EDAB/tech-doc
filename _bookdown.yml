@@ -1,3 +1,4 @@
+book_filename: "_main"
 rmd_files: ["index.Rmd",
 "chapters/erddap_query_and_build.Rmd",
 "chapters/aggregate_groups.rmd",
@@ -37,4 +38,4 @@ rmd_files: ["index.Rmd",
 "chapters/references.Rmd"]
 delete_merged_file: false
 output_dir: "_book"
-new_session: no
+new_session: false
