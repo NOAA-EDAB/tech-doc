@@ -120,9 +120,8 @@ EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gul
 
 emaxgroups <- readRDS(here::here("data","EMAXconceptualmodgroups.RDS"))  
 emaxgroups<-emaxgroups %>%   select(-Notes)
-knitr::kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.", booktabs = T) %>% 
-  kableExtra::kable_styling(font_size = 7) %>% 
-  kableExtra::landscape()
+knitr::kable(emaxgroups, "latex", caption="Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.", booktabs = T) %>% 
+  kableExtra::kable_styling(font_size = 7)
 ```
 
 

@@ -61,8 +61,7 @@ df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
 knitr::kable(
   df, booktabs = TRUE,
   caption = 'Habitat descriptors used in model parameterization.') %>% 
-  kableExtra::kable_styling(font_size = 8) %>% 
-  kableExtra::landscape()
+  kableExtra::kable_styling(font_size = 7)
 ```
 
 #### Zooplankton
