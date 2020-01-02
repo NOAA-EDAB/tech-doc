@@ -36,4 +36,5 @@ rmd_files: ["index.Rmd",
 "chapters/Zooplankton_indicators.Rmd",
 "chapters/references.Rmd"]
 delete_merged_file: false
+output_dir: "_book"
 new_session: no
