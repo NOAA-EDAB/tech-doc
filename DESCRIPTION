@@ -1,4 +1,5 @@
 Package: placeholder
+Type: Book
 Title: Technical Documentation, State of the Ecosystem Report
 Description: Technical documentation for State of the Ecosystem Reporting.
 Version: 2.0.0

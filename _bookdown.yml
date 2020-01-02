@@ -1,4 +1,4 @@
-book_filename: "_main"
+book_filename: "tech_doc"
 rmd_files: ["index.Rmd",
 "chapters/erddap_query_and_build.Rmd",
 "chapters/aggregate_groups.rmd",
