@@ -58,7 +58,7 @@ Depends:
   patchwork,
   Survdat
 Remotes: 
-  ropensci/rnaturalearthhires,
+  ropensci/rnaturalearthhires@7a3f0fc8d8d690fae044dd01eb2f14d3a75c92ed,
   rstudio/bookdown,
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
