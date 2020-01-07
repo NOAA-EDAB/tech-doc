@@ -32,12 +32,21 @@ R code used in extraction and processing:
 
 
 ### Plotting
-```{r MAB-SST, fig.width = 8, fig.height = 7, fig.cap = "Seasonal sea-surface temperature anomalies in the Mid-Atlantic Bight."}
+```{r MAB-SST, fig.width = 8, fig.height = 7, fig.cap = "Seasonal sea-surface temperature anomalies in the Mid-Atlantic Bight.",eval=T}
 #Coastline
-coast <- ne_countries(scale = 10,
-                          continent = "North America",
-                          returnclass = "sf") %>%
-             sf::st_transform(crs = crs)
+map.crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
+ # coast <- rnaturalearth::ne_countries(scale = 10,
+ #                       continent = "North America",
+ #                       returnclass = "sf") %>%
+ #   sf::st_transform(crs = map.crs)
+
+#projection
+
+#coastline
+gis.dir <- here::here("gis")
+coast <- sf::st_read(gis.dir,layer="NEUSCoast",quiet=T)
+coast <- sf::st_transform(coast,map.crs)
+
 
 #EPU shapefile
 epu_sf_ma <- ecodata::epu_sf %>% 
@@ -53,7 +62,7 @@ ymin = 35.5
 ymax = 43
 xlims <- c(xmin, xmax)
 ylims <- c(ymin, ymax)
-sst_ <- seasonal_oisst_anom_gridded 
+sst_ <- ecodata::seasonal_oisst_anom_gridded 
 
 sst_$Season <- factor(sst_$Season, levels = c("Winter",
                                             "Spring",
@@ -62,7 +71,7 @@ sst_$Season <- factor(sst_$Season, levels = c("Winter",
 sst_map <- 
   ggplot() +
   geom_tile(data = sst_, aes(x = Longitude, y = Latitude, fill = Value)) +
-  geom_sf(data = coast, size = map.lwd) +
+   geom_sf(data = coast, size = map.lwd) +
   geom_sf(data = epu_sf_ma, fill = "transparent", size = map.lwd) +
   scale_fill_gradient2(name = "Temp.\nAnomaly (°C)",
                        low = scales::muted("blue"),

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>Department of Commerce (DOC), National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), Coastal Services Center (CSC)</origin>
+<pubdate>1998</pubdate>
+<title>NOAA's Medium Resolution Digital Vector Shoreline (1998) for the Contiguous United States</title>
+<geoform>vector digital data</geoform>
+<pubinfo>
+<pubplace>Charleston, SC</pubplace>
+<publish>NOAA's Ocean Service, Coastal Services Center (CSC)</publish>
+</pubinfo>
+<onlink>http://csc.noaa.gov/htdata/Shoreline/us_medium_shoreline.zip</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>NOAA's Medium Resolution Digital Vector Shoreline is a high-quality, Geographic Information System-ready, general-use digital vector data set created by the Strategic Environmental Assessments (SEA) Division of NOAA's Office of Ocean Resources Conservation and Assessment. The Medium Resolution Digital Vector Shoreline is now managed by the NOS Coastal Services Center (CSC). Compiled from hundreds of NOAA coast charts, this product comprises over 75,000 nautical miles of coastline (nearly 2.5 million vectices), representing the entire coterminous United States of America. Alaska, the Hawaiian Islands, Puerto Rico, and all other interests and territories of the United States are not included in the collection.</abstract>
+<purpose>Shoreline spatial data are considered a crucial element in land use planning, determination of boundary extents, performing change analysis for erosion and accretion studies, and other types of decision making.</purpose>
+</descript>
+<timeperd>
+<timeinfo>
+<rngdates>
+<begdate>1988</begdate>
+<enddate>1992</enddate>
+</rngdates>
+</timeinfo>
+<current>Publication Date. The coastline data contained in this compilation are taken directly from the most up-to-date coast charts available at the time (1988-1992).</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>None Planned</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-124.762</westbc>
+<eastbc>-66.849</eastbc>
+<northbc>49.020</northbc>
+<southbc>24.504</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>shoreline</themekey>
+<themekey>shoreline data</themekey>
+<themekey>shoreline vectorization</themekey>
+<themekey>NOAA nautical chart</themekey>
+<themekey>digital vector shoreline</themekey>
+<themekey>digital geographic boundaries</themekey>
+<themekey>Shoreline</themekey>
+</theme>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>oceans</themekey>
+<themekey>environment</themekey>
+</theme>
+<theme>
+<themekt>NOS Data Explorer Topic Category</themekt>
+<themekey>Environmental Monitoring</themekey>
+<themekey>Shoreline</themekey>
+</theme>
+<theme>
+<themekt>Geospatial Platform</themekt>
+<themekey>OceanCommunity</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>Contiguous United States</placekey>
+<placekey>Conterminous United States</placekey>
+<placekey>East Coast</placekey>
+<placekey>West Coast</placekey>
+<placekey>Gulf of Mexico</placekey>
+<placekey>Gulf Coast</placekey>
+<placekey>Great Lakes</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>Not to be used for navigation purposes.</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), National Geodetic Survey (NGS)</cntorg>
+</cntorgp>
+<cntpos>Cartographer</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1315 East West Highway</address>
+<city>Silver Spring</city>
+<state>MD</state>
+<postal>20910</postal>
+</cntaddr>
+<cntvoice>301-713-3242</cntvoice>
+<cntfax>301-713-4172</cntfax>
+<cntemail>ngs.infocenter@noaa.gov</cntemail>
+</cntinfo>
+</ptcontac>
+</idinfo>
+<dataqual>
+<logic>Linear topological associations are maintained for the geographical component of the Shoreline data product.  In addition, a descriptive component contains a variety of attributes which detail the processing histories from data capture through final testing and error correction, as well as an assessment of the data integrity for each arc associated with the shoreline data product. Included also is a simple left-side right-side topology identification scheme which identifies the land and the water sides of each arc.</logic>
+<complete>The Medium Resolution Shoreline incorporates the entire contiguous United States coastline as four major regions.  These include: the Atlantic Coast, ranging from the United States-Canada Border at the St. Croix River to Florida Bay and the Florida Keys;  the Gulf of Mexico Region, extending from northwest of the Keys to the United States-Mexico Border at the Rio Grande; the Pacific Coast Region, extending from the United States-Mexico Border at Baja to the United States-Canada Border along the Straits of Juan de Fuca;and the Great Lakes Region, which includes all of the lakes in their entirety,and the St. Lawrence River Seaway to Ogdensburg, NY.  Alaska, the HawaiianIsland Archipelago, Puerto Rico, or any other U. S. interests which are nota part of the coterminous United States are not included in the collection.</complete>
+<posacc>
+<horizpa>
+<horizpar>These data were derived directly from master copy National Ocean Service's navigational charts. These charts are advertised to meet or exceed current National Map Accuracy Standards. When plotted as a hard-copy product to the appropriate source chart scale, the digital information supplied should meet or exceed these standards.The data supplied here are a compilation of information collected from some 270+ current or pre-release National Ocean Service Navigation Charts.   In compiling this product we made no attempt to ascertain the congruency between the charted data, and the real world.  Our objective was to simply capture the representative coastline as provided to us via the NOS Chart. Every effort was made to capture the shoreline on these charts as faithfully as our skills and technology allowed, and there is every indication that we were successful to this end.  However, in doing so, we automatically conveyed the character (all aspects, both good and bad) of those data to our digital product.  A character which may or may not be in agreement with the real world. Because of this, the user is advised to exercise caution in making any assumptions about the fallibility, or infallibility, of the spatial informationsupplied here; especially when circumstances warrant a high degree of absolute positional accuracy.</horizpar>
+</horizpa>
+</posacc>
+<lineage>
+<procstep>
+<procdesc>Generation of the Medium Resolution Digital Shoreline Product was accomplished in five stages: data capture, chart cover construction, segment assembly, verification, and final formatting/archive.  Stage 1, data capture involves the initial conversion of the analog source data, NOS Coastal Series Navigational Charts, into a digital vector image.  During stage 2, the raw vector image is converted into an Arc/Info GIS Coverage.  In addition, during this phase of the work, the data is corrected (gross error removal), topologies are constructed, descriptive information is added, and an intermediate archive is created.  The third stage is segment assembly.  Here, the chart cover data is partitioned into regionally contiguous groupings, (referred to as sections), adjacent boundaries are matched,  and the individual charts are joined together to produce continuous shoreline segments.  Following assembly, stage 4, data verification, is initiated.  Portions of the sectional data are chosen at random to be plotted coincident with chart master sheets (mylars) and compared.  Discrepancies are noted, corrective action, if required, is taken, and the data reverified.  The fifth and final stage is formatting and final archive.  The shoreline data is converted into the two ASCII formats for distribution. Process Date Range is 1996-1998</procdesc>
+<procdate>1998</procdate>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<indspref>Conterminous United States</indspref>
+<direct>Vector</direct>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.000001</latres>
+<longres>0.000001</longres>
+<geogunit>Decimal degrees</geogunit>
+</geograph>
+<geodetic>
+<horizdn>North American Datum of 1983</horizdn>
+<ellips>Geodetic Reference System 80</ellips>
+<semiaxis>6378137</semiaxis>
+<denflat>298.257222101</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>national medium shoreline</enttypl>
+<enttypd>shapefile attribute table</enttypd>
+<enttypds>ESRI</enttypds>
+</enttyp>
+<attr>
+<attrlabl>S_SCALE</attrlabl>
+<attrdef>Map scale of the source chart from which the arcs were captured.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<udom>Variable from 1:10,000 to 1:600,000</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_CHART</attrlabl>
+<attrdef>NOS chart catalog number for chart from which the arcs were captured.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<udom>Charts included 11301 through 18800.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_DATUM</attrlabl>
+<attrdef>Source chart horizontal reference datum.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<edom>
+<edomv>02</edomv>
+<edomvd>Horizontal Datum = 1902</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>27</edomv>
+<edomvd>Horizontal Datum = NOS 1927</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>83</edomv>
+<edomvd>Horizontal Datum = NOS 1983</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_REV_DATE</attrlabl>
+<attrdef>Source chart's date of revision.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<udom>Any valid date string (mm/yy), 1/87 though 12/92.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_SOURCE</attrlabl>
+<attrdef>Identifies method used to capture source data.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<edom>
+<edomv>1</edomv>
+<edomvd>Arc/Info - ArcEdit Heads Up</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>2</edomv>
+<edomvd>Hitachi CADCore Heads Up</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>3</edomv>
+<edomvd>Digitizing Table</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>4</edomv>
+<edomvd>Estimation or truncation arc added post capture. (* See Overview Description for explanation)</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>5</edomv>
+<edomvd>Data obtained from the State of Florida.</edomvd>
+<edomvds>NOS Special Projects</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_ARC_CODE</attrlabl>
+<attrdef>Coding identifying the arc type.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<edom>
+<edomv>1</edomv>
+<edomvd>Shoreline data arc from capture process.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>3</edomv>
+<edomvd>Shoreline truncation arc -post capture addition.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>5</edomv>
+<edomvd>Shoreline estimation arc -post capture modification/addition. (* See Overview Description for explanation)</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>S_INTEGRIT</attrlabl>
+<attrdef>Qualitative assessment of arcs accuracy based on source media.</attrdef>
+<attrdefs>NOS, Special Projects</attrdefs>
+<attrdomv>
+<edom>
+<edomv>1</edomv>
+<edomvd>Mater compilation -heavy gauge mylar (0.007 in).</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>2</edomv>
+<edomvd>X-drawing; reproduction of master on lighter grade (0.003) mylar.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>3</edomv>
+<edomvd>Water resistant paper</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>4</edomv>
+<edomvd>Data sourced from the State of Florida.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>5</edomv>
+<edomvd>Estimate or truncation arc. (* See Overview Description for explanation)</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>6</edomv>
+<edomvd>Unknown (* See Overview Description for explanation)</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>REGIONLIST</attrlabl>
+<attrdef>List of Coastal Assessment Regions (individual or combined list from the following).</attrdef>
+<attrdefs>NOS, Special Projectsx</attrdefs>
+<attrdomv>
+<edom>
+<edomv>N</edomv>
+<edomvd>Polygons of the North Atlantic region.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>M</edomv>
+<edomvd>Polygons of the Middle Atlantic region.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>S</edomv>
+<edomvd>Polygons of the South Atlantic region</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>G</edomv>
+<edomvd>Polygons of the Gulf of Mexico region.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>P</edomv>
+<edomvd>Polygons of the Pacific region</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>L</edomv>
+<edomvd>Polygons of the Great Lakes region</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>U</edomv>
+<edomvd>Polygons within the U.S. border but not a part of the Coastal Assessment Framework (CAF).</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>X</edomv>
+<edomvd>Polygons outside U.S. boundaries.</edomvd>
+<edomvds>NOS, Special Projects</edomvds>
+</edom>
+</attrdomv>
+</attr>
+</detailed>
+<overview>
+<eaover>Truncation arcs are arcs inserted into the data to provide continuity/closure in places where the cartographic information on the chart was incomplete. Often, small water bodies (rivers, streams, and creeks), in locations beyond the point of navigability are terminated to facilitate the insertion of non-cartographic information such as title blocks and notations. Continuity of the data, a requirement our data set specification, is interrupted at these locations if they are captured and retained as depicted on the navigation chart. To reestablish the necessary topological continuity an artificial closure arc is placed across the truncated section of shoreline. These arcs make no attempt to simulate the position of the missing shoreline section(s), but rather simply terminate the feature. To easily identify these arc features in the data field they are given the attribute codes: S_SOURCE = 4 and S_ARC_CODE = 3.Estimation arcs are used for two purposes: first, to fill in gaps in the shoreline as depicted on the chart (other than those areas which would be considered truncations), and secondly, to identify captured (digitized) shoreline arcs which have been modified in some way either for error rectification or edge matching adjustments. The span of these arcs range from five meters to several tens of meters in length. In the first case, estimator arcs attempt to simulate or mimic the actual shape or course of the coastline in the missing area. Insertion of these arcs into the data is done using heads up methods with the appropriate navigational chart(s) as a guide. In the second case, an existing arcs terminal to node is moved from its original captured location to a position where it can be connected to the concomitant arc's node from an adjacent chart. Additional vertices may then be added to replicate the course of the original information. Modification of existing arcs was carried out such that disruption of the information was minimized. Estimate arcs are identified in the data by the codes: S_SOURCE = 4, S_ARC_CODE = 5. If the accuracy of the data could not be assessed and thus categorized into one of the five qualitative integrity classes, the arc was classified with an integrity of unknown. Most of the arcs grouped into the unknown category were those captured early in the project. During that time source materials (primarily master compilations and X-drawings) were assumed to be of equal stability and accuracy. This was not, however, the case. Once this disparity was recognized, source tracking procedures were implemented and the integrity of the captured information, based on the stability and clarity of the source media was tracked and assessed.</eaover>
+<eadetcit>NOS, Special Projects</eadetcit>
+</overview>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), Coastal Services Center (CSC)</cntorg>
+</cntorgp>
+<cntpos>Clearninghouse Manager</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>2234 South Hobson Avenue</address>
+<city>Charleston</city>
+<state>SC</state>
+<postal>29405</postal>
+</cntaddr>
+<cntvoice>(843)740-1210</cntvoice>
+<cntfax>(843)740-1224</cntfax>
+<cntemail>Clearinghouse@noaa.gov</cntemail>
+</cntinfo>
+</distrib>
+<resdesc>Downloadable Data</resdesc>
+<distliab>These data were prepared by an agency of the United States Government. Neither the United States Government nor any agency thereof, nor any of their employees, make any warranty, expressed or implied, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed in this report, or represents that its use would not infringe privately owned rights. Reference therein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. Any views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof. Although all data have been used by NOAA, no warranty, expressed or implied, is made by NOAA as to the accuracy of the data and/or related materials. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by NOAA in the use of these data or related materials.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>ESRI shapefile</formname>
+<formcont>Data can be extracted for select areas from the NGDC site based on entered coordinates. There is a 500,000 point limit to these requests, so large geographic areas can not be processed as a single request.</formcont>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://csc.noaa.gov/htdata/Shoreline/us_medium_shoreline.zip</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>none</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20130930</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), Coastal Services Center (CSC)</cntorg>
+</cntorgp>
+<cntpos>Metadata Specialist</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>2234 South Hobson Avenue</address>
+<city>Charleston</city>
+<state>SC</state>
+<postal>29405</postal>
+</cntaddr>
+<cntvoice>843-740-1210</cntvoice>
+<cntfax>843-740-1224</cntfax>
+<cntemail>csc@noaa.gov</cntemail>
+</cntinfo>
+</metc>
+<metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+</metainfo>
+</metadata>
