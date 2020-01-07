@@ -33,6 +33,7 @@ gis.dir <- here::here("gis")
 data.dir <- here::here("data")
 #Plotting and data libraries
 library(ggplot2)
+library(formatR)
 library(magrittr)
 library(dplyr)
 library(tidyr)
