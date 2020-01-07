@@ -52,6 +52,7 @@ Depends:
   rvest,
   xml2,
   ggrepel,
+  kernlab,
   sf,
   rnaturalearth,
   patchwork,
