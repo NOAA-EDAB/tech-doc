@@ -58,6 +58,7 @@ library(sf)
 library(rgdal)
 library(raster)
 library(rnaturalearth)
+library(rnaturalearthhires)
 
 #Time series constants
 shade.alpha <- 0.3
