@@ -89,11 +89,26 @@ gom.scs.shp=gUnion(gom, scs, byid=F, id=NULL)
 mab.gbk.shp=gUnion(mab, gbk, byid=F, id=NULL)
 NES.shp=gUnion(mab.gbk.shp, gom.scs.shp, byid=F, id=NULL)
 #extract just lat/lons for lines
-gbk.lonlat =as.data.frame(lapply(slot(gbk, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
-gom.lonlat =as.data.frame(lapply(slot(gom, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
-mab.lonlat =as.data.frame(lapply(slot(mab, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
-scs.lonlat =as.data.frame(lapply(slot(scs, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
-gom.gbk.lonlat =as.data.frame(lapply(slot(gom.gbk.shp, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
+gbk.lonlat =as.data.frame(
+  lapply(slot(gbk, "polygons"),
+         function(x) lapply(slot(x, "Polygons"),
+                            function(y) slot(y, "coords"))))
+gom.lonlat =as.data.frame(
+  lapply(slot(gom, "polygons"), 
+         function(x) lapply(slot(x, "Polygons"), 
+                            function(y) slot(y, "coords"))))
+mab.lonlat =as.data.frame(
+  lapply(slot(mab, "polygons"), 
+         function(x) lapply(slot(x, "Polygons"), 
+                            function(y) slot(y, "coords"))))
+scs.lonlat =as.data.frame(
+  lapply(slot(scs, "polygons"), 
+         function(x) lapply(slot(x, "Polygons"), 
+                            function(y) slot(y, "coords"))))
+gom.gbk.lonlat =as.data.frame(
+  lapply(slot(gom.gbk.shp, "polygons"), 
+         function(x) lapply(slot(x, "Polygons"), 
+                            function(y) slot(y, "coords"))))
 NES.lonlat =as.data.frame(NES.shp@polygons[[1]]@Polygons[[1]]@coords)
 # create matrix to use in in.out function
 # create matrix to use in in.out function from package 'mgcv'
@@ -112,7 +127,8 @@ ZPD$epu[which(in.out(mab.mat, m4))]='MAB'
 test=ZPD[is.na(ZPD$epu),] #unassigned
 nms=data.frame(colnames(ZPD)) # column names of orginal data
 # limit data set to zooplankton from 1977 on
-ZPDb=ZPD[,c(seq(1,14,1), seq(290,297,1), seq(106,197,1))] # check to make sure these are correct against 'nms' if data source changes!!!
+ZPDb=ZPD[,c(seq(1,14,1), seq(290,297,1), seq(106,197,1))] 
+# check to make sure these are correct against 'nms' if data source changes!!!
 ZPDb=ZPDb[order(ZPDb$date),]
 ZPDb=ZPDb[which(ZPDb$year > 1976),] # remove NA data in years prior to 1977
 # Select only taxa present in yearly data > x percent of samples
@@ -157,8 +173,12 @@ gbk.yr.spln=data.frame()
 for (i in 23:50){
   num=i
   name=nm[num,1]
-  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num], by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), FUN=mean, na.rm=T)
-  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], method="natural",  ties = mean)  
+  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num],
+                       by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), 
+                       FUN=mean, na.rm=T)
+  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], 
+                   method="natural",  
+                   ties = mean)  
   x.daily=func(seq(1, 12, 0.0302)) #365 days
   gbk.yr.spln=rbind(gbk.yr.spln,x.daily)
 }
@@ -170,8 +190,11 @@ gom.yr.spln=data.frame()
 for (i in 23:50){
   num=i
   name=nm[num,1]
-  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num], by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), FUN=mean, na.rm=T)
-  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], method="natural",  ties = mean)
+  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num],
+                       by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), 
+                       FUN=mean, na.rm=T)
+  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], 
+                   method="natural",  ties = mean)
   x.daily=func(seq(1, 12, 0.0302)) #365 days
   gom.yr.spln=rbind(gom.yr.spln,x.daily)
 }
@@ -183,8 +206,11 @@ mab.yr.spln=data.frame()
 for (i in 23:50){
   num=i
   name=nm[num,1]
-  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num], by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), FUN=mean, na.rm=T)
-  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], method="natural",  ties = mean)
+  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num],
+                       by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]),
+                       FUN=mean, na.rm=T)
+  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2],
+                   method="natural",  ties = mean)
   x.daily=func(seq(1, 12, 0.0302)) #365 days
   mab.yr.spln=rbind(mab.yr.spln,x.daily)
 }
@@ -196,8 +222,11 @@ scs.yr.spln=data.frame()
 for (i in 23:50){
   num=i
   name=nm[num,1]
-  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num], by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), FUN=mean, na.rm=T)
-  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], method="natural",  ties = mean)
+  mean.loc.x=aggregate(ZPDlog[which(ZPDlog$epu==area),num],
+                       by=list(ZPDlog$bmm[which(ZPDlog$epu==area)]), 
+                       FUN=mean, na.rm=T)
+  func = splinefun(mean.loc.x[,1], y=mean.loc.x[,2], 
+                   method="natural",  ties = mean)
   x.daily=func(seq(1, 12, 0.0302)) #365 days
   scs.yr.spln=rbind(scs.yr.spln,x.daily)
 }
@@ -229,10 +258,30 @@ for (i in 1:dim(scs.anom)[1]){
 
 scs.anom.b=rbind(scs.anom.b,test)
 # Aggregrate by Year, Yearly anomaly by epu
-gbk.yr.anom=aggregate(gbk.anom.b, by=list(gbk.anom$year), FUN=mean, na.rm=T); rownames(gbk.yr.anom)=gbk.yr.anom[,1]; gbk.yr.anom[,1]=NULL; colnames(gbk.yr.anom)=colnames(gbk.anom)
-gom.yr.anom=aggregate(gom.anom.b, by=list(gom.anom$year), FUN=mean, na.rm=T); rownames(gom.yr.anom)=gom.yr.anom[,1]; gom.yr.anom[,1]=NULL; colnames(gom.yr.anom)=colnames(gom.anom)
-mab.yr.anom=aggregate(mab.anom.b, by=list(mab.anom$year), FUN=mean, na.rm=T); rownames(mab.yr.anom)=mab.yr.anom[,1]; mab.yr.anom[,1]=NULL; colnames(mab.yr.anom)=colnames(mab.anom)
-scs.yr.anom=aggregate(scs.anom.b, by=list(scs.anom$year), FUN=mean, na.rm=T); rownames(scs.yr.anom)=scs.yr.anom[,1]; scs.yr.anom[,1]=NULL; colnames(scs.yr.anom)=colnames(scs.anom)
+gbk.yr.anom=aggregate(gbk.anom.b, 
+                      by=list(gbk.anom$year),
+                      FUN=mean, na.rm=T); 
+rownames(gbk.yr.anom)=gbk.yr.anom[,1]; 
+gbk.yr.anom[,1]=NULL; 
+colnames(gbk.yr.anom)=colnames(gbk.anom)
+gom.yr.anom=aggregate(gom.anom.b, 
+                      by=list(gom.anom$year),
+                      FUN=mean, na.rm=T); 
+rownames(gom.yr.anom)=gom.yr.anom[,1]; 
+gom.yr.anom[,1]=NULL; 
+colnames(gom.yr.anom)=colnames(gom.anom)
+mab.yr.anom=aggregate(mab.anom.b, 
+                      by=list(mab.anom$year),
+                      FUN=mean, na.rm=T); 
+rownames(mab.yr.anom)=mab.yr.anom[,1]; 
+mab.yr.anom[,1]=NULL; 
+colnames(mab.yr.anom)=colnames(mab.anom)
+scs.yr.anom=aggregate(scs.anom.b, 
+                      by=list(scs.anom$year),
+                      FUN=mean, na.rm=T); 
+rownames(scs.yr.anom)=scs.yr.anom[,1]; 
+scs.yr.anom[,1]=NULL; 
+colnames(scs.yr.anom)=colnames(scs.anom)
 
 # Small-Large body copepod abundance anomaly
 lgtx=c(25) #column for Calanus finmarchicus

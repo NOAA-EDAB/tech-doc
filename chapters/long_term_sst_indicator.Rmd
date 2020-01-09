@@ -229,7 +229,8 @@ for (filenum in 1:numfiles){
       dwidth2 <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
       area=((dwidth1 + dwidth1)/2) * dheight
       
-      dataline <- matrix(c(year, month, regenlon, regenlat, round(sst[arrlons,arrlats],digits=2),area),1,6)
+      dataline <- matrix(c(year, month, regenlon, regenlat,
+                           round(sst[arrlons,arrlats],digits=2),area),1,6)
       
       
       if(is.finite(sst[arrlons,arrlats])) {

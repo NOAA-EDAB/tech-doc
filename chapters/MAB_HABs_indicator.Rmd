@@ -139,14 +139,18 @@ fixer <- function(cpm){
   
   #2017------------------------------------------------------------
   hab_2017$species = str_trim(hab_2017$species)
-  HAB_2017 <- hab_2017 %>% mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
-                                                                       "Anabaena sp.","Anabaena spp",
-                                                                       "none","NO HABs","C. polykrikoides",
-                                                                       "Microcystis aeurignosa","Cylindrospermopsis sp"),
-                                                            c("Alexandrium monilatum", "Anabaena spp.",
-                                                              "Anabaena spp.","Anabaena spp.",
-                                                              "NA","NA","Cochlodinium polykrikoides",
-                                                              "Microcystis aeruginosa","Cylindrospermopsis sp.")))
+  HAB_2017 <- hab_2017 %>% 
+    mutate(species = plyr::mapvalues(species, c("A. monilatum","Anabaena sp",
+                                                "Anabaena sp.","Anabaena spp",
+                                                "none","NO HABs",
+                                                "C. polykrikoides",
+                                                "Microcystis aeurignosa",
+                                                "Cylindrospermopsis sp"),
+                                     c("Alexandrium monilatum", "Anabaena spp.",
+                                       "Anabaena spp.","Anabaena spp.",
+                                       "NA","NA","Cochlodinium polykrikoides",
+                                       "Microcystis aeruginosa",
+                                       "Cylindrospermopsis sp.")))
   HAB_2017$cells_per_ml <- gsub("[a-zA-Z+/]",'',HAB_2017$cells_per_ml)
   HAB_2017$cells_per_ml <- str_trim(HAB_2017$cells_per_ml)
   HAB_2017$cells_per_ml <- as.numeric(HAB_2017$cells_per_ml)
@@ -178,7 +182,8 @@ cochlo <- cochlo[cochlo$species == "Cochlodinium polykrikoides",]
 cochlo <- cochlo %>% group_by(year) %>% dplyr::summarise(total = sum(Events))
 points(cochlo$year, cochlo$total, type = "o", pch = 20, col = "indianred", lwd = 2)
 legend(x = 2007, y = 80, legend = c(expression(paste("All reports >5000 cells ml"^"-1")),
-                                    expression(paste(italic("C. polykrikoides "),"reports >300 cells ml"^"-1"))),
+                                    expression(paste(italic("C. polykrikoides "),
+                                                     "reports >300 cells ml"^"-1"))),
        col = c("black","indianred"),
        lwd = 2,
        bty = "n")

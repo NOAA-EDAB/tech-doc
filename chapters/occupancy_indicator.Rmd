@@ -32,33 +32,22 @@ A variety of benthic habitat descriptors were incorporated as predictor variable
 
 
 ```{r habitatdesc, echo = F, results='asis', message=F, warning=F}
+
 tab <- '
 |Variables|Notes|References|
 |:-----------------------|:-----------------------|:-----------------------|
 |Complexity - Terrain Ruggedness Index|The difference in elevation values from a center cell and the eight cells immediately surrounding it. Each of the difference values are squared to make them all positive and averaged. The index is the square root of this average.|@Riley1999|
-
 |Namera bpi|BPI is a second order derivative of the surface depth using the TNC Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data with an inner radius=5 and outer radius=50.|@Lundblad2006|
-
-|Namera_vrm|Vector Ruggedness Measure (VRM) measures terrain ruggedness as the variation in 
-three-dimensional orientation of grid cells within a neighborhood based on The Nature 
-Conservancy Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data.|@Hobson1972; @Sappington2007|
-
+|Namera_vrm|Vector Ruggedness Measure (VRM) measures terrain ruggedness as the variation in three-dimensional orientation of grid cells within a neighborhood based on The Nature Conservancy Northwest Atlantic Marine Ecoregional Assessment ("NAMERA") data.|@Hobson1972; @Sappington2007|
 |Prcurv (2 km, 10 km, and 20 km)|Benthic profile curvature at 2km, 10km and 20 km spatial scales was derived from depth data.|@Winship2018|
-
-|Rugosity|A measure of small-scale variations of amplitude in the height of a surface, the ratio of the real 
-to the geometric surface area.|@Friedman2012|
-
+|Rugosity|A measure of small-scale variations of amplitude in the height of a surface, the ratio of the real to the geometric surface area.|@Friedman2012|
 |seabedforms|Seabed topography as measured by a combination of seabed position and slope.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
-
 |Slp (2 km, 10 km, and 20 km)|Benthic slope at 2km, 10km and 20km spatial scales.|@Winship2018|
-
 |Slpslp (2 km, 10 km, and 20 km)|Benthic slope of slope at 2km, 10km and 20km spatial scales|@Winship2018|
-
 |soft_sed|Soft-sediments is based on grain size distribution from the USGS usSeabed: Atlantic coast offshore surficial sediment data.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
-
 |Vort (fall - fa; spring - sp; summer - su; winter - wi)|Benthic current vorticity at a 1/6 degree (approx. 19 km) spatial scale.|@Kinlan2016|
-
 '
+
 df<-readr::read_delim(tab, delim="|")
 df<-df[-c(1,2,3) ,c("Variables","Notes","References")]
 knitr::kable(

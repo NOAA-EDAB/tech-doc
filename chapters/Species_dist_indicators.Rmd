@@ -128,7 +128,8 @@ load("stratareas.rdata")
 load(file=surfilename)
 
 # trin the data.... need to choose season
-retvars <- c("CRUISE6","STATION","STRATUM","SVSPP","YEAR","SEASON","LAT","LON","DEPTH","ABUNDANCE","BIOMASS")
+retvars <- c("CRUISE6","STATION","STRATUM","SVSPP","YEAR","SEASON",
+             "LAT","LON","DEPTH","ABUNDANCE","BIOMASS")
 survdat <- survdat[retvars]  		
 survdat <- survdat[(survdat$SEASON==selseaon),]
 
@@ -136,7 +137,8 @@ survdat <- survdat[(survdat$SEASON==selseaon),]
 # offshore strata to use
 CoreOffshoreStrata<-c(seq(1010,1300,10),1340, seq(1360,1400,10),seq(1610,1760,10))
 # inshore strata to use, still sampled by Bigelow
-CoreInshore73to12=c(3020, 3050, 3080 ,3110 ,3140 ,3170, 3200, 3230, 3260, 3290, 3320, 3350 ,3380, 3410 ,3440)
+CoreInshore73to12=c(3020, 3050, 3080 ,3110 ,3140 ,3170, 3200,
+                    3230, 3260, 3290, 3320, 3350 ,3380, 3410 ,3440)
 # combine
 strata_used=c(CoreOffshoreStrata,CoreInshore73to12)
 
@@ -203,7 +205,11 @@ survdat$AREAPERTOW=NA
 #fill AREAPERTOW
 dimsurvdat=dim(survdat)
 for (i in 1:dimsurvdat[1]){
-  survdat$AREAPERTOW[i]=areapertow$AREAWT[which(survdat$STRATUM[i]==areapertow$STRATA & survdat$YEAR[i]==areapertow$YEAR)]
+  survdat$AREAPERTOW[i]=
+    areapertow$AREAWT[which(survdat$STRATUM[i]==
+                              areapertow$STRATA & 
+                              survdat$YEAR[i]==
+                              areapertow$YEAR)]
 }
 
 table(ceiling(survdat$AREAPERTOW/1000))
@@ -307,12 +313,14 @@ sdat$GDTOC=dd/1000 # convert meters to KM
 #plot(nescoast2)
 #lines(nescoast2)
 #ptt=105
-#points(sdat$LON[ptt], sdat$LAT[ptt], col="red"); sdat$DTOC[ptt]; sdat$dtc[ptt]; points(ddtest[ptt,], col="green")
+#points(sdat$LON[ptt], sdat$LAT[ptt], col="red"); sdat$DTOC[ptt]; 
+#sdat$dtc[ptt]; points(ddtest[ptt,], col="green")
 
 #======================================================================================
 
 print("diag distance using geosphere")
-# Find distance to diagonal line (diag), use coordinates of nearest point to find distance to NC outerbanks (min(diag))
+# Find distance to diagonal line (diag), use coordinates of 
+# nearest point to find distance to NC outerbanks (min(diag))
 dd2 = array(data = NA, dim = nrow(sdat))
 dd2 = dist2Line(pts[,], diag, distfun=distHaversine)
 #Distance of closest point to data along diag line to NC coast
@@ -357,32 +365,39 @@ for (i in 1:numsps){
   for(j in min(sdat$YEAR):max(sdat$YEAR)){
  
     row_c=row_c+1   
-#sumdist=sum(sdat$ASDIST[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+#sumdist=sum(sdat$ASDIST[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+    #*sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 #lendist=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 #mASDIST =sumdist / lendist
 
-#sumdist=sum(sdat$DTOC[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+#sumdist=sum(sdat$DTOC[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+    #*sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 #lendist=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 #mDTOC =sumdist / lendist
 
-sumdepth=sum(sdat$MISDEPTH[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+sumdepth=sum(sdat$MISDEPTH[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+             *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 lendepth=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 mMISDEPTH =sumdepth / lendepth
 
-sumdepth=sum(sdat$LAT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+sumdepth=sum(sdat$LAT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+             *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 lendepth=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 mLAT =sumdepth / lendepth
 
-sumdepth=sum(sdat$LON[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+sumdepth=sum(sdat$LON[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+             *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 lendepth=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 mLON =sumdepth / lendepth
 
 
-sumdepth=sum(sdat$GASDIST[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+sumdepth=sum(sdat$GASDIST[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+             *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 lendepth=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 mGASDIST =sumdepth / lendepth
 
-sumdepth=sum(sdat$GDTOC[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
+sumdepth=sum(sdat$GDTOC[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]] 
+             *sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 lendepth=sum(sdat$PLOTWT[sdat$YEAR==j & sdat$SVSPP==sps$SVSPP[i]])
 mGDTOC =sumdepth / lendepth
 
