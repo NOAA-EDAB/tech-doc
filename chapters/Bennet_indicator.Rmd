@@ -23,7 +23,8 @@ Data used in the Bennet Indicator were derived from the Comland data set; a proc
 For information regarding processing of CFDBS, please see [Comland](#comdat) methods. The Comland dataset containing seafood landings data was subsetted to US landings after 1964 where revenue was $\ge$ 0 for each Ecological Production Unit (i.e. Mid-Atlantic Bight, Georges Bank, and Gulf of Maine). Each EPU was run in an individual R script, and the code specific to Georges Bank is shown below.
 
 ```{r, echo = T, eval = F, warning=F, message=F}
-#This code is used to load and process comland data. See comland methods for source data (CFDBS) processing methods. 
+#This code is used to load and process comland data. 
+#See comland methods for source data (CFDBS) processing methods. 
 
 drake::readd(proc_get_mass_inshore_survey.R)
 
@@ -37,7 +38,8 @@ for (p in PKG) {
 # #Setting Save path
 
 
-#load "comland" data - These data are unavailble due to PII concerns. See aggregated data load below
+#load "comland" data - These data are unavailble due to PII concerns. 
+#See aggregated data load below
 ecosys2<-subset(comland, US=='TRUE' & YEAR>=1964 & SPPVALUE >=0)
 
 #Load species and PDT codes
@@ -109,7 +111,8 @@ value[is.na(value)]<-0
 #Next two lines are to calculate mean values for landings
 #and value for the time series by feeding guild
 
-meanval<-as.data.frame(value[,j=list(mean(SPPVALUE,na.rm=TRUE), mean(SPPLIVMT,na.rm=TRUE)), by=Feeding.guild])
+meanval<-as.data.frame(value[,j=list(mean(SPPVALUE,na.rm=TRUE), 
+mean(SPPLIVMT,na.rm=TRUE)), by=Feeding.guild])
 meanval<-rename(meanval, c("V1"="BASEV", "V2"="BASEQ"))
 meanval$BASEP=meanval$BASEV/meanval$BASEQ;
 
@@ -141,7 +144,8 @@ biyear$BI<-(biyear$VI + biyear$PI)
 #Bennet Indicator can be plotted. Negative values are difficult in GGPLOT.
 #Since the Bennet indicator can have a negative value, separate data frames
 #need to be created. First, the data needs to be restructured to use the 
-#stacked bar function in ggplot. GGPLOT is used because it can graph differen#t data layers on the same graph.
+#stacked bar function in ggplot. GGPLOT is used because it can graph different
+# data layers on the same graph.
 
 y1<-biyear[,c(1,2)]
 y1$indicator='VI'
