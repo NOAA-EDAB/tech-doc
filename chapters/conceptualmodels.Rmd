@@ -107,7 +107,8 @@ pdlen,COLLCAT
 Select svspp,year,cruise6,stratum,station,COLLCAT,sum(pyamtv) sumpvol from 
 fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam 
 <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB'
-group by svspp,year,cruise6,stratum,station,COLLCAT order by svspp,year,
+group by svspp,year,cruise6,stratum,station,
+COLLCAT order by svspp,year,
 cruise6,stratum,station,COLLCAT
 Select svspp,year,cruise6,stratum,station, count(distinct pdid) nstom  
 from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' 
@@ -120,10 +121,12 @@ nstom  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <>
 YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,
 cruise6,stratum,station,pdlen,numlen,catsex order by svspp,year,cruise6,
 stratum,station,pdlen
-Select svspp,year,cruise6,stratum,station,pdlen,COLLCAT,sum(pyamtv) sumpvol 
+Select svspp,year,cruise6,stratum,station,pdlen,
+COLLCAT,sum(pyamtv) sumpvol 
 from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and 
 pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and 
-GEOAREA='GB' group by svspp,year,cruise6,stratum,station,pdlen,COLLCAT order by svspp,year,cruise6,stratum,station,pdlen,COLLCAT
+GEOAREA='GB' group by svspp,year,cruise6,stratum,station,pdlen,
+COLLCAT order by svspp,year,cruise6,stratum,station,pdlen,CFOLLCAT
 Select distinct svspp,year,cruise6,stratum,station,pdid,pdlen from 
 fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <>
 ' ' and numlen is null and svspp='073' and YEAR BETWEEN '1973' AND '2016' and

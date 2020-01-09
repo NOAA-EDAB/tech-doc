@@ -54,8 +54,7 @@ to the geometric surface area.|@Friedman2012|
 
 |Slpslp (2 km, 10 km, and 20 km)|Benthic slope of slope at 2km, 10km and 20km spatial scales|@Winship2018|
 
-|soft_sed|Soft-sediments is based on grain size distribution from the USGS usSeabed: Atlantic coast offshore
-surficial sediment data.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
+|soft_sed|Soft-sediments is based on grain size distribution from the USGS usSeabed: Atlantic coast offshore surficial sediment data.|[http://www.northeastoceandata.org/](http://www.northeastoceandata.org/)|
 
 |Vort (fall - fa; spring - sp; summer - su; winter - wi)|Benthic current vorticity at a 1/6 degree (approx. 19 km) spatial scale.|@Kinlan2016|
 
