@@ -579,7 +579,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.all.3 <- k.month.all[no.match.2]
   no.match.3 <- month.all.3[is.na(SPPLIVMT), ]
   no.match.3[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
                        c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.3, YEAR, NESPP3)
@@ -659,7 +660,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.g.s.2 <- k.month.g.s[no.match]
   no.match.2 <- month.g.s.2[is.na(SPPLIVMT), ]
   no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD',
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop GEAR
   setkey(no.match.2, YEAR, NESPP3)
@@ -667,7 +669,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.g.s.3 <- k.month.g.s[no.match.2]
   no.match.3 <- month.g.s.3[is.na(SPPLIVMT), ]
   no.match.3[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
                        c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.3[, c('QY', 'HY') := 1]
@@ -737,7 +740,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.a.g.2 <- k.month.a.g[no.match]
   no.match.2 <- month.a.g.2[is.na(SPPLIVMT), ]
   no.match.2[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.2, YEAR, NESPP3)
@@ -745,7 +749,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.a.g.3 <- k.month.a.g[no.match.2]
   no.match.3 <- month.a.g.3[is.na(SPPLIVMT), ]
   no.match.3[, c('AREA', 'GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.AREA', 'i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.AREA', 'i.GEAR', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
                        c('AREA', 'GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.3[, c('QY', 'HY') := 1]
@@ -815,7 +820,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.a.s.2 <- k.month.a.s[no.match]
   no.match.2 <- month.a.s.2[is.na(SPPLIVMT), ]
   no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.2, YEAR, NESPP3)
@@ -823,7 +829,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.a.s.3 <- k.month.a.s[no.match.2]
   no.match.3 <- month.a.s.3[is.na(SPPLIVMT), ]
   no.match.3[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
                        c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.3[, c('QY', 'HY') := 1]
@@ -892,7 +899,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.si.2 <- k.month.si[no.match]
   no.match.2 <- month.si.2[is.na(SPPLIVMT), ]
   no.match.2[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.2[, c('QY', 'HY') := 1]
@@ -954,7 +962,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.g.2 <- k.month.g[no.match]
   no.match.2 <- month.g.2[is.na(SPPLIVMT), ]
   no.match.2[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.GEAR', 'i.QY', 'i.HY',
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.2[, c('QY', 'HY') := 1]
@@ -1016,7 +1025,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   month.a.2 <- k.month.a[no.match]
   no.match.2 <- month.a.2[is.na(SPPLIVMT), ]
   no.match.2[, c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to first QY/HY
   no.match.2[, c('QY', 'HY') := 1]
@@ -1147,7 +1157,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   size.all.3 <- k.size.all[no.match.2]
   no.match.3 <- size.all.3[is.na(SPPLIVMT), ]
   no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop GEAR
   setkey(no.match.3, YEAR, NESPP3, AREA)
@@ -1155,7 +1166,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   size.all.4 <- k.size.all[no.match.3]
   no.match.4 <- size.all.4[is.na(SPPLIVMT), ]
   no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
                        c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.4, YEAR, NESPP3)
@@ -1163,8 +1175,10 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   size.all.5 <- k.size.all[no.match.4]
   no.match.5 <- size.all.5[is.na(SPPLIVMT), ]
   no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('AREA',   'GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'GEAR',   'SIZE',   'QY',   'HY',  
+                       'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to SIZE to small
   no.match.5[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
 ```
@@ -1251,16 +1265,20 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   size.g.3 <- k.size.g[no.match.2]
   no.match.3 <- size.g.3[is.na(SPPLIVMT), ]
   no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Drop GEAR
   setkey(no.match.3, YEAR, NESPP3)
   setkeyv(k.size.g, key(no.match.3))
   size.g.4 <- k.size.g[no.match.3]
   no.match.4 <- size.g.4[is.na(SPPLIVMT), ]
   no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 
+  'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to SIZE to small
   no.match.4[, SIZE := factor('small', levels = c('large', 'small', 'unknown'))]
   no.match.4[, AREA := 0]
@@ -1337,16 +1355,20 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   size.a.3 <- k.size.a[no.match.2]
   no.match.3 <- size.a.3[is.na(SPPLIVMT), ]
   no.match.3[, c('SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.3, c('i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD',
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.3, YEAR, NESPP3)
   setkeyv(k.size.a, key(no.match.3))
   size.a.4 <- k.size.a[no.match.3]
   no.match.4 <- size.a.4[is.na(SPPLIVMT), ]
   no.match.4[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to SIZE to small
   no.match.4[, SIZE := factor('small',   levels = c('large', 'small', 'unknown'))]
   no.match.4[, GEAR := factor('unknown', levels = levels(k.size[, GEAR]))]
@@ -1510,7 +1532,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   gear.all.3 <- k.gear.all[no.match.2]
   no.match.3 <- gear.all.3[is.na(SPPLIVMT), ]
   no.match.3[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop SIZE
   setkey(no.match.3, YEAR, NESPP3, AREA)
@@ -1518,17 +1541,21 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   gear.all.4 <- k.gear.all[no.match.3]
   no.match.4 <- gear.all.4[is.na(SPPLIVMT), ]
   no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Drop AREA
   setkey(no.match.4, YEAR, NESPP3)
   setkeyv(k.gear.all, key(no.match.4))
   gear.all.5 <- k.gear.all[no.match.4]
   no.match.5 <- gear.all.5[is.na(SPPLIVMT), ]
-  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 
+  'SPPLIVMT', 'SPPVALUE') := NULL]
   setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD',
                          'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 
+                       'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to GEAR to other
   no.match.5[, GEAR := factor('other', levels = levels(k.gear[, GEAR]))]
   
@@ -1611,7 +1638,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   gear.sp.3 <- k.gear.sp[no.match.2]
   no.match.3 <- gear.sp.3[is.na(SPPLIVMT), ]
   no.match.3[, c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.GEAR', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
            c('GEAR', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop SIZE
   setkey(no.match.3, YEAR, NESPP3)
@@ -1619,8 +1647,10 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   gear.sp.4 <- k.gear.sp[no.match.3]
   no.match.4 <- gear.sp.4[is.na(SPPLIVMT), ]
   no.match.4[, c('GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.4, c('i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('GEAR',   'SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Still no match - assign to GEAR to other
   no.match.4[, GEAR := factor('other', levels = levels(k.gear[, GEAR]))]
   no.match.4[, AREA := 0]
@@ -1704,7 +1734,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   area.all.2 <- k.area.all[no.match]
   no.match.2 <- area.all.2[is.na(SPPLIVMT), ]
   no.match.2[, c('AREA', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.2, c('i.AREA', 'i.QY', 'i.UTILCD', 'i.SPPLIVMT', 
+  'i.SPPVALUE'), 
            c('AREA', 'QY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop HY
   setkey(no.match.2, YEAR, NESPP3, SIZE, GEAR)
@@ -1712,7 +1743,8 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   area.all.3 <- k.area.all[no.match.2]
   no.match.3 <- area.all.3[is.na(SPPLIVMT), ]
   no.match.3[, c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.3, c('i.AREA', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
+  setnames(no.match.3, c('i.AREA', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 
+  'i.SPPVALUE'), 
            c('AREA', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
   #Drop SIZE
   setkey(no.match.3, YEAR, NESPP3, GEAR)
@@ -1720,17 +1752,21 @@ setnames(comland.agg, c('V1', 'V2'), c('SPPLIVMT', 'SPPVALUE'))
   area.all.4 <- k.area.all[no.match.3]
   no.match.4 <- area.all.4[is.na(SPPLIVMT), ]
   no.match.4[, c('AREA', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
-  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  'SPPLIVMT', 'SPPVALUE'))
+  setnames(no.match.4, c('i.AREA', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
+  'i.SPPLIVMT', 'i.SPPVALUE'), 
+                       c('AREA',   'SIZE',   'QY',   'HY',  'UTILCD',  
+                       'SPPLIVMT', 'SPPVALUE'))
   #Drop GEAR
   setkey(no.match.4, YEAR, NESPP3)
   setkeyv(k.area.all, key(no.match.4))
   area.all.5 <- k.area.all[no.match.4]
   no.match.5 <- area.all.5[is.na(SPPLIVMT), ]
-  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE') := NULL]
+  no.match.5[, c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 
+  'SPPVALUE') := NULL]
   setnames(no.match.5, c('i.AREA', 'i.GEAR', 'i.SIZE', 'i.QY', 'i.HY', 'i.UTILCD', 
                          'i.SPPLIVMT', 'i.SPPVALUE'), 
-                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 'SPPVALUE'))
+                       c('AREA', 'GEAR', 'SIZE', 'QY', 'HY', 'UTILCD', 'SPPLIVMT', 
+                       'SPPVALUE'))
   #Still no match - use 3 or 5 year window then drop year
   years <- unique(no.match.5[, YEAR], by = key(no.match.5))
   no.match.6 <- c()
