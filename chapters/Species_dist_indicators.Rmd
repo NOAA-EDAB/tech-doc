@@ -342,7 +342,8 @@ for(k in missingdepth){
 
 
 
-#outline=paste("YR",",","SVSPP",",","mASDIST",",","mDTOC",",","mMISDEPTH",",","mLAT",",","mLON",",","mGASDIST",",","mGDTOC")
+#outline=paste("YR",",","SVSPP",",","mASDIST",",","mDTOC",",",
+#"mMISDEPTH",",","mLAT",",","mLON",",","mGASDIST",",","mGDTOC")
 #write.table(outline,file=outfile,row.name=F,col.names=F,append=TRUE)
 
 

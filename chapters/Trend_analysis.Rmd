@@ -170,12 +170,18 @@ fit_lm <- function(dat) {
 
 #-------------------------------------Plotting code------------------------------------#
 soe.plot <- function(data, x.var, y.var, x.label = '', y.label = '', tol = 0.1,
-                     x.start = NA, x.end = NA, end.start = 2008, bg.col = background, mean_line = T,
-                     end.col = recent, stacked = NA, x.line = 2.5, y.line = 3.5, scale.axis = 1,
-                     rel.y.num = 1.5, rel.y.text = 1.5, suppressAxis = FALSE,status  = F,anomaly = F,
-                     endshade = TRUE, full.trend = TRUE, point.cex = 1.5, lwd = 2, ymax = TRUE,ymin = TRUE,
-                     y.upper = y.upper, y.lower = y.lower, extra = FALSE, x.var2 = x.var2, y.var2 = y.var2,
-                     line.forward = FALSE, mean_line.2 = T, cex.stacked = 1, website = T) {
+                     x.start = NA, x.end = NA, end.start = 2008, 
+                     bg.col = background, mean_line = T,
+                     end.col = recent, stacked = NA, x.line = 2.5, y.line = 3.5, 
+                     scale.axis = 1,
+                     rel.y.num = 1.5, rel.y.text = 1.5, suppressAxis = FALSE,
+                     status  = F,anomaly = F,
+                     endshade = TRUE, full.trend = TRUE, point.cex = 1.5, 
+                     lwd = 2, ymax = TRUE,ymin = TRUE,
+                     y.upper = y.upper, y.lower = y.lower, extra = FALSE, 
+                     x.var2 = x.var2, y.var2 = y.var2,
+                     line.forward = FALSE, mean_line.2 = T, cex.stacked = 1,
+                     website = T) {
   
 
   #Select Data
@@ -265,7 +271,8 @@ soe.plot <- function(data, x.var, y.var, x.label = '', y.label = '', tol = 0.1,
 
     #Add axis labels
     if(!website){
-      if(!is.na(stacked)) text(u[1], u[4], labels = stacked, cex = cex.stacked, adj = c(-0.5, 1.5))
+      if(!is.na(stacked)) text(u[1], u[4], labels = stacked, cex = cex.stacked, 
+                               adj = c(-0.5, 1.5))
     } else if (website){
       text(u[1], u[4], labels = "", cex = cex.stacked, adj = c(-0.5, 1.5))
     }

@@ -82,7 +82,9 @@ addTrans <- function(color,trans){
   # Works with either color and trans a vector of equal length,
   # or one of the two of length 1.
   
-  if (length(color)!=length(trans)&!any(c(length(color),length(trans))==1)) stop("Vector lengths not correct")
+  if (length(color)!=length(trans)&!any(c(length(color),
+                                          length(trans))==1)) 
+    stop("Vector lengths not correct")
   if (length(color)==1 & length(trans)>1) color <- rep(color,length(trans))
   if (length(trans)==1 & length(color)>1) trans <- rep(trans,length(color))
   
@@ -112,7 +114,8 @@ plot_kd <- function(species, season, exclude_years){
     dplyr::select(c(CRUISE6,STATION,STRATUM,SVSPP,YEAR,
                     SEASON,LAT,LON,ABUNDANCE,BIOMASS)) %>% 
     filter(SEASON == season,
-           STRATUM %in% strata_used) %>% # delete record form non-core strata and get unique records,
+           STRATUM %in% strata_used) %>% # delete record form non-core 
+    #strata and get unique records,
     # should be one per species
     distinct() %>% 
     # add field with rounded BIOMASS scaler used to adjust distributions
@@ -165,7 +168,8 @@ plot_kd <- function(species, season, exclude_years){
   }
   
   # read species list
-  sps <- ecodata::species_groupings %>% filter(!is.na(SVSPP)) %>% dplyr::select(COMNAME, SVSPP)
+  sps <- ecodata::species_groupings %>% filter(!is.na(SVSPP)) %>% 
+    dplyr::select(COMNAME, SVSPP)
   sps <- sps[!duplicated(sps),]
   numsps <- nrow(sps)
   
@@ -185,11 +189,16 @@ plot_kd <- function(species, season, exclude_years){
 
   # for base period, 1970 to 1979, find call lons for species and by biomass weighting
   minyr=1969;maxyr=1980
-  clons1 = sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
-  clons2 = sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
-  clons3 = sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
-  clons4 = sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
-  clons5 = sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clons1 = 
+    sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
+  clons2 = 
+    sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
+  clons3 = 
+    sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
+  clons4 = 
+    sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clons5 = 
+    sdat$LON[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
   
   # get rid of missings, KS does not like
   clons1 <- na.omit(clons1)
@@ -203,11 +212,16 @@ plot_kd <- function(species, season, exclude_years){
           clons5,clons5,clons5,clons5,clons5)
 
   # same for lats
-  clats1 = sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
-  clats2 = sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
-  clats3 = sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
-  clats4 = sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
-  clats5 = sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==5)]
+  clats1 = 
+    sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
+  clats2 = 
+    sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
+  clats3 = 
+    sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
+  clats4 = 
+    sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clats5 = 
+    sdat$LAT[(sdat$YEAR>minyr & sdat$YEAR<maxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==5)]
   clats1 <- na.omit(clats1)
   clats2 <- na.omit(clats2)
   clats3 <- na.omit(clats3)
@@ -222,28 +236,44 @@ plot_kd <- function(species, season, exclude_years){
   Hscv1 <- Hscv.diag(x=x)
   #fhat.pi1 <- kde(x=x, H=Hscv1)
   
-  fhat.pi1 <- kde(x, compute.cont=T, binned=F, xmin=c(-77, 35), xmax=c(-65, 45)) # specify grid to match raster stack of OISST... etc.
+  fhat.pi1 <- kde(x, compute.cont=T, binned=F, 
+                  xmin=c(-77, 35), xmax=c(-65, 45)) 
+  # specify grid to match raster stack of OISST... etc.
 
   # add to plot each probability separately
-  contour.25 <- with(fhat.pi1, contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["25%"]))
-  contour.50 <- with(fhat.pi1, contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["50%"]))
-  contour.75 <- with(fhat.pi1, contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["75%"]))
+  contour.25 <- with(fhat.pi1, 
+                     contourLines(x=eval.points[[1]],y=eval.points[[2]], 
+                                  z=estimate,levels=cont["25%"]))
+  contour.50 <- with(fhat.pi1, 
+                     contourLines(x=eval.points[[1]],y=eval.points[[2]], 
+                                  z=estimate,levels=cont["50%"]))
+  contour.75 <- with(fhat.pi1, 
+                     contourLines(x=eval.points[[1]],y=eval.points[[2]], 
+                                  z=estimate,levels=cont["75%"]))
   
   for (j in 1:length(contour.75)){
-    polygon(unlist(contour.75[[j]][2]), unlist(contour.75[[j]][3]),col=addTrans(color_b,tlevel), border=F)
+    polygon(unlist(contour.75[[j]][2]), unlist(contour.75[[j]][3]),
+            col=addTrans(color_b,tlevel), border=F)
   }
   for (j in 1:length(contour.50)){
-    polygon(unlist(contour.50[[j]][2]), unlist(contour.50[[j]][3]),col=addTrans(color_b,tlevel), border=F)
+    polygon(unlist(contour.50[[j]][2]), unlist(contour.50[[j]][3]),
+            col=addTrans(color_b,tlevel), border=F)
   }
   for (j in 1:length(contour.25)){
-    polygon(unlist(contour.25[[j]][2]), unlist(contour.25[[j]][3]),col=addTrans(color_b,tlevel), border=F)
+    polygon(unlist(contour.25[[j]][2]), unlist(contour.25[[j]][3]),
+            col=addTrans(color_b,tlevel), border=F)
   }
   
-  clons1 = sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
-  clons2 = sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
-  clons3 = sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
-  clons4 = sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
-  clons5 = sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clons1 = 
+    sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
+  clons2 = 
+    sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
+  clons3 = 
+    sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
+  clons4 = 
+    sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clons5 = 
+    sdat$LON[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
   # get rid of missings, KS does not like
   clons1 <- na.omit(clons1)
   clons2 <- na.omit(clons2)
@@ -255,11 +285,16 @@ plot_kd <- function(species, season, exclude_years){
           clons5,clons5,clons5,clons5,clons5)
   
   # same for lats
-  clats1 = sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
-  clats2 = sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
-  clats3 = sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
-  clats4 = sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
-  clats5 = sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==5)]
+  clats1 = 
+    sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==1)]
+  clats2 = 
+    sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==2)]
+  clats3 = 
+    sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==3)]
+  clats4 = 
+    sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==4)]
+  clats5 = 
+    sdat$LAT[(sdat$YEAR>rminyr & sdat$YEAR<rmaxyr & sdat$SVSPP==tspe$SVSPP & sdat$PLOTWT ==5)]
   clats1 <- na.omit(clats1)
   clats2 <- na.omit(clats2)
   clats3 <- na.omit(clats3)
@@ -273,21 +308,32 @@ plot_kd <- function(species, season, exclude_years){
 
 
   #fhat.pi2 <- kde(x=x, H=Hscv2)
-  fhat.pi2 <- kde(x, compute.cont=T, binned=F, xmin=c(-77, 35), xmax=c(-65, 45)) # specify grid to match raster stack of OISST... etc.
+  fhat.pi2 <- kde(x, compute.cont=T, 
+                  binned=F, xmin=c(-77, 35), xmax=c(-65, 45)) 
+  # specify grid to match raster stack of OISST... etc.
   
   # add to plot each probability separately
-  contour.25 <- with(fhat.pi2, contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["25%"]))
-  contour.50 <- with(fhat.pi2,contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["50%"]))
-  contour.75 <- with(fhat.pi2, contourLines(x=eval.points[[1]],y=eval.points[[2]], z=estimate,levels=cont["75%"]))
+  contour.25 <-
+    with(fhat.pi2, contourLines(x=eval.points[[1]],y=eval.points[[2]], 
+                                z=estimate,levels=cont["25%"]))
+  contour.50 <- 
+    with(fhat.pi2,contourLines(x=eval.points[[1]],y=eval.points[[2]],
+                               z=estimate,levels=cont["50%"]))
+  contour.75 <-
+    with(fhat.pi2, contourLines(x=eval.points[[1]],y=eval.points[[2]], 
+                                z=estimate,levels=cont["75%"]))
   
   for (j in 1:length(contour.75)){
-    polygon(unlist(contour.75[[j]][2]), unlist(contour.75[[j]][3]),col=addTrans(color_r,tlevel), border=F)
+    polygon(unlist(contour.75[[j]][2]), unlist(contour.75[[j]][3]),
+            col=addTrans(color_r,tlevel), border=F)
   }
   for (j in 1:length(contour.50)){
-    polygon(unlist(contour.50[[j]][2]), unlist(contour.50[[j]][3]),col=addTrans(color_r,tlevel), border=F)
+    polygon(unlist(contour.50[[j]][2]), unlist(contour.50[[j]][3]),
+            col=addTrans(color_r,tlevel), border=F)
   }
   for (j in 1:length(contour.25)){
-    polygon(unlist(contour.25[[j]][2]), unlist(contour.25[[j]][3]),col=addTrans(color_r,tlevel), border=F)
+    polygon(unlist(contour.25[[j]][2]), unlist(contour.25[[j]][3])
+            ,col=addTrans(color_r,tlevel), border=F)
   }
 
 
@@ -298,24 +344,36 @@ plot_kd <- function(species, season, exclude_years){
   stline=36.5
   text(-70.4,stline, pos=4,labels = "25%    50%    75%")
   incline=-.3
-  segments(-70, stline+incline,-69,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
-  segments(-70, stline+incline,-68,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
-  segments(-70, stline+incline,-67,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-69,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-68,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-67,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
   text(-66.8,stline+incline, pos=4,labels = "Base")
 
   incline=-.7
-  segments(-70, stline+incline,-69,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
-  segments(-70, stline+incline,-68,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
-  segments(-70, stline+incline,-67,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-69,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-68,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-67,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
   text(-66.8,stline+incline, pos=4,labels = "Recent")
 
   incline=-1.1 
-  segments(-70, stline+incline,-69,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
-  segments(-70, stline+incline,-68,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
-  segments(-70, stline+incline,-67,stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
-  segments(-70, stline+incline,-69,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
-  segments(-70, stline+incline,-68,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
-  segments(-70, stline+incline,-67,stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-69,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-68,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-67,
+           stline+incline ,lwd=20,col=addTrans(color_b,tlevel))
+  segments(-70, stline+incline,-69,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-68,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
+  segments(-70, stline+incline,-67,
+           stline+incline ,lwd=20,col=addTrans(color_r,tlevel))
   text(-66.8,stline+incline, pos=4,labels = "Overlap")
 
 } 

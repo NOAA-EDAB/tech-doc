@@ -32,7 +32,8 @@ The area encompassed by each stratum determined the number of samples in each st
 Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 m^-2^ sea surface.
 
 ### Data extraction
-Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) (Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
+Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) 
+(Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
 
 ### Data analysis
 All detailed data processing steps are not currently included in this document, but general steps are outlined. Data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
@@ -61,7 +62,8 @@ MATLAB code used to calculate diversity indices:
 %% Import aggregated data from spreadsheet
 % Script for importing data from the following spreadsheet:
 %
-%    Workbook: /Users/hwalsh/NEFSC larval samples/CombinedData/SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx
+%    Workbook: /Users/hwalsh/NEFSC larval samples/CombinedData/
+  SOE_Diversity/NEFSCIchthyoplanktonAbundance.xlsx
 %    Worksheet: Sheet1
 %% Output Data
 % SprSW = Spring Shannon Diversity Index

@@ -69,7 +69,8 @@ fixer <- function(cpm){
   
   #2013---------------------------------------------------------
   #ODU
-  odu_2013 <- gather(hab_2013_odu, species, cells_per_ml, `Pfiesteria like dinoflagellate`:`A. monilatum`) %>%
+  odu_2013 <- gather(hab_2013_odu, species, cells_per_ml, 
+                     `Pfiesteria like dinoflagellate`:`A. monilatum`) %>%
     filter(!is.na(cells_per_ml)) %>%
     filter(cells_per_ml >= cpm) %>%
     mutate(year = 2013) %>%
@@ -89,7 +90,8 @@ fixer <- function(cpm){
   
   #2014--------------------------------------------------------
   #ODU
-  long <- gather(hab_2014_odu, species, cells_per_ml, `Karlodinium veneficum`:`Cyanobacteria bloom`, factor_key = TRUE)
+  long <- gather(hab_2014_odu, species, cells_per_ml, 
+                 `Karlodinium veneficum`:`Cyanobacteria bloom`, factor_key = TRUE)
   hab_2014_odu <- long %>% filter(cells_per_ml != 0)
   hab_2014_odu$species <- sub("[.]"," ", hab_2014_odu$species)
   hab_2014_odu$cells_per_ml <- gsub("[A-Za-z+//]",'',hab_2014_odu$cells_per_ml)

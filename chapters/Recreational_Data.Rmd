@@ -81,8 +81,11 @@ REC_CATCH$Region[REC_CATCH$Region=="NORTH ATLANTIC"] <- 'NE'
 REC_CATCH$Units <- 'Effective Shannon'
 REC_CATCH$Var <- 'Recreational Diversity of Catch' 
 
-##Species include: American Eel, Atlantic Cod, Atlantic Mackerel, Atlantic Sturgeon, Black Drum, Black Sea Bass, Bluefish, 
-  ##Cobia, Haddock, Pollock, Red Drum, Scup, Spanish Mackerel, Spiny Dogfish, Spot, Spotted Seatrout, Striped Bass, Summer Flounder, Tautog, Tilefish, Weakfish, Winter Flounder,   
+##Species include: American Eel, Atlantic Cod, Atlantic Mackerel, 
+##Atlantic Sturgeon, Black Drum, Black Sea Bass, Bluefish, 
+  ##Cobia, Haddock, Pollock, Red Drum, Scup, Spanish Mackerel,
+##Spiny Dogfish, Spot, Spotted Seatrout, Striped Bass, 
+##Summer Flounder, Tautog, Tilefish, Weakfish, Winter Flounder,   
   #and All Other Species.
 
 REC_CATCH$Source <- 'MRIP catch time series.'

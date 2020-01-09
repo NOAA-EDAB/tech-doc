@@ -1895,22 +1895,34 @@ if(sum.by == 'EPU'){
   #Note - NAFO landings by division only so not available in sum.by = "stat.area"
   #Add NAFO foreign landings - Data from http://www.nafo.int/data/frames/data.html
   temp <- tempfile()
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-60-69.zip?ver=2016-08-03-063915-850",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-60-69.zip?ver=2016-08-03-063915-850",
+    temp)
   nafo.60 <- as.data.table(read.csv(unz(temp, "NAFO21B-60-69.txt")))
   unlink(temp)
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-70-79.zip?ver=2016-08-03-063915-850",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-70-79.zip?ver=2016-08-03-063915-850",
+    temp)
   nafo.70 <- as.data.table(read.csv(unz(temp, "NAFO21B-70-79.txt")))
   unlink(temp)
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-80-89.zip?ver=2016-08-03-063915-850",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-80-89.zip?ver=2016-08-03-063915-850",
+    temp)
   nafo.80 <- as.data.table(read.csv(unz(temp, "NAFO21B-80-89.txt")))
   unlink(temp)
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-90-99.zip?ver=2016-08-03-063915-850",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-90-99.zip?ver=2016-08-03-063915-850",
+    temp)
   nafo.90 <- as.data.table(read.csv(unz(temp, "NAFO21B-90-99.txt")))
   unlink(temp)
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-2000-09.zip?ver=2016-08-03-063915-850",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-2000-09.zip?ver=2016-08-03-063915-850",
+    temp)
   nafo.00 <- as.data.table(read.csv(unz(temp, "NAFO21B-2000-09.txt")))
   unlink(temp)
-  download.file("https://www.nafo.int/Portals/0/Stats/nafo-21b-2010-15.zip?ver=2017-06-01-164323-460",temp)
+  download.file(
+    "https://www.nafo.int/Portals/0/Stats/nafo-21b-2010-15.zip?ver=2017-06-01-164323-460",
+    temp)
   nafo.10 <- as.data.table(read.csv(unz(temp, "nafo-21b-2010-15/NAFO21B-2010-15.csv")))
   unlink(temp)
   
@@ -2189,26 +2201,31 @@ source(file.path(r.dir,"BasePlot_source.R"))
 opar <- par(mfrow = c(5, 1), mar = c(0, 0, 0, 0), oma = c(4, 6.5, 2, 6))
 
 soe.plot(SOE.data, "Time","Apex Predator Landings GB", stacked = "A",status = F,
-         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         endshade = T, rel.y.num = 1.1, full.trend = T, 
+         scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0,cex.stacked = 1.5 )
 
 soe.plot(SOE.data, "Time", "Piscivore Landings GB", stacked = "B",status = F,
-         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         endshade = T, rel.y.num = 1.1, full.trend = T, 
+         scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Piscivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
 soe.plot(SOE.data, "Time", "Planktivore Landings GB", stacked = "C",status = F,
-         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         endshade = T, rel.y.num = 1.1, full.trend = T, 
+         scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Planktivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
 soe.plot(SOE.data, "Time", "Benthivore Landings GB", stacked = "D",status = F,
-         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         endshade = T, rel.y.num = 1.1, full.trend = T, 
+         scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Benthivore NEFMC managed species sea food GB",cex.stacked = 1.5)
 
 soe.plot(SOE.data, "Time", "Benthos Landings GB", stacked = "E",status = F,
-         endshade = T, rel.y.num = 1.1, full.trend = T, scale.axis = 10^3,end.start = 2007, x.start = 1986,
+         endshade = T, rel.y.num = 1.1, full.trend = T, 
+         scale.axis = 10^3,end.start = 2007, x.start = 1986,
          ymin = FALSE, y.lower = 0 , extra = TRUE, x.var2 = "Time", 
          y.var2 = "Benthos NEFMC managed species sea food GB",cex.stacked = 1.5)
 

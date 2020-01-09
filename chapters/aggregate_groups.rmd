@@ -209,7 +209,8 @@ species[EMAX == 'SG', EMAX := 'Southern Gadiformes']
 species[EMAX == 'SO', EMAX := 'Southern Others']
 
 #Rename columns
-setnames(species, c('MANAGE', 'EBFM.PDT', 'Feeding.guild'), c('Fed.Managed', 'SOE.17', 'SOE.18'))
+setnames(species, c('MANAGE', 'EBFM.PDT', 'Feeding.guild'), 
+         c('Fed.Managed', 'SOE.17', 'SOE.18'))
 
 #Add classification from Garrison/Link 2000
 size <- data.table(COMNAME = c(rep('SMOOTH DOGFISH',           2), 
@@ -263,12 +264,14 @@ size <- data.table(COMNAME = c(rep('SMOOTH DOGFISH',           2),
                                'L', 'L', 'L', 'L', 'L'),
                    Min.size = c(41, 61, 10, 41, 61, 10, 31, 61, 81, 10, 31, 31,
                                 10, 31, 61, 81, 10, 21, 21, 10, 21, 41, 10, 21, 
-                                51, 81, 10, 21, 51, 10, 21, 51, 81, 10, 21, 41, 10, 21, 41, 10, 21, 
+                                51, 81, 10, 21, 51, 10, 21, 51, 81, 10, 21, 41, 
+                                10, 21, 41, 10, 21, 
                                 10, 21, 41, 21, 41, 10, 21, 10, 21, 41, 10, 21, 
                                 41, 21, 41, 10, 21, 10, 10, 21, 36, 10, 10, 31,
                                 71, 10, 26, 10, 26, 26, 10, 26, 26, 10, 26, 10, 
                                 26, 11, 61, 61, 61, 61, 31, 31),
-                   Garrison.Link = as.character(c(1, 1, 2, 2, 6, 3, 3, 6, 6, 3, 3, 4, 5, 5, 6, 
+                   Garrison.Link = as.character(c(1, 1, 2, 2, 6, 3, 3, 6, 6, 3, 
+                                                  3, 4, 5, 5, 6, 
                                      6, 2, 2, 2, 4, 4, 6, 3, 3, 6, 6, 5, 5, 5, 4, 
                                      4, 4, 4, 3, 4, 6, 3, 3, 4, 3, 6, 5, 5, 5, 6,
                                      6, 3, 6, 3, 5, 5, 5, 5, 5, 5, 5, 3, 3, 5, 2,
@@ -304,7 +307,8 @@ comet <- 'https://comet.nefsc.noaa.gov/erddap/'
 tab_list <- ed_datasets(url = comet)
 
 #download a tabular dataset (input is dataset id; this works on vectors)
-ed_spp <- as.data.table(sprintf("https://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv", "species_groups_2018") %>% 
+ed_spp <- as.data.table(sprintf("https://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
+                                "species_groups_2018") %>% 
   
   purrr::map(function(x) {
     

@@ -94,7 +94,8 @@ gom.lonlat =as.data.frame(lapply(slot(gom, "polygons"), function(x) lapply(slot(
 mab.lonlat =as.data.frame(lapply(slot(mab, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
 scs.lonlat =as.data.frame(lapply(slot(scs, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
 gom.gbk.lonlat =as.data.frame(lapply(slot(gom.gbk.shp, "polygons"), function(x) lapply(slot(x, "Polygons"), function(y) slot(y, "coords"))))
-NES.lonlat =as.data.frame(NES.shp@polygons[[1]]@Polygons[[1]]@coords)# create matrix to use in in.out function
+NES.lonlat =as.data.frame(NES.shp@polygons[[1]]@Polygons[[1]]@coords)
+# create matrix to use in in.out function
 # create matrix to use in in.out function from package 'mgcv'
 gom.mat=as.matrix(gom.lonlat)
 gbk.mat=as.matrix(gbk.lonlat)
@@ -235,7 +236,8 @@ scs.yr.anom=aggregate(scs.anom.b, by=list(scs.anom$year), FUN=mean, na.rm=T); ro
 
 # Small-Large body copepod abundance anomaly
 lgtx=c(25) #column for Calanus finmarchicus
-smtx=c(26,24,28,27) #Pseudocalanus spp, Centropoges typicus, Centropages hamatus, Temora longicornis
+smtx=c(26,24,28,27) 
+#Pseudocalanus spp, Centropoges typicus, Centropages hamatus, Temora longicornis
 
 dataTsm=gbk.yr.anom[,smtx]
 dataTlg=gbk.yr.anom[,lgtx]
