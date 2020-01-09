@@ -80,8 +80,9 @@ for (dir. in 1:3){
         
         
         #add mean value to data.frame
-        assign(paste0(j,"_sst_daily_mean"),rbind(get(paste0(j,"_sst_daily_mean")),
-                                                 c(mean(daily_mean_clipped@data@values, na.rm = T),y,i)))
+        assign(paste0(j,"_sst_daily_mean"),
+        rbind(get(paste0(j,"_sst_daily_mean")),
+        c(mean(daily_mean_clipped@data@values, na.rm = T),y,i)))
         
       }
     }
@@ -138,8 +139,9 @@ for (j in c("MAB","GB","GOM")){
     
     
     #add mean value to data.frame
-    assign(paste0(j,"_2017"),rbind(get(paste0(j,"_2017")),
-                                             c(mean(daily_mean_clipped@data@values, na.rm = T),"2017",i)))
+    assign(paste0(j,"_2017"),
+    rbind(get(paste0(j,"_2017")),
+    c(mean(daily_mean_clipped@data@values, na.rm = T),"2017",i)))
     
   }
 }
