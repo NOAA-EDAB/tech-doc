@@ -73,7 +73,7 @@ Along with nest productivity and diet diversity indices, we presented maps of sa
 
 (ref:nest-sites) Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5% of common tern diets were excluded for clarity.
 
-```{r nest-sites, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-map-and-prey.R"), fig.height = 4, fig.align="center", eval=T, echo=T, fig.cap='(ref:nest-sites)'}
-
+```{r nest-sites,fig.align="center", eval=T, echo=T, fig.cap='(ref:nest-sites)'}
+knitr::include_graphics(file.path(image.dir, 'map-prey.png'))
 ```
 
