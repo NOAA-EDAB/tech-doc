@@ -187,7 +187,8 @@ function (data, min.n = 25, min.range = 5, data.avail = NA, data.avail.bigelow =
 				lw.output <- rbind(lw.output, c(sp.name, sp, ds, NA, "SPRING", 
 				                                model.coefs["length.log"] + 
 				                                  model.coefs["length.log:factor(season)SPRING"], 
-				                                model.summary["length.log:factor(season)SPRING", "Pr(>|t|)"], 
+				                                model.summary["length.log:factor(season)SPRING", 
+				                                              "Pr(>|t|)"], 
 				                                model.coefs["(Intercept)"] + 
 				                                  model.coefs["factor(season)SPRING"], 
 				                                model.summary["factor(season)SPRING", "Pr(>|t|)"], 
@@ -217,9 +218,9 @@ function (data, min.n = 25, min.range = 5, data.avail = NA, data.avail.bigelow =
 			female.spring.range <- 
 			  range(this.data$length[this.data$season == "SPRING" & this.data$sex == 2])
 			if(any(model.summary[grep("season", rownames(model.summary)),
-			                     "Pr(>|t|)"] <= .05 | any(model.summary[grep("season",
-			                                                                 rownames(model.summary)), 
-			                                                            "Pr(>|t|)"] <= .05))){
+			                     "Pr(>|t|)"] <= 
+			       .05 | any(model.summary[grep("season", rownames(model.summary)), 
+			                               "Pr(>|t|)"] <= .05))){
 				model.coefs <- coef(this.model)
 				male.fall.int <- model.coefs["(Intercept)"]
 				male.fall.int.p <- model.summary["(Intercept)", "Pr(>|t|)"]
@@ -227,7 +228,8 @@ function (data, min.n = 25, min.range = 5, data.avail = NA, data.avail.bigelow =
 				male.fall.slope.p <- model.summary["length.log", "Pr(>|t|)"]
 				male.spring.int <- male.fall.int + model.coefs["factor(season)SPRING"]
 				male.spring.int.p <- model.summary["factor(season)SPRING", "Pr(>|t|)"]
-				male.spring.slope <- male.fall.slope + model.coefs["length.log:factor(season)SPRING"]
+				male.spring.slope <- male.fall.slope + 
+				  model.coefs["length.log:factor(season)SPRING"]
 				male.spring.slope.p <- model.summary["length.log:factor(season)SPRING", "Pr(>|t|)"]
 				female.fall.int <- male.fall.int + model.coefs["factor(sex)2"]
 				female.fall.int.p <- model.summary["factor(sex)2", "Pr(>|t|)"]
@@ -236,12 +238,14 @@ function (data, min.n = 25, min.range = 5, data.avail = NA, data.avail.bigelow =
 				female.spring.int <- male.spring.int + model.coefs["factor(sex)2"] + 
 				  model.coefs["factor(sex)2:factor(season)SPRING"]
 				female.spring.int.p <- model.summary["factor(sex)2:factor(season)SPRING",  "Pr(>|t|)"]
-				female.spring.slope <- male.spring.slope + model.coefs["length.log:factor(sex)2"] + model.coefs["length.log:factor(sex)2:factor(season)SPRING"]
+				female.spring.slope <- male.spring.slope + model.coefs["length.log:factor(sex)2"] +
+				  model.coefs["length.log:factor(sex)2:factor(season)SPRING"]
 				female.spring.slope.p <- 
 				  model.summary["length.log:factor(sex)2:factor(season)SPRING", "Pr(>|t|)"]
 				length.log <- rep(log(seq(length.range[1], length.range[2], by=.5)),4)
 				sex <- c(rep("1", length(length.log)/2), rep("2", length(length.log)/2))
-				season <- rep(c(rep("FALL", length(length.log)/4), rep("SPRING", length(length.log)/4)),2)
+				season <- rep(c(rep("FALL", length(length.log)/4), 
+				                rep("SPRING", length(length.log)/4)),2)
 				predict.length <- data.frame(length.log, sex, season)
 				check.diffs <- plot.lw(this.data, this.model,
 				                       c("sex", "season"), sp.name, predict.length)
