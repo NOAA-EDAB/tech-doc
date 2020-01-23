@@ -1,0 +1,40 @@
+# Highly Migratory Species Landings
+
+**Description**: Highly Migratory Species Landings
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020), State of the Ecosystem - Mid-Atlantic (2020)
+
+**Indicator category**: Synthesis of published information, Database pull with analysis
+
+**Contributor(s)**: George Silva, Heather Baertlein, and Cliff Hutt
+  
+**Data steward**: Kimberly Bastille
+  
+**Point of contact**: George Silva <george.silva@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+Data from eDealer database and Bluefin Tuna Dealer reports on SAFIS.
+
+
+### Data extraction 
+Data was processed for Fisheries of the United States and then lumped by region to avoid confidentiality issues.
+
+### Data analysis
+Data was analyzed using Excel pivot tables.
+
+### Data processing
+HMS landings data were formatted for inclusion in the `ecodata` R package using the following R code.
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_hms_landings_rev.R"), eval = F, echo = T}
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_hms_landings_weight.R"), eval = F, echo = T}
+
+```
+### Plotting
+

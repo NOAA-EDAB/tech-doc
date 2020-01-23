@@ -1,0 +1,33 @@
+# Forage Fish Energy Density
+
+**Description**: Forage Engery Density indicators
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020), State of the Ecosystem - Mid-Atlantic (2020)
+
+**Indicator category**: Published methods, Database pull with analysis
+
+**Contributor(s)**: Mark Wuenschel
+  
+**Data steward**: Mark Wuenschel <mark.wuenschel@noaa.gov>
+  
+**Point of contact**: Mark Wuenschel <mark.wuenschel@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+
+
+### Data extraction 
+
+
+### Data analysis
+
+
+### Data processing
+
+
+### Plotting
+
