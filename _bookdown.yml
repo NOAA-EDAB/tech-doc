@@ -22,7 +22,7 @@ rmd_files: ["index.Rmd",
 "chapters/MAB_HABs_indicator.Rmd",
 "chapters/NE_HABs_indicator.Rmd",
 "chapters/marine_heatwave.Rmd", 
-"chapters/hms_landings.Rmd"
+"chapters/hms_landings.Rmd",
 "chapters/observer_data_indicator.Rmd",
 "chapters/occupancy_indicator.Rmd",
 "chapters/productivity_for_tech_memo.Rmd",
