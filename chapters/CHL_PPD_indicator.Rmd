@@ -2,7 +2,7 @@
 
 **Description**: Chlorophyll *a* and Primary Production
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020)
 
 **Indicator category**: Database pull; Database pull with analysis; Published methods
 
@@ -82,30 +82,29 @@ The ecological production unit (EPU) shapefile that excludes the estuaries was u
 
 ### Data processing
 
-CHL and PPD time series were formatted for inclusion in the `ecodata` R package using the following R code.
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_chl_pp.R"), eval = F, echo = T}
-
-```
-
-
+CHL and PPD time series were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_chl_pp.R).
 
 ### Plotting
 
-The following figures show examples of how Chlorophyll *a* and primary production data have been included into State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight. 
+<!-- The following figures show examples of how Chlorophyll *a* and primary production data have been included into State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight.  -->
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-MAB-sli.R"), fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F}
+<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-MAB-sli.R"), fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F} -->
+
+<!-- ``` -->
+
+Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figures below show data specific to the Mid-Atlantic Bight. The code for the plots can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-mab-chl-weekly.R).
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-mab-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2019. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
+
 
 ```
 
-Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figure below shows data specific to the Mid-Atlantic Bight. 
+In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. The code for this can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-PP-OCCI.R) 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-mab-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2018. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = T, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
-
-
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-PP-OCCI.R"), eval = T, echo = F, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
 ```
 
-In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-PP-OCCI.R"), eval = T, echo = T, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
-```
+
+
+

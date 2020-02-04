@@ -31,13 +31,12 @@ No data analyses occurred for this indicator.
 
 ### Data processing
 
-Aquaculture data were formatted for inclusion in the ecodata R package using the following R code.
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_aquaculture.R"), eval = F, echo = T}
+Aquaculture data were formatted for inclusion in the `ecodata` R package using the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
 
-```
 
 ### Plotting
+Code for plotting data included in the State of the Ecosystem can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-oyster-aqua.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-oyster-aqua.R"), fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = T, eval =TRUE, warning = F, message=F, fig.align='center', fig.height=4}
+```{r oyster-aqua, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/MA-oyster-aqua.R"), fig.width = 5, fig.asp = 0.45, fig.cap = "Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey."}
 
 ```

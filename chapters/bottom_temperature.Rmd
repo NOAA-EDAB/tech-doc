@@ -3,7 +3,7 @@
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 
 **Indicator category**: Extensive analysis; not yet published
-Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019); State of the Ecosystem - Mid-Atlantic Bight (2019)
+Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019, 2020); State of the Ecosystem - Mid-Atlantic Bight (2019, 2020)
 
 **Contributor(s)**: Paula Fratantoni, paula.fratantoni@noaa.gov
 
@@ -30,16 +30,12 @@ Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal t
 
 ### Data processing
 
-Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the following R code. 
-
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_oceantemp_insitu.R"), eval =F, echo = T}
-
-```
+Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_oceantemp_insitu.R). 
 
 ### Plotting
 
+Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/LTL.Rmd-NE-bot-temp.R)
 
-```{r, eval = T, echo=T, fig.width = 8, fig.asp = .25, fig.cap = "GOM and GB annual bottom temperature anomalies.", fig.align='center', code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-NE-bot-temp.R")}
+```{r oyster-aqua, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-NE-bot-temp.R"), eval=TRUE, echo = FALSE, fig.cap = "Georges Bank and Gulf of Maine annual bottom temperature anomalies."}
 
 ```

@@ -1,0 +1,41 @@
+# Chesapeake Bay Salinity
+
+**Description**: Chesapeake Bay Salinity
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+
+**Indicator category**: 
+
+**Contributor(s)**: Bruce Vogt
+  
+**Data steward**: Bruce Vogt
+  
+**Point of contact**: Bruce Vogt, <bruce.vogt@noaa.gov> 
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+Low salinity levels recorded by NOAA Chesapeake Bay Office’s Chesapeake Bay Interpretive Buoy System (CBIBS).
+
+NOAA Chesapeake Bay Office https://buoybay.noaa.gov/node/160
+Chesapeake Bay Program https://www.chesapeakebay.net/news/blog/what_this_summers_rainfall_could_mean_for_the_bay
+Maryland Department of Natural Resources (Jodi Baxter, Lynn Fegley)
+Virginia Marine Resources Commission (Andrew Button)
+University of Maryland Center for Environmental Science, Horn Point Laboratory Oyster Hatchery (Stephanie Tobash Alexander)
+
+  
+
+### Data extraction 
+
+
+### Data analysis
+
+
+### Data processing
+NA
+
+### Plotting
+NA

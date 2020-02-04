@@ -2,7 +2,7 @@
 
 **Description**: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019), State of the Ecosystem - Mid-Atlantic (2018,2019) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020) 
 
 **Indicator category**: Synthesis of published information, Extensive analysis; not yet published
 
@@ -76,67 +76,8 @@ Sources for cultural practices and attachments links included @pauly_putting_199
 #### Ecological submodels
 "Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
 
-Example FEAST sql script for Cod weighted diet on Georges Bank. Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
-```{sql FEAST, eval = F, echo = T}
-Select svspp,year,cruise6,stratum,station,catsex,pdid,pdgutw,pdlen,pdwgt,
-perpyw,pyamtw,COLLCAT,numlen,pyamtv  from fhdbs.allfh_feast where pynam 
-<> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and 
-YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by svspp,year,
-cruise6,stratum,station,pdid,COLLCAT
-Select distinct svspp,year,cruise6,stratum,station from fhdbs.allfh_feast 
-where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and 
-svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by 
-svspp,year,cruise6,stratum,station
-Select distinct svspp,year,cruise6,stratum,station,catsex,catnum from 
-fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and 
-pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and 
-GEOAREA='GB' order by svspp,year,cruise6,stratum,station
-Select distinct COLLCAT from fhdbs.allfh_feast where pynam <> 'BLOWN' and 
-pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' 
-AND '2016' and GEOAREA='GB' order by COLLCAT
-Select distinct svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,pdgutw,
-pdwgt  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED'
-and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and
-GEOAREA='GB' order by svspp,year,cruise6,stratum,station,catsex,pdid
-Select svspp,year,cruise6,stratum,station,catsex,pdid,pdlen,COLLCAT,sum(perpyw),
-sum(pyamtw),sum(pyamtv)  from fhdbs.allfh_feast where pynam <> 'BLOWN' and 
-pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' 
-AND '2016' and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,catsex,
-pdid,pdlen,COLLCAT order by svspp,year,cruise6,stratum,station,catsex,pdid,
-pdlen,COLLCAT
-Select svspp,year,cruise6,stratum,station,COLLCAT,sum(pyamtv) sumpvol from 
-fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam 
-<> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB'
-group by svspp,year,cruise6,stratum,station,
-COLLCAT order by svspp,year,
-cruise6,stratum,station,COLLCAT
-Select svspp,year,cruise6,stratum,station, count(distinct pdid) nstom  
-from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' 
-and pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' 
-and GEOAREA='GB' group by svspp,year,cruise6,stratum,station,catsex order by 
-svspp,year,cruise6,stratum,station
-Select svspp,year,cruise6,stratum,station,pdlen,numlen,count(distinct pdid) 
-nstom  from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 
-'PRESERVED' and pynam <> ' ' and numlen is not null and svspp='073' and 
-YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' group by svspp,year,
-cruise6,stratum,station,pdlen,numlen,catsex order by svspp,year,cruise6,
-stratum,station,pdlen
-Select svspp,year,cruise6,stratum,station,pdlen,
-COLLCAT,sum(pyamtv) sumpvol 
-from fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and 
-pynam <> ' ' and svspp='073' and YEAR BETWEEN '1973' AND '2016' and 
-GEOAREA='GB' group by svspp,year,cruise6,stratum,station,pdlen,
-COLLCAT order by svspp,year,cruise6,stratum,station,pdlen,CFOLLCAT
-Select distinct svspp,year,cruise6,stratum,station,pdid,pdlen from 
-fhdbs.allfh_feast where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <>
-' ' and numlen is null and svspp='073' and YEAR BETWEEN '1973' AND '2016' and
-GEOAREA='GB'
-Select distinct year,cruise6,stratum,station,beglat,beglon  from fhdbs.allfh_feast
-where pynam <> 'BLOWN' and pynam <> 'PRESERVED' and pynam <> ' ' and svspp='073'
-and YEAR BETWEEN '1973' AND '2016' and GEOAREA='GB' order by year,cruise6,stratum,station
-
-```
-
+Example FEAST sql script for Cod weighted diet on Georges Bank can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/conceptual_models_extraction.sql).
+Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
 
 #### Environmental submodels
 Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
