@@ -4,7 +4,7 @@
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020), State of the Ecosystem - Mid-Atlantic (2020)
 
-**Indicator category**: Published methods, Database pull with analysis
+**Indicator category**: 
 
 **Contributor(s)**: Mark Wuenschel
   
@@ -16,18 +16,20 @@
 
 ## Methods
 
+A collaborative project between UMASS Dartmouth Biology Department (Dr. Ken Oliveira, M.S student Kelcie Bean) and NEFSC Population Biology Branch (Mark Wuenschel) is underway to evaluate energy content of forage species. The study focuses on the following species; Atlantic herring, alewife, silver hake, butterfish, northern sandlance, Atlantic mackerel, longfin squid, and northern shortfin squid. Samples have been analyzed for proximate composition and energy density from 2017 and 2018 NEFSC spring and fall bottom trawl surveys (Bean 2019, table below). Predictive relationships between the percent dry weight of samples and energy density were developed, and samples collected from 2019 surveys are currently being analyzed for percentage dry weight to enable estimation of energy content. The energy density of forage species differed from prior studies in the 1980s and 1990s (@steimle1985, @lawson1998). 
 
 ### Data sources
-
+2017 and 2018 NEFSC spring and fall bottom trawl surveys. 
 
 ### Data extraction 
 
 
 ### Data analysis
-
+Sampling and laboratory analysis is ongoing, with the goal of continuing routine monitoring of energy density of these species. 
 
 ### Data processing
 
-
-### Plotting
+NA
+Code for building the table used in the SOE can be found 
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauana.Rmd-foarge.R). 
 

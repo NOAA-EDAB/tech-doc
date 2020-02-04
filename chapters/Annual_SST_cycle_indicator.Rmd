@@ -31,6 +31,6 @@ We calculated the long-term mean and standard deviation of SST over the period o
 
 R code used for analysis and plotting can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/annual_sst_cycles_analysis_and_plotting.R)
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/annual_sst_cycles_analysis_and_plotting.R"), fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", echo = F, fig.align="center", eval=T, echo=T}
-
-```
+<!--  ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/annual_sst_cycles_analysis_and_plotting.R"), fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", echo = F, fig.align="center", eval=T } -->
+<!--   -->
+<!--  ``` -->

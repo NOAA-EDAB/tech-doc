@@ -2,7 +2,7 @@
 
 **Description**: Ecological Production Units
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020) 
 
 **Indicator category**: Extensive analysis, not yet published
 
@@ -94,10 +94,7 @@ knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 ### Data processing
 
-Shapefiles were converted to `sf` objects for inclusion in the ecodata R package using the following R code.
+Shapefiles were converted to `sf` objects for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R).
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R"), eval = F, echo = T}
-
-```
 
 

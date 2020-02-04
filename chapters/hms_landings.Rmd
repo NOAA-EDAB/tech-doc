@@ -18,23 +18,23 @@
 
 
 ### Data sources
-Data from eDealer database and Bluefin Tuna Dealer reports on SAFIS.
+Data from eDealer database (website) and Bluefin Tuna Dealer reports on SAFIS.
 
 
 ### Data extraction 
-Data was processed for Fisheries of the United States and then lumped by region to avoid confidentiality issues.
+Data was processed for Fisheries of the United States and then aggregated by region to avoid confidentiality issues.
 
 ### Data analysis
 Data was analyzed using Excel pivot tables.
 
 ### Data processing
-HMS landings data were formatted for inclusion in the `ecodata` R package using the following R code.
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_hms_landings_rev.R"), eval = F, echo = T}
+HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_hms_landings_rev.R).
 
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_hms_landings_weight.R"), eval = F, echo = T}
-
-```
 ### Plotting
 
+The plot below was built using the code found
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
+
+<!-- ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F} -->
+
+<!-- ``` -->

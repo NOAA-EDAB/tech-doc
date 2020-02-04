@@ -4,11 +4,11 @@
 
 **Indicator category**: Database pull with analysis
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2019), State of the Ecosystem - New England (2019)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2019,2020), State of the Ecosystem - New England (2019, 2020)
 
 **Contributor(s)**: James Gartland, Matt Camisa, Rebecca Peters, Sean Lucey
   
-**Data steward**: Sean Hardison, <sean.hardison@noaa.gov>
+**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
   
 **Points of contact**: James Gartland (NEAMAP), <jgartlan@vims.edu>; Rebecca Peters (ME/NH survey), <rebecca.j.peters@maine.gov>; Sean Lucey (MA Inshore Survey), <sean.lucey@noaa.gov>
   
@@ -22,134 +22,22 @@ All inshore bottom trawl survey data sets were derived from raw survey data. NEA
 
 ### Data extraction
 
-Source data from the Massachusetts DMF Bottom Trawl Survey were extracted using the following R script.
-
-```{r, eval = F, include = T, echo = T}
-#Survdat_Mass.R
-#This script will generate data from the Mass State bottom trawl surveys
-#SML
-
-#-------------------------------------------------------------------------------
-#User parameters
-if(Sys.info()['sysname']=="Windows"){
-  data.dir <- "L:\\Rworkspace\\RSurvey"
-  out.dir  <- "L:\\EcoAP\\Data\\survey"
-  memory.limit(4000)
-}
-if(Sys.info()['sysname']=="Linux"){
-  data.dir <- "/home/slucey/slucey/Rworkspace/RSurvey"
-  out.dir  <- "/home/slucey/slucey/EcoAP/Data/survey"
-  uid      <- 'slucey'
-  cat("Oracle Password: ")
-  pwd <- scan(stdin(), character(), n = 1)
-}
-
-#-------------------------------------------------------------------------------
-#Required packages
-library(RODBC); library(data.table)
-
-#-------------------------------------------------------------------------------
-#Created functions
-#Convert output to text for RODBC query
-sqltext <- function(x){
-  out <- x[1]
-  if(length(x) > 1){
-    for(i in 2:length(x)){
-      out <- paste(out, x[i], sep = "','")
-    }
-  }
-  out <- paste("'", out, "'", sep = '')
-  return(out)
-}
-
-#-------------------------------------------------------------------------------
-#Begin script
-if(Sys.info()['sysname']=="Windows"){
-  channel <- odbcDriverConnect()
-} else {
-  channel <- odbcConnect('sole', uid, pwd)
-}
-
-#Generate cruise list
-cruise.qry <- "select unique year, cruise6, svvessel, season
-               from mstr_cruise
-               where purpose_code = 11
-               and year >= 1963
-               order by year, cruise6"
-
-
-cruise <- as.data.table(sqlQuery(channel, cruise.qry))
-cruise <- na.omit(cruise)
-
-#Use cruise codes to select other data
-cruise6 <- sqltext(cruise$CRUISE6)
-
-#Station data
-station.qry <- paste("select unique cruise6, svvessel, station, stratum,
-                      tow, decdeg_beglat as lat, decdeg_beglon as lon, 
-                      begin_est_towdate as est_towdate, avgdepth as depth, 
-                      surftemp, surfsalin, bottemp, botsalin
-                      from Union_fscs_svsta
-                      where cruise6 in (", cruise6, ")
-                      and SHG <= 136
-                      order by cruise6, station", sep='')
-  
-station <- as.data.table(sqlQuery(channel, station.qry))
-
-#merge cruise and station
-survdat.mass <- merge(cruise, station)
-
-#Catch data
-catch.qry <- paste("select cruise6, station, stratum, tow, svspp, catchsex, 
-                   expcatchnum as abundance, expcatchwt as biomass
-                   from UNION_FSCS_SVCAT
-                   where cruise6 in (", cruise6, ")
-                   and stratum not like 'YT%'
-                   order by cruise6, station, svspp", sep='')
-
-catch <- as.data.table(sqlQuery(channel, catch.qry))
-
-#merge with survdat
-setkey(survdat.mass, CRUISE6, STATION, STRATUM, TOW)
-survdat.mass <- merge(survdat.mass, catch, by = key(survdat.mass))
-
-#Length data
-length.qry <- paste("select cruise6, station, stratum, tow, svspp, catchsex, 
-                    length, expnumlen as numlen
-                    from UNION_FSCS_SVLEN
-                    where cruise6 in (", cruise6, ")
-                    and stratum not like 'YT%'
-                    order by cruise6, station, svspp, length", sep='')
-
-len <- as.data.table(sqlQuery(channel, length.qry))
-
-#merge with survdat
-setkey(survdat.mass, CRUISE6, STATION, STRATUM, TOW, SVSPP, CATCHSEX)
-survdat.mass <- merge(survdat.mass, len, by = key(survdat.mass), all.x = T)
-
-odbcClose(channel)
-
-save(survdat.mass, file = file.path(out.dir, "Survdat_Mass.RData"))
-```
+Source data from the Massachusetts DMF Bottom Trawl Survey were extracted using this [R script](https://github.com/slucey/RSurvey/blob/master/Mass_survey.R)) .
 
 ### Data Processing
 
-The following R code was used to process inshore bottom trawl data into the ecodata R package.  
+The following R code was used to process inshore bottom trawl data into the `ecodata` R package.  
 
 **New England**
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_inshore_survdat.R"), eval = F, echo = T}
 
-```
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_inshore_survdat.R
+
 
 **Massachusetts**
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_mass_inshore_survey.R"), eval = F, echo = T}
-
-```
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mass_inshore_survey.R
 
 **Mid-Atlantic (NEAMAP)**
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_mab_inshore_survey.R"), eval = F, echo = T}
-
-```
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mab_inshore_survey.R
 
 ### Data Analysis
 
@@ -161,164 +49,20 @@ Biomass indices were provided as stratified mean biomass (kg `r ifelse(knitr::is
 
 Stratified mean biomass was also calculated for the MA Inshore Bottom Trawl Survey. These calculations followed those used to find stratified mean biomass by feeding guild in the NEFSC Bottom Trawl Survey and are described in greater detail [there](#survdat). The R code used to derive the stratified mean biomass indices for MA Inshore time series is provided below. 
 
-```{r, eval = F, include = T, echo = T}
-#SOE Mass State data
-##SML
-
-#User parameters
-if(Sys.info()['sysname'] == "Windows"){
-  data.dir <- 'L:\\EcoAP\\Data\\survey'
-  out.dir  <- 'L:\\EcoAP\\Data\\SOE'
-  gis.dir  <- 'L:\\Rworkspace\\GIS_files'
-}
-if(Sys.info()['sysname'] == "Linux"){
-  data.dir <- '/home/slucey/slucey/EcoAP/Data/survey'
-  out.dir  <- '/home/slucey/slucey/EcoAP/Data/SOE'
-  gis.dir  <- '/home/slucey/slucey/Rworkspace/GIS_files'
-}
-
-#-------------------------------------------------------------------------------
-#Required packages
-library(data.table); library(rgdal); library(Survdat)
-
-#-------------------------------------------------------------------------------
-#User created functions
-
-
-#-------------------------------------------------------------------------------
-load(file.path(data.dir, 'Survdat_Mass.RData'))
-load(file.path(data.dir, 'SOE_species_list.RData'))
-
-#Grab strata
-strata <- readOGR(gis.dir, 'RA_STRATA_POLY_MC')
-
-#Generate area table
-strat.area <- getarea(strata, 'stratum')
-
-#Fix strata code to match data
-strat.area[, STRATUM := as.numeric(paste0(9, stratum, 0))]
-
-#Subset by season/ strata set
-fall   <- survdat.mass[SEASON == 'FALL',   ]
-spring <- survdat.mass[SEASON == 'SPRING', ]
-
-#Run stratification prep
-fall.prep   <- stratprep(fall,   strat.area, strat.col = 'STRATUM', area.col = 'Area')
-spring.prep <- stratprep(spring, strat.area, strat.col = 'STRATUM', area.col = 'Area')
-
-#Calculate mean weight/tow by aggregate groups
-#n tows
-n.tows.fall  <- unique(fall.prep[,   list(YEAR, EPU, ntows)])
-n.tow.spring <- unique(spring.prep[, list(YEAR, EPU, ntows)])
-
-#drop length data
-setkey(fall.prep, YEAR, EPU, STATION, STRATUM, SVSPP, CATCHSEX)
-fall.prep <- unique(fall.prep, by = key(fall.prep))
-fall.prep[, c('LENGTH', 'NUMLEN') := NULL]
-
-setkey(spring.prep, YEAR, EPU, STATION, STRATUM, SVSPP, CATCHSEX)
-spring.prep <- unique(spring.prep, by = key(spring.prep))
-spring.prep[, c('LENGTH', 'NUMLEN') := NULL]
-
-#Merge Sexed species
-setkey(fall.prep, YEAR, EPU, STATION, STRATUM, SVSPP)
-fall.prep <- fall.prep[, sum(BIOMASS, na.rm = T), by = key(fall.prep)]
-
-setkey(spring.prep, YEAR, EPU, STATION, STRATUM, SVSPP)
-spring.prep <- spring.prep[, sum(BIOMASS, na.rm = T), by = key(spring.prep)]
-
-#Sum biomass within an EPU
-fall.sum   <- fall.prep[,   sum(V1), by = c('YEAR', 'EPU', 'SVSPP')]
-spring.sum <- spring.prep[, sum(V1), by = c('YEAR', 'EPU', 'SVSPP')]
-
-#Merge sum with station count
-fall.sum   <- merge(fall.sum,   n.tows.fall, by = c('YEAR', 'EPU'))
-spring.sum <- merge(spring.sum, n.tows.fall, by = c('YEAR', 'EPU'))
-
-#Calculate mean weight per tow
-fall.sum[, kg.per.tow := V1 / ntows]
-fall.mean <- fall.sum[, list(YEAR, EPU, SVSPP, kg.per.tow)]
-
-spring.sum[, kg.per.tow := V1 / ntows]
-spring.mean <- spring.sum[, list(YEAR, EPU, SVSPP, kg.per.tow)]
-
-#Aggregate by EBFM codes
-fall   <- merge(fall.mean,   unique(species[, list(SVSPP, SOE.18, Fed.Managed)]), 
-                by = 'SVSPP', all.x = T)
-spring <- merge(spring.mean, unique(species[, list(SVSPP, SOE.18, Fed.Managed)]), 
-                by = 'SVSPP', all.x = T)
-
-#Fix NA group to other
-fall[  is.na(SOE.18), SOE.18 := 'Other']
-spring[is.na(SOE.18), SOE.18 := 'Other']
-
-#Sum by feeding guild and managed species
-fall.agg   <- fall[,   sum(kg.per.tow), by = c('YEAR', 'EPU', 'SOE.18', 'Fed.Managed')]
-spring.agg <- spring[, sum(kg.per.tow), by = c('YEAR', 'EPU', 'SOE.18', 'Fed.Managed')]
-
-#Total
-fall.agg[, Total := sum(V1), by = c('YEAR', 'EPU', 'SOE.18')]
-fall.agg[, Prop.managed := V1 / Total]
-
-spring.agg[, Total := sum(V1), by = c('YEAR', 'EPU', 'SOE.18')]
-spring.agg[, Prop.managed := V1 / Total]
-
-#Get in correct long format for SOE
-#By feeding guild
-fall.tot <- copy(fall.agg)
-fall.tot[, Var := paste(SOE.18, 'Fall Biomass Index')]
-setnames(fall.tot, c('YEAR', 'EPU', 'Total'), c('Time', 'Region', 'Value'))
-fall.tot[, c('SOE.18', 'V1', 'Prop.managed', 'Fed.Managed') := NULL]
-fall.tot[, Units  := 'kg tow^-1']
-fall.tot[, Source := 'NEFSC bottom trawl survey (survdat)']
-setcolorder(fall.tot, c('Time', 'Value', 'Var', 'Units', 'Region', 'Source'))
-fall.tot <- unique(fall.tot)
-
-spring.tot <- copy(spring.agg)
-spring.tot[, Var := paste(SOE.18, 'Spring Biomass Index')]
-setnames(spring.tot, c('YEAR', 'EPU', 'Total'), c('Time', 'Region', 'Value'))
-spring.tot[, c('SOE.18', 'V1', 'Prop.managed', 'Fed.Managed') := NULL]
-spring.tot[, Units  := 'kg tow^-1']
-spring.tot[, Source := 'NEFSC bottom trawl survey (survdat)']
-setcolorder(spring.tot, c('Time', 'Value', 'Var', 'Units', 'Region', 'Source'))
-spring.tot <- unique(spring.tot)
-
-#Proportion managed
-fall.prop <- copy(fall.agg)
-fall.prop[is.na(Fed.Managed), Fed.Managed := 'Non']
-fall.prop[, Var := paste(SOE.18, Fed.Managed, 'managed species - Fall Biomass Index')]
-setnames(fall.prop, c('YEAR', 'EPU', 'Prop.managed'), c('Time', 'Region', 'Value'))
-fall.prop[, c('SOE.18', 'V1', 'Total', 'Fed.Managed') := NULL]
-fall.prop[, Units  := 'proportion']
-fall.prop[, Source := 'NEFSC bottom trawl survey (survdat)']
-setcolorder(fall.prop, c('Time', 'Value', 'Var', 'Units', 'Region', 'Source'))
-
-spring.prop <- copy(spring.agg)
-spring.prop[is.na(Fed.Managed), Fed.Managed := 'Non']
-spring.prop[, Var := paste(SOE.18, Fed.Managed, 'managed species - Spring Biomass Index')]
-setnames(spring.prop, c('YEAR', 'EPU', 'Prop.managed'), c('Time', 'Region', 'Value'))
-spring.prop[, c('SOE.18', 'V1', 'Total', 'Fed.Managed') := NULL]
-spring.prop[, Units  := 'proportion']
-spring.prop[, Source := 'NEFSC bottom trawl survey (survdat)']
-setcolorder(spring.prop, c('Time', 'Value', 'Var', 'Units', 'Region', 'Source'))
-
-#Merge into one data set
-survey <- rbindlist(list(fall.tot, spring.tot, fall.prop, spring.prop))
-save(survey, file = file.path(out.dir, 'Aggregate_Survey_biomass_19.RData'))
-```
+R code used for analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/inshore_survey_analysis.R)
 
 
 ### Plotting
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-nefsc-biomass-mab.R"), fig.cap = paste0("Fall (left) and spring (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red."), fig.width=8, fig.asp = 0.75, eval = T, echo = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-agg-bio.R"), fig.cap = paste0("Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red."), fig.width=8, fig.asp = 0.75, eval = T, echo = T}
 
 ```
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-MA-inshore.R"), fig.width=8, fig.asp = 0.75, fig.cap = "Fall (left) and spring (right) surveyed biomass from the MA state inshore bottom trawl survey.", echo = T, eval = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-MA-inshore.R"), fig.width=8, fig.asp = 0.75, fig.cap = "Spring (left) and fall (right) surveyed biomass from the MA state inshore bottom trawl survey.", echo = F, eval = T}
 
 ```
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-menh-survey.R"),fig.width=8, fig.asp = 0.75, fig.cap = "Fall (left) and spring (right) surveyed biomass from the ME/NH state inshore bottom trawl survey.", echo = T, eval = T}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-menh-survey.R"),fig.width=8, fig.asp = 0.75, fig.cap = "Spring (left) and fall(right) surveyed biomass from the ME/NH state inshore bottom trawl survey.", echo = F, eval = T}
 
 ```
 

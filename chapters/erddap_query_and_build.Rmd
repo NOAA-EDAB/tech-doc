@@ -15,58 +15,7 @@ Source data for the derived indicators in this document are linked to in the tex
 
 ### Building the document
 
-Start a local build of the SOE bookdown document by first cloning the project's associated [git repository](https://github.com/NOAA-EDAB/tech-doc). Next, if you would like to build a past version of the document, use `git checkout [version_commit_hash]` to revert the project to a past commit of interest, and set `build_latest <- FALSE` in the following code chunk. This will ensure the project builds from a cached data set, and not the most updated versions present on the NEFSC ERDDAP server. Once the `tech-doc.Rproj` file is opened in RStudio, run `bookdown::serve_book()` from the console to build the document. 
-
-
-```{r query, echo = T, eval = F, message=F, warning=F}
-
-build_latest <- FALSE
-
-if (build_latest){
-  
-  # Relative working directories
-  data.dir  <- here::here('data')
-  r.dir <- here::here('R')
-  
-  #Source function for querying ERDDAP server
-  source(file.path(r.dir,"get_erddap.R"))
-  
-  #Set URL for COMET (server where NEFSC ERDDAP lives)
-  comet <- 'https://comet.nefsc.noaa.gov/erddap/'
-  
-  #List datasets on the NEFSC ERDDAP
-  tab_list <- ed_datasets(url = comet)
-  
-  #Get updated data set IDs
-  erddap_datasets <- tab_list %>% 
-    filter(str_detect(Dataset.ID, "soe_v")) %>% 
-    get_erddap(id = NULL)
-  
-  #Save and clean updated IDs for use in rest of report
-  save(erddap_datasets, file = file.path(data.dir, "ERDDAP_datasets.Rdata"))
-  
-  # Exclude stock assessment status data, which have unique structure
-  erddap_datasets <- erddap_datasets %>%
-    dplyr::filter(!str_detect(Dataset.ID, "assess")) 
-  
-  #Create SOE parent data set, filter out NAs. This queries based on 
-  #data set IDs that were collected above
-  SOE.data.erd <- sprintf("http://comet.nefsc.noaa.gov/erddap/tabledap/%s.csv",
-                           erddap_datasets$Dataset.ID) %>% 
-    purrr::map(function(x) {
-      readr::read_csv(url(x))
-    }) %>% 
-    do.call(rbind,.) %>% 
-    mutate(Value = as.numeric(Value)) %>% 
-      dplyr::filter(!is.na(Value))
-  
-  #Convert to data.table
-  SOE.data <- as.data.table(SOE.data.erd)
-  
-  #Save data
-  save(SOE.data, file = file.path(data.dir,"SOE_data_erddap.Rdata"))
-}
-```
+Start a local build of the SOE bookdown document by first cloning the project's associated [git repository](https://github.com/NOAA-EDAB/tech-doc). Next, if you would like to build a past version of the document, use `git checkout [version_commit_hash]` to revert the project to a past commit of interest, and set `build_latest <- FALSE` in this [code chunk](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/erddap_query_and_build_code.R). This will ensure the project builds from a cached data set, and not the most updated versions present on the NEFSC ERDDAP server. Once the `tech-doc.Rproj` file is opened in RStudio, run `bookdown::serve_book()` from the console to build the document. 
 
 #### A note on data structures
 

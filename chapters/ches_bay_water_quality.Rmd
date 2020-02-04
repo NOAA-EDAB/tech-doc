@@ -44,7 +44,7 @@ Patterns of attainment of individual DUs are variable (Figure 2). Changes in OW-
 
 
 
-```{r,,fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017."}
+```{r,fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017."}
 
 knitr::include_graphics(file.path(image.dir, "cb_water_quality_attainment.png"))
 
