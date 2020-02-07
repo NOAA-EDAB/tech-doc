@@ -36,7 +36,7 @@ The multimetric indicator quantifies the fraction of segment-DU-criterion combin
 
 The indicator provides an integrated measure of Chesapeake Bay’s water quality condition (Figure 1). In 2015-2017, 42% of all tidal water segment-DU-criterion combinations are estimated to have met or exceeded applicable water quality criteria thresholds, which marks the best 3-year status since 1985-1987. The indicator has a positive and statistically significant trend from 1985 to 2017, which shows that Chesapeake Bay is on a positive trajectory toward recovery. This pattern was statistically linked to total nitrogen reduction, indicating responsiveness of attainment status to management actions implemented to reduce nutrients in the system. 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-cb-attainment.R"),fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2015-2017. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-cb-attainment.R"),fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2015-2017. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
 
 ```
 

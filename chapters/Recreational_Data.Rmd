@@ -2,7 +2,7 @@
 
 **Description**: A variety of indicators derived from MRIP Recreational Fisheries Statistics, including total recreational catch, total angler trips by region, annual diversity of recreational fleet effort, and annual diversity of managed species.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020)
 
 **Indicator category**: Database pull with analysis
   
@@ -33,80 +33,29 @@ Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Se
 
 **Recreational fleet effort diversity**
 
-```{r, eval = F, include = T, echo = T}
-REC_DATA <- read.csv('X:/gdepiper/ESR2018/SOE/Data/Rec_Days_Fished_2018.csv', as.is=TRUE)
+Code used to for effort diversity data analysis can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/rev_effort_div_analysis.R). 
 
-REC_DATA$P_Shore <- -(as.numeric(gsub("","",'""',REC_DATA$Shore)) /
-                        as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
-                          log(as.numeric(gsub("","",'""',REC_DATA$Shore)) /
-                                as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
 
-REC_DATA$P_Private <- -(as.numeric(gsub("","",'""',REC_DATA$Private_Rental)) /
-                          as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
-                          log(as.numeric(gsub("","",'""',REC_DATA$Private_Rental)) /
-                                as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
-
-REC_DATA$P_Party <- -(as.numeric(gsub("","",'""',REC_DATA$Party_Charter)) /
-                        as.numeric(gsub("","",'""',REC_DATA$All_Modes))) *
-                        log(as.numeric(gsub("","",'""',REC_DATA$Party_Charter)) /
-                              as.numeric(gsub("","",'""',REC_DATA$All_Modes)))
-
-REC_DATA$Value <- exp(REC_DATA$P_Shore+REC_DATA$P_Private+REC_DATA$P_Party)
-
-REC_DATA$Region[REC_DATA$Region=='"MID-ATLANTIC"'] <- 'MA'
-REC_DATA$Region[REC_DATA$Region=='"NORTH ATLANTIC"'] <- 'NE'
-
-E_SHANNON <- subset(REC_DATA, select=c('Time','Region','Value'))
-E_SHANNON$Units <- 'Effective Shannon'
-E_SHANNON$Var <- 'Recreational fleet effort diversity across modes'
-E_SHANNON$Source <- 'MRIP effort time series, processed to generate diversity measure.'
-```
 
 **Recreational catch diversity**
 
-```{r, eval = F, include = T, echo = T}
- REC_CATCH <- read.csv('X:/gdepiper/ESR2018/SOE/Data/Rec_Species_Quantity_2018.csv', as.is=TRUE)
+Code used to for catch diversity data analysis can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/rec_catch_div_analysis.R). 
 
-REC_CATCH$Value <-  as.numeric(gsub(",","",REC_CATCH$Value))
-TOT_REC_CATCH <- aggregate(Value~Time+Region, data=REC_CATCH, FUN=sum)
-names(TOT_REC_CATCH) <- c('Time','Region','Tot_Catch')
-REC_CATCH <- merge(REC_CATCH,TOT_REC_CATCH, by=c('Time','Region'))
-REC_CATCH$P_Catch <- -(REC_CATCH$Value/REC_CATCH$Tot_Catch*
-log(REC_CATCH$Value/REC_CATCH$Tot_Catch))
-REC_CATCH <- aggregate(P_Catch~Time+Region, data=REC_CATCH, FUN=sum)
-REC_CATCH$Value <- exp(REC_CATCH$P_Catch)
-REC_CATCH <- subset(REC_CATCH, select=c('Time','Region','Value'))
-REC_CATCH$Region[REC_CATCH$Region=="MID-ATLANTIC"] <- 'MA'
-REC_CATCH$Region[REC_CATCH$Region=="NORTH ATLANTIC"] <- 'NE'
-REC_CATCH$Units <- 'Effective Shannon'
-REC_CATCH$Var <- 'Recreational Diversity of Catch' 
-
-##Species include: American Eel, Atlantic Cod, Atlantic Mackerel, 
-##Atlantic Sturgeon, Black Drum, Black Sea Bass, Bluefish, 
-  ##Cobia, Haddock, Pollock, Red Drum, Scup, Spanish Mackerel,
-##Spiny Dogfish, Spot, Spotted Seatrout, Striped Bass, 
-##Summer Flounder, Tautog, Tilefish, Weakfish, Winter Flounder,   
-  #and All Other Species.
-
-REC_CATCH$Source <- 'MRIP catch time series.'
-```
 
 ### Data processing
 
-Recreational fishing indicators were formatted for inclusion in the `ecodata` R package using the following code.
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_rec.R"), eval = F, echo = T}
+Recreational fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec.R).
 
-```
 
 ### Plotting
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-rec-div.R"), eval = T, echo = T,  fig.cap = "Recreational effort diversity and diversity of recreational catch in New England."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-recdat.R"), eval = T, echo = F,  fig.cap = "Recreational effort diversity and diversity of recreational catch in the Mid-Atlantic."}
 
 ```
 
  
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-NEFMC/master/chunk_scripts/NE-rec-landings-ne.R"), fig.cap = "Total recreational seafood harvest in New England.", eval=T, echo=T}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-rec-landings.R"), fig.cap = "Total recreational seafood harvest in the Mid-Atlantic.", eval=T, echo=F}
 
 ```
 

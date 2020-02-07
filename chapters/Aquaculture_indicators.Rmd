@@ -37,5 +37,5 @@ Aquaculture data were formatted for inclusion in the `ecodata` R package using t
 ### Plotting
 Code for plotting data included in the State of the Ecosystem can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-oyster-aqua.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-oyster-aqua.R"), fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = F, eval =F, warning = F, message=F, fig.align='center', fig.height=4}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-oyster-aqua.R"), fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = F, eval =F, warning = F, message=F, fig.align='center', fig.height=4}
 ```
