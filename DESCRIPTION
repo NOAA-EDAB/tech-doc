@@ -60,5 +60,6 @@ Remotes:
   rstudio/bookdown,
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
-  thomasp85/patchwork
+  thomasp85/patchwork, 
+  ropensci/rnaturalearthhires
   
