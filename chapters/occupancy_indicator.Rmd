@@ -86,6 +86,6 @@ The `irr` R package [@irr] was used to calculate Area Under the ROC Curve (AUC) 
 
 ### Plotting
 
-<!-- ```{r occupancy-MAB, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/observer_data_plotting.R"), fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = F, fig.show='hold', warning = F, message = F,fig.pos='H'} -->
-
-<!-- ``` -->
+```{r occupancy-MAB, fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = F, fig.show='hold', warning = F, message = F,fig.pos='H'}
+knitr::include_graphics(file.path(image.dir, "habitat_occupancy_plot.png"))
+```

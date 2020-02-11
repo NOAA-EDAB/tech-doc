@@ -30,6 +30,8 @@ The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity 
 Marine Heatwave data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_marine_heatwave.R).
 
 ### Plotting
+
+Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-heatwave_mab.R).
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-heatwave_mab.R"), eval = T, echo=F, fig.cap="Cumulative and maximum marine heatwave in the Mid-Atlantic", fig.align="center"}
 
 ```

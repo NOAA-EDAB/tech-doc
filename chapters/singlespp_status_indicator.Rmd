@@ -68,7 +68,7 @@ library(ncdf4);library(marmap); library(magick)
 
 ### Plotting
 
-The script used to develop the figure in the State of the Ecosystem report is below, with an example figure. Different lines are commented out of the script to produce the Mid- Atlantic or New England figures. The positioning table used to make the plot (the data frame named "decoder" below) is available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_support_soe_v1.htmlTable?Entity_Name,Count_of_No,Min_of_No2,Code,Council,my_pos,my_pos2,my_pos3).
+The script used to develop the figure in the State of the Ecosystem report can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-stock-status1.R).
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-stock-status1.R"), warning=F, fig.cap ="Summary of single species status for MAFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=F}
 

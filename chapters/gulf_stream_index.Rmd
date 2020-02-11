@@ -26,7 +26,7 @@ For detailed analytical methods, see @joyce2019.
 
 ### Data Processing
 
-The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here]("https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R").
+The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R).
 
 ### Plotting
 

@@ -40,11 +40,11 @@ NA
 
 ### Data analysis
 
-Code used for trend analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/trend_analsyis.R). 
+Code used for trend analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/trend_analysis.R). 
 
 
 **Example plot**
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-long-term-sst.R"), echo = F, fig.align="center", eval = T, ig.cap=""}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-long-term-sst.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
 
 ```
 

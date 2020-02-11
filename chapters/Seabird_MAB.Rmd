@@ -1,0 +1,40 @@
+# MA Seabird productivity
+
+**Description**: Virginia seabird data 
+
+**Indicator category**: Published method
+
+**Found in**: State of the Ecosystem - Mid-Atantic (2020)
+
+**Contributor(s)**: Ruth Boettcher
+                
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Public availability statement**: 
+
+
+## Methods
+
+
+### Data sources
+Virginia seabird breeding pair population estimates derived from  table 4 of "Status and distribution of colonial waterbirds in coastal Virginia: 2018 breeding season." Center for Conservation Biology Technical Report Series, CCBTR-19-06. College of William and Mary & Virginia Commonwealth University, Williamsburg, VA. 28 pp. Available at: https://ccbbirds.org/wp-content/uploads/CCBTR-19-06_Colonial-waterbirds-in-coastal-Virginia-2018.pdf
+
+
+### Data processing
+
+VA seabird data were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seabird_MAB.R).
+
+
+### Data analysis
+
+NA
+
+### Plotting 
+Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-VA-cote.R)
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-VA-cote.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= "Functional group population estimated derived from Table 4 of Watts, B. D., B. J. Paxton, R. Boettcher, and A. L. Wilke. 2019."}
+
+```
+

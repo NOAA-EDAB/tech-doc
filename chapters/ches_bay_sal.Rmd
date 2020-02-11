@@ -35,7 +35,10 @@ University of Maryland Center for Environmental Science, Horn Point Laboratory O
 
 
 ### Data processing
-NA
+Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_sal.R). 
 
 ### Plotting
-NA
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-cb-sal.R"), echo = F, fig.align="center", eval = T, ig.cap=" Buoy data showing unprecedented fresh water in Chesapeake Bay, 2018-2019. ."}
+
+```

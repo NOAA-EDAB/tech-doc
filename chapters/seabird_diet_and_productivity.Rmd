@@ -1,4 +1,4 @@
-# Seabird diet and productivity
+# NE Seabird diet and productivity
 
 **Description**: Common tern annual diet and productivity at seven Gulf of Maine colonies managed by the National Audubon Society's Seabird Restoration Program
 
@@ -7,7 +7,7 @@
 **Found in**: State of the Ecosystem - New England (2019, 2020)
 
 **Contributor(s)**: Don Lyons, Steve Kress, Paula Shannon, Sue Schubel
-  
+                
 **Data steward**: Don Lyons, <dlyons@audubon.org>
   
 **Point of contact**: Don Lyons, <dlyons@audubon.org>
@@ -35,25 +35,31 @@ Common tern diet and nest productivity data were provided by the National Audubo
 ### Data processing
 
 Diet and productivity data were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_commontern.R).
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_commontern.R"), eval = F, echo = T}
 
-```
 
 ### Data analysis
 
-Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@R-vegan]. Code for this calculation can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/seabird_ne_div_analysis.R). Diet diversity is presented along with nest productivity (+/- 1 SE).
+Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@R-vegan]. Code for this calculation can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/seabird_ne_div_analysis.R). Diet diversity is presented along with nest productivity (+/- 1 SE).
 
-(ref:bird-prod) a. Mean common tern productivity at nesting sites in Gulf of Maine. Error bars show +/- 1 SE of the mean. b. Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006.
+Code used to create the figures below can be found at these links, [diet diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-tern-diet-diversity.R), [prey frequencies](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R) and [common tern productivity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-aggregate-prod.R)
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= '(ref:bird-prod)'}
+### Plotting 
+#### Diet diversity
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-tern-diet-diversity.R"),echo = F, fig.align="center", eval = T, fig.cap= "Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006."}
 
 ```
 
-Along with nest productivity and diet diversity indices, we presented maps of sampling sites in Gulf of Maine and mean prey frequencies across sites. Prey occurring in less than 5\% of common tern diets was excluded for visual clarity. 
+#### Prey frequencies
+(ref:bird-prod)  Prey frequencies in the diets of common tern observed across the seven colonies in the Gulf of Maine.
 
-(ref:nest-sites) Common terns: a. Locations of the seven sampled common tern nesting sites in Gulf of Maine (EER = Eastern Egg Rock, JI = Jenny Island, MR = Matinicus Rock, OGI = Outer Green Island, PINWR = Pond Island National Wildlife Refuge, SINWR = Seal Island National Wildlife Refuge, STI = Stratton Island), and b. Prey frequencies in the diets of common tern observed across the seven colonies in Gulf of Maine. Prey occurring in <5% of common tern diets were excluded for clarity.
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R"),echo = F, fig.align="center", eval = T, fig.cap= '(ref:bird-prod)'}
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-common-tern.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= '(ref:nest-sites)'}
+```
+
+#### Common tern productivity
+(ref:nest-sites) Common terns: Mean common tern productivity at nesting sites in Gulf of Maine. Error bars show +/- 1 SE of the mean. 
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-aggregate-prod.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= '(ref:nest-sites)'}
 
 ```
 

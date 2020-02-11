@@ -30,7 +30,7 @@ Data for these indicators were derived from fishery-independent bottom trawl sur
 
 ### Data analysis
 
-Species distribution indicators were derived using the R code found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_distribution_analsyis.R). 
+Species distribution indicators were derived using the R code found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_distribution_analysis.R). 
 
 
 
@@ -40,7 +40,8 @@ Distribution indicators were further formatted for inclusion in the `ecodata` R 
 
 
 ### Plotting
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-spec-dist.R"), fig.cap = "Aggregate species distribution depth along shelf distance (northward shift) and depth.", fig.align="center", eval=T, echo=F}
+Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-spec-dist.R).
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-spec-dist.R"), fig.cap = "Aggregate species distribution depth along shelf distance (northward shift) and depth.", eval=T, echo=F}
 
 ```
 

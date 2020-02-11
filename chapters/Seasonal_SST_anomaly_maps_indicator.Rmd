@@ -27,9 +27,11 @@ We calculated the long-term mean (LTM) for each season-specific stack of rasters
 
 R code used in extraction and processing [gridded](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom_gridded.R)  and [timeseries](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom.R)  data can found in the `ecodata` package.  
 
+
 ### Plotting
 
+Code used to build the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-SST-insitu.R).
+```{r MAB-SST, echo = F, fig.align="center", fig.cap="MAB seasonal sea surface temperature time series overlaid onto 2019 seasonal spatial anomalies."}
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-SST-insitu.R"), echo = F, fig.align="center", eval = T, ig.cap="MAB seasonal sea surface temperature time series overlaid onto 2019 seasonal spatial anomalies."}
-
+knitr::include_graphics(file.path(image.dir, "seasonal_SST_plot.png"))
 ```

@@ -37,7 +37,7 @@ Data are processed similarly to @Kane2007 and @Perretti2017, where a mean annual
 
 Abundance anomalies (Figure \@ref(fig:zooplankton-abundance)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, *Calanus finmarchicus*.
 
-Code used for zooplankton data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analsyis.R). 
+Code used for zooplankton data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R). 
 
 
 **Seasonal abundance**
@@ -46,13 +46,10 @@ Time series of zooplankton abundance in the spring and fall months have been pre
 
 ### Data processing
 
-Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code linked below.
-
-[Abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R)
-
-[Seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R)
+Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R)
 
 ### Plotting
+Code used to create the figures below can be found linked here, [copepod abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R), [Euphausiid and Cnidarian abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R). 
 
 **Abundance anomaly**
 

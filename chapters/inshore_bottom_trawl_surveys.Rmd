@@ -53,15 +53,17 @@ R code used for analysis can be found [here](https://github.com/NOAA-EDAB/tech-d
 
 
 ### Plotting
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-agg-bio.R"), fig.cap = paste0("Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red."), fig.width=8, fig.asp = 0.75, eval = T, echo = T}
+#### NEAMAP
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-agg-bio.R"), fig.cap = paste0("Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red."), fig.width=8, fig.asp = 0.75, eval = T, echo =F}
 
 ```
 
+#### Massechusetts
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-MA-inshore.R"), fig.width=8, fig.asp = 0.75, fig.cap = "Spring (left) and fall (right) surveyed biomass from the MA state inshore bottom trawl survey.", echo = F, eval = T}
 
 ```
 
+#### Maine-New Hampshire
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-menh-survey.R"),fig.width=8, fig.asp = 0.75, fig.cap = "Spring (left) and fall(right) surveyed biomass from the ME/NH state inshore bottom trawl survey.", echo = F, eval = T}
 
 ```
