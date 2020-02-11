@@ -6,7 +6,7 @@
 .html
 *.pdf
 .eps
-*.png
+#*.png
 *.log
 # Session Data files
 .RData
