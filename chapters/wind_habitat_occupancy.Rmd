@@ -1,0 +1,31 @@
+# Wind lease areas and habitat occupancy overlap
+
+**Description**: Wind lease areas and habitat occupancy
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+
+**Indicator category**: 
+
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+
+
+### Data extraction 
+
+
+### Data analysis
+
+
+### Data processing
+
+### Plotting
