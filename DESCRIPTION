@@ -40,7 +40,6 @@ Depends:
   openxlsx,
   lubridate, 
   rgeos,
-  Survdat,
   kableExtra,
   here,
   ks,
@@ -52,11 +51,9 @@ Depends:
   xml2,
   ggrepel,
   kernlab,
-  sf,
-  patchwork,
-  Survdat
+  formatR,
+  sf
 Remotes: 
-  rstudio/bookdown,
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
   thomasp85/patchwork

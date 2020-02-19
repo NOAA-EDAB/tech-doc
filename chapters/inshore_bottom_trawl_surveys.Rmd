@@ -32,7 +32,6 @@ The following R code was used to process inshore bottom trawl data into the `eco
 
 https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_inshore_survdat.R
 
-
 **Massachusetts**
 https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mass_inshore_survey.R
 

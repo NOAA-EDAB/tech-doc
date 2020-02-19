@@ -86,11 +86,6 @@ CHL and PPD time series were formatted for inclusion in the `ecodata` R package 
 
 ### Plotting
 
-<!-- The following figures show examples of how Chlorophyll *a* and primary production data have been included into State of the Ecosystem reports. The figure immediately below shows primary production anomaly plotted with the small-large copepod index (see [Zooplankton](#zooabund)) in the Mid-Atlantic Bight.  -->
-
-<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/SOE-MAFMC/master/chunk_scripts/MA-MAB-sli.R"), fig.cap="MAB small-large zooplankton index and the annual primary production anomaly.", message=F, warning=F} -->
-
-<!-- ``` -->
 
 Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figures below show data specific to the Mid-Atlantic Bight. The code for the plots can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-mab-chl-weekly.R).
 

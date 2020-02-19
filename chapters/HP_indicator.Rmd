@@ -1,12 +1,5 @@
 # Harbor Porpoise Bycatch
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 
 **Description**: Harbor Porpoise Indicator
 
