@@ -78,31 +78,31 @@ See the [workedExample vignette](https://github.com/andybeet/indexPPR/tree/maste
 
 #### Georges Bank (GB)
 
-```{r, pprgb, echo=FALSE, out.width='50%'}
+<!-- ```{r, pprgb, echo=FALSE, out.width='50%'} -->
 
-knitr::include_graphics(paste0(imagePath,"/PPR-GB-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/MTL-GB-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/PP-GB.png"))
-knitr::include_graphics(paste0(imagePath,"/composition-GB-0.80.png"))
-```
+<!-- knitr::include_graphics(paste0(imagePath,"/PPR-GB-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/MTL-GB-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/PP-GB.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/composition-GB-0.80.png")) -->
+<!-- ``` -->
 
 #### Gulf of Maine (GOM)
 
-```{r, pprgom,echo=FALSE, out.width='50%'}
+<!-- ```{r, pprgom,echo=FALSE, out.width='50%'} -->
 
-knitr::include_graphics(paste0(imagePath,"/PPR-GOM-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/MTL-GOM-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/PP-GOM.png"))
-knitr::include_graphics(paste0(imagePath,"/composition-GOM-0.80.png"))
-```
+<!-- knitr::include_graphics(paste0(imagePath,"/PPR-GOM-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/MTL-GOM-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/PP-GOM.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/composition-GOM-0.80.png")) -->
+<!-- ``` -->
 
 #### Mid-Atlantic Bight (MAB)
 
-```{r, pprmab,  echo=FALSE, out.width='50%'}
-knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0.80.png"))
-knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))
-knitr::include_graphics(paste0(imagePath,"/composition-MAB-0.80.png"))
-```
+<!-- ```{r, pprmab,  echo=FALSE, out.width='50%'} -->
+<!-- knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0.80.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/PP-MAB.png")) -->
+<!-- knitr::include_graphics(paste0(imagePath,"/composition-MAB-0.80.png")) -->
+<!-- ``` -->
 
 
