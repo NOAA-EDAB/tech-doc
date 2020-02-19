@@ -82,7 +82,7 @@ See the [workedExample vignette](https://github.com/andybeet/indexPPR/tree/maste
 
 #knitr::include_graphics(paste0(imagePath,"/PPR-GB-0_80.png"))
 #knitr::include_graphics(paste0(imagePath,"/MTL-GB-0_80.png"))
-knitr::include_graphics(paste0(imagePath,"/PP-GB.png"))
+#knitr::include_graphics(paste0(imagePath,"/PP-GB.png"))
 #knitr::include_graphics(paste0(imagePath,"/composition-GB-0_80.png"))
 ```
 
