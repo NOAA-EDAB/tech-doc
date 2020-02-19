@@ -36,7 +36,3 @@ Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/e
 
 ```
 
-```{r, }
-imagePath <- "https://raw.githubusercontent.com/noaa-edab/ecodata/master/docs/images"
-knitr::include_graphics(paste0(imagePath,"/MAB_Heatwave_timeseries.jpg"))
-```
