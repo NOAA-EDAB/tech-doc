@@ -44,11 +44,5 @@ Code used to build the community engagement indicator plot below can be found [h
 
 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R"), eval=TRUE, echo = FALSE, fig.cap = "Community Engagement."}
-
-```
-
-
-
 
 
