@@ -36,6 +36,6 @@ Derived bottom temperature data were formatted for inclusion in the `ecodata` R 
 
 Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-bot-temp.R). 
 
-<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-bot-temp.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic annual bottom temperature anomalies."} -->
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-bot-temp.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic annual bottom temperature anomalies."}
 
-<!-- ``` -->
+```

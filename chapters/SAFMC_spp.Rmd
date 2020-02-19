@@ -1,0 +1,32 @@
+# SAFMC managed spp
+
+**Description**: SAFMC Species on NES
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+
+**Indicator category**: 
+
+**Contributor(s)**: Sean Lucey
+  
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Public availability statement**: 
+
+## Methods
+
+
+### Data sources
+
+
+### Data extraction 
+
+
+### Data analysis
+
+
+### Data processing
+
+
+### Plotting

@@ -2,7 +2,7 @@
 
 **Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019), State of the Ecosystem - Mid-Atlantic (2018,2019) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019, 2020), State of the Ecosystem - Mid-Atlantic (2018,2019, 2020) 
 
 **Indicator category**: Database pull with analysis
 
@@ -38,11 +38,15 @@ Data were formatted for inclusion in the ecodata R package using the R script fo
 
 
 ### Plotting
-Code forplotting the community reliance vulnerability indicator can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/comm_rel_vuln_plotting.R). 
+Code for plotting the community reliance vulnerability indicator can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/comm_rel_vuln_plotting.R). 
+
+Code used to build the community engagement indicator plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R). 
 
 
 
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R"), eval=TRUE, echo = FALSE, fig.cap = "Community Engagement."}
 
+```
 
 
 

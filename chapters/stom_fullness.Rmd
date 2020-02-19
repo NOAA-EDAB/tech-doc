@@ -1,0 +1,32 @@
+# Stomach fullness
+
+**Description**: Stomach FUllness
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020), State of the Ecosystem - New England (2020)
+
+**Indicator category**: 
+
+**Contributor(s)**: Laurel Smith
+  
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Public availability statement**: 
+
+## Methods
+
+
+### Data sources
+
+
+### Data extraction 
+
+
+### Data analysis
+
+
+### Data processing
+
+
+### Plotting
