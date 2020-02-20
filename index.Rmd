@@ -58,8 +58,8 @@ library(cowplot)
 library(sf)
 library(rgdal)
 library(raster)
-#library(rnaturalearth)
-#library(rnaturalearthhires)
+# library(rnaturalearth)
+# library(rnaturalearthhires)
 
 #Time series constants
 shade.alpha <- 0.3
@@ -97,8 +97,8 @@ crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +da
 # ne_states <- ne_states(country = "united states of america",
 #                                       returnclass = "sf") %>%
 #   sf::st_transform(crs = crs)
-#high-res polygon of Maine
-#new_england <- read_sf(gis.dir,"new_england")
+# #high-res polygon of Maine
+# new_england <- read_sf(gis.dir,"new_england")
 #EPU shapefile
 epu_sf <- ecodata::epu_sf %>% 
   filter(EPU %in% c("MAB","GB","GOM"))

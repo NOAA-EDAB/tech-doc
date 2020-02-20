@@ -1,6 +1,6 @@
-# MA Seabird productivity
+# MA waterbird productivity
 
-**Description**: Virginia seabird data 
+**Description**: Virginia waterbird data 
 
 **Indicator category**: Published method
 
@@ -19,12 +19,12 @@
 
 
 ### Data sources
-Virginia seabird breeding pair population estimates derived from  table 4 of "Status and distribution of colonial waterbirds in coastal Virginia: 2018 breeding season." Center for Conservation Biology Technical Report Series, CCBTR-19-06. College of William and Mary & Virginia Commonwealth University, Williamsburg, VA. 28 pp. Available at: https://ccbbirds.org/wp-content/uploads/CCBTR-19-06_Colonial-waterbirds-in-coastal-Virginia-2018.pdf
+Virginia colonial waterbird breeding pair population estimates derived from table 4 of "Status and distribution of colonial waterbirds in coastal Virginia: 2018 breeding season." Center for Conservation Biology Technical Report Series, CCBTR-19-06. College of William and Mary & Virginia Commonwealth University, Williamsburg, VA. 28 pp. Available at: https://ccbbirds.org/wp-content/uploads/CCBTR-19-06_Colonial-waterbirds-in-coastal-Virginia-2018.pdf
 
 
 ### Data processing
 
-VA seabird data were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seabird_MAB.R).
+VA colonial waterbird data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seabird_MAB.R).
 
 
 ### Data analysis

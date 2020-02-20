@@ -27,6 +27,14 @@
 
 
 ### Data processing
-
+Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R). 
 
 ### Plotting
+
+The plot below was built using the code found
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-warm-core-rings.R). 
+
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-warm-core-rings.R"), eval = T, fig.cap= " Interannual Variability of the WCR formation between 1980 and 2019. The regime shift (denoted by the split in the red solid line) is significant at the turn of the century.  Figure reproduced with permission from Gangopadhyay, et al. (2019).  2018 and 2019 data points based on personal communication with A. Gangopadhyay (2020)."}
+
+```
