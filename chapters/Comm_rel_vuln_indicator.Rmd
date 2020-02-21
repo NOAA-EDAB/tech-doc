@@ -43,6 +43,10 @@ Code for plotting the community reliance vulnerability indicator can be found [h
 Code used to build the community engagement indicator plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R). 
 
 
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-MAB-comm-eng.R"), eval = T, fig.cap= "Community engagement."}
+
+```
+
 
 
 

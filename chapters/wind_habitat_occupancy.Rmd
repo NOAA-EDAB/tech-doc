@@ -4,7 +4,7 @@
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2020)
 
-**Indicator category**: 
+**Indicator category**: Database pull with analysis; Extensive analysis; not yet published; Published methods
 
 **Contributor(s)**: Kevin Friedland
   
@@ -16,16 +16,30 @@
 
 ## Methods
 
+Habitat area with a probability of occupancy greater than 0.5 was modeled for many species throughout the Northeast Large Marine Ecosystem (NE-LME). Methodology for habitat occpancy models have been discussed in a [seperate chapter](#hab-occu). 
 
-### Data sources
-
+[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas (Table \@ref(fig:wind-table)). 
 
 ### Data extraction 
 
+BOEM existing and proposed lease areas (as of Feb 2019) shape files were taken from the [BOEM website](https://www.boem.gov/renewable-energy/mapping-and-data/renewable-energy-gis-data) (Figure \@ref(fig:wind-map)). 
 
 ### Data analysis
 
+For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South) (Figure \@ref(fig:wind-map)). The species shown in the table below are those that have the highest average probablity of occupancy in the lease areas. 
 
 ### Data processing
 
+Code used to format wind lease area and habitat occupancy overlap for inclusion in the `ecodata` package can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_occupancy.R). 
+
 ### Plotting
+
+Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R) and [figure below](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-eval%20%3D%20T.R).
+
+```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R"), eval=TRUE, echo=FALSE}
+
+```
+
+```{r wind-map, fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019."}
+knitr::include_graphics(file.path(image.dir, "wind_hab_occupancy.png"))
+```

@@ -2,7 +2,7 @@
 
 **Description**: Annual time series of zooplankton abundance
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020)
 
 **Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods
 
@@ -33,37 +33,48 @@ ZPD=openxlsx::read.xlsx(URL, sheet='Data')
 
 **Annual abundance anomalies**
 
+
 Data are processed similarly to @Kane2007 and @Perretti2017, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
 
-Abundance anomalies (Figure \@ref(fig:zooplankton-abundance)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, *Calanus finmarchicus*.
-
 Code used for zooplankton data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R). 
+
+***Copepod***
+
+Abundance anomalies (Figure \@ref(fig:copepod)) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, *Calanus finmarchicus*.
+
+***Euphausiids and Cnidarians***
+
+Stratified abundance of euphausiids and cnidarians were included in the 2020 State of the Ecosystem reports (Figure \@ref(fig:euph)). These were calculated as the log of estimated absolute number of individuals. 
 
 
 **Seasonal abundance**
 
-Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit. These data are presented in Figure \@ref(fig:MAB-oi-zoo).
+Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit. 
+
+**Zooplankton Diversity**
+
+Time series of zooplankton diveristy (effective shannon) (Figure \@ref(fig:zoo-div)) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above. 
 
 ### Data processing
 
 Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R)
 
 ### Plotting
-Code used to create the figures below can be found linked here, [copepod abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R), [Euphausiid and Cnidarian abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R). 
+Code used to create the figures below can be found linked here, [copepod abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R) (\@ref(fig:copepod)), [Euphausiid and Cnidarian abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R) (\@ref(fig:euph)) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R) (\@ref(fig:zoo-div). 
 
 **Abundance anomaly**
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R"), fig.cap= "Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F, fig.height=6, out.width= "50%", fig.show = 'hold'}
+```{r copepod, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R"), fig.cap= "Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,fig.show = 'hold'}
 
 ```
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F, fig.height=6, out.width= "50%", fig.show = 'hold'}
+```{r euph, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,  fig.show = 'hold'}
 
 ```
 
 **Zooplankton Diversity**
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund1.R"), fig.width = 8, fig.asp = .35, fig.cap="Zooplankton diversity in the Mid-Atlantic Bight."}
+```{r zoo-div, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund1.R"), fig.width = 8, fig.asp = .35, fig.cap="Zooplankton diversity in the Mid-Atlantic Bight."}
 
 ```

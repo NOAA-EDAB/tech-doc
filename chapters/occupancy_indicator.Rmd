@@ -1,4 +1,4 @@
-# Habitat Occupancy Models
+# Habitat Occupancy Models {#hab-occu}
 
 **Description**: Habitat Occupancy
 

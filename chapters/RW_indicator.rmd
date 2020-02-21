@@ -27,7 +27,7 @@ library(rmarkdown)
 ### Data sources
 The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 National Oceanographic and Atmospheric Administration marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
 
-Calves??
+Calves birth estimates are taken from a published report [@narw2019] put out yearly by the North American Right Whale Consortium. 
 
 ### Data extraction 
 Data were collected from existing reports and validated by report authors. 

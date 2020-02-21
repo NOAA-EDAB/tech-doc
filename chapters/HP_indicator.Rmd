@@ -34,6 +34,6 @@ Data were analyzed and formatted for inclusion in the `ecodata` R package using 
 
 
 ### Plotting
- Code used to plot harbor porpoise data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/hp_indicator_plotting.R)
+ Code used to plot harbor porpoise data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/hp_indicator_plotting.R).
 
 

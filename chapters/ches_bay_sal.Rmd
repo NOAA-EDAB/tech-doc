@@ -4,11 +4,11 @@
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2020)
 
-**Indicator category**: 
+**Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Bruce Vogt
+**Contributor(s)**: Bruce Vogt, Charles Pellerin
   
-**Data steward**: Bruce Vogt
+**Data steward**: Charles Pellerin, <charles.pellerin@noaa.gov>
   
 **Point of contact**: Bruce Vogt, <bruce.vogt@noaa.gov> 
   
