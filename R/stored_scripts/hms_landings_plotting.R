@@ -20,11 +20,10 @@ apex<-apex %>%
 series.col <- c("indianred","black")
 
 ##Plot
-p1<-apex %>% 
-  filter(EPU == "MA") %>% 
-  group_by(Var) %>% 
-  mutate(hline = mean(Value)) %>% 
-  
+apex %>% 
+  dplyr::filter(EPU == "MA") %>% 
+  dplyr::group_by(Var) %>% 
+  dplyr::mutate(hline = mean(Value)) %>% 
   ggplot(aes(x = Time, y = Value, color = Var)) +
   
   #Add time series
