@@ -38,7 +38,7 @@ HMS landings data were formatted for inclusion in the `ecodata` R package using 
 The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-comm_landings.R). 
 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/hms_landings_plotting.R"), eval = T, fig.cap= "Highly migratory species landings from 2016-2018 grouped by sharks, tunas and swordfish."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/hms_landings_plotting.R"), eval = T, echo = F, fig.cap = "Highly migratory species landings from 2016-2018 grouped by sharks, tunas and swordfish."}
 
 ```
+
