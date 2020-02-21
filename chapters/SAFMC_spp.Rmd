@@ -36,7 +36,7 @@ The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-blue-runner.R). 
 
 
-```{r , eval = T, fig.cap= "South Atlantic species Blue Runner Presence on the Northeast Shelf.", fig.width= 5}
+```{r , eval = T, fig.cap= "South Atlantic species Blue Runner Presence on the Northeast Shelf.", fig.width= 120%}
 
 knitr::include_graphics(file.path(image.dir, "blue_runner.png"))
 ```
