@@ -18,7 +18,7 @@
 
 Habitat area with a probability of occupancy greater than 0.5 was modeled for many species throughout the Northeast Large Marine Ecosystem (NE-LME) [@friedland2020]. Methodology for habitat occpancy models have been discussed in a [seperate chapter](#hab-occu). 
 
-[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas (Table \@ref(fig:wind-table)). 
+[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas (Table \@ref(tab:wind-table)). 
 
 ### Data extraction 
 
@@ -26,7 +26,7 @@ BOEM existing and proposed lease areas (as of Feb 2019) shape files were taken f
 
 ### Data analysis
 
-For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South) (Figure \@ref(fig:wind-map)). The species shown in the table below are those that have the highest average probablity of occupancy in the lease areas. 
+For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South) (Figure \@ref(fig:wind-map)). The species shown in the table below (Table \@ref(tab:wind-table))are those that have the highest average probablity of occupancy in the lease areas. 
 
 ### Data processing
 
@@ -36,7 +36,7 @@ Code used to format wind lease area and habitat occupancy overlap for inclusion 
 
 Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R) and [figure below](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-eval%20%3D%20T.R).
 
-```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R"), eval=TRUE, echo=FALSE}
+```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R"), eval=TRUE, echo=FALSE, out.width='80%'}
 
 ```
 
