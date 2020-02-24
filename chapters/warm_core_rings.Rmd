@@ -4,27 +4,27 @@
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2020), State of the Ecosystem - New England (2020)
 
-**Indicator category**: 
+**Indicator category**: Published Results
 
-**Contributor(s)**: Kimberly Hyde
+**Contributor(s)**: Avijit Gangopadhyay  <avijit.gangopadhyay@umassd.edu>
   
-**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+**Data steward**: Avijit Gangopadhyay 
   
-**Point of contact**: Kimberly Hyde <kimberly.hyde@noaa.gov>
+**Point of contact**: Avijit Gangopadhyay
   
-**Public availability statement**: 
+**Public availability statement**: Data is available upon request. 
 
 ## Methods
-
+The methods used to determine number of warm core ring births and the analysis of regime shift are described in @gangopadhyay2019. 
 
 ### Data sources
-
+Satellite data was compiled in to 2-3 day charts that were using in the regime shift analysis. 
 
 ### Data extraction 
-
+Data was requested from Avijit Gangopandhyay directly through email. 
 
 ### Data analysis
-
+NA
 
 ### Data processing
 Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R). 
