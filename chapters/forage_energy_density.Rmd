@@ -40,6 +40,7 @@ knitr::kable(forage.tab, caption = "List of forage fish study species.",  bookta
 2017 and 2018 NEFSC spring and fall bottom trawl surveys. 
 
 ### Data extraction
+NA 
 
 ### Data analysis
 
