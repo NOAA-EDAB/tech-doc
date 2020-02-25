@@ -1,0 +1,363 @@
+%C. Melrose's note- code written/provided by Jon Hare. See DOI: 10.1139/cjfas-2015-0339
+%
+%C. Melrose's note 2- There are hard coded input files you may need to
+%change below. It will look for them in the current working directory. See
+%lines 46, 56 and 98 for the three input files.
+
+clc
+clear
+close all
+
+%%
+% Sets grid size
+grid_size=0.25;
+lat_grid=35:grid_size:45-grid_size;
+lon_grid=-77:grid_size:-65+grid_size;
+
+%%
+% COLD POOL INDEX FROM MOUNTAIN (TABLE FROM YTF WP)
+
+data = [1967, -6.2333, -6.278; 1968, -5.5009, -5.7114; 1969, 0.4725, 0.5248; 1970, -6.3515, -6.7104; ...
+        1971, -4.1841, -4.4529; 1972, 0.8088, 0.7815; 1973, 2.9319, 2.9953; 1974, 3.0977, 2.9576; ...
+        1975, 1.0994, 0.9272; 1976, -0.3608, -0.5362; 1977, 1.3321, 1.0362; 1978, -2.6783, -2.8946; ...
+        1979, -1.8562, -2.1015; 1980, -0.5846, -0.8412; 1981, -2.5168, -2.5674; 1982, 1.515, 0.9275; ...
+        1983, -0.9842, -1.1852; 1984, -1.8064, -1.9438; 1985, 4.3491, 4.1785; 1986, 2.2052, 2.4237; ...
+        1987, -1.8991, -2.0332; 1988, -3.3023, -3.6673; 1989, -0.1167, -0.0407; 1990, 1.2867, 1.2379; ...
+        1991, -0.7287, -0.9686; 1992, 0.0869, -0.1202; 1993, -2.6737, -2.7746; 1994, 2.1854, 1.8481; ...
+        1995, 5.4394, 5.284; 1996, 0.3991, -0.1767; 1997, 1.2235, 0.8876; 1998, -3.7895, -3.6034; ...
+        1999, 6.6025, 6.4353; 2000, 4.4595, 4.2452; 2001, 1.8013, 1.6367; 2002, 0.5781, 0.3118; 2003, 1.1521, 1.0147; ...
+        2004, 0.502, 0.0686; 2005, -2.603, -2.8502; 2006, 5.929, 5.6464; 2007, -1.2874, -1.4038; 2008, NaN, -1.478; ...
+        2009, NaN, 6.6792; 2010, NaN, 2.2914; 2011, NaN, NaN; 2012, NaN, NaN; 2013, NaN, NaN];
+
+yr_MT=data(:,1);
+cp1_MT=data(:,2);
+cp2_MT=data(:,3);
+
+clear data
+
+%% OPENS MOUNTAINS DATA
+pathname=pwd;
+
+%					Area (x 10^3 KM^2)	Area (x 10^3 KM^2)	Area (x 10^3 KM^2)	Area (x 10^3 KM^2)	Area (x 10^3 KM^2)	Area (x 10^3 KM^2)	Area (x 10^3 KM^2)		Width of Cold Pool < 12 km	Width of Cold Pool < 12 km	Width of Cold Pool < 12 km	Width of Cold Pool < 12 km		annually averaged anomalies of shelf water (< 34 PSU) temperature	annually averaged anomalies of shelf water (< 34 PSU) salinity	annually averaged anomalies of shelf water (< 34 PSU) volume
+%Year	Cday	Mean-t	Max-t	Min-t	<10 c	<11 c	<12 c	<13 c	<14 c	<15 c	<16 c	CP mean t	MV <12	LI <12	NJ <12	DB <12	MAB Cold Pool mid-line bottom temp anomaly, early fall, days 240-285			
+
+[yearMT,Scday, meanT, maxT, minT, area10, area11, area12, area13, area14, area15, area16, ...
+    meanT_CP, widMV, widLI, widNJ, widDE, midlineT, anomT, anomS, anomV] = ...
+    textread([pathname '/cold_pool_stats.txt'],'%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f', ...
+    'headerlines',2,'delimiter','\t');
+
+
+%%
+% Opens trawl survey data to capture earlier temperature data
+% Will merge with OCTEMPS LATER IN THE PROGRAM
+species=['spiny_dogfish'];
+
+% opens trawl survey data from NEFSC IOOS site; I downloaded all of these; the path will need to be changed 
+filename=[char(species) '_catch_haul_all.txt'];
+
+[cr, pc, status, season1, date, time, stratum, tow, sta, svspp, svvessel, crunum, catchsex, expcatnum, cpue, spp_name, lat1, long1, surftemp1, bottemp1, surfsalin1, botsalin1, maxdepth1,endlat1,endlon1] = ...
+textread([pwd '/' char(filename)], ...
+'%s %s %s %s %s %s %s %s %s %s %s %s %s %f %s %s %f %f %f %f %f %f %f %s %s','delimiter',',','headerlines',1);
+
+clear cr pc status season1 stratum tow sta svspp svvessel crunum catchsex expcatnum cpue spp_name  endlat1 endlon1 species time
+
+% identifies bad dates from Trawl Survey
+count=1;
+for ii=1:length(date)
+    if length(char(date(ii)))>10;
+      in(count)=ii;
+      count=count+1;
+   end
+end
+ 
+% changes date to date vector
+[year,mon,day,hr,minute,sec]=datevec(date(in));
+ 
+% selects data collected in September and October
+in1=find(mon==9 | mon==10);
+ 
+sSAL=surfsalin1(in(in1));
+bSAL=botsalin1(in(in1));
+sTEM=surftemp1(in(in1));
+bTEM=bottemp1(in(in1));
+
+DPT=maxdepth1(in(in1));
+LAT=lat1(in(in1));
+LON=long1(in(in1));
+YR=year(in1);
+DAY=day(in1);
+MON=mon(in1);
+DOY1=datenum(YR,MON,DAY)-datenum(YR,1,1);
+
+clear count date day filename hr ii in in1 lat1 long1 minute mon sec surfsalin1 surftermp1 botsalin1 bottemp1 surftemp1 maxdepth1
+
+%%
+% Open OCTEMP to add additional years
+% and to develop estimates for each grid cell to calculate residuals
+[CRUISE_ID STA LAT1 LON1 YR1 MON1 DAY1 TIME BTM_DEP SFC_T BTM_T SFC_S BTM_S]=...
+     textread('OCDBS_sfcbot.txt', ...
+     '%s %s %f %f %f %f %f %s %f %f %f %f %f','headerlines',1,'delimiter','\t'); 
+ 
+LON1=LON1.*-1;
+
+% sets up variables for third order harmonic
+DOY=datenum(YR1,MON1,DAY1)-datenum(YR1,1,1);
+DOY_rad1=DOY./(365./1).*2.*pi;
+c1DOY=cos(DOY_rad1);
+s1DOY=sin(DOY_rad1);
+DOY_rad2=DOY./(365./2).*2.*pi;
+c2DOY=cos(DOY_rad2);
+s2DOY=sin(DOY_rad2);
+DOY_rad3=DOY./(365./3).*2.*pi;
+c3DOY=cos(DOY_rad3);
+s3DOY=sin(DOY_rad3);
+
+unYR=unique(YR1);
+for ii=1:length(unYR);
+    n_unY(ii)=length(find(YR1==unYR(ii)));
+end
+
+% calculate third order harmonic
+count=1;
+for ii=1:length(lat_grid);
+    for jj=1:length(lon_grid);
+        in=find(LAT1>lat_grid(ii) & LAT1<=lat_grid(ii)+grid_size & LON1>lon_grid(jj) & LON1<=lon_grid(jj)+grid_size & BTM_T<40 & BTM_T>5);
+        warning('off')
+        n_grid(ii,jj)=length(in);
+        if length(in)>10;
+            stats=regstats(BTM_T(in),[c1DOY(in) s1DOY(in) c2DOY(in) s2DOY(in) c3DOY(in) s3DOY(in)]);
+%            stats=regstats(BTM_T(in),[c1DOY(in) s1DOY(in) c2DOY(in) s2DOY(in)]);
+        else
+            stats.beta=[NaN NaN NaN NaN NaN NaN NaN];
+%             stats.beta=[NaN NaN NaN NaN NaN];
+        end
+        if ii==19 & jj==17;
+            figure(10)
+            plot(DOY(in),BTM_T(in),'o')
+            hold on
+            plot(DOY(in),stats.yhat,'.r')
+            xlabel('Day of the Year')
+            ylabel('Bottom Temperature')
+            title('Annual Cycle in Grid Cell ii=20 and jj=18') 
+        end
+        warning('on')
+        beta(count,:)=stats.beta;
+        count=count+1;
+        clear stats in
+    end
+end
+
+clear DOY_rad1 c1DOY s1DOY DOY_rad2 c2DOY s2DOY DOY_rad3 c3DOY s3DOY count
+
+%% 
+%selects data from OCTEMPS for years to add to Trawl Survey data
+%
+%Note from C. Melrose- Jon uses the fall trawl survey data up to 2011 then 
+%data from the NEFSC Hydrographic database's OCTEMPS table after 2011.
+%OCTEMPS actually includes the fall trawl survey data in more recent years,
+%but not all of the old years because of data quality standards. Notably
+%some of the old trawl data uses analog XBT and MBT data or basic trawl
+%mounted sensors like the VEMCO logger. OCTEMPS is strictly CTD or
+%bottle/reversing thermometer temps with higher accuracy/precision so it
+%excludes some trawl data. This means you have to use caution if you merge
+%these two data sets because there is duplication. That is why Jon used a
+%strict cutoff where he uses one then the other after 2011 instead of
+%merging them.
+
+
+in=find((MON1==9 | MON1==10) & YR1>2011);
+
+sSAL=[sSAL; SFC_S(in)];
+bSAL=[bSAL; BTM_S(in)];
+sTEM=[sTEM; SFC_T(in)];
+bTEM=[bTEM; BTM_T(in)];
+ 
+DPT=[DPT; BTM_DEP(in)];
+LAT=[LAT; LAT1(in)];
+LON=[LON; LON1(in)];
+YR=[YR; YR1(in)];
+DAY=[DAY; DAY1(in)];
+MON=[MON; MON1(in)];
+DOY1=[DOY1; DOY(in)];
+
+% clean up DOY variable
+clear DOY;
+DOY=DOY1;
+DOY_rad1=DOY./(365./1).*2.*pi;
+c1DOY=cos(DOY_rad1);
+s1DOY=sin(DOY_rad1);
+DOY_rad2=DOY./(365./2).*2.*pi;
+c2DOY=cos(DOY_rad2);
+s2DOY=sin(DOY_rad2);
+DOY_rad3=DOY./(365./3).*2.*pi;
+c3DOY=cos(DOY_rad3);
+s3DOY=sin(DOY_rad3);
+
+clear CRUISE_ID STA LAT1 LON1 YR1 DAY TIME BTM_DEP SFC_T BTM_T SFC_S BTM_S in DOY1
+  
+%%
+% calculate grid averages and grid residual averages
+% identifies observations that are in the cold pool area
+
+count=1;
+inCP=zeros(length(LAT),1);
+inCP_area=zeros(length(LAT),1);
+bTEM_r=zeros(length(LAT),1)./0;
+for ii=1:length(lat_grid);
+    for jj=1:length(lon_grid);
+        clear in
+        in=find(LAT>lat_grid(ii) & LAT<=lat_grid(ii)+grid_size & LON>lon_grid(jj) & LON<=lon_grid(jj)+grid_size & bTEM<40 & bTEM>5);
+
+        DPT_grid(ii,jj)=nanmean(DPT(in));
+        
+        bTEM_r(in)=bTEM(in) - (beta(count,1) + beta(count,2).*c1DOY(in) + beta(count,3).*s1DOY(in) + beta(count,4).*c2DOY(in) + beta(count,5).*s2DOY(in) + beta(count,6).*c3DOY(in) + beta(count,6).*s3DOY(in));
+%        bTEM_r(in)=bTEM(in) - (beta(count,1) + beta(count,2).*c1DOY(in) + beta(count,3).*s1DOY(in) + beta(count,4).*c2DOY(in) + beta(count,5).*s2DOY(in));
+        in1=find(abs(bTEM_r(in))>5);
+        bTEM_r(in(in1))=NaN;
+        bTEM_r_grid(ii,jj)=nanmean(bTEM_r(in));
+        
+        bTEM_grid(ii,jj)=nanmean(bTEM(in));
+        
+        if jj<27 & ii>10 & ii<27 & bTEM_grid(ii,jj)<12 & DPT_grid(ii,jj)<90;
+            CP_grid(ii,jj)=1;
+            inCP(in)=1;
+        else 
+            CP_grid(ii,jj)=NaN;
+        end
+        count=count+1;
+    end
+end
+
+%%
+% calculate annual average and min of temperature and temperature residuals
+unY=1963:2018;
+for yy=1:length(unY);
+     clear in
+     in=find(YR==unY(yy) & inCP==1);
+     if isempty(in)==0;
+        CP_year(yy)=nanmean(bTEM(in));
+        CP_year_r(yy)=nanmean(bTEM_r(in));
+        CP_year_min(yy)=nanmin(bTEM(in));
+        CP_year_min_r(yy)=nanmin(bTEM_r(in));
+        CP_year_max(yy)=nanmax(bTEM(in));
+        CP_year_max_r(yy)=nanmax(bTEM_r(in));
+        CP_year_n(yy)=length(isnan(bTEM(in))==0);
+        CP_year_n_r(yy)=length(isnan(bTEM_r(in))==0);
+        CP_year_r_se(yy)=nanstd(bTEM_r(in))./CP_year_n_r(yy).^.5;
+     else
+        CP_year(yy)=NaN;
+        CP_year_r(yy)=NaN;
+        CP_year_min(yy)=NaN;
+        CP_year_min_r(yy)=NaN;
+        CP_year_max(yy)=NaN;
+        CP_year_max_r(yy)=NaN;
+        CP_year_n(yy)=0;
+        CP_year_n_r(yy)=0;
+        CP_year_r_se(yy)=NaN; 
+     end
+end
+filename=['cold_pool_index_NEW.csv'];
+fid = fopen(filename, 'w');
+
+fprintf(fid,'Year, Cold_Pool_Index, SE_Cold_Pool_Index\n');
+for yy=1:length(yr_MT)
+    fprintf(fid,'%4.0f,',yr_MT(yy));
+    fprintf(fid,'%6.4f,',CP_year_r(yy));
+    fprintf(fid,'%6.4f',CP_year_r_se(yy));
+    fprintf(fid,'\n');
+end
+fclose(fid);
+
+
+figure(1)
+imagesc(bTEM_grid)
+set(gca,'YDir','norm','XDir','norm')
+title('Mean September-October Bottom Temperature')
+
+figure(2)
+imagesc(CP_grid)
+set(gca,'YDir','norm','XDir','norm')
+title('Location of Cold Pool Grid Cells')
+
+figure(3)
+%axes('position',[0.1 0.55 0.4 0.35])
+errorbar(unY,CP_year_r,CP_year_r_se)
+xlabel('Year')
+ylabel('Annual Cold Pool Temperature Residuals')
+in1=find(unY>=1973);
+stats=regstats(CP_year_r(in1),unY(in1));
+x_est=min(unY(in1)):max(unY(in1));
+y_est=stats.beta(1)+stats.beta(2)*x_est;
+hold on
+plot(x_est,y_est,'r')
+
+figure(4)
+%axes('position',[0.1 0.1 0.4 0.35])
+plot(yearMT,area12)
+xlabel('Year')
+ylabel('Cold Pool Area <12oC')
+in1=find(year>=1973);
+set(gca,'XLim',[1960 2020])
+stats=regstats(area12,yearMT);
+x_est=min(yearMT):max(yearMT);
+y_est=stats.beta(1)+stats.beta(2)*x_est;
+hold on
+plot(x_est,y_est,'r')
+
+figure(5)
+subplot(2,2,1)
+y=CP_year';
+x=cp2_MT;
+[in,ia,ib]=intersect(yearMT,unY);
+plot(x(ia),y(ib),'o')
+clear in
+in=find(isnan(x(ia))==0 & isnan(y(ib))==0);
+r=corr(x(ia(in)),y(ib(in)))
+xlabel('PCA 1')
+ylabel('Mean Temp')
+clear in
+
+subplot(2,2,2)
+y=CP_year_r';
+x=cp2_MT;
+[in,ia,ib]=intersect(yearMT,unY);
+plot(x(ia),y(ib),'o')
+clear in
+in=find(isnan(x(ia))==0 & isnan(y(ib))==0);
+r=corr(x(ia(in)),y(ib(in)))
+xlabel('PCA 1')
+ylabel('Mean Temp Res')
+clear in
+
+subplot(2,2,3)
+y=CP_year_r';
+x=widNJ;
+[in,ia,ib]=intersect(yearMT,unY);
+plot(x(ia),y(ib),'o')
+clear in
+in=find(isnan(x(ia))==0 & isnan(y(ib))==0);
+r=corr(x(ia(in)),y(ib(in)))
+xlabel('Width of DE')
+ylabel('Mean Temp Res')
+clear in
+
+subplot(2,2,4)
+y=CP_year_r';
+x=area12;
+[in,ia,ib]=intersect(yearMT,unY);
+plot(x(ia),y(ib),'o')
+clear in
+in=find(isnan(x(ia))==0 & isnan(y(ib))==0);
+r=corr(x(ia(in)),y(ib(in)))
+xlabel('Area < 12oC')
+ylabel('Mean Temp Res')
+clear in
+
+figure(6)
+for ii=1:length(unY);
+    in=find(inCP==1 & YR==unY(ii) & (MON==9 | MON==10));
+    mDOY(ii)=nanmean(DOY(in));
+    seDOY(ii)=std(DOY(in));
+    clear in
+end
+errorbar(unY,mDOY,seDOY)
