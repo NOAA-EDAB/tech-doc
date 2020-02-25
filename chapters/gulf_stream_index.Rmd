@@ -4,7 +4,8 @@
 
 **Indicator category**: Published method
 
-**Found in**: State of the Ecosystem - New England (2019, 2020)
+**Found in**: State of the Ecosystem - New England (2019 (Different Methods), 2020), 
+State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020) 
 
 **Contributor(s)**: Zhuomin Chen, Young-oh Kwon
   
@@ -12,7 +13,7 @@
   
 **Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available. Please email vincent.saba@noaa.gov for further information and queries of GSI indicator source data.
+**Public availability statement**: Source data are publicly available at [CMENS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047). Index data are NOT publically available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
 
 ## Methods
 
@@ -22,7 +23,7 @@ GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1
 
 ### Data analysis
 
-The GSI is calculated based on the method presented by @perez-hernandez2014. It is a simple 16-point GS index constructed by selecting grid points following the max. Standard deviation of SLA, every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO previously.  We followed the same method, except using the dataset from [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047), which has a 0.25°x0.25° resolution. Therefore we select points every 1° between 52° and 72° and average them, and there are 21 points in total.
+The GSI is calculated based on the method presented by @perez-hernandez2014. It is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  We followed the same method, except using the dataset from [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047), which has a 0.25°x0.25° resolution. Therefore we select points every 1° between 52° and 72° and average them, and there are 21 points in total.
 
 ### Data Processing
 
