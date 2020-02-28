@@ -2,7 +2,7 @@
 
 **Description**: Relative condition
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019, 2020), State of the Ecosystem - Mid-Atlantic (2018,2019, 2020) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020) 
 
 **Indicator category**: Database pull with analysis
 
@@ -17,9 +17,9 @@
 
 ## Methods
 Relative condition (Kn) was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
-$$Kn = W/W',$$ where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. "Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn and spring bottom trawl surveys, from 1992-present. 
+$$Kn = W/W',$$ where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn bottom trawl survey, from 1992-present. 
 
-Where data allowed, predicted length-weight parameters were calculated for $W’$ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by sex for those species that exhibited differences in growth between sexes and aggregated across sex for those that did not.
+Where data allowed, predicted length-weight parameters were calculated for $W’$ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by Ecological Production Unit (EPU) for females only, as trends tended to be similar for males and females.
 
 The `Condition` package used for calculations and plotting of fish condition factor can be found on [GitHub](https://github.com/Laurels1/Condition).
 
@@ -37,7 +37,7 @@ $$\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},$$
 
 where length is in cm and weight is in kg. Fall survey data were used where sample sizes allowed for growth curve estimation, otherwise data from spring and fall seasons were combined. 
 
-Individual fish lengths from NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition ($Kn$) was calculated annually by species and sex (for sexually dimorphic species) by dividing individual fish weights by the predicted weight. 
+Individual fish lengths from the NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition ($Kn$) was calculated annually for females by species and EPU by dividing individual fish weights by the predicted weight. 
 
 The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R) was used in the analysis of fish condition.
 
