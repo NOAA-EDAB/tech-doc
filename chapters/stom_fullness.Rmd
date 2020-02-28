@@ -1,10 +1,10 @@
 # Stomach fullness
 
-**Description**: Stomach FUllness
+**Description**: Stomach Fullness
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2020), State of the Ecosystem - New England (2020)
 
-**Indicator category**: 
+**Indicator category**: Database pull with analysis
 
 **Contributor(s)**: Laurel Smith
   
@@ -12,10 +12,11 @@
   
 **Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures). Derived stomach fullness data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/) (STILL NEEDS SOE REFERENCE!).
+
 
 ## Methods
-
+An index of stomach fullness was calculated from NEFSC autumn bottom trawl food habits data.
 
 ### Data sources
 
