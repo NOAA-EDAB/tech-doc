@@ -16,7 +16,7 @@
 **Public availability statement**: Source data is not publicly availabe due to PII restrictions. 
   
 ```{r pprchunk1, echo = F, eval = T}  
-imagePath <- "https://raw.githubusercontent.com/andybeet/indexPPR/master/inst/extdata"
+imagePath <- here::here("images")
 ```
 
   
@@ -74,35 +74,16 @@ Four plots are produced for each EPU:
 
 All created using the [indexPPR](https://github.com/andybeet/indexPPR)
 
-See the [workedExample vignette](https://github.com/andybeet/indexPPR/tree/master/vignettes) in the [indexPPR](https://github.com/andybeet/indexPPR/)  package for plotting code.
+See the [workedExample vignette](https://github.com/andybeet/indexPPR/tree/master/vignettes) in the [indexPPR](https://github.com/andybeet/indexPPR/) package for plotting code.
 
-
-#### Georges Bank (GB)
-
-<!-- ```{r, pprgb, echo=FALSE, out.width='50%'} -->
-
-<!-- knitr::include_graphics(paste0(imagePath,"/PPR-GB-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/MTL-GB-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/PP-GB.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/composition-GB-0.80.png")) -->
-<!-- ``` -->
-
-#### Gulf of Maine (GOM)
-
-<!-- ```{r, pprgom,echo=FALSE, out.width='50%'} -->
-
-<!-- knitr::include_graphics(paste0(imagePath,"/PPR-GOM-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/MTL-GOM-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/PP-GOM.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/composition-GOM-0.80.png")) -->
-<!-- ``` -->
+Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here]((https://github.com/andybeet/indexPPR/tree/master/vignettes/figures))
 
 #### Mid-Atlantic Bight (MAB)
 
-<!-- ```{r, pprmab,  echo=FALSE, out.width='50%'} -->
-<!-- knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0.80.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/PP-MAB.png")) -->
-<!-- knitr::include_graphics(paste0(imagePath,"/composition-MAB-0.80.png")) -->
-<!-- ``` -->
+```{r, pprmab,  echo=FALSE, out.width='50%'}
+knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0_80.png"))
+knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0_80.png"))
+knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))
+knitr::include_graphics(paste0(imagePath,"/composition-MAB-0_80.png"))
+```
 
