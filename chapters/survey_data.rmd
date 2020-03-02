@@ -74,9 +74,15 @@ survey data are treated separately.  Additionally, all length data is dropped an
 species seperated by sex at the catch level are merged back together.
 
 Since 2019, survey strata where characterized as being within an [Ecological Production Unit](#epu)
-based on where at least 50% of the area of the strata was located.  While this does not
+based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not
 create a perfect match for the EPU boundaries it allows us to calculate the variance
 associated with the index as the survey was designed. 
+
+```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.  Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata.", fig.align='center', echo = F}
+
+knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
+
+```
   
 Prior to 2019, Survdat was first post stratified into EPUs by labeling stations by the EPU they fell within
 using the `over` function from the `rgdal` R package [@rgdal].  Next, the total number 
