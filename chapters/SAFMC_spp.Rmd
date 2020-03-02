@@ -15,13 +15,71 @@
 **Public availability statement**: 
 
 ## Methods
-
+The State of the Ecosystem report has examined the presence of Mid-Atlantic managed species in New England and vice versa.  In 2020, this was extended to species managed by the South Atlantic Management Council in the Mid-Atlantic and New England regions.  The vast majority of "southern" managed species do not occur in the NEFSC Bottom Trawl Survey and when they do, they are present in the fall only.  The most common "southern" species was the blue runner (*Caranx crysos*), who's range does include the entire survey area.
 
 ### Data sources
-
+The [Survdat](#survdat) data set was used to examine the presence of "southern" species.
 
 ### Data extraction 
+Survdat was subsetted by common "southern" species (table @\ref(tab:southern)).  Simple presence/absence was used.
 
+```{r southern, eval = T, echo = F}
+comnames <- c('Black snapper', 'Queen Snapper', 'Mutton Snapper', 'Schoolmaster Snapper',
+              'Blackfin Snapper', 'Northern Red Snapper', 'Cubera Snapper',
+              'Grey Snapper', 'Mahogany Snapper', 'Dog Snapper', 'Lane Snapper',
+              'Silk Snapper', 'Yellowtail Snapper', 'Vermilion Snapper',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '', '',
+              '', '', '',
+              '', '', '',
+              '', '', '', '',
+              '')
+
+scinames <- c('Apsilus dentatus', 'Etelis oculatus', 'Lutjanus analis', 'Lutjanus apodus', 
+              'Lutjanus buccanella', 'Lutjanus campechanus', 'Lutjanus cyanopterus', 
+              'Lutjanus griseus', 'Lutjanus mahogoni', 'Lutjanus jocu', 'Lutjanus synagris', 
+              'Lutjanus vivanus', 'Ocyurus chrysurus', 'Rhomboplites aurorubens', 
+              'Centropristis ocyurus', 'Centropristis philadelphica', 'Centropristis striata', 
+              'Epinephelus adscensionis', 'Epinephelus cruentatus', 'Epinephelus drumrondhayi', 
+              'Epinephelus flavolimbatus', 'Epinephelus fulvus',  'Epinephelus guttatus', 
+              'Epinephelus itajara', 'Epinephelus mario', 'Epinephelus mystacinus', 
+              'Epinephelus nigritus', 'Epinephelus niveatus', 'Epinephelus striatus', 
+              'Mycteroperca bonaci', 'Mycteroperca interstitialis', 'Mycteroperco microlepis', 
+              'Mycteroperca phenax', 'Mycteroperca tigris', 'Mycteroperca venenoso', 
+              'Archosargus probotocephalus', 'Calamus arctifrons', 'Colamus baonado', 
+              'Calamus calanus', 'Calumus leucosteus', 'Calamus nodosus', 
+              'Pagrus pagrus', 'Stenotomus caprinus', 'Anisotremus surinamensis', 
+              'Anisotremus virginicus', 'Haemulon album', 'Haemulon aurolineatum', 
+              'Hemulon chrysargyreum', 'Haemulon flavolineatum', 'Haemulon macrostomum', 
+              'Haemulon melanurum', 'Hoemulon parrai', 'Haemulon plumieri', 'Haemulon sciurus',
+              'Balistes capriscus', 'Balistes vetula', 'Canthidermis sufflamen',
+              'Lachnolaimus maximus', 'Halichoeres rodiatus', 'Caranx bartholomaei', 
+              'Caranx crysos', 'Caranx hippos', 'Caranx ruber', 'Seriola dumerili', 
+              'Seriola rivoliano')
+
+type <- c(rep('Snappers', 14), rep('Sea Basses', 3), rep('Groupers', 18), 
+          rep('Porgies', 8), rep('Grunts', 11), rep('Triggerfishes', 3),
+          rep('Wrasses', 2), rep('Jacks', 6))
+
+southern.sp <- data.frame('Common Name' = comnames,
+                          'Scientific Name' = scinames,
+                          Group = type)
+
+kable(southern.sp, booktabs = TRUE,
+      caption = "Southern Species that were examined within the NEFSC trawl survey data")
+
+```
 
 ### Data analysis
 
