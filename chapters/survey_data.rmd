@@ -73,7 +73,7 @@ indicators.  For the purposes of the aggregate biomass indicators, fall and spri
 survey data are treated separately.  Additionally, all length data is dropped and 
 species seperated by sex at the catch level are merged back together.
 
-For the aggregate biomass indicators, Survdat is first post stratified into [Ecological Production Units](#epu). Stations are labeled by the EPU they fall within
+Change: For the aggregate biomass indicators, Survdat is first post stratified into [Ecological Production Units](#epu). Stations are labeled by the EPU they fall within
 using the `over` function from the `rdga` R package [@rgdal].  Next, the total number 
 of stations within each EPU per year is counted using unique station records. Biomass
 is summed by species per year per EPU.  Those sums are divided by the appropriate
