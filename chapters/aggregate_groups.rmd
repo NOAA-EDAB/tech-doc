@@ -22,7 +22,7 @@ The State of the Ecosystem (SOE) reports are delivered to the New England Fisher
 
 For the purposes of the SOE, species were only assigned to one category based on the most prevalent size available to commercial fisheries.  However, several of those categories were confusing to the management councils, so in 2018 those categories were simplified to five (plus "other"; Table \@ref(tab:soe2018class)) along the lines of @link2006EMAX.  In addition to feeding guilds, species managed by the councils have been identified.  This is done to show the breadth of what a given council is responsible for within the broader ecosystem context.
 
-In the 2020 report, squids were moved from planktivores to piscivores.  
+In the 2020 report, squids were moved from planktivores to piscivores based on the majority of their diet being either fish or other squid.  
 
 ```{r soe2017class, eval = T, echo = F}
 soe.17.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore', 
@@ -49,7 +49,7 @@ soe.18.class <- data.frame('Feeding Guild' = c('Apex Predator', 'Piscivore',
                                            'Things not classified above'))
 
 kable(soe.18.class, booktabs = TRUE,
-      caption = "Aggregate groups use in 2018 SOE.  Classifications are based on @link2006EMAX.")
+      caption = "Aggregate groups use since 2018 SOE.  Classifications are based on @link2006EMAX.")
 ```
 
 ### Data sources
