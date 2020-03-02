@@ -12,27 +12,23 @@
   
 **Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures). Derived stomach fullness data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/) (STILL NEEDS SOE REFERENCE!).
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures). Derived stomach fullness data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/) (STILL NEEDS SOE DATA REFERENCE!).
 
 
 ## Methods
-An index of stomach fullness was calculated from NEFSC autumn bottom trawl food habits data.
+An index of stomach fullness was calculated from NEFSC autumn bottom trawl food habits data, as a simple ratio of estimated stomach content weight to total weight of an individual fish. Stomach fullness may be a better measure than absolute stomach weight if combining across species into a feeding guild, to prevent larger animals with heavier stomachs from dominating the index. An average stomach fullness was calcuated annually for each species and Ecological Production Unit (EPU).
 
 ### Data sources
-
+Stomach contents weights and individual fish weights (both to the nearest gram) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures).
 
 ### Data extraction 
-
+NEFSC food habits data summarized in the R data file allfh.RData were obtained from Brian Smith (Brian.Smith@noaa.gov) for this index.
 
 ### Data analysis
-
+The stomach fullness index was calculated using the R script found [here](https://github.com/Laurels1/StomachFullness)
 
 ### Data processing
-
-
-### Plotting
-
-Fish stomach fullness index was formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_stom_fullness.R). 
+Fish stomach fullness index was formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_stom_fullness.R). Stomach fullness was expressed as an annual anomaly for each species in each region.
 
 ### Plotting
 
