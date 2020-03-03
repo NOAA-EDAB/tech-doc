@@ -18,21 +18,16 @@
 
 
 ### Data sources
-Low salinity levels recorded by NOAA Chesapeake Bay Office’s Chesapeake Bay Interpretive Buoy System (CBIBS).
+The National Oceanic and Atmospheric Administration’s (NOAA) Chesapeake Bay Interpretive Buoy System (CBIBS) is a network of observing platforms (buoys) that collect meteorological, oceanographic, and water-quality data and relay that information using wireless technology. The stations have been in place since 2007. The Sting Ray station was deployed in July of 2008 and has been monitoring conditions on and off since then. The data is recorded in situ and sent to a server over a cellular modem. 
 
-NOAA Chesapeake Bay Office https://buoybay.noaa.gov/node/160
-Chesapeake Bay Program https://www.chesapeakebay.net/news/blog/what_this_summers_rainfall_could_mean_for_the_bay
-Maryland Department of Natural Resources (Jodi Baxter, Lynn Fegley)
-Virginia Marine Resources Commission (Andrew Button)
-University of Maryland Center for Environmental Science, Horn Point Laboratory Oyster Hatchery (Stephanie Tobash Alexander)
-
-  
+The standard CBIBS instrument is a WETLabs WQM mounted in the buoy well approximately 0.5 meters below the surface. Seabird purchased WETLabs and are now the manufacturer of the instruments. The WQM instruments are calibrated and swapped out on a regular basis. Salinity is stored as a double with the units of PSU
 
 ### Data extraction 
+Data is directly inserted into a database from the real time system over the cellular network. The general public can use [this link](https://buoybay.noaa.gov/observations/data-download) to explore and pull that data from the CBIBS database. The process for data extraction for this indicator can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_extraction.txt)
 
 
 ### Data analysis
-
+The data is processed by a [python script](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py). This creates an array and runs the data through a qartod routine. The result is a set of flags. Only the good data is used in the plot
 
 ### Data processing
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_sal.R). 

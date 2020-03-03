@@ -1,0 +1,101 @@
+REST CBIBS Endpoints
+
+Base URL: https://mw.buoybay.noaa.gov/
+XML Station: /api/v1/xml/station?key=apikey
+XML query: /api/v1/xml/query/FL?key=apikey&sd=startdate&ed=enddate&var=variablename
+JSON Station:  /api/v1/json/station?key=apikey
+JSON query: /api/v1/json/query/FL?key=apikey&sd=startdate&ed=enddate&var=variablename
+
+key=<<api_key>>
+
+https://mw.buoybay.noaa.gov/api/v1/json/station/FL?key=<<api_key>>
+
+Current Readings
+Send a GET request to the service. There is a query parameter filter if you want to get just one station. That data may be old, it is the last values recorded.
+
+Required Parameters:
+	key=apikey
+
+XML Endpoint
+URI path: /api/v1/xml/station?key=apikey
+Optional Parameter: /api/v1/xml/station/FL?key=apikey
+Example
+https://mw.buoybay.noaa.gov/api/v1/xml/station?key=apikey
+Example Return Data Format
+https://mw.buoybay.noaa.gov/api/v1/xml/station/FL?key=apikey
+<CBIBS>
+  <stations>
+    <station stationLongName="First Landing CBIBS Buoy" stationShortName="FL">
+      <active>true</active>
+      <latitude>36.99810</latitude>
+      <longitude>-76.08710</longitude>
+      <variable reportName="Air Pressure" actualName="air_pressure" interval="600">
+        <measurements>
+          <measurement>
+            <time>2019-05-06T13:40:00+00</time>
+            <value>1015.57</value>
+            <unit>hPa</unit>
+            <elevation>0.0</elevation>
+            <QA id="1">N/A</QA>
+          </measurement>
+        </measurements>
+      </variable>
+
+      <variable reportName="Air Temperature" actualName="air_temperature" interval="600">
+        <measurements>
+          <measurement>
+            <time>2019-05-06T13:40:00+00</time>
+            <value>15.30</value>
+            <unit>C</unit>
+            <elevation>0.0</elevation>
+            <QA id="1">N/A</QA>
+          </measurement>
+        </measurements>
+      </variable>
+
+
+
+
+JSON Endpoint
+
+URI path: /api/v1/json/station?key=apikey
+Optional Parameter: /api/v1/json/station/FL?key=apikey
+
+Example
+https://mw.buoybay.noaa.gov/api/v1/json/station?key=apikey
+
+Example Return Data Format
+{
+
+  "stations": [
+    {
+      "stationShortName": "FL",
+      "stationLongName": "First Landing CBIBS Buoy",
+      "active": true,
+      "latitude": 36.9981,
+      "longitude": -76.0871,
+      "variable": [
+        {
+          "reportName": "Air Temperature",
+          "actualName": "air_temperature",
+          "interval": 600,
+          "units": "C",
+          "group": "Meteorological",
+          "elevation": "0.0",
+          "measurements": [
+            {
+              "time": "2019-05-06T14:10:00+00",
+              "value": 15.4,
+              "QA": "N/A"
+            }
+          ]
+        },
+
+Query Data Using Criteria
+Send a GET request to the service. The required parameters are
+key = apikey
+var = Variable queried
+sd = Start date time in ISO8601 format format
+ed = End date time in ISO8601 format format
+Example to pull the SR buoy salinity data:
+http://mw.buoybay.noaa.gov/api/v1/json/query/SR?key=key&sd=2019-04-01T00:00:00&ed=2019-04-01T12:00:00&var=sea_water_salinity
