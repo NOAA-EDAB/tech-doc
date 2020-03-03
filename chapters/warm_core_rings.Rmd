@@ -15,16 +15,20 @@
 **Public availability statement**: Data is available upon request. 
 
 ## Methods
-The methods used to determine number of warm core ring births and the analysis of regime shift are described in @gangopadhyay2019. 
+
+The plot showing the number of warm core ring formations and regime shift replicates figure 3 in @gangopadhyay2019.  Detailed methods on the warm core ring time series and regime shift analysis are described in the manuscript.
 
 ### Data sources
-Satellite data was compiled in to 2-3 day charts that were using in the regime shift analysis. 
+
+
+[Gulf Stream charts from Jennifer Clark](https://jcgulfstream.com/charts/) are the primary data source for the warm core ring analysis in @gangopadhyay2019.  The Gulf Stream charts use infra-red (IR) imagery, satellite altimetry data, and surface in-situ temperature data in 3-day composite images are regularly produced by NOAA and/or the Johns Hopkins University Applied Physics Lab (fermi) group (see http://fermi.jhuapl.edu for more details).
+
 
 ### Data extraction 
-Data was requested from Avijit Gangopandhyay directly through email. 
+The data from @gangopadhyay2019 as well as 2018 and 2019 points were provided by Avijit Gangopandhyay, *School for Marine Science and Technology, University of Massachusetts Dartmouth, MA*. 
 
 ### Data analysis
-NA
+A sequential regime shift detection algorithm was used to identify the regimes evident in the warm core ring formation time-series.  See @gangopadhyay2019 for details.
 
 ### Data processing
 Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R). 

@@ -1,0 +1,37 @@
+# Chapter Title
+
+**Description**: Short description of indicator
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020), State of the Ecosystem - New England (2020) - List all SOEs that included the indicator
+
+**Indicator category**: Select all relevant options from the following list (Published Results, Extensive analysis; not yet published, Synthesis of published information, Database pull, Database pull with analysis, Other)
+
+**Contributor(s)**: Name of data contributor including email. 
+  
+**Data steward**: Name of data steward including email.
+  
+**Point of contact**: Name of contact person including email.
+  
+**Public availability statement**: Choose one of the following options (Source data are publicly available, Source data are NOT publicly available). If source data are NOT publicly available, what are the procedures for accessing the data? E.g. "Please email your.email@noaa.gov for further information and queries of X indicator source data".
+
+## Methods
+
+### Data sources
+Describe the data sources, with links wherever possible. Where do these indicator data come from?
+
+### Data extraction 
+How were data extracted/processed?  If not applicable, please leave empty. If extraction processes are published elsewhere, include a brief description of the processing steps, link to source. Please include relevant code below.
+
+### Data analysis
+Short narrative describing how indicator data were analyzed. If analytical steps are published elsewhere, please provide a link to the source and appropriate citations.  Please include relevant code below.
+
+### Data processing
+From this point on, the EDAB team will take over. In the sections above please outline all steps in the indicator development. The goal is to make the indicator as transparent and reproducible as possible. 
+
+EDAB will include description and links to processing code. 
+
+### Plotting
+
+EDAB will include link to plotting code and a visualization of the data (preferably the one used in an SOE or Memo).
+
+
