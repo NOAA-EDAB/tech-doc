@@ -73,8 +73,19 @@ indicators.  For the purposes of the aggregate biomass indicators, fall and spri
 survey data are treated separately.  Additionally, all length data is dropped and 
 species seperated by sex at the catch level are merged back together.
 
-For the aggregate biomass indicators, Survdat is first post stratified into [Ecological Production Units](#epu). Stations are labeled by the EPU they fall within
-using the `over` function from the `rdga` R package [@rgdal].  Next, the total number 
+Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu)
+based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not
+create a perfect match for the EPU boundaries it allows us to calculate the variance
+associated with the index as the survey was designed. 
+
+```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.  Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata.", fig.align='center', echo = F}
+
+knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
+
+```
+  
+Prior to 2020, Survdat was first post stratified into EPUs by labeling stations by the EPU they fell within
+using the `over` function from the `rgdal` R package [@rgdal].  Next, the total number 
 of stations within each EPU per year is counted using unique station records. Biomass
 is summed by species per year per EPU.  Those sums are divided by the appropriate
 station count to get the EPU mean.  Finally, the mean biomasses are summed by [aggregate groups](#aggroups). These steps are encompassed in the [processing code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_agg_bio.R), which also includes steps taken to format the data set for inclusion in the `ecodata` R package.
