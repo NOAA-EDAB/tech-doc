@@ -25,7 +25,7 @@ Stomach contents weights and individual fish weights (both to the nearest gram) 
 NEFSC food habits data summarized in the R data file allfh.RData were obtained from Brian Smith (Brian.Smith@noaa.gov) for this index.
 
 ### Data analysis
-The stomach fullness index was calculated using the R script found [here](https://github.com/Laurels1/StomachFullness)
+The stomach fullness index was calculated using the R script found [here](https://github.com/Laurels1/StomachFullness). 
 
 ### Data processing
 Fish stomach fullness index was formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_stom_fullness.R). Stomach fullness was expressed as an annual anomaly for each species in each region.
