@@ -52,7 +52,8 @@ Depends:
   ggrepel,
   kernlab,
   formatR,
-  sf
+  sf, 
+  ggspatial
 Remotes: 
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
