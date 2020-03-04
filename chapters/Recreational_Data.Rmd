@@ -23,7 +23,21 @@ All recreational fishing indicator data, including number of recreationally harv
 
 Data sets were queried by region on the MRIP site, and for the purposes of the State of the Ecosystem reports, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
 
-The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis included American eel *Anguilla rostrata*, Atlantic cod *Gadus morhua*, Atlantic mackerel *Scomber scombrus*, Atlantic sturgeon *Acipenser oxyrinchus*, black drum *Pogonias cromis*, black sea bass *Centropristis striata *, bluefish *Pomatomus saltatrix *, cobia *Rachycentron canadum*, haddock *Melanogrammus aeglefinus* , pollock *Pollachius virens*, red drum *Sciaenops ocellatus*, scup *Stenotomus chrysops*, Spanish mackerel *Scomberomorus maculatus*, spiny dogfish *Squalus acanthias*, spot *Leiostomus xanthurus *, spotted seatrout *Cynoscion nebulosus*, striped bass *Morone saxatilis*, summer flounder *Paralichthys dentatus*, tautog *Tautoga onitis *, tilefish *Lopholatilus chamaeleonticeps*, weakfish *Cynoscion regalis*, winter flounder *Pseudopleuronectes americanus*, and "All Other Species".
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis can be found in Table \@ref(tab:rec-groups). The Mid-Atlantic Fishery Management Council asked that species managed by the South Atlantic Fishery Management Council be distinguished in the analysis of recreational species diversity. 
+
+
+```{r rec-groups, eval = T, echo = F}
+library(tidyverse)
+rec_spp <- read.csv(here::here("data","rec_spp_list.csv")) 
+rec_spp %>% 
+  dplyr::rename("Common Name" = "Common_Name", 
+                "Scientific Name" = "Scientific_Name", 
+                "Diversity Analysis" = "Diversity_analysis") %>% 
+  knitr::kable(caption="Species included in recreational catch diversity.", booktabs = T) %>% 
+  kableExtra::kable_styling(font_size = 8) %>% 
+  kableExtra::landscape()
+```
+
 
 Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the Marine Recreational Fishery Statistics Survey (MRFSS) Participation Time Series Query, and includes data from 1981 - 2016. 
 
