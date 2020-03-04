@@ -27,13 +27,14 @@ The number of recreationally harvested fish was found by selecting "TOTAL HARVES
 
 
 ```{r rec-groups, eval = T, echo = F}
-library(tidyverse)
+
 rec_spp <- read.csv(here::here("data","rec_spp_list.csv")) 
 rec_spp %>% 
   dplyr::rename("Common Name" = "Common_Name", 
                 "Scientific Name" = "Scientific_Name", 
-                "Diversity Analysis" = "Diversity_analysis") %>% 
-  knitr::kable(caption="Species included in recreational catch diversity.", booktabs = T) %>% 
+                "Diversity Analysis" = "Diversity_analysis")
+
+knitr::kable(rec_spp, caption="Species included in recreational catch diversity.") %>%
   kableExtra::kable_styling(font_size = 8) %>% 
   kableExtra::landscape()
 ```
