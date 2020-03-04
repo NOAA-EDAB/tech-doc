@@ -34,9 +34,8 @@ rec_spp %>%
                 "Scientific Name" = "Scientific_Name", 
                 "Diversity Analysis" = "Diversity_analysis")
 
-knitr::kable(rec_spp, caption="Species included in recreational catch diversity.") %>%
-  kableExtra::kable_styling(font_size = 8) %>% 
-  kableExtra::landscape()
+knitr::kable(rec_spp, caption="Species included in recreational catch diversity analysis.") %>%
+  kableExtra::kable_styling(font_size = 8)
 ```
 
 
