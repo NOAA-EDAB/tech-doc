@@ -40,6 +40,6 @@ Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/
 
 ```
 
-```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-eval%20%3D%20T.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019."}
+```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019."}
 
 ```

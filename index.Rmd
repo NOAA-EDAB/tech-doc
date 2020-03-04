@@ -61,6 +61,8 @@ library(cowplot)
 library(sf)
 library(rgdal)
 library(raster)
+library(marmap)
+library(ggspatial)
 
 #Time series constants
 shade.alpha <- 0.3
