@@ -18,10 +18,10 @@
 
 
 ### Data sources
-The [Survdat](#survdat) data set was used to examine the presence of "southern" species (table @\ref(tab:southern)) in Mid-Atlantic and New England waters.
+The [Survdat](#survdat) data set was used to examine the presence of "southern" species (table \@ref(tab:southern)) in Mid-Atlantic and New England waters.
 
 ### Data extraction 
-Survdat was subsetted by common "southern" species (table @\ref(tab:southern)). 
+Survdat was subsetted by common "southern" species (table \@ref(tab:soe2018class)). 
 
 ```{r southern, eval = T, echo = F}
 comnames <- c('Black snapper', 'Queen snapper', 'Mutton snapper', 'Schoolmaster snapper',
@@ -77,12 +77,13 @@ southern.sp <- data.frame('Common Name' = comnames,
                           Group = type)
 
 knitr::kable(southern.sp, booktabs = TRUE,
-      caption = "Southern Species that were examined within the NEFSC trawl survey data")
+      caption = "Southern Species that were examined within the NEFSC trawl survey data") %>% 
+  kableExtra::column_spec(2, italic = TRUE)
 
 ```
 
 ### Data analysis
-The presence/absence of "southern" species was broadly examined for all species listed in table @\ref(tab:southern).  It was quickly determined that these species were extremely rare in the bottom trawl survey.  When a species was present, they were found during the fall survey and not the spring.  No trends were apparent in the data.  The one species that was commonly present was the blue runner (*Caranx crysos*).  Stations were binned temporally by three categories: Prior to 2001, 2001 - 2010, and since 2010.  Stations were then plotted on a map of the survey region and visually inspected.
+The presence/absence of "southern" species was broadly examined for all species listed in table \@ref(tab:southern).  It was quickly determined that these species were extremely rare in the bottom trawl survey.  When a species was present, they were found during the fall survey and not the spring.  No trends were apparent in the data.  The one species that was commonly present was the blue runner (*Caranx crysos*).  Stations were binned temporally by three categories: Prior to 2001, 2001 - 2010, and since 2010.  Stations were then plotted on a map of the survey region and visually inspected.
 
 ### Data processing
 
