@@ -2,49 +2,48 @@
 
 **Description**: SAFMC Species on NES
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020), State of the Ecosystem - New England (2020)
 
-**Indicator category**: 
+**Indicator category**: Database pull
 
 **Contributor(s)**: Sean Lucey
   
-**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+**Data steward**: Sean Lucey <Sean.Lucey@noaa.gov>
   
-**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+**Point of contact**: Sean Lucey <Sean.Lucey@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)).
 
 ## Methods
-The State of the Ecosystem report has examined the presence of Mid-Atlantic managed species in New England and vice versa.  In 2020, this was extended to species managed by the South Atlantic Management Council in the Mid-Atlantic and New England regions.  The vast majority of "southern" managed species do not occur in the NEFSC Bottom Trawl Survey and when they do, they are present in the fall only.  The most common "southern" species was the blue runner (*Caranx crysos*), who's range does include the entire survey area.
 
 ### Data sources
-The [Survdat](#survdat) data set was used to examine the presence of "southern" species.
+The [Survdat](#survdat) data set was used to examine the presence of "southern" species (table @\ref(tab:southern)) in Mid-Atlantic and New England waters.
 
 ### Data extraction 
-Survdat was subsetted by common "southern" species (table @\ref(tab:southern)).  Simple presence/absence was used.
+Survdat was subsetted by common "southern" species (table @\ref(tab:southern)). 
 
 ```{r southern, eval = T, echo = F}
-comnames <- c('Black snapper', 'Queen Snapper', 'Mutton Snapper', 'Schoolmaster Snapper',
-              'Blackfin Snapper', 'Northern Red Snapper', 'Cubera Snapper',
-              'Grey Snapper', 'Mahogany Snapper', 'Dog Snapper', 'Lane Snapper',
-              'Silk Snapper', 'Yellowtail Snapper', 'Vermilion Snapper',
-              'Bank Sea Bass', 'Rock Sea Bass', 'Black Sea Bass',
-              'Rock Hind', 'Graysby', 'Calico Grouper',
-              'Yellowedge Grouper', 'Coney', 'Red Hind',
-              'Atlantic Goliath Grouper', 'Red Grouper', 'Misty Grouper',
-              'Warsaw Grouper', 'Snowy Grouper', 'Nassau Grouper',
-              'Black Grouper', 'Yellowmouth Grouper', 'Gag Grouper',
-              'Scamp Grouper', 'Tiger Grouper', 'Yellowfin Grouper',
-              'Sheepshead', 'Grass Porgy', 'Jolthead Porgy',
-              'Saucereye Porgy', 'Whitebone Porgy', 'Knobbed Porgy',
-              'Red Porgy', 'Longspine Porgy', 'Black Margate',
-              'Porkfish', 'White Margate', 'Tomtate',
-              'Smallmouth Grunt', 'French Grunt', 'Spanish Grunt',
-              'Cottonwick Grunt', "Sailor's Grunt", 'White Grunt', 'Blue Striped Grunt',
-              '', '', '',
-              '', '', '',
-              '', '', '', '',
-              '')
+comnames <- c('Black snapper', 'Queen snapper', 'Mutton snapper', 'Schoolmaster snapper',
+              'Blackfin snapper', 'Northern Red snapper', 'Cubera snapper',
+              'Grey snapper', 'Mahogany snapper', 'Dog snapper', 'Lane snapper',
+              'Silk snapper', 'Yellowtail snapper', 'Vermilion snapper',
+              'Bank sea bass', 'Rock sea bass', 'Black sea bass',
+              'Rock hind', 'Graysby', 'Calico grouper',
+              'Yellowedge grouper', 'Coney', 'Red hind',
+              'Atlantic goliath grouper', 'Red grouper', 'Misty grouper',
+              'Warsaw grouper', 'Snowy grouper', 'Nassau grouper',
+              'Black grouper', 'Yellowmouth grouper', 'Gag grouper',
+              'Scamp grouper', 'Tiger grouper', 'Yellowfin grouper',
+              'Sheepshead', 'Grass porgy', 'Jolthead porgy',
+              'Saucereye porgy', 'Whitebone porgy', 'Knobbed porgy',
+              'Red porgy', 'Longspine porgy', 'Black margate',
+              'Porkfish', 'White margate', 'Tomtate',
+              'Smallmouth grunt', 'French grunt', 'Spanish grunt',
+              'Cottonwick grunt', "Sailor's grunt", 'White grunt', 'Blue Striped grunt',
+              'Grey triggerfish', 'Queen triggerfish', 'Ocean triggerfish',
+              'Hogfish', 'Puddingwife wrasse', 'Yellow jack',
+              'Blue runner', 'Crevalle jack', 'Bar jack', 'Greater amberjack',
+              'Almaco jack')
 
 scinames <- c('Apsilus dentatus', 'Etelis oculatus', 'Lutjanus analis', 'Lutjanus apodus', 
               'Lutjanus buccanella', 'Lutjanus campechanus', 'Lutjanus cyanopterus', 
@@ -82,7 +81,7 @@ knitr::kable(southern.sp, booktabs = TRUE,
 ```
 
 ### Data analysis
-
+The presence/absence of "southern" species was broadly examined for all species listed in table @\ref(tab:southern).  It was quickly determined that these species were extremely rare in the bottom trawl survey.  When a species was present, they were found during the fall survey and not the spring.  No trends were apparent in the data.  The one species that was commonly present was the blue runner (*Caranx crysos*).  Stations were binned temporally by three categories: Prior to 2001, 2001 - 2010, and since 2010.  Stations were then plotted on a map of the survey region and visually inspected.
 
 ### Data processing
 
