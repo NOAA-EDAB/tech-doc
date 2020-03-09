@@ -34,7 +34,7 @@ Common tern diet and nest productivity data were provided by the National Audubo
 
 ### Data processing
 
-Diet and productivity data were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_commontern.R).
+Diet and productivity data were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seabird_ne.R).
 
 
 ### Data analysis

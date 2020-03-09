@@ -30,7 +30,7 @@ Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal t
 
 ### Data processing
 
-Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_oceantemp_insitu.R). 
+Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R). 
 
 ### Plotting
 

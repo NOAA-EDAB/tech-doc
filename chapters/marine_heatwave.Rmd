@@ -27,7 +27,7 @@ Each yearly file (global) was downloaded, concatenated into a single netcdf file
 The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2010.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/
 
 ### Data processing 
-Marine Heatwave data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_marine_heatwave.R).
+Marine Heatwave data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_heatwave.R).
 
 ### Plotting
 

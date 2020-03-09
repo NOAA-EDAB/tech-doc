@@ -31,7 +31,7 @@ Data was analyzed using Excel pivot tables.
 
 
 ### Data processing
-HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_landings_rev.R).
+HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_landings.R).
 
 ### Plotting
 
