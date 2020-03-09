@@ -2,7 +2,7 @@
 
 **Description**: Virginia waterbird data 
 
-**Indicator category**: Published method
+**Indicator category**: Published Results
 
 **Found in**: State of the Ecosystem - Mid-Atantic (2020)
 
@@ -12,26 +12,27 @@
   
 **Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: Data is publically available. 
 
 
 ## Methods
 
 
 ### Data sources
-Virginia colonial waterbird breeding pair population estimates derived from table 4 of "Status and distribution of colonial waterbirds in coastal Virginia: 2018 breeding season." Center for Conservation Biology Technical Report Series, CCBTR-19-06. College of William and Mary & Virginia Commonwealth University, Williamsburg, VA. 28 pp. Available at: https://scholarworks.wm.edu/cgi/viewcontent.cgi?article=1237&context=ccb_reports
 
+Virginia colonial waterbird breeding pair population estimates derived from table 4 of "Status and distribution of colonial waterbirds in coastal Virginia: 2018 breeding season." Center for Conservation Biology Technical Report Series, CCBTR-18-17. College of William and Mary & Virginia Commonwealth University, Williamsburg, VA.  Available at: https://scholarworks.wm.edu/cgi/viewcontent.cgi?article=1237&context=ccb_reports
+
+### Data analysis
+
+NA
 
 ### Data processing
 
 VA colonial waterbird data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seabird_MAB.R).
 
 
-### Data analysis
-
-NA
-
 ### Plotting 
+
 Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-VA-cote.R).
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-VA-cote.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= "Functional group population estimated derived from Table 4 of Watts, B. D., B. J. Paxton, R. Boettcher, and A. L. Wilke. 2019."}

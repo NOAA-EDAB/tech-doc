@@ -30,7 +30,7 @@ SQL and SAS code for data extraction and processing steps can be found [here](ht
 
 
 ### Data analysis
-The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn2012 and @Jepson2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
 
 ### Data processing
 
