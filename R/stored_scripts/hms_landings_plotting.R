@@ -1,6 +1,8 @@
 #```{r , fig.cap = " HMS landings from 2016-2018 broken out by group (sharks, tunas or swordfish.", fig.align="center", eval=T, echo=F}
 
-apex<-ecodata::hms_landings_weight
+apex<-ecodata::hms_landings %>% 
+  dplyr::filter(stringr::str_detect(Var, "Weight")) %>% 
+  tidyr::separate(., Var, "Var", "_")
 
 apex$sp.group <- ifelse(grepl("Shark", apex$Var, ignore.case = T), "shark", 
                         ifelse(grepl("TUNA", apex$Var, ignore.case = T), "tuna", "swordfish"))
