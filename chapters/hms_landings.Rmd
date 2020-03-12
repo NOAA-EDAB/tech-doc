@@ -38,7 +38,15 @@ The extract only includes species with more than $1,000 in landings in the regio
 
 
 ### Data analysis
-High migratory landings include 19 species of tunas, sharks and swordfish.
+High migratory landings include 19 species of tunas, sharks and swordfish (table \@(tab:hms-spp)).
+
+```{r hms-spp, eval = T, echo = F}
+
+rec_spp <- read.csv(here::here("data","hms_species.csv")) 
+
+knitr::kable(rec_spp, caption="Species included in the highly migratory species landings reported in the SOE.") %>%
+  kableExtra::column_spec(2, italic = TRUE)
+```
 
 Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of records marked as confidential and the number of states represented in each regional species sum was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential.
 

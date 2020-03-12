@@ -33,13 +33,17 @@ Marine Heatwave data were formatted for inclusion in the `ecodata` R package usi
 
 Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-heatwave_mab.R).
 
-```{r, fig.cap="Heatwave events in 2019."}
-
-knitr::include_graphics(file.path(image.dir, "mab_heatwave.jpeg"))
-
-```
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-heatwave_mab.R"), eval = T, echo=F, fig.cap="Cumulative and maximum marine heatwave in the Mid-Atlantic", fig.align="center"}
 
 ```
 
+```{r, fig.cap="Heatwave events in 2019.", out.width='100%'}
+
+knitr::include_graphics(file.path(image.dir, "mab_heatwave.jpeg"))
+
+```
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-mab-heatwave-max.R"), eval = T, echo=F, fig.cap="Map showing the maximum intensity heatwave in the Mid-Atlantic occuring on July 22, 2019", fig.align="center"}
+
+```
