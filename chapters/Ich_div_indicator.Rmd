@@ -1,12 +1,5 @@
 # Ichthyoplankton Diversity
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
@@ -38,7 +31,7 @@ Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://
 ### Data analysis
 All detailed data processing steps are not currently included in this document, but general steps are outlined. Data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
 
-MATLAB code used to calculate diversity indices:
+MATLAB code used to calculate diversity indices can be found using this [link](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ich_div_analysis).
 
 
 ### Data processing
