@@ -76,7 +76,7 @@ Comland is a database query of the NEFSC commercial fishery database (CFDBS). Mo
 
 ### Data extraction 
 
-R code used in the extraction process described above can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/landings_extraction.R). 
+[`comlandr`](https://github.com/NOAA-EDAB/comlandr) is a package used to extract relevant data from the database.  
 
 
 #### Data Processing
