@@ -182,5 +182,9 @@ https://www.wjakethompson.com/post/blogdown-gh-pages-travis-ci/
 http://seankross.com/2016/11/17/How-to-Start-a-Bookdown-Book.html  
 http://happygitwithr.com/  
 
+## Update 26 March 2020
 
+Migrated to Travis.com from Travis.org using instructions at https://docs.travis-ci.com/user/migrate/open-source-repository-migration/#can-i-migrate-multiple-repositories-at-once
+
+This trivial change to a non-tech-doc bookdown file may trigger a new build. Let's hope it is successful!
 
