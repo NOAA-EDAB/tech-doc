@@ -23,7 +23,7 @@ The purpose of this document is to collate the methods used to access, collect, 
 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
-```{r setup, echo=F, message = F ,warning = F}
+```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = F, message = F ,warning = F, fig.path = here::here("images/")) 
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 #update.packages(ask = FALSE, checkBuilt = TRUE)  # update R packages
@@ -35,8 +35,8 @@ r.dir <- here::here("R")
 gis.dir <- here::here("gis")
 data.dir <- here::here("data")
 #Plotting and data libraries
-remotes::install_github("noaa-edab/ecodata")
-remotes::install_github("thomasp85/patchwork")
+#remotes::install_github("noaa-edab/ecodata")
+#remotes::install_github("thomasp85/patchwork")
 
 library(ggplot2)
 #library(formatR)
@@ -83,7 +83,7 @@ letter_size <- 4
 feeding.guilds1 <- c("Piscivore","Planktivore","Benthivore","Benthos")
 feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
 x.shade.min <- 2009
-x.shade.max <- 2018
+x.shade.max <- 2019
 #Function for custom ggplot facet labels
 label <- function(variable,value){
   return(facet_names[value])
