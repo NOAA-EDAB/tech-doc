@@ -24,7 +24,11 @@ The purpose of this document is to collate the methods used to access, collect, 
 Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
 ```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = F, message = F ,warning = F, fig.path = here::here("images/")) 
+knitr::opts_chunk$set(echo = F, 
+                      message = F,
+                      warning = F, 
+                      dev = "cairo_pdf", 
+                      fig.path = here::here("images/")) 
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 #update.packages(ask = FALSE, checkBuilt = TRUE)  # update R packages
 tinytex::tlmgr_update() 
