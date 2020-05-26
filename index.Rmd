@@ -40,7 +40,7 @@ gis.dir <- here::here("gis")
 data.dir <- here::here("data")
 #Plotting and data libraries
 remotes::install_github("noaa-edab/ecodata")
-#remotes::install_github("thomasp85/patchwork")
+remotes::install_github("thomasp85/patchwork")
 
 library(ggplot2)
 #library(formatR)
