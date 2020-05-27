@@ -27,7 +27,7 @@ Indicators included in this document were selected to clearly align with managem
 knitr::opts_chunk$set(echo = F, 
                       message = F,
                       warning = F, 
-                      dev = "cairo_pdf", 
+                      #dev = "cairo_pdf", 
                       fig.path = here::here("images/")) 
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 #update.packages(ask = FALSE, checkBuilt = TRUE)  # update R packages
