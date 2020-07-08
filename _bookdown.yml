@@ -47,7 +47,7 @@ rmd_files: ["index.Rmd",
 "chapters/warm_core_rings.Rmd",
 "chapters/wind_habitat_occupancy.Rmd",
 "chapters/Zooplankton_indicators.Rmd",
-"chapters/glossary.Rmd",
+"chapters/pl_lan_glossary.Rmd",
 "chapters/references.Rmd"]
 delete_merged_file: false
 output_dir: "_book"
