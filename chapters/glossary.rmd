@@ -43,7 +43,6 @@ Underwater portion (shelf) of the continent, extending seaward from the shore to
 **Continental Slope:**
 Part of the continental margin; the ocean floor from the continental shelf to the continental rise (@madden2004). 
 
-
 **Ecological Production Unit (EPU):**
 A specific geographic region of similar physical features and plankton characteristics supporting an ecological community within a large marine ecosystem (LME). 
 
@@ -224,6 +223,6 @@ Plankton consisting of small animals and the immature stages of larger animals, 
 
 
 ```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap)'}
-knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
+knitr::include_graphics(here::here("images/journal.pone.0146756.g002.PNG"))
  
 ```
