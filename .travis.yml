@@ -4,7 +4,7 @@ os: linux
 language: r
 #r_github_packages: NOAA-EDAB/ecodata
 
-pandoc_version: 2.6
+pandoc_version: 2.10
 cache: packages
 
 before_install:
