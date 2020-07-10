@@ -145,7 +145,7 @@ The death of one or more individuals of a species.
 The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The region  spans from Cape Hatteras, NC to Nova Scotia and includes the waters between the eastern coastline of the U.S and the continental shelf break. 
 
 **Ocean Acidification (OA):**
-Global-scale changes in ocean marine carbonate chemistry driven by ocean uptake of atmospheric carbon dioxide (CO2). Human-induced ocean acidification specifically refers to the significant present shifts in the marine carbonate system that are a direct result of the exponential increase in atmospheric CO2 concentrations associated with human activities like fossil fuel use. *(CITE????)*
+Global-scale changes in ocean marine carbonate chemistry driven by ocean uptake of atmospheric carbon dioxide (CO2). Human-induced ocean acidification specifically refers to the significant present shifts in the marine carbonate system that are a direct result of the exponential increase in atmospheric CO2 concentrations associated with human activities like fossil fuel use (@jewett2020).
 
 **Overfished:**
 When a stock’s biomass is below the point at which stock can produce sustainable yield. The term is used when biomass has been estimated to be below a limit biological reference point: in the US when biomass is less than ½ of Bmsy (@unfao). 
