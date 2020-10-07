@@ -59,7 +59,7 @@ R code used for analysis can be found [here](https://github.com/NOAA-EDAB/tech-d
 
 ```
 
-#### [Massechusetts](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-MA-inshore.R)
+#### [Massachusetts](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-MA-inshore.R)
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-MA-inshore.R"), fig.width=8, fig.asp = 0.75, fig.cap = "Spring (left) and fall (right) surveyed biomass from the MA state inshore bottom trawl survey.", echo = F, eval = T}
 
 ```
