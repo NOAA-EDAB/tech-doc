@@ -6,11 +6,11 @@
 
 **Indicator category**: Database pull with analysis; Published methods
 
-**Contributor(s)**: Charles Perretti
+**Contributor(s)**: 
   
-**Data steward**: Charles Perretti, <charles.perretti@noaa.gov>
+**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
   
-**Point of contact**: Charles Perretti, <charles.perretti@noaa.gov>
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
   
 **Public availability statement**: Source data are available upon request.
 
