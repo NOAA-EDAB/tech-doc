@@ -69,7 +69,7 @@ Code used to create the figures below can be found linked here, [copepod abundan
 ```
 
 
-```{r euph, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-strat-abund.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,  fig.show = 'hold'}
+```{r euph, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-strat-abun.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,  fig.show = 'hold'}
 
 ```
 
