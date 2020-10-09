@@ -65,7 +65,7 @@ Recreational fishing indicators were formatted for inclusion in the `ecodata` R 
 
  
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recdat-landingsR"), fig.cap = "Total recreational seafood harvest in the Mid-Atlantic.", eval=T, echo=F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recdat-landings.R"), fig.cap = "Total recreational seafood harvest in the Mid-Atlantic.", eval=T, echo=F}
 
 ```
 
