@@ -94,6 +94,6 @@ station count to get the EPU mean.  Finally, the mean biomasses are summed by [a
 ### Plotting
 Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-agg-bio.R)
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-agg-bio.R"), fig.cap="Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red.",  echo = F, fig.align='default',warning = F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-aggregate-biomass.R"), fig.cap="Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red.",  echo = F, fig.align='default',warning = F}
 
 ```

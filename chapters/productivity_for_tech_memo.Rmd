@@ -39,6 +39,6 @@ Productivity data were formatted for inclusion in the `ecodata` R package using 
 
 ### Plotting
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-MAB-recruitment.R"), echo = F, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Mid-Atlantic Bight."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-productivity-anomaly.R"), echo = F, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Mid-Atlantic Bight."}
 
 ```

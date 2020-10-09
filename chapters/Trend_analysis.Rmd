@@ -44,7 +44,7 @@ Code used for trend analysis can be found [here](https://github.com/NOAA-EDAB/te
 
 
 **Example plot**
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-long-term-sst.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-long-term-sst.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
 
 ```
 

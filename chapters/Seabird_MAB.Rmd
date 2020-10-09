@@ -35,7 +35,7 @@ VA colonial waterbird data were formatted for inclusion in the `ecodata` R packa
 
 Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-VA-cote.R).
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-VA-cote.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= "Functional group population estimated derived from Table 4 of Watts, B. D., B. J. Paxton, R. Boettcher, and A. L. Wilke. 2019."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-seabird-mab.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= "Functional group population estimated derived from Table 4 of Watts, B. D., B. J. Paxton, R. Boettcher, and A. L. Wilke. 2019."}
 
 ```
 

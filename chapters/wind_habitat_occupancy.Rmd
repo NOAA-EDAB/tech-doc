@@ -36,10 +36,10 @@ Code used to format wind lease area and habitat occupancy overlap for inclusion 
 
 Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R) and [figure below](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-eval%20%3D%20T.R).
 
-```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R"), eval=TRUE, echo=FALSE, out.width='70%'}
+```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-occupancy.R"), eval=TRUE, echo=FALSE, out.width='70%'}
 
 ```
 
-```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE}
+```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE}
 
 ```

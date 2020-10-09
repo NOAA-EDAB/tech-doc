@@ -35,6 +35,6 @@ Code used to process the cold pool inidcator can be found in the `ecodata` packa
 The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
 
 ```

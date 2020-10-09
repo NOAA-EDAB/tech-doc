@@ -45,21 +45,21 @@ Code used to create the figures below can be found at these links, [diet diversi
 
 ### Plotting 
 #### Diet diversity
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-tern-diet-diversity.R"),echo = F, fig.align="center", eval = T, fig.cap= "Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seabird-ne-diversity.R"),echo = F, fig.align="center", eval = T, fig.cap= "Shannon diversity of common tern diets observed at nesting sites in Gulf of Maine. Diversity of common tern diets has been predominantly above the long-term mean since 2006."}
 
 ```
 
 #### Prey frequencies
 (ref:bird-prod)  Prey frequencies in the diets of common tern observed across the seven colonies in the Gulf of Maine.
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R"),echo = F, fig.align="center", eval = T, fig.cap= '(ref:bird-prod)'}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seabird-ne-prey-freq.R"),echo = F, fig.align="center", eval = T, fig.cap= '(ref:bird-prod)'}
 
 ```
 
 #### Common tern productivity
 (ref:nest-sites) Common terns: Mean common tern productivity at nesting sites in Gulf of Maine. Error bars show +/- 1 SE of the mean. 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna.Rmd-aggregate-prod.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= '(ref:nest-sites)'}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seabird-ne-productivity.R"),fig.width = 8, fig.asp = 0.25, echo = F, fig.align="center", eval = T, fig.cap= '(ref:nest-sites)'}
 
 ```
 

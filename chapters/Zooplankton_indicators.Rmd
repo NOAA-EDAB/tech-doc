@@ -64,17 +64,17 @@ Code used to create the figures below can be found linked here, [copepod abundan
 
 **Abundance anomaly**
 
-```{r copepod, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R"), fig.cap= "Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,fig.show = 'hold'}
+```{r copepod, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-abund.R"), fig.cap= "Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,fig.show = 'hold'}
 
 ```
 
 
-```{r euph, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,  fig.show = 'hold'}
+```{r euph, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-strat-abund.R"), fig.cap="Stratified abundance of cnidarians and euphausiids in Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F,  fig.show = 'hold'}
 
 ```
 
 **Zooplankton Diversity**
 
-```{r zoo-div, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund1.R"), fig.width = 8, fig.asp = .35, fig.cap="Zooplankton diversity in the Mid-Atlantic Bight."}
+```{r zoo-div, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-diversity.R"), fig.width = 8, fig.asp = .35, fig.cap="Zooplankton diversity in the Mid-Atlantic Bight."}
 
 ```

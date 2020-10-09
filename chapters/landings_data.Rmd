@@ -94,7 +94,7 @@ The plot below was built using the code found
 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions.Rmd-comm_landings.R"), eval = T, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 }
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = T, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 }
 
 ```
 

@@ -44,6 +44,6 @@ Source data were formatted for inclusion in the `ecodata` R package using the R 
 ### Plotting
 
 Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-wsw-prop.R).
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL.Rmd-wsw-prop.R"), fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", fig.align="center", eval=T, echo=F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-slopewater.R"), fig.width=5, fig.asp = 0.45, fig.cap = "Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.", fig.align="center", eval=T, echo=F}
 
 ```
