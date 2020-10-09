@@ -89,7 +89,7 @@ Fisheries dependent data from Comlands is used in several indicators for the Sta
 
 ### Plotting
 The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-comm_landings.R). 
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R). 
 
 
 
