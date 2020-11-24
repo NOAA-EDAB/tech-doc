@@ -62,12 +62,14 @@ library(RColorBrewer)
 library(ks)
 library(plyr)
 library(cowplot)
+library(plotly)
 #GIS libraries
 library(sf)
 library(rgdal)
 library(raster)
 library(marmap)
 library(ggspatial)
+
 
 #Time series constants
 shade.alpha <- 0.3

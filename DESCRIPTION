@@ -53,7 +53,8 @@ Depends:
   kernlab,
   formatR,
   sf, 
-  ggspatial
+  ggspatial,
+  plotly
 Remotes: 
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
