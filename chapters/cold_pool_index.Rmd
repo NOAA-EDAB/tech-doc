@@ -2,20 +2,41 @@
 
 **Description**: Cold Pool Index
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020, 2021)
 
 **Indicator category**: Published methods
 
-**Contributor(s)**: Chris Melrose
+**Contributor(s)**: Zhuomin Chen
   
 **Data steward**: Kimberly Bastille 
   
-**Point of contact**: Chris Melrose <chris.melrose@noaa.gov>
+**Point of contact**: Zhuomin Chen <zchen@whoi.edu>
   
-**Public availability statement**: Source data are publicly available.
+**Public availability statement**: Source data are publicly available. Please email zchen@whoi.edu for further information and queries of Cold Pool Spatial Extent indicator source data.
 
 ## Methods
+The methodology for the cold pool index changed between 2020 and 2021 SOEs. The most recent methods and at the top with older methods below those.
 
+### Data Sources
+The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
+
+### Data Analysis
+Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following Chen et al., 2018.
+
+### Data processing
+
+Code used to process the cold pool inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cold_pool.R). 
+
+### Plotting
+The plot below was built using the code found
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
+```
+
+
+## 2020 Methods
+**Point of Contact:**: Chris Melrose <chris.melrose@noaa.gov>
 
 ### Data sources
 NEFSC Hydrographic Database
@@ -27,14 +48,3 @@ This data represents the annual mean bottom temperature residual for Sept-Oct in
 ### Data analysis
 Methods published @miller2016, [original MATLAB source code](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/cold_pool_analysis.txt) used in that paper was provided by Jon Hare and used in this analysis.
 
-### Data processing
-
-Code used to process the cold pool inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cold_pool.R). 
-
-### Plotting
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
-
-```
