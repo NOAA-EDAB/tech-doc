@@ -2,20 +2,54 @@
 
 **Description**: Aquaculture indicators
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019 (Different Methods), 2021)
 
 **Indicator category**: Synthesis of published information
 
-**Contributor(s)**: Sean Hardison, Lisa Calvo, Karl Roscher
+**Contributor(s)**: Christopher Schillaci, Maine DMR, NH DES, MA DMF, RI CRMC, MD DNR
   
-**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+**Data steward**: Chris Schillaci <christopher.schillaci@noaa.gov>
   
-**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov> 
+**Point of contact**: Chris Schillaci <christopher.schillaci@noaa.gov>
   
-**Public availability statement**: Source data are publicly available in referenced reports, and are also available for download [here](https://comet.nefsc.noaa.gov/erddap/tabledap/aquaculture_soe_v1.html). 
+**Public availability statement**: Source data are publicly available
+
 
 
 ## Methods
+
+### Data Sources 
+Data was synthesized from state specific sources, listed below. 
+
+*[State of Maine, Department of Marine Resources.](https://www.maine.gov/dmr/aquaculture/data/index.html)                
+
+*[State of New Hampshire, Marine Aquaculture Compendium](https://drive.google.com/file/d/1eCg0cP2rsjZ0AAloPuxIyDiA01urOcjR/view?usp=sharing)
+
+*[State of Massachusetts, Division of Marine Fisheries](https://www.mass.gov/service-details/dmf-annual-reports)
+
+*[State of Rhode Island, Coastal Resource Management Council](http://www.crmc.ri.gov/aquaculture.html)        
+
+*[State of Maryland, Aquaculture Coordinating Council](https://calendarmedia.blob.core.windows.net/assets/1495a281-9eab-422a-9f90-a16ac9686db8.pdf) 
+
+### Data Extraction
+Production data was pulled from the state sources above. 
+
+### Data analysis
+Divsion of production in pieces by shellfish lease area acres to calculate production per acre.
+
+### Data processing
+
+Aquaculture data were formatted for inclusion in the `ecodata` R package using the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
+
+
+### Plotting
+Code for plotting data included in the State of the Ecosystem report can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-oyster-aqua.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-aquaculture.R"), fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = F, eval =T, warning = F, message=F, fig.align='center', fig.height=4}
+```
+
+
+## Methods 2017-2019
 Aquaculture data included in the State of the Ecosystem (SOE) report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
 
 
@@ -29,13 +63,5 @@ Data were collected directly from state aquaculture reports. Oyster harvest data
 ### Data analysis
 No data analyses occurred for this indicator.
 
-### Data processing
-
-Aquaculture data were formatted for inclusion in the `ecodata` R package using the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
 
 
-### Plotting
-Code for plotting data included in the State of the Ecosystem report can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-oyster-aqua.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-aquaculture.R"), fig.cap="Oyster aquaculture production in terms of number of oysters sold from Virginia, Maryland, and New Jersey.",echo = F, eval =T, warning = F, message=F, fig.align='center', fig.height=4}
-```
