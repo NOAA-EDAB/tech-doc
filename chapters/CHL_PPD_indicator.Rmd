@@ -2,7 +2,7 @@
 
 **Description**: Chlorophyll *a* and Primary Production
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
 
 **Indicator category**: Database pull; Database pull with analysis; Published methods
 
@@ -12,41 +12,27 @@
   
 **Point of contact**: Kimberly Hyde, kimberly.hyde@noaa.gov
   
-**Public availability statement**: Source data used in these analyses will be made publicly available. Derived data used in State of the Ecosystem Reports can be found [here](http://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000).
+**Public availability statement**: Source data used in these analyses are publicly available. 
 
 
 ## Methods
 ### Data sources
-Level 1A ocean color remote sensing data from the Sea-viewing Wide Field-of-view Sensor (SeaWiFS) [@NASA1] on the OrbView-2 satellite and the Moderate Resolution Imaging Spectroradiometer (MODIS) [@NASA2] on the Aqua satellite were acquired from the NASA Ocean Biology Processing Group (OBPG).  Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder [@Casey2010; @Saha2018] and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 [@SOE4; @SOE14] data.  
+Level 1A ocean color remote sensing data from the Sea-viewing Wide Field-of-view Sensor (SeaWiFS) [@NASA1] on the OrbView-2 satellite, the Moderate Resolution Imaging Spectroradiometer (MODIS) [@NASA2] on the Aqua satellite and the Visible and Infrared Imager/Radiometer Suite (VIIRS) [@NASA3] on the Suomi National Polar-orbiting Partnership (S-NPP) platform were acquired from the NASA Ocean Biology Processing Group (OBPG).  Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite chlorophyll data were obtained from the European Space Agency’s Ocean Colour Climate Change Initiative project. Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder [@Casey2010; @Saha2018] and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 [@SOE4; @SOE14] data.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
+
+NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group. Sea-viewing Wide Field-of-view Sensor (SeaWiFS) Level 1 Data; NASA OB.DAAC, Greenbelt, MD, USA. doi: 10.5067/ORBVIEW-2/SEAWIFS/L1/DATA/1.
+NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group. Moderate-resolution Imaging Spectroradiometer (MODIS) Aqua {Dataset Name} Data; NASA OB.DAAC, Greenbelt, MD, USA. doi: 10.5067/AQUA/MODIS/L2/OC/2018.
+NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group. Visible and Infrared Imager/Radiometer Suite (VIIRS) Level 1A Data; NASA OB.DAAC, Greenbelt, MD, USA. doi: 10.5067/NPP/VIIRS/L2/OC/2018.
+Sathyendranath, S, Brewin, RJW, Brockmann, C, Brotas, V, Calton, B, Chuprin, A, Cipollini, P, Couto, AB, Dingle, J, Doerffer, R, Donlon, C, Dowell, M, Farman, A, Grant, M, Groom, S, Horseman, A, Jackson, T, Krasemann, H, Lavender, S, Martinez-Vicente, V, Mazeran, C, Mélin, F, Moore, TS, Müller, D, Regner, P, Roy, S, Steele, CJ, Steinmetz, F, Swinton, J, Taberner, M, Thompson, A, Valente, A, Zühlke, M, Brando, VE, Feng, H, Feldman, G, Franz, BA, Frouin, R, Gould, Jr., RW, Hooker, SB, Kahru, M, Kratzer, S, Mitchell, BG, Muller-Karger, F, Sosik, HM, Voss, KJ, Werdell, J, and Platt, T (2019) An ocean-colour time series for use in climate studies: the experience of the Ocean-Colour Climate Change Initiative (OC-CCI). Sensors: 19, 4285. doi:10.3390/s19194285
 
 ### Data extraction
 NA
 
 ### Data analysis
-The SeaWiFS and MODIS L1A files were processed using the NASA Ocean Biology Processing Group [SeaDAS](https://seadas.gsfc.nasa.gov/) software version 7.4.  All MODIS files were spatially subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) using [L1AEXTRACT_MODIS](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL1aextract_modis.html). SeaWiFS files were subset using the same coordinates prior to begin downloaded from the [Ocean Color Web Browser](https://oceancolor.gsfc.nasa.gov/cgi/browse.pl?sen=am).  SeaDAS's [L2GEN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2gen.html) program was used to generate Level 2 (L2) files using the default settings and optimal ancillary files, and the [L2BIN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2bin.html) program spatially and temporally aggregated the L2 files to create daily Level 3 binned (L3B) files.  The daily files were binned at 2 km resolution that are stored in a global, nearly equal-area, [integerized sinusoidal grids](https://oceancolor.gsfc.nasa.gov/docs/format/l3bins/) and use the default [L2 ocean color flag masks](https://oceancolor.gsfc.nasa.gov/atbd/ocl2flags/).  The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid.    
+The SeaWiFS, MODIS and VIIRS L1A files were processed using the NASA Ocean Biology Processing Group [SeaDAS](https://seadas.gsfc.nasa.gov/) software version 7.4.  All MODIS and VIIRS files were spatially subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) using [L1AEXTRACT_MODIS](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL1aextract_modis.html). SeaWiFS files were subset using the same coordinates prior to begin downloaded from the [Ocean Color Web Browser](https://oceancolor.gsfc.nasa.gov/cgi/browse.pl?sen=am).  SeaDAS's [L2GEN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2gen.html) program was used to generate Level 2 (L2) files using the default settings and optimal ancillary files, and the [L2BIN](https://seadas.gsfc.nasa.gov/help/seadas-processing/ProcessL2bin.html) program spatially and temporally aggregated the L2 files to create daily Level 3 binned (L3B) files.  The daily files were binned at 2 km resolution that are stored in a global, nearly equal-area, [integerized sinusoidal grids](https://oceancolor.gsfc.nasa.gov/docs/format/l3bins/) and use the default [L2 ocean color flag masks](https://oceancolor.gsfc.nasa.gov/atbd/ocl2flags/).  The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid.    
 
-The L2 files contain several ocean color products including the default chlorophyll *a*; product (CHL-OCI), photosynthetic available radiation (PAR), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property products (IOPs).  The CHL-OCI product combines two algorithms, the O'Reilly band ratio (OCx) algorithm [@SOE11] and the Hu color index (CI) algorithm [@SOE5].  The SeaDAS default CHL-OCI algorithm diverges slightly from @SOE5 in that the transition between CI and OCx occurs at 0.15 < CI < 0.2 mg m^-3^ to ensure a smooth [transition](https://oceancolor.gsfc.nasa.gov/atbd/chlor_a/). The regional chlorophyll *a* algorithm by @SOE12 was used to create a second chlorophyll product (CHL-PAN).  CHL-PAN is an empirical algorithm derived from *in situ* sampling within the Northeast Large Marine Ecosystem (NE-LME) and demonstrated significant improvements from the standard NASA operational algorithm in the NES-LME [@SOE13].  A 3rd-order polynomial function (Equation \@ref(eq:one)) is used to derive [CHL-PAN] from Rrs band ratios (RBR): 
+The L2 files contain several ocean color products including the default chlorophyll *a*; product (CHL-OCI), photosynthetic available radiation (PAR), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property products (IOPs).  The CHL-OCI product combines two algorithms, the O'Reilly band ratio (OCx) algorithm [@SOE11] and the Hu color index (CI) algorithm [@SOE5].  The SeaDAS default CHL-OCI algorithm diverges slightly from @SOE5 in that the transition between CI and OCx occurs at 0.15 < CI < 0.2 mg m^-3^ to ensure a smooth [transition](https://oceancolor.gsfc.nasa.gov/atbd/chlor_a/). 
 
-\begin{equation}
-log[\textrm{CHL-PAN}] = A_{0} + A_{1}X + A_{2}X^{2} + A_{3}X^{3},  
-(\#eq:one) 
-\end{equation}
-
-where $X = log(R_{rs}(\lambda_{1})/R_{rs}(\lambda_{2}))$ and $A_{i} (i = 0, 1, 2, \textrm{or }  3)$ are sensor and RBR specific coefficients:
-
-* If SeaWiFS and RBR is $R_{rs}(490)/R_{rs}(555)(R_{^3{\mskip -5mu/\mskip -3mu}_5})$ then: $A_0=0.02534, A_1=-3.033, A_2=2.096, A_3=-1.607$
-* If SeaWiFS and RBR is $R_{rs}(490)/R_{rs}(670)(R_{^3{\mskip -5mu/\mskip -3mu}_6})$  then: $A_0=1.351, A_1=-2.427, A_2=0.9395, A_3=-0.2432$
-* If MODIS and RBR is $R_{rs}(488)/R_{rs}(547)(R_{^3{\mskip -5mu/\mskip -3mu}_5})$  then: $A_0=0. 03664, A_1=-3.451, A_2=2.276, A_3=-1.096$
-* If MODIS and RBR is $R_{rs}(488)/R_{rs}(667)(R_{^3{\mskip -5mu/\mskip -3mu}_6})$  then: $A_0=1.351, A_1=-2.427, A_2=0.9395, A_3=-0.2432$
-
-C~3/5~ and C~3/6~ were calculated for each sensor specific RBR (R~3/5~ and R~3/6~ respectively) and then the following criteria were used to determine to derive CHL-PAN:
-
-<ol type="a">
-  <li>If $R_{^3{\mskip -5mu/\mskip -3mu}_5}>0.15$ or $R_{6} <0.0001$ then $\textrm{CHL-PAN} = C_{^3{\mskip -5mu/\mskip -3mu}_5};$</li>
-  <li> Otherwise, $\textrm{CHL-PAN} = \textrm{max}(C_{^3{\mskip -5mu/\mskip -3mu}_5}, C_{^3{\mskip -5mu/\mskip -3mu}_6})$,</li>
-</ol>
-
-where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13]. 
+Add info about the OC-CCI algorithm and K Turner's CHL validation analysis
 
 The Vertically Generalized Production Model (VGPM) estimates net primary production (PP) as a function of chlorophyll *a*, photosynthetically available light and the photosynthetic efficiency [@SOE1].  In the VGPM-Eppley version, the original temperature-dependent function to estimate the chlorophyll-specific photosynthetic efficiency is replaced with the exponential "Eppley" function (equation PP1) as modified by @SOE7. The VGPM calculates the daily amount of carbon fixed based on the maximum rate of chlorophyll-specific carbon fixation in the water column, sea surface daily photosynthetically available radiation, the euphotic depth (the depth where light is 1% of that at the surface), chlorophyll *a* concentration, and the number of daylight hours (Equation \@ref(eq:two)).  
 
