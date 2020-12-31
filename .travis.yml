@@ -14,7 +14,7 @@ before_install:
 - sudo apt-get install libmagick++-dev
 - sudo apt-get update
 - sudo apt-get install libudunits2-dev
-- tlmgr install threeparttablex infwarerr pdfescape letltxmacro bitset grffile pdflscape makecell
+#- tlmgr install threeparttablex infwarerr pdfescape letltxmacro bitset grffile pdflscape makecell
 
 script:
 #  - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
