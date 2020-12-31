@@ -42,9 +42,11 @@ Data were formatted for inclusion in the ecodata R package using the R script fo
 Code used to build the community engagement indicator plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R). 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-engagement.R"), eval = T, fig.cap= "Community engagement in the Mid-Atlantic."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-commercial-engagement.R"), eval = T, fig.cap= "Commercial engagement in the Mid-Atlantic."}
 
 ```
 
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recreational-engagement.R"), eval = T, fig.cap= "Recreational engagement in the Mid-Atlantic."}
 
+```
 
