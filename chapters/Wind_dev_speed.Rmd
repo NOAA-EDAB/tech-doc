@@ -1,0 +1,56 @@
+# Wind Energy Delvelopment Speed
+
+**Description**: Wind Energy Lease Area Development 
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
+
+**Indicator category**: Synthesis of published information
+
+**Contributor(s)**: Angela Silva, Andrew Lipsky, Doug Christel
+  
+**Data steward**: Angela Silva
+  
+**Point of contact**: Angela Silva <angela.silva@noaa.gov>
+  
+**Public availability statement**: Source data are NOT publicly available. Please email angela.silva@noaa.gov for further information and queries of Speed and Extent of Offshore Wind Development indicator source data.
+
+## Methods
+### Data Sources
+BOEM Lease Area shapefiles; 
+NY Call Area shapefiles; 
+Table E-4 of South Fork Wind Farm Draft EIS; 
+Table A-4 of South Fork Wind Farm Draft EIS.
+
+### Data Analysis
+Variable Calculations
+Assign Coordinate System 
+Project tool: Project Coordinate System to shapefile Project_Areas_12_3_2019, NY_Call_Areas, BOEM_NY_Draft_WEAs_11_1_2018:  GEOGCS['GCS_North_American_1983',DATUM['D_North_American_1983',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]: 
+
+Spatial Analysis for Project_Acres:
+Project Areas and Call Area acres were calculated using BOEM Project Area Shapefiles (Project_Areas_12_3_2019), BOEM NY Call Area Shapefiles (NY_Call_Areas), and NY Call Area Primary and Secondary Recommendation shapefiles (BOEM_NY_Draft_WEAs_11_1_2018) in ArcMap. 
+Project_Areas_12_3_2019, NY_Call_Areas, and BOEM_NY_Draft_WEAs_11_1_2018 Acres were calculated using Add Field and Field Calculator tool. Python Expression = !shape.area@acres!
+
+Project_Name:  Table E-4 of South Fork DEIS Project names were matched to shapefiles by name and lease number. 
+FDNS: Number of foundations proposed or expected for each Project area taken directly from Table E-4 of South Fork DEIS.
+SeaDist_FndScr_Acres: Values taken directly from Table A-4 in South Fork DEIS (Table A-4: Offshore Wind Leasing Activities in the U.S. East Coast: Projects and Assumptions [part 2], pg. E-3-4). Total values for MA/RI lease areas Bay State Wind, Liberty Wind, OCS-A 0522 Remainder, OCS-A 0500 Remainder, OCS-A 0521 Remainder, OCS-A 0520 were aggregated in the table (528 total acres). For these lease areas the total number of foundations from table E-4 (Future Offshore Wind Project Construction Schedule, pg. E-14) were aggregated (SUM function). The percent of each project’s foundation to the total was calculated. The same percent value to the total foundations was applied to SeaDist_FndScr_Acres  (% of Individual Projects FDNS to total group’s foundations/100)*528). These values should be treated as estimates until more information is released specific to individual project areas.
+Offsh_Cbl_Acres: Values taken directly from Table A-4 in South Fork DEIS (Table A-4: Offshore Wind Leasing Activities in the U.S. East Coast: Projects and Assumptions [part 2], pg. E-3-4). Total values for MA/RI lease areas Bay State Wind, Liberty Wind, OCS-A 0522 Remainder, OCS-A 0500 Remainder, OCS-A 0521 Remainder, OCS-A 0520 were aggregated in the table (567 total acres).  Values were evenly distributed across the 6 Project areas.  As such, these values should be treated as estimates until more information is released specific to individual project areas and their landing sites. 
+Dominion Energy was presented as 3 phases in Table E-4 for Project_Name (Dominion Energy Phase1, Dominion Energy Phase 2, Dominion Energy Phase 3). Only one Project shapefile area exists for this lease  area OCS-A 0483. Therefore, the total shapefile acreage was evenly divided between 3 phases similar to how the foundations were treated in table E-4 (Future Offshore Wind Project Construction Schedule, pg. E-14). 
+OffExpCab_Miles: Offshore Export Cable Length OCS-A 0482, OCS-A 0519 OCS-A 0490 had 360 offshore export cable miles reported in Table E-4. This number was divided by 3 and 120 were assigned to these three project areas. 
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_dev_speed.R).
+
+### Plotting
+
+The plot below was built using the code found
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-dev-speed0.30.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-dev-speed0.30.R"), eval = T, echo = F, fig.cap = "Cumulative area of wind lease sites being developed on the Northeast Shelf."}
+
+```
+
+
+
+
+
