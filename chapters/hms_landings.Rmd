@@ -2,7 +2,7 @@
 
 **Description**: Atlantic Highly Migratory Species Landings
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020), State of the Ecosystem - Mid-Atlantic (2020)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021)
 
 **Indicator category**: Database pull with analysis
 

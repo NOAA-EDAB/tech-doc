@@ -2,7 +2,7 @@
 
 **Description**: Bennet Indicator
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) 
 
 **Indicator category**: Database pull with analysis
 
