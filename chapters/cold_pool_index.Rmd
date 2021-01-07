@@ -2,7 +2,7 @@
 
 **Description**: Cold Pool Index
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2020, 2021)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020 (Different Methods), 2021)
 
 **Indicator category**: Published methods
 
@@ -29,9 +29,9 @@ Code used to process the cold pool inidcator can be found in the `ecodata` packa
 
 ### Plotting
 The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool_map.R). 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool_map.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F}
 ```
 
 

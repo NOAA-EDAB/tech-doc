@@ -46,5 +46,5 @@ The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelCon
 Code for plotting the fish condition indicator can be found [here](https://github.com/Laurels1/Condition/blob/master/R/Condition_plot_viridis_final.R).
 
 ```{r, fig.cap=" Condition factor for fish species in the MAB. MAB data are missing for 2017 due to survey delays."}
-knitr::include_graphics(file.path(image.dir, "MABcondition_2019_viridis_final.jpg"))
+knitr::include_graphics(file.path(image.dir, "MABcondition_2020_viridis_final.jpg"))
 ```
