@@ -2,7 +2,7 @@
 
 **Description**: Forage Engery Density indicators
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020), State of the Ecosystem - Mid-Atlantic (2020)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020, 2021), State of the Ecosystem - Mid-Atlantic (2020, 2021)
 
 **Indicator category**: Database pull with analysis
 
@@ -37,14 +37,14 @@ knitr::kable(forage.tab, caption = "List of forage fish study species.",  bookta
 
 
 ### Data sources
-2017 and 2018 NEFSC spring and fall bottom trawl surveys. 
+NEFSC spring and fall bottom trawl surveys. 
 
 ### Data extraction
 NA 
 
 ### Data analysis
 
-Samples were analyzed for proximate composition and energy density from 2017 and 2018 NEFSC spring and fall bottom trawl surveys. Predictive relationships between the percent dry weight of samples and energy density were developed, and samples collected from 2019 surveys are currently being analyzed for percentage dry weight to enable estimation of energy content (@Bean2020). The energy density of forage species differed from prior studies in the 1980s and 1990s (@steimle1985, @lawson1998, Table \@ref(tab:tab)).
+Samples were analyzed for proximate composition and energy density from NEFSC spring and fall bottom trawl surveys. Predictive relationships between the percent dry weight of samples and energy density were developed, and samples collected from current surveys are currently being analyzed for percentage dry weight to enable estimation of energy content (@Bean2020). The energy density of forage species differed from prior studies in the 1980s and 1990s (@steimle1985, @lawson1998, Table \@ref(tab:tab)).
 
 Sampling and laboratory analysis is ongoing, with the goal of continuing routine monitoring of energy density of these species. 
 
