@@ -1,0 +1,33 @@
+# Expected Number of Species
+
+**Description**: Time Series of Expected Number of Species per Tow in NEFSC BTS
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+
+**Indicator category**: Database pull with analysis; Published methods
+
+**Contributor(s)**: Sean Lucey
+  
+**Data steward**: Sean Lucey, <sean.lucey@noaa.gov>
+  
+**Point of contact**: Sean Lucey, <sean.lucey@noaa.gov>
+  
+**Public availability statement**: 
+
+
+  
+## Methods
+
+
+### Data sources
+
+
+
+### Data analysis
+
+
+
+### Plotting 
+
+
+

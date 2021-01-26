@@ -1,0 +1,33 @@
+# Ecosystem Overfishing
+
+**Description**: Time Series of Foarty and Ryther Indices.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+
+**Indicator category**: Database pull with analysis; Published methods
+
+**Contributor(s)**: Michael Fogarty, Andrew Beet
+  
+**Data steward**: Andrew Beet, <andrew.beet@noaa.gov>
+  
+**Point of contact**: Andrew Beet, <andrew.beet@noaa.gov>
+  
+**Public availability statement**: Source data is not publicly availabe due to PII restrictions. 
+
+
+  
+## Methods
+
+
+### Data sources
+
+
+
+### Data analysis
+
+
+
+### Plotting 
+
+
+

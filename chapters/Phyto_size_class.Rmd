@@ -1,0 +1,33 @@
+# Phytoplankton Size Class
+
+**Description**: Proportion of phytoplankton size class
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+
+**Indicator category**: 
+
+**Contributor(s)**: Kim Hyde
+  
+**Data steward**: Kim Hyde, <kimberly.hyde@noaa.gov>
+  
+**Point of contact**: Kim Hyde, <kimberly.hyde@noaa.gov>
+  
+**Public availability statement**: 
+
+
+  
+## Methods
+
+
+### Data sources
+
+
+
+### Data analysis
+
+
+
+### Plotting 
+
+
+
