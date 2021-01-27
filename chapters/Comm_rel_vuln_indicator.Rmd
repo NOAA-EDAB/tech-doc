@@ -2,15 +2,15 @@
 
 **Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019, 2020), State of the Ecosystem - Mid-Atlantic (2018,2019, 2020) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018,2019, 2020, 2021) 
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Lisa L. Colburn
+**Contributor(s)**: Lisa L. Colburn, Changua Weng
   
-**Data steward**: Lisa L. Colburn
-  
-**Point of contact**: Lisa L. Colburn 
+**Data steward**: Changua Weng <changhua.weng@noaa.gov>
+
+**Point of contact**: Lisa L. Colburn <lisa.colburn@noaa.gov>
   
 **Public availability statement**: The source data used to construct the commercial fishing engagement and reliance indices include confidential information and are not available publicly. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. All calculated indices can be found [here](https://www.st.nmfs.noaa.gov/humandimensions/social-indicators/map).
   
@@ -38,15 +38,14 @@ Data were formatted for inclusion in the ecodata R package using the R script fo
 
 
 ### Plotting
-Code for plotting the community reliance vulnerability indicator can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/comm_rel_vuln_plotting.R). 
 
 Code used to build the community engagement indicator plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R). 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-engagement.R"), eval = T, fig.cap= "Community engagement."}
-
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-commercial-engagement.R"), eval = T, fig.cap= "Commercial engagement in the Mid-Atlantic."}
 ```
 
-
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recreational-engagement.R"), eval = T, fig.cap= "Recreational engagement in the Mid-Atlantic."}
+```
 
 

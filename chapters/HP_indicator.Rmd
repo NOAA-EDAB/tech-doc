@@ -3,7 +3,7 @@
 
 **Description**: Harbor Porpoise Indicator
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2021)
 
 **Indicator category**: Synthesis of published information; Published methods
 
@@ -34,6 +34,8 @@ Data were analyzed and formatted for inclusion in the `ecodata` R package using 
 
 
 ### Plotting
- Code used to plot harbor porpoise data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/hp_indicator_plotting.R).
+ Code used to plot harbor porpoise data can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R).
 
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R"), eval = T, echo=F, fig.cap="Estimated Harbor porpoise bycatch (black) and the potential biological removal (red)."}
 
+```

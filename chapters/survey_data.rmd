@@ -14,6 +14,7 @@
 
 **Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data used in SOE reports are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
 
+NO SURVEYS IS 2020
 
 ## Methods
 The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys

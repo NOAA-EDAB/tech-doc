@@ -2,7 +2,7 @@
 
 **Description**: NOAA NEFSC Oceans and Climate branch public ichthyoplankton dataset
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019), State of the Ecosystem - Mid-Atlantic (2018, 2019)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021)
 
 **Indicator category**: Database pull with analysis 
 
@@ -39,4 +39,8 @@ MATLAB code used to calculate diversity indices can be found using this [link](h
 Ichthyoplankton diversity data sets were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ichthyoplankton.R).
 
 ### Plotting
-Code used to plot ichthyoplankton diversity can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ich_div_plotting.R). 
+Code used to plot ichthyoplankton diversity can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-ichthyo-diversity.R). 
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-ichthyo-diversity.R"), eval = T, echo=F, fig.cap="Ichthyolpankton Diversity in the Mid-Atlantic Bight."}
+
+```
