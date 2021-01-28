@@ -2,32 +2,60 @@
 
 **Description**: Proportion of phytoplankton size class
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
 
-**Indicator category**: 
+**Indicator category**:  Database pull; Database pull with analysis; Published methods
 
-**Contributor(s)**: Kim Hyde
-  
+**Contributor(s)**: Kim Hyde, Kyle Turner, Colleen Mouw, Audrey Ciochetto, Ryan Morse
+
 **Data steward**: Kim Hyde, <kimberly.hyde@noaa.gov>
   
 **Point of contact**: Kim Hyde, <kimberly.hyde@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: Source data used in these analyses are publicly available. 
 
 
   
 ## Methods
 
+Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite chlorophyll data were obtained from the European Space Agency’s Ocean Colour Climate Change Initiative project. Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder (Casey et al. 2010; Saha et al. 2018) and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 (Chin, Vazquez-Cuervo, and Armstrong 2017; Project 2015) data.  Prior to June 2002, AVHRR Pathfinder data are used as the SST source and MUR SST in subsequent years.
 
 ### Data sources
 
+The global chlorophyll data were subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) and stored in a nearly equal-area, integerized sinusoidal grid. The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid. 
 
 
 ### Data analysis
 
+Phytoplankton size classes were calculated according to Turner et al. (in prep).  The regionally tuned abundance-based model is based on the three-component model of Brewin et al. (2010) that varies as a function of SST (Brewin et al. 2017, Moore and Brown, 2020).  [Add info about the SST look-up table and the equations] 
+
+Statistics, including the arithmetic mean, standard deviation, and coefficient of variation were calculated at weekly, monthly, and annual time steps and for several climatological periods. Annual statistics used the monthly means as inputs to avoid a summer time bias when more data is available due to reduced cloud cover. The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period. For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year. 
+
+The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files. The median values, which are equivalent to the geometric mean, were used for the CHL and PP data. 
 
 
 ### Plotting 
 
+Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-weekly-phyto-size.R). 
 
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-weekly-phyto-size.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic phytoplankton size class."}
 
+```
+
+### Resources
+
+Brewin, R. J. W., Ciavatta, S., Sathyendranath, S., Jackson, T., Tilstone, G., Curran, K., et al. (2017). Uncertainty in Ocean-Color Estimates of Chlorophyll for Phytoplankton Groups. Front. Mar. Sci. 4. doi:10.3389/fmars.2017.00104.
+
+Brewin, R. J. W., Sathyendranath, S., Hirata, T., Lavender, S. J., Barciela, R. M., and Hardman-Mountford, N. J. (2010). A three-component model of phytoplankton size class for the Atlantic Ocean. Ecol. Model. 221, 1472–1483. doi:10.1016/j.ecolmodel.2010.02.014.
+
+Casey, Kenneth S., Tess B. Brandon, Peter Cornillon, and Robert Evans. 2010. “The past, present, and future of the AVHRR pathfinder SST program.” In Oceanography from Space: Revisited, 273–87. https://doi.org/10.1007/978-90-481-8681-5_16.
+
+Chin, Toshio Michael, Jorge Vazquez-Cuervo, and Edward M. Armstrong. 2017. “A Multi-Scale High-Resolution Analysis of Global Sea Surface Temperature.” Remote Sensing of Environment 200: 154–69. https://doi.org/10.1016/j.rse.2017.07.029.
+
+Moore, T. S., and Brown, C. W. (2020). Incorporating environmental data in abundance-based algorithms for deriving phytoplankton size classes in the Atlantic Ocean. Remote Sens. Environ. 240, 111689. doi:10.1016/j.rse.2020.111689.
+
+Project, JPL MUR MEaSUREs. 2015. “GHRSST Level 4 Mur Global Foundation Sea Surface Temperature Analysis (V4.1).” CA, USA: NASA PO.DAAC. https://doi.org/10.5067/GHGMR-4FJ04.
+
+Saha, Korak, Xuepeng Zhao, Huai-min Zhang, Kenneth S. Casey, Dexin Zhang, Sheekela Baker-Yeboah, Katherine A. Kilpatrick, Robert H. Evans, Thomas Ryan, and John M. Relph. 2018. “AVHRR Pathfinder version 5.3 level 3 collated (L3C) global 4km sea surface temperature for 1981-Present.” NOAA National Centers for Environmental Information. https://doi.org/doi:10.7289/V52J68XX Accessed in 2016 and 2018.
+
+Sathyendranath, S, Brewin, RJW, Brockmann, C, Brotas, V, Calton, B, Chuprin, A, Cipollini, P, Couto, AB, Dingle, J, Doerffer, R, Donlon, C, Dowell, M, Farman, A, Grant, M, Groom, S, Horseman, A, Jackson, T, Krasemann, H, Lavender, S, Martinez-Vicente, V, Mazeran, C, Mélin, F, Moore, TS, Müller, D, Regner, P, Roy, S, Steele, CJ, Steinmetz, F, Swinton, J, Taberner, M, Thompson, A, Valente, A, Zühlke, M, Brando, VE, Feng, H, Feldman, G, Franz, BA, Frouin, R, Gould, Jr., RW, Hooker, SB, Kahru, M, Kratzer, S, Mitchell, BG, Muller-Karger, F, Sosik, HM, Voss, KJ, Werdell, J, and Platt, T (2019) An ocean-colour time series for use in climate studies: the experience of the Ocean-Colour Climate Change Initiative (OC-CCI). Sensors: 19, 4285. doi:10.3390/s19194285
