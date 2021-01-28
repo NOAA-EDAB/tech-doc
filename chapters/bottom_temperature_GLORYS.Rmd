@@ -1,0 +1,41 @@
+# Bottom temperature - GLORYS
+
+**Description**: Time series of annual bottom temperatures on the Northeast Continental Shelf from the GLORYS model.
+
+**Indicator category**: Extensive analysis; not yet published
+Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2021); State of the Ecosystem - Mid-Atlantic Bight (2021)
+
+**Contributor(s)**: Joe Caracappa <joseph.caracappa@noaa.gov>
+
+**Data steward**: Joe Caracappa <joseph.caracappa@noaa.gov>
+
+**Point of contact**: Joe Caracappa <joseph.caracappa@noaa.gov>
+
+**Public availability statement**: Source data are publicly available. 
+
+## Methods
+
+### Data sources
+
+The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
+
+
+### Data extraction
+
+NA
+
+### Data analysis
+
+The GLORYS12V1 daily bottom temperature product was downloaded as a flat 8km grid subsetted over the northwest Atlantic. Then the EPUNOESTUARIES.shp polygons were used to match GLORYS grid cells to EPUS. A weighted mean of bottom temperature was used weighted by the area of each GLORYS grid cell to obtain daily mean bottom temp by EPU. Then the mean daily bottom temp was used to get the annual bottom temp. A 1994-2010 climatology was used to best match with that used by the observed bottom temp (model doesnt' go back any further). The 1994-2010 climatology was used to get the annual bottom temp anomaly by EPU.
+
+### Data processing
+
+Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R). 
+
+### Plotting
+
+Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-bot-temp.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-bottom-temp.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic annual bottom temperature anomalies (Red = GLORYS, Black = in situ)."}
+
+```
