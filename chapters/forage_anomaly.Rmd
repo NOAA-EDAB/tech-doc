@@ -1,0 +1,39 @@
+# Forage Anomaly
+
+
+**Description**: Forage Anomaly Indicator
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
+
+**Indicator category**: 
+
+**Contributor(s)**: Harvey Walsh
+  
+**Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>
+
+**Point of contact**: Harvey Walsh, <harvey.walsh@noaa.gov>
+
+**Public availability statement**: 
+  
+
+## Methods
+
+
+### Data sources
+
+
+### Data extraction 
+
+### Data analysis
+
+
+Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_forage_anomaly.R).
+
+
+### Plotting
+Code used to plot data can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-anomaly.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-anomaly.R"), eval = T, echo=F, fig.cap="Mid-Atlantic Bight forage anomaly"}
+
+```
+

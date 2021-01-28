@@ -2,8 +2,9 @@
 
 **Description**: Time series of annual bottom temperatures on the Northeast Continental Shelf from the GLORYS model.
 
-**Indicator category**: Extensive analysis; not yet published
-Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2021); State of the Ecosystem - Mid-Atlantic Bight (2021)
+**Indicator category**: 
+
+**Found in:** State of the Ecosystem - Gulf of Maine & Georges Bank (2021); State of the Ecosystem - Mid-Atlantic Bight (2021)
 
 **Contributor(s)**: Joe Caracappa <joseph.caracappa@noaa.gov>
 
