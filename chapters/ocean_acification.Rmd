@@ -16,7 +16,7 @@
 
 ## Methods
 
-The work included in the State of the Ecosystem came directly from this paper. 
+The work included in the State of the Ecosystem came directly from Wright-Fairbanks et al. 2020. 
 
 ### Data sources
 
