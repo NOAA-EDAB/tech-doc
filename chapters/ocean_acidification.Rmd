@@ -1,0 +1,51 @@
+# Ocean Acidification
+
+**Description**: Ocean Acidification 
+
+**Indicator category**: 
+
+**Found in:** State of the Ecosystem - Gulf of Maine & Georges Bank (2021); State of the Ecosystem - Mid-Atlantic Bight (2021)
+
+**Contributor(s)**: Grace Saba 
+
+**Data steward**: Grace Saba
+
+**Point of contact**: Grace Saba <saba@marine.rutgers.edu>
+
+**Public availability statement**: 
+
+## Methods
+
+The work included in the State of the Ecosystem came directly from Wright-Fairbanks et al. 2020. 
+
+### Data sources
+
+See paper.
+
+### Data extraction
+
+See paper.
+
+### Data analysis
+
+See paper.
+
+### Data processing
+
+See paper.
+
+### Plotting
+
+Code for plotting can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-mab-oa-glider.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-mab-oa-glider.R"), eval=TRUE, echo = FALSE}
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-mab-oa.R"), eval=TRUE, echo = FALSE}
+
+```
+
+#References 
+
+Wright-Fairbanks, E.K., Miles, T, Cai, W.-J., Chen, B., Saba, G.K. 2020. Autonomous observation of seasonal carbonate chemistry dynamics in the Mid-Atlantic Bight. Journal of Geophysical Research: Oceans 125(11): e2020JC016505, doi:10.1029/2020JC016505.
