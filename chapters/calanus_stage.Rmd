@@ -1,0 +1,33 @@
+# Calanus Stage
+
+**Description**: Calanus abundance by life stage
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
+
+**Indicator category**:  
+
+**Contributor(s)**:  Ryan Morse
+
+**Data steward**: Ryan Morse <ryan.morse@noaa.gov>
+  
+**Point of contact**: Ryan Morse <ryan.morse@noaa.gov>
+  
+**Public availability statement**:  
+
+
+  
+## Methods
+
+### Data sources
+
+
+### Data analysis
+
+
+### Plotting 
+
+Code for plotting Calanus stage data can be found  [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-calanus-stage.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-calanus-stage.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic phytoplankton size class."}
+
+```
