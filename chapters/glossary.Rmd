@@ -49,6 +49,9 @@ A specific geographic region of similar physical features and plankton character
 **Ecosystem Assessment:**
 A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers (@unfao). 
 
+**Ecosystem Assessment:**
+FIND GOOD DEF
+
 **Effort:**
 The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower (@wallace1994). 
 

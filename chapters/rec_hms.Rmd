@@ -1,0 +1,41 @@
+# Recreational Shark Fishing Indicators
+
+**Description**: Recreational Shark Landings
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
+
+**Indicator category**: Database pull with analysis
+  
+**Contributor(s)**: Kimberly Bastille
+  
+**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+ 
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+
+**Public availability statement**: Data sets are publicly available (see Data Sources below).
+
+
+## Methods
+We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in species manages by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC) and fleet effort diversity using the effective Shannon index. 
+
+### Data sources
+All recreational shark fishing indicator data, in were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. 
+
+Data sets were queried by region on the MRIP site, and for the purposes of the State of the Ecosystem reports, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+
+### Data analysis
+
+MRIP data were grouped used the shark species groupings found in [this table](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/hms-mrip/species_list.csv).
+
+### Data processing
+
+Recreational shark fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec_hms.R).
+
+
+### Plotting
+
+Code used to create the plot below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-rec_hms.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-rec_hms.R"), fig.cap = "Total recreational shark landings in the New England.", eval=T, echo=F}
+
+```
