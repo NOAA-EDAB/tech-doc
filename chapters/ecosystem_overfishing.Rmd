@@ -1,6 +1,6 @@
 # Ecosystem Overfishing
 
-**Description**: Time Series of Foarty and Ryther Indices.
+**Description**: Time Series of Fogarty and Ryther Indices.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
 
@@ -75,7 +75,7 @@ Four plots are produced for each EPU:
 
 All created using the [indexPPR](https://github.com/andybeet/indexPPR)
 
-See the [workedExample vignette](https://github.com/andybeet/indexPPR/tree/master/vignettes) in the [indexPPR](https://github.com/andybeet/indexPPR/) package for plotting code.
+See the [workedExample vignette](https://andybeet.github.io/indexPPR/articles/workedExample.html) in the [indexPPR](https://github.com/andybeet/indexPPR/) package for plotting code.
 
 Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here]((https://github.com/andybeet/indexPPR/tree/master/vignettes/figures))
 
