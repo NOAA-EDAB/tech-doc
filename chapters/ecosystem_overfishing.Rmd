@@ -60,7 +60,7 @@ Data for this index come from a variety of sources. The landings data come from 
 
 Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](https://noaa-edab.github.io/tech-doc/comdat.html)
 
-Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese2019fishbase] in tandem with the package [ecosystemeof.](https://github.com/NOAA-EDAB/ecosystemeof/)
+Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese2019fishbase] in tandem with the package [eofindices.](https://github.com/NOAA-EDAB/eofindices/)
 
 Primary Production is estimated using the methods described in the chapter [Chlorophyll a and Primary Production.](https://noaa-edab.github.io/tech-doc/chl-pp.html)
 
@@ -89,11 +89,11 @@ Four plots are produced for each EPU:
 -   The Fogarty index (with reference levels)
 -   The Ryther Index (with reference levels)
 
-All created using the [ecosystemeof](https://github.com/NOAA-EDAB/ecosystemeof)
+All created using the [eofindices](https://github.com/NOAA-EDAB/eofindices)
 
-See the [workedExample vignette](https://NOAA-EDAB.github.io/ecosystemeof/articles/workedExample.html) in the [ecosystemeof](https://github.com/NOAA-EDAB/ecosystemeof/) package for plotting code.
+See the [workedExample vignette](https://NOAA-EDAB.github.io/eofindices/articles/workedExample.html) in the [eofindices](https://github.com/NOAA-EDAB/eofindices/) package for plotting code.
 
-Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here]((https://github.com/NOAA-EDAB/ecosystemeof/tree/master/vignettes/figures))
+Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here]((https://github.com/NOAA-EDAB/eofindices/tree/master/vignettes/figures))
 
 ##### Mid-Atlantic Bight (MAB)
 
