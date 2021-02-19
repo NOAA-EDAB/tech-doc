@@ -91,9 +91,9 @@ Four plots are produced for each EPU:
 
 All created using the [eofindices](https://github.com/NOAA-EDAB/eofindices)
 
-See the [workedExample vignette](https://NOAA-EDAB.github.io/eofindices/articles/workedExample.html) in the [eofindices](https://github.com/NOAA-EDAB/eofindices/) package for plotting code.
+See the [workedExample vignette](https://NOAA-EDAB.github.io/eofindices/articles/workedExample2021.html) in the [eofindices](https://github.com/NOAA-EDAB/eofindices/) package for plotting code.
 
-Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here]((https://github.com/NOAA-EDAB/eofindices/tree/master/vignettes/figures))
+Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here](https://noaa-edab.github.io/eofindices/articles/currentIndices.html)
 
 ##### Mid-Atlantic Bight (MAB)
 
@@ -102,5 +102,7 @@ knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))
 knitr::include_graphics(paste0(imagePath,"/composition-MAB-0_80.png"))
+knitr::include_graphics(paste0(imagePath,"/ryther-index-MAB.png"))
+knitr::include_graphics(paste0(imagePath,"/fogarty-index-Constant-MAB.png"))
 ```
 
