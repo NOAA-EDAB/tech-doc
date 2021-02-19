@@ -102,5 +102,7 @@ knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))
 knitr::include_graphics(paste0(imagePath,"/composition-MAB-0_80.png"))
+knitr::include_graphics(paste0(imagePath,"/ryther-index-MAB.png"))
+knitr::include_graphics(paste0(imagePath,"/fogarty-index-Constant-MAB.png"))
 ```
 
