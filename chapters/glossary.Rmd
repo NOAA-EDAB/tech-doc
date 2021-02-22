@@ -141,8 +141,14 @@ Period of five or more days where sea surface temperature is warmer than 90% of 
 **Marine Mammals:**
 Warm-blooded animals that live in marine waters and breathe air directly. These include porpoises, dolphins, whales, seals, and sea lions (@wallace2000). 
 
+**Microplankton**
+Phytoplankton that range in size from 20 to 200 μm.
+
 **Mortality Event: **
 The death of one or more individuals of a species. 
+
+**Nanoplankton**
+Phytoplankton that range in size from 2 to 20 μm.
 
 **Northeast Shelf:**
 The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The region  spans from Cape Hatteras, NC to Nova Scotia and includes the waters between the eastern coastline of the U.S and the continental shelf break. 
@@ -158,6 +164,12 @@ Whenever a stock is subjected to a fishing morality greater than the fishing mor
 
 **Phytoplankton:**
 Microscopic single-celled, free-floating algae (plants) that take up carbon dioxide and use nutrients and sunlight to produce biomass and form the base of the food web (@unfao). 
+
+**Phytoplankton size class (PSC)**
+A classification scheme to group phytoplankton by size: picoplankton (0.2-2 μm), nanoplankton (2-20 μm) and microplankton (20-200 μm).
+
+**Picoplankton**
+Phytoplankton that range in size from 0.2 to 2 μm.
 
 **Piscivore:**
 Predator whose diet primarily consists of fish and squid, such as cod and striped bass. 
