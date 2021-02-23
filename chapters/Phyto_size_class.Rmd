@@ -27,7 +27,7 @@ The global chlorophyll data were subset to the U.S. East Coast (SW longitude=-82
 
 ### Data analysis
 
-Phytoplankton size classes were calculated according to Turner et al. (in prep).  The regionally tuned abundance-based model is based on the three-component model of @Brewin2010 that varies as a function of SST (@Brewin2017, @Moore2020).  The model uses a look-up table with parameters indexed by SST, developed using a local data set of HPLC diagnostic pigment-derived phytoplankton size fractions matched with coincident satellite SST.
+Phytoplankton size classes were calculated according to @Turner2020 (in prep).  The regionally tuned abundance-based model is based on the three-component model of @Brewin2010 that varies as a function of SST (@Brewin2017, @Moore2020).  The model uses a look-up table with parameters indexed by SST, developed using a local data set of HPLC diagnostic pigment-derived phytoplankton size fractions matched with coincident satellite SST.
 
 Statistics, including the arithmetic mean, standard deviation, and coefficient of variation were calculated at weekly, monthly, and annual time steps and for several climatological periods. Annual statistics used the monthly means as inputs to avoid a summer time bias when more data is available due to reduced cloud cover. The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period. For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year. 
 
