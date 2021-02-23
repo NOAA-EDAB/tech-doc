@@ -16,22 +16,39 @@
 
 
 ## Methods
-
+Data from the NOAA Northeast Fisheries Science Center (NEFSC) Oceans and Climate branch (OCB) public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa.  The 45 taxa were established [@RN126], and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae. 
 
 ### Data sources
+Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year.  A random-stratified design based on the NEFSC bottom trawl survey design [@Azarovitz1981] is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design. 
+The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo net. Net tow speed was 1.5 knots and maximum sample depth was 200 m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5 m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net. 
+
+Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada.  Larvae were identified to the lowest possible taxa and enumerated for each sample.  Taxon abundance for each station was standardized to number under 10 m^-2^ sea surface.
 
 ### Data extraction
+Data retrieved from NOAA NEFSC Oceans and Climate branch [public dataset](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/) 
+(Filename: "EcoMon_Plankton_Data_v3_0.xlsx", File Date: 10/20/2016).
 
 ### Data analysis
+All detailed data processing steps are not currently included in this document, but general steps are outlined. Data were grouped into seasons: spring = February, March, April and fall = September, October, November. Stratified weighted mean abundance was calculated for each taxon for each year and season across all plankton strata (n = 47) for 17 years (1999 to 2015). Shannon Diversity Index and count of positive taxon was calculated for each season and year.
+
+MATLAB code used to calculate diversity indices can be found using this [link](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ich_div_analysis).
 
 
 ### Data processing
 
-Ichthyoplankton diversity data sets were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_forage_anomaly.R).
+Forage Anomaly data sets were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_forage_anomaly.R).
+
+Ichthyoplankton diversity data sets were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ichthyoplankton.R).
 
 ### Plotting
-Code used to plot ichthyoplankton diversity can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-anomaly.R). 
+Code used to plot forage anomaly can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-anomaly.R). 
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-anomaly.R"), eval = T, echo=F, fig.cap="Forage Anomaly in the Mid-Atlantic Bight."}
+
+```
+
+Code used to plot ichthyoplankton diversity can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-ichthyo-diversity.R.R). 
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-ichthyo-diversity.R"), eval = T, echo=F, fig.cap="Ichthyoplankton diversity in the Mid-Atlantic Bight."}
 
 ```
