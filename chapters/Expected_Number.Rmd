@@ -26,8 +26,19 @@
 ### Data analysis
 
 
+### Data processing
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_exp_n.R).
 
-### Plotting 
+### Plotting
 
+The plot below was built using the code found
+[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n.R). 
 
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n.R"), eval = T, echo = F, fig.cap = "Expected number of species per 1000 individuals for FAll NEFSC bottom trawl survey."}
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n-spring.R"), eval = T, echo = F, fig.cap = "Expected number of species per 1000 individuals for Spring NEFSC bottom trawl survey."}
+
+```
 

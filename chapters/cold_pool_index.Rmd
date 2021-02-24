@@ -32,7 +32,7 @@ The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool_map.R). 
 
 ```{r, fig.cap=" "}
-knitr::include_graphics(file.path(image.dir, "cold_pool_map.png"))
+knitr::include_graphics(file.path(image.dir, "cold_pool_area.png"))
 ```
 
 <!-- ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool_map.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F} -->

@@ -38,12 +38,6 @@ Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/e
 
 ```
 
-```{r, fig.cap="Heatwave events in 2019.", out.width='100%'}
-
-knitr::include_graphics(file.path(image.dir, "mab_heatwave.jpeg"))
-
-```
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year.R"), eval = F, echo=F, fig.cap="Map showing the maximum intensity heatwave in the Mid-Atlantic occuring on July 22, 2019", fig.align="center"}
+```{r, fig.cap="Mid-Atlantic Marine Heatwave events in 2020.",code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year.R"), eval = T, echo=F}
 
 ```

@@ -36,10 +36,10 @@ Data were analyzed and formatted for inclusion in the `ecodata` R package using 
 ### Plotting
 Code used to plot data can be found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R) and [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-grayseal.R).
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R"), eval = T, echo=F, fig.cap="Estimated Harbor porpoise bycatch (black) and the potential biological removal (red)."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R"), eval = T, echo=F, fig.cap="Estimated Harbor porpoise bycatch and the potential biological removal."}
 
 ```
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-grayseal.R"), eval = T, echo=F, fig.cap="Estimated Gray Seal (black - 5yr, Blue - 1yr New England) and the potential biological removal (red)."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-grayseal.R"), eval = T, echo=F, fig.cap="Estimated Gray Seal bycatch and the potential biological removal."}
 
 ```
