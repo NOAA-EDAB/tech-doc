@@ -23,6 +23,7 @@ Depends:
   Kendall,
   zoo,
   colorRamps,
+  heatwaveR,
   Hmisc,
   raster,
   grid,
