@@ -1,0 +1,42 @@
+# Chesapeake Bay Temperature Anomaly 
+
+**Description**: Chesapeake Bay temperature anomaly
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2021)
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Bruce Vogt, Charles Pellerin
+  
+**Data steward**: Charles Pellerin, <charles.pellerin@noaa.gov>
+  
+**Point of contact**: Bruce Vogt, <bruce.vogt@noaa.gov> 
+  
+**Public availability statement**: Source data are publicly available.
+  
+**Public availability statement**: Choose one of the following options (Source data are publicly available, Source data are NOT publicly available). If source data are NOT publicly available, what are the procedures for accessing the data? E.g. "Please email your.email@noaa.gov for further information and queries of X indicator source data".
+
+## Methods
+
+### Data sources
+Describe the data sources, with links wherever possible. Where do these indicator data come from?
+
+### Data extraction 
+How were data extracted/processed?  If not applicable, please leave empty. If extraction processes are published elsewhere, include a brief description of the processing steps, link to source. Please include relevant code below.
+
+### Data analysis
+Short narrative describing how indicator data were analyzed. If analytical steps are published elsewhere, please provide a link to the source and appropriate citations.  Please include relevant code below.
+
+
+### Data processing
+Code for processing Chesapeake Bay temperature data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_temp.R). 
+
+### Plotting
+Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R)
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R"), echo = F, eval = T, fig.cap="Chesapeake Bay temperature anomaly."}
+
+```
+
+```{r, fig.cap="Seasonal temperature anomaly map of Chesapeake Bay."}
+knitr::include_graphics(file.path(image.dir, "ches-temp-temp.png"))
+```
