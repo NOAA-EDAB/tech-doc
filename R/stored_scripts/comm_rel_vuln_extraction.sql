@@ -4,7 +4,7 @@
 create table cfders2011 as
 select *
 from connection to oracle
-(select port, state, year, dealnum, permit, nespp3, spplndlb, sppvalue from cfders2011 where permit > 0 order by permit);
+(select port, state, year, dealnum, permit, nespp3, spplndlb, sppvalue from cfders2018 where permit > 0 order by permit);
 create table cfvess11 as
 select *
 from connection to oracle
