@@ -12,7 +12,7 @@
   
 **Point of contact**: Ryan Morse <ryan.morse@noaa.gov>
   
-**Public availability statement**:  
+**Public availability statement**:  Please contact Harvey Walsh <harvey.wlsh@noaa.gov> for raw data. 
 
 
   
@@ -22,7 +22,7 @@
 
 
 ### Data analysis
-
+Code used to analyze calanus stage data can be found [at this link](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/CalanusStage_SOE.R). 
 
 ### Plotting 
 

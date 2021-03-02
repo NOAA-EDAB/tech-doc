@@ -31,9 +31,7 @@ Persistent hotspots were computed with the sf and raster R packages.
 ### Plotting
 
 ```{r, fig.cap="Seasonal temperature anomaly map of Chesapeake Bay."}
-knitr::include_graphics(file.path(image.dir, "4 panel hotspot map FINAL.tif"))
+knitr::include_graphics(file.path(image.dir, "protected_spp_hotspot_4_panel.png"))
 ```
 
-
-### References
 

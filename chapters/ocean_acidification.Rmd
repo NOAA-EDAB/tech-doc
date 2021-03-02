@@ -16,23 +16,26 @@
 
 ## Methods
 
-The work included in the State of the Ecosystem came directly from Wright-Fairbanks et al. 2020. 
+The work included in the State of the Ecosystem came directly from @Wright2020. 
 
 ### Data sources
 
-See paper.
+See @Wright2020.
 
 ### Data extraction
 
-See paper.
+See @Wright2020.
+
 
 ### Data analysis
 
-See paper.
+See @Wright2020.
+
 
 ### Data processing
 
-See paper.
+See @Wright2020.
+
 
 ### Plotting
 
@@ -46,7 +49,3 @@ Code for plotting can be found [here](https://raw.githubusercontent.com/NOAA-EDA
 ```
 
 
-
-#References 
-
-Wright-Fairbanks, E.K., Miles, T, Cai, W.-J., Chen, B., Saba, G.K. 2020. Autonomous observation of seasonal carbonate chemistry dynamics in the Mid-Atlantic Bight. Journal of Geophysical Research: Oceans 125(11): e2020JC016505, doi:10.1029/2020JC016505.

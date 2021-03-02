@@ -25,7 +25,7 @@ Data was synthesized from state specific sources, listed below.
 
 * [State of New Hampshire, Marine Aquaculture Compendium](https://drive.google.com/file/d/1eCg0cP2rsjZ0AAloPuxIyDiA01urOcjR/view?usp=sharing)
 
-*[State of Massachusetts, Division of Marine Fisheries](https://www.mass.gov/service-details/dmf-annual-reports)
+* [State of Massachusetts, Division of Marine Fisheries](https://www.mass.gov/service-details/dmf-annual-reports)
 
 * [State of Rhode Island, Coastal Resource Management Council](http://www.crmc.ri.gov/aquaculture.html)        
 
