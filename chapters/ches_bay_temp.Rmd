@@ -43,6 +43,7 @@ These are contained in the following Bash shell scripts:
 The CoastWatch Utilities Library is free software which may be obtained from NOAA's CoastWatch Program:
 https://coastwatch.noaa.gov/cw/user-resources/coastwatch-utilities.html
 
+Python code used for database pull and analysis can be [found here.](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/cbibs)
 
 ### Data processing
 Code for processing Chesapeake Bay temperature data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_temp.R). 
