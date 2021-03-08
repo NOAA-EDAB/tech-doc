@@ -104,9 +104,3 @@ C~3/5~ and C~3/6~ were calculated for each sensor specific RBR (R~3/5~ and R~3/6
 </ol>
 where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13]. 
 
-
-ADDITIONAL REFERENCES:
-NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group. Sea-viewing Wide Field-of-view Sensor (SeaWiFS) Level 1 Data; NASA OB.DAAC, Greenbelt, MD, USA. doi: 10.5067/ORBVIEW-2/SEAWIFS/L1/DATA/1.
-NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group. Moderate-resolution Imaging Spectroradiometer (MODIS) Aqua {Dataset Name} Data; NASA OB.DAAC, Greenbelt, MD, USA. doi: 10.5067/AQUA/MODIS/L2/OC/2018.
-Sathyendranath, S, Brewin, RJW, Brockmann, C, Brotas, V, Calton, B, Chuprin, A, Cipollini, P, Couto, AB, Dingle, J, Doerffer, R, Donlon, C, Dowell, M, Farman, A, Grant, M, Groom, S, Horseman, A, Jackson, T, Krasemann, H, Lavender, S, Martinez-Vicente, V, Mazeran, C, Mélin, F, Moore, TS, Müller, D, Regner, P, Roy, S, Steele, CJ, Steinmetz, F, Swinton, J, Taberner, M, Thompson, A, Valente, A, Zühlke, M, Brando, VE, Feng, H, Feldman, G, Franz, BA, Frouin, R, Gould, Jr., RW, Hooker, SB, Kahru, M, Kratzer, S, Mitchell, BG, Muller-Karger, F, Sosik, HM, Voss, KJ, Werdell, J, and Platt, T (2019) An ocean-colour time series for use in climate studies: the experience of the Ocean-Colour Climate Change Initiative (OC-CCI). Sensors: 19, 4285. doi:10.3390/s19194285
-
