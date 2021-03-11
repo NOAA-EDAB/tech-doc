@@ -7,7 +7,7 @@
 
 **Indicator category**: Synthesis of published information
 
-**Contributor(s)**: Sarah Gaichas, based on code and spreadsheets originally provided by Chris Legault
+**Contributor(s)**: Sarah Gaichas, Andy Beet, Jeff Vieser, Chris Legault
 
 **Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
 
@@ -20,19 +20,97 @@
 ### Data sources
 <!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
 
-"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. The spreadsheet summarizes the most recent stock assessment updates for each species, which are available on the Northeast Fisheries Science Center (NEFSC) website at:
-https://www.nefsc.noaa.gov/saw/reports.html  
-https://www.nefsc.noaa.gov/publications/crd/crd1717/
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. These metrics are reported to the a national repository, [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage).
 
-Additional assessments are reported directly to the New England Fishery Management Council (NEFMC):
-http://s3.amazonaws.com/nefmc.org/Document-2-SAFE-Report-for-Fishing-Year-2016.pdf  
-http://s3.amazonaws.com/nefmc.org/4_NEFSC_SkateMemo_July_2017.pdf
+Recent stock assessment updates for each species are available on the Northeast Fisheries Science Center (NEFSC) website using the form here: https://apps-nefsc.fisheries.noaa.gov/saw/sasi/sasi_report_options.php
 
+For example, to download the 2020 assessment data, use the form by checking the boxes: Year--2020
+
+Check each available 2020 species and stock area in turn, downloaded .zip of "all files". 
+
+Species with 2020 updates included: Acadian redfish, Atlantic halibut, Atlantic herring, Atlantic Sea Scallop, Atlantic surfclam, Atlantic wolffish, Butterfish, Longfin squid, Ocean Pout, Ocean quahog, Red Hake (2 stocks), Silver hake (2 stocks), Windowpane flounder (2 stocks), Winter flounder (3 stocks). 
+
+These 2020 stock assessment results were compiled as preliminary information by Jeff Vieser, who provided the spreadsheet `NE Stock Assessment Results.xlsx` 10 December 2020. These results are considered preliminary until uploaded to StockSMART.
 
 
 ### Data extraction
 
-Each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary):
+Beginning in 2020 for the 2021 SOE, we used Andy Beet's [assessmentdata package](https://github.com/NOAA-EDAB/assessmentdata) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
+
+```{r}
+remotes::install_github("noaa-edab/assessmentdata")
+library(assessmentdata)
+```
+
+
+Two data frames are in the `assessmentdata` package, `stockAssessmentData` and `stockAssessmentSummary`.
+
+In `stockAssessmentData` we have time series. Columns are `r names(stockAssessmentData)` and the reported metrics are `r unique(stockAssessmentData$Metric)`. 
+
+
+```{r}
+library(DT)
+datatable(head(stockAssessmentData), rownames = FALSE)
+
+```
+
+In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(stockAssessmentSummary))`.
+
+```{r}
+
+datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+Assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
+
+* The `assess.csv` fields used in previous years were recreated from stockSMART to include necessary metadata:
+
+```{r newassess, echo=TRUE, eval=FALSE}
+
+new2019assess <- stockAssessmentSummary %>%
+  filter(`Science Center` == "NEFSC") %>%
+  rename(Entity.Name = `Stock Name`) %>%
+  rename_all(list(~make.names(.)))
+
+```
+
+* Add 2020 assessments and write `2020assess.csv` data contribution:
+
+```{r addrow-replace, echo=TRUE, eval=FALSE}
+
+prelim2020 <- read.csv(here("NE Stock Assessment Results.csv")) %>%
+  filter(Assessment.Year == 2020) %>%
+  rename(Entity.Name = Stock,
+         FSSI.Stock. = FSSI,
+         Estimated.F = Best.F,
+         Estimated.B = Best.B,
+         Review.Result = Review.Type) %>%
+  select(-c(Year, Status.Stock., Record.Status, TimeSeries.Data.,
+            Survey.Links., Adequate, Minimum.F, Maximum.F,
+            Minimum.B, Maximum.B, 
+            Stock.Level.Relative.to.Bmsy:Decision.memo.related.to.inadequate.rebuilding.progress))
+
+
+update2020assess <- bind_rows(new2019assess, prelim2020)
+
+write.csv(update2020assess, here("2020assess.csv"))
+
+```
+
+The `decoder.csv` data contribution was updated in December 2020 to retain only Entity.Name, Council, and Code fields (used by `get_stocks`):
+
+```{r newdecoder, echo=TRUE, eval=FALSE}
+
+newdecoder <- read.csv(here("2019decoder.csv")) %>%
+  select(Entity.Name, Code, Council)
+
+write.csv(newdecoder, here("2020decoder.csv"))
+
+```
+
+
+For the 2017-2020 SOEs, each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary), and the spreadsheets were updated by hand:
 
 *    **Bcur**: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
 
