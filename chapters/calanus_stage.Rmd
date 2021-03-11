@@ -34,6 +34,6 @@ Code used to analyze calanus stage data can be found [at this link](https://gith
 
 Code for plotting Calanus stage data can be found  [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-calanus-stage.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-calanus-stage.R"), eval=TRUE, echo = FALSE, fig.cap = "New England Calanus stage."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-gom-calanus-stage.R"), eval=TRUE, echo = FALSE, fig.cap = "New England Calanus stage."}
 
 ```
