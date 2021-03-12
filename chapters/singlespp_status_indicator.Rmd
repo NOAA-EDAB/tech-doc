@@ -38,7 +38,7 @@ These 2020 stock assessment results were compiled as preliminary information by 
 Beginning in 2020 for the 2021 SOE, we used Andy Beet's [assessmentdata package](https://github.com/NOAA-EDAB/assessmentdata) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
 
 ```{r}
-remotes::install_github("noaa-edab/assessmentdata")
+
 library(assessmentdata)
 ```
 

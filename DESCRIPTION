@@ -59,5 +59,6 @@ Depends:
 Remotes: 
   slucey/RSurvey/Survdat,
   NOAA-EDAB/ecodata,
+  NOAA-EDAB/assessmentdata,
   thomasp85/patchwork
   
