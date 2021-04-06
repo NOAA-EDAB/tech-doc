@@ -32,7 +32,7 @@ E(S_n) = \sum_{i=1}^S{ \Bigg( 1 - \frac{\binom{N-N_i}{n}}{\binom{N}{n}} \Bigg) }
 
 where $S$ is the total number of species present, $N$ the total number of individuals, and $N_i$ the number of individuals of *ith* species.  The result represents a sample of *n* individuals randomly selected from the tow without replacement.  The calculation is made using the `rarefy` function of the `vegan` package [@R-vegan] using an *n* of 1000.
 
-The number of species represented in these samples of 1000 fishes are then averaged over the survey for each Ecological Production Unit [ref].  Due to the lack of survey calibration factor to account for differences in the number of species caught between the NOAA Ship Albatross IV and NOAA Ship Henry B. Bigelow, the time series are kept separate.  
+The number of species represented in these samples of 1000 fishes are then averaged over the survey for each [Ecological Production Unit](https://noaa-edab.github.io/tech-doc/epu.html).  Due to the lack of survey calibration factor to account for differences in the number of species caught between the NOAA Ship Albatross IV and NOAA Ship Henry B. Bigelow, the time series are kept separate.  
 
 
 ### Data processing
