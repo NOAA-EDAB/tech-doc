@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>References | Technical Documentation, State of the Ecosystem Report</title>
+  <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="References | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="References | Technical Documentation, State of the Ecosystem Report" />
+  
+  <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
+  
+
+<meta name="author" content="Northeast Fisheries Science Center" />
+
+
+<meta name="date" content="2021-04-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="glossary.html"/>
+
+<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/jquery-3.5.1/jquery.min.js"></script>
+<link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="asset/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="asset/kePrint-0.0.1/kePrint.js"></script>
+<link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="asset/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="asset/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="erddap.html"><a href="erddap.html"><i class="fa fa-check"></i><b>1</b> Data and Code Access</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="erddap.html"><a href="erddap.html#about"><i class="fa fa-check"></i><b>1.0.1</b> About</a></li>
+<li class="chapter" data-level="1.0.2" data-path="erddap.html"><a href="erddap.html#accessing-data-and-build-code"><i class="fa fa-check"></i><b>1.0.2</b> Accessing data and build code</a></li>
+<li class="chapter" data-level="1.0.3" data-path="erddap.html"><a href="erddap.html#building-the-document"><i class="fa fa-check"></i><b>1.0.3</b> Building the document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aggroups.html"><a href="aggroups.html"><i class="fa fa-check"></i><b>2</b> Aggregate Groups</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="aggroups.html"><a href="aggroups.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="aggroups.html"><a href="aggroups.html#data-sources"><i class="fa fa-check"></i><b>2.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="2.1.2" data-path="aggroups.html"><a href="aggroups.html#data-extraction"><i class="fa fa-check"></i><b>2.1.2</b> Data extraction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html"><i class="fa fa-check"></i><b>3</b> Annual SST Cycles</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#methods-1"><i class="fa fa-check"></i><b>3.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-sources-1"><i class="fa fa-check"></i><b>3.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="3.1.2" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-extraction-1"><i class="fa fa-check"></i><b>3.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="3.1.3" data-path="annual-sst-cycles.html"><a href="annual-sst-cycles.html#data-analysis"><i class="fa fa-check"></i><b>3.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aquaculture.html"><a href="aquaculture.html"><i class="fa fa-check"></i><b>4</b> Aquaculture</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="aquaculture.html"><a href="aquaculture.html#methods-2"><i class="fa fa-check"></i><b>4.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-2"><i class="fa fa-check"></i><b>4.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="4.1.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-2"><i class="fa fa-check"></i><b>4.1.2</b> Data Extraction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="aquaculture.html"><a href="aquaculture.html#data-processing"><i class="fa fa-check"></i><b>4.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="aquaculture.html"><a href="aquaculture.html#plotting"><i class="fa fa-check"></i><b>4.1.5</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="aquaculture.html"><a href="aquaculture.html#methods-2017-2019"><i class="fa fa-check"></i><b>4.2</b> Methods 2017-2019</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="aquaculture.html"><a href="aquaculture.html#data-sources-3"><i class="fa fa-check"></i><b>4.2.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.2.2" data-path="aquaculture.html"><a href="aquaculture.html#data-extraction-3"><i class="fa fa-check"></i><b>4.2.2</b> Data extraction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-2"><i class="fa fa-check"></i><b>4.2.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-4"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-4"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-3"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-1"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html"><i class="fa fa-check"></i><b>6</b> Bottom temperature - in situ</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#methods-4"><i class="fa fa-check"></i><b>6.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#data-sources-5"><i class="fa fa-check"></i><b>6.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="6.1.2" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#data-extraction-5"><i class="fa fa-check"></i><b>6.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#data-analysis-4"><i class="fa fa-check"></i><b>6.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="6.1.4" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#data-processing-2"><i class="fa fa-check"></i><b>6.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="6.1.5" data-path="bottom-temperature-in-situ.html"><a href="bottom-temperature-in-situ.html#plotting-2"><i class="fa fa-check"></i><b>6.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html"><i class="fa fa-check"></i><b>7</b> Bottom temperature - GLORYS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#methods-5"><i class="fa fa-check"></i><b>7.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#data-sources-6"><i class="fa fa-check"></i><b>7.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="7.1.2" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#data-extraction-6"><i class="fa fa-check"></i><b>7.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="7.1.3" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#data-analysis-5"><i class="fa fa-check"></i><b>7.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="7.1.4" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#data-processing-3"><i class="fa fa-check"></i><b>7.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="7.1.5" data-path="bottom-temperature-glorys.html"><a href="bottom-temperature-glorys.html#plotting-3"><i class="fa fa-check"></i><b>7.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="calanus-stage.html"><a href="calanus-stage.html"><i class="fa fa-check"></i><b>8</b> Calanus Stage</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="calanus-stage.html"><a href="calanus-stage.html#methods-6"><i class="fa fa-check"></i><b>8.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="calanus-stage.html"><a href="calanus-stage.html#data-sources-7"><i class="fa fa-check"></i><b>8.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="8.1.2" data-path="calanus-stage.html"><a href="calanus-stage.html#data-analysis-6"><i class="fa fa-check"></i><b>8.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="8.1.3" data-path="calanus-stage.html"><a href="calanus-stage.html#plotting-4"><i class="fa fa-check"></i><b>8.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html"><i class="fa fa-check"></i><b>9</b> Catch and Fleet Diversity</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#methods-7"><i class="fa fa-check"></i><b>9.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-sources-8"><i class="fa fa-check"></i><b>9.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="9.1.2" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-extraction-7"><i class="fa fa-check"></i><b>9.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="9.1.3" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-analysis-7"><i class="fa fa-check"></i><b>9.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="9.1.4" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#data-processing-4"><i class="fa fa-check"></i><b>9.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="9.1.5" data-path="catch-and-fleet-diversity.html"><a href="catch-and-fleet-diversity.html#plotting-5"><i class="fa fa-check"></i><b>9.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html"><i class="fa fa-check"></i><b>10</b> Chesapeake Bay Salinity</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#methods-8"><i class="fa fa-check"></i><b>10.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#data-sources-9"><i class="fa fa-check"></i><b>10.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="10.1.2" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#data-extraction-8"><i class="fa fa-check"></i><b>10.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="10.1.3" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#data-analysis-8"><i class="fa fa-check"></i><b>10.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="10.1.4" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#data-processing-5"><i class="fa fa-check"></i><b>10.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="10.1.5" data-path="chesapeake-bay-salinity.html"><a href="chesapeake-bay-salinity.html#plotting-6"><i class="fa fa-check"></i><b>10.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html"><i class="fa fa-check"></i><b>11</b> Chesapeake Bay Temperature Anomaly</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html#methods-9"><i class="fa fa-check"></i><b>11.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html#data-sources-10"><i class="fa fa-check"></i><b>11.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="11.1.2" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html#data-analysis-9"><i class="fa fa-check"></i><b>11.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="11.1.3" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html#data-processing-6"><i class="fa fa-check"></i><b>11.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="11.1.4" data-path="chesapeake-bay-temperature-anomaly.html"><a href="chesapeake-bay-temperature-anomaly.html#plotting-7"><i class="fa fa-check"></i><b>11.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html"><i class="fa fa-check"></i><b>12</b> Chesapeake Bay Water Quality Standards Attainment</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-sources-11"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-analysis-10"><i class="fa fa-check"></i><b>12.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.3" data-path="chesapeake-bay-water-quality-standards-attainment.html"><a href="chesapeake-bay-water-quality-standards-attainment.html#data-processing-7"><i class="fa fa-check"></i><b>12.1.3</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chl-pp.html"><a href="chl-pp.html"><i class="fa fa-check"></i><b>13</b> Chlorophyll <em>a</em> and Primary Production</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="chl-pp.html"><a href="chl-pp.html#current-methods"><i class="fa fa-check"></i><b>13.1</b> Current Methods</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-12"><i class="fa fa-check"></i><b>13.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.1.2" data-path="chl-pp.html"><a href="chl-pp.html#data-extraction-9"><i class="fa fa-check"></i><b>13.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="13.1.3" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-11"><i class="fa fa-check"></i><b>13.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="13.1.4" data-path="chl-pp.html"><a href="chl-pp.html#data-processing-8"><i class="fa fa-check"></i><b>13.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="13.1.5" data-path="chl-pp.html"><a href="chl-pp.html#plotting-8"><i class="fa fa-check"></i><b>13.1.5</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="chl-pp.html"><a href="chl-pp.html#methods-11"><i class="fa fa-check"></i><b>13.2</b> 2018-2020 Methods</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="chl-pp.html"><a href="chl-pp.html#data-sources-13"><i class="fa fa-check"></i><b>13.2.1</b> Data sources</a></li>
+<li class="chapter" data-level="13.2.2" data-path="chl-pp.html"><a href="chl-pp.html#data-analysis-12"><i class="fa fa-check"></i><b>13.2.2</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="cold-pool-index.html"><a href="cold-pool-index.html"><i class="fa fa-check"></i><b>14</b> Cold Pool Index</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="cold-pool-index.html"><a href="cold-pool-index.html#methods-12"><i class="fa fa-check"></i><b>14.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-sources-14"><i class="fa fa-check"></i><b>14.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="14.1.2" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-analysis-13"><i class="fa fa-check"></i><b>14.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="14.1.3" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-processing-9"><i class="fa fa-check"></i><b>14.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="14.1.4" data-path="cold-pool-index.html"><a href="cold-pool-index.html#plotting-9"><i class="fa fa-check"></i><b>14.1.4</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="cold-pool-index.html"><a href="cold-pool-index.html#methods-13"><i class="fa fa-check"></i><b>14.2</b> 2020 Methods</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-sources-15"><i class="fa fa-check"></i><b>14.2.1</b> Data sources</a></li>
+<li class="chapter" data-level="14.2.2" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-extraction-10"><i class="fa fa-check"></i><b>14.2.2</b> Data extraction</a></li>
+<li class="chapter" data-level="14.2.3" data-path="cold-pool-index.html"><a href="cold-pool-index.html#data-analysis-14"><i class="fa fa-check"></i><b>14.2.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="comdat.html"><a href="comdat.html"><i class="fa fa-check"></i><b>15</b> Commercial Landings Data</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="comdat.html"><a href="comdat.html#methods-14"><i class="fa fa-check"></i><b>15.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="comdat.html"><a href="comdat.html#data-sources-16"><i class="fa fa-check"></i><b>15.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="15.1.2" data-path="comdat.html"><a href="comdat.html#data-extraction-11"><i class="fa fa-check"></i><b>15.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="15.1.3" data-path="comdat.html"><a href="comdat.html#data-analysis-15"><i class="fa fa-check"></i><b>15.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="15.1.4" data-path="comdat.html"><a href="comdat.html#plotting-10"><i class="fa fa-check"></i><b>15.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html"><i class="fa fa-check"></i><b>16</b> Fishery Reliance and Social Vulnerability</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#methods-15"><i class="fa fa-check"></i><b>16.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#data-sources-17"><i class="fa fa-check"></i><b>16.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="16.1.2" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#data-extraction-12"><i class="fa fa-check"></i><b>16.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="16.1.3" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#data-analysis-16"><i class="fa fa-check"></i><b>16.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="16.1.4" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#data-processing-11"><i class="fa fa-check"></i><b>16.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="16.1.5" data-path="fishery-reliance-and-social-vulnerability.html"><a href="fishery-reliance-and-social-vulnerability.html#plotting-11"><i class="fa fa-check"></i><b>16.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="conceptual-models.html"><a href="conceptual-models.html"><i class="fa fa-check"></i><b>17</b> Conceptual Models</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="conceptual-models.html"><a href="conceptual-models.html#methods-16"><i class="fa fa-check"></i><b>17.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="conceptual-models.html"><a href="conceptual-models.html#data-sources-18"><i class="fa fa-check"></i><b>17.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="17.1.2" data-path="conceptual-models.html"><a href="conceptual-models.html#data-extraction-13"><i class="fa fa-check"></i><b>17.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="17.1.3" data-path="conceptual-models.html"><a href="conceptual-models.html#data-analysis-17"><i class="fa fa-check"></i><b>17.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html"><i class="fa fa-check"></i><b>18</b> Fish Condition Indicator</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#methods-17"><i class="fa fa-check"></i><b>18.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-sources-19"><i class="fa fa-check"></i><b>18.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="18.1.2" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-extraction-14"><i class="fa fa-check"></i><b>18.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="18.1.3" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#data-analysis-18"><i class="fa fa-check"></i><b>18.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="18.1.4" data-path="fish-condition-indicator.html"><a href="fish-condition-indicator.html#plotting-12"><i class="fa fa-check"></i><b>18.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="ecosystem-overfishing.html"><a href="ecosystem-overfishing.html"><i class="fa fa-check"></i><b>19</b> Ecosystem Overfishing</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="ecosystem-overfishing.html"><a href="ecosystem-overfishing.html#methods-18"><i class="fa fa-check"></i><b>19.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="ecosystem-overfishing.html"><a href="ecosystem-overfishing.html#fogarty-ryther-indices"><i class="fa fa-check"></i><b>19.1.1</b> Fogarty &amp; Ryther Indices</a></li>
+<li class="chapter" data-level="19.1.2" data-path="ecosystem-overfishing.html"><a href="ecosystem-overfishing.html#primary-production-required-ppr"><i class="fa fa-check"></i><b>19.1.2</b> Primary Production Required (PPR)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="epu.html"><a href="epu.html"><i class="fa fa-check"></i><b>20</b> Ecological Production Units</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="epu.html"><a href="epu.html#methods-19"><i class="fa fa-check"></i><b>20.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="20.1.1" data-path="epu.html"><a href="epu.html#data-sources-21"><i class="fa fa-check"></i><b>20.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="20.1.2" data-path="epu.html"><a href="epu.html#data-extraction-16"><i class="fa fa-check"></i><b>20.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="20.1.3" data-path="epu.html"><a href="epu.html#data-analysis-20"><i class="fa fa-check"></i><b>20.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="20.1.4" data-path="epu.html"><a href="epu.html#data-processing-12"><i class="fa fa-check"></i><b>20.1.4</b> Data processing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html"><i class="fa fa-check"></i><b>21</b> Expected Number of Species</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html#methods-20"><i class="fa fa-check"></i><b>21.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html#data-sources-22"><i class="fa fa-check"></i><b>21.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="21.1.2" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html#data-analysis-21"><i class="fa fa-check"></i><b>21.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="21.1.3" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html#data-processing-13"><i class="fa fa-check"></i><b>21.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="21.1.4" data-path="expected-number-of-species.html"><a href="expected-number-of-species.html#plotting-14"><i class="fa fa-check"></i><b>21.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html"><i class="fa fa-check"></i><b>22</b> Forage Fish Energy Density</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#methods-21"><i class="fa fa-check"></i><b>22.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#data-sources-23"><i class="fa fa-check"></i><b>22.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="22.1.2" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#data-extraction-17"><i class="fa fa-check"></i><b>22.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="22.1.3" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#data-analysis-22"><i class="fa fa-check"></i><b>22.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="22.1.4" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#data-processing-14"><i class="fa fa-check"></i><b>22.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="22.1.5" data-path="forage-fish-energy-density.html"><a href="forage-fish-energy-density.html#plotting-15"><i class="fa fa-check"></i><b>22.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html"><i class="fa fa-check"></i><b>23</b> Gulf Stream Index</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-22"><i class="fa fa-check"></i><b>23.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-24"><i class="fa fa-check"></i><b>23.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="23.1.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-23"><i class="fa fa-check"></i><b>23.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="23.1.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-15"><i class="fa fa-check"></i><b>23.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="23.1.4" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#plotting-16"><i class="fa fa-check"></i><b>23.1.4</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#methods-23"><i class="fa fa-check"></i><b>23.2</b> 2019 Methods</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-sources-25"><i class="fa fa-check"></i><b>23.2.1</b> Data Sources</a></li>
+<li class="chapter" data-level="23.2.2" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-analysis-24"><i class="fa fa-check"></i><b>23.2.2</b> Data analysis</a></li>
+<li class="chapter" data-level="23.2.3" data-path="gulf-stream-index.html"><a href="gulf-stream-index.html#data-processing-and-plotting"><i class="fa fa-check"></i><b>23.2.3</b> Data processing and plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html"><i class="fa fa-check"></i><b>24</b> Habitat Vulnerability</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#methods-24"><i class="fa fa-check"></i><b>24.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="24.1.1" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-sources-26"><i class="fa fa-check"></i><b>24.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="24.1.2" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-analysis-25"><i class="fa fa-check"></i><b>24.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="24.1.3" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-processing-16"><i class="fa fa-check"></i><b>24.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="24.1.4" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#plotting-17"><i class="fa fa-check"></i><b>24.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html"><i class="fa fa-check"></i><b>25</b> Harbor Porpoise and Gray Seal Bycatch</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html#methods-25"><i class="fa fa-check"></i><b>25.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="25.1.1" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html#data-sources-27"><i class="fa fa-check"></i><b>25.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="25.1.2" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html#data-extraction-18"><i class="fa fa-check"></i><b>25.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="25.1.3" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html#data-analysis-26"><i class="fa fa-check"></i><b>25.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="25.1.4" data-path="harbor-porpoise-and-gray-seal-bycatch.html"><a href="harbor-porpoise-and-gray-seal-bycatch.html#plotting-18"><i class="fa fa-check"></i><b>25.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html"><i class="fa fa-check"></i><b>26</b> Highly Migratory Species Landings</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#methods-26"><i class="fa fa-check"></i><b>26.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="26.1.1" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-sources-28"><i class="fa fa-check"></i><b>26.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="26.1.2" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-analysis-27"><i class="fa fa-check"></i><b>26.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="26.1.3" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-processing-17"><i class="fa fa-check"></i><b>26.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="26.1.4" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#plotting-19"><i class="fa fa-check"></i><b>26.1.4</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="26.2" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#methods-2020"><i class="fa fa-check"></i><b>26.2</b> Methods 2020</a>
+<ul>
+<li class="chapter" data-level="26.2.1" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-sources-29"><i class="fa fa-check"></i><b>26.2.1</b> Data sources</a></li>
+<li class="chapter" data-level="26.2.2" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-extraction-19"><i class="fa fa-check"></i><b>26.2.2</b> Data extraction</a></li>
+<li class="chapter" data-level="26.2.3" data-path="highly-migratory-species-landings.html"><a href="highly-migratory-species-landings.html#data-analysis-28"><i class="fa fa-check"></i><b>26.2.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html"><i class="fa fa-check"></i><b>27</b> Inshore bottom trawl surveys</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#methods-27"><i class="fa fa-check"></i><b>27.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="27.1.1" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#data-sources-30"><i class="fa fa-check"></i><b>27.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="27.1.2" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#data-extraction-20"><i class="fa fa-check"></i><b>27.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="27.1.3" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#data-processing-18"><i class="fa fa-check"></i><b>27.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="27.1.4" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#data-analysis-29"><i class="fa fa-check"></i><b>27.1.4</b> Data Analysis</a></li>
+<li class="chapter" data-level="27.1.5" data-path="inshoresurvdat.html"><a href="inshoresurvdat.html#plotting-20"><i class="fa fa-check"></i><b>27.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html"><i class="fa fa-check"></i><b>28</b> Long-term Sea Surface Temperature</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#methods-28"><i class="fa fa-check"></i><b>28.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="28.1.1" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-sources-31"><i class="fa fa-check"></i><b>28.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="28.1.2" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-extraction-21"><i class="fa fa-check"></i><b>28.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="28.1.3" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#data-processing-19"><i class="fa fa-check"></i><b>28.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="28.1.4" data-path="long-term-sea-surface-temperature.html"><a href="long-term-sea-surface-temperature.html#plotting-21"><i class="fa fa-check"></i><b>28.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>29</b> Mid-Atlantic Harmful Algal Bloom Indicator</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#methods-29"><i class="fa fa-check"></i><b>29.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="29.1.1" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-sources-32"><i class="fa fa-check"></i><b>29.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="29.1.2" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-extraction-22"><i class="fa fa-check"></i><b>29.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="29.1.3" data-path="mid-atlantic-harmful-algal-bloom-indicator.html"><a href="mid-atlantic-harmful-algal-bloom-indicator.html#data-analysis-30"><i class="fa fa-check"></i><b>29.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html"><i class="fa fa-check"></i><b>30</b> New England Harmful Algal Bloom Indicator</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#methods-30"><i class="fa fa-check"></i><b>30.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="30.1.1" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-sources-33"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="30.1.2" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-extraction-23"><i class="fa fa-check"></i><b>30.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="30.1.3" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#data-analysis-31"><i class="fa fa-check"></i><b>30.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="30.1.4" data-path="new-england-harmful-algal-bloom-indicator.html"><a href="new-england-harmful-algal-bloom-indicator.html#plotting-22"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="marine-heatwave.html"><a href="marine-heatwave.html"><i class="fa fa-check"></i><b>31</b> Marine Heatwave</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="marine-heatwave.html"><a href="marine-heatwave.html#methods-31"><i class="fa fa-check"></i><b>31.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="31.1.1" data-path="marine-heatwave.html"><a href="marine-heatwave.html#data-sources-34"><i class="fa fa-check"></i><b>31.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="31.1.2" data-path="marine-heatwave.html"><a href="marine-heatwave.html#data-extraction-24"><i class="fa fa-check"></i><b>31.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="31.1.3" data-path="marine-heatwave.html"><a href="marine-heatwave.html#data-analysis-32"><i class="fa fa-check"></i><b>31.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="31.1.4" data-path="marine-heatwave.html"><a href="marine-heatwave.html#data-processing-20"><i class="fa fa-check"></i><b>31.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="31.1.5" data-path="marine-heatwave.html"><a href="marine-heatwave.html#plotting-23"><i class="fa fa-check"></i><b>31.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html"><i class="fa fa-check"></i><b>32</b> Verified Records of Southern Kingfish</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#methods-32"><i class="fa fa-check"></i><b>32.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="32.1.1" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-sources-35"><i class="fa fa-check"></i><b>32.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="32.1.2" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-extraction-25"><i class="fa fa-check"></i><b>32.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="32.1.3" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#data-analysis-33"><i class="fa fa-check"></i><b>32.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="32.1.4" data-path="verified-records-of-southern-kingfish.html"><a href="verified-records-of-southern-kingfish.html#plotting-24"><i class="fa fa-check"></i><b>32.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="hab-occu.html"><a href="hab-occu.html"><i class="fa fa-check"></i><b>33</b> Habitat Occupancy Models</a>
+<ul>
+<li class="chapter" data-level="33.1" data-path="hab-occu.html"><a href="hab-occu.html#methods-33"><i class="fa fa-check"></i><b>33.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="33.1.1" data-path="hab-occu.html"><a href="hab-occu.html#data-sources-36"><i class="fa fa-check"></i><b>33.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="33.1.2" data-path="hab-occu.html"><a href="hab-occu.html#data-processing-21"><i class="fa fa-check"></i><b>33.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="33.1.3" data-path="hab-occu.html"><a href="hab-occu.html#data-analysis-34"><i class="fa fa-check"></i><b>33.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="33.1.4" data-path="hab-occu.html"><a href="hab-occu.html#plotting-25"><i class="fa fa-check"></i><b>33.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="34" data-path="ocean-acidification.html"><a href="ocean-acidification.html"><i class="fa fa-check"></i><b>34</b> Ocean Acidification</a>
+<ul>
+<li class="chapter" data-level="34.1" data-path="ocean-acidification.html"><a href="ocean-acidification.html#methods-34"><i class="fa fa-check"></i><b>34.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="34.1.1" data-path="ocean-acidification.html"><a href="ocean-acidification.html#data-sources-37"><i class="fa fa-check"></i><b>34.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="34.1.2" data-path="ocean-acidification.html"><a href="ocean-acidification.html#data-extraction-26"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="34.1.3" data-path="ocean-acidification.html"><a href="ocean-acidification.html#data-analysis-35"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="34.1.4" data-path="ocean-acidification.html"><a href="ocean-acidification.html#data-processing-22"><i class="fa fa-check"></i><b>34.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="34.1.5" data-path="ocean-acidification.html"><a href="ocean-acidification.html#plotting-26"><i class="fa fa-check"></i><b>34.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="35" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html"><i class="fa fa-check"></i><b>35</b> Phytoplankton Size Class</a>
+<ul>
+<li class="chapter" data-level="35.1" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html#methods-35"><i class="fa fa-check"></i><b>35.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="35.1.1" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html#data-sources-38"><i class="fa fa-check"></i><b>35.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="35.1.2" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html#data-analysis-36"><i class="fa fa-check"></i><b>35.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="35.1.3" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html#plotting-27"><i class="fa fa-check"></i><b>35.1.3</b> Plotting</a></li>
+<li class="chapter" data-level="35.1.4" data-path="phytoplankton-size-class.html"><a href="phytoplankton-size-class.html#resources"><i class="fa fa-check"></i><b>35.1.4</b> Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="36" data-path="plankton-diversity.html"><a href="plankton-diversity.html"><i class="fa fa-check"></i><b>36</b> Plankton Diversity</a>
+<ul>
+<li class="chapter" data-level="36.1" data-path="plankton-diversity.html"><a href="plankton-diversity.html#methods-36"><i class="fa fa-check"></i><b>36.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="36.1.1" data-path="plankton-diversity.html"><a href="plankton-diversity.html#data-sources-39"><i class="fa fa-check"></i><b>36.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="36.1.2" data-path="plankton-diversity.html"><a href="plankton-diversity.html#data-extraction-27"><i class="fa fa-check"></i><b>36.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="36.1.3" data-path="plankton-diversity.html"><a href="plankton-diversity.html#data-analysis-37"><i class="fa fa-check"></i><b>36.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="36.1.4" data-path="plankton-diversity.html"><a href="plankton-diversity.html#data-processing-23"><i class="fa fa-check"></i><b>36.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="36.1.5" data-path="plankton-diversity.html"><a href="plankton-diversity.html#plotting-28"><i class="fa fa-check"></i><b>36.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="37" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html"><i class="fa fa-check"></i><b>37</b> Fish Productivity Indicator</a>
+<ul>
+<li class="chapter" data-level="37.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#methods-37"><i class="fa fa-check"></i><b>37.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="37.1.1" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-sources-40"><i class="fa fa-check"></i><b>37.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="37.1.2" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-extraction-28"><i class="fa fa-check"></i><b>37.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="37.1.3" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-analysis-38"><i class="fa fa-check"></i><b>37.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="37.1.4" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#data-processing-24"><i class="fa fa-check"></i><b>37.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="37.1.5" data-path="fish-productivity-indicator.html"><a href="fish-productivity-indicator.html#plotting-29"><i class="fa fa-check"></i><b>37.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="38" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html"><i class="fa fa-check"></i><b>38</b> Protected Species Hotspots</a>
+<ul>
+<li class="chapter" data-level="38.1" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html#methods-38"><i class="fa fa-check"></i><b>38.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="38.1.1" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html#data-sources-41"><i class="fa fa-check"></i><b>38.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="38.1.2" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html#data-analysis-39"><i class="fa fa-check"></i><b>38.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="38.1.3" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html#data-processing-25"><i class="fa fa-check"></i><b>38.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="38.1.4" data-path="protected-species-hotspots.html"><a href="protected-species-hotspots.html#plotting-30"><i class="fa fa-check"></i><b>38.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="39" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html"><i class="fa fa-check"></i><b>39</b> Recreational Fishing Indicators</a>
+<ul>
+<li class="chapter" data-level="39.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#methods-39"><i class="fa fa-check"></i><b>39.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="39.1.1" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-sources-42"><i class="fa fa-check"></i><b>39.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="39.1.2" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-analysis-40"><i class="fa fa-check"></i><b>39.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="39.1.3" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#data-processing-26"><i class="fa fa-check"></i><b>39.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="39.1.4" data-path="recreational-fishing-indicators.html"><a href="recreational-fishing-indicators.html#plotting-31"><i class="fa fa-check"></i><b>39.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="40" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html"><i class="fa fa-check"></i><b>40</b> Recreational Shark Fishing Indicators</a>
+<ul>
+<li class="chapter" data-level="40.1" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#methods-40"><i class="fa fa-check"></i><b>40.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="40.1.1" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-sources-43"><i class="fa fa-check"></i><b>40.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="40.1.2" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-analysis-41"><i class="fa fa-check"></i><b>40.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="40.1.3" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-processing-27"><i class="fa fa-check"></i><b>40.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="40.1.4" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#plotting-32"><i class="fa fa-check"></i><b>40.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="41" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html"><i class="fa fa-check"></i><b>41</b> Right Whale Abundance</a>
+<ul>
+<li class="chapter" data-level="41.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#methods-41"><i class="fa fa-check"></i><b>41.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="41.1.1" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-sources-44"><i class="fa fa-check"></i><b>41.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="41.1.2" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-extraction-29"><i class="fa fa-check"></i><b>41.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="41.1.3" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-analysis-42"><i class="fa fa-check"></i><b>41.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="41.1.4" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#data-processing-28"><i class="fa fa-check"></i><b>41.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="41.1.5" data-path="right-whale-abundance.html"><a href="right-whale-abundance.html#plotting-33"><i class="fa fa-check"></i><b>41.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="42" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html"><i class="fa fa-check"></i><b>42</b> SAFMC managed spp</a>
+<ul>
+<li class="chapter" data-level="42.1" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#methods-42"><i class="fa fa-check"></i><b>42.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="42.1.1" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#data-sources-45"><i class="fa fa-check"></i><b>42.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="42.1.2" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#data-extraction-30"><i class="fa fa-check"></i><b>42.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="42.1.3" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#data-analysis-43"><i class="fa fa-check"></i><b>42.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="42.1.4" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#data-processing-29"><i class="fa fa-check"></i><b>42.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="42.1.5" data-path="safmc-managed-spp.html"><a href="safmc-managed-spp.html#plotting-34"><i class="fa fa-check"></i><b>42.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="43" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html"><i class="fa fa-check"></i><b>43</b> NE Seabird diet and productivity</a>
+<ul>
+<li class="chapter" data-level="43.1" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html#methods-43"><i class="fa fa-check"></i><b>43.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="43.1.1" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html#data-sources-46"><i class="fa fa-check"></i><b>43.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="43.1.2" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html#data-processing-30"><i class="fa fa-check"></i><b>43.1.2</b> Data processing</a></li>
+<li class="chapter" data-level="43.1.3" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html#data-analysis-44"><i class="fa fa-check"></i><b>43.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="43.1.4" data-path="ne-seabird-diet-and-productivity.html"><a href="ne-seabird-diet-and-productivity.html#plotting-35"><i class="fa fa-check"></i><b>43.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="44" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html"><i class="fa fa-check"></i><b>44</b> MA waterbird productivity</a>
+<ul>
+<li class="chapter" data-level="44.1" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html#methods-44"><i class="fa fa-check"></i><b>44.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="44.1.1" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html#data-sources-47"><i class="fa fa-check"></i><b>44.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="44.1.2" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html#data-analysis-45"><i class="fa fa-check"></i><b>44.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="44.1.3" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html#data-processing-31"><i class="fa fa-check"></i><b>44.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="44.1.4" data-path="ma-waterbird-productivity.html"><a href="ma-waterbird-productivity.html#plotting-36"><i class="fa fa-check"></i><b>44.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="45" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html"><i class="fa fa-check"></i><b>45</b> Seasonal SST Anomalies</a>
+<ul>
+<li class="chapter" data-level="45.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#methods-45"><i class="fa fa-check"></i><b>45.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="45.1.1" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-sources-48"><i class="fa fa-check"></i><b>45.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="45.1.2" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-extraction-31"><i class="fa fa-check"></i><b>45.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="45.1.3" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#data-analysis-46"><i class="fa fa-check"></i><b>45.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="45.1.4" data-path="seasonal-sst-anomalies.html"><a href="seasonal-sst-anomalies.html#plotting-37"><i class="fa fa-check"></i><b>45.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="46" data-path="stockstatus.html"><a href="stockstatus.html"><i class="fa fa-check"></i><b>46</b> Single Species Status Indicator</a>
+<ul>
+<li class="chapter" data-level="46.1" data-path="stockstatus.html"><a href="stockstatus.html#methods-46"><i class="fa fa-check"></i><b>46.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="46.1.1" data-path="stockstatus.html"><a href="stockstatus.html#data-sources-49"><i class="fa fa-check"></i><b>46.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="46.1.2" data-path="stockstatus.html"><a href="stockstatus.html#data-extraction-32"><i class="fa fa-check"></i><b>46.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="46.1.3" data-path="stockstatus.html"><a href="stockstatus.html#data-processing-32"><i class="fa fa-check"></i><b>46.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="46.1.4" data-path="stockstatus.html"><a href="stockstatus.html#data-analysis-47"><i class="fa fa-check"></i><b>46.1.4</b> Data analysis</a></li>
+<li class="chapter" data-level="46.1.5" data-path="stockstatus.html"><a href="stockstatus.html#plotting-38"><i class="fa fa-check"></i><b>46.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="47" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html"><i class="fa fa-check"></i><b>47</b> Slopewater proportions</a>
+<ul>
+<li class="chapter" data-level="47.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#methods-47"><i class="fa fa-check"></i><b>47.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="47.1.1" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-sources-50"><i class="fa fa-check"></i><b>47.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="47.1.2" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-extraction-33"><i class="fa fa-check"></i><b>47.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="47.1.3" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-analysis-48"><i class="fa fa-check"></i><b>47.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="47.1.4" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#data-processing-33"><i class="fa fa-check"></i><b>47.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="47.1.5" data-path="slopewater-proportions.html"><a href="slopewater-proportions.html#plotting-39"><i class="fa fa-check"></i><b>47.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="48" data-path="species-density-estimates.html"><a href="species-density-estimates.html"><i class="fa fa-check"></i><b>48</b> Species Density Estimates</a>
+<ul>
+<li class="chapter" data-level="48.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#methods-48"><i class="fa fa-check"></i><b>48.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="48.1.1" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-sources-51"><i class="fa fa-check"></i><b>48.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="48.1.2" data-path="species-density-estimates.html"><a href="species-density-estimates.html#data-analysis-49"><i class="fa fa-check"></i><b>48.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="48.1.3" data-path="species-density-estimates.html"><a href="species-density-estimates.html#plotting-40"><i class="fa fa-check"></i><b>48.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="49" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html"><i class="fa fa-check"></i><b>49</b> Species Distribution Indicators</a>
+<ul>
+<li class="chapter" data-level="49.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#methods-49"><i class="fa fa-check"></i><b>49.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="49.1.1" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-sources-52"><i class="fa fa-check"></i><b>49.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="49.1.2" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-analysis-50"><i class="fa fa-check"></i><b>49.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="49.1.3" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#data-processing-34"><i class="fa fa-check"></i><b>49.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="49.1.4" data-path="species-distribution-indicators.html"><a href="species-distribution-indicators.html#plotting-41"><i class="fa fa-check"></i><b>49.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="50" data-path="stomach-fullness.html"><a href="stomach-fullness.html"><i class="fa fa-check"></i><b>50</b> Stomach fullness</a>
+<ul>
+<li class="chapter" data-level="50.1" data-path="stomach-fullness.html"><a href="stomach-fullness.html#methods-50"><i class="fa fa-check"></i><b>50.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="50.1.1" data-path="stomach-fullness.html"><a href="stomach-fullness.html#data-sources-53"><i class="fa fa-check"></i><b>50.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="50.1.2" data-path="stomach-fullness.html"><a href="stomach-fullness.html#data-extraction-34"><i class="fa fa-check"></i><b>50.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="50.1.3" data-path="stomach-fullness.html"><a href="stomach-fullness.html#data-analysis-51"><i class="fa fa-check"></i><b>50.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="50.1.4" data-path="stomach-fullness.html"><a href="stomach-fullness.html#data-processing-35"><i class="fa fa-check"></i><b>50.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="50.1.5" data-path="stomach-fullness.html"><a href="stomach-fullness.html#plotting-42"><i class="fa fa-check"></i><b>50.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="51" data-path="survdat.html"><a href="survdat.html"><i class="fa fa-check"></i><b>51</b> Survey Data</a>
+<ul>
+<li class="chapter" data-level="51.1" data-path="survdat.html"><a href="survdat.html#methods-51"><i class="fa fa-check"></i><b>51.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="51.1.1" data-path="survdat.html"><a href="survdat.html#data-sources-54"><i class="fa fa-check"></i><b>51.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="51.1.2" data-path="survdat.html"><a href="survdat.html#data-extraction-35"><i class="fa fa-check"></i><b>51.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="51.1.3" data-path="survdat.html"><a href="survdat.html#data-analysis-52"><i class="fa fa-check"></i><b>51.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="51.1.4" data-path="survdat.html"><a href="survdat.html#plotting-43"><i class="fa fa-check"></i><b>51.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="52" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html"><i class="fa fa-check"></i><b>52</b> Thermal Habitat Projections</a>
+<ul>
+<li class="chapter" data-level="52.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#methods-52"><i class="fa fa-check"></i><b>52.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="52.1.1" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-sources-55"><i class="fa fa-check"></i><b>52.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="52.1.2" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#data-analysis-53"><i class="fa fa-check"></i><b>52.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="52.1.3" data-path="thermal-habitat-projections.html"><a href="thermal-habitat-projections.html#plotting-44"><i class="fa fa-check"></i><b>52.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="53" data-path="trend-analysis.html"><a href="trend-analysis.html"><i class="fa fa-check"></i><b>53</b> Trend Analysis</a>
+<ul>
+<li class="chapter" data-level="53.1" data-path="trend-analysis.html"><a href="trend-analysis.html#methods-53"><i class="fa fa-check"></i><b>53.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="53.1.1" data-path="trend-analysis.html"><a href="trend-analysis.html#data-sources-56"><i class="fa fa-check"></i><b>53.1.1</b> Data source(s)</a></li>
+<li class="chapter" data-level="53.1.2" data-path="trend-analysis.html"><a href="trend-analysis.html#data-extraction-36"><i class="fa fa-check"></i><b>53.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="53.1.3" data-path="trend-analysis.html"><a href="trend-analysis.html#data-analysis-54"><i class="fa fa-check"></i><b>53.1.3</b> Data analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="54" data-path="warm-core-rings.html"><a href="warm-core-rings.html"><i class="fa fa-check"></i><b>54</b> Warm Core Rings</a>
+<ul>
+<li class="chapter" data-level="54.1" data-path="warm-core-rings.html"><a href="warm-core-rings.html#methods-54"><i class="fa fa-check"></i><b>54.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="54.1.1" data-path="warm-core-rings.html"><a href="warm-core-rings.html#data-sources-57"><i class="fa fa-check"></i><b>54.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="54.1.2" data-path="warm-core-rings.html"><a href="warm-core-rings.html#data-extraction-37"><i class="fa fa-check"></i><b>54.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="54.1.3" data-path="warm-core-rings.html"><a href="warm-core-rings.html#data-analysis-55"><i class="fa fa-check"></i><b>54.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="54.1.4" data-path="warm-core-rings.html"><a href="warm-core-rings.html#data-processing-36"><i class="fa fa-check"></i><b>54.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="54.1.5" data-path="warm-core-rings.html"><a href="warm-core-rings.html#plotting-45"><i class="fa fa-check"></i><b>54.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="55" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html"><i class="fa fa-check"></i><b>55</b> Wind Energy Delvelopment Speed</a>
+<ul>
+<li class="chapter" data-level="55.1" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html#methods-55"><i class="fa fa-check"></i><b>55.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="55.1.1" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html#data-sources-58"><i class="fa fa-check"></i><b>55.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="55.1.2" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html#data-analysis-56"><i class="fa fa-check"></i><b>55.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="55.1.3" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html#data-processing-37"><i class="fa fa-check"></i><b>55.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="55.1.4" data-path="wind-energy-delvelopment-speed.html"><a href="wind-energy-delvelopment-speed.html#plotting-46"><i class="fa fa-check"></i><b>55.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="56" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html"><i class="fa fa-check"></i><b>56</b> Fisheries Revenue in Wind Development Areas</a>
+<ul>
+<li class="chapter" data-level="56.1" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html#methods-56"><i class="fa fa-check"></i><b>56.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="56.1.1" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html#data-sources-59"><i class="fa fa-check"></i><b>56.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="56.1.2" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html#data-analysis-57"><i class="fa fa-check"></i><b>56.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="56.1.3" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html#data-processing-38"><i class="fa fa-check"></i><b>56.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="56.1.4" data-path="fisheries-revenue-in-wind-development-areas.html"><a href="fisheries-revenue-in-wind-development-areas.html#plotting-47"><i class="fa fa-check"></i><b>56.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="57" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html"><i class="fa fa-check"></i><b>57</b> Wind lease areas and habitat occupancy overlap</a>
+<ul>
+<li class="chapter" data-level="57.1" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html#methods-57"><i class="fa fa-check"></i><b>57.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="57.1.1" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html#data-extraction-38"><i class="fa fa-check"></i><b>57.1.1</b> Data extraction</a></li>
+<li class="chapter" data-level="57.1.2" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html#data-analysis-58"><i class="fa fa-check"></i><b>57.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="57.1.3" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html#data-processing-39"><i class="fa fa-check"></i><b>57.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="57.1.4" data-path="wind-lease-areas-and-habitat-occupancy-overlap.html"><a href="wind-lease-areas-and-habitat-occupancy-overlap.html#plotting-48"><i class="fa fa-check"></i><b>57.1.4</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="58" data-path="zooabund.html"><a href="zooabund.html"><i class="fa fa-check"></i><b>58</b> Zooplankton</a>
+<ul>
+<li class="chapter" data-level="58.1" data-path="zooabund.html"><a href="zooabund.html#methods-58"><i class="fa fa-check"></i><b>58.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="58.1.1" data-path="zooabund.html"><a href="zooabund.html#data-sources-60"><i class="fa fa-check"></i><b>58.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="58.1.2" data-path="zooabund.html"><a href="zooabund.html#data-extraction-39"><i class="fa fa-check"></i><b>58.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="58.1.3" data-path="zooabund.html"><a href="zooabund.html#data-analysis-59"><i class="fa fa-check"></i><b>58.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="58.1.4" data-path="zooabund.html"><a href="zooabund.html#data-processing-40"><i class="fa fa-check"></i><b>58.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="58.1.5" data-path="zooabund.html"><a href="zooabund.html#plotting-49"><i class="fa fa-check"></i><b>58.1.5</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="59" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>59</b> Glossary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Technical Documentation, State of the Ecosystem Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="refs" class="references hanging-indent">
+<div>
+<p>ACC. 2017. “Maryland Aquaculture Coordinating Council: Annual Report 2017.” Annapolis, MD: Maryland Aquaculture Coordinating Council.</p>
+</div>
+<div>
+<p>Adams, Robert L. A. 1973. “Uncertainty in Nature, Cognitive Dissonance, and the Perceptual Distortion of Environmental Information: Weather Forecasts and New England Beach Trip Decisions.” <em>Economic Geography</em> 49 (4): 287–97. <a href="https://doi.org/10.2307/143232">https://doi.org/10.2307/143232</a>.</p>
+</div>
+<div>
+<p>Azarovitz, Thomas R. 1981. “A brief historical review of the Woods Hole Laboratory trawl survey time series.” In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.</p>
+</div>
+<div>
+<p>Backus, Richard H., and Donald W. Bourne, eds. 1987. <em>Georges Bank</em>. Cambridge, MA: The MIT Press.</p>
+</div>
+<div>
+<p>Balk, Bert M. 2010. “An assumption-free framework for measuring productivity change.” <em>Review of Income and Wealth</em> 56 (s1): S224–S256. <a href="https://doi.org/10.1111/j.1475-4991.2010.00388.x">https://doi.org/10.1111/j.1475-4991.2010.00388.x</a>.</p>
+</div>
+<div>
+<p>Bean, Kelcie. 2020. “Investigating Patterns in Proximate Composition and Energy Density of Northwest Atlantic Forage Species.” Master’s thesis, University of Dartmouth, Department of Biology.</p>
+</div>
+<div>
+<p>Beardsley, Robert C., David C. Chapman, Kenneth H. Brink, Steven R. Ramp, and Ronald Schlitz. 1985. “The Nantucket Shoals Flux Experiment (NSFE79). Part I: A Basic Description of the Current and Temperature Variability.” <em>Journal of Physical Oceanography</em> 15 (6): 713–48. <a href="https://doi.org/10.1175/1520-0485(1985)015%3C0713:TNSFEP%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1985)015&lt;0713:TNSFEP&gt;2.0.CO;2</a>.</p>
+</div>
+<div>
+<p>Behrenfeld, Michael J., and Paul G. Falkowski. 1997. “Photosynthetic Rates Derived from Satellite-Based Chlorophyll Concentration.” <em>Limnology and Oceanography</em> 42 (1): 1–20. <a href="https://doi.org/10.4319/lo.1997.42.1.0001">https://doi.org/10.4319/lo.1997.42.1.0001</a>.</p>
+</div>
+<div>
+<p>Bisack, K. D., and G. Magnusson. 2014. “Measuring the Economic Value of Increased Precision in Scientific Estimates of Marine Mammal Abundance and Bycatch.” <em>North American Journal of Fisheries Management</em> 34 (2): 311–21. <a href="https://doi.org/10.1080/02755947.2013.869281">https://doi.org/10.1080/02755947.2013.869281</a>.</p>
+</div>
+<div>
+<p>Bivand, Roger, Tim Keitt, and Barry Rowlingson. 2018. <em>Rgdal: Bindings for the ’Geospatial’ Data Abstraction Library</em>. <a href="https://CRAN.R-project.org/package=rgdal">https://CRAN.R-project.org/package=rgdal</a>.</p>
+</div>
+<div>
+<p>Bivand, Roger, Colin Rundel, Edzer Pebesma, and Karl O. Hufthammer. 2011. “rgeos: Interface to Geometry Engine–Open Source (GEOS).” <a href="http://scholar.google.com/scholar?hl=en%7B\&amp;%7DbtnG=Search%7B\&amp;%7Dq=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS)%7B\#%7D0">http://scholar.google.com/scholar?hl=en{\&amp;}btnG=Search{\&amp;}q=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS){\#}0</a>.</p>
+</div>
+<div>
+<p>Blackwell, Brian G., Michael L. Brown, and David W. Willis. 2000. “Relative Weight (Wr) Status and Current Use in Fisheries Assessment and Management.” <em>Reviews in Fisheries Science</em> 8 (1): 1–44. <a href="https://doi.org/10.1080/10641260091129161">https://doi.org/10.1080/10641260091129161</a>.</p>
+</div>
+<div>
+<p>Blasiak, Robert, James L. Anderson, Peter Bridgewater, Ken Furuya, Benjamin S. Halpern, Hisashi Kurokura, Joji Morishita, Nobuyuki Yagi, and Akane Minohara. 2014. “Paradigms of Sustainable Ocean Management.” <em>Marine Policy</em> 48: 206–11. <a href="https://doi.org/10.1016/j.marpol.2014.03.021">https://doi.org/10.1016/j.marpol.2014.03.021</a>.</p>
+</div>
+<div>
+<p>Boundy, Michael J., Andrew I. Selwood, D. Tim Harwood, Paul S. McNabb, and Andrew D. Turner. 2015. “Development of a sensitive and selective liquid chromatography-mass spectrometry method for high throughput analysis of paralytic shellfish toxins using graphitised carbon solid phase extraction.” <em>Journal of Chromatography A</em> 1387: 1–12. <a href="https://doi.org/10.1016/j.chroma.2015.01.086">https://doi.org/10.1016/j.chroma.2015.01.086</a>.</p>
+</div>
+<div>
+<p>Brewin, Robert J. W., Stefano Ciavatta, Shubha Sathyendranath, Thomas Jackson, Gavin Tilstone, Kieran Curran, Ruth L. Airs, et al. 2017. “Uncertainty in Ocean-Color Estimates of Chlorophyll for Phytoplankton Groups.” <em>Frontiers in Marine Science</em> 4: 104. <a href="https://doi.org/10.3389/fmars.2017.00104">https://doi.org/10.3389/fmars.2017.00104</a>.</p>
+</div>
+<div>
+<p>Brewin, Robert J. W., Shubha Sathyendranath, Takafumi Hirata, Samantha J. Lavender, Rosa M. Barciela, and Nick J. Hardman-Mountford. 2010. “A Three-Component Model of Phytoplankton Size Class for the Atlantic Ocean.” <em>Ecological Modelling</em> 221 (11): 1472–83. <a href="https://doi.org/https://doi.org/10.1016/j.ecolmodel.2010.02.014">https://doi.org/https://doi.org/10.1016/j.ecolmodel.2010.02.014</a>.</p>
+</div>
+<div>
+<p>Brown, Shandel Marie. 2015. “"We Have the Best Life There Ever Was": Linking Sense of Place and Adaptive Capacity in Nova Scotia’s Coastal Communities.” In <em>Thesis, Masters in Environmental Affairs</em>. University of Waterloo. <a href="http://hdl.handle.net/10012/9408">http://hdl.handle.net/10012/9408</a>.</p>
+</div>
+<div>
+<p>Calvo, Lisa M. 2017. “New Jersey Shellfish Aquaculture Situation and Outlook Report: 2015 Production Year.” New Jersey Sea Grant Consortium; Haskin Shellfish Research Laboratory, Rutgers University. <a href="https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture%7B\_%7DSurvey%7B\_%7DYr2015.pdf">https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture{\_}Survey{\_}Yr2015.pdf</a>.</p>
+</div>
+<div>
+<p>Campbell, Janet W. 1995. “The Lognormal Distribution as a Model for Bio-Optical Variability in the Sea.” <em>Journal of Geophysical Research: Oceans</em> 100 (C7): 13237–54. <a href="https://doi.org/10.1029/95JC00458">https://doi.org/10.1029/95JC00458</a>.</p>
+</div>
+<div>
+<p>Casey, Kenneth S., Tess B. Brandon, Peter Cornillon, and Robert Evans. 2010. “The past, present, and future of the AVHRR pathfinder SST program.” In <em>Oceanography from Space: Revisited</em>, 273–87. <a href="https://doi.org/10.1007/978-90-481-8681-5_16">https://doi.org/10.1007/978-90-481-8681-5_16</a>.</p>
+</div>
+<div>
+<p>Castelao, Renato, Scott Glenn, and Oscar Schofield. 2010. “Temperature, Salinity, and Density Variability in the Central Middle Atlantic Bight.” <em>Journal of Geophysical Research: Oceans</em> 115 (C10). <a href="https://doi.org/10.1029/2009JC006082">https://doi.org/10.1029/2009JC006082</a>.</p>
+</div>
+<div>
+<p>Castelao, Renato, Scott Glenn, Oscar Schofield, Robert Chant, John Wilkin, and Josh Kohut. 2008. “Seasonal Evolution of Hydrographic Fields in the Central Middle Atlantic Bight from Glider Observations.” <em>Geophysical Research Letters</em> 35 (3). <a href="https://doi.org/10.1029/2007GL032335">https://doi.org/10.1029/2007GL032335</a>.</p>
+</div>
+<div>
+<p>Chin, Toshio Michael, Jorge Vazquez-Cuervo, and Edward M. Armstrong. 2017a. “A Multi-Scale High-Resolution Analysis of Global Sea Surface Temperature.” <em>Remote Sensing of Environment</em> 200: 154–69. <a href="https://doi.org/10.1016/j.rse.2017.07.029">https://doi.org/10.1016/j.rse.2017.07.029</a>.</p>
+</div>
+<div>
+<p>———. 2017b. “A Multi-Scale High-Resolution Analysis of Global Sea Surface Temperature.” <em>Remote Sensing of Environment</em> 200: 154–69. <a href="https://doi.org/https://doi.org/10.1016/j.rse.2017.07.029">https://doi.org/https://doi.org/10.1016/j.rse.2017.07.029</a>.</p>
+</div>
+<div>
+<p>Clay, Patricia M., and Julia Olson. 2007. “Defining Fishing Communities: Issues in Theory and Practice.” <em>Napa Bulletin</em> 28 (1): 27–42. <a href="https://doi.org/10.1525/napa.2007.28.1.27">https://doi.org/10.1525/napa.2007.28.1.27</a>.</p>
+</div>
+<div>
+<p>———. 2008. “Defining‘Fishing Communities’: Vulnerability and the Magnuson-Stevens Fishery Conservation and Management Act.” <em>Human Ecology Review</em> 15 (2): 143. <a href="https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf">https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf</a>.</p>
+</div>
+<div>
+<p>Colburn, Lisa L., and Michael Jepson. 2012. “Social Indicators of Gentrification Pressure in Fishing Communities: A Context for Social Impact Assessment.” <em>Coastal Management</em> 40 (3): 289–300. <a href="https://doi.org/10.1080/08920753.2012.677635">https://doi.org/10.1080/08920753.2012.677635</a>.</p>
+</div>
+<div>
+<p>Colburn, Lisa L., Michael Jepson, Changhua Weng, Tarsila Seara, Jeremy Weiss, and Jonathan A. Hare. 2016. “Indicators of Climate Change and Social Vulnerability in Fishing Dependent Communities Along the Eastern and Gulf Coasts of the United States.” <em>Marine Policy</em> 74: 323–33. <a href="https://doi.org/10.1016/j.marpol.2016.04.030">https://doi.org/10.1016/j.marpol.2016.04.030</a>.</p>
+</div>
+<div>
+<p>Cortes-Vazquez, Jose A., and Morgan Zedalis. 2013. “Identity and Native Species Conservation: Similar Historical Ecologies from Idaho to Spain.” <em>Human Ecology</em> 41 (6): 937–45. <a href="https://doi.org/10.1007/s10745-013-9570-3">https://doi.org/10.1007/s10745-013-9570-3</a>.</p>
+</div>
+<div>
+<p>Cren, E. D. Le. 1951. “The Length-Weight Relationship and Seasonal Cycle in Gonad Weight and Condition in the Perch (Perca fluviatilis).” <em>The Journal of Animal Ecology</em> 20 (2): 201. <a href="https://doi.org/10.2307/1540">https://doi.org/10.2307/1540</a>.</p>
+</div>
+<div>
+<p>Cross, Robin M, and Rolf Färe. 2009. “Value data and the Bennet price and quantity indicators.” <em>Economics Letters</em> 102 (1): 19–21. <a href="https://doi.org/10.1016/j.econlet.2008.10.003">https://doi.org/10.1016/j.econlet.2008.10.003</a>.</p>
+</div>
+<div>
+<p>Das, Chhandita. 2013. “Northeast Trip Cost Data - Overview, Estimation, and Predictions.” <em>NOAA Tehnical Memorandum</em> NMFS_NE_227: 20.</p>
+</div>
+<div>
+<p>———. 2014. “An Overview of the Annual Cost Survey Protocol and Results in the Northeastern Region (2007-2009).” <em>NOAA Technical Memorandum</em> NMFS-NE-226: 34.</p>
+</div>
+<div>
+<p>Degnbol, P., and A. Jarre. 2004. “Review of Indicators in Fisheries Management – a Development Perspective.” <em>African Journal of Marine Science</em> 26 (1): 303–26. <a href="https://doi.org/10.2989/18142320409504063">https://doi.org/10.2989/18142320409504063</a>.</p>
+</div>
+<div>
+<p>DePiper, Geret S., Sarah K. Gaichas, Sean M. Lucey, Patricia Pinto da Silva, M. Robin Anderson, Heather Breeze, Alida Bundy, et al. 2017. “Operationalizing Integrated Ecosystem Assessments Within a Multidisciplinary Team: Lessons Learned from a Worked Example.” <em>ICES Journal of Marine Science</em> 74 (8): 2076–86. <a href="https://doi.org/10.1093/icesjms/fsx038">https://doi.org/10.1093/icesjms/fsx038</a>.</p>
+</div>
+<div>
+<p>Donatuto, Jamie, and Melissa R. Poe. 2015. “Evaluating Sense of Place as a Domain of Human Wellbeing for Puget Sound Restoration.” Final Report. Tacoma, WA: Puget Sound Institute. <a href="https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf">https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf</a>.</p>
+</div>
+<div>
+<p>Donkersloot, Rachel. 2010. “The Politics of Place and Identity in an Irish Fishing Locale.” <em>Journal of Maritime Studies</em> 9 (2): 33–53. <a href="http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf">http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf</a>.</p>
+</div>
+<div>
+<p>Duan, Naihua. 1983. “Smearing estimate: A nonparametric retransformation method.” <em>Journal of the American Statistical Association</em> 78 (383): 605–10. <a href="https://doi.org/10.1080/01621459.1983.10478017">https://doi.org/10.1080/01621459.1983.10478017</a>.</p>
+</div>
+<div>
+<p>Elizabeth Jewett, Rik Wanninkhof, Emily Osborne, and Kenric Osgood. 2020. <em>NOAA Ocean and Great Lakes Acidification Research Plan 2020-2029</em>. <a href="https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf">https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf</a>.</p>
+</div>
+<div>
+<p>Evans, Jeffrey S., and Melanie A. Murphy. 2018. <em>RfUtilities</em>. <a href="https://cran.r-project.org/package=rfUtilities">https://cran.r-project.org/package=rfUtilities</a>.</p>
+</div>
+<div>
+<p>Everett, Sally, and Cara Aitchison. 2008. “The Role of Food Tourism in Sustaining Regional Identity: A Case Study of Cornwall, South West England.” <em>Journal of Sustainable Tourism</em> 16 (2): 150–67. <a href="https://doi.org/10.2167/jost696.0">https://doi.org/10.2167/jost696.0</a>.</p>
+</div>
+<div>
+<p>Färe, Rolf, James E. Kirkley, and John B. Walden. 2006. “Adjusting Technical Efficiency to Reflect Discarding: The Case of the U.S. Georges Bank Multi-Species Otter Trawl Fishery.” <em>Fisheries Research</em> 78 (2-3): 257–65. <a href="https://doi.org/10.1016/j.fishres.2005.12.014">https://doi.org/10.1016/j.fishres.2005.12.014</a>.</p>
+</div>
+<div>
+<p>Forsyth, Jacob Samuel Tse, Magdalena Andres, and Glen G. Gawarkiewicz. 2015. “Recent Accelerated Warming of the Continental Shelf Off New Jersey: Observations from the CMV Oleander Expendable Bathythermograph Line.” <em>Journal of Geophysical Research: Oceans</em> 120 (3): 2370–84. <a href="https://doi.org/10.1002/2014JC010516">https://doi.org/10.1002/2014JC010516</a>.</p>
+</div>
+<div>
+<p>Fratantoni, Paula S., Tamara Holzwarth-Davis, and Maureen H. Taylor. 2015. <em>Description of Oceanographic Conditions on the Northeast U.S. Continental Shelf During 2014. Northeast Fisheries Science Center Reference Document 15-21</em>. US Dep. Commer., National Marine Fisheries Service. <a href="https://repository.library.noaa.gov/view/noaa/5047">https://repository.library.noaa.gov/view/noaa/5047</a>.</p>
+</div>
+<div>
+<p>Friedland, Kevin D., and Jon A. Hare. 2007. “Long-term trends and regime shifts in sea surface temperature on the continental shelf of the northeast United States.” <em>Continental Shelf Research</em> 27: 2313–28. <a href="https://doi.org/10.1016/j.csr.2007.06.001">https://doi.org/10.1016/j.csr.2007.06.001</a>.</p>
+</div>
+<div>
+<p>Friedland, Kevin D., Joseph A. Langan, Scott I. Large, Rebecca L. Selden, Jason S. Link, Reg A. Watson, and Jeremy S. Collie. 2020. “Changes in Higher Trophic Level Productivity, Diversity and Niche Space in a Rapidly Warming Continental Shelf Ecosystem.” <em>Science of the Total Environment</em> 704: 135270. <a href="https://doi.org/https://doi.org/10.1016/j.scitotenv.2019.135270">https://doi.org/https://doi.org/10.1016/j.scitotenv.2019.135270</a>.</p>
+</div>
+<div>
+<p>Friedland, Kevin D, M Conor McManus, Ryan E Morse, and Jason S Link. 2018. “Event Scale and Persistent Drivers of Fish and Macroinvertebrate Distributions on the Northeast Us Shelf.” <em>ICES Journal of Marine Science</em>. <a href="https://doi.org/10.1093/icesjms/fsy167">https://doi.org/10.1093/icesjms/fsy167</a>.</p>
+</div>
+<div>
+<p>Friedman, Ariell, Oscar Pizarro, Stefan B. Williams, and Matthew Johnson-Roberson. 2012. “Multi-Scale Measures of Rugosity, Slope and Aspect from Benthic Stereo Image Reconstructions.” <em>PLoS ONE</em> 7 (12). <a href="https://doi.org/10.1371/journal.pone.0050440">https://doi.org/10.1371/journal.pone.0050440</a>.</p>
+</div>
+<div>
+<p>Froese, R, and D Pauly, eds. 2019. <em>Fishbase</em> (version 08/2019).</p>
+</div>
+<div>
+<p>Gaichas, Sarah K., Richard J. Seagraves, Jessica M. Coakley, Geret S. DePiper, Vincent G. Guida, Jonathan A. Hare, Paul J. Rago, and Michael J. Wilberg. 2016. “A Framework for Incorporating Species, Fleet, Habitat, and Climate Interactions into Fishery Management.” <em>Frontiers in Marine Science</em> 3. <a href="https://doi.org/10.3389/fmars.2016.00105">https://doi.org/10.3389/fmars.2016.00105</a>.</p>
+</div>
+<div>
+<p>Gamer, Matthias, Jim Lemon, and Ian Fellows Puspendra Singh. 2012. <em>Irr: Various Coefficients of Interrater Reliability and Agreement</em>. <a href="https://CRAN.R-project.org/package=irr">https://CRAN.R-project.org/package=irr</a>.</p>
+</div>
+<div>
+<p>Gangopadhyay, Avijit, Glen Gawarkiewicz, Etige Nishchitha Sandeepana Silva, Mahmud Monim, and Jenifer Clark. 2019. “An Observed Regime Shift in the Formation of Warm Core Rings from the Gulf Stream.” <em>Scientific Reports</em> 9 (December). <a href="https://doi.org/10.1038/s41598-019-48661-9">https://doi.org/10.1038/s41598-019-48661-9</a>.</p>
+</div>
+<div>
+<p>Garrison, Lance P, and Jason S Link. 2000. “Dietary guild structure of the fish community in the Northeast United States continental shelf ecosystem.” <em>Marine Ecology Progress Series</em> 202: 231–40. <a href="https://doi.org/10.3354/meps202231">https://doi.org/10.3354/meps202231</a>.</p>
+</div>
+<div>
+<p>Gawarkiewicz, Glen G., Robert E. Todd, Albert J. Plueddemann, Magdalena Andres, and James P. Manning. 2012. “Direct Interaction Between the Gulf Stream and the Shelfbreak South of New England.” <em>Scientific Reports</em> 2 (August): 553. <a href="https://doi.org/10.1038/srep00553">https://doi.org/10.1038/srep00553</a>.</p>
+</div>
+<div>
+<p>Gende, Scott M, and Michael F Sigler. 2006. “Persistence of Forage Fish ‘Hot Spots’ and Its Association with Foraging Steller Sea Lions (Eumetopias Jubatus) in Southeast Alaska.” <em>Deep Sea Research Part II: Topical Studies in Oceanography</em> 53 (3-4): 432–41.</p>
+</div>
+<div>
+<p>Georgianna, Daniel, Min-Yang Lee, and John Walden. 2017. “Contrasting trends in the Northeast United States groundfish and scallop processing industries.” <em>Marine Policy</em>. <a href="https://doi.org/10.1016/j.marpol.2017.08.025">https://doi.org/10.1016/j.marpol.2017.08.025</a>.</p>
+</div>
+<div>
+<p>“GHRSST Level 4 Mur Global Foundation Sea Surface Temperature Analysis (V4.1).” 2015. NASA Physical Oceanography DAAC. <a href="https://doi.org/10.5067/GHGMR-4FJ04">https://doi.org/10.5067/GHGMR-4FJ04</a>.</p>
+</div>
+<div>
+<p>Glenn, Scott, Robert Arnone, Trisha Bergmann, W. Paul Bissett, Michael Crowley, Jay Cullen, Joe Gryzmski, et al. 2004. “Biogeochemical Impact of Summertime Coastal Upwelling on the New Jersey Shelf.” <em>Journal of Geophysical Research: Oceans</em> 109 (C12). <a href="https://doi.org/10.1029/2003JC002265">https://doi.org/10.1029/2003JC002265</a>.</p>
+</div>
+<div>
+<p>Gong, D., J. T. Kohut, and S. M. Glenn. 2010. “Seasonal Climatology of Wind-Driven Circulation on the New Jersey Shelf.” <em>Journal of Geophysical Research: Oceans</em> 115 (C4). <a href="https://doi.org/10.1029/2009JC005520">https://doi.org/10.1029/2009JC005520</a>.</p>
+</div>
+<div>
+<p>Gray, Steven A., Stefan Gray, Linda J. Cox, and Sarah Henly-Shepard. 2013. “Mental Modeler: A Fuzzy-Logic Cognitive Mapping Modeling Tool for Adaptive Environmental Management.” In, 965–73. IEEE. <a href="https://doi.org/10.1109/HICSS.2013.399">https://doi.org/10.1109/HICSS.2013.399</a>.</p>
+</div>
+<div>
+<p>Grifell-Tatjé, Emili, and CA Knox Lovell. 2004. “Decomposing the dividend.” <em>Journal of Comparative Economics</em> 32 (3): 500–518. <a href="https://doi.org/10.1016/j.jce.2004.05.002">https://doi.org/10.1016/j.jce.2004.05.002</a>.</p>
+</div>
+<div>
+<p>Hall, C Scott, and Stephen W Kress. 2004. “Comparison of Common Tern Reproductive Performance at Four Restored Colonies Along the Maine Coast, 1991-2002.” <em>Waterbirds</em> 27 (4): 424–34. <a href="https://doi.org/%2010.1675/1524-4695(2004)027%5B0424:COCTRP%5D2.0.CO;2">https://doi.org/ 10.1675/1524-4695(2004)027[0424:COCTRP]2.0.CO;2</a>.</p>
+</div>
+<div>
+<p>Hall, C Scott, Stephen W Kress, and Curtice R Griffin. 2000. “Composition, Spatial and Temporal Variation of Common and Arctic Tern Chick Diets in the Gulf of Maine.” <em>Waterbirds</em>, 430–39. <a href="https://doi.org/10.1675/1524-4695(2004)027%5B0424:COCTRP%5D2.0.CO;2">https://doi.org/10.1675/1524-4695(2004)027[0424:COCTRP]2.0.CO;2</a>.</p>
+</div>
+<div>
+<p>Halpern, Benjamin S, Catherine Longo, Darren Hardy, Karen L McLeod, Jameal F Samhouri, Steven K Katona, Kristin Kleisner, et al. 2012. “An Index to Assess the Health and Benefits of the Global Ocean.” <em>Nature</em> 488 (7413): 615–20. <a href="https://doi.org/10.1038/nature11397">https://doi.org/10.1038/nature11397</a>.</p>
+</div>
+<div>
+<p>Hardison, Sean, Charles T Perretti, Geret S DePiper, and Andrew Beet. 2019. “A Simulation Study of Trend Detection Methods for Integrated Ecosystem Assessment.” <em>ICES Journal of Marine Science</em>. <a href="https://doi.org/10.1093/icesjms/fsz097">https://doi.org/10.1093/icesjms/fsz097</a>.</p>
+</div>
+<div>
+<p>Hare, JA, WE Morrison, MW Nelson, MM Stachura, EJ Teeters, and RB Griffis. 2016. “A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast Us Continental Shelf.” <em>PLoS ONE</em> 11.</p>
+</div>
+<div>
+<p>Hayes, Sean Arthur, Elizabeth Josephson, Katherine Maze-Foley, Patricia E Rosel, Barbie L Byrd, Timothy VN Cole, Laura Engleby, et al. 2017. “US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2016.” <em>NOAA Technical Memorandum NMFS-NE-241</em>, no. June: 274. <a href="http://nova.nefsc.noaa.gov/palit/Waring%20et%20al.%7B\_%7D2013%7B\_%7DNOAA%20Tech%20Memo%20NMFS-NE-223%7B\_%7DU%20.%20S%20.%20Atlantic%20and%20Gulf%20of%20Mexico%20Marine%20Mammal%20Stock%20Assessments%20-%202012.pdf">http://nova.nefsc.noaa.gov/palit/Waring et al.{\_}2013{\_}NOAA Tech Memo NMFS-NE-223{\_}U . S . Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2012.pdf</a>.</p>
+</div>
+<div>
+<p>Health, Virginia Department of. 2011. “Virginia Recreational Water Guidance for Microcystin and Microcystis Blooms: Provisional Guidance.” Richmond, VA: Virginia Department of Health. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf</a>.</p>
+</div>
+<div>
+<p>Hess, Jeremy J., Josephine N. Malilay, and Alan J. Parkinson. 2008. “Climate Change: The Importance of Place.” <em>American Journal of Preventive Medicine</em> 35 (5): 468–78. <a href="https://doi.org/10.1016/j.amepre.2008.08.024">https://doi.org/10.1016/j.amepre.2008.08.024</a>.</p>
+</div>
+<div>
+<p>Hiemstra, P. H., E. J. Pebesma, C. J. W. Twenh"ofel, and G. B. M. Heuvelink. 2008. “Real-time automatic interpolation of ambient gamma dose rates from the Dutch Radioactivity Monitoring Network.” <em>Computers &amp; Geosciences</em>. <a href="https://doi.org/10.1016/j.cageo.2008.10.011">https://doi.org/10.1016/j.cageo.2008.10.011</a>.</p>
+</div>
+<div>
+<p>Hoagland, P., and A. Meeks. 2000. “‘The Demand for Whalewatching at Stellwagen Bank National Marine Sanctuary’ in: The Economic Contribution of Whalewatching to Regional Economies: Perspectives from Two National Marine Sanctuaries.” In <em>NOAA Marine Sancuaries Conservation Series</em>, 00–02.</p>
+</div>
+<div>
+<p>Hobday, Alistair J., Lisa V. Alexander, Sarah E. Perkins, Dan A. Smale, Sandra C. Straub, Eric C. J. Oliver, Jessica A. Benthuysen, et al. 2016. “A Hierarchical Approach to Defining Marine Heatwaves.” <em>Progress in Oceanography</em> 141: 227–38. <a href="https://doi.org/https://doi.org/10.1016/j.pocean.2015.12.014">https://doi.org/https://doi.org/10.1016/j.pocean.2015.12.014</a>.</p>
+</div>
+<div>
+<p>Hobson, R. D. 1972. <em>Surface roughness in topography: quantitative approach</em>. New York, New York: Harper; Row.</p>
+</div>
+<div>
+<p>Host, G E, P L Polzer, D J Mladenoff, M A White, and T R Crow. 1996. “A quantitative approach to developing regional ecosystem classifications.” <em>Ecological Applications</em> 6 (2): 608–18. <a href="https://doi.org/10.2307/2269395">https://doi.org/10.2307/2269395</a>.</p>
+</div>
+<div>
+<p>Houghton, R. W., R. Schlitz, R. C. Beardsley, B. Butman, and J. L. Chamberlin. 1982. “Middle Atlantic Bight Cold Pool: Evolution of the Temperature Structure During Summer 1979.” <em>J. Phys. Oceanogr.; (United States)</em> 12:10 (October). <a href="https://doi.org/10.1175/1520-0485(1982)012%3C1019:TMABCP%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1982)012&lt;1019:TMABCP&gt;2.0.CO;2</a>.</p>
+</div>
+<div>
+<p>Hu, Chuanmin, Zhongping Lee, and Bryan Franz. 2012. “Chlorophyll a Algorithms for Oligotrophic Oceans: A Novel Approach Based on Three-Band Reflectance Difference.” <em>Journal of Geophysical Research</em> 117 (C1): C01011. <a href="https://doi.org/10.1029/2011JC007395">https://doi.org/10.1029/2011JC007395</a>.</p>
+</div>
+<div>
+<p>Huang, Boyin, Peter W. Thorne, Viva F. Banzon, Tim Boyer, Gennady Chepurin, Jay H. Lawrimore, Matthew J. Menne, Thomas M. Smith, Russell S. Vose, and Huai Min Zhang. 2017a. “NOAA Extended Reconstructed Sea Surface Temperature (ERSST), Version 5.” <a href="https://doi.org/10.7289/V5T72FNM">https://doi.org/10.7289/V5T72FNM</a>.</p>
+</div>
+<div>
+<p>Huang, Boyin, Peter W Thorne, Viva F Banzon, Tim Boyer, Gennady Chepurin, Jay H Lawrimore, Matthew J Menne, Thomas M Smith, Russell S Vose, and Huai-Min Zhang. 2017b. “Extended Reconstructed Sea Surface Temperature, Version 5 (Ersstv5): Upgrades, Validations, and Intercomparisons.” <em>Journal of Climate</em> 30 (20): 8179–8205. <a href="https://doi.org/10.1175/JCLI-D-16-0836.1">https://doi.org/10.1175/JCLI-D-16-0836.1</a>.</p>
+</div>
+<div>
+<p>Hudson, Karen. 2017. “Virginia Shellfish Aquaculture Situation and Outlook Report : Results of the 2016 Virginia Shellfish Aquaculture Crop Reporting Survey.” Virginia Institute of Marine Science, College of William; Mary. <a href="https://doi.org/10.21220/V51K6T">https://doi.org/10.21220/V51K6T</a>.</p>
+</div>
+<div>
+<p>Hurlbert, Stuart H. 1971. “The Nonconcept of Species Diversity: A Critique and Alternative Parameters.” <em>Ecology</em> 52 (4): 577–86. <a href="https://doi.org/https://doi.org/10.2307/1934145">https://doi.org/https://doi.org/10.2307/1934145</a>.</p>
+</div>
+<div>
+<p>International, AOAC. 2005. “AOAC Official Method 959.08. Paralytic shellfish poison. Biological method. Final action.” In <em>AOAC Official Methods for Analysis</em>, 18th ed., 79–80. Gaithersburg.</p>
+</div>
+<div>
+<p>IPCC. 2014. “Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change.” <a href="https://doi.org/10.1017/CBO9781107415324">https://doi.org/10.1017/CBO9781107415324</a>.</p>
+</div>
+<div>
+<p>Jacob, Steve, Priscilla Weeks, Benjamin G. Blount, and Michael Jepson. 2010. “Exploring fishing dependence in gulf coast communities.” <em>Marine Policy</em> 34 (6): 1307–14. <a href="https://doi.org/10.1016/j.marpol.2010.06.003">https://doi.org/10.1016/j.marpol.2010.06.003</a>.</p>
+</div>
+<div>
+<p>Jacob, Steve, Priscilla Weeks, Ben Blount, and Michael Jepson. 2013. “Development and evaluation of social indicators of vulnerability and resiliency for fishing communities in the Gulf of Mexico.” <em>Marine Policy</em> 37 (1): 86–95. <a href="https://doi.org/10.1016/j.marpol.2012.04.014">https://doi.org/10.1016/j.marpol.2012.04.014</a>.</p>
+</div>
+<div>
+<p>Jennings, Simon. 2005. “Indicators to Support an Ecosystem Approach to Fisheries.” <em>Fish and Fisheries</em> 6 (3): 212–32. <a href="https://doi.org/10.1111/j.1467-2979.2005.00189.x">https://doi.org/10.1111/j.1467-2979.2005.00189.x</a>.</p>
+</div>
+<div>
+<p>Jepson, Michael, and Lisa L. Colburn. 2013. “Development of Social Indicators of Fishing Community Vulnerability and Resilience in the US Southeast and Northeast Regions.” <em>NOAA Technical Memorandum NMFS-F/SPO-129 (US Dept Commerce, 2013)</em>. <a href="http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf">http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf</a>.</p>
+</div>
+<div>
+<p>Joyce, Terrence M, Young-Oh Kwon, Hyodae Seo, and Caroline C Ummenhofer. 2019. “Meridional Gulf Stream Shifts Can Influence Wintertime Variability in the North Atlantic Storm Track and Greenland Blocking.” <em>Geophysical Research Letters</em> 46 (3): 1702–8. <a href="https://doi.org/10.1029/2018GL081087">https://doi.org/10.1029/2018GL081087</a>.</p>
+</div>
+<div>
+<p>Kane, Joseph. 2007. “Zooplankton abundance trends on Georges Bank, 1977–2004.” <em>ICES Journal of Marine Science</em> 64 (5): 909–19. <a href="https://doi.org/10.1093/icesjms/fsm066">https://doi.org/10.1093/icesjms/fsm066</a>.</p>
+</div>
+<div>
+<p>———. 2011. “Multiyear variability of phytoplankton abundance in the Gulf of Maine.” <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. <a href="https://doi.org/10.1093/icesjms/fsr122">https://doi.org/10.1093/icesjms/fsr122</a>.</p>
+</div>
+<div>
+<p>Khakzad, Sorna, and David Griffith. 2016. “The Role of Fishing Material Culture in Communities’ Sense of Place as an Added-Value in Management of Coastal Areas.” <em>Journal of Marine and Island Cultures</em> 5 (2): 95–117. <a href="https://doi.org/10.1016/j.imic.2016.09.002">https://doi.org/10.1016/j.imic.2016.09.002</a>.</p>
+</div>
+<div>
+<p>Kinlan, Brian P., Arliss J. Winship, Timothy P. White, and John Christensen. 2016. “Modeling At-Sea Occurrence and Abundance of Marine Birds to Support Atlantic Marine Renewable Energy Planning Phase I Report.” <a href="https://www.boem.gov/ESPIS/5/5512.pdf">https://www.boem.gov/ESPIS/5/5512.pdf</a>.</p>
+</div>
+<div>
+<p>Kirk, John T. O. 1994. <em>Light and Photosynthesis in Aquatic Ecosystems</em>. Cambridge, UK: Cambridge University Press.</p>
+</div>
+<div>
+<p>Klain, Sarah C., Terre A. Satterfield, and Kai M. A. Chan. 2014. “What Matters and Why? Ecosystem Services and Their Bundled Qualities.” <em>Ecological Economics</em> 107: 310–20. <a href="https://doi.org/10.1016/j.ecolecon.2014.09.003">https://doi.org/10.1016/j.ecolecon.2014.09.003</a>.</p>
+</div>
+<div>
+<p>Kleisner, Kristin M., Michael J. Fogarty, Sally McGee, Jonathan A. Hare, Skye Moret, Charles T. Perretti, and Vincent S. Saba. 2017. “Marine species distribution shifts on the U.S. Northeast Continental Shelf under continued ocean warming.” <em>Progress in Oceanography</em> 153: 24–36. <a href="https://doi.org/10.1016/j.pocean.2017.04.001">https://doi.org/10.1016/j.pocean.2017.04.001</a>.</p>
+</div>
+<div>
+<p>Koehn, J. Zachary, Daniel R. Reineman, and John N. Kittinger. 2013. “Progress and Promise in Spatial Human Dimensions Research for Ecosystem-Based Ocean Planning.” <em>Marine Policy</em> 42: 31–38. <a href="https://doi.org/10.1016/j.marpol.2013.01.015">https://doi.org/10.1016/j.marpol.2013.01.015</a>.</p>
+</div>
+<div>
+<p>Lawson, John W., Alexandra M. Magalhães, and Edward H. Miller. 1998. “Important Prey Species of Marine Vertebrate Predators in the Northwest Atlantic: Proximate Composition and Energy Density.” <em>Marine Ecology Progress Series</em> 164: 13–20. <a href="http://www.jstor.org/stable/24825521">http://www.jstor.org/stable/24825521</a>.</p>
+</div>
+<div>
+<p>Lee, Min-Yang. 2010. “Economic Tradeoffs in the Gulf of Maine Ecosystem: Herring and Whale-Watching.” <em>Marine Policy</em> 34: 156–62. <a href="https://doi.org/10.1016/j.marpol.2009.06.001">https://doi.org/10.1016/j.marpol.2009.06.001</a>.</p>
+</div>
+<div>
+<p>———. 2014. “Hedonic Pricing of Atlantic Cod: Effects of Size, Freshness, and Gear.” <em>Marine Resource Economics</em> 29 (3). <a href="https://doi.org/10.1086/677769">https://doi.org/10.1086/677769</a>.</p>
+</div>
+<div>
+<p>Lee, Min-Yang, Scott Steinback, and Kristy Wallmo. 2017. “Applying a Bioeconomic Model to Recreational Fisheries Management: Groundfish in the Northeast United States.” <em>Marine Resource Economics</em> 32 (2): 191–216. <a href="https://doi.org/10.1086/690676">https://doi.org/10.1086/690676</a>.</p>
+</div>
+<div>
+<p>Lee, Min-Yang, and Eric M. Thunberg. 2013. “An Inverse Demand System for New England Groundfish: Welfare Analysis of the Transition to Catch Share Management.” <em>American Journal of Agricultural Economics</em> 95 (5). <a href="https://doi.org/10.1093/ajae/aat061">https://doi.org/10.1093/ajae/aat061</a>.</p>
+</div>
+<div>
+<p>Legendre, Pierre, and Loic Legendre. 1998. <em>Numerical Ecology</em>. <a href="https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2">https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2</a>.</p>
+</div>
+<div>
+<p>Lemley, Daniel A., and Janine B. Adams. 2019. “Eutrophication.” In <em>Encyclopedia of Ecology (Second Edition)</em>, edited by Brian Fath, Second Edition, 86–90. Oxford: Elsevier. <a href="https://doi.org/https://doi.org/10.1016/B978-0-12-409548-9.10957-1">https://doi.org/https://doi.org/10.1016/B978-0-12-409548-9.10957-1</a>.</p>
+</div>
+<div>
+<p>Lentz, S. J. 2003. “A Climatology of Salty Intrusions over the Continental Shelf from Georges Bank to Cape Hatteras.” <em>Journal of Geophysical Research</em> 108 (C10). <a href="https://doi.org/10.1029/2003JC001859">https://doi.org/10.1029/2003JC001859</a>.</p>
+</div>
+<div>
+<p>———. 2017. “Seasonal Warming of the Middle Atlantic Bight Cold Pool.” <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. <a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.</p>
+</div>
+<div>
+<p>Levin, Phillip S, Michael J Fogarty, Steven A Murawski, and David Fluharty. 2009. “Integrated Ecosystem Assessments: Developing the Scientific Basis for Ecosystem-Based Management of the Ocean.” <em>PLoS Biol</em> 7 (1): e1000014. <a href="https://doi.org/10.1371/journal.pbio.1000014">https://doi.org/10.1371/journal.pbio.1000014</a>.</p>
+</div>
+<div>
+<p>Li, X., W. Pichel, P. Clemente-Colón, V. Krasnopolsky, and J. Sapper. 2001. “Validation of Coastal Sea and Lake Surface Temperature Measurements Derived from Noaa/Avhrr Data.” <em>International Journal of Remote Sensing</em> 22 (7): 1285–1303. <a href="https://doi.org/10.1080/01431160151144350">https://doi.org/10.1080/01431160151144350</a>.</p>
+</div>
+<div>
+<p>Li, X., W. Pichel, E. Maturi, P. Clemente-Colón, and J. Sapper. 2001. “Deriving the Operational Nonlinear Multichannel Sea Surface Temperature Algorithm Coefficients for Noaa-15 Avhrr/3.” <em>International Journal of Remote Sensing</em> 22 (4): 699–704. <a href="https://doi.org/10.1080/01431160010013793">https://doi.org/10.1080/01431160010013793</a>.</p>
+</div>
+<div>
+<p>Liaw, Andy, and Matthew Wiener. 2002. “Classification and Regression by randomForest.” <em>R News</em> 2 (3): 18–22. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.</p>
+</div>
+<div>
+<p>Lim, Siew Hoon, and CA Knox Lovell. 2009. “Profit and productivity of US Class I railroads.” <em>Managerial and Decision Economics</em> 30 (7): 423–42. <a href="https://doi.org/10.1002/mde.1462">https://doi.org/10.1002/mde.1462</a>.</p>
+</div>
+<div>
+<p>Link, Jason, William Overholtz, John O’Reilly, Jack Green, David Dow, Debra Palka, Chris Legault, et al. 2008. “The Northeast U.S. Continental Shelf Energy Modeling and Analysis Exercise (EMAX): Ecological Network Model Development and Basic Ecosystem Metrics.” <em>Journal of Marine Systems</em> 74 (1–2): 453–74. <a href="https://doi.org/10.1016/j.jmarsys.2008.03.007">https://doi.org/10.1016/j.jmarsys.2008.03.007</a>.</p>
+</div>
+<div>
+<p>Link, Jason S. 2005. “Translating Ecosystem Indicators into Decision Criteria.” <em>ICES Journal of Marine Science</em> 62 (3): 569–76. <a href="https://doi.org/10.1016/j.icesjms.2004.12.015">https://doi.org/10.1016/j.icesjms.2004.12.015</a>.</p>
+</div>
+<div>
+<p>Link, Jason S, Carolyn A Griswold, Elizabeth T Methratta, Jessie Gunnard, Jon Brodziak, Tarsus Kenton, Laurel A Col, et al. 2006. <em>Documentation for the energy modeling and analysis exercise (EMAX)</em>. US Department of Commerce, National Oceanic; Atmospheric Administration.</p>
+</div>
+<div>
+<p>Link, J. S., C. T. Griswold, E. T. Methratta, and J. Gunnard, eds. 2006. <em>Documentation for the Energy Modeling and Analysis eXercise (EMAX). Northeast Fish. Sci. Cent. Ref. Doc. 06-15</em>. Northeast Fish. Sci. Cent. Ref. Doc. Woods Hole, MA: US Dep. Commer., National Marine Fisheries Service.</p>
+</div>
+<div>
+<p>Link, JS, and RA Watson. 2019. “Global ecosystem overfishing: Clear delineation within real limits to production.” <em>Science Advances</em> 5:6. <a href="https://doi.org/10.1126/sciadv.aav0474">https://doi.org/10.1126/sciadv.aav0474</a>.</p>
+</div>
+<div>
+<p>Longhurst, Alan R. 2007. <em>Ecological Geography of the Sea</em>. <a href="https://doi.org/10.1016/B978-0-12-455521-1.X5000-1">https://doi.org/10.1016/B978-0-12-455521-1.X5000-1</a>.</p>
+</div>
+<div>
+<p>Lord, Fabienne. 2011. “Understanding Social Impacts by Using New Variables and a Causal Model Diagram in New England Fisheries.” <em>Impact Assessment and Project Appraisal</em> 1: 59–68. <a href="https://doi.org/10.3152/146155111X12913679730476">https://doi.org/10.3152/146155111X12913679730476</a>.</p>
+</div>
+<div>
+<p>Madden, Chris, and Dennis Grossman. 2004. “A Framework for a Coastal/Marine Ecological Classification Standard (Cmecs).” <em>Special Paper - Geological Association of Canada</em>, January, 185–209.</p>
+</div>
+<div>
+<p>Maritorena, Stéphane, Odile Hembise Fanton D’Andon, Antoine Mangin, and David A Siegel. 2010. “Merged satellite ocean color data products using a bio-optical model: Characteristics,benefits and issues.” <em>Remote Sensing of Environment</em> 114: 1791–1804. <a href="https://doi.org/10.1016/j.rse.2010.04.002">https://doi.org/10.1016/j.rse.2010.04.002</a>.</p>
+</div>
+<div>
+<p>Matzarakis, A., and C. R. de Freitas, eds. 2001. “Proceedings of the First International Workshop on Climate, Tourism and Recreation.” In. Porto Carras, Greece.</p>
+</div>
+<div>
+<p>Mazerolle, Marc J. 2017. “AICcmodavg: model selection and multimodel inference based on (Q)AIC(c).” <a href="https://cran.r-project.org/package=AICcmodavg.">https://cran.r-project.org/package=AICcmodavg.</a></p>
+</div>
+<div>
+<p>McGoodwin, James R. 2001. “Understanding the Cultures of Fishing Communities: A Key to Fisheries Management and Food Security.” In. <a href="http://www.fao.org/docrep/004/y1290e/y1290e00.htm">http://www.fao.org/docrep/004/y1290e/y1290e00.htm</a>.</p>
+</div>
+<div>
+<p>Miller, Timothy, Jon Hare, and Larry Alade. 2016. “A State-Space Approach to Incorporating Environmental Effects on Recruitment in an Age-Structured Assessment Model with an Application to Southern New England Yellowtail Flounder.” <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 73 (February). <a href="https://doi.org/10.1139/cjfas-2015-0339">https://doi.org/10.1139/cjfas-2015-0339</a>.</p>
+</div>
+<div>
+<p>Miller, Timothy J., Jonathan A. Hare, and Larry A. Alade. 2016. “A State-Space Approach to Incorporating Environmental Effects on Recruitment in an Age-Structured Assessment Model with an Application to Southern New England Yellowtail Flounder.” <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 73 (8): 1261–70. <a href="https://doi.org/10.1139/cjfas-2015-0339">https://doi.org/10.1139/cjfas-2015-0339</a>.</p>
+</div>
+<div>
+<p>Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, R. W. Brown, and P. J. Rago. 2010. “Estimation of Albatross IV to Henry B. Bigelow Calibration Factors.” 10-05. Woods Hole, MA: National Marine Fisheries Service. <a href="https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf">https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf</a>.</p>
+</div>
+<div>
+<p>Milligan, Glenn W., and Martha C. Cooper. 1985. “An examination of procedures for determining the number of clusters in a data set.” <em>Psychometrika</em> 50 (2): 159–79. <a href="https://doi.org/10.1007/BF02294245">https://doi.org/10.1007/BF02294245</a>.</p>
+</div>
+<div>
+<p>Moore, Timothy S., and Christopher W. Brown. 2020. “Incorporating Environmental Data in Abundance-Based Algorithms for Deriving Phytoplankton Size Classes in the Atlantic Ocean.” <em>Remote Sensing of Environment</em> 240: 111689. <a href="https://doi.org/https://doi.org/10.1016/j.rse.2020.111689">https://doi.org/https://doi.org/10.1016/j.rse.2020.111689</a>.</p>
+</div>
+<div>
+<p>Morel, André. 1991. “Light and Marine Photosynthesis: A Spectral Model with Geochemical and Climatological Implications.” <em>Progress in Oceanography</em> 26 (3): 263–306. <a href="https://doi.org/10.1016/0079-6611(91)90004-6">https://doi.org/10.1016/0079-6611(91)90004-6</a>.</p>
+</div>
+<div>
+<p>Morel, André, and Jean-François Berthon. 1989. “Surface Pigments, Algal Biomass Profiles, and Potential Production of the Euphotic Layer: Relationships Reinvestigated in View of Remote-Sensing Applications.” <em>Limnology and Oceanography</em> 34 (8): 1545–62. <a href="https://doi.org/10.4319/lo.1989.34.8.1545">https://doi.org/10.4319/lo.1989.34.8.1545</a>.</p>
+</div>
+<div>
+<p>Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. “Distinct Zooplankton Regime Shift Patterns Across Ecoregions of the U.s. Northeast Continental Shelf Large Marine Ecosystem.” <em>Journal of Marine Systems</em> 165: 77–91. <a href="https://doi.org/https://doi.org/10.1016/j.jmarsys.2016.09.011">https://doi.org/https://doi.org/10.1016/j.jmarsys.2016.09.011</a>.</p>
+</div>
+<div>
+<p>Mountain, David G. 1991. “The Volume of Shelf Water in the Middle Atlantic Bight: Seasonal and Interannual Variability, 1977–1987.” <em>Continental Shelf Research</em> 11 (3): 251–67. <a href="https://doi.org/10.1016/0278-4343(91)90068-H">https://doi.org/10.1016/0278-4343(91)90068-H</a>.</p>
+</div>
+<div>
+<p>Mountain, David G. 2003. “Variability in the Properties of Shelf Water in the Middle Atlantic Bight, 1977–1999.” <em>Journal of Geophysical Research</em> 108 (C1). <a href="https://doi.org/10.1029/2001JC001044">https://doi.org/10.1029/2001JC001044</a>.</p>
+</div>
+<div>
+<p>———. 2012. “Labrador Slope Water Entering the Gulf of Maine—Response to the North Atlantic Oscillation.” <em>Continental Shelf Research</em> 47 (September): 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.</p>
+</div>
+<div>
+<p>———. 2012. “Labrador Slope Water Entering the Gulf of Maine—Response to the North Atlantic Oscillation.” <em>Continental Shelf Research</em> 47: 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.</p>
+</div>
+<div>
+<p>Mupparapu, Prashant, and Wendell S. Brown. 2002. “Role of Convection in Winter Mixed Layer Formation in the Gulf of Maine, February 1987.” <em>Journal of Geophysical Research: Oceans</em> 107 (C12): 22–21–22–18. <a href="https://doi.org/10.1029/1999JC000116">https://doi.org/10.1029/1999JC000116</a>.</p>
+</div>
+<div>
+<p>Murawski, S. 2000. “Definitions of Overfishing from an Ecosystem Perspective.” <em>ICES Journal of Marine Science</em> 57 (3): 649–58. <a href="https://doi.org/10.1006/jmsc.2000.0738">https://doi.org/10.1006/jmsc.2000.0738</a>.</p>
+</div>
+<div>
+<p>Murphy, Melanie A., Jeffrey S. Evans, and Andrew Storfer. 2010. “Quantifying Bufo boreas connectivity in Yellowstone National Park with landscape genetics.” <em>Ecology</em> 91 (1): 252–61. <a href="https://doi.org/10.1890/08-0879.1">https://doi.org/10.1890/08-0879.1</a>.</p>
+</div>
+<div>
+<p>NASA Ocean Biology Processing Group. 2017. “MODIS-Aqua Level-3 Binned Garver, Siegel, Maritorena Model (GSM) Data Version R2018.0.” NASA Ocean Biology DAAC. <a href="https://doi.org/10.5067/AQUA/MODIS/L3B/GSM/2018">https://doi.org/10.5067/AQUA/MODIS/L3B/GSM/2018</a>.</p>
+</div>
+<div>
+<p>———. 2018. “SEAWIFS-ORBVIEW-2 Level 3 Mapped Chlorophyll Data Version R2018.0.” NASA Ocean Biology DAAC. <a href="https://doi.org/10.5067/ORBVIEW-2/SEAWIFS/L3M/CHL/2018">https://doi.org/10.5067/ORBVIEW-2/SEAWIFS/L3M/CHL/2018</a>.</p>
+</div>
+<div>
+<p>Nicholson, Mike D., and Simon Jennings. 2004. “Testing candidate indicators to support ecosystem-based management: The power of monitoring surveys to detect temporal trends in fish community metrics.” <a href="https://doi.org/10.1016/j.icesjms.2003.09.004">https://doi.org/10.1016/j.icesjms.2003.09.004</a>.</p>
+</div>
+<div>
+<p>Norris-Raynbird, Carla. 2004. “‘For Hire’ in the US Gulf of Mexico: A Typology of Offshore Charter and Party Boat Operations.” <em>MAST (Maritime Studies)</em> 1 (51 – 65). <a href="http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf">http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf</a>.</p>
+</div>
+<div>
+<p><em>Northwest Fisheries Science Center. Glossary</em>. n.d. <a href="https://www.nwfsc.noaa.gov/research/divisions/fe/estuarine/oeip/ic-glossary.cfm">https://www.nwfsc.noaa.gov/research/divisions/fe/estuarine/oeip/ic-glossary.cfm</a>.</p>
+</div>
+<div>
+<p>Oberg, Angela, Julia Flagg, Bonnie McCay, and Lisa L. Colburn. 2016. “Surviving Sandy: Identity and Cultural Resilience in a New Jersey Fishing Community.” In <em>Taking Chances on the Coast After Hurricane Sandy</em>, edited by Dan Van Abs and Karen O.’Neill. New Brunswick, NJ: The Rutgers University Press. <a href="muse.jhu.edu/book/45532">muse.jhu.edu/book/45532</a>.</p>
+</div>
+<div>
+<p>Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, et al. 2020. <em>Vegan: Community Ecology Package</em>. <a href="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</a>.</p>
+</div>
+<div>
+<p>O’Reilly, John E., Stéphane Maritorena, B. Greg Mitchell, David A. Siegel, Kendall L. Carder, Sara A. Garver, Mati Kahru, and Charles McClain. 1998. “Ocean Color Chlorophyll Algorithms for Seawifs.” <em>Journal of Geophysical Research: Oceans</em> 103 (C11): 24937–53. <a href="https://doi.org/10.1029/98JC02160">https://doi.org/10.1029/98JC02160</a>.</p>
+</div>
+<div>
+<p>Organization, World Health. 2003. <em>Guidelines for Safe Recreational Water Environments: Coastal and Fresh Waters</em>. Vol. 1. World Health Organization.</p>
+</div>
+<div>
+<p>Pace, Richard M., Peter J. Corkeron, and Scott D. Kraus. 2017. “State-space mark-recapture estimates reveal a recent decline in abundance of North Atlantic right whales.” <em>Ecology and Evolution</em>. <a href="https://doi.org/10.1002/ece3.3406">https://doi.org/10.1002/ece3.3406</a>.</p>
+</div>
+<div>
+<p>Paluszynska, Aleksandra, and Przemyslaw Biecek. 2017. <em>randomForestExplainer: Explaining and Visualizing Random Forests in Terms of Variable Importance</em>. <a href="https://CRAN.R-project.org/package=randomForestExplainer">https://CRAN.R-project.org/package=randomForestExplainer</a>.</p>
+</div>
+<div>
+<p>Pan, Xiaoju, Antonio Mannino, Mary E. Russ, and Stanford B. Hooker. 2008. “Remote Sensing of the Absorption Coefficients and Chlorophyll a Concentration in the United States Southern Middle Atlantic Bight from Seawifs and Modis-Aqua.” <em>Journal of Geophysical Research</em> 113 (C11): C11022. <a href="https://doi.org/10.1029/2008JC004852">https://doi.org/10.1029/2008JC004852</a>.</p>
+</div>
+<div>
+<p>Pan, Xiaoju, Antonio Mannino, Mary E. Russ, Stanford B. Hooker, and Lawrence W. Harding Jr. 2010. “Remote Sensing of Phytoplankton Pigment Distribution in the United States Northeast Coast.” <em>Remote Sensing of Environment</em> 114 (11): 2403–16. <a href="https://doi.org/10.1016/j.rse.2010.05.015">https://doi.org/10.1016/j.rse.2010.05.015</a>.</p>
+</div>
+<div>
+<p>Pauly, Daniel. 1997. “Putting Fisheries Management Back in Places.” <em>Reviews in Fish Biology and Fisheries</em> 7 (1): 125–27.</p>
+</div>
+<div>
+<p>Pauly, D, and V Christensen. 1995a. “Primary production required to sustain global fisheries.” <em>Nature</em> 374: 255–57. <a href="https://doi.org/https://doi.org/10.1038/374255a0">https://doi.org/https://doi.org/10.1038/374255a0</a>.</p>
+</div>
+<div>
+<p>———. 1995b. “Primary Production Required to Sustain Global Fisheries.” <em>Nature</em>. <a href="https://doi.org/10.1038/374255a0">https://doi.org/10.1038/374255a0</a>.</p>
+</div>
+<div>
+<p>Perretti, Charles T., Michael J. Fogarty, Kevin D. Friedland, Jon A. Hare, Sean M. Lucey, Richard S. McBride, Timothy J. Miller, et al. 2017a. “Regime Shifts in Fish Recruitment on the Northeast US Continental Shelf.” <em>Marine Ecology Progress Series</em> 574: 1–11. <a href="https://doi.org/10.3354/meps12183">https://doi.org/10.3354/meps12183</a>.</p>
+</div>
+<div>
+<p>———. 2017b. “Regime shifts in fish recruitment on the Northeast US Continental Shelf.” <em>Marine Ecology Progress Series</em> 574: 1–11. <a href="https://doi.org/10.3354/meps12183">https://doi.org/10.3354/meps12183</a>.</p>
+</div>
+<div>
+<p>Pettis, H. M, R. M. Pace, and P. K. Hamilton. 2019. “North American Right Whale Consortium 2019 Annual Report Card.” <a href="https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf">https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf</a>.</p>
+</div>
+<div>
+<p>Pérez-Hernández, M. Dolores, and Terrence M. Joyce. 2014. “Two Modes of Gulf Stream Variability Revealed in the Last Two Decades of Satellite Altimeter Data.” <em>Journal of Physical Oceanography</em> 44 (1): 149–63. <a href="https://doi.org/10.1175/JPO-D-13-0136.1">https://doi.org/10.1175/JPO-D-13-0136.1</a>.</p>
+</div>
+<div>
+<p>Pielou, Evelyn Chris. 1984. <em>The Interpretation of Ecological Data: A Primer on Classification and Ordination</em>. John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Pinheiro, J, D Bates, S DebRoy, D Sarkar, and R Core Team. 2017. “nlme: Linear and Nonlinear Mixed Effects Models.” <em>R Package Version 3.1-131</em>. <a href="https://CRAN.R-project.org/package=nlme">https://CRAN.R-project.org/package=nlme</a>.</p>
+</div>
+<div>
+<p>Pinsky, Malin L., Boris Worm, Michael J. Fogarty, Jorge L. Sarmiento, and Simon A. Levin. 2013. “Marine taxa track local climate velocities.” <em>Science</em> 341 (6151): 1239–42. <a href="https://doi.org/10.1126/science.1239352">https://doi.org/10.1126/science.1239352</a>.</p>
+</div>
+<div>
+<p>Poe, Melissa R., Karma C. Norman, and Phillip S. Levin. 2014. “Cultural Dimensions of Socioecological Systems: Key Connections and Guiding Principles for Conservation in Coastal Environments.” <em>Conservation Letters</em> 7 (3): 166–75. <a href="https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf">https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf</a>.</p>
+</div>
+<div>
+<p>Pollnac, Richard B., Susan Abbott-Jamieson, Courtland Smith, Marc L. Miller, Patricia M. Clay, and Bryan Oles. 2006. “Toward a Model for Fisheries Social Impact Assessment.” <em>Marine Fisheries Review</em> 68: 1–4. <a href="http://aquaticcommons.org/866/1/Pollnac_Toward.pdf">http://aquaticcommons.org/866/1/Pollnac_Toward.pdf</a>.</p>
+</div>
+<div>
+<p>Potschin, Marion, and Roy Haines-Young. 2013. “Landscapes, Sustainability and the Place-Based Analysis of Ecosystem Services.” <em>Landscape Ecology</em> 28 (6): 1053–65. <a href="https://doi.org/10.1007/s10980-012-9756-x">https://doi.org/10.1007/s10980-012-9756-x</a>.</p>
+</div>
+<div>
+<p>Project, JPL MUR MEaSUREs. 2015. “GHRSST Level 4 Mur Global Foundation Sea Surface Temperature Analysis (V4.1).” CA, USA: NASA PO.DAAC. <a href="https://doi.org/10.5067/GHGMR-4FJ04">https://doi.org/10.5067/GHGMR-4FJ04</a>.</p>
+</div>
+<div>
+<p>Quilliam, M. A., M. Xie, and W. R. Hardstaff. 1995. “Rapid extraction and cleanup for liquid chromatography determination of domoic acid in unsalted seafood.” <em>Journal of AOAC International</em> 78 (JANUARY 1995): 543–54.</p>
+</div>
+<div>
+<p>Reed, Matt, Paul Courtney, Julie Urquhart, and Natalie Ross. 2013. “Beyond Fish as Commodities: Understanding the Socio-Cultural Role of Inshore Fisheries in England.” <em>Marine Policy</em> 37: 62–68. <a href="https://doi.org/10.1016/j.marpol.2012.04.009">https://doi.org/10.1016/j.marpol.2012.04.009</a>.</p>
+</div>
+<div>
+<p>Reynolds, Richard W., Thomas M. Smith, Chunying Liu, Dudley B. Chelton, Kenneth S. Casey, and Michael G. Schlax. 2007. “Daily high-resolution-blended analyses for sea surface temperature.” <em>Journal of Climate</em> 20 (22): 5473–96. <a href="https://doi.org/10.1175/2007JCLI1824.1">https://doi.org/10.1175/2007JCLI1824.1</a>.</p>
+</div>
+<div>
+<p>Rice, Jake C., and Marie-Joëlle Rochet. 2005. “A Framework for Selecting a Suite of Indicators for Fisheries Management.” <em>ICES Journal of Marine Science</em> 62 (3): 516–27. <a href="https://doi.org/10.1016/j.icesjms.2005.01.003">https://doi.org/10.1016/j.icesjms.2005.01.003</a>.</p>
+</div>
+<div>
+<p>Roff, John C., and Mark E. Taylor. 2000. “National frameworks for marine conservation - A hierarchical geophysical approach.” <em>Aquatic Conservation: Marine and Freshwater Ecosystems</em> 10 (3): 209–23. <a href="https://doi.org/10.1002/1099-0755(200005/06)10:3%3C209::AID-AQC408%3E3.0.CO;2-J">https://doi.org/10.1002/1099-0755(200005/06)10:3&lt;209::AID-AQC408&gt;3.0.CO;2-J</a>.</p>
+</div>
+<div>
+<p>Saba, Vincent S., Stephen M. Griffies, Whit G. Anderson, Michael Winton, Michael A. Alexander, Thomas L. Delworth, Jonathan A. Hare, et al. 2016. “Enhanced warming of the Northwest Atlantic Ocean under climate change.” <em>Journal of Geophysical Research: Oceans</em> 121 (1): 118–32. <a href="https://doi.org/10.1002/2015JC011346">https://doi.org/10.1002/2015JC011346</a>.</p>
+</div>
+<div>
+<p>Saha, Korak, Xuepeng Zhao, Huai-min Zhang, Kenneth S. Casey, Dexin Zhang, Sheekela Baker-Yeboah, Katherine A. Kilpatrick, Robert H. Evans, Thomas Ryan, and John M. Relph. 2018. “AVHRR Pathfinder version 5.3 level 3 collated (L3C) global 4km sea surface temperature for 1981-Present.” NOAA National Centers for Environmental Information. <a href="https://doi.org/doi:10.7289/V52J68XX%20Accessed%20in%202016%20and%202018">https://doi.org/doi:10.7289/V52J68XX Accessed in 2016 and 2018</a>.</p>
+</div>
+<div>
+<p>Sanders, Howard L. 1968. “Marine Benthic Diversity: A Comparative Study.” <em>American Naturalist</em> 102: 247–82. <a href="https://www.journals.uchicago.edu/doi/10.1086/282541">https://www.journals.uchicago.edu/doi/10.1086/282541</a>.</p>
+</div>
+<div>
+<p>Sappington, J. M., Kathleen M. Longshore, and Daniel B. Thompson. 2007. “Quantifying Landscape Ruggedness for Animal Habitat Analysis: A Case Study Using Bighorn Sheep in the Mojave Desert.” <em>Journal of Wildlife Management</em> 71 (5): 1419–26. <a href="https://doi.org/10.2193/2005-723">https://doi.org/10.2193/2005-723</a>.</p>
+</div>
+<div>
+<p>Scott, D., G McBoyle, and M. Schwartzentruber. 2004. “Climate Change and the Distribution of Climatic Resources for Tourism in North America.” <em>Climate Research</em> 27: 105–17. <a href="https://doi.org/10.3354/cr027105">https://doi.org/10.3354/cr027105</a>.</p>
+</div>
+<div>
+<p>Seara, Tarsila, Patricia M. Clay, and Lisa L. Colburn. 2016. “Perceived Adaptive Capacity and Natural Disasters: A Fisheries Case Study.” <em>Global Environmental Change</em> 38: 49–57. <a href="https://doi.org/10.1016/j.gloenvcha.2016.01.006">https://doi.org/10.1016/j.gloenvcha.2016.01.006</a>.</p>
+</div>
+<div>
+<p>Service, United States. National Marine Fisheries. 2004. <em>NMFS Strategic Plan for Fisheries Research</em>. NOAA Tech. Memo. NMFS-F/Spo. U.S. Department of Commerce, National Oceanic; Atmospheric Administration, National Marine Fisheries Service. <a href="https://books.google.com/books?id=IkbxAAAAMAAJ">https://books.google.com/books?id=IkbxAAAAMAAJ</a>.</p>
+</div>
+<div>
+<p>Shearman, R. Kipp, and Steven J. Lentz. 2009. “Long-Term Sea Surface Temperature Variability Along the U.S. East Coast.” <em>Journal of Physical Oceanography</em> 40 (5): 1004–17. <a href="https://doi.org/10.1175/2009JPO4300.1">https://doi.org/10.1175/2009JPO4300.1</a>.</p>
+</div>
+<div>
+<p>Smienk, Henry G F, Dolores Calvo, Pedro Razquin, Elena Domínguez, and Luis Mata. 2012. “Single laboratory validation of A ready-to-Use phosphatase inhibition assay for detection of okadaic acid toxins.” <em>Toxins</em> 4 (5): 339–52. <a href="https://doi.org/10.3390/toxins4050339">https://doi.org/10.3390/toxins4050339</a>.</p>
+</div>
+<div>
+<p>Smith, Brian E., and Jason S. Link. 2010. <em>The Trophic Dynamics of 50 Finfish and 2 Squid Species on the Northeast US Continental Shelf. NOAA Technichal Memorandum NMFS-NE-216</em>. National Marine Fisheries Service, 166 Water Street, Woods Hole, MA 02543-1026. <a href="http://www.nefsc.noaa.gov/publications/tm/tm216/">http://www.nefsc.noaa.gov/publications/tm/tm216/</a>.</p>
+</div>
+<div>
+<p>Smith, Laurel A., Jason S. Link, Steven X. Cadrin, and Debra L. Palka. 2015. “Consumption by Marine Mammals on the Northeast U.S. Continental Shelf.” <em>Ecological Applications</em> 25 (2): 373–89. <a href="https://doi.org/10.1890/13-1656.1">https://doi.org/10.1890/13-1656.1</a>.</p>
+</div>
+<div>
+<p>Smith, Peter C. 1983. “The Mean and Seasonal Circulation Off Southwest Nova Scotia.” <em>Journal of Physical Oceanography</em> 13 (6): 1034–54. <a href="https://doi.org/10.1175/1520-0485(1983)013%3C1034:TMASCO%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1983)013&lt;1034:TMASCO&gt;2.0.CO;2</a>.</p>
+</div>
+<div>
+<p>Smith, Peter C., Robert W. Houghton, Richard G. Fairbanks, and David G. Mountain. 2001. “Interannual Variability of Boundary Fluxes and Water Mass Properties in the Gulf of Maine and on Georges Bank: 1993–1997.” <em>Deep Sea Research Part II: Topical Studies in Oceanography</em>, Coupled biological and physical studies of plankton populations on Georges Bank and related North Atlantic regions, 48 (1): 37–70. <a href="https://doi.org/10.1016/S0967-0645(00)00081-3">https://doi.org/10.1016/S0967-0645(00)00081-3</a>.</p>
+</div>
+<div>
+<p>Smith, Peter C, Neal R Pettigrew, Philip Yeats, David W Townsend, and Guoqi Han. 2012. “Regime Shift in the Gulf of Maine.” <em>American Fisheries Society Symposium</em> 79: 185–203.</p>
+</div>
+<div>
+<p>Steimle, Frank W., and Russell Terranova. 1985. “Energy Equivalents of Marine Organisms from the Continental Shelf of the Temperate Northwest Atlantic.” <em>Journal of Northwest Atlantic Fishery Science</em> 6: 117–24.</p>
+</div>
+<div>
+<p>Steinback, Scott, and Eric Thunberg. 2006. “Northeast Regional Commercial Fishing Input-Output Model.” <em>NOAA Technical Memorandum</em> NMFS-NE-188: 54. <a href="https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf">https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf</a>.</p>
+</div>
+<div>
+<p>St Martin, Kevin. 2001. “Making Space for Community Resource Management in Fisheries.” <em>Annals of the Association of American Geographers</em> 91 (1): 122–42. <a href="https://doi.org/10.1111/0004-5608.00236">https://doi.org/10.1111/0004-5608.00236</a>.</p>
+</div>
+<div>
+<p>Storch, Hans von. 1999. “Misuses of Statistical Analysis in Climate Research.” In <em>Analysis of Climate Variability</em>, 11–26. <a href="https://doi.org/10.1007/978-3-662-03744-7_2">https://doi.org/10.1007/978-3-662-03744-7_2</a>.</p>
+</div>
+<div>
+<p>Stutts, Whitney, and Jonathon Deeds. 2017. “Single Laboratory Validation (SLV) Protocol for Submission to the Interstate Shellfish Sanitation Conference (ISSC) For Method Approval.” College Park: FDA Center for Food Safety; Applied Nutrition. <a href="http://www.issc.org/Data/Sites/1/media/00-2017biennialmeeting/--taskforcei2017/17-103-supporting-documentation.pdf">http://www.issc.org/Data/Sites/1/media/00-2017biennialmeeting/--taskforcei2017/17-103-supporting-documentation.pdf</a>.</p>
+</div>
+<div>
+<p>Sullivan, Mark C., Robert K. Cowen, and Brian P. Steves. 2005. “Evidence for Atmosphere-Ocean Forcing of Yellowtail Flounder (Limanda Ferruginea) Recruitment in the Middle Atlantic Bight.” <em>Fisheries Oceanography</em> 14 (5): 386–99. <a href="http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight">http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight</a>.</p>
+</div>
+<div>
+<p>Tang, Ying Zhong, and Christopher J. Gobler. 2009. “Characterization of the toxicity of Cochlodinium polykrikoides isolates from Northeast US estuaries to finfish and shellfish.” <em>Harmful Algae</em> 8 (3): 454–62. <a href="https://doi.org/10.1016/j.hal.2008.10.001">https://doi.org/10.1016/j.hal.2008.10.001</a>.</p>
+</div>
+<div>
+<p><em>Technical Documentation: State of the Ecosystem</em>. n.d. <a href="https://doi.org/10.25923/64pf-sc70">https://doi.org/10.25923/64pf-sc70</a>.</p>
+</div>
+<div>
+<p>Thunberg, Eric M., and Steven J. Correia. 2015. “Measures of Fishing Fleet Diversity in the New England Groundfish Fishery.” <em>Marine Policy</em> 58 (2015): 6–14. <a href="https://doi.org/https://doi.org/10.1016/j.marpol.2015.04.005">https://doi.org/https://doi.org/10.1016/j.marpol.2015.04.005</a>.</p>
+</div>
+<div>
+<p>Townsend, David W, Andrew C Thomas, Lawrence M Mayer, Maura A Thomas, and John A Qunilan. 2006. “Oceanography of the Northwest Atlantic Continental Shelf (1,W).” In <em>The Sea, Volume 14A</em>, edited by Allan R Robinson and Kenneth H Brink, 119–68. Cambridge, MA: Harvard University Press. <a href="https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf">https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf</a>.</p>
+</div>
+<div>
+<p>Turner, Kyle J. 2020. “Remote Sensing of Phytoplankton Size Classes on the Noretheast U.s. Continental Shelf.” <a href="https://digitalcommons.uri.edu/theses/1913">https://digitalcommons.uri.edu/theses/1913</a>.</p>
+</div>
+<div>
+<p><em>United Nations Food and Agricultural Organization. Fisheries Glossary</em>. n.d. <a href="http://www.fao.org/fi/glossary/default.asp">http://www.fao.org/fi/glossary/default.asp</a>.</p>
+</div>
+<div>
+<p>United States, National Oceanic, and Atmospheric Administration. 2005. <em>NOAA Fisheries Glossary</em>. <a href="https://repository.library.noaa.gov/view/noaa/12856">https://repository.library.noaa.gov/view/noaa/12856</a>.</p>
+</div>
+<div>
+<p>Urquhart, Julie, and Tim Acott. 2013. “Constructing ‘the Stade’: Fishers’ and Non-Fishers’ Identity and Place Attachment in Hastings, South-East England.” <em>Marine Policy</em> 37: 45–54. <a href="https://doi.org/10.1016/j.marpol.2012.04.004">https://doi.org/10.1016/j.marpol.2012.04.004</a>.</p>
+</div>
+<div>
+<p>USEPA. 2003. “Ambient Water Quality Criteria for Dissolve Oxygen, Water Clarity and Chlorophyll a for the Chesapeake Bay and Its Tidal Tributaries.” USEPA Region III Chesapeake Bay Program Office EPA 903-R-03-002, Annapolis, Maryland. <a href="https://www.chesapeakebay.net/content/publications/cbp_13142.pdf">https://www.chesapeakebay.net/content/publications/cbp_13142.pdf</a>.</p>
+</div>
+<div>
+<p>———. 2017. “Ambient Water Quality Criteria for Dissolve Oxygen, Water Clarity and Chlorophyll a for the Chesapeake Bay and Its Tidal Tributaries: 2017 Addendum.” USEPA Region III Chesapeake Bay Program Office EPA 903-R-03-002, Annapolis, Maryland. <a href="https://www.chesapeakebay.net/documents/2017_Nov_ChesBayWQ_Criteria_Addendum_Final.pdf">https://www.chesapeakebay.net/documents/2017_Nov_ChesBayWQ_Criteria_Addendum_Final.pdf</a>.</p>
+</div>
+<div>
+<p>Wagner, Tyler, Brian J. Irwin, James R. Bence, and Daniel B. Hayes. 2013. “Detecting Temporal Trends in Freshwater Fisheries Surveys: Statistical Power and the Important Linkages between Management Questions and Monitoring Objectives.” <em>Fisheries</em> 38 (7): 309–19. <a href="https://doi.org/10.1080/03632415.2013.799466">https://doi.org/10.1080/03632415.2013.799466</a>.</p>
+</div>
+<div>
+<p>Walden, John B., James E. Kirkley, Rolf Färe, and Philip Logan. 2012. “Productivity Change Under an Individual Transferable Quota Management System.” <em>American Journal of Agricultural Economics</em> 94 (4): 913–28. <a href="https://doi.org/10.1093/ajae/aas025">https://doi.org/10.1093/ajae/aas025</a>.</p>
+</div>
+<div>
+<p>Wallace, Richard Kent, and Kristen Michele Fletcher. 2000. “Understanding Fisheries Management: A Manual for Understanding the Federal Fisheries Management Process, Including Analysis of the 1996 Sustainable Fisheries Act.”</p>
+</div>
+<div>
+<p>Wallace, William Hosking, Richard K, and Stephen T. Szedlmayer. 1994. <em>Fisheries Management for Fisherman: A Manual for Helping Fisherman Understand the Federal Management Process</em>. <a href="http://hdl.handle.net/1969.3/23692">http://hdl.handle.net/1969.3/23692</a>.</p>
+</div>
+<div>
+<p>Walsh, Harvey J., David E. Richardson, Katrin E. Marancik, and Jonathan A. Hare. 2015. “Long-Term Changes in the Distributions of Larval and Adult Fish in the Northeast U.s. Shelf Ecosystem.” Journal Article. <em>PLoS ONE</em> 10 (9): e0137382. <a href="https://doi.org/10.1371/journal.pone.0137382">https://doi.org/10.1371/journal.pone.0137382</a>.</p>
+</div>
+<div>
+<p>Waring, Gordon T., Elizabeth Josephson, Katherine Maze-Foley, and Patricia E. Rosel, eds. 2015. <em>US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments – 2014., Type = NOAA Technical Memorandom</em>. 231. National Marine Fisheries Service. <a href="https://doi.org/10.7289/V5TQ5ZH0">https://doi.org/10.7289/V5TQ5ZH0</a>.</p>
+</div>
+<div>
+<p>Wigley, S. E., H. M. McBride, and N. J. McHugh. 2003. “Length-Weight Relationships for 74 Fish Species Collected During NEFSC Research Vessel Bottom Trawl Surveys, 1992-99.” NOAA Technical Memorandum 171. National Marine Fisheries Service. <a href="https://www.nefsc.noaa.gov/publications/tm/tm171/tm171.pdf">https://www.nefsc.noaa.gov/publications/tm/tm171/tm171.pdf</a>.</p>
+</div>
+<div>
+<p>Winship, A. J., B. P. Kinlan, T. P. White, J. B. Leirness, and J. Christensen. 2018. “Modeling At-Sea Density of Marine Birds to Support Atlantic Marine Renewable Energy Planning: Final Report.” OCS Study BOEM 2018-010. <a href="https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/">https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/</a>.</p>
+</div>
+<div>
+<p>Winton, Michael, Whit G. Anderson, Thomas L. Delworth, Stephen M. Griffies, William J. Hurlin, and Anthony Rosati. 2014. “Has Coarse Ocean Resolution Biased Simulations of Transient Climate Sensitivity?” <em>Geophysical Research Letters</em> 41 (23): 8522–9. <a href="https://doi.org/10.1002/2014GL061523">https://doi.org/10.1002/2014GL061523</a>.</p>
+</div>
+<div>
+<p>WMO. 2017. “WMO Guidelines of the Calculation of Climate Normals.” World Meteorological Organization.</p>
+</div>
+<div>
+<p>Wood, S. 2011. “Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL.” <a href="https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html">https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html</a>.</p>
+</div>
+<div>
+<p>Wright-Fairbanks, Elizabeth K., Travis N. Miles, Wei-Jun Cai, Baoshan Chen, and Grace K. Saba. 2020. “Autonomous Observation of Seasonal Carbonate Chemistry Dynamics in the Mid-Atlantic Bight.” <em>Journal of Geophysical Research: Oceans</em> 125 (11): e2020JC016505. <a href="https://doi.org/https://doi.org/10.1029/2020JC016505">https://doi.org/https://doi.org/10.1029/2020JC016505</a>.</p>
+</div>
+<div>
+<p>Wynveen, Christopher J., Gerard T. Kyle, and Stephen G. Sutton. 2012. “Natural Area Visitors’ Place Meaning and Place Attachment Ascribed to a Marine Setting.” <em>Journal of Environmental Psychology</em> 32 (4): 287–96. <a href="https://doi.org/10.1016/j.jenvp.2012.05.001">https://doi.org/10.1016/j.jenvp.2012.05.001</a>.</p>
+</div>
+<div>
+<p>Zhang, Qian, Rebecca R Murphy, Richard Tian, Melinda K Forsyth, Emily M Trentacoste, Jennifer Keisman, and Peter J Tango. 2018. “Chesapeake Bay Water Quality Condition Has Been Recovering: Insights from a Multimetric Indicator Assessment of Thirty Years of Tidal Monitoring Data.” <em>Science of the Total Environment</em> 637: 1617–25. <a href="https://doi.org/10.1016/j.scitotenv.2018.05.025">https://doi.org/10.1016/j.scitotenv.2018.05.025</a>.</p>
+</div>
+<div>
+<p>Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. “Dynamics of the Direct Intrusion of Gulf Stream Ring Water onto the Mid-Atlantic Bight Shelf.” <em>Geophysical Research Letters</em> 42 (18): 7687–95. <a href="https://doi.org/10.1002/2015GL065530">https://doi.org/10.1002/2015GL065530</a>.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="glossary.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="asset/gitbook-2.6.7/js/app.min.js"></script>
+<script src="asset/gitbook-2.6.7/js/lunr.js"></script>
+<script src="asset/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="asset/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="asset/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="asset/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="asset/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="asset/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="asset/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/references.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["tech_doc.pdf"],
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
