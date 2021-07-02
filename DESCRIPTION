@@ -48,7 +48,6 @@ Depends:
   geosphere,
   purrr,
   remotes (> 2.0.2), 
-  RCurl,
   rvest,
   xml2,
   ggrepel,
