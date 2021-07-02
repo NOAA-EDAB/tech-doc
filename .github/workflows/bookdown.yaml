@@ -6,7 +6,7 @@ name: bookdown
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GH_PAT }}
     steps:
@@ -43,7 +43,7 @@ jobs:
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
       - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           BRANCH: gh-pages # The branch the action should deploy to.
