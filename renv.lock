@@ -287,13 +287,6 @@
       "Repository": "CRAN",
       "Hash": "ae55f5d7c02f0ab43c58dd050694f2b4"
     },
-    "crul": {
-      "Package": "crul",
-      "Version": "1.0.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "9c36cf228a33d1aafc2658ce3d422698"
-    },
     "data.table": {
       "Package": "data.table",
       "Version": "1.13.0",
