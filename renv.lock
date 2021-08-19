@@ -331,10 +331,15 @@
       "Repository": "CRAN",
       "Hash": "9a374a10e3c0dbf1a0e207af019bfcea"
     },
-    "ecodata": {
+   "ecodata": {
       "Package": "ecodata",
       "Version": "0.1.0",
-      "Source": "unknown",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "ecodata",
+      "RemoteUsername": "noaa-edab",
+      "RemoteRef": "master",
       "Hash": "d8719485396d4e6f9ba59536ee606dd3"
     },
     "ellipsis": {
