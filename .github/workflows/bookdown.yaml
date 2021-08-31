@@ -15,6 +15,10 @@ jobs:
 
       - name: Setup R
         uses: r-lib/actions/setup-r@master
+      
+      - name: Install libcurl 
+        run: |
+          brew install libcurl4-openssl-dev
 
       - name: Install pandoc 
         run: |
