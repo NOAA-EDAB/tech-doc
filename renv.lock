@@ -82,6 +82,13 @@
       "Repository": "CRAN",
       "Hash": "e031418365a7f7a766181ab5a41a5716"
     },
+    "RNetCDF": {
+      "Package": "RNetCDF",
+      "Version": "2.4-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f239d1814b2d647a5bc22da8831f5621"
+    },
     "RSQLite": {
       "Package": "RSQLite",
       "Version": "2.2.7",
@@ -361,6 +368,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "2b06f9e415a62b6762e4b8098d2aecbc"
+    },
+    "curl": {
+      "Package": "curl",
+      "Version": "4.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "022c42d49c28e95d69ca60446dbabf88"
     },
     "data.table": {
       "Package": "data.table",
@@ -713,6 +727,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "781248b864d00c390830504937fe5c29"
+    },
+    "httr": {
+      "Package": "httr",
+      "Version": "1.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a525aba14184fec243f9eaec62fbed43"
     },
     "ids": {
       "Package": "ids",
