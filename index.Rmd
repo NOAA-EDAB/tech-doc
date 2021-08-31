@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = F,
                       fig.path = here::here("images/")) 
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 #update.packages(ask = FALSE, checkBuilt = TRUE)  # update R packages
-tinytex::tlmgr_update() 
+#tinytex::tlmgr_update() 
 
 #source directories
 image.dir <- here::here("images")
