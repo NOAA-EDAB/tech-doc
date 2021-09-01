@@ -60,7 +60,7 @@ library(knitr)
 library(rmarkdown)
 library(readr)
 library(RColorBrewer)
-library(ks)
+
 library(plyr)
 library(cowplot)
 library(plotly)
