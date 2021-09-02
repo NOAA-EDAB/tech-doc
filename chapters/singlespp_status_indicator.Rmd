@@ -132,12 +132,12 @@ For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. 
 <!--What packages or libraries did you use in your work flow?-->
 ```{r, eval=F, echo = F}
 #all packages in the SOE file that ran my code snippet, probably only need data.table
-library(Kendall);library(data.table);library(zoo)
-library(dplyr);library(nlme);library(AICcmodavg)
-library(colorRamps);library(Hmisc);library(rgdal)
-library(maps);library(mapdata);library(raster)
-library(grid);library(stringr);library(png)
-library(ncdf4);library(marmap); library(magick)
+#library(Kendall);library(data.table);library(zoo)
+#library(dplyr);library(nlme);library(AICcmodavg)
+#library(colorRamps);library(Hmisc);library(rgdal)
+#library(maps);library(mapdata);library(raster)
+#library(grid);library(stringr);library(png)
+#library(ncdf4);library(marmap); library(magick)
 
 
 ```
