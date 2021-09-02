@@ -130,23 +130,13 @@ R code used to process the stock status data set for inclusion in the `ecodata` 
 For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
 
 <!--What packages or libraries did you use in your work flow?-->
-```{r, eval=F, echo = F}
-#all packages in the SOE file that ran my code snippet, probably only need data.table
-#library(Kendall);library(data.table);library(zoo)
-#library(dplyr);library(nlme);library(AICcmodavg)
-#library(colorRamps);library(Hmisc);library(rgdal)
-#library(maps);library(mapdata);library(raster)
-#library(grid);library(stringr);library(png)
-#library(ncdf4);library(marmap); library(magick)
 
-
-```
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
 
 ### Plotting
 
-The script used to develop the figure in the State of the Ecosystem report can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-stock-status1.R).
+The script used to develop the figure in the State of the Ecosystem report can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-stock-status.R).
 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-stock-status.R"), warning=F, fig.cap ="Summary of single species status for MAFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=F}
 
