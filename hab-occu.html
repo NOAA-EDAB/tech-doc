@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>33 Habitat Occupancy Models | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="33 Habitat Occupancy Models | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="verified-records-of-southern-kingfish.html"/>
 <link rel="next" href="ocean-acidification.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -934,23 +960,23 @@ Benthic current vorticity at a 1/6 degree (approx. 19 km) spatial scale.
 </div>
 <div id="remote-sensing-data-1" class="section level4" number="33.1.2.2">
 <h4><span class="header-section-number">33.1.2.2</span> Remote sensing data</h4>
-<p>An overlapping time series of observations from the four sensors listed above was created using a bio-optical model inversion algorithm <span class="citation">(Maritorena et al. <a href="#ref-Maritorena2010" role="doc-biblioref">2010</a>)</span>. Monthly SST data were derived from MODIS-Terra sensor data (available <a href="https://oceancolor.gsfc.nasa.gov/data/terra/">here</a>).</p>
+<p>An overlapping time series of observations from the four sensors listed above was created using a bio-optical model inversion algorithm <span class="citation">(<a href="#ref-Maritorena2010" role="doc-biblioref">Maritorena et al. 2010</a>)</span>. Monthly SST data were derived from MODIS-Terra sensor data (available <a href="https://oceancolor.gsfc.nasa.gov/data/terra/">here</a>).</p>
 </div>
 <div id="ocean-temperature-and-salinity-1" class="section level4" number="33.1.2.3">
 <h4><span class="header-section-number">33.1.2.3</span> Ocean temperature and salinity</h4>
 <p>Date of collection corrections for ocean temperature data were developed using linear regressions for the spring and fall time frames; standardizing to collection dates of April 3 and October 11 for spring and fall. No correction was performed for salinity data. Annual data for ocean temperature and salinity were combined with climatology by season through an optimal interpolation approach. Specifically, mean bottom temperature or salinity was calculated by year and season on a 0.5° grid across the ecosystem, and data from grid cells with &gt;80% temporal coverage were used to calculate a final seasonal mean. Annual seasonal means were then used to calculate combined anomalies for seasonal surface and bottom climatologies.</p>
-<p>An annual field was then estimated using raw data observations for a year, season, and depth using universal kriging <span class="citation">(Hiemstra et al. <a href="#ref-automap" role="doc-biblioref">2008</a>)</span>, with depth included as a covariate (on a standard 0.1° grid). This field was then combined with the climatology anomaly field and adjusted by the annual mean using the variance field from kriging as the basis for a weighted mean between the two. The variance field was divided into quartiles with the lowest quartile assigned a weighting of 4:1 between the annual and climatology values. The optimally interpolated field at these locations was therefore skewed towards the annual data, reflecting their proximity to actual data locations and associated low kriging variance. The highest kriging variance quartile (1:1) reflected less information from the annual field and more from the climatology.</p>
+<p>An annual field was then estimated using raw data observations for a year, season, and depth using universal kriging <span class="citation">(<a href="#ref-automap" role="doc-biblioref">Hiemstra et al. 2008</a>)</span>, with depth included as a covariate (on a standard 0.1° grid). This field was then combined with the climatology anomaly field and adjusted by the annual mean using the variance field from kriging as the basis for a weighted mean between the two. The variance field was divided into quartiles with the lowest quartile assigned a weighting of 4:1 between the annual and climatology values. The optimally interpolated field at these locations was therefore skewed towards the annual data, reflecting their proximity to actual data locations and associated low kriging variance. The highest kriging variance quartile (1:1) reflected less information from the annual field and more from the climatology.</p>
 </div>
 </div>
 <div id="data-analysis-34" class="section level3" number="33.1.3">
 <h3><span class="header-section-number">33.1.3</span> Data analysis</h3>
 <div id="occupancy-models" class="section level4" number="33.1.3.1">
 <h4><span class="header-section-number">33.1.3.1</span> Occupancy models</h4>
-<p>Prior to fitting the occupancy models, predictor variables were tested for multi-collinearity and removed if found to be correlated. The final model variables were then chosen utilizing a model selection process as shown by <span class="citation">Murphy, Evans, and Storfer (<a href="#ref-Murphy2010" role="doc-biblioref">2010</a>)</span> and implemented with the R package <code>rfUtilities</code> <span class="citation">(Evans and Murphy <a href="#ref-rfUtilities-package" role="doc-biblioref">2018</a>)</span>. Occupancy models were then fit as two-factor classification models (absence as 0 and presence as 1) using the <code>randomForest</code> R package <span class="citation">(Liaw and Wiener <a href="#ref-randomForest" role="doc-biblioref">2002</a>)</span>.</p>
+<p>Prior to fitting the occupancy models, predictor variables were tested for multi-collinearity and removed if found to be correlated. The final model variables were then chosen utilizing a model selection process as shown by <span class="citation">Murphy, Evans, and Storfer (<a href="#ref-Murphy2010" role="doc-biblioref">2010</a>)</span> and implemented with the R package <code>rfUtilities</code> <span class="citation">(<a href="#ref-rfUtilities-package" role="doc-biblioref">Evans and Murphy 2018</a>)</span>. Occupancy models were then fit as two-factor classification models (absence as 0 and presence as 1) using the <code>randomForest</code> R package <span class="citation">(<a href="#ref-randomForest" role="doc-biblioref">Liaw and Wiener 2002</a>)</span>.</p>
 </div>
 <div id="selection-criteria-and-variable-importance" class="section level4" number="33.1.3.2">
 <h4><span class="header-section-number">33.1.3.2</span> Selection criteria and variable importance</h4>
-<p>The <code>irr</code> R package <span class="citation">(Gamer, Lemon, and Singh <a href="#ref-irr" role="doc-biblioref">2012</a>)</span> was used to calculate Area Under the ROC Curve (AUC) and Cohen’s Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable <span class="citation">(Paluszynska and Biecek <a href="#ref-randomForestExplainer" role="doc-biblioref">2017</a>)</span>, as well as by plotting the Gini index decrease versus accuracy decrease.</p>
+<p>The <code>irr</code> R package <span class="citation">(<a href="#ref-irr" role="doc-biblioref">Gamer, Lemon, and Singh 2012</a>)</span> was used to calculate Area Under the ROC Curve (AUC) and Cohen’s Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable <span class="citation">(<a href="#ref-randomForestExplainer" role="doc-biblioref">Paluszynska and Biecek 2017</a>)</span>, as well as by plotting the Gini index decrease versus accuracy decrease.</p>
 </div>
 </div>
 <div id="plotting-25" class="section level3" number="33.1.4">
@@ -966,51 +992,51 @@ Figure 33.1: Summer flounder spring (A) and fall (B) occupancy habitat area in t
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-rfUtilities-package">
-<p>Evans, Jeffrey S., and Melanie A. Murphy. 2018. <em>RfUtilities</em>. <a href="https://cran.r-project.org/package=rfUtilities">https://cran.r-project.org/package=rfUtilities</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-rfUtilities-package" class="csl-entry">
+Evans, Jeffrey S., and Melanie A. Murphy. 2018. <em>rfUtilities</em>. <a href="https://cran.r-project.org/package=rfUtilities">https://cran.r-project.org/package=rfUtilities</a>.
 </div>
-<div id="ref-Friedman2012">
-<p>Friedman, Ariell, Oscar Pizarro, Stefan B. Williams, and Matthew Johnson-Roberson. 2012. “Multi-Scale Measures of Rugosity, Slope and Aspect from Benthic Stereo Image Reconstructions.” <em>PLoS ONE</em> 7 (12). <a href="https://doi.org/10.1371/journal.pone.0050440">https://doi.org/10.1371/journal.pone.0050440</a>.</p>
+<div id="ref-Friedman2012" class="csl-entry">
+Friedman, Ariell, Oscar Pizarro, Stefan B. Williams, and Matthew Johnson-Roberson. 2012. <span>“<span class="nocase">Multi-Scale Measures of Rugosity, Slope and Aspect from Benthic Stereo Image Reconstructions</span>.”</span> <em>PLoS ONE</em> 7 (12). <a href="https://doi.org/10.1371/journal.pone.0050440">https://doi.org/10.1371/journal.pone.0050440</a>.
 </div>
-<div id="ref-irr">
-<p>Gamer, Matthias, Jim Lemon, and Ian Fellows Puspendra Singh. 2012. <em>Irr: Various Coefficients of Interrater Reliability and Agreement</em>. <a href="https://CRAN.R-project.org/package=irr">https://CRAN.R-project.org/package=irr</a>.</p>
+<div id="ref-irr" class="csl-entry">
+Gamer, Matthias, Jim Lemon, and Ian Fellows Puspendra Singh. 2012. <em>Irr: Various Coefficients of Interrater Reliability and Agreement</em>. <a href="https://CRAN.R-project.org/package=irr">https://CRAN.R-project.org/package=irr</a>.
 </div>
-<div id="ref-automap">
-<p>Hiemstra, P. H., E. J. Pebesma, C. J. W. Twenh"ofel, and G. B. M. Heuvelink. 2008. “Real-time automatic interpolation of ambient gamma dose rates from the Dutch Radioactivity Monitoring Network.” <em>Computers &amp; Geosciences</em>. <a href="https://doi.org/10.1016/j.cageo.2008.10.011">https://doi.org/10.1016/j.cageo.2008.10.011</a>.</p>
+<div id="ref-automap" class="csl-entry">
+Hiemstra, P. H., E. J. Pebesma, C. J. W. Twenh"ofel, and G. B. M. Heuvelink. 2008. <span>“<span class="nocase">Real-time automatic interpolation of ambient gamma dose rates from the Dutch Radioactivity Monitoring Network</span>.”</span> <em>Computers &amp; Geosciences</em>. <a href="https://doi.org/10.1016/j.cageo.2008.10.011">https://doi.org/10.1016/j.cageo.2008.10.011</a>.
 </div>
-<div id="ref-Hobson1972">
-<p>Hobson, R. D. 1972. <em>Surface roughness in topography: quantitative approach</em>. New York, New York: Harper; Row.</p>
+<div id="ref-Hobson1972" class="csl-entry">
+Hobson, R. D. 1972. <em><span class="nocase">Surface roughness in topography: quantitative approach</span></em>. New York, New York: Harper; Row.
 </div>
-<div id="ref-Kane2007">
-<p>Kane, Joseph. 2007. “Zooplankton abundance trends on Georges Bank, 1977–2004.” <em>ICES Journal of Marine Science</em> 64 (5): 909–19. <a href="https://doi.org/10.1093/icesjms/fsm066">https://doi.org/10.1093/icesjms/fsm066</a>.</p>
+<div id="ref-Kane2007" class="csl-entry">
+Kane, Joseph. 2007. <span>“<span class="nocase">Zooplankton abundance trends on Georges Bank, 1977-2004</span>.”</span> <em>ICES Journal of Marine Science</em> 64 (5): 909–19. <a href="https://doi.org/10.1093/icesjms/fsm066">https://doi.org/10.1093/icesjms/fsm066</a>.
 </div>
-<div id="ref-Kane2011">
-<p>Kane, Joseph. 2011. “Multiyear variability of phytoplankton abundance in the Gulf of Maine.” <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. <a href="https://doi.org/10.1093/icesjms/fsr122">https://doi.org/10.1093/icesjms/fsr122</a>.</p>
+<div id="ref-Kane2011" class="csl-entry">
+———. 2011. <span>“<span class="nocase">Multiyear variability of phytoplankton abundance in the Gulf of Maine</span>.”</span> <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. <a href="https://doi.org/10.1093/icesjms/fsr122">https://doi.org/10.1093/icesjms/fsr122</a>.
 </div>
-<div id="ref-Kinlan2016">
-<p>Kinlan, Brian P., Arliss J. Winship, Timothy P. White, and John Christensen. 2016. “Modeling At-Sea Occurrence and Abundance of Marine Birds to Support Atlantic Marine Renewable Energy Planning Phase I Report.” <a href="https://www.boem.gov/ESPIS/5/5512.pdf">https://www.boem.gov/ESPIS/5/5512.pdf</a>.</p>
+<div id="ref-Kinlan2016" class="csl-entry">
+Kinlan, Brian P., Arliss J. Winship, Timothy P. White, and John Christensen. 2016. <span>“<span class="nocase">Modeling At-Sea Occurrence and Abundance of Marine Birds to Support Atlantic Marine Renewable Energy Planning Phase I Report</span>.”</span> <a href="https://www.boem.gov/ESPIS/5/5512.pdf">https://www.boem.gov/ESPIS/5/5512.pdf</a>.
 </div>
-<div id="ref-randomForest">
-<p>Liaw, Andy, and Matthew Wiener. 2002. “Classification and Regression by randomForest.” <em>R News</em> 2 (3): 18–22. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.</p>
+<div id="ref-randomForest" class="csl-entry">
+Liaw, Andy, and Matthew Wiener. 2002. <span>“<span class="nocase">Classification and Regression by randomForest</span>.”</span> <em>R News</em> 2 (3): 18–22. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.
 </div>
-<div id="ref-Maritorena2010">
-<p>Maritorena, Stéphane, Odile Hembise Fanton D’Andon, Antoine Mangin, and David A Siegel. 2010. “Merged satellite ocean color data products using a bio-optical model: Characteristics,benefits and issues.” <em>Remote Sensing of Environment</em> 114: 1791–1804. <a href="https://doi.org/10.1016/j.rse.2010.04.002">https://doi.org/10.1016/j.rse.2010.04.002</a>.</p>
+<div id="ref-Maritorena2010" class="csl-entry">
+Maritorena, Stéphane, Odile Hembise Fanton D’Andon, Antoine Mangin, and David A Siegel. 2010. <span>“<span class="nocase">Merged satellite ocean color data products using a bio-optical model: Characteristics,benefits and issues</span>.”</span> <em>Remote Sensing of Environment</em> 114: 1791–1804. <a href="https://doi.org/10.1016/j.rse.2010.04.002">https://doi.org/10.1016/j.rse.2010.04.002</a>.
 </div>
-<div id="ref-Morse2017">
-<p>Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. “Distinct Zooplankton Regime Shift Patterns Across Ecoregions of the U.s. Northeast Continental Shelf Large Marine Ecosystem.” <em>Journal of Marine Systems</em> 165: 77–91. <a href="https://doi.org/https://doi.org/10.1016/j.jmarsys.2016.09.011">https://doi.org/https://doi.org/10.1016/j.jmarsys.2016.09.011</a>.</p>
+<div id="ref-Morse2017" class="csl-entry">
+Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. <span>“<span class="nocase">Distinct zooplankton regime shift patterns across ecoregions of the U.S. Northeast continental shelf Large Marine Ecosystem</span>.”</span> <em>Journal of Marine Systems</em> 165: 77–91. <a href="https://doi.org/10.1016/j.jmarsys.2016.09.011">https://doi.org/10.1016/j.jmarsys.2016.09.011</a>.
 </div>
-<div id="ref-Murphy2010">
-<p>Murphy, Melanie A., Jeffrey S. Evans, and Andrew Storfer. 2010. “Quantifying Bufo boreas connectivity in Yellowstone National Park with landscape genetics.” <em>Ecology</em> 91 (1): 252–61. <a href="https://doi.org/10.1890/08-0879.1">https://doi.org/10.1890/08-0879.1</a>.</p>
+<div id="ref-Murphy2010" class="csl-entry">
+Murphy, Melanie A., Jeffrey S. Evans, and Andrew Storfer. 2010. <span>“<span class="nocase">Quantifying Bufo boreas connectivity in Yellowstone National Park with landscape genetics</span>.”</span> <em>Ecology</em> 91 (1): 252–61. <a href="https://doi.org/10.1890/08-0879.1">https://doi.org/10.1890/08-0879.1</a>.
 </div>
-<div id="ref-randomForestExplainer">
-<p>Paluszynska, Aleksandra, and Przemyslaw Biecek. 2017. <em>randomForestExplainer: Explaining and Visualizing Random Forests in Terms of Variable Importance</em>. <a href="https://CRAN.R-project.org/package=randomForestExplainer">https://CRAN.R-project.org/package=randomForestExplainer</a>.</p>
+<div id="ref-randomForestExplainer" class="csl-entry">
+Paluszynska, Aleksandra, and Przemyslaw Biecek. 2017. <em><span class="nocase">randomForestExplainer: Explaining and Visualizing Random Forests in Terms of Variable Importance</span></em>. <a href="https://CRAN.R-project.org/package=randomForestExplainer">https://CRAN.R-project.org/package=randomForestExplainer</a>.
 </div>
-<div id="ref-Sappington2007">
-<p>Sappington, J. M., Kathleen M. Longshore, and Daniel B. Thompson. 2007. “Quantifying Landscape Ruggedness for Animal Habitat Analysis: A Case Study Using Bighorn Sheep in the Mojave Desert.” <em>Journal of Wildlife Management</em> 71 (5): 1419–26. <a href="https://doi.org/10.2193/2005-723">https://doi.org/10.2193/2005-723</a>.</p>
+<div id="ref-Sappington2007" class="csl-entry">
+Sappington, J. M., Kathleen M. Longshore, and Daniel B. Thompson. 2007. <span>“<span class="nocase">Quantifying Landscape Ruggedness for Animal Habitat Analysis: A Case Study Using Bighorn Sheep in the Mojave Desert</span>.”</span> <em>Journal of Wildlife Management</em> 71 (5): 1419–26. <a href="https://doi.org/10.2193/2005-723">https://doi.org/10.2193/2005-723</a>.
 </div>
-<div id="ref-Winship2018">
-<p>Winship, A. J., B. P. Kinlan, T. P. White, J. B. Leirness, and J. Christensen. 2018. “Modeling At-Sea Density of Marine Birds to Support Atlantic Marine Renewable Energy Planning: Final Report.” OCS Study BOEM 2018-010. <a href="https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/">https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/</a>.</p>
+<div id="ref-Winship2018" class="csl-entry">
+Winship, A. J., B. P. Kinlan, T. P. White, J. B. Leirness, and J. Christensen. 2018. <span>“<span class="nocase">Modeling At-Sea Density of Marine Birds to Support Atlantic Marine Renewable Energy Planning: Final Report</span>.”</span> OCS Study BOEM 2018-010. <a href="https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/">https://coastalscience.noaa.gov/data_reports/modeling-at-sea-density-of-marine-birds-to-support-atlantic-marine-renewable-energy-planning-final-report/</a>.
 </div>
 </div>
             </section>
@@ -1042,6 +1068,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

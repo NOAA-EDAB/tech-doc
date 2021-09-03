@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>47 Slopewater proportions | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="47 Slopewater proportions | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="stockstatus.html"/>
 <link rel="next" href="species-density-estimates.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -803,9 +829,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="data-analysis-48" class="section level3" number="47.1.3">
 <h3><span class="header-section-number">47.1.3</span> Data analysis</h3>
-<p>Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel. The analysis closely follows the methodology described by <span class="citation">D. G. Mountain (<a href="#ref-mountain2012" role="doc-biblioref">2012</a>)</span>. This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia.</p>
+<p>Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel. The analysis closely follows the methodology described by <span class="citation">David G. Mountain (<a href="#ref-mountain2012" role="doc-biblioref">2012a</a>)</span>. This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia.</p>
 <p>For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6° latitude north and 66-66.8° longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated. The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting. The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.</p>
-<p>The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=10 °C, S=35), (2) Labrador Slope Water (T=6 °C, S=34.7) and (3) Scotian Shelf Water (T=2 °C, S=32). As described by <span class="citation">D. G. Mountain (<a href="#ref-mountain2012" role="doc-biblioref">2012</a>)</span>, the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm. On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram. Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement. As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources). This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources. Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.</p>
+<p>The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=10 °C, S=35), (2) Labrador Slope Water (T=6 °C, S=34.7) and (3) Scotian Shelf Water (T=2 °C, S=32). As described by <span class="citation">David G. Mountain (<a href="#ref-mountain2012" role="doc-biblioref">2012a</a>)</span>, the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm. On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram. Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement. As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources). This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources. Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.</p>
 <p>It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant. In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes. Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank. These sources are not explicitely considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates. Code used to calculate slopewater proportions can be found <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/slopewater_analysis.R">here</a>.</p>
 </div>
 <div id="data-processing-33" class="section level3" number="47.1.4">
@@ -815,8 +841,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plotting-39" class="section level3" number="47.1.5">
 <h3><span class="header-section-number">47.1.5</span> Plotting</h3>
 Code used to create the figure below can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-wsw-prop.R">here</a>.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-58"></span>
-<img src="images/unnamed-chunk-58-1.png" alt="Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-57"></span>
+<img src="images/unnamed-chunk-57-1.png" alt="Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel." width="480" />
 <p class="caption">
 Figure 47.1: Proportion of warm slope water (WSW) and Labrador slope water (LSLW) entering the GOM through the Northeast Channel.
 </p>
@@ -826,9 +852,9 @@ Figure 47.1: Proportion of warm slope water (WSW) and Labrador slope water (LSLW
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-mountain2012">
-<p>Mountain, David G. 2012. “Labrador Slope Water Entering the Gulf of Maine—Response to the North Atlantic Oscillation.” <em>Continental Shelf Research</em> 47: 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-mountain2012" class="csl-entry">
+———. 2012a. <span>“Labrador Slope Water Entering the Gulf of Maine—Response to the North Atlantic Oscillation.”</span> <em>Continental Shelf Research</em> 47: 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.
 </div>
 </div>
             </section>
@@ -860,6 +886,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

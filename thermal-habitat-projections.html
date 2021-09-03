@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>52 Thermal Habitat Projections | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="52 Thermal Habitat Projections | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="survdat.html"/>
 <link rel="next" href="trend-analysis.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -802,7 +828,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="modeling-changes-in-suitable-thermal-habitat" class="section level4" number="52.1.1.2">
 <h4><span class="header-section-number">52.1.1.2</span> Modeling Changes in Suitable Thermal Habitat</h4>
-<p>The NOAA Northeast Fisheries Science Center, U.S. Northeast Shelf (NES) bottom trawl survey, which has been conducted for almost 50-years in the spring and fall, provides a rich source of data on historical and current marine species distribution, abundance, and habitat, as well as oceanographic conditions <span class="citation">(Azarovitz <a href="#ref-Azarovitz1981" role="doc-biblioref">1981</a>)</span>. The survey was implemented to meet several objectives: (1) monitor trends in abundance, biomass, and recruitment, (2) monitor the geographic distribution of species, (3) monitor ecosystem changes, (4) monitor changes in life history traits (e.g., trends in growth, longevity, mortality, and maturation, and food habits), and (5) collect baseline oceanographic and environmental data. These data can be leveraged for exploring future changes in the patterns of abundance and distribution of species in the region.</p>
+<p>The NOAA Northeast Fisheries Science Center, U.S. Northeast Shelf (NES) bottom trawl survey, which has been conducted for almost 50-years in the spring and fall, provides a rich source of data on historical and current marine species distribution, abundance, and habitat, as well as oceanographic conditions <span class="citation">(<a href="#ref-Azarovitz1981" role="doc-biblioref">Azarovitz 1981</a>)</span>. The survey was implemented to meet several objectives: (1) monitor trends in abundance, biomass, and recruitment, (2) monitor the geographic distribution of species, (3) monitor ecosystem changes, (4) monitor changes in life history traits (e.g., trends in growth, longevity, mortality, and maturation, and food habits), and (5) collect baseline oceanographic and environmental data. These data can be leveraged for exploring future changes in the patterns of abundance and distribution of species in the region.</p>
 <!-- ### Data extraction -->
 </div>
 </div>
@@ -810,20 +836,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">52.1.2</span> Data analysis</h3>
 <div id="global-climate-model-projection-1" class="section level4" number="52.1.2.1">
 <h4><span class="header-section-number">52.1.2.1</span> Global Climate Model Projection</h4>
-<p>The CM2.6 80-year projections can be roughly assigned to a time period by using the International Panel on Climate Change (IPCC) Representative Concentration Pathways (RCPs), which describe four different 21st century pathways of anthropogenic greenhouse gas emissions, air pollutant emissions, and land use <span class="citation">(IPCC <a href="#ref-IPCC2014" role="doc-biblioref">2014</a>)</span>. There are four RCPs, ranging from a stringent mitigation scenario (RCP2.6), two intermediate scenarios (RCP4.5 and RCP6.0), and one scenario with very high greenhouse gas emissions (RCP8.5). For RCP8.5, the global average temperature at the surface warms by 2C by approximately 2060-2070 relative to the 1986-2005 climatology (see Figure SPM.7a in <a href="https://www.ipcc.ch/pdf/assessment-report/ar5/wg1/WG1AR5_SPM_FINAL.pdf">IPCC, 2013</a>). For CM2.6, the global average temperature warms by 2C by approximately years 60-80 (see Fig. 1 in <span class="citation">Winton et al. (<a href="#ref-winton_has_2014" role="doc-biblioref">2014</a>)</span>). Therefore, the last 20 years of the transient climate response simulation roughly corresponds to 2060-2080 of the RCP8.5 scenario.</p>
+<p>The CM2.6 80-year projections can be roughly assigned to a time period by using the International Panel on Climate Change (IPCC) Representative Concentration Pathways (RCPs), which describe four different 21st century pathways of anthropogenic greenhouse gas emissions, air pollutant emissions, and land use <span class="citation">(<a href="#ref-IPCC2014" role="doc-biblioref">IPCC 2014</a>)</span>. There are four RCPs, ranging from a stringent mitigation scenario (RCP2.6), two intermediate scenarios (RCP4.5 and RCP6.0), and one scenario with very high greenhouse gas emissions (RCP8.5). For RCP8.5, the global average temperature at the surface warms by 2C by approximately 2060-2070 relative to the 1986-2005 climatology (see Figure SPM.7a in <a href="https://www.ipcc.ch/pdf/assessment-report/ar5/wg1/WG1AR5_SPM_FINAL.pdf">IPCC, 2013</a>). For CM2.6, the global average temperature warms by 2C by approximately years 60-80 (see Fig. 1 in <span class="citation">Winton et al. (<a href="#ref-winton_has_2014" role="doc-biblioref">2014</a>)</span>). Therefore, the last 20 years of the transient climate response simulation roughly corresponds to 2060-2080 of the RCP8.5 scenario.</p>
 <p>Here, the monthly differences in surface and bottom temperatures (‘deltas’) for spring (February-April) and fall (September- November) are added to an average annual temperature climatology for spring and fall, respectively, derived from observed surface and bottom temperatures to produce an 80-year time series of future bottom and surface temperatures in both seasons. The observed temperatures come from the NEFSC spring and fall bottom trawl surveys conducted from 1968 to 2013 and represent approximately 30,000 observations over the time series.</p>
 </div>
 <div id="modeling-changes-in-suitable-thermal-habitat-1" class="section level4" number="52.1.2.2">
 <h4><span class="header-section-number">52.1.2.2</span> Modeling Changes in Suitable Thermal Habitat</h4>
-<p>We modeled individual species thermal habitat across the whole U.S. NES and not by sub-region because we did not want to assume that species would necessarily maintain these assemblages in the future. Indeed, the goal here is to determine future patterns of thermal habitat availability for species on the U.S. NES in more broad terms. We fit one generalizaed additive model (GAM) based on both spring and fall data (i.e., an annual model as opposed to separate spring and fall models) and use it to project potential changes in distribution and magnitude of biomass separately for each season for each species. By creating a single annual model based on temperature data from both spring and fall, we ensure that the full thermal envelope of each species is represented. For example, if a species with a wide thermal tolerance has historically been found in cooler waters in the spring, and in warmer waters in the fall, an annual model will ensure that if there are warmer waters in the spring in the future, that species will have the potential to inhabit those areas. Additionally, because the trawl survey data are subject to many zero observations, we use delta-lognormal GAMs <span class="citation">(Wood <a href="#ref-Wood2011a" role="doc-biblioref">2011</a>)</span>, which model presence-absence separately from logged positive observations. The response variables in each of the GAMs are presence/absence and logged positive biomass of each assemblage or individual species, respectively. A binomial link function is used in the presence/absence models and a Gaussian link function is used in the models with logged positive biomass.
-The predictor variables are surface and bottom temperature and depth (all measured by the survey at each station), fit with penalized regression splines, and survey stratum, which accounts for differences in regional habitat quality across the survey region. Stratum may be considered to account for additional information not explicitly measured by the survey (e.g., bottom rugosity). Predictions of species abundance are calculated as the product of the predictions from the presence-absence model, the exponentiated predictions from the logged positive biomass model, and a correction factor to account for the retransformation bias associated with the log transformation <span class="citation">(Duan <a href="#ref-Duan1983" role="doc-biblioref">1983</a>; and see Pinsky et al. <a href="#ref-Pinsky2013" role="doc-biblioref">2013</a>)</span>.</p>
-<p>We calculated the suitable thermal habitat both in terms of changes in ‘suitable thermal abundance’, defined as the species density possible given appropriate temperature, depth and bathymetric conditions, and changes in ‘suitable thermal area’, defined as the size of the physical area potentially occupied by a species given appropriate temperature, depth and bathymetric conditions. Suitable thermal abundance is determined from the predictions from the GAMs (i.e., a prediction of biomass). However, this quantity should not be interpreted directly as a change in future abundance or biomass, but instead as the potential abundance of a species in the future given changes in temperature and holding all else (e.g., fishing effort, species interactions, productivity, etc.) constant. Suitable thermal area is determined as a change in the suitable area that a species distribution occupies in the future and is derived from the area of the kernel density of the distribution. To ensure that the estimates are conservative, we select all points with values greater than one standard deviation above the mean. We then compute the area of these kernels using the <code>gArea</code> function from the <code>rgeos</code> package in R <span class="citation">(Bivand et al. <a href="#ref-Bivand2011" role="doc-biblioref">2011</a>)</span>.</p>
+<p>We modeled individual species thermal habitat across the whole U.S. NES and not by sub-region because we did not want to assume that species would necessarily maintain these assemblages in the future. Indeed, the goal here is to determine future patterns of thermal habitat availability for species on the U.S. NES in more broad terms. We fit one generalizaed additive model (GAM) based on both spring and fall data (i.e., an annual model as opposed to separate spring and fall models) and use it to project potential changes in distribution and magnitude of biomass separately for each season for each species. By creating a single annual model based on temperature data from both spring and fall, we ensure that the full thermal envelope of each species is represented. For example, if a species with a wide thermal tolerance has historically been found in cooler waters in the spring, and in warmer waters in the fall, an annual model will ensure that if there are warmer waters in the spring in the future, that species will have the potential to inhabit those areas. Additionally, because the trawl survey data are subject to many zero observations, we use delta-lognormal GAMs <span class="citation">(<a href="#ref-Wood2011a" role="doc-biblioref">Wood 2011</a>)</span>, which model presence-absence separately from logged positive observations. The response variables in each of the GAMs are presence/absence and logged positive biomass of each assemblage or individual species, respectively. A binomial link function is used in the presence/absence models and a Gaussian link function is used in the models with logged positive biomass.
+The predictor variables are surface and bottom temperature and depth (all measured by the survey at each station), fit with penalized regression splines, and survey stratum, which accounts for differences in regional habitat quality across the survey region. Stratum may be considered to account for additional information not explicitly measured by the survey (e.g., bottom rugosity). Predictions of species abundance are calculated as the product of the predictions from the presence-absence model, the exponentiated predictions from the logged positive biomass model, and a correction factor to account for the retransformation bias associated with the log transformation <span class="citation">(<a href="#ref-Duan1983" role="doc-biblioref">Duan 1983</a>; and see <a href="#ref-Pinsky2013" role="doc-biblioref">Pinsky et al. 2013</a>)</span>.</p>
+<p>We calculated the suitable thermal habitat both in terms of changes in ‘suitable thermal abundance’, defined as the species density possible given appropriate temperature, depth and bathymetric conditions, and changes in ‘suitable thermal area’, defined as the size of the physical area potentially occupied by a species given appropriate temperature, depth and bathymetric conditions. Suitable thermal abundance is determined from the predictions from the GAMs (i.e., a prediction of biomass). However, this quantity should not be interpreted directly as a change in future abundance or biomass, but instead as the potential abundance of a species in the future given changes in temperature and holding all else (e.g., fishing effort, species interactions, productivity, etc.) constant. Suitable thermal area is determined as a change in the suitable area that a species distribution occupies in the future and is derived from the area of the kernel density of the distribution. To ensure that the estimates are conservative, we select all points with values greater than one standard deviation above the mean. We then compute the area of these kernels using the <code>gArea</code> function from the <code>rgeos</code> package in R <span class="citation">(<a href="#ref-Bivand2011" role="doc-biblioref">Bivand et al. 2011</a>)</span>.</p>
 </div>
 </div>
 <div id="plotting-44" class="section level3" number="52.1.3">
 <h3><span class="header-section-number">52.1.3</span> Plotting</h3>
 <div class="figure"><span id="fig:th-maps"></span>
-<img src="images/th-maps-1.png" alt="Current thermal habitat estimate (A), and 20-40 year thermal habitat projection (B) for summer flounder on the Northeast Continental Shelf." width="768" />
+<img src="images/thermal_habitat.png" alt="Current thermal habitat estimate (A), and 20-40 year thermal habitat projection (B) for summer flounder on the Northeast Continental Shelf." width="640" />
 <p class="caption">
 Figure 52.1: Current thermal habitat estimate (A), and 20-40 year thermal habitat projection (B) for summer flounder on the Northeast Continental Shelf.
 </p>
@@ -834,33 +860,33 @@ Figure 52.1: Current thermal habitat estimate (A), and 20-40 year thermal habita
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Azarovitz1981">
-<p>Azarovitz, Thomas R. 1981. “A brief historical review of the Woods Hole Laboratory trawl survey time series.” In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Azarovitz1981" class="csl-entry">
+Azarovitz, Thomas R. 1981. <span>“<span class="nocase">A brief historical review of the Woods Hole Laboratory trawl survey time series</span>.”</span> In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.
 </div>
-<div id="ref-Bivand2011">
-<p>Bivand, Roger, Colin Rundel, Edzer Pebesma, and Karl O. Hufthammer. 2011. “rgeos: Interface to Geometry Engine–Open Source (GEOS).” <a href="http://scholar.google.com/scholar?hl=en%7B\&amp;%7DbtnG=Search%7B\&amp;%7Dq=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS)%7B\#%7D0">http://scholar.google.com/scholar?hl=en{\&amp;}btnG=Search{\&amp;}q=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS){\#}0</a>.</p>
+<div id="ref-Bivand2011" class="csl-entry">
+Bivand, Roger, Colin Rundel, Edzer Pebesma, and Karl O. Hufthammer. 2011. <span>“<span class="nocase">rgeos: Interface to Geometry Engine–Open Source (GEOS)</span>.”</span> <a href="http://scholar.google.com/scholar?hl=en{\&amp;}btnG=Search{\&amp;}q=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS){\#}0">http://scholar.google.com/scholar?hl=en{\&amp;}btnG=Search{\&amp;}q=intitle:Interface+to+Geometry+Engine+-+Open+Source+(GEOS){\#}0</a>.
 </div>
-<div id="ref-Duan1983">
-<p>Duan, Naihua. 1983. “Smearing estimate: A nonparametric retransformation method.” <em>Journal of the American Statistical Association</em> 78 (383): 605–10. <a href="https://doi.org/10.1080/01621459.1983.10478017">https://doi.org/10.1080/01621459.1983.10478017</a>.</p>
+<div id="ref-Duan1983" class="csl-entry">
+Duan, Naihua. 1983. <span>“<span class="nocase">Smearing estimate: A nonparametric retransformation method</span>.”</span> <em>Journal of the American Statistical Association</em> 78 (383): 605–10. <a href="https://doi.org/10.1080/01621459.1983.10478017">https://doi.org/10.1080/01621459.1983.10478017</a>.
 </div>
-<div id="ref-IPCC2014">
-<p>IPCC. 2014. “Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change.” <a href="https://doi.org/10.1017/CBO9781107415324">https://doi.org/10.1017/CBO9781107415324</a>.</p>
+<div id="ref-IPCC2014" class="csl-entry">
+IPCC. 2014. <span>“<span class="nocase">Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</span>.”</span> <a href="https://doi.org/10.1017/CBO9781107415324">https://doi.org/10.1017/CBO9781107415324</a>.
 </div>
-<div id="ref-Kleisner2017">
-<p>Kleisner, Kristin M., Michael J. Fogarty, Sally McGee, Jonathan A. Hare, Skye Moret, Charles T. Perretti, and Vincent S. Saba. 2017. “Marine species distribution shifts on the U.S. Northeast Continental Shelf under continued ocean warming.” <em>Progress in Oceanography</em> 153: 24–36. <a href="https://doi.org/10.1016/j.pocean.2017.04.001">https://doi.org/10.1016/j.pocean.2017.04.001</a>.</p>
+<div id="ref-Kleisner2017" class="csl-entry">
+Kleisner, Kristin M., Michael J. Fogarty, Sally McGee, Jonathan A. Hare, Skye Moret, Charles T. Perretti, and Vincent S. Saba. 2017. <span>“<span class="nocase">Marine species distribution shifts on the U.S. Northeast Continental Shelf under continued ocean warming</span>.”</span> <em>Progress in Oceanography</em> 153: 24–36. <a href="https://doi.org/10.1016/j.pocean.2017.04.001">https://doi.org/10.1016/j.pocean.2017.04.001</a>.
 </div>
-<div id="ref-Pinsky2013">
-<p>Pinsky, Malin L., Boris Worm, Michael J. Fogarty, Jorge L. Sarmiento, and Simon A. Levin. 2013. “Marine taxa track local climate velocities.” <em>Science</em> 341 (6151): 1239–42. <a href="https://doi.org/10.1126/science.1239352">https://doi.org/10.1126/science.1239352</a>.</p>
+<div id="ref-Pinsky2013" class="csl-entry">
+Pinsky, Malin L., Boris Worm, Michael J. Fogarty, Jorge L. Sarmiento, and Simon A. Levin. 2013. <span>“<span class="nocase">Marine taxa track local climate velocities</span>.”</span> <em>Science</em> 341 (6151): 1239–42. <a href="https://doi.org/10.1126/science.1239352">https://doi.org/10.1126/science.1239352</a>.
 </div>
-<div id="ref-Saba2016">
-<p>Saba, Vincent S., Stephen M. Griffies, Whit G. Anderson, Michael Winton, Michael A. Alexander, Thomas L. Delworth, Jonathan A. Hare, et al. 2016. “Enhanced warming of the Northwest Atlantic Ocean under climate change.” <em>Journal of Geophysical Research: Oceans</em> 121 (1): 118–32. <a href="https://doi.org/10.1002/2015JC011346">https://doi.org/10.1002/2015JC011346</a>.</p>
+<div id="ref-Saba2016" class="csl-entry">
+Saba, Vincent S., Stephen M. Griffies, Whit G. Anderson, Michael Winton, Michael A. Alexander, Thomas L. Delworth, Jonathan A. Hare, et al. 2016. <span>“<span class="nocase">Enhanced warming of the Northwest Atlantic Ocean under climate change</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 121 (1): 118–32. <a href="https://doi.org/10.1002/2015JC011346">https://doi.org/10.1002/2015JC011346</a>.
 </div>
-<div id="ref-winton_has_2014">
-<p>Winton, Michael, Whit G. Anderson, Thomas L. Delworth, Stephen M. Griffies, William J. Hurlin, and Anthony Rosati. 2014. “Has Coarse Ocean Resolution Biased Simulations of Transient Climate Sensitivity?” <em>Geophysical Research Letters</em> 41 (23): 8522–9. <a href="https://doi.org/10.1002/2014GL061523">https://doi.org/10.1002/2014GL061523</a>.</p>
+<div id="ref-winton_has_2014" class="csl-entry">
+Winton, Michael, Whit G. Anderson, Thomas L. Delworth, Stephen M. Griffies, William J. Hurlin, and Anthony Rosati. 2014. <span>“Has Coarse Ocean Resolution Biased Simulations of Transient Climate Sensitivity?”</span> <em>Geophysical Research Letters</em> 41 (23): 8522–29. <a href="https://doi.org/10.1002/2014GL061523">https://doi.org/10.1002/2014GL061523</a>.
 </div>
-<div id="ref-Wood2011a">
-<p>Wood, S. 2011. “Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL.” <a href="https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html">https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html</a>.</p>
+<div id="ref-Wood2011a" class="csl-entry">
+Wood, S. 2011. <span>“<span class="nocase">Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL</span>.”</span> <a href="https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html">https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/mgcv-package.html</a>.
 </div>
 </div>
             </section>
@@ -892,6 +918,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="erddap.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -785,12 +811,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Technical Documentation, State of the Ecosystem Report</h1>
 <p class="author"><em>Northeast Fisheries Science Center</em></p>
-<p class="date"><em>6 April 2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>3 September 2021</em></p>
 </div>
 <div id="introduction" class="section level1 unnumbered">
 <h1>Introduction</h1>
 <p>The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data (“indicators”) used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the <a href="https://www.nefsc.noaa.gov/">Northeast Fisheries Science Center</a> for the <a href="https://www.nefmc.org/">New England Fisheries Management Council</a> and the <a href="http://www.mafmc.org/">Mid-Atlantic Fisheries Management Council</a>. The metadata for each indicator (in accordance with the <a href="http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf">Public Access to Research Results (PARR) directive</a>) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports. The most recent and usable html version of this document can be found at the <a href="https://noaa-edab.github.io/tech-doc/">NOAA EDAB Github</a>. The PDF version of this document is for archiving only. The <a href="https://doi.org/10.25923/64pf-sc70">PDF version</a> from previous years is archived in NOAA’s Institutional Repository.</p>
-<p>Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment <span class="citation">(Levin et al. <a href="#ref-levin_integrated_2009" role="doc-biblioref">2009</a>)</span>, and has been advised many times in the literature <span class="citation">(Degnbol and Jarre <a href="#ref-degnbol_review_2004" role="doc-biblioref">2004</a>; Jennings <a href="#ref-jennings_indicators_2005" role="doc-biblioref">2005</a>; Rice and Rochet <a href="#ref-rice_framework_2005" role="doc-biblioref">2005</a>; Link <a href="#ref-link_translating_2005" role="doc-biblioref">2005</a>)</span>. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested <span class="citation">(Murawski <a href="#ref-murawski_definitions_2000" role="doc-biblioref">2000</a>)</span>). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources <span class="citation">(DePiper et al. <a href="#ref-depiper_operationalizing_2017" role="doc-biblioref">2017</a>)</span>. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.</p>
+<p>Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment <span class="citation">(<a href="#ref-levin_integrated_2009" role="doc-biblioref">Levin et al. 2009</a>)</span>, and has been advised many times in the literature <span class="citation">(<a href="#ref-degnbol_review_2004" role="doc-biblioref">Degnbol and Jarre 2004</a>; <a href="#ref-jennings_indicators_2005" role="doc-biblioref">Jennings 2005</a>; <a href="#ref-rice_framework_2005" role="doc-biblioref">Rice and Rochet 2005</a>; <a href="#ref-link_translating_2005" role="doc-biblioref">Jason S. Link 2005</a>)</span>. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested <span class="citation">(<a href="#ref-murawski_definitions_2000" role="doc-biblioref">Murawski 2000</a>)</span>). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources <span class="citation">(<a href="#ref-depiper_operationalizing_2017" role="doc-biblioref">DePiper et al. 2017</a>)</span>. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.</p>
+<pre><code>##   
+   checking for file ‘/tmp/RtmpHWC8gZ/remotes147b867a4c485/NOAA-EDAB-ecodata-97c2c49/DESCRIPTION’ ...
+  
+✔  checking for file ‘/tmp/RtmpHWC8gZ/remotes147b867a4c485/NOAA-EDAB-ecodata-97c2c49/DESCRIPTION’
+## 
+  
+─  preparing ‘ecodata’: (661ms)
+##    checking DESCRIPTION meta-information ...
+  
+✔  checking DESCRIPTION meta-information
+## 
+  
+─  checking for LF line-endings in source and make files and shell scripts
+## 
+  
+─  checking for empty or unneeded directories
+## 
+  
+─  building ‘ecodata_0.1.0.tar.gz’
+## 
+  
+   
+## </code></pre>
+<pre><code>## cpp11 (0.2.7 -&gt; 0.3.1) [CRAN]
+## dplyr (1.0.6 -&gt; 1.0.7) [CRAN]
+##   
+   checking for file ‘/tmp/RtmpHWC8gZ/remotes147b833fb683b/NOAA-EDAB-assessmentdata-0a0a793/DESCRIPTION’ ...
+  
+✔  checking for file ‘/tmp/RtmpHWC8gZ/remotes147b833fb683b/NOAA-EDAB-assessmentdata-0a0a793/DESCRIPTION’
+## 
+  
+─  preparing ‘assessmentdata’:
+##    checking DESCRIPTION meta-information ...
+  
+✔  checking DESCRIPTION meta-information
+## 
+  
+─  checking for LF line-endings in source and make files and shell scripts
+## 
+  
+─  checking for empty or unneeded directories
+## 
+  
+─  building ‘assessmentdata_0.2.1.tar.gz’
+## 
+  
+   
+## </code></pre>
 
 <div class="figure" style="text-align: center"><span id="fig:neusmap"></span>
 <img src="images/journal.pone.0146756.g002.PNG" alt="Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from Hare et al. (2016)." width="1247" />
@@ -804,30 +878,30 @@ Figure 0.1: Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from 
 
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-degnbol_review_2004">
-<p>Degnbol, P., and A. Jarre. 2004. “Review of Indicators in Fisheries Management – a Development Perspective.” <em>African Journal of Marine Science</em> 26 (1): 303–26. <a href="https://doi.org/10.2989/18142320409504063">https://doi.org/10.2989/18142320409504063</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-degnbol_review_2004" class="csl-entry">
+Degnbol, P., and A. Jarre. 2004. <span>“Review of Indicators in Fisheries Management – a Development Perspective.”</span> <em>African Journal of Marine Science</em> 26 (1): 303–26. <a href="https://doi.org/10.2989/18142320409504063">https://doi.org/10.2989/18142320409504063</a>.
 </div>
-<div id="ref-depiper_operationalizing_2017">
-<p>DePiper, Geret S., Sarah K. Gaichas, Sean M. Lucey, Patricia Pinto da Silva, M. Robin Anderson, Heather Breeze, Alida Bundy, et al. 2017. “Operationalizing Integrated Ecosystem Assessments Within a Multidisciplinary Team: Lessons Learned from a Worked Example.” <em>ICES Journal of Marine Science</em> 74 (8): 2076–86. <a href="https://doi.org/10.1093/icesjms/fsx038">https://doi.org/10.1093/icesjms/fsx038</a>.</p>
+<div id="ref-depiper_operationalizing_2017" class="csl-entry">
+DePiper, Geret S., Sarah K. Gaichas, Sean M. Lucey, Patricia Pinto da Silva, M. Robin Anderson, Heather Breeze, Alida Bundy, et al. 2017. <span>“Operationalizing Integrated Ecosystem Assessments Within a Multidisciplinary Team: Lessons Learned from a Worked Example.”</span> <em>ICES Journal of Marine Science</em> 74 (8): 2076–86. <a href="https://doi.org/10.1093/icesjms/fsx038">https://doi.org/10.1093/icesjms/fsx038</a>.
 </div>
-<div id="ref-Hare2016">
-<p>Hare, JA, WE Morrison, MW Nelson, MM Stachura, EJ Teeters, and RB Griffis. 2016. “A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast Us Continental Shelf.” <em>PLoS ONE</em> 11.</p>
+<div id="ref-Hare2016" class="csl-entry">
+Hare, JA, WE Morrison, MW Nelson, MM Stachura, EJ Teeters, and RB Griffis. 2016. <span>“<a href="">A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast US Continental Shelf</a>.”</span> <em>PLoS ONE</em> 11.
 </div>
-<div id="ref-jennings_indicators_2005">
-<p>Jennings, Simon. 2005. “Indicators to Support an Ecosystem Approach to Fisheries.” <em>Fish and Fisheries</em> 6 (3): 212–32. <a href="https://doi.org/10.1111/j.1467-2979.2005.00189.x">https://doi.org/10.1111/j.1467-2979.2005.00189.x</a>.</p>
+<div id="ref-jennings_indicators_2005" class="csl-entry">
+Jennings, Simon. 2005. <span>“Indicators to Support an Ecosystem Approach to Fisheries.”</span> <em>Fish and Fisheries</em> 6 (3): 212–32. <a href="https://doi.org/10.1111/j.1467-2979.2005.00189.x">https://doi.org/10.1111/j.1467-2979.2005.00189.x</a>.
 </div>
-<div id="ref-levin_integrated_2009">
-<p>Levin, Phillip S, Michael J Fogarty, Steven A Murawski, and David Fluharty. 2009. “Integrated Ecosystem Assessments: Developing the Scientific Basis for Ecosystem-Based Management of the Ocean.” <em>PLoS Biol</em> 7 (1): e1000014. <a href="https://doi.org/10.1371/journal.pbio.1000014">https://doi.org/10.1371/journal.pbio.1000014</a>.</p>
+<div id="ref-levin_integrated_2009" class="csl-entry">
+Levin, Phillip S, Michael J Fogarty, Steven A Murawski, and David Fluharty. 2009. <span>“Integrated <span>Ecosystem</span> <span>Assessments</span>: <span>Developing</span> the <span>Scientific</span> <span>Basis</span> for <span>Ecosystem</span>-<span>Based</span> <span>Management</span> of the <span>Ocean</span>.”</span> <em>PLoS Biol</em> 7 (1): e1000014. <a href="https://doi.org/10.1371/journal.pbio.1000014">https://doi.org/10.1371/journal.pbio.1000014</a>.
 </div>
-<div id="ref-link_translating_2005">
-<p>Link, Jason S. 2005. “Translating Ecosystem Indicators into Decision Criteria.” <em>ICES Journal of Marine Science</em> 62 (3): 569–76. <a href="https://doi.org/10.1016/j.icesjms.2004.12.015">https://doi.org/10.1016/j.icesjms.2004.12.015</a>.</p>
+<div id="ref-link_translating_2005" class="csl-entry">
+Link, Jason S. 2005. <span>“Translating Ecosystem Indicators into Decision Criteria.”</span> <em>ICES Journal of Marine Science</em> 62 (3): 569–76. <a href="https://doi.org/10.1016/j.icesjms.2004.12.015">https://doi.org/10.1016/j.icesjms.2004.12.015</a>.
 </div>
-<div id="ref-murawski_definitions_2000">
-<p>Murawski, S. 2000. “Definitions of Overfishing from an Ecosystem Perspective.” <em>ICES Journal of Marine Science</em> 57 (3): 649–58. <a href="https://doi.org/10.1006/jmsc.2000.0738">https://doi.org/10.1006/jmsc.2000.0738</a>.</p>
+<div id="ref-murawski_definitions_2000" class="csl-entry">
+Murawski, S. 2000. <span>“Definitions of Overfishing from an Ecosystem Perspective.”</span> <em>ICES Journal of Marine Science</em> 57 (3): 649–58. <a href="https://doi.org/10.1006/jmsc.2000.0738">https://doi.org/10.1006/jmsc.2000.0738</a>.
 </div>
-<div id="ref-rice_framework_2005">
-<p>Rice, Jake C., and Marie-Joëlle Rochet. 2005. “A Framework for Selecting a Suite of Indicators for Fisheries Management.” <em>ICES Journal of Marine Science</em> 62 (3): 516–27. <a href="https://doi.org/10.1016/j.icesjms.2005.01.003">https://doi.org/10.1016/j.icesjms.2005.01.003</a>.</p>
+<div id="ref-rice_framework_2005" class="csl-entry">
+Rice, Jake C., and Marie-Joëlle Rochet. 2005. <span>“A Framework for Selecting a Suite of Indicators for Fisheries Management.”</span> <em>ICES Journal of Marine Science</em> 62 (3): 516–27. <a href="https://doi.org/10.1016/j.icesjms.2005.01.003">https://doi.org/10.1016/j.icesjms.2005.01.003</a>.
 </div>
 </div>
             </section>
@@ -859,6 +933,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

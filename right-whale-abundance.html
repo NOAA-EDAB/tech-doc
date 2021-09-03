@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>41 Right Whale Abundance | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="41 Right Whale Abundance | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="recreational-shark-fishing-indicators.html"/>
 <link rel="next" href="safmc-managed-spp.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -795,8 +821,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">41.1</span> Methods</h2>
 <div id="data-sources-44" class="section level3" number="41.1.1">
 <h3><span class="header-section-number">41.1.1</span> Data sources</h3>
-<p>The North Atlantic right whale abundance estimates were taken from a published document <span class="citation">(see Pace, Corkeron, and Kraus <a href="#ref-Pace2017" role="doc-biblioref">2017</a>)</span>, except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 National Oceanographic and Atmospheric Administration marine mammal stock assessment <span class="citation">(Hayes et al. <a href="#ref-Hayes2017" role="doc-biblioref">2017</a>)</span> and an unpublished 2017 stock assessment.</p>
-<p>Calves birth estimates are taken from a published report <span class="citation">(Pettis, Pace, and Hamilton <a href="#ref-narw2019" role="doc-biblioref">2019</a>)</span> put out yearly by the North American Right Whale Consortium.</p>
+<p>The North Atlantic right whale abundance estimates were taken from a published document <span class="citation">(see <a href="#ref-Pace2017" role="doc-biblioref">Pace, Corkeron, and Kraus 2017</a>)</span>, except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 National Oceanographic and Atmospheric Administration marine mammal stock assessment <span class="citation">(<a href="#ref-Hayes2017" role="doc-biblioref">Hayes et al. 2017</a>)</span> and an unpublished 2017 stock assessment.</p>
+<p>Calves birth estimates are taken from a published report <span class="citation">(<a href="#ref-narw2019" role="doc-biblioref">Pettis, Pace, and Hamilton 2019</a>)</span> put out yearly by the North American Right Whale Consortium.</p>
 </div>
 <div id="data-extraction-29" class="section level3" number="41.1.2">
 <h3><span class="header-section-number">41.1.2</span> Data extraction</h3>
@@ -830,15 +856,15 @@ Figure 41.2: North Atlantic right whale calf births.
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Hayes2017">
-<p>Hayes, Sean Arthur, Elizabeth Josephson, Katherine Maze-Foley, Patricia E Rosel, Barbie L Byrd, Timothy VN Cole, Laura Engleby, et al. 2017. “US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2016.” <em>NOAA Technical Memorandum NMFS-NE-241</em>, no. June: 274. <a href="http://nova.nefsc.noaa.gov/palit/Waring%20et%20al.%7B\_%7D2013%7B\_%7DNOAA%20Tech%20Memo%20NMFS-NE-223%7B\_%7DU%20.%20S%20.%20Atlantic%20and%20Gulf%20of%20Mexico%20Marine%20Mammal%20Stock%20Assessments%20-%202012.pdf">http://nova.nefsc.noaa.gov/palit/Waring et al.{\_}2013{\_}NOAA Tech Memo NMFS-NE-223{\_}U . S . Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2012.pdf</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Hayes2017" class="csl-entry">
+Hayes, Sean Arthur, Elizabeth Josephson, Katherine Maze-Foley, Patricia E Rosel, Barbie L Byrd, Timothy VN Cole, Laura Engleby, et al. 2017. <span>“<span class="nocase">US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2016</span>.”</span> <em>NOAA Technical Memorandum NMFS-NE-241</em>, no. June: 274. <a href="http://nova.nefsc.noaa.gov/palit/Waring et al.{\_}2013{\_}NOAA Tech Memo NMFS-NE-223{\_}U . S . Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2012.pdf">http://nova.nefsc.noaa.gov/palit/Waring et al.{\_}2013{\_}NOAA Tech Memo NMFS-NE-223{\_}U . S . Atlantic and Gulf of Mexico Marine Mammal Stock Assessments - 2012.pdf</a>.
 </div>
-<div id="ref-Pace2017">
-<p>Pace, Richard M., Peter J. Corkeron, and Scott D. Kraus. 2017. “State-space mark-recapture estimates reveal a recent decline in abundance of North Atlantic right whales.” <em>Ecology and Evolution</em>. <a href="https://doi.org/10.1002/ece3.3406">https://doi.org/10.1002/ece3.3406</a>.</p>
+<div id="ref-Pace2017" class="csl-entry">
+Pace, Richard M., Peter J. Corkeron, and Scott D. Kraus. 2017. <span>“<span class="nocase">State-space mark-recapture estimates reveal a recent decline in abundance of North Atlantic right whales</span>.”</span> <em>Ecology and Evolution</em>. <a href="https://doi.org/10.1002/ece3.3406">https://doi.org/10.1002/ece3.3406</a>.
 </div>
-<div id="ref-narw2019">
-<p>Pettis, H. M, R. M. Pace, and P. K. Hamilton. 2019. “North American Right Whale Consortium 2019 Annual Report Card.” <a href="https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf">https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf</a>.</p>
+<div id="ref-narw2019" class="csl-entry">
+Pettis, H. M, R. M. Pace, and P. K. Hamilton. 2019. <span>“North American Right Whale Consortium 2019 Annual Report Card.”</span> <a href="https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf">https://www.narwc.org/uploads/1/1/6/6/116623219/2019reportfinal.pdf</a>.
 </div>
 </div>
             </section>
@@ -870,6 +896,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

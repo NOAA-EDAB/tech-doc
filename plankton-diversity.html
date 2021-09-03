@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>36 Plankton Diversity | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="36 Plankton Diversity | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="phytoplankton-size-class.html"/>
 <link rel="next" href="fish-productivity-indicator.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -793,10 +819,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Public availability statement</strong>: Source data are available to the public <a href="ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/">here</a>. Derived data for this indicator are available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/ichthyo_div_soe_v1.html">here</a>.</p>
 <div id="methods-36" class="section level2" number="36.1">
 <h2><span class="header-section-number">36.1</span> Methods</h2>
-<p>Data from the NOAA Northeast Fisheries Science Center (NEFSC) Oceans and Climate branch (OCB) public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa. The 45 taxa were established <span class="citation">(Walsh et al. <a href="#ref-RN126" role="doc-biblioref">2015</a>)</span>, and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae.</p>
+<p>Data from the NOAA Northeast Fisheries Science Center (NEFSC) Oceans and Climate branch (OCB) public dataset were used to examine changes in diversity of abundance among 45 ichthyoplankton taxa. The 45 taxa were established <span class="citation">(<a href="#ref-RN126" role="doc-biblioref">Walsh et al. 2015</a>)</span>, and include the most abundant taxa from the 1970s to present that represent consistency in the identification of larvae.</p>
 <div id="data-sources-39" class="section level3" number="36.1.1">
 <h3><span class="header-section-number">36.1.1</span> Data sources</h3>
-<p>Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year. A random-stratified design based on the NEFSC bottom trawl survey design <span class="citation">(Azarovitz <a href="#ref-Azarovitz1981" role="doc-biblioref">1981</a>)</span> is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design.
+<p>Multi-species plankton surveys cover the entire Northeast US shelf from Cape Hatteras, North Carolina, to Cape Sable, Nova Scotia, four to six times per year. A random-stratified design based on the NEFSC bottom trawl survey design <span class="citation">(<a href="#ref-Azarovitz1981" role="doc-biblioref">Azarovitz 1981</a>)</span> is used to collect samples from 47 strata. The number of strata is lower than the trawl survey as many of the narrow inshore and shelf-break strata are combined in the EcoMon design.
 The area encompassed by each stratum determined the number of samples in each stratum. Samples were collected both day and night using a 61 cm bongo net. Net tow speed was 1.5 knots and maximum sample depth was 200 m. Double oblique tows were a minimum of 5 mintues in duration, and fished from the surface to within 5 m of the seabed or to a maximum depth of 200 m. The volume filtered of all collections was measured with mechanical flowmeters mounted across the mouth of each net.</p>
 <p>Processing of most samples was conducted at the Morski Instytut Rybacki (MIR) in Szczecin, Poland; the remaining samples were processed at the NEFSC or the Atlantic Reference Center, St Andrews, Canada. Larvae were identified to the lowest possible taxa and enumerated for each sample. Taxon abundance for each station was standardized to number under 10 m<sup>-2</sup> sea surface.</p>
 </div>
@@ -836,12 +862,12 @@ Figure 36.2: Ichthyoplankton diversity in the Mid-Atlantic Bight.
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Azarovitz1981">
-<p>Azarovitz, Thomas R. 1981. “A brief historical review of the Woods Hole Laboratory trawl survey time series.” In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Azarovitz1981" class="csl-entry">
+Azarovitz, Thomas R. 1981. <span>“<span class="nocase">A brief historical review of the Woods Hole Laboratory trawl survey time series</span>.”</span> In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.
 </div>
-<div id="ref-RN126">
-<p>Walsh, Harvey J., David E. Richardson, Katrin E. Marancik, and Jonathan A. Hare. 2015. “Long-Term Changes in the Distributions of Larval and Adult Fish in the Northeast U.s. Shelf Ecosystem.” Journal Article. <em>PLoS ONE</em> 10 (9): e0137382. <a href="https://doi.org/10.1371/journal.pone.0137382">https://doi.org/10.1371/journal.pone.0137382</a>.</p>
+<div id="ref-RN126" class="csl-entry">
+Walsh, Harvey J., David E. Richardson, Katrin E. Marancik, and Jonathan A. Hare. 2015. <span>“Long-Term Changes in the Distributions of Larval and Adult Fish in the Northeast u.s. Shelf Ecosystem.”</span> Journal Article. <em>PLoS ONE</em> 10 (9): e0137382. <a href="https://doi.org/10.1371/journal.pone.0137382">https://doi.org/10.1371/journal.pone.0137382</a>.
 </div>
 </div>
             </section>
@@ -873,6 +899,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

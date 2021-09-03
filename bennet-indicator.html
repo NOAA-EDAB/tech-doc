@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Bennet Indicator | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Bennet Indicator | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="aquaculture.html"/>
 <link rel="next" href="bottom-temperature-in-situ.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -804,11 +830,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-analysis-3" class="section level3" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> Data analysis</h3>
 <p>Revenue earned by harvesting resources from a Large Marine Ecosystem (LME) at time <em>t</em> is a function of both the quantity landed of each species and the prices paid for landings. Changes in revenue between any two years depends on both prices and quantities in each year, and both may be changing simultaneously. For example, an increase in the harvest of higher priced species, such as scallops can lead to an overall increase in total revenue from an LME between time periods even if quantities landed of other species decline. Although measurement of revenue change is useful, the ability to see what drives revenue change, whether it is changing harvest levels, the mix of species landed, or price changes provides additional valuable information. Therefore, it is useful to decompose revenue change into two parts, one which is due to changing quantities (or volumes), and a second which is due to changing prices. In an LME, the quantity component will yield useful information about how the species mix of harvests are changing through time.</p>
-<p>A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator <span class="citation">(Cross and Färe <a href="#ref-Cross2009" role="doc-biblioref">2009</a>)</span>. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index <span class="citation">(Balk <a href="#ref-Balk2010" role="doc-biblioref">2010</a>)</span>, and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads <span class="citation">(Lim and Lovell <a href="#ref-lim2009" role="doc-biblioref">2009</a>)</span>, and dividend changes in banking operations <span class="citation">(Grifell-Tatjé and Lovell <a href="#ref-Grifell-Tatje2004" role="doc-biblioref">2004</a>)</span>. An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents <span class="citation">(Balk <a href="#ref-Balk2010" role="doc-biblioref">2010</a>)</span>. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964 and 2015.</p>
+<p>A Bennet indicator (BI) is used to examine revenue change between 1964 and 2015 for two major LME regions. It is composed of a volume indicator (VI), which measures changes in quantities, and a price indicator (PI) which measures changes in prices. The Bennet (1920) indicator (BI) was first used to show how a change in social welfare could be decomposed into a sum of a price and quantity change indicator <span class="citation">(<a href="#ref-Cross2009" role="doc-biblioref">Cross and Färe 2009</a>)</span>. It is called an indicator because it is based on differences in value between time periods, rather than ratios, which are referred to as indices. The BI is the indicator equivalent of the more popular Fisher index <span class="citation">(<a href="#ref-Balk2010" role="doc-biblioref">Balk 2010</a>)</span>, and has been used to examine revenue changes in Swedish pharmacies, productivity change in U.S. railroads <span class="citation">(<a href="#ref-lim2009" role="doc-biblioref">Lim and Lovell 2009</a>)</span>, and dividend changes in banking operations <span class="citation">(<a href="#ref-Grifell-Tatje2004" role="doc-biblioref">Grifell-Tatjé and Lovell 2004</a>)</span>. An attractive feature of the BI is that the overall indicator is equal to the sum of its subcomponents <span class="citation">(<a href="#ref-Balk2010" role="doc-biblioref">Balk 2010</a>)</span>. This allows one to examine what component of overall revenue is responsible for change between time periods. This allows us to examine whether changing quantities or prices of separate species groups are driving revenue change in each EPU between 1964 and 2015.</p>
 <p>Revenue in a given year for any species group is the product of quantity landed times price, and the sum of revenue from all groups is total revenue from the LME. In any year, both prices and quantities can change from prior years, leading to total revenue change. At time t, revenue (R) is defined as <span class="math display">\[R^{t} = \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t},\]</span>
 where <span class="math inline">\(p_{j}\)</span> is the price for species group <span class="math inline">\(j\)</span>, and <span class="math inline">\(y_{j}\)</span> is the quantity landed of species group <span class="math inline">\(j\)</span>. Revenue change between any two time periods, say <span class="math inline">\(t+1\)</span> and <span class="math inline">\(t\)</span>, is then <span class="math inline">\(R^{t+1}-R^{t}\)</span>, which can also be expressed as:
 <span class="math display">\[\Delta R = \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1}-\sum_{j=1}^{J}p_{j}^{t}y_{j}^{t}.\]</span>
-This change can be decomposed further, yielding a VI and PI. The VI is calculated using the following formula <span class="citation">(Georgianna, Lee, and Walden <a href="#ref-Georgianna2017" role="doc-biblioref">2017</a>)</span>:</p>
+This change can be decomposed further, yielding a VI and PI. The VI is calculated using the following formula <span class="citation">(<a href="#ref-Georgianna2017" role="doc-biblioref">Georgianna, Lee, and Walden 2017</a>)</span>:</p>
 <p><span class="math display">\[VI = \frac{1}{2}(\sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t+1}y_{j}^{t} + \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t+1} - \sum_{j=1}^{J}p_{j}^{t}y_{j}^{t})\]</span>
 The price indicator (PI) is calculated as follows:
 <span class="math display">\[PI = \frac{1}{2}(\sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t} + \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t})\]</span>
@@ -832,21 +858,21 @@ Figure 5.1: Revenue change from the long-term mean in 2015 dollars (black), Pric
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Balk2010">
-<p>Balk, Bert M. 2010. “An assumption-free framework for measuring productivity change.” <em>Review of Income and Wealth</em> 56 (s1): S224–S256. <a href="https://doi.org/10.1111/j.1475-4991.2010.00388.x">https://doi.org/10.1111/j.1475-4991.2010.00388.x</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Balk2010" class="csl-entry">
+Balk, Bert M. 2010. <span>“<span class="nocase">An assumption-free framework for measuring productivity change</span>.”</span> <em>Review of Income and Wealth</em> 56 (s1): S224–56. <a href="https://doi.org/10.1111/j.1475-4991.2010.00388.x">https://doi.org/10.1111/j.1475-4991.2010.00388.x</a>.
 </div>
-<div id="ref-Cross2009">
-<p>Cross, Robin M, and Rolf Färe. 2009. “Value data and the Bennet price and quantity indicators.” <em>Economics Letters</em> 102 (1): 19–21. <a href="https://doi.org/10.1016/j.econlet.2008.10.003">https://doi.org/10.1016/j.econlet.2008.10.003</a>.</p>
+<div id="ref-Cross2009" class="csl-entry">
+Cross, Robin M, and Rolf Färe. 2009. <span>“<span class="nocase">Value data and the Bennet price and quantity indicators</span>.”</span> <em>Economics Letters</em> 102 (1): 19–21. <a href="https://doi.org/10.1016/j.econlet.2008.10.003">https://doi.org/10.1016/j.econlet.2008.10.003</a>.
 </div>
-<div id="ref-Georgianna2017">
-<p>Georgianna, Daniel, Min-Yang Lee, and John Walden. 2017. “Contrasting trends in the Northeast United States groundfish and scallop processing industries.” <em>Marine Policy</em>. <a href="https://doi.org/10.1016/j.marpol.2017.08.025">https://doi.org/10.1016/j.marpol.2017.08.025</a>.</p>
+<div id="ref-Georgianna2017" class="csl-entry">
+Georgianna, Daniel, Min-Yang Lee, and John Walden. 2017. <span>“<span class="nocase">Contrasting trends in the Northeast United States groundfish and scallop processing industries.</span>”</span> <em>Marine Policy</em>. <a href="https://doi.org/10.1016/j.marpol.2017.08.025">https://doi.org/10.1016/j.marpol.2017.08.025</a>.
 </div>
-<div id="ref-Grifell-Tatje2004">
-<p>Grifell-Tatjé, Emili, and CA Knox Lovell. 2004. “Decomposing the dividend.” <em>Journal of Comparative Economics</em> 32 (3): 500–518. <a href="https://doi.org/10.1016/j.jce.2004.05.002">https://doi.org/10.1016/j.jce.2004.05.002</a>.</p>
+<div id="ref-Grifell-Tatje2004" class="csl-entry">
+Grifell-Tatjé, Emili, and CA Knox Lovell. 2004. <span>“<span class="nocase">Decomposing the dividend</span>.”</span> <em>Journal of Comparative Economics</em> 32 (3): 500–518. <a href="https://doi.org/10.1016/j.jce.2004.05.002">https://doi.org/10.1016/j.jce.2004.05.002</a>.
 </div>
-<div id="ref-lim2009">
-<p>Lim, Siew Hoon, and CA Knox Lovell. 2009. “Profit and productivity of US Class I railroads.” <em>Managerial and Decision Economics</em> 30 (7): 423–42. <a href="https://doi.org/10.1002/mde.1462">https://doi.org/10.1002/mde.1462</a>.</p>
+<div id="ref-lim2009" class="csl-entry">
+Lim, Siew Hoon, and CA Knox Lovell. 2009. <span>“<span class="nocase">Profit and productivity of US Class I railroads</span>.”</span> <em>Managerial and Decision Economics</em> 30 (7): 423–42. <a href="https://doi.org/10.1002/mde.1462">https://doi.org/10.1002/mde.1462</a>.
 </div>
 </div>
             </section>
@@ -878,6 +904,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

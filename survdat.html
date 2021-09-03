@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>51 Survey Data | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="51 Survey Data | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="stomach-fullness.html"/>
 <link rel="next" href="thermal-habitat-projections.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -796,10 +822,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">51.1</span> Methods</h2>
 <p>The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys
 in the fall since 1963 and spring since 1968. The surveys follow a stratified random design. Fish
-species and several invertebrate species are enumerated on a tow by tow basis <span class="citation">(Azarovitz <a href="#ref-Azarovitz1981" role="doc-biblioref">1981</a>)</span>.<br />
+species and several invertebrate species are enumerated on a tow by tow basis <span class="citation">(<a href="#ref-Azarovitz1981" role="doc-biblioref">Azarovitz 1981</a>)</span>.<br />
 The data are housed in the NEFSC’s survey database (SVDBS) maintained by the Ecosystem Survey Branch.</p>
 <p>Direct pulls from the database are not advisable as there have been several gear modifications and
-vessel changes over the course of the time series <span class="citation">(Miller et al. <a href="#ref-Miller_2010" role="doc-biblioref">2010</a>)</span>. Survdat was developed as a database
+vessel changes over the course of the time series <span class="citation">(<a href="#ref-Miller_2010" role="doc-biblioref">T. J. Miller et al. 2010</a>)</span>. Survdat was developed as a database
 query that applies the appropriate calibration factors for a seamless time series since the 1960s.
 As such, it is the base for many of the other analyses conducted for the State of the Ecosystem
 report that involve fisheries independent data.</p>
@@ -914,7 +940,7 @@ Figure 51.1: Map of the Northeast Shelf broken into the four Ecological Producti
 </p>
 </div>
 <p>Prior to 2020, Survdat was first post stratified into EPUs by labeling stations by the EPU they fell within
-using the <code>over</code> function from the <code>rgdal</code> R package <span class="citation">(Bivand, Keitt, and Rowlingson <a href="#ref-rgdal" role="doc-biblioref">2018</a>)</span>. Next, the total number
+using the <code>over</code> function from the <code>rgdal</code> R package <span class="citation">(<a href="#ref-rgdal" role="doc-biblioref">Bivand, Keitt, and Rowlingson 2018</a>)</span>. Next, the total number
 of stations within each EPU per year is counted using unique station records. Biomass
 is summed by species per year per EPU. Those sums are divided by the appropriate
 station count to get the EPU mean. Finally, the mean biomasses are summed by <a href="aggroups.html#aggroups">aggregate groups</a>. These steps are encompassed in the <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_agg_bio.R">processing code</a>, which also includes steps taken to format the data set for inclusion in the <code>ecodata</code> R package.</p>
@@ -922,8 +948,8 @@ station count to get the EPU mean. Finally, the mean biomasses are summed by <a 
 <div id="plotting-43" class="section level3" number="51.1.4">
 <h3><span class="header-section-number">51.1.4</span> Plotting</h3>
 <p>Code used to create the figure below can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-agg-bio.R">here</a></p>
-<div class="figure"><span id="fig:unnamed-chunk-62"></span>
-<img src="images/unnamed-chunk-62-1.png" alt="Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-61"></span>
+<img src="images/unnamed-chunk-61-1.png" alt="Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red." width="672" />
 <p class="caption">
 Figure 51.2: Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red.
 </p>
@@ -933,15 +959,15 @@ Figure 51.2: Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Azarovitz1981">
-<p>Azarovitz, Thomas R. 1981. “A brief historical review of the Woods Hole Laboratory trawl survey time series.” In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Azarovitz1981" class="csl-entry">
+Azarovitz, Thomas R. 1981. <span>“<span class="nocase">A brief historical review of the Woods Hole Laboratory trawl survey time series</span>.”</span> In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.
 </div>
-<div id="ref-rgdal">
-<p>Bivand, Roger, Tim Keitt, and Barry Rowlingson. 2018. <em>Rgdal: Bindings for the ’Geospatial’ Data Abstraction Library</em>. <a href="https://CRAN.R-project.org/package=rgdal">https://CRAN.R-project.org/package=rgdal</a>.</p>
+<div id="ref-rgdal" class="csl-entry">
+Bivand, Roger, Tim Keitt, and Barry Rowlingson. 2018. <em>Rgdal: Bindings for the ’Geospatial’ Data Abstraction Library</em>. <a href="https://CRAN.R-project.org/package=rgdal">https://CRAN.R-project.org/package=rgdal</a>.
 </div>
-<div id="ref-Miller_2010">
-<p>Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, R. W. Brown, and P. J. Rago. 2010. “Estimation of Albatross IV to Henry B. Bigelow Calibration Factors.” 10-05. Woods Hole, MA: National Marine Fisheries Service. <a href="https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf">https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf</a>.</p>
+<div id="ref-Miller_2010" class="csl-entry">
+Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, R. W. Brown, and P. J. Rago. 2010. <span>“Estimation of <span>Albatross</span> <span>IV</span> to <span>Henry</span> <span>B</span>. <span>Bigelow</span> Calibration Factors.”</span> 10-05. Woods Hole, MA: National Marine Fisheries Service. <a href="https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf">https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf</a>.
 </div>
 </div>
             </section>
@@ -973,6 +999,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

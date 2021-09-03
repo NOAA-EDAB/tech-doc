@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>29 Mid-Atlantic Harmful Algal Bloom Indicator | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="29 Mid-Atlantic Harmful Algal Bloom Indicator | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="long-term-sea-surface-temperature.html"/>
 <link rel="next" href="new-england-harmful-algal-bloom-indicator.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -793,7 +819,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Public availability statement</strong>: Source data for this indicator are available <a href="https://github.com/NOAA-EDAB/tech-doc/tree/master/data/CB_HAB">here</a>. Processed time series can be found <a href="http://comet.nefsc.noaa.gov/erddap/tabledap/CBhabs_ann_soe_v2.html">here</a>.</p>
 <div id="methods-29" class="section level2" number="29.1">
 <h2><span class="header-section-number">29.1</span> Methods</h2>
-<p>We presented two indicator time series for reports of algal blooms in the southern portion of Chesapeake Bay between 2007-2017. The first indicator was observations of algal blooms above 5000 cell ml<sup>-1</sup>. This threshold was developed by the Virginia Department of Health (VDH) for <em>Microcystis</em> spp. algal blooms based on World Health Organization guidelines <span class="citation">(Organization <a href="#ref-WHO2003" role="doc-biblioref">2003</a>; Health <a href="#ref-VDH2011" role="doc-biblioref">2011</a>)</span>. VDH also uses this same threshold for other algal species blooms in Virginia waters. When cell concentrations are above 5000 cell ml<sup>-1</sup>, VDH recommends initiation of biweekly water sampling and that relevant local agencies be notified of the elevated cell concentrations.</p>
+<p>We presented two indicator time series for reports of algal blooms in the southern portion of Chesapeake Bay between 2007-2017. The first indicator was observations of algal blooms above 5000 cell ml<sup>-1</sup>. This threshold was developed by the Virginia Department of Health (VDH) for <em>Microcystis</em> spp. algal blooms based on World Health Organization guidelines <span class="citation">(<a href="#ref-WHO2003" role="doc-biblioref">Organization 2003</a>; <a href="#ref-VDH2011" role="doc-biblioref">Health 2011</a>)</span>. VDH also uses this same threshold for other algal species blooms in Virginia waters. When cell concentrations are above 5000 cell ml<sup>-1</sup>, VDH recommends initiation of biweekly water sampling and that relevant local agencies be notified of the elevated cell concentrations.</p>
 <p>The second indicator we reported, blooms of <em>Cochlodinium polykrikoides</em> at cell concentrations &gt;300 cell ml<sup>-1</sup>, was chosen due to reports of high ichthyotoxicity seen at these levels. <span class="citation">Tang and Gobler (<a href="#ref-Tang2009" role="doc-biblioref">2009</a>)</span> showed that fish exposed to cultured <em>C. polykrikoides</em> at densities as low 330 cells ml<sup>-1</sup> saw 100% mortality within 1 hour, which if often far less than <em>C. polykrikoides</em> cell concentrations seen in the field. Algal bloom data were not available for 2015 nor 2010. The algal bloom information presented here are a synthesis of reported events, and has been updated to include data not presented in the 2018 State of the Ecosystem Report.</p>
 <div id="data-sources-32" class="section level3" number="29.1.1">
 <h3><span class="header-section-number">29.1.1</span> Data sources</h3>
@@ -814,15 +840,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-VDH2011">
-<p>Health, Virginia Department of. 2011. “Virginia Recreational Water Guidance for Microcystin and Microcystis Blooms: Provisional Guidance.” Richmond, VA: Virginia Department of Health. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-VDH2011" class="csl-entry">
+Health, Virginia Department of. 2011. <span>“<span class="nocase">Virginia Recreational Water Guidance for Microcystin and Microcystis Blooms: Provisional Guidance</span>.”</span> Richmond, VA: Virginia Department of Health. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.432.955&amp;rep=rep1&amp;type=pdf</a>.
 </div>
-<div id="ref-WHO2003">
-<p>Organization, World Health. 2003. <em>Guidelines for Safe Recreational Water Environments: Coastal and Fresh Waters</em>. Vol. 1. World Health Organization.</p>
+<div id="ref-WHO2003" class="csl-entry">
+Organization, World Health. 2003. <em>Guidelines for Safe Recreational Water Environments: Coastal and Fresh Waters</em>. Vol. 1. World Health Organization.
 </div>
-<div id="ref-Tang2009">
-<p>Tang, Ying Zhong, and Christopher J. Gobler. 2009. “Characterization of the toxicity of Cochlodinium polykrikoides isolates from Northeast US estuaries to finfish and shellfish.” <em>Harmful Algae</em> 8 (3): 454–62. <a href="https://doi.org/10.1016/j.hal.2008.10.001">https://doi.org/10.1016/j.hal.2008.10.001</a>.</p>
+<div id="ref-Tang2009" class="csl-entry">
+Tang, Ying Zhong, and Christopher J. Gobler. 2009. <span>“<span class="nocase">Characterization of the toxicity of Cochlodinium polykrikoides isolates from Northeast US estuaries to finfish and shellfish</span>.”</span> <em>Harmful Algae</em> 8 (3): 454–62. <a href="https://doi.org/10.1016/j.hal.2008.10.001">https://doi.org/10.1016/j.hal.2008.10.001</a>.
 </div>
 </div>
             </section>
@@ -854,6 +880,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>20 Ecological Production Units | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="20 Ecological Production Units | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="ecosystem-overfishing.html"/>
 <link rel="next" href="expected-number-of-species.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -798,7 +824,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Public availability statement</strong>: Ecological production unit (EPU) shapefiles are available <a href="https://github.com/NOAA-EDAB/tech-doc/tree/master/gis">here</a>. More information about source data used to derive EPUs can be found <a href="https://www.integratedecosystemassessment.noaa.gov/sites/default/files/pdf/ne-ecological-production-units-paper.pdf">here</a>.</p>
 <div id="methods-19" class="section level2" number="20.1">
 <h2><span class="header-section-number">20.1</span> Methods</h2>
-<p>To define ecological production units (EPUs), we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions <span class="citation">(e.g Roff and Taylor <a href="#ref-Roff2000" role="doc-biblioref">2000</a>)</span>. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables <span class="citation">(Longhurst <a href="#ref-Longhurst2007" role="doc-biblioref">2007</a>)</span> to define ecological provinces throughout the world ocean.</p>
+<p>To define ecological production units (EPUs), we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions <span class="citation">(e.g <a href="#ref-Roff2000" role="doc-biblioref">Roff and Taylor 2000</a>)</span>. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables <span class="citation">(<a href="#ref-Longhurst2007" role="doc-biblioref">Longhurst 2007</a>)</span> to define ecological provinces throughout the world ocean.</p>
 <p>We did not include information on zooplankton, benthic invertebrates, fish, protected species, or fishing patterns in our analysis. The biomass and production of the higher trophic level groups in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences.</p>
 <p>Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table <a href="epu.html#tab:epuinputs">20.1</a>. They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007.</p>
 <div id="data-sources-21" class="section level3" number="20.1.1">
@@ -999,9 +1025,9 @@ gC/m<sup>3</sup>/year (cumulative)
 <h3><span class="header-section-number">20.1.3</span> Data analysis</h3>
 <p>In all cases, we standardized the data to common spatial units by taking annual means of each observation type within spatial units of 10’ latitude by 10’ longitude to account for the disparate spatial and temporal scales at which these observations are taken. There are over 1000 spatial cells in this analysis. Shipboard sampling used to obtain direct hydrographic measurements is constrained by a minimum sampling depth of 27 m specified on the basis of prescribed safe operating procedures. As a result nearshore waters are not fully represented in our initial specifications of ecological production units.</p>
 <p>The size of the spatial units employed further reflects a compromise between retaining spatial detail and minimizing the need for spatial interpolation of some data sets. For shipboard data sets characterized by relatively coarse spatial resolution, where necessary, we first constructed an interpolated map using an inverse distance weighting function before including it in the analysis. Although alternative interpolation schemes based on geostatistical approaches are possible, we considered the inverse distance weighting function to be both tractable and robust for this application.</p>
-<p>We first employed a spatial principal components analysis <span class="citation">(PCA; e.g. Pielou <a href="#ref-Pielou1984" role="doc-biblioref">1984</a>; Legendre and Legendre <a href="#ref-Legendre1998" role="doc-biblioref">1998</a>)</span> to examine the multivariate structure of the data and to account for any inter-correlations among the variables to be used in subsequent analysis. The variables included in the analysis exhibited generally skewed distributions and we therefore transformed each to natural logarithms prior to analysis.</p>
-<p>The PCA was performed on the correlation matrix of the transformed observations. We selected the eigenvectors associated with eigenvalues of the dispersion matrix with scores greater than 1.0 <span class="citation">(the Kaiser-Guttman criterion; Legendre and Legendre <a href="#ref-Legendre1998" role="doc-biblioref">1998</a>)</span> for all subsequent analysis. These eigenvectors represent orthogonal linear combinations of the original variables used in the analysis.</p>
-<p>We delineated ecological subunits by applying a disjoint cluster based on Euclidean distances using the K-means procedure <span class="citation">(Legendre and Legendre <a href="#ref-Legendre1998" role="doc-biblioref">1998</a>)</span> on the principal component scores The use of non-independent variables can strongly influence the results of classification analyses of this type <span class="citation">(Pielou <a href="#ref-Pielou1984" role="doc-biblioref">1984</a>)</span>, hence the interest in using the PCA results in the cluster.</p>
+<p>We first employed a spatial principal components analysis <span class="citation">(PCA; e.g. <a href="#ref-Pielou1984" role="doc-biblioref">Pielou 1984</a>; <a href="#ref-Legendre1998" role="doc-biblioref">Legendre and Legendre 1998</a>)</span> to examine the multivariate structure of the data and to account for any inter-correlations among the variables to be used in subsequent analysis. The variables included in the analysis exhibited generally skewed distributions and we therefore transformed each to natural logarithms prior to analysis.</p>
+<p>The PCA was performed on the correlation matrix of the transformed observations. We selected the eigenvectors associated with eigenvalues of the dispersion matrix with scores greater than 1.0 [the Kaiser-Guttman criterion; <span class="citation">Legendre and Legendre (<a href="#ref-Legendre1998" role="doc-biblioref">1998</a>)</span>] for all subsequent analysis. These eigenvectors represent orthogonal linear combinations of the original variables used in the analysis.</p>
+<p>We delineated ecological subunits by applying a disjoint cluster based on Euclidean distances using the K-means procedure <span class="citation">(<a href="#ref-Legendre1998" role="doc-biblioref">Legendre and Legendre 1998</a>)</span> on the principal component scores The use of non-independent variables can strongly influence the results of classification analyses of this type <span class="citation">(<a href="#ref-Pielou1984" role="doc-biblioref">Pielou 1984</a>)</span>, hence the interest in using the PCA results in the cluster.</p>
 <p>The eigenvectors were represented as standard normal deviates. We used a Pseudo-F Statistic described by <span class="citation">Milligan and Cooper (<a href="#ref-Milligan1985" role="doc-biblioref">1985</a>)</span> to objectively define the number of clusters to use in the analysis. The general approach employed is similar to that of <span class="citation">Host et al. (<a href="#ref-Host1996" role="doc-biblioref">1996</a>)</span> for the development of regional ecosystem classifications for terrestrial systems.</p>
 <p>After the analyses were done, we next considered options for interpolation of nearshore boundaries resulting from depth-related constraints on shipboard observations. For this, we relied on information from satellite imagery. For the missing nearshore areas in the Gulf of Maine and Mid-Atlantic Bight, the satellite information for chlorophyll concentration and sea surface temperature indicated a direct extension from adjacent observations. For the Nantucket Shoals region south of Cape Cod, similarities in tidal mixing patterns reflected in chlorophyll and temperature observations indicated an affinity with Georges Bank and the boundaries were changed accordingly.</p>
 <p>Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply “Gulf of Maine” in the State of the Ecosystem), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses.</p>
@@ -1020,24 +1046,24 @@ Figure 20.1: Map of the four Ecological Production Units, including the Mid-Atla
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Host1996">
-<p>Host, G E, P L Polzer, D J Mladenoff, M A White, and T R Crow. 1996. “A quantitative approach to developing regional ecosystem classifications.” <em>Ecological Applications</em> 6 (2): 608–18. <a href="https://doi.org/10.2307/2269395">https://doi.org/10.2307/2269395</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Host1996" class="csl-entry">
+Host, G E, P L Polzer, D J Mladenoff, M A White, and T R Crow. 1996. <span>“<span class="nocase">A quantitative approach to developing regional ecosystem classifications</span>.”</span> <em>Ecological Applications</em> 6 (2): 608–18. <a href="https://doi.org/10.2307/2269395">https://doi.org/10.2307/2269395</a>.
 </div>
-<div id="ref-Legendre1998">
-<p>Legendre, Pierre, and Loic Legendre. 1998. <em>Numerical Ecology</em>. <a href="https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2">https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2</a>.</p>
+<div id="ref-Legendre1998" class="csl-entry">
+Legendre, Pierre, and Loic Legendre. 1998. <em><span>Numerical Ecology</span></em>. <a href="https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2">https://www.elsevier.com/books/numerical-ecology/legendre/978-0-444-89249-2</a>.
 </div>
-<div id="ref-Longhurst2007">
-<p>Longhurst, Alan R. 2007. <em>Ecological Geography of the Sea</em>. <a href="https://doi.org/10.1016/B978-0-12-455521-1.X5000-1">https://doi.org/10.1016/B978-0-12-455521-1.X5000-1</a>.</p>
+<div id="ref-Longhurst2007" class="csl-entry">
+Longhurst, Alan R. 2007. <em><span class="nocase">Ecological Geography of the Sea</span></em>. <a href="https://doi.org/10.1016/B978-0-12-455521-1.X5000-1">https://doi.org/10.1016/B978-0-12-455521-1.X5000-1</a>.
 </div>
-<div id="ref-Milligan1985">
-<p>Milligan, Glenn W., and Martha C. Cooper. 1985. “An examination of procedures for determining the number of clusters in a data set.” <em>Psychometrika</em> 50 (2): 159–79. <a href="https://doi.org/10.1007/BF02294245">https://doi.org/10.1007/BF02294245</a>.</p>
+<div id="ref-Milligan1985" class="csl-entry">
+Milligan, Glenn W., and Martha C. Cooper. 1985. <span>“<span class="nocase">An examination of procedures for determining the number of clusters in a data set</span>.”</span> <em>Psychometrika</em> 50 (2): 159–79. <a href="https://doi.org/10.1007/BF02294245">https://doi.org/10.1007/BF02294245</a>.
 </div>
-<div id="ref-Pielou1984">
-<p>Pielou, Evelyn Chris. 1984. <em>The Interpretation of Ecological Data: A Primer on Classification and Ordination</em>. John Wiley &amp; Sons.</p>
+<div id="ref-Pielou1984" class="csl-entry">
+Pielou, Evelyn Chris. 1984. <em><span class="nocase">The Interpretation of Ecological Data: A Primer on Classification and Ordination</span></em>. John Wiley <span>&amp;</span> Sons.
 </div>
-<div id="ref-Roff2000">
-<p>Roff, John C., and Mark E. Taylor. 2000. “National frameworks for marine conservation - A hierarchical geophysical approach.” <em>Aquatic Conservation: Marine and Freshwater Ecosystems</em> 10 (3): 209–23. <a href="https://doi.org/10.1002/1099-0755(200005/06)10:3%3C209::AID-AQC408%3E3.0.CO;2-J">https://doi.org/10.1002/1099-0755(200005/06)10:3&lt;209::AID-AQC408&gt;3.0.CO;2-J</a>.</p>
+<div id="ref-Roff2000" class="csl-entry">
+Roff, John C., and Mark E. Taylor. 2000. <span>“<span class="nocase">National frameworks for marine conservation - A hierarchical geophysical approach</span>.”</span> <em>Aquatic Conservation: Marine and Freshwater Ecosystems</em> 10 (3): 209–23. <a href="https://doi.org/10.1002/1099-0755(200005/06)10:3&lt;209::AID-AQC408&gt;3.0.CO;2-J">https://doi.org/10.1002/1099-0755(200005/06)10:3&lt;209::AID-AQC408&gt;3.0.CO;2-J</a>.
 </div>
 </div>
             </section>
@@ -1069,6 +1095,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

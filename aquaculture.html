@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Aquaculture | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Aquaculture | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="annual-sst-cycles.html"/>
 <link rel="next" href="bennet-indicator.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -832,7 +858,7 @@ Figure 4.1: .
 <p>Aquaculture data included in the State of the Ecosystem (SOE) report were time series of number of oysters sold in Virginia, Maryland, and New Jersey.</p>
 <div id="data-sources-3" class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Data sources</h3>
-<p>Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report <span class="citation">(Hudson <a href="#ref-Hudson2017a" role="doc-biblioref">2017</a>)</span>. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report <span class="citation">(ACC <a href="#ref-ACC2017" role="doc-biblioref">2017</a>)</span>, from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed <span class="citation">(Calvo <a href="#ref-Calvo2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report <span class="citation">(<a href="#ref-Hudson2017a" role="doc-biblioref">Hudson 2017</a>)</span>. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report <span class="citation">(<a href="#ref-ACC2017" role="doc-biblioref">ACC 2017</a>)</span>, from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed <span class="citation">(<a href="#ref-Calvo2017" role="doc-biblioref">Calvo 2017</a>)</span>.</p>
 </div>
 <div id="data-extraction-3" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Data extraction</h3>
@@ -846,15 +872,15 @@ Figure 4.1: .
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-ACC2017">
-<p>ACC. 2017. “Maryland Aquaculture Coordinating Council: Annual Report 2017.” Annapolis, MD: Maryland Aquaculture Coordinating Council.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ACC2017" class="csl-entry">
+ACC. 2017. <span>“<span>Maryland Aquaculture Coordinating Council: Annual Report 2017</span>.”</span> Annapolis, MD: Maryland Aquaculture Coordinating Council.
 </div>
-<div id="ref-Calvo2017">
-<p>Calvo, Lisa M. 2017. “New Jersey Shellfish Aquaculture Situation and Outlook Report: 2015 Production Year.” New Jersey Sea Grant Consortium; Haskin Shellfish Research Laboratory, Rutgers University. <a href="https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture%7B\_%7DSurvey%7B\_%7DYr2015.pdf">https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture{\_}Survey{\_}Yr2015.pdf</a>.</p>
+<div id="ref-Calvo2017" class="csl-entry">
+Calvo, Lisa M. 2017. <span>“<span class="nocase">New Jersey Shellfish Aquaculture Situation and Outlook Report: 2015 Production Year</span>.”</span> New Jersey Sea Grant Consortium; Haskin Shellfish Research Laboratory, Rutgers University. <a href="https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture{\_}Survey{\_}Yr2015.pdf">https://hsrl.rutgers.edu/outreach/aquaculture/AquacultureReports/NJAquaculture{\_}Survey{\_}Yr2015.pdf</a>.
 </div>
-<div id="ref-Hudson2017a">
-<p>Hudson, Karen. 2017. “Virginia Shellfish Aquaculture Situation and Outlook Report : Results of the 2016 Virginia Shellfish Aquaculture Crop Reporting Survey.” Virginia Institute of Marine Science, College of William; Mary. <a href="https://doi.org/10.21220/V51K6T">https://doi.org/10.21220/V51K6T</a>.</p>
+<div id="ref-Hudson2017a" class="csl-entry">
+Hudson, Karen. 2017. <span>“<span class="nocase">Virginia Shellfish Aquaculture Situation and Outlook Report : Results of the 2016 Virginia Shellfish Aquaculture Crop Reporting Survey</span>.”</span> Virginia Institute of Marine Science, College of William; Mary. <a href="https://doi.org/10.21220/V51K6T">https://doi.org/10.21220/V51K6T</a>.
 </div>
 </div>
             </section>
@@ -886,6 +912,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

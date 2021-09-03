@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Conceptual Models | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Conceptual Models | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="fishery-reliance-and-social-vulnerability.html"/>
 <link rel="next" href="fish-condition-indicator.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -802,14 +828,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">17.1.1</span> Data sources</h3>
 <div id="ecological-submodels" class="section level4" number="17.1.1.1">
 <h4><span class="header-section-number">17.1.1.1</span> Ecological submodels</h4>
-<p>Published food web (EMAX) models for each subregion <span class="citation">(J. S. Link et al. <a href="#ref-link_documentation_2006" role="doc-biblioref">2006</a>; Link et al. <a href="#ref-link_northeast_2008" role="doc-biblioref">2008</a>)</span>, food habits data collected by NEFSC trawl surveys <span class="citation">(Smith and Link <a href="#ref-smith_trophic_2010" role="doc-biblioref">2010</a>)</span>, and other literature sources <span class="citation">(Smith et al. <a href="#ref-smith_consumption_2015" role="doc-biblioref">2015</a>)</span> were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups.</p>
+<p>Published food web (EMAX) models for each subregion <span class="citation">(<a href="#ref-link_documentation_2006" role="doc-biblioref">J. S. Link et al. 2006</a>; <a href="#ref-link_northeast_2008" role="doc-biblioref">Jason Link et al. 2008</a>)</span>, food habits data collected by NEFSC trawl surveys <span class="citation">(<a href="#ref-smith_trophic_2010" role="doc-biblioref">B. E. Smith and Link 2010</a>)</span>, and other literature sources <span class="citation">(<a href="#ref-smith_consumption_2015" role="doc-biblioref">L. A. Smith et al. 2015</a>)</span> were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups.</p>
 </div>
 <div id="environmental-submodels" class="section level4" number="17.1.1.2">
 <h4><span class="header-section-number">17.1.1.2</span> Environmental submodels</h4>
 <p>Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted.
 Sources for Georges Bank included <span class="citation">Backus and Bourne (<a href="#ref-backus_georges_1987" role="doc-biblioref">1987</a>)</span> and <span class="citation">Townsend et al. (<a href="#ref-townsend_oceanography_2006" role="doc-biblioref">2006</a>)</span>.
-Sources for the Gulf of Maine included <span class="citation">Smith (<a href="#ref-smith_mean_1983" role="doc-biblioref">1983</a>)</span>, <span class="citation">Smith et al. (<a href="#ref-smith_interannual_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">Mupparapu and Brown (<a href="#ref-mupparapu_role_2002" role="doc-biblioref">2002</a>)</span>, <span class="citation">Townsend et al. (<a href="#ref-townsend_oceanography_2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Smith et al. (<a href="#ref-smith_regime_2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation">Mountain (<a href="#ref-mountain_labrador_2012" role="doc-biblioref">2012</a>)</span>.<br />
-Sources for the Mid Atlantic Bight included <span class="citation">Houghton et al. (<a href="#ref-houghton_middle_1982" role="doc-biblioref">1982</a>)</span>, <span class="citation">Beardsley et al. (<a href="#ref-beardsley_nantucket_1985" role="doc-biblioref">1985</a>)</span>, <span class="citation">Lentz (<a href="#ref-lentz_climatology_2003" role="doc-biblioref">2003</a>)</span>, <span class="citation">Mountain (<a href="#ref-mountain_variability_2003" role="doc-biblioref">2003</a>)</span>, <span class="citation">Glenn et al. (<a href="#ref-glenn_biogeochemical_2004" role="doc-biblioref">2004</a>)</span>, <span class="citation">Sullivan, Cowen, and Steves (<a href="#ref-sullivan_evidence_2005" role="doc-biblioref">2005</a>)</span>, <span class="citation">Castelao et al. (<a href="#ref-castelao_seasonal_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Shearman and Lentz (<a href="#ref-shearman_long-term_2009" role="doc-biblioref">2009</a>)</span>, <span class="citation">Castelao, Glenn, and Schofield (<a href="#ref-castelao_temperature_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Gong, Kohut, and Glenn (<a href="#ref-gong_seasonal_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Gawarkiewicz et al. (<a href="#ref-gawarkiewicz_direct_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Forsyth, Andres, and Gawarkiewicz (<a href="#ref-forsyth_recent_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Fratantoni, Holzwarth-Davis, and Taylor (<a href="#ref-fratantoni_description_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Zhang and Gawarkiewicz (<a href="#ref-zhang_dynamics_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Timothy J. Miller, Hare, and Alade (<a href="#ref-miller_state-space_2016" role="doc-biblioref">2016</a>)</span>, and <span class="citation">Lentz (<a href="#ref-lentz_seasonal_2017" role="doc-biblioref">2017</a>)</span>.</p>
+Sources for the Gulf of Maine included <span class="citation">Peter C. Smith (<a href="#ref-smith_mean_1983" role="doc-biblioref">1983</a>)</span>, <span class="citation">Peter C. Smith et al. (<a href="#ref-smith_interannual_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">Mupparapu and Brown (<a href="#ref-mupparapu_role_2002" role="doc-biblioref">2002</a>)</span>, <span class="citation">Townsend et al. (<a href="#ref-townsend_oceanography_2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Peter C. Smith et al. (<a href="#ref-smith_regime_2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation">David G. Mountain (<a href="#ref-mountain_labrador_2012" role="doc-biblioref">2012b</a>)</span>.<br />
+Sources for the Mid Atlantic Bight included <span class="citation">Houghton et al. (<a href="#ref-houghton_middle_1982" role="doc-biblioref">1982</a>)</span>, <span class="citation">Beardsley et al. (<a href="#ref-beardsley_nantucket_1985" role="doc-biblioref">1985</a>)</span>, <span class="citation">Lentz (<a href="#ref-lentz_climatology_2003" role="doc-biblioref">2003</a>)</span>, <span class="citation">David G. Mountain (<a href="#ref-mountain_variability_2003" role="doc-biblioref">2003</a>)</span>, <span class="citation">Glenn et al. (<a href="#ref-glenn_biogeochemical_2004" role="doc-biblioref">2004</a>)</span>, <span class="citation">Sullivan, Cowen, and Steves (<a href="#ref-sullivan_evidence_2005" role="doc-biblioref">2005</a>)</span>, <span class="citation">Castelao et al. (<a href="#ref-castelao_seasonal_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Shearman and Lentz (<a href="#ref-shearman_long-term_2009" role="doc-biblioref">2009</a>)</span>, <span class="citation">Castelao, Glenn, and Schofield (<a href="#ref-castelao_temperature_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Gong, Kohut, and Glenn (<a href="#ref-gong_seasonal_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Gawarkiewicz et al. (<a href="#ref-gawarkiewicz_direct_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Forsyth, Andres, and Gawarkiewicz (<a href="#ref-forsyth_recent_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Fratantoni, Holzwarth-Davis, and Taylor (<a href="#ref-fratantoni_description_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">W. G. Zhang and Gawarkiewicz (<a href="#ref-zhang_dynamics_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Timothy J. Miller, Hare, and Alade (<a href="#ref-miller_state-space_2016" role="doc-biblioref">2016</a>)</span>, and <span class="citation">Lentz (<a href="#ref-lentz_seasonal_2017" role="doc-biblioref">2017</a>)</span>.</p>
 </div>
 <div id="human-dimensions-submodels" class="section level4" number="17.1.1.3">
 <h4><span class="header-section-number">17.1.1.3</span> Human dimensions submodels</h4>
@@ -831,7 +857,7 @@ Sources for the Mid Atlantic Bight included <span class="citation">Houghton et a
 <p>Published literature on human activities in each EPU was consulted.</p>
 <p>Sources for protected species and tourism links included <span class="citation">Hoagland and Meeks (<a href="#ref-hoagland_demand_2000" role="doc-biblioref">2000</a>)</span> and <span class="citation">Lee (<a href="#ref-lee_economic_2010" role="doc-biblioref">2010</a>)</span>.</p>
 <p>Sources for links between environmental drivers and human activities included <span class="citation">Adams (<a href="#ref-adams_uncertainty_1973" role="doc-biblioref">1973</a>)</span>, <span class="citation">Matzarakis and Freitas (<a href="#ref-matzarakis_proceedings_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">Scott, McBoyle, and Schwartzentruber (<a href="#ref-scott_climate_2004" role="doc-biblioref">2004</a>)</span>, <span class="citation">Hess, Malilay, and Parkinson (<a href="#ref-hess_climate_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Colburn and Jepson (<a href="#ref-colburn_social_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Jepson and Colburn (<a href="#ref-jepson_development_2013" role="doc-biblioref">2013</a>)</span>, and <span class="citation">Colburn et al. (<a href="#ref-colburn_indicators_2016" role="doc-biblioref">2016</a>)</span>.</p>
-<p>Sources for cultural practices and attachments links included <span class="citation">Pauly (<a href="#ref-pauly_putting_1997" role="doc-biblioref">1997</a>)</span>, <span class="citation">McGoodwin (<a href="#ref-mcgoodwin_understanding_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">St Martin (<a href="#ref-st_martin_making_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">Norris-Raynbird (<a href="#ref-norris-raynbird_for_2004" role="doc-biblioref">2004</a>)</span>, <span class="citation">Pollnac et al. (<a href="#ref-pollnac_toward_2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_defining_2007" role="doc-biblioref">2007</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_definingfishing_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Everett and Aitchison (<a href="#ref-everett_role_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Donkersloot (<a href="#ref-donkersloot_politics_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Lord (<a href="#ref-lord_understanding_2011" role="doc-biblioref">2011</a>)</span>, <span class="citation">Halpern et al. (<a href="#ref-halpern_index_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Wynveen, Kyle, and Sutton (<a href="#ref-wynveen_natural_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Cortes-Vazquez and Zedalis (<a href="#ref-cortes-vazquez_identity_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Koehn, Reineman, and Kittinger (<a href="#ref-koehn_progress_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Potschin and Haines-Young (<a href="#ref-potschin_landscapes_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Reed et al. (<a href="#ref-reed_beyond_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Urquhart and Acott (<a href="#ref-urquhart_constructing_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Blasiak et al. (<a href="#ref-blasiak_paradigms_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Klain, Satterfield, and Chan (<a href="#ref-klain_what_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Poe, Norman, and Levin (<a href="#ref-poe_cultural_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Brown (<a href="#ref-brown_we_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Donatuto and Poe (<a href="#ref-donatuto_evaluating_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Khakzad and Griffith (<a href="#ref-khakzad_role_2016" role="doc-biblioref">2016</a>)</span>, <span class="citation">Oberg et al. (<a href="#ref-oberg_surviving_2016" role="doc-biblioref">2016</a>)</span>, and <span class="citation">Seara, Clay, and Colburn (<a href="#ref-seara_perceived_2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Sources for cultural practices and attachments links included <span class="citation">Daniel Pauly (<a href="#ref-pauly_putting_1997" role="doc-biblioref">1997</a>)</span>, <span class="citation">McGoodwin (<a href="#ref-mcgoodwin_understanding_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">St Martin (<a href="#ref-st_martin_making_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation">Norris-Raynbird (<a href="#ref-norris-raynbird_for_2004" role="doc-biblioref">2004</a>)</span>, <span class="citation">Pollnac et al. (<a href="#ref-pollnac_toward_2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_defining_2007" role="doc-biblioref">2007</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_definingfishing_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Everett and Aitchison (<a href="#ref-everett_role_2008" role="doc-biblioref">2008</a>)</span>, <span class="citation">Donkersloot (<a href="#ref-donkersloot_politics_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">Lord (<a href="#ref-lord_understanding_2011" role="doc-biblioref">2011</a>)</span>, <span class="citation">Halpern et al. (<a href="#ref-halpern_index_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Wynveen, Kyle, and Sutton (<a href="#ref-wynveen_natural_2012" role="doc-biblioref">2012</a>)</span>, <span class="citation">Cortes-Vazquez and Zedalis (<a href="#ref-cortes-vazquez_identity_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Koehn, Reineman, and Kittinger (<a href="#ref-koehn_progress_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Potschin and Haines-Young (<a href="#ref-potschin_landscapes_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Reed et al. (<a href="#ref-reed_beyond_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Urquhart and Acott (<a href="#ref-urquhart_constructing_2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Blasiak et al. (<a href="#ref-blasiak_paradigms_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Klain, Satterfield, and Chan (<a href="#ref-klain_what_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Poe, Norman, and Levin (<a href="#ref-poe_cultural_2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Brown (<a href="#ref-brown_we_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Donatuto and Poe (<a href="#ref-donatuto_evaluating_2015" role="doc-biblioref">2015</a>)</span>, <span class="citation">Khakzad and Griffith (<a href="#ref-khakzad_role_2016" role="doc-biblioref">2016</a>)</span>, <span class="citation">Oberg et al. (<a href="#ref-oberg_surviving_2016" role="doc-biblioref">2016</a>)</span>, and <span class="citation">Seara, Clay, and Colburn (<a href="#ref-seara_perceived_2016" role="doc-biblioref">2016</a>)</span>.</p>
 </div>
 </div>
 <div id="data-extraction-13" class="section level3" number="17.1.2">
@@ -849,7 +875,7 @@ Queries for different species are standardized by the FEAST application and woul
 <div id="human-dimensions-submodels-1" class="section level4" number="17.1.2.3">
 <h4><span class="header-section-number">17.1.2.3</span> Human dimensions submodels</h4>
 <p>Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found <a href="data/top10_prim1_common_mode.xlsx">here</a> for each region (New England or Mid-Atlantic as defined by states).</p>
-<p>Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model <span class="citation">(Steinback and Thunberg <a href="#ref-steinback_scott_northeast_2006" role="doc-biblioref">2006</a>)</span> was used as the basis for the strength of the employment linkages.</p>
+<p>Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model <span class="citation">(<a href="#ref-steinback_scott_northeast_2006" role="doc-biblioref">Steinback and Thunberg 2006</a>)</span> was used as the basis for the strength of the employment linkages.</p>
 </div>
 </div>
 <div id="data-analysis-17" class="section level3" number="17.1.3">
@@ -1367,7 +1393,7 @@ Figure 17.2: Gulf of Maine Environmental submodel
 <div id="human-dimensions-submodels-2" class="section level4" number="17.1.3.3">
 <h4><span class="header-section-number">17.1.3.3</span> Human dimensions submodels</h4>
 <p>The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.</p>
-<p>No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model <span class="citation">(Steinback and Thunberg <a href="#ref-steinback_scott_northeast_2006" role="doc-biblioref">2006</a>)</span> was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available <span class="citation">(Das, Chhandita <a href="#ref-das_chhandita_northeast_2013" role="doc-biblioref">2013</a>, <a href="#ref-das_chhandita_overview_2014" role="doc-biblioref">2014</a>)</span>. Human activities and objectives for the conceptual sub model are defined in <span class="citation">DePiper et al. (<a href="#ref-depiper_operationalizing_2017" role="doc-biblioref">2017</a>)</span>. As shown in Figure <a href="conceptual-models.html#fig:draftGOMhuman">17.3</a>, human dimensions submodels were also initially constructed and visualized in Mental Modeler.</p>
+<p>No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model <span class="citation">(<a href="#ref-steinback_scott_northeast_2006" role="doc-biblioref">Steinback and Thunberg 2006</a>)</span> was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available <span class="citation">(<a href="#ref-das_chhandita_northeast_2013" role="doc-biblioref">Das, Chhandita 2013</a>, <a href="#ref-das_chhandita_overview_2014" role="doc-biblioref">2014</a>)</span>. Human activities and objectives for the conceptual sub model are defined in <span class="citation">DePiper et al. (<a href="#ref-depiper_operationalizing_2017" role="doc-biblioref">2017</a>)</span>. As shown in Figure <a href="conceptual-models.html#fig:draftGOMhuman">17.3</a>, human dimensions submodels were also initially constructed and visualized in Mental Modeler.</p>
 <div class="figure"><span id="fig:draftGOMhuman"></span>
 <img src="images/MM_GoM_Human_Connections.png" alt="Gulf of Maine Human dimensions submodel" width="80%" />
 <p class="caption">
@@ -1420,21 +1446,19 @@ sessionInfo(package = NULL)
 ```
 
 ```
-## R version 4.0.2 (2020-06-22)
+## R version 4.1.1 (2021-08-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 16.04.6 LTS
+## Running under: Ubuntu 20.04.3 LTS
 ## 
 ## Matrix products: default
-## BLAS:   /usr/lib/openblas-base/libblas.so.3
-## LAPACK: /usr/lib/libopenblasp-r0.2.18.so
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
 ## 
 ## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 ## 
 ## attached base packages:
 ## [1] grid      stats     graphics  grDevices utils     datasets  methods  
@@ -1444,54 +1468,53 @@ sessionInfo(package = NULL)
 ##  [1] ggspatial_1.1.5      marmap_1.0.5         raster_3.4-5        
 ##  [4] rgdal_1.5-23         sp_1.4-5             sf_0.9-8            
 ##  [7] plotly_4.9.3         cowplot_1.1.1        plyr_1.8.6          
-## [10] ks_1.12.0            RColorBrewer_1.1-2   readr_1.4.0         
-## [13] magick_2.7.1         rmarkdown_2.7        knitr_1.31          
-## [16] rpart_4.1-15         vegan_2.5-7          lattice_0.20-41     
-## [19] permute_0.9-5        heatwaveR_0.4.5      patchwork_1.1.0.9000
-## [22] stringr_1.4.0        ggrepel_0.9.1        kableExtra_1.3.4    
-## [25] here_1.0.1           ecodata_0.1.0        tidyr_1.1.3         
-## [28] dplyr_1.0.5          magrittr_2.0.1       ggplot2_3.3.3       
+## [10] RColorBrewer_1.1-2   readr_1.4.0          rmarkdown_2.9       
+## [13] knitr_1.33           rpart_4.1-15         vegan_2.5-7         
+## [16] lattice_0.20-41      permute_0.9-5        heatwaveR_0.4.5     
+## [19] patchwork_1.1.0.9000 stringr_1.4.0        ggrepel_0.9.1       
+## [22] kableExtra_1.3.4     here_1.0.1           ecodata_0.1.0       
+## [25] tidyr_1.1.3          dplyr_1.0.7          magrittr_2.0.1      
+## [28] ggplot2_3.3.5       
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] VGAM_1.1-5          colorspace_2.0-0    ellipsis_0.3.1     
-##   [4] class_7.3-17        mclust_5.4.7        rprojroot_2.0.2    
-##   [7] fs_1.5.0            rstudioapi_0.13     proxy_0.4-25       
-##  [10] farver_2.1.0        remotes_2.3.0       bit64_4.0.5        
-##  [13] fansi_0.4.2         mvtnorm_1.1-1       xml2_1.3.2         
-##  [16] codetools_0.2-16    splines_4.0.2       ncdf4_1.17         
-##  [19] cachem_1.0.4        pkgload_1.2.1       jsonlite_1.7.2     
-##  [22] cluster_2.1.0       png_0.1-7           compiler_4.0.2     
-##  [25] httr_1.4.2          assertthat_0.2.1    Matrix_1.2-18      
-##  [28] fastmap_1.1.0       lazyeval_0.2.2      cli_2.4.0          
-##  [31] formatR_1.8         htmltools_0.5.1.1   prettyunits_1.1.1  
-##  [34] tools_4.0.2         gtable_0.3.0        glue_1.4.2         
-##  [37] reshape2_1.4.4      tinytex_0.31        Rcpp_1.0.6         
-##  [40] vctrs_0.3.7         svglite_2.0.0       nlme_3.1-148       
-##  [43] xfun_0.22           ps_1.6.0            testthat_3.0.2     
-##  [46] rvest_1.0.0         lifecycle_1.0.0     devtools_2.3.2     
-##  [49] MASS_7.3-51.6       scales_1.1.1        hms_1.0.0          
-##  [52] parallel_4.0.2      yaml_2.2.1          curl_4.3           
-##  [55] gridExtra_2.3       memoise_2.0.0       RSQLite_2.2.5      
-##  [58] stringi_1.5.3       highr_0.8           desc_1.3.0         
-##  [61] e1071_1.7-6         pkgbuild_1.2.0      shape_1.4.5        
-##  [64] rlang_0.4.10        pkgconfig_2.0.3     systemfonts_1.0.1  
-##  [67] evaluate_0.14       purrr_0.3.4         labeling_0.4.2     
-##  [70] htmlwidgets_1.5.3   bit_4.0.4           processx_3.5.1     
-##  [73] tidyselect_1.1.0    bookdown_0.21       R6_2.5.0           
-##  [76] generics_0.1.0      DBI_1.1.1           pillar_1.5.1       
-##  [79] withr_2.4.1         mgcv_1.8-31         units_0.7-1        
-##  [82] survival_3.1-12     tibble_3.1.0        crayon_1.4.1       
-##  [85] KernSmooth_2.23-17  utf8_1.2.1          usethis_2.0.1      
-##  [88] data.table_1.14.0   blob_1.2.1          callr_3.6.0        
-##  [91] AICcmodavg_2.3-1    digest_0.6.27       classInt_0.4-3     
-##  [94] webshot_0.5.2       xtable_1.8-4        adehabitatMA_0.3.14
-##  [97] unmarked_1.0.1      stats4_4.0.2        munsell_0.5.0      
-## [100] viridisLite_0.3.0   sessioninfo_1.1.1
+##   [1] VGAM_1.1-5          colorspace_2.0-2    ellipsis_0.3.2     
+##   [4] class_7.3-18        rprojroot_2.0.2     fs_1.5.0           
+##   [7] rstudioapi_0.13     proxy_0.4-25        farver_2.1.0       
+##  [10] remotes_2.3.0       bit64_4.0.5         fansi_0.5.0        
+##  [13] xml2_1.3.2          codetools_0.2-18    splines_4.1.1      
+##  [16] ncdf4_1.17          cachem_1.0.4        pkgload_1.2.1      
+##  [19] jsonlite_1.7.2      cluster_2.1.1       png_0.1-7          
+##  [22] compiler_4.1.1      httr_1.4.2          assertthat_0.2.1   
+##  [25] Matrix_1.3-2        fastmap_1.1.0       lazyeval_0.2.2     
+##  [28] cli_3.0.1           htmltools_0.5.1.1   prettyunits_1.1.1  
+##  [31] tools_4.1.1         gtable_0.3.0        glue_1.4.2         
+##  [34] reshape2_1.4.4      Rcpp_1.0.5          jquerylib_0.1.4    
+##  [37] vctrs_0.3.8         svglite_2.0.0       nlme_3.1-152       
+##  [40] xfun_0.22           ps_1.6.0            testthat_3.0.3     
+##  [43] rvest_1.0.0         lifecycle_1.0.0     devtools_2.4.2     
+##  [46] MASS_7.3-53.1       scales_1.1.1        hms_1.0.0          
+##  [49] parallel_4.1.1      yaml_2.2.1          curl_4.3.2         
+##  [52] gridExtra_2.3       memoise_2.0.0       sass_0.3.1         
+##  [55] stringi_1.5.3       RSQLite_2.2.7       highr_0.9          
+##  [58] desc_1.3.0          e1071_1.7-6         pkgbuild_1.2.0     
+##  [61] shape_1.4.5         rlang_0.4.11        pkgconfig_2.0.3    
+##  [64] systemfonts_1.0.1   evaluate_0.14       purrr_0.3.4        
+##  [67] labeling_0.4.2      htmlwidgets_1.5.3   bit_4.0.4          
+##  [70] processx_3.5.2      tidyselect_1.1.1    bookdown_0.22      
+##  [73] R6_2.5.1            generics_0.1.0      DBI_1.1.1          
+##  [76] pillar_1.6.2        withr_2.4.2         mgcv_1.8-35        
+##  [79] units_0.7-1         survival_3.2-10     tibble_3.1.4       
+##  [82] crayon_1.4.1        KernSmooth_2.23-18  utf8_1.2.2         
+##  [85] usethis_2.0.1       data.table_1.14.0   blob_1.2.1         
+##  [88] callr_3.7.0         AICcmodavg_2.3-1    digest_0.6.27      
+##  [91] classInt_0.4-3      webshot_0.5.2       xtable_1.8-4       
+##  [94] adehabitatMA_0.3.14 unmarked_1.0.1      stats4_4.1.1       
+##  [97] munsell_0.5.0       viridisLite_0.4.0   bslib_0.2.4        
+## [100] sessioninfo_1.1.1
 ```
 
 ```r
-# Use this to output a detailed list of the package
-# information
+#Use this to output a detailed list of the package information
 current.session <- sessionInfo(package = NULL)
 current.session$otherPkgs
 ```
@@ -1529,9 +1552,9 @@ current.session$otherPkgs
 ##         (<https://orcid.org/0000-0002-1099-3857>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-04 17:30:15 UTC
-## Built: R 4.0.2; ; 2021-01-07 16:50:26 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:26:25 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/ggspatial/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/ggspatial/Meta/package.rds 
 ## 
 ## $marmap
 ## Package: marmap
@@ -1560,9 +1583,9 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2020-11-19 14:50:03 UTC
-## Built: R 4.0.2; ; 2020-12-31 16:12:50 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:31:52 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/marmap/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/marmap/Meta/package.rds 
 ## 
 ## $raster
 ## Package: raster
@@ -1626,9 +1649,9 @@ current.session$otherPkgs
 ## Maintainer: Robert J. Hijmans <r.hijmans@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-14 15:30:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2020-12-31 15:55:00 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 12:49:27 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/raster/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/raster/Meta/package.rds 
 ## 
 ## $rgdal
 ## Package: rgdal
@@ -1684,9 +1707,9 @@ current.session$otherPkgs
 ## Maintainer: Roger Bivand <Roger.Bivand@nhh.no>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-03 10:50:03 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-02-04 19:51:38 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:26:02 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/rgdal/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/rgdal/Meta/package.rds 
 ## 
 ## $sp
 ## Package: sp
@@ -1725,9 +1748,9 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 13:10:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-01-13 16:19:20 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 12:49:17 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/sp/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/sp/Meta/package.rds 
 ## 
 ## $sf
 ## Package: sf
@@ -1789,9 +1812,9 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-03-17 10:50:03 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-04-06 13:02:13 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:05:31 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/sf/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/sf/Meta/package.rds 
 ## 
 ## $plotly
 ## Package: plotly
@@ -1846,9 +1869,9 @@ current.session$otherPkgs
 ## Maintainer: Carson Sievert <cpsievert1@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 14:30:02 UTC
-## Built: R 4.0.2; ; 2021-01-13 16:19:55 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:32:15 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/plotly/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/plotly/Meta/package.rds 
 ## 
 ## $cowplot
 ## Package: cowplot
@@ -1886,9 +1909,9 @@ current.session$otherPkgs
 ## Maintainer: Claus O. Wilke <wilke@austin.utexas.edu>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-30 14:30:02 UTC
-## Built: R 4.0.2; ; 2020-12-31 16:12:47 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:17:28 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/cowplot/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/cowplot/Meta/package.rds 
 ## 
 ## $plyr
 ## Package: plyr
@@ -1921,42 +1944,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-03-03 14:40:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2020-12-31 15:51:47 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 12:49:07 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/plyr/Meta/package.rds 
-## 
-## $ks
-## Package: ks
-## Version: 1.12.0
-## Date: 2021-02-06
-## Title: Kernel Smoothing
-## Authors@R: c(person("Tarn", "Duong", role=c("aut","cre"),
-##         email="tarn.duong@gmail.com"), person("Matt", "Wand",
-##         role="ctb", email="Matt.Wand@uts.edu.au"), person("Jose",
-##         "Chacon", role="ctb", email="jechacon@unex.es"),
-##         person("Artur", "Gramacki", role="ctb",
-##         email="a.gramacki@issi.uz.zgora.pl"))
-## Maintainer: Tarn Duong <tarn.duong@gmail.com>
-## Depends: R (>= 2.10.0)
-## Imports: FNN (>= 1.1), kernlab, KernSmooth (>= 2.22), Matrix, mclust,
-##         mgcv, multicool, mvtnorm (>= 1.0-0), plot3D
-## Suggests: maps, MASS, misc3d (>= 0.4-0), OceanView, oz, rgl (>= 0.66)
-## Description: Kernel smoothers for univariate and multivariate data,
-##         including densities, density derivatives, cumulative
-##         distributions, clustering, classification, density ridges,
-##         significant modal regions, and two-sample hypothesis tests.
-##         Chacon & Duong (2018) <doi:10.1201/9780429485572>.
-## License: GPL-2 | GPL-3
-## URL: https://www.mvstat.net/mvksa/
-## NeedsCompilation: yes
-## Packaged: 2021-02-07 00:32:08 UTC; tduong
-## Author: Tarn Duong [aut, cre], Matt Wand [ctb], Jose Chacon [ctb],
-##         Artur Gramacki [ctb]
-## Repository: CRAN
-## Date/Publication: 2021-02-07 05:50:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-02-11 16:19:25 UTC; unix
-## 
-## -- File: /home/travis/R/Library/ks/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/plyr/Meta/package.rds 
 ## 
 ## $RColorBrewer
 ## Package: RColorBrewer
@@ -1976,9 +1966,9 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2014-12-07 08:28:55
-## Built: R 4.0.2; ; 2020-12-31 15:47:23 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 12:57:57 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/RColorBrewer/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/RColorBrewer/Meta/package.rds 
 ## 
 ## $readr
 ## Package: readr
@@ -2028,61 +2018,15 @@ current.session$otherPkgs
 ## Maintainer: Jim Hester <james.hester@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-10-05 08:50:03 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2020-12-31 16:08:36 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:09:47 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/readr/Meta/package.rds 
-## 
-## $magick
-## Package: magick
-## Type: Package
-## Title: Advanced Graphics and Image-Processing in R
-## Version: 2.7.1
-## Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email =
-##         "jeroen@berkeley.edu", comment = c(ORCID =
-##         "0000-0002-4035-0289"))
-## Description: Bindings to 'ImageMagick': the most comprehensive
-##         open-source image processing library available. Supports many
-##         common formats (png, jpeg, tiff, pdf, etc) and manipulations
-##         (rotate, scale, crop, trim, flip, blur, etc).  All operations
-##         are vectorized via the Magick++ STL meaning they operate either
-##         on a single frame or a series of frames for working with
-##         layers, collages, or animation. In RStudio images are
-##         automatically previewed when printed to the console, resulting
-##         in an interactive editing environment. The latest version of
-##         the package includes a native graphics device for creating
-##         in-memory graphics or drawing onto images using pixel
-##         coordinates.
-## License: MIT + file LICENSE
-## URL: https://docs.ropensci.org/magick/ (website)
-##         https://github.com/ropensci/magick (devel)
-## BugReports: https://github.com/ropensci/magick/issues
-## SystemRequirements: ImageMagick++: ImageMagick-c++-devel (rpm) or
-##         libmagick++-dev (deb)
-## VignetteBuilder: knitr
-## Imports: Rcpp (>= 0.12.12), magrittr, curl
-## LinkingTo: Rcpp
-## Suggests: av (>= 0.3), spelling, jsonlite, methods, knitr, rmarkdown,
-##         rsvg, webp, pdftools, ggplot2, gapminder, IRdisplay, tesseract
-##         (>= 2.0), gifski
-## Encoding: UTF-8
-## RoxygenNote: 7.1.1
-## Language: en-US
-## NeedsCompilation: yes
-## Packaged: 2021-03-20 12:55:02 UTC; jeroen
-## Author: Jeroen Ooms [aut, cre]
-##         (<https://orcid.org/0000-0002-4035-0289>)
-## Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
-## Repository: CRAN
-## Date/Publication: 2021-03-20 23:10:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-04-06 13:01:01 UTC; unix
-## 
-## -- File: /home/travis/R/Library/magick/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/readr/Meta/package.rds 
 ## 
 ## $rmarkdown
 ## Package: rmarkdown
 ## Type: Package
 ## Title: Dynamic Documents for R
-## Version: 2.7
+## Version: 2.9
 ## Authors@R: c( person("JJ", "Allaire", role = "aut", email =
 ##         "jj@rstudio.com"), person("Yihui", "Xie", role = c("aut",
 ##         "cre"), email = "xie@yihui.name", comment = c(ORCID =
@@ -2105,10 +2049,12 @@ current.session$otherPkgs
 ##         filter")), person("Barret", "Schloerke", role = "ctb"),
 ##         person("Carson", "Sievert", role = "ctb", comment = c(ORCID =
 ##         "0000-0002-4958-2844")), person("Christophe", "Dervieux", role
-##         = "ctb"), person("Frederik", "Aust", role = "ctb", email =
-##         "frederik.aust@uni-koeln.de", comment = c(ORCID =
-##         "0000-0003-4900-788X")), person("Jeff", "Allen", role = "ctb",
-##         email = "jeff@rstudio.com"), person("JooYoung", "Seo",
+##         = "ctb"), person("Devon", "Ryan", role = "ctb", email =
+##         "dpryan79@gmail.com", comment = c(ORCID =
+##         "0000-0002-8549-0971")), person("Frederik", "Aust", role =
+##         "ctb", email = "frederik.aust@uni-koeln.de", comment = c(ORCID
+##         = "0000-0003-4900-788X")), person("Jeff", "Allen", role =
+##         "ctb", email = "jeff@rstudio.com"), person("JooYoung", "Seo",
 ##         role="ctb", comment = c(ORCID = "0000-0002-4064-6012")),
 ##         person("Malcolm", "Barrett", role = "ctb"), person("Rob",
 ##         "Hyndman", role = "ctb", email = "Rob.Hyndman@monash.edu"),
@@ -2151,21 +2097,21 @@ current.session$otherPkgs
 ## Description: Convert R Markdown documents into a variety of formats.
 ## Depends: R (>= 3.0)
 ## Imports: tools, utils, knitr (>= 1.22), yaml (>= 2.1.19), htmltools (>=
-##         0.3.5), evaluate (>= 0.13), jsonlite, tinytex (>= 0.11), xfun
-##         (>= 0.15), methods, stringr (>= 1.2.0)
+##         0.3.5), evaluate (>= 0.13), jsonlite, tinytex (>= 0.31), xfun
+##         (>= 0.21), methods, stringr (>= 1.2.0)
 ## Suggests: shiny (>= 1.6.0), tufte, testthat (>= 3.0.0), digest,
-##         dygraphs, vctrs, tibble, fs, rsconnect, withr (>= 2.3.0), bslib
-##         (>= 0.2.4), sass
+##         dygraphs, vctrs, tibble, fs, rsconnect, withr (>= 2.4.2), bslib
+##         (>= 0.2.5.1), sass (>= 0.4.0)
 ## SystemRequirements: pandoc (>= 1.14) - http://pandoc.org
 ## URL: https://github.com/rstudio/rmarkdown,
-##         https://rmarkdown.rstudio.com/docs/
+##         https://pkgs.rstudio.com/rmarkdown/
 ## BugReports: https://github.com/rstudio/rmarkdown/issues
 ## License: GPL-3
 ## RoxygenNote: 7.1.1
 ## Encoding: UTF-8
 ## VignetteBuilder: knitr
 ## NeedsCompilation: no
-## Packaged: 2021-02-19 04:20:47 UTC; yihui
+## Packaged: 2021-06-15 13:59:38 UTC; yihui
 ## Author: JJ Allaire [aut], Yihui Xie [aut, cre]
 ##         (<https://orcid.org/0000-0003-0645-5666>), Jonathan McPherson
 ##         [aut], Javier Luraschi [aut], Kevin Ushey [aut], Aron Atkins
@@ -2176,7 +2122,8 @@ current.session$otherPkgs
 ##         [ctb, cph] (<https://orcid.org/0000-0002-8335-495X>, Number
 ##         sections Lua filter), Barret Schloerke [ctb], Carson Sievert
 ##         [ctb] (<https://orcid.org/0000-0002-4958-2844>), Christophe
-##         Dervieux [ctb], Frederik Aust [ctb]
+##         Dervieux [ctb], Devon Ryan [ctb]
+##         (<https://orcid.org/0000-0002-8549-0971>), Frederik Aust [ctb]
 ##         (<https://orcid.org/0000-0003-4900-788X>), Jeff Allen [ctb],
 ##         JooYoung Seo [ctb] (<https://orcid.org/0000-0002-4064-6012>),
 ##         Malcolm Barrett [ctb], Rob Hyndman [ctb], Romain Lesur [ctb],
@@ -2199,40 +2146,42 @@ current.session$otherPkgs
 ##         StickyTabs), Benct Philip Jonsson [ctb, cph] (pagebreak Lua
 ##         filter), Albert Krewinkel [ctb, cph] (pagebreak Lua filter)
 ## Repository: CRAN
-## Date/Publication: 2021-02-19 08:10:02 UTC
-## Built: R 4.0.2; ; 2021-02-19 20:04:58 UTC; unix
+## Date/Publication: 2021-06-15 14:50:07 UTC
+## Built: R 4.1.1; ; 2021-09-03 13:14:28 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/rmarkdown/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/rmarkdown/Meta/package.rds 
 ## 
 ## $knitr
 ## Package: knitr
 ## Type: Package
 ## Title: A General-Purpose Package for Dynamic Report Generation in R
-## Version: 1.31
+## Version: 1.33
 ## Authors@R: c( person("Yihui", "Xie", role = c("aut", "cre"), email =
 ##         "xie@yihui.name", comment = c(ORCID = "0000-0003-0645-5666")),
-##         person("Adam", "Vogt", role = "ctb"), person("Alastair",
-##         "Andrew", role = "ctb"), person("Alex", "Zvoleff", role =
-##         "ctb"), person("Andre", "Simon", role = "ctb", comment = "the
-##         CSS files under inst/themes/ were derived from the Highlight
-##         package http://www.andre-simon.de"), person("Aron", "Atkins",
-##         role = "ctb"), person("Aaron", "Wolen", role = "ctb"),
+##         person("Abhraneel", "Sarma", role = "ctb"), person("Adam",
+##         "Vogt", role = "ctb"), person("Alastair", "Andrew", role =
+##         "ctb"), person("Alex", "Zvoleff", role = "ctb"),
+##         person("Andre", "Simon", role = "ctb", comment = "the CSS files
+##         under inst/themes/ were derived from the Highlight package
+##         http://www.andre-simon.de"), person("Aron", "Atkins", role =
+##         "ctb"), person("Aaron", "Wolen", role = "ctb"),
 ##         person("Ashley", "Manton", role = "ctb"), person("Atsushi",
 ##         "Yasumoto", role = "ctb", comment = c(ORCID =
 ##         "0000-0002-8335-495X")), person("Ben", "Baumer", role = "ctb"),
 ##         person("Brian", "Diggs", role = "ctb"), person("Brian",
-##         "Zhang", role = "ctb"), person("Cassio", "Pereira", role =
-##         "ctb"), person("Christophe", "Dervieux", role = "ctb"),
-##         person("David", "Hall", role = "ctb"), person("David",
-##         "Hugh-Jones", role = "ctb"), person("David", "Robinson", role =
-##         "ctb"), person("Doug", "Hemken", role = "ctb"),
-##         person("Duncan", "Murdoch", role = "ctb"), person("Elio",
-##         "Campitelli", role = "ctb"), person("Ellis", "Hughes", role =
-##         "ctb"), person("Emily", "Riederer", role = "ctb"),
-##         person("Fabian", "Hirschmann", role = "ctb"), person("Fitch",
-##         "Simeon", role = "ctb"), person("Forest", "Fang", role =
-##         "ctb"), person(c("Frank", "E", "Harrell", "Jr"), role = "ctb",
-##         comment = "the Sweavel package at inst/misc/Sweavel.sty"),
+##         "Zhang", role = "ctb"), person("Bulat", "Yapparov", role =
+##         "ctb"), person("Cassio", "Pereira", role = "ctb"),
+##         person("Christophe", "Dervieux", role = "ctb"), person("David",
+##         "Hall", role = "ctb"), person("David", "Hugh-Jones", role =
+##         "ctb"), person("David", "Robinson", role = "ctb"),
+##         person("Doug", "Hemken", role = "ctb"), person("Duncan",
+##         "Murdoch", role = "ctb"), person("Elio", "Campitelli", role =
+##         "ctb"), person("Ellis", "Hughes", role = "ctb"),
+##         person("Emily", "Riederer", role = "ctb"), person("Fabian",
+##         "Hirschmann", role = "ctb"), person("Fitch", "Simeon", role =
+##         "ctb"), person("Forest", "Fang", role = "ctb"),
+##         person(c("Frank", "E", "Harrell", "Jr"), role = "ctb", comment
+##         = "the Sweavel package at inst/misc/Sweavel.sty"),
 ##         person("Garrick", "Aden-Buie", role = "ctb"),
 ##         person("Gregoire", "Detrez", role = "ctb"), person("Hadley",
 ##         "Wickham", role = "ctb"), person("Hao", "Zhu", role = "ctb"),
@@ -2270,33 +2219,34 @@ current.session$otherPkgs
 ##         "Caballero", role = "ctb"), person("Nick", "Salkowski", role =
 ##         "ctb"), person("Niels Richard", "Hansen", role = "ctb"),
 ##         person("Noam", "Ross", role = "ctb"), person("Obada", "Mahdi",
-##         role = "ctb"), person("Qiang", "Li", role = "ctb"),
-##         person("Ramnath", "Vaidyanathan", role = "ctb"),
-##         person("Richard", "Cotton", role = "ctb"), person("Robert",
-##         "Krzyzanowski", role = "ctb"), person("Romain", "Francois",
-##         role = "ctb"), person("Ruaridh", "Williamson", role = "ctb"),
-##         person("Scott", "Kostyshak", role = "ctb"), person("Sebastian",
-##         "Meyer", role = "ctb"), person("Sietse", "Brouwer", role =
-##         "ctb"), person(c("Simon", "de"), "Bernard", role = "ctb"),
-##         person("Sylvain", "Rousseau", role = "ctb"), person("Taiyun",
-##         "Wei", role = "ctb"), person("Thibaut", "Assus", role = "ctb"),
-##         person("Thibaut", "Lamadon", role = "ctb"), person("Thomas",
-##         "Leeper", role = "ctb"), person("Tim", "Mastny", role = "ctb"),
-##         person("Tom", "Torsney-Weir", role = "ctb"), person("Trevor",
-##         "Davis", role = "ctb"), person("Viktoras", "Veitas", role =
-##         "ctb"), person("Weicheng", "Zhu", role = "ctb"), person("Wush",
-##         "Wu", role = "ctb"), person("Zachary", "Foster", role = "ctb")
-##         )
+##         role = "ctb"), person("Pavel N.", "Krivitsky", role = "ctb",
+##         comment=c(ORCID = "0000-0002-9101-3362")), person("Qiang",
+##         "Li", role = "ctb"), person("Ramnath", "Vaidyanathan", role =
+##         "ctb"), person("Richard", "Cotton", role = "ctb"),
+##         person("Robert", "Krzyzanowski", role = "ctb"),
+##         person("Romain", "Francois", role = "ctb"), person("Ruaridh",
+##         "Williamson", role = "ctb"), person("Scott", "Kostyshak", role
+##         = "ctb"), person("Sebastian", "Meyer", role = "ctb"),
+##         person("Sietse", "Brouwer", role = "ctb"), person(c("Simon",
+##         "de"), "Bernard", role = "ctb"), person("Sylvain", "Rousseau",
+##         role = "ctb"), person("Taiyun", "Wei", role = "ctb"),
+##         person("Thibaut", "Assus", role = "ctb"), person("Thibaut",
+##         "Lamadon", role = "ctb"), person("Thomas", "Leeper", role =
+##         "ctb"), person("Tim", "Mastny", role = "ctb"), person("Tom",
+##         "Torsney-Weir", role = "ctb"), person("Trevor", "Davis", role =
+##         "ctb"), person("Viktoras", "Veitas", role = "ctb"),
+##         person("Weicheng", "Zhu", role = "ctb"), person("Wush", "Wu",
+##         role = "ctb"), person("Zachary", "Foster", role = "ctb") )
 ## Description: Provides a general-purpose tool for dynamic report
 ##         generation in R using Literate Programming techniques.
 ## Depends: R (>= 3.2.3)
 ## Imports: evaluate (>= 0.10), highr, methods, markdown, stringr (>=
-##         0.6), yaml (>= 2.1.19), xfun (>= 0.19), tools
+##         0.6), yaml (>= 2.1.19), xfun (>= 0.21), tools
 ## Suggests: formatR, testit, digest, rgl (>= 0.95.1201), codetools,
 ##         rmarkdown, htmlwidgets (>= 0.7), webshot, tikzDevice (>= 0.10),
 ##         tinytex, reticulate (>= 1.4), JuliaCall (>= 0.11.1), magick,
 ##         png, jpeg, gifski, xml2 (>= 1.2.0), httr, DBI (>= 0.4-1),
-##         showtext, tibble, sass, ragg, styler (>= 1.2.0)
+##         showtext, tibble, sass, bslib, ragg, styler (>= 1.2.0)
 ## License: GPL
 ## URL: https://yihui.org/knitr/
 ## BugReports: https://github.com/yihui/knitr/issues
@@ -2310,31 +2260,31 @@ current.session$otherPkgs
 ##         'plot.R' .....
 ## RoxygenNote: 7.1.1
 ## NeedsCompilation: no
-## Packaged: 2021-01-27 13:36:01 UTC; yihui
+## Packaged: 2021-04-24 05:24:06 UTC; yihui
 ## Author: Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),
-##         Adam Vogt [ctb], Alastair Andrew [ctb], Alex Zvoleff [ctb],
-##         Andre Simon [ctb] (the CSS files under inst/themes/ were
-##         derived from the Highlight package http://www.andre-simon.de),
-##         Aron Atkins [ctb], Aaron Wolen [ctb], Ashley Manton [ctb],
-##         Atsushi Yasumoto [ctb]
+##         Abhraneel Sarma [ctb], Adam Vogt [ctb], Alastair Andrew [ctb],
+##         Alex Zvoleff [ctb], Andre Simon [ctb] (the CSS files under
+##         inst/themes/ were derived from the Highlight package
+##         http://www.andre-simon.de), Aron Atkins [ctb], Aaron Wolen
+##         [ctb], Ashley Manton [ctb], Atsushi Yasumoto [ctb]
 ##         (<https://orcid.org/0000-0002-8335-495X>), Ben Baumer [ctb],
-##         Brian Diggs [ctb], Brian Zhang [ctb], Cassio Pereira [ctb],
-##         Christophe Dervieux [ctb], David Hall [ctb], David Hugh-Jones
-##         [ctb], David Robinson [ctb], Doug Hemken [ctb], Duncan Murdoch
-##         [ctb], Elio Campitelli [ctb], Ellis Hughes [ctb], Emily
-##         Riederer [ctb], Fabian Hirschmann [ctb], Fitch Simeon [ctb],
-##         Forest Fang [ctb], Frank E Harrell Jr [ctb] (the Sweavel
-##         package at inst/misc/Sweavel.sty), Garrick Aden-Buie [ctb],
-##         Gregoire Detrez [ctb], Hadley Wickham [ctb], Hao Zhu [ctb],
-##         Heewon Jeon [ctb], Henrik Bengtsson [ctb], Hiroaki Yutani
-##         [ctb], Ian Lyttle [ctb], Hodges Daniel [ctb], Jake Burkhead
-##         [ctb], James Manton [ctb], Jared Lander [ctb], Jason Punyon
-##         [ctb], Javier Luraschi [ctb], Jeff Arnold [ctb], Jenny Bryan
-##         [ctb], Jeremy Ashkenas [ctb, cph] (the CSS file at
-##         inst/misc/docco-classic.css), Jeremy Stephens [ctb], Jim Hester
-##         [ctb], Joe Cheng [ctb], Johannes Ranke [ctb], John Honaker
-##         [ctb], John Muschelli [ctb], Jonathan Keane [ctb], JJ Allaire
-##         [ctb], Johan Toloe [ctb], Jonathan Sidi [ctb], Joseph
+##         Brian Diggs [ctb], Brian Zhang [ctb], Bulat Yapparov [ctb],
+##         Cassio Pereira [ctb], Christophe Dervieux [ctb], David Hall
+##         [ctb], David Hugh-Jones [ctb], David Robinson [ctb], Doug
+##         Hemken [ctb], Duncan Murdoch [ctb], Elio Campitelli [ctb],
+##         Ellis Hughes [ctb], Emily Riederer [ctb], Fabian Hirschmann
+##         [ctb], Fitch Simeon [ctb], Forest Fang [ctb], Frank E Harrell
+##         Jr [ctb] (the Sweavel package at inst/misc/Sweavel.sty),
+##         Garrick Aden-Buie [ctb], Gregoire Detrez [ctb], Hadley Wickham
+##         [ctb], Hao Zhu [ctb], Heewon Jeon [ctb], Henrik Bengtsson
+##         [ctb], Hiroaki Yutani [ctb], Ian Lyttle [ctb], Hodges Daniel
+##         [ctb], Jake Burkhead [ctb], James Manton [ctb], Jared Lander
+##         [ctb], Jason Punyon [ctb], Javier Luraschi [ctb], Jeff Arnold
+##         [ctb], Jenny Bryan [ctb], Jeremy Ashkenas [ctb, cph] (the CSS
+##         file at inst/misc/docco-classic.css), Jeremy Stephens [ctb],
+##         Jim Hester [ctb], Joe Cheng [ctb], Johannes Ranke [ctb], John
+##         Honaker [ctb], John Muschelli [ctb], Jonathan Keane [ctb], JJ
+##         Allaire [ctb], Johan Toloe [ctb], Jonathan Sidi [ctb], Joseph
 ##         Larmarange [ctb], Julien Barnier [ctb], Kaiyin Zhong [ctb],
 ##         Kamil Slowikowski [ctb], Karl Forner [ctb], Kevin K. Smith
 ##         [ctb], Kirill Mueller [ctb], Kohske Takahashi [ctb], Lorenz
@@ -2343,20 +2293,22 @@ current.session$otherPkgs
 ##         [ctb], Michal Bojanowski [ctb], Michel Kuhlmann [ctb], Miller
 ##         Patrick [ctb], Nacho Caballero [ctb], Nick Salkowski [ctb],
 ##         Niels Richard Hansen [ctb], Noam Ross [ctb], Obada Mahdi [ctb],
-##         Qiang Li [ctb], Ramnath Vaidyanathan [ctb], Richard Cotton
-##         [ctb], Robert Krzyzanowski [ctb], Romain Francois [ctb],
-##         Ruaridh Williamson [ctb], Scott Kostyshak [ctb], Sebastian
-##         Meyer [ctb], Sietse Brouwer [ctb], Simon de Bernard [ctb],
-##         Sylvain Rousseau [ctb], Taiyun Wei [ctb], Thibaut Assus [ctb],
-##         Thibaut Lamadon [ctb], Thomas Leeper [ctb], Tim Mastny [ctb],
-##         Tom Torsney-Weir [ctb], Trevor Davis [ctb], Viktoras Veitas
-##         [ctb], Weicheng Zhu [ctb], Wush Wu [ctb], Zachary Foster [ctb]
+##         Pavel N. Krivitsky [ctb]
+##         (<https://orcid.org/0000-0002-9101-3362>), Qiang Li [ctb],
+##         Ramnath Vaidyanathan [ctb], Richard Cotton [ctb], Robert
+##         Krzyzanowski [ctb], Romain Francois [ctb], Ruaridh Williamson
+##         [ctb], Scott Kostyshak [ctb], Sebastian Meyer [ctb], Sietse
+##         Brouwer [ctb], Simon de Bernard [ctb], Sylvain Rousseau [ctb],
+##         Taiyun Wei [ctb], Thibaut Assus [ctb], Thibaut Lamadon [ctb],
+##         Thomas Leeper [ctb], Tim Mastny [ctb], Tom Torsney-Weir [ctb],
+##         Trevor Davis [ctb], Viktoras Veitas [ctb], Weicheng Zhu [ctb],
+##         Wush Wu [ctb], Zachary Foster [ctb]
 ## Maintainer: Yihui Xie <xie@yihui.name>
 ## Repository: CRAN
-## Date/Publication: 2021-01-27 15:10:05 UTC
-## Built: R 4.0.2; ; 2021-01-28 15:16:16 UTC; unix
+## Date/Publication: 2021-04-24 06:20:02 UTC
+## Built: R 4.1.1; ; 2021-09-03 13:14:20 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/knitr/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/knitr/Meta/package.rds 
 ## 
 ## $rpart
 ## Package: rpart
@@ -2388,9 +2340,9 @@ current.session$otherPkgs
 ## BugReports: https://github.com/bethatkinson/rpart/issues
 ## Packaged: 2019-04-11 15:59:38 UTC; atkinson
 ## Date/Publication: 2019-04-12 14:32:39 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-02-17 03:34:47 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-08-10 08:10:09 UTC; unix
 ## 
-## -- File: /opt/R/4.0.2/lib/R/library/rpart/Meta/package.rds 
+## -- File: /opt/R/4.1.1/lib/R/library/rpart/Meta/package.rds 
 ## 
 ## $vegan
 ## Package: vegan
@@ -2414,9 +2366,9 @@ current.session$otherPkgs
 ## Packaged: 2020-11-27 13:22:03 UTC; jarioksa
 ## Repository: CRAN
 ## Date/Publication: 2020-11-28 15:10:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2020-12-31 15:59:49 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:38:13 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/vegan/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/vegan/Meta/package.rds 
 ## 
 ## $lattice
 ## Package: lattice
@@ -2454,9 +2406,9 @@ current.session$otherPkgs
 ## Maintainer: Deepayan Sarkar <deepayan.sarkar@r-project.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-04-02 12:00:06 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-02-17 03:31:38 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 12:45:30 UTC; unix
 ## 
-## -- File: /opt/R/4.0.2/lib/R/library/lattice/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/lattice/Meta/package.rds 
 ## 
 ## $permute
 ## Package: permute
@@ -2493,9 +2445,9 @@ current.session$otherPkgs
 ## Maintainer: Gavin L. Simpson <ucfagls@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-03-12 09:40:08 UTC
-## Built: R 4.0.2; ; 2020-12-31 15:50:07 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:32:12 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/permute/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/permute/Meta/package.rds 
 ## 
 ## $heatwaveR
 ## Package: heatwaveR
@@ -2536,9 +2488,9 @@ current.session$otherPkgs
 ##         [aut, ctb] (<https://orcid.org/0000-0002-3799-6126>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-07 16:10:16 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-02-24 14:35:44 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:28:15 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/heatwaveR/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/heatwaveR/Meta/package.rds 
 ## 
 ## $patchwork
 ## Package: patchwork
@@ -2570,23 +2522,22 @@ current.session$otherPkgs
 ## Suggests: knitr, rmarkdown, gridGraphics, gridExtra, ragg, testthat (>=
 ##         2.1.0), vdiffr, covr, png
 ## VignetteBuilder: knitr
+## Author: Thomas Lin Pedersen [cre, aut]
+##         (<https://orcid.org/0000-0002-5147-4711>)
+## Built: R 4.1.1; ; 2021-09-03 13:26:39 UTC; unix
 ## RemoteType: github
 ## RemoteHost: api.github.com
 ## RemoteRepo: patchwork
 ## RemoteUsername: thomasp85
 ## RemoteRef: HEAD
 ## RemoteSha: 79223d3002e7bd7e715a270685c6507d684b2622
+## GithubHost: api.github.com
 ## GithubRepo: patchwork
 ## GithubUsername: thomasp85
 ## GithubRef: HEAD
 ## GithubSHA1: 79223d3002e7bd7e715a270685c6507d684b2622
-## NeedsCompilation: no
-## Packaged: 2020-12-31 16:14:02 UTC; travis
-## Author: Thomas Lin Pedersen [cre, aut]
-##         (<https://orcid.org/0000-0002-5147-4711>)
-## Built: R 4.0.2; ; 2020-12-31 16:14:03 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/patchwork/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/patchwork/Meta/package.rds 
 ## 
 ## $stringr
 ## Package: stringr
@@ -2617,9 +2568,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-02-10 03:40:03 UTC
-## Built: R 4.0.2; ; 2020-12-31 15:52:21 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:02:44 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/stringr/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/stringr/Meta/package.rds 
 ## 
 ## $ggrepel
 ## Package: ggrepel
@@ -2686,9 +2637,9 @@ current.session$otherPkgs
 ## Maintainer: Kamil Slowikowski <kslowikowski@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-15 22:00:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-01-26 16:31:36 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:25:46 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/ggrepel/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/ggrepel/Meta/package.rds 
 ## 
 ## $kableExtra
 ## Package: kableExtra
@@ -2740,9 +2691,9 @@ current.session$otherPkgs
 ## Maintainer: Hao Zhu <haozhu233@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-20 05:50:07 UTC
-## Built: R 4.0.2; ; 2021-02-22 20:55:46 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:28:51 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/kableExtra/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/kableExtra/Meta/package.rds 
 ## 
 ## $here
 ## Package: here
@@ -2778,9 +2729,9 @@ current.session$otherPkgs
 ## Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-13 07:30:02 UTC
-## Built: R 4.0.2; ; 2020-12-31 15:57:47 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:28:33 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/here/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/here/Meta/package.rds 
 ## 
 ## $ecodata
 ## Package: ecodata
@@ -2806,18 +2757,18 @@ current.session$otherPkgs
 ## RemoteRepo: ecodata
 ## RemoteUsername: noaa-edab
 ## RemoteRef: HEAD
-## RemoteSha: 933e8821638ec1f6fd3c02049dedca05821a2e74
+## RemoteSha: 97c2c49650f77e007314c8e09b93bab6ed14de65
 ## GithubRepo: ecodata
 ## GithubUsername: noaa-edab
 ## GithubRef: HEAD
-## GithubSHA1: 933e8821638ec1f6fd3c02049dedca05821a2e74
+## GithubSHA1: 97c2c49650f77e007314c8e09b93bab6ed14de65
 ## NeedsCompilation: no
-## Packaged: 2021-04-06 13:10:17 UTC; travis
+## Packaged: 2021-09-03 13:39:05 UTC; runner
 ## Author: Kimberly Bastille [cre, aut], Sean Hardison [aut]
 ## Maintainer: Kimberly Bastille <kimberly.bastille@noaa.gov>
-## Built: R 4.0.2; ; 2021-04-06 13:10:37 UTC; unix
+## Built: R 4.1.1; ; 2021-09-03 13:39:27 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/ecodata/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/ecodata/Meta/package.rds 
 ## 
 ## $tidyr
 ## Package: tidyr
@@ -2856,15 +2807,15 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-03-03 09:20:06 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-03-04 14:41:02 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:09:37 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/tidyr/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/tidyr/Meta/package.rds 
 ## 
 ## $dplyr
 ## Type: Package
 ## Package: dplyr
 ## Title: A Grammar of Data Manipulation
-## Version: 1.0.5
+## Version: 1.0.7
 ## Authors@R: c(person(given = "Hadley", family = "Wickham", role =
 ##         c("aut", "cre"), email = "hadley@rstudio.com", comment =
 ##         c(ORCID = "0000-0003-4757-117X")), person(given = "Romain",
@@ -2882,7 +2833,8 @@ current.session$otherPkgs
 ## Depends: R (>= 3.3.0)
 ## Imports: ellipsis, generics, glue (>= 1.3.2), lifecycle (>= 1.0.0),
 ##         magrittr (>= 1.5), methods, R6, rlang (>= 0.4.10), tibble (>=
-##         2.1.3), tidyselect (>= 1.1.0), utils, vctrs (>= 0.3.5)
+##         2.1.3), tidyselect (>= 1.1.0), utils, vctrs (>= 0.3.5), pillar
+##         (>= 1.5.1)
 ## Suggests: bench, broom, callr, covr, DBI, dbplyr (>= 1.4.3), knitr,
 ##         Lahman, lobstr, microbenchmark, nycflights13, purrr, rmarkdown,
 ##         RMySQL, RPostgreSQL, RSQLite, testthat (>= 3.0.2), tidyr, withr
@@ -2892,7 +2844,7 @@ current.session$otherPkgs
 ## RoxygenNote: 7.1.1
 ## Config/testthat/edition: 3
 ## NeedsCompilation: yes
-## Packaged: 2021-02-19 10:54:12 UTC; romainfrancois
+## Packaged: 2021-06-16 07:10:11 UTC; lionel
 ## Author: Hadley Wickham [aut, cre]
 ##         (<https://orcid.org/0000-0003-4757-117X>), Romain François
 ##         [aut] (<https://orcid.org/0000-0002-2444-4226>), Lionel Henry
@@ -2900,10 +2852,10 @@ current.session$otherPkgs
 ##         (<https://orcid.org/0000-0002-1416-3412>), RStudio [cph, fnd]
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
-## Date/Publication: 2021-03-05 11:00:02 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2021-03-05 18:58:01 UTC; unix
+## Date/Publication: 2021-06-18 23:20:01 UTC
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 13:39:47 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/dplyr/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/dplyr/Meta/package.rds 
 ## 
 ## $magrittr
 ## Type: Package
@@ -2940,13 +2892,13 @@ current.session$otherPkgs
 ## Maintainer: Lionel Henry <lionel@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-17 16:20:06 UTC
-## Built: R 4.0.2; x86_64-pc-linux-gnu; 2020-12-31 15:44:44 UTC; unix
+## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-03 12:57:07 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/magrittr/Meta/package.rds 
+## -- File: /home/runner/work/_temp/Library/magrittr/Meta/package.rds 
 ## 
 ## $ggplot2
 ## Package: ggplot2
-## Version: 3.3.3
+## Version: 3.3.5
 ## Title: Create Elegant Data Visualisations Using the Grammar of Graphics
 ## Description: A system for 'declaratively' creating graphics, based on
 ##         "The Grammar of Graphics". You provide the data, tell 'ggplot2'
@@ -2967,14 +2919,15 @@ current.session$otherPkgs
 ##         person("Dewey", "Dunnington", role = "aut", comment = c(ORCID =
 ##         "0000-0002-9415-4582")), person("RStudio", role = c("cph",
 ##         "fnd")) )
-## Depends: R (>= 3.2)
+## Depends: R (>= 3.3)
 ## Imports: digest, glue, grDevices, grid, gtable (>= 0.1.1), isoband,
-##         MASS, mgcv, rlang (>= 0.3.0), scales (>= 0.5.0), stats, tibble,
-##         withr (>= 2.0.0)
-## Suggests: covr, dplyr, ggplot2movies, hexbin, Hmisc, knitr, lattice,
-##         mapproj, maps, maptools, multcomp, munsell, nlme, profvis,
-##         quantreg, RColorBrewer, rgeos, rmarkdown, rpart, sf (>= 0.7-3),
-##         svglite (>= 1.2.0.9001), testthat (>= 2.1.0), vdiffr (>= 0.3.0)
+##         MASS, mgcv, rlang (>= 0.4.10), scales (>= 0.5.0), stats,
+##         tibble, withr (>= 2.0.0)
+## Suggests: covr, ragg, dplyr, ggplot2movies, hexbin, Hmisc, interp,
+##         knitr, lattice, mapproj, maps, maptools, multcomp, munsell,
+##         nlme, profvis, quantreg, RColorBrewer, rgeos, rmarkdown, rpart,
+##         sf (>= 0.7-3), svglite (>= 1.2.0.9001), testthat (>= 2.1.0),
+##         vdiffr (>= 1.0.0), xml2
 ## Enhances: sp
 ## License: MIT + file LICENSE
 ## URL: https://ggplot2.tidyverse.org,
@@ -2986,8 +2939,9 @@ current.session$otherPkgs
 ## VignetteBuilder: knitr
 ## RoxygenNote: 7.1.1
 ## Encoding: UTF-8
+## Config/Needs/website: ggtext, tidyr, forcats, tidyverse/tidytemplate
 ## NeedsCompilation: no
-## Packaged: 2020-12-17 12:32:40 UTC; thomas
+## Packaged: 2021-06-24 12:25:35 UTC; thomas
 ## Author: Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),
 ##         Winston Chang [aut] (<https://orcid.org/0000-0002-1576-2126>),
 ##         Lionel Henry [aut], Thomas Lin Pedersen [aut, cre]
@@ -3000,10 +2954,10 @@ current.session$otherPkgs
 ##         fnd]
 ## Maintainer: Thomas Lin Pedersen <thomas.pedersen@rstudio.com>
 ## Repository: CRAN
-## Date/Publication: 2020-12-30 15:30:02 UTC
-## Built: R 4.0.2; ; 2020-12-31 16:12:08 UTC; unix
+## Date/Publication: 2021-06-25 11:30:09 UTC
+## Built: R 4.1.1; ; 2021-09-03 13:13:33 UTC; unix
 ## 
-## -- File: /home/travis/R/Library/ggplot2/Meta/package.rds
+## -- File: /home/runner/work/_temp/Library/ggplot2/Meta/package.rds
 ```
 
 
@@ -3019,225 +2973,225 @@ Include accompanying R code, pseudocode, flow of scripts, and/or link to locatio
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-adams_uncertainty_1973">
-<p>Adams, Robert L. A. 1973. “Uncertainty in Nature, Cognitive Dissonance, and the Perceptual Distortion of Environmental Information: Weather Forecasts and New England Beach Trip Decisions.” <em>Economic Geography</em> 49 (4): 287–97. <a href="https://doi.org/10.2307/143232">https://doi.org/10.2307/143232</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-adams_uncertainty_1973" class="csl-entry">
+Adams, Robert L. A. 1973. <span>“Uncertainty in <span>Nature</span>, <span>Cognitive</span> <span>Dissonance</span>, and the <span>Perceptual</span> <span>Distortion</span> of <span>Environmental</span> <span>Information</span>: <span>Weather</span> <span>Forecasts</span> and <span>New</span> <span>England</span> <span>Beach</span> <span>Trip</span> <span>Decisions</span>.”</span> <em>Economic Geography</em> 49 (4): 287–97. <a href="https://doi.org/10.2307/143232">https://doi.org/10.2307/143232</a>.
 </div>
-<div id="ref-backus_georges_1987">
-<p>Backus, Richard H., and Donald W. Bourne, eds. 1987. <em>Georges Bank</em>. Cambridge, MA: The MIT Press.</p>
+<div id="ref-backus_georges_1987" class="csl-entry">
+Backus, Richard H., and Donald W. Bourne, eds. 1987. <em>Georges <span>Bank</span></em>. Cambridge, MA: The MIT Press.
 </div>
-<div id="ref-beardsley_nantucket_1985">
-<p>Beardsley, Robert C., David C. Chapman, Kenneth H. Brink, Steven R. Ramp, and Ronald Schlitz. 1985. “The Nantucket Shoals Flux Experiment (NSFE79). Part I: A Basic Description of the Current and Temperature Variability.” <em>Journal of Physical Oceanography</em> 15 (6): 713–48. <a href="https://doi.org/10.1175/1520-0485(1985)015%3C0713:TNSFEP%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1985)015&lt;0713:TNSFEP&gt;2.0.CO;2</a>.</p>
+<div id="ref-beardsley_nantucket_1985" class="csl-entry">
+Beardsley, Robert C., David C. Chapman, Kenneth H. Brink, Steven R. Ramp, and Ronald Schlitz. 1985. <span>“The <span>Nantucket</span> <span>Shoals</span> <span>Flux</span> <span>Experiment</span> (<span>NSFE</span>79). <span>Part</span> <span>I</span>: <span>A</span> <span>Basic</span> <span>Description</span> of the <span>Current</span> and <span>Temperature</span> <span>Variability</span>.”</span> <em>Journal of Physical Oceanography</em> 15 (6): 713–48. <a href="https://doi.org/10.1175/1520-0485(1985)015&lt;0713:TNSFEP&gt;2.0.CO;2">https://doi.org/10.1175/1520-0485(1985)015&lt;0713:TNSFEP&gt;2.0.CO;2</a>.
 </div>
-<div id="ref-bisack_measuring_2014">
-<p>Bisack, K. D., and G. Magnusson. 2014. “Measuring the Economic Value of Increased Precision in Scientific Estimates of Marine Mammal Abundance and Bycatch.” <em>North American Journal of Fisheries Management</em> 34 (2): 311–21. <a href="https://doi.org/10.1080/02755947.2013.869281">https://doi.org/10.1080/02755947.2013.869281</a>.</p>
+<div id="ref-bisack_measuring_2014" class="csl-entry">
+Bisack, K. D., and G. Magnusson. 2014. <span>“Measuring the <span>Economic</span> <span>Value</span> of <span>Increased</span> <span>Precision</span> in <span>Scientific</span> <span>Estimates</span> of <span>Marine</span> <span>Mammal</span> <span>Abundance</span> and <span>Bycatch</span>.”</span> <em>North American Journal of Fisheries Management</em> 34 (2): 311–21. <a href="https://doi.org/10.1080/02755947.2013.869281">https://doi.org/10.1080/02755947.2013.869281</a>.
 </div>
-<div id="ref-blasiak_paradigms_2014">
-<p>Blasiak, Robert, James L. Anderson, Peter Bridgewater, Ken Furuya, Benjamin S. Halpern, Hisashi Kurokura, Joji Morishita, Nobuyuki Yagi, and Akane Minohara. 2014. “Paradigms of Sustainable Ocean Management.” <em>Marine Policy</em> 48: 206–11. <a href="https://doi.org/10.1016/j.marpol.2014.03.021">https://doi.org/10.1016/j.marpol.2014.03.021</a>.</p>
+<div id="ref-blasiak_paradigms_2014" class="csl-entry">
+Blasiak, Robert, James L. Anderson, Peter Bridgewater, Ken Furuya, Benjamin S. Halpern, Hisashi Kurokura, Joji Morishita, Nobuyuki Yagi, and Akane Minohara. 2014. <span>“Paradigms of Sustainable Ocean Management.”</span> <em>Marine Policy</em> 48: 206–11. <a href="https://doi.org/10.1016/j.marpol.2014.03.021">https://doi.org/10.1016/j.marpol.2014.03.021</a>.
 </div>
-<div id="ref-brown_we_2015">
-<p>Brown, Shandel Marie. 2015. “"We Have the Best Life There Ever Was": Linking Sense of Place and Adaptive Capacity in Nova Scotia’s Coastal Communities.” In <em>Thesis, Masters in Environmental Affairs</em>. University of Waterloo. <a href="http://hdl.handle.net/10012/9408">http://hdl.handle.net/10012/9408</a>.</p>
+<div id="ref-brown_we_2015" class="csl-entry">
+Brown, Shandel Marie. 2015. <span>“"<span>We</span> Have the Best Life There Ever Was": <span>Linking</span> Sense of Place and Adaptive Capacity in <span>Nova</span> <span>Scotia</span>’s Coastal Communities.”</span> In <em>Thesis, <span>Masters</span> in <span>Environmental</span> <span>Affairs</span></em>. University of Waterloo. <a href="http://hdl.handle.net/10012/9408">http://hdl.handle.net/10012/9408</a>.
 </div>
-<div id="ref-castelao_temperature_2010">
-<p>Castelao, Renato, Scott Glenn, and Oscar Schofield. 2010. “Temperature, Salinity, and Density Variability in the Central Middle Atlantic Bight.” <em>Journal of Geophysical Research: Oceans</em> 115 (C10). <a href="https://doi.org/10.1029/2009JC006082">https://doi.org/10.1029/2009JC006082</a>.</p>
+<div id="ref-castelao_temperature_2010" class="csl-entry">
+Castelao, Renato, Scott Glenn, and Oscar Schofield. 2010. <span>“Temperature, Salinity, and Density Variability in the Central <span>Middle</span> <span>Atlantic</span> <span>Bight</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 115 (C10). <a href="https://doi.org/10.1029/2009JC006082">https://doi.org/10.1029/2009JC006082</a>.
 </div>
-<div id="ref-castelao_seasonal_2008">
-<p>Castelao, Renato, Scott Glenn, Oscar Schofield, Robert Chant, John Wilkin, and Josh Kohut. 2008. “Seasonal Evolution of Hydrographic Fields in the Central Middle Atlantic Bight from Glider Observations.” <em>Geophysical Research Letters</em> 35 (3). <a href="https://doi.org/10.1029/2007GL032335">https://doi.org/10.1029/2007GL032335</a>.</p>
+<div id="ref-castelao_seasonal_2008" class="csl-entry">
+Castelao, Renato, Scott Glenn, Oscar Schofield, Robert Chant, John Wilkin, and Josh Kohut. 2008. <span>“Seasonal Evolution of Hydrographic Fields in the Central <span>Middle</span> <span>Atlantic</span> <span>Bight</span> from Glider Observations.”</span> <em>Geophysical Research Letters</em> 35 (3). <a href="https://doi.org/10.1029/2007GL032335">https://doi.org/10.1029/2007GL032335</a>.
 </div>
-<div id="ref-clay_defining_2007">
-<p>Clay, Patricia M., and Julia Olson. 2007. “Defining Fishing Communities: Issues in Theory and Practice.” <em>Napa Bulletin</em> 28 (1): 27–42. <a href="https://doi.org/10.1525/napa.2007.28.1.27">https://doi.org/10.1525/napa.2007.28.1.27</a>.</p>
+<div id="ref-clay_defining_2007" class="csl-entry">
+Clay, Patricia M., and Julia Olson. 2007. <span>“Defining Fishing Communities: <span>Issues</span> in Theory and Practice.”</span> <em>Napa Bulletin</em> 28 (1): 27–42. <a href="https://doi.org/10.1525/napa.2007.28.1.27">https://doi.org/10.1525/napa.2007.28.1.27</a>.
 </div>
-<div id="ref-clay_definingfishing_2008">
-<p>Clay, Patricia M., and Julia Olson. 2007. “Defining Fishing Communities: Issues in Theory and Practice.” <em>Napa Bulletin</em> 28 (1): 27–42. <a href="https://doi.org/10.1525/napa.2007.28.1.27">https://doi.org/10.1525/napa.2007.28.1.27</a>.</p> 2008. “Defining‘Fishing Communities’: Vulnerability and the Magnuson-Stevens Fishery Conservation and Management Act.” <em>Human Ecology Review</em> 15 (2): 143. <a href="https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf">https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf</a>.</p>
+<div id="ref-clay_definingfishing_2008" class="csl-entry">
+———. 2008. <span>“Defining<span>‘<span>Fishing</span> <span>Communities</span>’</span>: <span>Vulnerability</span> and the <span>Magnuson</span>-<span>Stevens</span> <span>Fishery</span> <span>Conservation</span> and <span>Management</span> <span>Act</span>.”</span> <em>Human Ecology Review</em> 15 (2): 143. <a href="https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf">https://www.humanecologyreview.org/pastissues/her152/clayolson.pdf</a>.
 </div>
-<div id="ref-colburn_social_2012">
-<p>Colburn, Lisa L., and Michael Jepson. 2012. “Social Indicators of Gentrification Pressure in Fishing Communities: A Context for Social Impact Assessment.” <em>Coastal Management</em> 40 (3): 289–300. <a href="https://doi.org/10.1080/08920753.2012.677635">https://doi.org/10.1080/08920753.2012.677635</a>.</p>
+<div id="ref-colburn_social_2012" class="csl-entry">
+Colburn, Lisa L., and Michael Jepson. 2012. <span>“Social <span>Indicators</span> of <span>Gentrification</span> <span>Pressure</span> in <span>Fishing</span> <span>Communities</span>: <span>A</span> <span>Context</span> for <span>Social</span> <span>Impact</span> <span>Assessment</span>.”</span> <em>Coastal Management</em> 40 (3): 289–300. <a href="https://doi.org/10.1080/08920753.2012.677635">https://doi.org/10.1080/08920753.2012.677635</a>.
 </div>
-<div id="ref-colburn_indicators_2016">
-<p>Colburn, Lisa L., Michael Jepson, Changhua Weng, Tarsila Seara, Jeremy Weiss, and Jonathan A. Hare. 2016. “Indicators of Climate Change and Social Vulnerability in Fishing Dependent Communities Along the Eastern and Gulf Coasts of the United States.” <em>Marine Policy</em> 74: 323–33. <a href="https://doi.org/10.1016/j.marpol.2016.04.030">https://doi.org/10.1016/j.marpol.2016.04.030</a>.</p>
+<div id="ref-colburn_indicators_2016" class="csl-entry">
+Colburn, Lisa L., Michael Jepson, Changhua Weng, Tarsila Seara, Jeremy Weiss, and Jonathan A. Hare. 2016. <span>“Indicators of Climate Change and Social Vulnerability in Fishing Dependent Communities Along the <span>Eastern</span> and <span>Gulf</span> <span>Coasts</span> of the <span>United</span> <span>States</span>.”</span> <em>Marine Policy</em> 74: 323–33. <a href="https://doi.org/10.1016/j.marpol.2016.04.030">https://doi.org/10.1016/j.marpol.2016.04.030</a>.
 </div>
-<div id="ref-cortes-vazquez_identity_2013">
-<p>Cortes-Vazquez, Jose A., and Morgan Zedalis. 2013. “Identity and Native Species Conservation: Similar Historical Ecologies from Idaho to Spain.” <em>Human Ecology</em> 41 (6): 937–45. <a href="https://doi.org/10.1007/s10745-013-9570-3">https://doi.org/10.1007/s10745-013-9570-3</a>.</p>
+<div id="ref-cortes-vazquez_identity_2013" class="csl-entry">
+Cortes-Vazquez, Jose A., and Morgan Zedalis. 2013. <span>“Identity and Native Species Conservation: Similar Historical Ecologies from <span>Idaho</span> to <span>Spain</span>.”</span> <em>Human Ecology</em> 41 (6): 937–45. <a href="https://doi.org/10.1007/s10745-013-9570-3">https://doi.org/10.1007/s10745-013-9570-3</a>.
 </div>
-<div id="ref-das_chhandita_northeast_2013">
-<p>Das, Chhandita. 2013. “Northeast Trip Cost Data - Overview, Estimation, and Predictions.” <em>NOAA Tehnical Memorandum</em> NMFS_NE_227: 20.</p>
+<div id="ref-das_chhandita_northeast_2013" class="csl-entry">
+Das, Chhandita. 2013. <span>“Northeast <span>Trip</span> <span>Cost</span> <span>Data</span> - <span>Overview</span>, <span>Estimation</span>, and <span>Predictions</span>.”</span> <em>NOAA Tehnical Memorandum</em> NMFS_NE_227: 20.
 </div>
-<div id="ref-das_chhandita_overview_2014">
-<p>Das, Chhandita. 2014. “An Overview of the Annual Cost Survey Protocol and Results in the Northeastern Region (2007-2009).” <em>NOAA Technical Memorandum</em> NMFS-NE-226: 34.</p>
+<div id="ref-das_chhandita_overview_2014" class="csl-entry">
+———. 2014. <span>“An <span>Overview</span> of the <span>Annual</span> <span>Cost</span> <span>Survey</span> <span>Protocol</span> and <span>Results</span> in the <span>Northeastern</span> <span>Region</span> (2007-2009).”</span> <em>NOAA Technical Memorandum</em> NMFS-NE-226: 34.
 </div>
-<div id="ref-depiper_operationalizing_2017">
-<p>DePiper, Geret S., Sarah K. Gaichas, Sean M. Lucey, Patricia Pinto da Silva, M. Robin Anderson, Heather Breeze, Alida Bundy, et al. 2017. “Operationalizing Integrated Ecosystem Assessments Within a Multidisciplinary Team: Lessons Learned from a Worked Example.” <em>ICES Journal of Marine Science</em> 74 (8): 2076–86. <a href="https://doi.org/10.1093/icesjms/fsx038">https://doi.org/10.1093/icesjms/fsx038</a>.</p>
+<div id="ref-depiper_operationalizing_2017" class="csl-entry">
+DePiper, Geret S., Sarah K. Gaichas, Sean M. Lucey, Patricia Pinto da Silva, M. Robin Anderson, Heather Breeze, Alida Bundy, et al. 2017. <span>“Operationalizing Integrated Ecosystem Assessments Within a Multidisciplinary Team: Lessons Learned from a Worked Example.”</span> <em>ICES Journal of Marine Science</em> 74 (8): 2076–86. <a href="https://doi.org/10.1093/icesjms/fsx038">https://doi.org/10.1093/icesjms/fsx038</a>.
 </div>
-<div id="ref-donatuto_evaluating_2015">
-<p>Donatuto, Jamie, and Melissa R. Poe. 2015. “Evaluating Sense of Place as a Domain of Human Wellbeing for Puget Sound Restoration.” Final Report. Tacoma, WA: Puget Sound Institute. <a href="https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf">https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf</a>.</p>
+<div id="ref-donatuto_evaluating_2015" class="csl-entry">
+Donatuto, Jamie, and Melissa R. Poe. 2015. <span>“Evaluating Sense of Place as a Domain of Human Wellbeing for <span>Puget</span> Sound Restoration.”</span> Final {Report}. Tacoma, WA: Puget Sound Institute. <a href="https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf">https://www.eopugetsound.org/sites/default/files/Donatuto%26Poe2015_Evaluating%20Sense%20of%20Place%20Final%20Report.pdf</a>.
 </div>
-<div id="ref-donkersloot_politics_2010">
-<p>Donkersloot, Rachel. 2010. “The Politics of Place and Identity in an Irish Fishing Locale.” <em>Journal of Maritime Studies</em> 9 (2): 33–53. <a href="http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf">http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf</a>.</p>
+<div id="ref-donkersloot_politics_2010" class="csl-entry">
+Donkersloot, Rachel. 2010. <span>“The <span>Politics</span> of <span>Place</span> and <span>Identity</span> in an <span>Irish</span> <span>Fishing</span> <span>Locale</span>.”</span> <em>Journal of Maritime Studies</em> 9 (2): 33–53. <a href="http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf">http://www.marecentre.nl/mast/documents/Mast2010_9.2_Donkersloot.pdf</a>.
 </div>
-<div id="ref-everett_role_2008">
-<p>Everett, Sally, and Cara Aitchison. 2008. “The Role of Food Tourism in Sustaining Regional Identity: A Case Study of Cornwall, South West England.” <em>Journal of Sustainable Tourism</em> 16 (2): 150–67. <a href="https://doi.org/10.2167/jost696.0">https://doi.org/10.2167/jost696.0</a>.</p>
+<div id="ref-everett_role_2008" class="csl-entry">
+Everett, Sally, and Cara Aitchison. 2008. <span>“The Role of Food Tourism in Sustaining Regional Identity: <span>A</span> Case Study of <span>Cornwall</span>, <span>South</span> <span>West</span> <span>England</span>.”</span> <em>Journal of Sustainable Tourism</em> 16 (2): 150–67. <a href="https://doi.org/10.2167/jost696.0">https://doi.org/10.2167/jost696.0</a>.
 </div>
-<div id="ref-fare_adjusting_2006">
-<p>Färe, Rolf, James E. Kirkley, and John B. Walden. 2006. “Adjusting Technical Efficiency to Reflect Discarding: The Case of the U.S. Georges Bank Multi-Species Otter Trawl Fishery.” <em>Fisheries Research</em> 78 (2-3): 257–65. <a href="https://doi.org/10.1016/j.fishres.2005.12.014">https://doi.org/10.1016/j.fishres.2005.12.014</a>.</p>
+<div id="ref-fare_adjusting_2006" class="csl-entry">
+Färe, Rolf, James E. Kirkley, and John B. Walden. 2006. <span>“Adjusting Technical Efficiency to Reflect Discarding: <span>The</span> Case of the <span>U</span>.<span>S</span>. <span>Georges</span> <span>Bank</span> Multi-Species Otter Trawl Fishery.”</span> <em>Fisheries Research</em> 78 (2-3): 257–65. <a href="https://doi.org/10.1016/j.fishres.2005.12.014">https://doi.org/10.1016/j.fishres.2005.12.014</a>.
 </div>
-<div id="ref-forsyth_recent_2015">
-<p>Forsyth, Jacob Samuel Tse, Magdalena Andres, and Glen G. Gawarkiewicz. 2015. “Recent Accelerated Warming of the Continental Shelf Off New Jersey: Observations from the CMV Oleander Expendable Bathythermograph Line.” <em>Journal of Geophysical Research: Oceans</em> 120 (3): 2370–84. <a href="https://doi.org/10.1002/2014JC010516">https://doi.org/10.1002/2014JC010516</a>.</p>
+<div id="ref-forsyth_recent_2015" class="csl-entry">
+Forsyth, Jacob Samuel Tse, Magdalena Andres, and Glen G. Gawarkiewicz. 2015. <span>“Recent Accelerated Warming of the Continental Shelf Off <span>New</span> <span>Jersey</span>: <span>Observations</span> from the <span>CMV</span> <span>Oleander</span> Expendable Bathythermograph Line.”</span> <em>Journal of Geophysical Research: Oceans</em> 120 (3): 2370–84. <a href="https://doi.org/10.1002/2014JC010516">https://doi.org/10.1002/2014JC010516</a>.
 </div>
-<div id="ref-fratantoni_description_2015">
-<p>Fratantoni, Paula S., Tamara Holzwarth-Davis, and Maureen H. Taylor. 2015. <em>Description of Oceanographic Conditions on the Northeast U.S. Continental Shelf During 2014. Northeast Fisheries Science Center Reference Document 15-21</em>. US Dep. Commer., National Marine Fisheries Service. <a href="https://repository.library.noaa.gov/view/noaa/5047">https://repository.library.noaa.gov/view/noaa/5047</a>.</p>
+<div id="ref-fratantoni_description_2015" class="csl-entry">
+Fratantoni, Paula S., Tamara Holzwarth-Davis, and Maureen H. Taylor. 2015. <em>Description of <span>Oceanographic</span> <span>Conditions</span> on the <span>Northeast</span> <span>U</span>.<span>S</span>. <span>Continental</span> <span>Shelf</span> During 2014. <span>Northeast</span> <span>Fisheries</span> <span>Science</span> <span>Center</span> <span>Reference</span> <span>Document</span> 15-21</em>. US Dep. Commer., National Marine Fisheries Service. <a href="https://repository.library.noaa.gov/view/noaa/5047">https://repository.library.noaa.gov/view/noaa/5047</a>.
 </div>
-<div id="ref-gawarkiewicz_direct_2012">
-<p>Gawarkiewicz, Glen G., Robert E. Todd, Albert J. Plueddemann, Magdalena Andres, and James P. Manning. 2012. “Direct Interaction Between the Gulf Stream and the Shelfbreak South of New England.” <em>Scientific Reports</em> 2 (August): 553. <a href="https://doi.org/10.1038/srep00553">https://doi.org/10.1038/srep00553</a>.</p>
+<div id="ref-gawarkiewicz_direct_2012" class="csl-entry">
+Gawarkiewicz, Glen G., Robert E. Todd, Albert J. Plueddemann, Magdalena Andres, and James P. Manning. 2012. <span>“Direct Interaction Between the <span>Gulf</span> <span>Stream</span> and the Shelfbreak South of <span>New</span> <span>England</span>.”</span> <em>Scientific Reports</em> 2 (August): 553. <a href="https://doi.org/10.1038/srep00553">https://doi.org/10.1038/srep00553</a>.
 </div>
-<div id="ref-glenn_biogeochemical_2004">
-<p>Glenn, Scott, Robert Arnone, Trisha Bergmann, W. Paul Bissett, Michael Crowley, Jay Cullen, Joe Gryzmski, et al. 2004. “Biogeochemical Impact of Summertime Coastal Upwelling on the New Jersey Shelf.” <em>Journal of Geophysical Research: Oceans</em> 109 (C12). <a href="https://doi.org/10.1029/2003JC002265">https://doi.org/10.1029/2003JC002265</a>.</p>
+<div id="ref-glenn_biogeochemical_2004" class="csl-entry">
+Glenn, Scott, Robert Arnone, Trisha Bergmann, W. Paul Bissett, Michael Crowley, Jay Cullen, Joe Gryzmski, et al. 2004. <span>“Biogeochemical Impact of Summertime Coastal Upwelling on the <span>New</span> <span>Jersey</span> <span>Shelf</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 109 (C12). <a href="https://doi.org/10.1029/2003JC002265">https://doi.org/10.1029/2003JC002265</a>.
 </div>
-<div id="ref-gong_seasonal_2010">
-<p>Gong, D., J. T. Kohut, and S. M. Glenn. 2010. “Seasonal Climatology of Wind-Driven Circulation on the New Jersey Shelf.” <em>Journal of Geophysical Research: Oceans</em> 115 (C4). <a href="https://doi.org/10.1029/2009JC005520">https://doi.org/10.1029/2009JC005520</a>.</p>
+<div id="ref-gong_seasonal_2010" class="csl-entry">
+Gong, D., J. T. Kohut, and S. M. Glenn. 2010. <span>“Seasonal Climatology of Wind-Driven Circulation on the <span>New</span> <span>Jersey</span> <span>Shelf</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 115 (C4). <a href="https://doi.org/10.1029/2009JC005520">https://doi.org/10.1029/2009JC005520</a>.
 </div>
-<div id="ref-gray_mental_2013">
-<p>Gray, Steven A., Stefan Gray, Linda J. Cox, and Sarah Henly-Shepard. 2013. “Mental Modeler: A Fuzzy-Logic Cognitive Mapping Modeling Tool for Adaptive Environmental Management.” In, 965–73. IEEE. <a href="https://doi.org/10.1109/HICSS.2013.399">https://doi.org/10.1109/HICSS.2013.399</a>.</p>
+<div id="ref-gray_mental_2013" class="csl-entry">
+Gray, Steven A., Stefan Gray, Linda J. Cox, and Sarah Henly-Shepard. 2013. <span>“Mental <span>Modeler</span>: <span>A</span> <span>Fuzzy</span>-<span>Logic</span> <span>Cognitive</span> <span>Mapping</span> <span>Modeling</span> <span>Tool</span> for <span>Adaptive</span> <span>Environmental</span> <span>Management</span>.”</span> In, 965–73. IEEE. <a href="https://doi.org/10.1109/HICSS.2013.399">https://doi.org/10.1109/HICSS.2013.399</a>.
 </div>
-<div id="ref-halpern_index_2012">
-<p>Halpern, Benjamin S, Catherine Longo, Darren Hardy, Karen L McLeod, Jameal F Samhouri, Steven K Katona, Kristin Kleisner, et al. 2012. “An Index to Assess the Health and Benefits of the Global Ocean.” <em>Nature</em> 488 (7413): 615–20. <a href="https://doi.org/10.1038/nature11397">https://doi.org/10.1038/nature11397</a>.</p>
+<div id="ref-halpern_index_2012" class="csl-entry">
+Halpern, Benjamin S, Catherine Longo, Darren Hardy, Karen L McLeod, Jameal F Samhouri, Steven K Katona, Kristin Kleisner, et al. 2012. <span>“An Index to Assess the Health and Benefits of the Global Ocean.”</span> <em>Nature</em> 488 (7413): 615–20. <a href="https://doi.org/10.1038/nature11397">https://doi.org/10.1038/nature11397</a>.
 </div>
-<div id="ref-hess_climate_2008">
-<p>Hess, Jeremy J., Josephine N. Malilay, and Alan J. Parkinson. 2008. “Climate Change: The Importance of Place.” <em>American Journal of Preventive Medicine</em> 35 (5): 468–78. <a href="https://doi.org/10.1016/j.amepre.2008.08.024">https://doi.org/10.1016/j.amepre.2008.08.024</a>.</p>
+<div id="ref-hess_climate_2008" class="csl-entry">
+Hess, Jeremy J., Josephine N. Malilay, and Alan J. Parkinson. 2008. <span>“Climate Change: The Importance of Place.”</span> <em>American Journal of Preventive Medicine</em> 35 (5): 468–78. <a href="https://doi.org/10.1016/j.amepre.2008.08.024">https://doi.org/10.1016/j.amepre.2008.08.024</a>.
 </div>
-<div id="ref-hoagland_demand_2000">
-<p>Hoagland, P., and A. Meeks. 2000. “‘The Demand for Whalewatching at Stellwagen Bank National Marine Sanctuary’ in: The Economic Contribution of Whalewatching to Regional Economies: Perspectives from Two National Marine Sanctuaries.” In <em>NOAA Marine Sancuaries Conservation Series</em>, 00–02.</p>
+<div id="ref-hoagland_demand_2000" class="csl-entry">
+Hoagland, P., and A. Meeks. 2000. <span>“<span>‘<span>The</span> <span>Demand</span> for <span>Whalewatching</span> at <span>Stellwagen</span> <span>Bank</span> <span>National</span> <span>Marine</span> <span>Sanctuary</span>’</span> <span>In</span>: <span>The</span> Economic Contribution of Whalewatching to Regional Economies: Perspectives from Two National Marine Sanctuaries.”</span> In <em><span>NOAA</span> <span>Marine</span> <span>Sancuaries</span> <span>Conservation</span> <span>Series</span></em>, 00–02.
 </div>
-<div id="ref-houghton_middle_1982">
-<p>Houghton, R. W., R. Schlitz, R. C. Beardsley, B. Butman, and J. L. Chamberlin. 1982. “Middle Atlantic Bight Cold Pool: Evolution of the Temperature Structure During Summer 1979.” <em>J. Phys. Oceanogr.; (United States)</em> 12:10 (October). <a href="https://doi.org/10.1175/1520-0485(1982)012%3C1019:TMABCP%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1982)012&lt;1019:TMABCP&gt;2.0.CO;2</a>.</p>
+<div id="ref-houghton_middle_1982" class="csl-entry">
+Houghton, R. W., R. Schlitz, R. C. Beardsley, B. Butman, and J. L. Chamberlin. 1982. <span>“Middle <span>Atlantic</span> <span>Bight</span> Cold Pool: <span>Evolution</span> of the Temperature Structure During Summer 1979.”</span> <em>J. Phys. Oceanogr.; (United States)</em> 12:10 (October). <a href="https://doi.org/10.1175/1520-0485(1982)012&lt;1019:TMABCP&gt;2.0.CO;2">https://doi.org/10.1175/1520-0485(1982)012&lt;1019:TMABCP&gt;2.0.CO;2</a>.
 </div>
-<div id="ref-jepson_development_2013">
-<p>Jepson, Michael, and Lisa L. Colburn. 2013. “Development of Social Indicators of Fishing Community Vulnerability and Resilience in the US Southeast and Northeast Regions.” <em>NOAA Technical Memorandum NMFS-F/SPO-129 (US Dept Commerce, 2013)</em>. <a href="http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf">http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf</a>.</p>
+<div id="ref-jepson_development_2013" class="csl-entry">
+Jepson, Michael, and Lisa L. Colburn. 2013. <span>“Development of <span>Social</span> <span>Indicators</span> of <span>Fishing</span> <span>Community</span> <span>Vulnerability</span> and <span>Resilience</span> in the <span>US</span> <span>Southeast</span> and <span>Northeast</span> <span>Regions</span>.”</span> <em>NOAA Technical Memorandum NMFS-F/SPO-129 (US Dept Commerce, 2013)</em>. <a href="http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf">http://www.nmfs.noaa.gov/sfa/management/councils/training/2014/r_h3_fishing_community_vulnerability.pdf</a>.
 </div>
-<div id="ref-khakzad_role_2016">
-<p>Khakzad, Sorna, and David Griffith. 2016. “The Role of Fishing Material Culture in Communities’ Sense of Place as an Added-Value in Management of Coastal Areas.” <em>Journal of Marine and Island Cultures</em> 5 (2): 95–117. <a href="https://doi.org/10.1016/j.imic.2016.09.002">https://doi.org/10.1016/j.imic.2016.09.002</a>.</p>
+<div id="ref-khakzad_role_2016" class="csl-entry">
+Khakzad, Sorna, and David Griffith. 2016. <span>“The Role of Fishing Material Culture in Communities’ Sense of Place as an Added-Value in Management of Coastal Areas.”</span> <em>Journal of Marine and Island Cultures</em> 5 (2): 95–117. <a href="https://doi.org/10.1016/j.imic.2016.09.002">https://doi.org/10.1016/j.imic.2016.09.002</a>.
 </div>
-<div id="ref-klain_what_2014">
-<p>Klain, Sarah C., Terre A. Satterfield, and Kai M. A. Chan. 2014. “What Matters and Why? Ecosystem Services and Their Bundled Qualities.” <em>Ecological Economics</em> 107: 310–20. <a href="https://doi.org/10.1016/j.ecolecon.2014.09.003">https://doi.org/10.1016/j.ecolecon.2014.09.003</a>.</p>
+<div id="ref-klain_what_2014" class="csl-entry">
+Klain, Sarah C., Terre A. Satterfield, and Kai M. A. Chan. 2014. <span>“What Matters and Why? <span>Ecosystem</span> Services and Their Bundled Qualities.”</span> <em>Ecological Economics</em> 107: 310–20. <a href="https://doi.org/10.1016/j.ecolecon.2014.09.003">https://doi.org/10.1016/j.ecolecon.2014.09.003</a>.
 </div>
-<div id="ref-koehn_progress_2013">
-<p>Koehn, J. Zachary, Daniel R. Reineman, and John N. Kittinger. 2013. “Progress and Promise in Spatial Human Dimensions Research for Ecosystem-Based Ocean Planning.” <em>Marine Policy</em> 42: 31–38. <a href="https://doi.org/10.1016/j.marpol.2013.01.015">https://doi.org/10.1016/j.marpol.2013.01.015</a>.</p>
+<div id="ref-koehn_progress_2013" class="csl-entry">
+Koehn, J. Zachary, Daniel R. Reineman, and John N. Kittinger. 2013. <span>“Progress and Promise in Spatial Human Dimensions Research for Ecosystem-Based Ocean Planning.”</span> <em>Marine Policy</em> 42: 31–38. <a href="https://doi.org/10.1016/j.marpol.2013.01.015">https://doi.org/10.1016/j.marpol.2013.01.015</a>.
 </div>
-<div id="ref-lee_economic_2010">
-<p>Lee, Min-Yang. 2010. “Economic Tradeoffs in the Gulf of Maine Ecosystem: Herring and Whale-Watching.” <em>Marine Policy</em> 34: 156–62. <a href="https://doi.org/10.1016/j.marpol.2009.06.001">https://doi.org/10.1016/j.marpol.2009.06.001</a>.</p>
+<div id="ref-lee_economic_2010" class="csl-entry">
+Lee, Min-Yang. 2010. <span>“Economic <span>Tradeoffs</span> in the <span>Gulf</span> of <span>Maine</span> <span>Ecosystem</span>: <span>Herring</span> and <span>Whale</span>-Watching.”</span> <em>Marine Policy</em> 34: 156–62. <a href="https://doi.org/10.1016/j.marpol.2009.06.001">https://doi.org/10.1016/j.marpol.2009.06.001</a>.
 </div>
-<div id="ref-lee_hedonic_2014">
-<p>Lee, Min-Yang. 2014. “Hedonic Pricing of Atlantic Cod: Effects of Size, Freshness, and Gear.” <em>Marine Resource Economics</em> 29 (3). <a href="https://doi.org/10.1086/677769">https://doi.org/10.1086/677769</a>.</p>
+<div id="ref-lee_hedonic_2014" class="csl-entry">
+———. 2014. <span>“Hedonic <span>Pricing</span> of <span>Atlantic</span> <span>Cod</span>: <span>Effects</span> of <span>Size</span>, <span>Freshness</span>, and <span>Gear</span>.”</span> <em>Marine Resource Economics</em> 29 (3). <a href="https://doi.org/10.1086/677769">https://doi.org/10.1086/677769</a>.
 </div>
-<div id="ref-lee_applying_2017">
-<p>Lee, Min-Yang, Scott Steinback, and Kristy Wallmo. 2017. “Applying a Bioeconomic Model to Recreational Fisheries Management: Groundfish in the Northeast United States.” <em>Marine Resource Economics</em> 32 (2): 191–216. <a href="https://doi.org/10.1086/690676">https://doi.org/10.1086/690676</a>.</p>
+<div id="ref-lee_applying_2017" class="csl-entry">
+Lee, Min-Yang, Scott Steinback, and Kristy Wallmo. 2017. <span>“Applying a <span>Bioeconomic</span> <span>Model</span> to <span>Recreational</span> <span>Fisheries</span> <span>Management</span>: <span>Groundfish</span> in the <span>Northeast</span> <span>United</span> <span>States</span>.”</span> <em>Marine Resource Economics</em> 32 (2): 191–216. <a href="https://doi.org/10.1086/690676">https://doi.org/10.1086/690676</a>.
 </div>
-<div id="ref-lee_inverse_2013">
-<p>Lee, Min-Yang, and Eric M. Thunberg. 2013. “An Inverse Demand System for New England Groundfish: Welfare Analysis of the Transition to Catch Share Management.” <em>American Journal of Agricultural Economics</em> 95 (5). <a href="https://doi.org/10.1093/ajae/aat061">https://doi.org/10.1093/ajae/aat061</a>.</p>
+<div id="ref-lee_inverse_2013" class="csl-entry">
+Lee, Min-Yang, and Eric M. Thunberg. 2013. <span>“An <span>Inverse</span> <span>Demand</span> <span>System</span> for <span>New</span> <span>England</span> <span>Groundfish</span>: <span>Welfare</span> <span>Analysis</span> of the <span>Transition</span> to <span>Catch</span> <span>Share</span> <span>Management</span>.”</span> <em>American Journal of Agricultural Economics</em> 95 (5). <a href="https://doi.org/10.1093/ajae/aat061">https://doi.org/10.1093/ajae/aat061</a>.
 </div>
-<div id="ref-lentz_climatology_2003">
-<p>Lentz, S. J. 2003. “A Climatology of Salty Intrusions over the Continental Shelf from Georges Bank to Cape Hatteras.” <em>Journal of Geophysical Research</em> 108 (C10). <a href="https://doi.org/10.1029/2003JC001859">https://doi.org/10.1029/2003JC001859</a>.</p>
+<div id="ref-lentz_climatology_2003" class="csl-entry">
+Lentz, S. J. 2003. <span>“A Climatology of Salty Intrusions over the Continental Shelf from <span>Georges</span> <span>Bank</span> to <span>Cape</span> <span>Hatteras</span>.”</span> <em>Journal of Geophysical Research</em> 108 (C10). <a href="https://doi.org/10.1029/2003JC001859">https://doi.org/10.1029/2003JC001859</a>.
 </div>
-<div id="ref-lentz_seasonal_2017">
-<p>Lentz, S. 2017. “Seasonal Warming of the Middle Atlantic Bight Cold Pool.” <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. <a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.</p>
+<div id="ref-lentz_seasonal_2017" class="csl-entry">
+———. 2017. <span>“Seasonal Warming of the <span>Middle</span> <span>Atlantic</span> <span>Bight</span> <span>Cold</span> <span>Pool</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. <a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.
 </div>
-<div id="ref-link_northeast_2008">
-<p>Link, Jason, William Overholtz, John O’Reilly, Jack Green, David Dow, Debra Palka, Chris Legault, et al. 2008. “The Northeast U.S. Continental Shelf Energy Modeling and Analysis Exercise (EMAX): Ecological Network Model Development and Basic Ecosystem Metrics.” <em>Journal of Marine Systems</em> 74 (1–2): 453–74. <a href="https://doi.org/10.1016/j.jmarsys.2008.03.007">https://doi.org/10.1016/j.jmarsys.2008.03.007</a>.</p>
+<div id="ref-link_documentation_2006" class="csl-entry">
+Link, J. S., C. T. Griswold, E. T. Methratta, and J. Gunnard, eds. 2006. <em>Documentation for the <span>Energy</span> <span>Modeling</span> and <span>Analysis</span> <span class="nocase">eXercise</span> (<span>EMAX</span>). <span>Northeast</span> <span>Fish</span>. <span>Sci</span>. <span>Cent</span>. <span>Ref</span>. <span>Doc</span>. 06-15</em>. Northeast <span>Fish</span>. <span>Sci</span>. <span>Cent</span>. <span>Ref</span>. <span>Doc</span>. Woods Hole, MA: US Dep. Commer., National Marine Fisheries Service.
 </div>
-<div id="ref-link_documentation_2006">
-<p>Link, J. S., C. T. Griswold, E. T. Methratta, and J. Gunnard, eds. 2006. <em>Documentation for the Energy Modeling and Analysis eXercise (EMAX). Northeast Fish. Sci. Cent. Ref. Doc. 06-15</em>. Northeast Fish. Sci. Cent. Ref. Doc. Woods Hole, MA: US Dep. Commer., National Marine Fisheries Service.</p>
+<div id="ref-link_northeast_2008" class="csl-entry">
+Link, Jason, William Overholtz, John O’Reilly, Jack Green, David Dow, Debra Palka, Chris Legault, et al. 2008. <span>“The <span>Northeast</span> <span>U</span>.<span>S</span>. Continental Shelf <span>Energy</span> <span>Modeling</span> and <span>Analysis</span> Exercise (<span>EMAX</span>): <span>Ecological</span> Network Model Development and Basic Ecosystem Metrics.”</span> <em>Journal of Marine Systems</em> 74 (1–2): 453–74. <a href="https://doi.org/10.1016/j.jmarsys.2008.03.007">https://doi.org/10.1016/j.jmarsys.2008.03.007</a>.
 </div>
-<div id="ref-lord_understanding_2011">
-<p>Lord, Fabienne. 2011. “Understanding Social Impacts by Using New Variables and a Causal Model Diagram in New England Fisheries.” <em>Impact Assessment and Project Appraisal</em> 1: 59–68. <a href="https://doi.org/10.3152/146155111X12913679730476">https://doi.org/10.3152/146155111X12913679730476</a>.</p>
+<div id="ref-lord_understanding_2011" class="csl-entry">
+Lord, Fabienne. 2011. <span>“Understanding Social Impacts by Using New Variables and a Causal Model Diagram in <span>New</span> <span>England</span> Fisheries.”</span> <em>Impact Assessment and Project Appraisal</em> 1: 59–68. <a href="https://doi.org/10.3152/146155111X12913679730476">https://doi.org/10.3152/146155111X12913679730476</a>.
 </div>
-<div id="ref-matzarakis_proceedings_2001">
-<p>Matzarakis, A., and C. R. de Freitas, eds. 2001. “Proceedings of the First International Workshop on Climate, Tourism and Recreation.” In. Porto Carras, Greece.</p>
+<div id="ref-matzarakis_proceedings_2001" class="csl-entry">
+Matzarakis, A., and C. R. de Freitas, eds. 2001. <span>“Proceedings of the <span>First</span> <span>International</span> <span>Workshop</span> on <span>Climate</span>, <span>Tourism</span> and <span>Recreation</span>.”</span> In. Porto Carras, Greece.
 </div>
-<div id="ref-mcgoodwin_understanding_2001">
-<p>McGoodwin, James R. 2001. “Understanding the Cultures of Fishing Communities: A Key to Fisheries Management and Food Security.” In. <a href="http://www.fao.org/docrep/004/y1290e/y1290e00.htm">http://www.fao.org/docrep/004/y1290e/y1290e00.htm</a>.</p>
+<div id="ref-mcgoodwin_understanding_2001" class="csl-entry">
+McGoodwin, James R. 2001. <span>“Understanding the Cultures of Fishing Communities: A Key to Fisheries Management and Food Security.”</span> In. <a href="http://www.fao.org/docrep/004/y1290e/y1290e00.htm">http://www.fao.org/docrep/004/y1290e/y1290e00.htm</a>.
 </div>
-<div id="ref-miller_state-space_2016">
-<p>Miller, Timothy J., Jonathan A. Hare, and Larry A. Alade. 2016. “A State-Space Approach to Incorporating Environmental Effects on Recruitment in an Age-Structured Assessment Model with an Application to Southern New England Yellowtail Flounder.” <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 73 (8): 1261–70. <a href="https://doi.org/10.1139/cjfas-2015-0339">https://doi.org/10.1139/cjfas-2015-0339</a>.</p>
+<div id="ref-miller_state-space_2016" class="csl-entry">
+Miller, Timothy J., Jonathan A. Hare, and Larry A. Alade. 2016. <span>“A State-Space Approach to Incorporating Environmental Effects on Recruitment in an Age-Structured Assessment Model with an Application to Southern <span>New</span> <span>England</span> Yellowtail Flounder.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 73 (8): 1261–70. <a href="https://doi.org/10.1139/cjfas-2015-0339">https://doi.org/10.1139/cjfas-2015-0339</a>.
 </div>
-<div id="ref-mountain_variability_2003">
-<p>Mountain, David G. 2003. “Variability in the Properties of Shelf Water in the Middle Atlantic Bight, 1977–1999.” <em>Journal of Geophysical Research</em> 108 (C1). <a href="https://doi.org/10.1029/2001JC001044">https://doi.org/10.1029/2001JC001044</a>.</p>
+<div id="ref-mountain_variability_2003" class="csl-entry">
+Mountain, David G. 2003. <span>“Variability in the Properties of <span>Shelf</span> <span>Water</span> in the <span>Middle</span> <span>Atlantic</span> <span>Bight</span>, 1977–1999.”</span> <em>Journal of Geophysical Research</em> 108 (C1). <a href="https://doi.org/10.1029/2001JC001044">https://doi.org/10.1029/2001JC001044</a>.
 </div>
-<div id="ref-mountain_labrador_2012">
-<p>Mountain, David G. 2012. “Labrador Slope Water Entering the Gulf of Maine—Response to the North Atlantic Oscillation.” <em>Continental Shelf Research</em> 47 (September): 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.</p>
+<div id="ref-mountain_labrador_2012" class="csl-entry">
+———. 2012b. <span>“Labrador Slope Water Entering the <span>Gulf</span> of <span>Maine</span>—Response to the <span>North</span> <span>Atlantic</span> <span>Oscillation</span>.”</span> <em>Continental Shelf Research</em> 47 (September): 150–55. <a href="https://doi.org/10.1016/j.csr.2012.07.008">https://doi.org/10.1016/j.csr.2012.07.008</a>.
 </div>
-<div id="ref-mupparapu_role_2002">
-<p>Mupparapu, Prashant, and Wendell S. Brown. 2002. “Role of Convection in Winter Mixed Layer Formation in the Gulf of Maine, February 1987.” <em>Journal of Geophysical Research: Oceans</em> 107 (C12): 22–21–22–18. <a href="https://doi.org/10.1029/1999JC000116">https://doi.org/10.1029/1999JC000116</a>.</p>
+<div id="ref-mupparapu_role_2002" class="csl-entry">
+Mupparapu, Prashant, and Wendell S. Brown. 2002. <span>“Role of Convection in Winter Mixed Layer Formation in the <span>Gulf</span> of <span>Maine</span>, <span>February</span> 1987.”</span> <em>Journal of Geophysical Research: Oceans</em> 107 (C12): 22-1-22-18. <a href="https://doi.org/10.1029/1999JC000116">https://doi.org/10.1029/1999JC000116</a>.
 </div>
-<div id="ref-norris-raynbird_for_2004">
-<p>Norris-Raynbird, Carla. 2004. “‘For Hire’ in the US Gulf of Mexico: A Typology of Offshore Charter and Party Boat Operations.” <em>MAST (Maritime Studies)</em> 1 (51 – 65). <a href="http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf">http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf</a>.</p>
+<div id="ref-norris-raynbird_for_2004" class="csl-entry">
+Norris-Raynbird, Carla. 2004. <span>“<span>‘<span>For</span> <span>Hire</span>’</span> in the <span>US</span> <span>Gulf</span> of <span>Mexico</span>: <span>A</span> <span>Typology</span> of <span>Offshore</span> <span>Charter</span> and <span>Party</span> <span>Boat</span> <span>Operations</span>.”</span> <em>MAST (Maritime Studies)</em> 1 (51 – 65). <a href="http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf">http://www.marecentre.nl/mast/documents/ArtikelCarlaNorris-Raynbird.pdf</a>.
 </div>
-<div id="ref-oberg_surviving_2016">
-<p>Oberg, Angela, Julia Flagg, Bonnie McCay, and Lisa L. Colburn. 2016. “Surviving Sandy: Identity and Cultural Resilience in a New Jersey Fishing Community.” In <em>Taking Chances on the Coast After Hurricane Sandy</em>, edited by Dan Van Abs and Karen O.’Neill. New Brunswick, NJ: The Rutgers University Press. <a href="muse.jhu.edu/book/45532">muse.jhu.edu/book/45532</a>.</p>
+<div id="ref-oberg_surviving_2016" class="csl-entry">
+Oberg, Angela, Julia Flagg, Bonnie McCay, and Lisa L. Colburn. 2016. <span>“Surviving <span>Sandy</span>: <span>Identity</span> and <span>Cultural</span> <span>Resilience</span> in a <span>New</span> <span>Jersey</span> <span>Fishing</span> <span>Community</span>.”</span> In <em>Taking <span>Chances</span> on the <span>Coast</span> After <span>Hurricane</span> <span>Sandy</span></em>, edited by Dan Van Abs and Karen O.’Neill. New Brunswick, NJ: The Rutgers University Press. <a href="https://muse.jhu.edu/book/45532">muse.jhu.edu/book/45532</a>.
 </div>
-<div id="ref-pauly_putting_1997">
-<p>Pauly, Daniel. 1997. “Putting Fisheries Management Back in Places.” <em>Reviews in Fish Biology and Fisheries</em> 7 (1): 125–27.</p>
+<div id="ref-pauly_putting_1997" class="csl-entry">
+Pauly, Daniel. 1997. <span>“Putting Fisheries Management Back in Places.”</span> <em>Reviews in Fish Biology and Fisheries</em> 7 (1): 125–27.
 </div>
-<div id="ref-poe_cultural_2014">
-<p>Poe, Melissa R., Karma C. Norman, and Phillip S. Levin. 2014. “Cultural Dimensions of Socioecological Systems: Key Connections and Guiding Principles for Conservation in Coastal Environments.” <em>Conservation Letters</em> 7 (3): 166–75. <a href="https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf">https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf</a>.</p>
+<div id="ref-poe_cultural_2014" class="csl-entry">
+Poe, Melissa R., Karma C. Norman, and Phillip S. Levin. 2014. <span>“Cultural Dimensions of Socioecological Systems: Key Connections and Guiding Principles for Conservation in Coastal Environments.”</span> <em>Conservation Letters</em> 7 (3): 166–75. <a href="https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf">https://www.nwfsc.noaa.gov/news/events/program_reviews/2016/documents/D1_PoeNormanLevin2014.pdf</a>.
 </div>
-<div id="ref-pollnac_toward_2006">
-<p>Pollnac, Richard B., Susan Abbott-Jamieson, Courtland Smith, Marc L. Miller, Patricia M. Clay, and Bryan Oles. 2006. “Toward a Model for Fisheries Social Impact Assessment.” <em>Marine Fisheries Review</em> 68: 1–4. <a href="http://aquaticcommons.org/866/1/Pollnac_Toward.pdf">http://aquaticcommons.org/866/1/Pollnac_Toward.pdf</a>.</p>
+<div id="ref-pollnac_toward_2006" class="csl-entry">
+Pollnac, Richard B., Susan Abbott-Jamieson, Courtland Smith, Marc L. Miller, Patricia M. Clay, and Bryan Oles. 2006. <span>“Toward a Model for Fisheries Social Impact Assessment.”</span> <em>Marine Fisheries Review</em> 68: 1–4. <a href="http://aquaticcommons.org/866/1/Pollnac_Toward.pdf">http://aquaticcommons.org/866/1/Pollnac_Toward.pdf</a>.
 </div>
-<div id="ref-potschin_landscapes_2013">
-<p>Potschin, Marion, and Roy Haines-Young. 2013. “Landscapes, Sustainability and the Place-Based Analysis of Ecosystem Services.” <em>Landscape Ecology</em> 28 (6): 1053–65. <a href="https://doi.org/10.1007/s10980-012-9756-x">https://doi.org/10.1007/s10980-012-9756-x</a>.</p>
+<div id="ref-potschin_landscapes_2013" class="csl-entry">
+Potschin, Marion, and Roy Haines-Young. 2013. <span>“Landscapes, Sustainability and the Place-Based Analysis of Ecosystem Services.”</span> <em>Landscape Ecology</em> 28 (6): 1053–65. <a href="https://doi.org/10.1007/s10980-012-9756-x">https://doi.org/10.1007/s10980-012-9756-x</a>.
 </div>
-<div id="ref-reed_beyond_2013">
-<p>Reed, Matt, Paul Courtney, Julie Urquhart, and Natalie Ross. 2013. “Beyond Fish as Commodities: Understanding the Socio-Cultural Role of Inshore Fisheries in England.” <em>Marine Policy</em> 37: 62–68. <a href="https://doi.org/10.1016/j.marpol.2012.04.009">https://doi.org/10.1016/j.marpol.2012.04.009</a>.</p>
+<div id="ref-reed_beyond_2013" class="csl-entry">
+Reed, Matt, Paul Courtney, Julie Urquhart, and Natalie Ross. 2013. <span>“Beyond Fish as Commodities: <span>Understanding</span> the Socio-Cultural Role of Inshore Fisheries in <span>England</span>.”</span> <em>Marine Policy</em> 37: 62–68. <a href="https://doi.org/10.1016/j.marpol.2012.04.009">https://doi.org/10.1016/j.marpol.2012.04.009</a>.
 </div>
-<div id="ref-scott_climate_2004">
-<p>Scott, D., G McBoyle, and M. Schwartzentruber. 2004. “Climate Change and the Distribution of Climatic Resources for Tourism in North America.” <em>Climate Research</em> 27: 105–17. <a href="https://doi.org/10.3354/cr027105">https://doi.org/10.3354/cr027105</a>.</p>
+<div id="ref-scott_climate_2004" class="csl-entry">
+Scott, D., G McBoyle, and M. Schwartzentruber. 2004. <span>“Climate <span>Change</span> and the <span>Distribution</span> of <span>Climatic</span> <span>Resources</span> for <span>Tourism</span> in <span>North</span> <span>America</span>.”</span> <em>Climate Research</em> 27: 105–17. <a href="https://doi.org/10.3354/cr027105">https://doi.org/10.3354/cr027105</a>.
 </div>
-<div id="ref-seara_perceived_2016">
-<p>Seara, Tarsila, Patricia M. Clay, and Lisa L. Colburn. 2016. “Perceived Adaptive Capacity and Natural Disasters: A Fisheries Case Study.” <em>Global Environmental Change</em> 38: 49–57. <a href="https://doi.org/10.1016/j.gloenvcha.2016.01.006">https://doi.org/10.1016/j.gloenvcha.2016.01.006</a>.</p>
+<div id="ref-seara_perceived_2016" class="csl-entry">
+Seara, Tarsila, Patricia M. Clay, and Lisa L. Colburn. 2016. <span>“Perceived Adaptive Capacity and Natural Disasters: <span>A</span> Fisheries Case Study.”</span> <em>Global Environmental Change</em> 38: 49–57. <a href="https://doi.org/10.1016/j.gloenvcha.2016.01.006">https://doi.org/10.1016/j.gloenvcha.2016.01.006</a>.
 </div>
-<div id="ref-shearman_long-term_2009">
-<p>Shearman, R. Kipp, and Steven J. Lentz. 2009. “Long-Term Sea Surface Temperature Variability Along the U.S. East Coast.” <em>Journal of Physical Oceanography</em> 40 (5): 1004–17. <a href="https://doi.org/10.1175/2009JPO4300.1">https://doi.org/10.1175/2009JPO4300.1</a>.</p>
+<div id="ref-shearman_long-term_2009" class="csl-entry">
+Shearman, R. Kipp, and Steven J. Lentz. 2009. <span>“Long-<span>Term</span> <span>Sea</span> <span>Surface</span> <span>Temperature</span> <span>Variability</span> Along the <span>U</span>.<span>S</span>. <span>East</span> <span>Coast</span>.”</span> <em>Journal of Physical Oceanography</em> 40 (5): 1004–17. <a href="https://doi.org/10.1175/2009JPO4300.1">https://doi.org/10.1175/2009JPO4300.1</a>.
 </div>
-<div id="ref-smith_trophic_2010">
-<p>Smith, Brian E., and Jason S. Link. 2010. <em>The Trophic Dynamics of 50 Finfish and 2 Squid Species on the Northeast US Continental Shelf. NOAA Technichal Memorandum NMFS-NE-216</em>. National Marine Fisheries Service, 166 Water Street, Woods Hole, MA 02543-1026. <a href="http://www.nefsc.noaa.gov/publications/tm/tm216/">http://www.nefsc.noaa.gov/publications/tm/tm216/</a>.</p>
+<div id="ref-smith_trophic_2010" class="csl-entry">
+Smith, Brian E., and Jason S. Link. 2010. <em>The <span>Trophic</span> <span>Dynamics</span> of 50 <span>Finfish</span> and 2 <span>Squid</span> <span>Species</span> on the <span>Northeast</span> <span>US</span> <span>Continental</span> <span>Shelf</span>. <span>NOAA</span> <span>Technichal</span> <span>Memorandum</span> <span>NMFS</span>-<span>NE</span>-216</em>. National Marine Fisheries Service, 166 Water Street, Woods Hole, MA 02543-1026. <a href="http://www.nefsc.noaa.gov/publications/tm/tm216/">http://www.nefsc.noaa.gov/publications/tm/tm216/</a>.
 </div>
-<div id="ref-smith_consumption_2015">
-<p>Smith, Laurel A., Jason S. Link, Steven X. Cadrin, and Debra L. Palka. 2015. “Consumption by Marine Mammals on the Northeast U.S. Continental Shelf.” <em>Ecological Applications</em> 25 (2): 373–89. <a href="https://doi.org/10.1890/13-1656.1">https://doi.org/10.1890/13-1656.1</a>.</p>
+<div id="ref-smith_consumption_2015" class="csl-entry">
+Smith, Laurel A., Jason S. Link, Steven X. Cadrin, and Debra L. Palka. 2015. <span>“Consumption by Marine Mammals on the <span>Northeast</span> <span>U</span>.<span>S</span>. Continental Shelf.”</span> <em>Ecological Applications</em> 25 (2): 373–89. <a href="https://doi.org/10.1890/13-1656.1">https://doi.org/10.1890/13-1656.1</a>.
 </div>
-<div id="ref-smith_mean_1983">
-<p>Smith, Peter C. 1983. “The Mean and Seasonal Circulation Off Southwest Nova Scotia.” <em>Journal of Physical Oceanography</em> 13 (6): 1034–54. <a href="https://doi.org/10.1175/1520-0485(1983)013%3C1034:TMASCO%3E2.0.CO;2">https://doi.org/10.1175/1520-0485(1983)013&lt;1034:TMASCO&gt;2.0.CO;2</a>.</p>
+<div id="ref-smith_mean_1983" class="csl-entry">
+Smith, Peter C. 1983. <span>“The <span>Mean</span> and <span>Seasonal</span> <span>Circulation</span> Off <span>Southwest</span> <span>Nova</span> <span>Scotia</span>.”</span> <em>Journal of Physical Oceanography</em> 13 (6): 1034–54. <a href="https://doi.org/10.1175/1520-0485(1983)013&lt;1034:TMASCO&gt;2.0.CO;2">https://doi.org/10.1175/1520-0485(1983)013&lt;1034:TMASCO&gt;2.0.CO;2</a>.
 </div>
-<div id="ref-smith_interannual_2001">
-<p>Smith, Peter C., Robert W. Houghton, Richard G. Fairbanks, and David G. Mountain. 2001. “Interannual Variability of Boundary Fluxes and Water Mass Properties in the Gulf of Maine and on Georges Bank: 1993–1997.” <em>Deep Sea Research Part II: Topical Studies in Oceanography</em>, Coupled biological and physical studies of plankton populations on Georges Bank and related North Atlantic regions, 48 (1): 37–70. <a href="https://doi.org/10.1016/S0967-0645(00)00081-3">https://doi.org/10.1016/S0967-0645(00)00081-3</a>.</p>
+<div id="ref-smith_interannual_2001" class="csl-entry">
+Smith, Peter C., Robert W. Houghton, Richard G. Fairbanks, and David G. Mountain. 2001. <span>“Interannual Variability of Boundary Fluxes and Water Mass Properties in the <span>Gulf</span> of <span>Maine</span> and on <span>Georges</span> <span>Bank</span>: 1993–1997.”</span> <em>Deep Sea Research Part II: Topical Studies in Oceanography</em>, Coupled biological and physical studies of plankton populations on <span>Georges</span> <span>Bank</span> and related <span>North</span> <span>Atlantic</span> regions, 48 (1): 37–70. <a href="https://doi.org/10.1016/S0967-0645(00)00081-3">https://doi.org/10.1016/S0967-0645(00)00081-3</a>.
 </div>
-<div id="ref-smith_regime_2012">
-<p>Smith, Peter C, Neal R Pettigrew, Philip Yeats, David W Townsend, and Guoqi Han. 2012. “Regime Shift in the Gulf of Maine.” <em>American Fisheries Society Symposium</em> 79: 185–203.</p>
+<div id="ref-smith_regime_2012" class="csl-entry">
+Smith, Peter C, Neal R Pettigrew, Philip Yeats, David W Townsend, and Guoqi Han. 2012. <span>“Regime <span>Shift</span> in the <span>Gulf</span> of <span>Maine</span>.”</span> <em>American Fisheries Society Symposium</em> 79: 185–203.
 </div>
-<div id="ref-steinback_scott_northeast_2006">
-<p>Steinback, Scott, and Eric Thunberg. 2006. “Northeast Regional Commercial Fishing Input-Output Model.” <em>NOAA Technical Memorandum</em> NMFS-NE-188: 54. <a href="https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf">https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf</a>.</p>
+<div id="ref-st_martin_making_2001" class="csl-entry">
+St Martin, Kevin. 2001. <span>“Making Space for Community Resource Management in Fisheries.”</span> <em>Annals of the Association of American Geographers</em> 91 (1): 122–42. <a href="https://doi.org/10.1111/0004-5608.00236">https://doi.org/10.1111/0004-5608.00236</a>.
 </div>
-<div id="ref-st_martin_making_2001">
-<p>St Martin, Kevin. 2001. “Making Space for Community Resource Management in Fisheries.” <em>Annals of the Association of American Geographers</em> 91 (1): 122–42. <a href="https://doi.org/10.1111/0004-5608.00236">https://doi.org/10.1111/0004-5608.00236</a>.</p>
+<div id="ref-steinback_scott_northeast_2006" class="csl-entry">
+Steinback, Scott, and Eric Thunberg. 2006. <span>“Northeast <span>Regional</span> <span>Commercial</span> <span>Fishing</span> <span>Input</span>-<span>Output</span> <span>Model</span>.”</span> <em>NOAA Technical Memorandum</em> NMFS-NE-188: 54. <a href="https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf">https://www.nefsc.noaa.gov/publications/tm/tm188/tm188.pdf</a>.
 </div>
-<div id="ref-sullivan_evidence_2005">
-<p>Sullivan, Mark C., Robert K. Cowen, and Brian P. Steves. 2005. “Evidence for Atmosphere-Ocean Forcing of Yellowtail Flounder (Limanda Ferruginea) Recruitment in the Middle Atlantic Bight.” <em>Fisheries Oceanography</em> 14 (5): 386–99. <a href="http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight">http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight</a>.</p>
+<div id="ref-sullivan_evidence_2005" class="csl-entry">
+Sullivan, Mark C., Robert K. Cowen, and Brian P. Steves. 2005. <span>“Evidence for Atmosphere-Ocean Forcing of Yellowtail Flounder (<span>Limanda</span> Ferruginea) Recruitment in the <span>Middle</span> <span>Atlantic</span> <span>Bight</span>.”</span> <em>Fisheries Oceanography</em> 14 (5): 386–99. <a href="http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight">http://www.academia.edu/10197997/Evidence_for_atmosphere-ocean_forcing_of_yellowtail_flounder_Limanda_ferruginea_recruitment_in_the_Middle_Atlantic_Bight</a>.
 </div>
-<div id="ref-townsend_oceanography_2006">
-<p>Townsend, David W, Andrew C Thomas, Lawrence M Mayer, Maura A Thomas, and John A Qunilan. 2006. “Oceanography of the Northwest Atlantic Continental Shelf (1,W).” In <em>The Sea, Volume 14A</em>, edited by Allan R Robinson and Kenneth H Brink, 119–68. Cambridge, MA: Harvard University Press. <a href="https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf">https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf</a>.</p>
+<div id="ref-townsend_oceanography_2006" class="csl-entry">
+Townsend, David W, Andrew C Thomas, Lawrence M Mayer, Maura A Thomas, and John A Qunilan. 2006. <span>“Oceanography of the <span>Northwest</span> <span>Atlantic</span> <span>Continental</span> <span>Shelf</span> (1,<span>W</span>).”</span> In <em>The <span>Sea</span>, <span>Volume</span> 14a</em>, edited by Allan R Robinson and Kenneth H Brink, 119–68. Cambridge, MA: Harvard University Press. <a href="https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf">https://pdfs.semanticscholar.org/bbdb/3136f6ab34fd405225fde03696feee70b36b.pdf</a>.
 </div>
-<div id="ref-urquhart_constructing_2013">
-<p>Urquhart, Julie, and Tim Acott. 2013. “Constructing ‘the Stade’: Fishers’ and Non-Fishers’ Identity and Place Attachment in Hastings, South-East England.” <em>Marine Policy</em> 37: 45–54. <a href="https://doi.org/10.1016/j.marpol.2012.04.004">https://doi.org/10.1016/j.marpol.2012.04.004</a>.</p>
+<div id="ref-urquhart_constructing_2013" class="csl-entry">
+Urquhart, Julie, and Tim Acott. 2013. <span>“Constructing <span>‘<span>The</span> <span>Stade</span>’</span>: <span>Fishers</span>’ and Non-Fishers’ Identity and Place Attachment in <span>Hastings</span>, South-East <span>England</span>.”</span> <em>Marine Policy</em> 37: 45–54. <a href="https://doi.org/10.1016/j.marpol.2012.04.004">https://doi.org/10.1016/j.marpol.2012.04.004</a>.
 </div>
-<div id="ref-walden_productivity_2012">
-<p>Walden, John B., James E. Kirkley, Rolf Färe, and Philip Logan. 2012. “Productivity Change Under an Individual Transferable Quota Management System.” <em>American Journal of Agricultural Economics</em> 94 (4): 913–28. <a href="https://doi.org/10.1093/ajae/aas025">https://doi.org/10.1093/ajae/aas025</a>.</p>
+<div id="ref-walden_productivity_2012" class="csl-entry">
+Walden, John B., James E. Kirkley, Rolf Färe, and Philip Logan. 2012. <span>“Productivity <span>Change</span> Under an <span>Individual</span> <span>Transferable</span> <span>Quota</span> <span>Management</span> <span>System</span>.”</span> <em>American Journal of Agricultural Economics</em> 94 (4): 913–28. <a href="https://doi.org/10.1093/ajae/aas025">https://doi.org/10.1093/ajae/aas025</a>.
 </div>
-<div id="ref-waring_us_2015">
-<p>Waring, Gordon T., Elizabeth Josephson, Katherine Maze-Foley, and Patricia E. Rosel, eds. 2015. <em>US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments – 2014., Type = NOAA Technical Memorandom</em>. 231. National Marine Fisheries Service. <a href="https://doi.org/10.7289/V5TQ5ZH0">https://doi.org/10.7289/V5TQ5ZH0</a>.</p>
+<div id="ref-waring_us_2015" class="csl-entry">
+Waring, Gordon T., Elizabeth Josephson, Katherine Maze-Foley, and Patricia E. Rosel, eds. 2015. <em><span class="nocase">US Atlantic and Gulf of Mexico Marine Mammal Stock Assessments – 2014.</span>, Type = <span>NOAA</span> <span>Technical</span> <span>Memorandom</span></em>. 231. National Marine Fisheries Service. <a href="https://doi.org/10.7289/V5TQ5ZH0">https://doi.org/10.7289/V5TQ5ZH0</a>.
 </div>
-<div id="ref-wynveen_natural_2012">
-<p>Wynveen, Christopher J., Gerard T. Kyle, and Stephen G. Sutton. 2012. “Natural Area Visitors’ Place Meaning and Place Attachment Ascribed to a Marine Setting.” <em>Journal of Environmental Psychology</em> 32 (4): 287–96. <a href="https://doi.org/10.1016/j.jenvp.2012.05.001">https://doi.org/10.1016/j.jenvp.2012.05.001</a>.</p>
+<div id="ref-wynveen_natural_2012" class="csl-entry">
+Wynveen, Christopher J., Gerard T. Kyle, and Stephen G. Sutton. 2012. <span>“Natural Area Visitors’ Place Meaning and Place Attachment Ascribed to a Marine Setting.”</span> <em>Journal of Environmental Psychology</em> 32 (4): 287–96. <a href="https://doi.org/10.1016/j.jenvp.2012.05.001">https://doi.org/10.1016/j.jenvp.2012.05.001</a>.
 </div>
-<div id="ref-zhang_dynamics_2015">
-<p>Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. “Dynamics of the Direct Intrusion of Gulf Stream Ring Water onto the Mid-Atlantic Bight Shelf.” <em>Geophysical Research Letters</em> 42 (18): 7687–95. <a href="https://doi.org/10.1002/2015GL065530">https://doi.org/10.1002/2015GL065530</a>.</p>
+<div id="ref-zhang_dynamics_2015" class="csl-entry">
+Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. <span>“Dynamics of the Direct Intrusion of <span>Gulf</span> <span>Stream</span> Ring Water onto the <span>Mid</span>-<span>Atlantic</span> <span>Bight</span> Shelf.”</span> <em>Geophysical Research Letters</em> 42 (18): 7687–95. <a href="https://doi.org/10.1002/2015GL065530">https://doi.org/10.1002/2015GL065530</a>.
 </div>
 </div>
             </section>
@@ -3269,6 +3223,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

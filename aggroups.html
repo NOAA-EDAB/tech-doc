@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Aggregate Groups | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Aggregate Groups | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="erddap.html"/>
 <link rel="next" href="annual-sst-cycles.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -793,8 +819,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Public availability statement</strong>: Source data is available to the public (see Data Sources).</p>
 <div id="methods" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Methods</h2>
-<p>The State of the Ecosystem (SOE) reports are delivered to the New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) to provide ecosystems context. To better understand that broader ecosystem context, many of the indicators are reported at an aggregate level rather than at a single species level. Species were assigned to an aggregate group following the classification scheme of <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary" role="doc-biblioref">2000</a>)</span> and <span class="citation">Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>. Both works classified species into feeding guilds based on food habits data collected at the Northeast Fisheries Science Center (NEFSC). In 2017, the SOE used seven specific feeding guilds (plus an “other” category; Table <a href="aggroups.html#tab:soe2017class">2.1</a>). These seven were the same guilds used in <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary" role="doc-biblioref">2000</a>)</span>, which also distinguished ontogentic shifts in species diets.</p>
-<p>For the purposes of the SOE, species were only assigned to one category based on the most prevalent size available to commercial fisheries. However, several of those categories were confusing to the management councils, so in 2018 those categories were simplified to five (plus “other”; Table <a href="aggroups.html#tab:soe2018class">2.2</a>) along the lines of <span class="citation">Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>. In addition to feeding guilds, species managed by the councils have been identified. This is done to show the breadth of what a given council is responsible for within the broader ecosystem context.</p>
+<p>The State of the Ecosystem (SOE) reports are delivered to the New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) to provide ecosystems context. To better understand that broader ecosystem context, many of the indicators are reported at an aggregate level rather than at a single species level. Species were assigned to an aggregate group following the classification scheme of <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary" role="doc-biblioref">2000</a>)</span> and <span class="citation">Jason S. Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>. Both works classified species into feeding guilds based on food habits data collected at the Northeast Fisheries Science Center (NEFSC). In 2017, the SOE used seven specific feeding guilds (plus an “other” category; Table <a href="aggroups.html#tab:soe2017class">2.1</a>). These seven were the same guilds used in <span class="citation">Garrison and Link (<a href="#ref-garrison2000dietary" role="doc-biblioref">2000</a>)</span>, which also distinguished ontogentic shifts in species diets.</p>
+<p>For the purposes of the SOE, species were only assigned to one category based on the most prevalent size available to commercial fisheries. However, several of those categories were confusing to the management councils, so in 2018 those categories were simplified to five (plus “other”; Table <a href="aggroups.html#tab:soe2018class">2.2</a>) along the lines of <span class="citation">Jason S. Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>. In addition to feeding guilds, species managed by the councils have been identified. This is done to show the breadth of what a given council is responsible for within the broader ecosystem context.</p>
 <p>In the 2020 report, squids were moved from planktivores to piscivores based on the majority of their diet being either fish or other squid.</p>
 <table>
 <caption>
@@ -879,7 +905,7 @@ Things not classified above
 </table>
 <table>
 <caption>
-<span id="tab:soe2018class">Table 2.2: </span>Aggregate groups use since 2018 SOE. Classifications are based on <span class="citation">Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>.
+<span id="tab:soe2018class">Table 2.2: </span>Aggregate groups use since 2018 SOE. Classifications are based on <span class="citation">Jason S. Link et al. (<a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>.
 </caption>
 <thead>
 <tr>
@@ -945,7 +971,7 @@ Things not classified above
 <div id="data-sources" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Data sources</h3>
 <p>In order to match aggregate groups with various data sources, a look-up table was generated which includes species’ common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch (ESB) in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.</p>
-<p>Management responsibilities for different species are listed under the column “Fed.managed” (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the “NEIEA” column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings <span class="citation">(Link et al. <a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span>, but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the Northeast Large Marine Ecosystem (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.</p>
+<p>Management responsibilities for different species are listed under the column “Fed.managed” (NEFMC, MAFMC, or JOINT for jointly managed species). More information about these species is available on the FMC websites listed below. Species groupings listed in the “NEIEA” column were developed for presentation on the Northeast Integrated Ecosystem Assessment (NE-IEA) website. These groupings are based on EMAX groupings <span class="citation">(<a href="#ref-link2006EMAX" role="doc-biblioref">Jason S. Link et al. 2006</a>)</span>, but were adjusted based on conceptual models developed for the NE-IEA program that highlight focal components in the Northeast Large Marine Ecosystem (i.e. those components with the largest potential for perturbing ecosystem dynamics). NE-IEA groupings were further simplified to allow for effective communication through the NE-IEA website.</p>
 <div id="supplemental-information" class="section level4" number="2.1.1.1">
 <h4><span class="header-section-number">2.1.1.1</span> Supplemental information</h4>
 <p>See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:</p>
@@ -965,18 +991,18 @@ Things not classified above
 </div>
 <div id="data-extraction" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Data extraction</h3>
-<p>Species lists are pulled from SVDBS and CFDBS. They are merged using the ITIS code. Classifications from Garrison and Link <span class="citation">(Garrison and Link <a href="#ref-garrison2000dietary" role="doc-biblioref">2000</a>)</span> and Link et al. <span class="citation">(Link et al. <a href="#ref-link2006EMAX" role="doc-biblioref">2006</a>)</span> are added manually. The R code used in the extraction process can be found <a href="https://github.com/slucey/RSurvey/blob/master/Species_list.R">here</a>.</p>
+<p>Species lists are pulled from SVDBS and CFDBS. They are merged using the ITIS code. Classifications from Garrison and Link <span class="citation">(<a href="#ref-garrison2000dietary" role="doc-biblioref">Garrison and Link 2000</a>)</span> and Link et al. <span class="citation">(<a href="#ref-link2006EMAX" role="doc-biblioref">Jason S. Link et al. 2006</a>)</span> are added manually. The R code used in the extraction process can be found <a href="https://github.com/slucey/RSurvey/blob/master/Species_list.R">here</a>.</p>
 
 </div>
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-garrison2000dietary">
-<p>Garrison, Lance P, and Jason S Link. 2000. “Dietary guild structure of the fish community in the Northeast United States continental shelf ecosystem.” <em>Marine Ecology Progress Series</em> 202: 231–40. <a href="https://doi.org/10.3354/meps202231">https://doi.org/10.3354/meps202231</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-garrison2000dietary" class="csl-entry">
+Garrison, Lance P, and Jason S Link. 2000. <span>“<span class="nocase">Dietary guild structure of the fish community in the Northeast United States continental shelf ecosystem</span>.”</span> <em>Marine Ecology Progress Series</em> 202: 231–40. <a href="https://doi.org/10.3354/meps202231">https://doi.org/10.3354/meps202231</a>.
 </div>
-<div id="ref-link2006EMAX">
-<p>Link, Jason S, Carolyn A Griswold, Elizabeth T Methratta, Jessie Gunnard, Jon Brodziak, Tarsus Kenton, Laurel A Col, et al. 2006. <em>Documentation for the energy modeling and analysis exercise (EMAX)</em>. US Department of Commerce, National Oceanic; Atmospheric Administration.</p>
+<div id="ref-link2006EMAX" class="csl-entry">
+Link, Jason S, Carolyn A Griswold, Elizabeth T Methratta, Jessie Gunnard, Jon Brodziak, Tarsus Kenton, Laurel A Col, et al. 2006. <em><span class="nocase">Documentation for the energy modeling and analysis exercise (EMAX)</span></em>. US Department of Commerce, National Oceanic; Atmospheric Administration.
 </div>
 </div>
             </section>
@@ -1008,6 +1034,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

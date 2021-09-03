@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>35 Phytoplankton Size Class | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="35 Phytoplankton Size Class | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="ocean-acidification.html"/>
 <link rel="next" href="plankton-diversity.html"/>
-<script src="asset/header-attrs-2.7/header-attrs.js"></script>
+<script src="asset/header-attrs-2.9/header-attrs.js"></script>
 <script src="asset/jquery-3.5.1/jquery.min.js"></script>
 <link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,13 +51,15 @@
 
 
 
+<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="asset/kePrint-0.0.1/kePrint.js"></script>
 <link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="asset/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.17/datatables.js"></script>
+<script src="asset/datatables-binding-0.18/datatables.js"></script>
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="asset/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="asset/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -69,6 +71,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -793,7 +819,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Public availability statement</strong>: Source data used in these analyses are publicly available.</p>
 <div id="methods-35" class="section level2" number="35.1">
 <h2><span class="header-section-number">35.1</span> Methods</h2>
-<p>Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite chlorophyll data were obtained from the European Space Agency’s Ocean Colour Climate Change Initiative project. Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder (<span class="citation">Casey et al. (<a href="#ref-Casey2010" role="doc-biblioref">2010</a>)</span>; <span class="citation">Saha et al. (<a href="#ref-Saha2018" role="doc-biblioref">2018</a>)</span>) and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 (<span class="citation">Chin, Vazquez-Cuervo, and Armstrong (<a href="#ref-Chin2017" role="doc-biblioref">2017</a><a href="#ref-Chin2017" role="doc-biblioref">b</a>)</span>; <span class="citation">(“GHRSST Level 4 Mur Global Foundation Sea Surface Temperature Analysis (V4.1)” <a href="#ref-Project2015" role="doc-biblioref">2015</a>)</span>) data. Prior to June 2002, AVHRR Pathfinder data were used as the SST source and MUR SST in subsequent years.</p>
+<p>Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite chlorophyll data were obtained from the European Space Agency’s Ocean Colour Climate Change Initiative project. Sea Surface Temperature (SST) data included the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder (<span class="citation">Casey et al. (<a href="#ref-Casey2010" role="doc-biblioref">2010</a>)</span>; <span class="citation"><span>“AVHRR Pathfinder Version 5.3 Level 3 Collated (L3c) Global 4km Sea Surface Temperature for 1981-Present.”</span> (<a href="#ref-Saha2018" role="doc-biblioref">2018</a>)</span>) and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 (<span class="citation">Chin, Vazquez-Cuervo, and Armstrong (<a href="#ref-Chin2017" role="doc-biblioref">2017b</a>)</span>; <span class="citation"><span>“GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (V4.1)”</span> (<a href="#ref-Project2015" role="doc-biblioref">2015</a>)</span>) data. Prior to June 2002, AVHRR Pathfinder data were used as the SST source and MUR SST in subsequent years.</p>
 <div id="data-sources-38" class="section level3" number="35.1.1">
 <h3><span class="header-section-number">35.1.1</span> Data sources</h3>
 <p>The global chlorophyll data were subset to the U.S. East Coast (SW longitude=-82.5, SW latitude=22.5, NE longitude=-51.5, NE latitude=48.5) and stored in a nearly equal-area, integerized sinusoidal grid. The global SST data were also subset to the same East Coast region and remapped to the same sinusoidal grid.</p>
@@ -821,30 +847,30 @@ Figure 35.1: Mid-Atlantic phytoplankton size class.
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Brewin2017">
-<p>Brewin, Robert J. W., Stefano Ciavatta, Shubha Sathyendranath, Thomas Jackson, Gavin Tilstone, Kieran Curran, Ruth L. Airs, et al. 2017. “Uncertainty in Ocean-Color Estimates of Chlorophyll for Phytoplankton Groups.” <em>Frontiers in Marine Science</em> 4: 104. <a href="https://doi.org/10.3389/fmars.2017.00104">https://doi.org/10.3389/fmars.2017.00104</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Saha2018" class="csl-entry">
+<span>“AVHRR Pathfinder Version 5.3 Level 3 Collated (L3c) Global 4km Sea Surface Temperature for 1981-Present.”</span> 2018. NOAA National Centers for Environmental Information. https://doi.org/<a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1">https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1</a>.
 </div>
-<div id="ref-Brewin2010">
-<p>Brewin, Robert J. W., Shubha Sathyendranath, Takafumi Hirata, Samantha J. Lavender, Rosa M. Barciela, and Nick J. Hardman-Mountford. 2010. “A Three-Component Model of Phytoplankton Size Class for the Atlantic Ocean.” <em>Ecological Modelling</em> 221 (11): 1472–83. <a href="https://doi.org/https://doi.org/10.1016/j.ecolmodel.2010.02.014">https://doi.org/https://doi.org/10.1016/j.ecolmodel.2010.02.014</a>.</p>
+<div id="ref-Brewin2017" class="csl-entry">
+Brewin, Robert J. W., Stefano Ciavatta, Shubha Sathyendranath, Thomas Jackson, Gavin Tilstone, Kieran Curran, Ruth L. Airs, et al. 2017. <span>“Uncertainty in Ocean-Color Estimates of Chlorophyll for Phytoplankton Groups.”</span> <em>Frontiers in Marine Science</em> 4: 104. <a href="https://doi.org/10.3389/fmars.2017.00104">https://doi.org/10.3389/fmars.2017.00104</a>.
 </div>
-<div id="ref-Casey2010">
-<p>Casey, Kenneth S., Tess B. Brandon, Peter Cornillon, and Robert Evans. 2010. “The past, present, and future of the AVHRR pathfinder SST program.” In <em>Oceanography from Space: Revisited</em>, 273–87. <a href="https://doi.org/10.1007/978-90-481-8681-5_16">https://doi.org/10.1007/978-90-481-8681-5_16</a>.</p>
+<div id="ref-Brewin2010" class="csl-entry">
+Brewin, Robert J. W., Shubha Sathyendranath, Takafumi Hirata, Samantha J. Lavender, Rosa M. Barciela, and Nick J. Hardman-Mountford. 2010. <span>“A Three-Component Model of Phytoplankton Size Class for the Atlantic Ocean.”</span> <em>Ecological Modelling</em> 221 (11): 1472–83. https://doi.org/<a href="https://doi.org/10.1016/j.ecolmodel.2010.02.014">https://doi.org/10.1016/j.ecolmodel.2010.02.014</a>.
 </div>
-<div id="ref-Chin2017">
-<p>Chin, Toshio Michael, Jorge Vazquez-Cuervo, and Edward M. 2017b. “A Multi-Scale High-Resolution Analysis of Global Sea Surface Temperature.” <em>Remote Sensing of Environment</em> 200: 154–69. <a href="https://doi.org/https://doi.org/10.1016/j.rse.2017.07.029">https://doi.org/https://doi.org/10.1016/j.rse.2017.07.029</a>.</p>
+<div id="ref-Casey2010" class="csl-entry">
+Casey, Kenneth S., Tess B. Brandon, Peter Cornillon, and Robert Evans. 2010. <span>“The Past, Present, and Future of the AVHRR Pathfinder SST Program.”</span> In <em>Oceanography from Space: Revisited</em>, edited by Vittorio Barale, J. F. R. Gower, and L. Alberotanza, 273–87. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-90-481-8681-5_16">https://doi.org/10.1007/978-90-481-8681-5_16</a>.
 </div>
-<div id="ref-Project2015">
-<p>“GHRSST Level 4 Mur Global Foundation Sea Surface Temperature Analysis (V4.1).” 2015. NASA Physical Oceanography DAAC. <a href="https://doi.org/10.5067/GHGMR-4FJ04">https://doi.org/10.5067/GHGMR-4FJ04</a>.</p>
+<div id="ref-Chin2017" class="csl-entry">
+———. 2017b. <span>“A Multi-Scale High-Resolution Analysis of Global Sea Surface Temperature.”</span> <em>Remote Sensing of Environment</em> 200: 154–69. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.07.029">https://doi.org/10.1016/j.rse.2017.07.029</a>.
 </div>
-<div id="ref-Moore2020">
-<p>Moore, Timothy S., and Christopher W. Brown. 2020. “Incorporating Environmental Data in Abundance-Based Algorithms for Deriving Phytoplankton Size Classes in the Atlantic Ocean.” <em>Remote Sensing of Environment</em> 240: 111689. <a href="https://doi.org/https://doi.org/10.1016/j.rse.2020.111689">https://doi.org/https://doi.org/10.1016/j.rse.2020.111689</a>.</p>
+<div id="ref-Project2015" class="csl-entry">
+<span>“GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (V4.1).”</span> 2015. NASA Physical Oceanography DAAC. <a href="https://doi.org/10.5067/GHGMR-4FJ04">https://doi.org/10.5067/GHGMR-4FJ04</a>.
 </div>
-<div id="ref-Saha2018">
-<p>Saha, Korak, Xuepeng Zhao, Huai-min Zhang, Kenneth S. Casey, Dexin Zhang, Sheekela Baker-Yeboah, Katherine A. Kilpatrick, Robert H. Evans, Thomas Ryan, and John M. Relph. 2018. “AVHRR Pathfinder version 5.3 level 3 collated (L3C) global 4km sea surface temperature for 1981-Present.” NOAA National Centers for Environmental Information. <a href="https://doi.org/doi:10.7289/V52J68XX%20Accessed%20in%202016%20and%202018">https://doi.org/doi:10.7289/V52J68XX Accessed in 2016 and 2018</a>.</p>
+<div id="ref-Moore2020" class="csl-entry">
+Moore, Timothy S., and Christopher W. Brown. 2020. <span>“Incorporating Environmental Data in Abundance-Based Algorithms for Deriving Phytoplankton Size Classes in the Atlantic Ocean.”</span> <em>Remote Sensing of Environment</em> 240: 111689. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2020.111689">https://doi.org/10.1016/j.rse.2020.111689</a>.
 </div>
-<div id="ref-Turner2020">
-<p>Turner, Kyle J. 2020. “Remote Sensing of Phytoplankton Size Classes on the Noretheast U.s. Continental Shelf.” <a href="https://digitalcommons.uri.edu/theses/1913">https://digitalcommons.uri.edu/theses/1913</a>.</p>
+<div id="ref-Turner2020" class="csl-entry">
+Turner, Kyle J. 2020. <span>“Remote Sensing of Phytoplankton Size Classes on the Noretheast u.s. Continental Shelf.”</span> <a href="https://digitalcommons.uri.edu/theses/1913">https://digitalcommons.uri.edu/theses/1913</a>.
 </div>
 </div>
             </section>
@@ -876,6 +902,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
