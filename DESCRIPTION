@@ -31,7 +31,6 @@ Depends:
   grid,
   gridExtra,
   ncdf4,
-  magick,
   readxl,
   reshape2,
   RColorBrewer,
