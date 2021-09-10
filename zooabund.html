@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-09-03" />
+<meta name="date" content="2021-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -811,7 +811,7 @@ div.csl-indent {
 <div id="zooabund" class="section level1" number="58">
 <h1><span class="header-section-number">58</span> Zooplankton</h1>
 <p><strong>Description</strong>: Annual time series of zooplankton abundance</p>
-<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2017, 2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020. 2021)</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)</p>
 <p><strong>Indicator category</strong>: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods</p>
 <p><strong>Contributor(s)</strong>: Ryan Morse, Kevin Friedland</p>
 <p><strong>Data steward</strong>: Harvey Walsh, <a href="mailto:harvey.walsh@noaa.gov" class="email">harvey.walsh@noaa.gov</a>; Mike Jones, <a href="mailto:michael.jones@noaa.gov" class="email">michael.jones@noaa.gov</a></p>
@@ -827,9 +827,9 @@ div.csl-indent {
 <h3><span class="header-section-number">58.1.2</span> Data extraction</h3>
 <p>Data are from the publicly available zooplankton dataset on the NOAA File Transfer Protocol (FTP) server. The excel file has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-Kane2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-Kane2011" role="doc-biblioref">2011</a>)</span>.</p>
 <p>R code used in extraction process.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="zooabund.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb6-2"><a href="zooabund.html#cb6-2" aria-hidden="true" tabindex="-1"></a>URL<span class="ot">=</span><span class="st">&#39;ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx&#39;</span></span>
-<span id="cb6-3"><a href="zooabund.html#cb6-3" aria-hidden="true" tabindex="-1"></a>ZPD<span class="ot">=</span>openxlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(URL, <span class="at">sheet=</span><span class="st">&#39;Data&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="zooabund.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb4-2"><a href="zooabund.html#cb4-2" aria-hidden="true" tabindex="-1"></a>URL<span class="ot">=</span><span class="st">&#39;ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx&#39;</span></span>
+<span id="cb4-3"><a href="zooabund.html#cb4-3" aria-hidden="true" tabindex="-1"></a>ZPD<span class="ot">=</span>openxlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(URL, <span class="at">sheet=</span><span class="st">&#39;Data&#39;</span>)</span></code></pre></div>
 </div>
 <div id="data-analysis-59" class="section level3" number="58.1.3">
 <h3><span class="header-section-number">58.1.3</span> Data analysis</h3>
