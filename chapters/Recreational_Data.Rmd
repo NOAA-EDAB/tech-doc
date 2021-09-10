@@ -2,7 +2,7 @@
 
 **Description**: A variety of indicators derived from MRIP Recreational Fisheries Statistics, including total recreational catch, total angler trips by region, annual diversity of recreational fleet effort, and annual diversity of managed species.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020, 2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
 **Indicator category**: Database pull with analysis
   

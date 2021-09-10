@@ -91,7 +91,7 @@ Fisheries dependent data from Comlands is used in several indicators for the Sta
 The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R). 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = T, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 }
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = F, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 }
 
 ```
 
