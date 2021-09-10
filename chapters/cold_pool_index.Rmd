@@ -10,12 +10,15 @@
   
 **Data steward**: Kimberly Bastille 
   
-**Point of contact**: Zhuomin Chen <zchen@whoi.edu>
+**Point of contact**: Zhuomin Chen <zhuomin.chen@uconn.edu>
   
-**Public availability statement**: Source data are publicly available. Please email zchen@whoi.edu for further information and queries of Cold Pool Spatial Extent indicator source data.
+**Public availability statement**: Source data are publicly available. Please email zhuomin.chen@uconn.edu for further information and queries of Cold Pool Spatial Extent indicator source data.
 
 ## Methods
 The methodology for the cold pool index changed between 2020 and 2021 SOEs. The most recent methods and at the top with older methods below those.
+
+
+The cold pool is an area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight.
 
 ### Data Sources
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
