@@ -1,0 +1,45 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1,4"
+
+name: Maintain pkgdown cache
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+    
+    steps:
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        
+      - name: Check cached R packages
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: pkg-cache20210913-KB
+          
+      - name: Load R packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          sudo R CMD javareconf
+          Rscript -e 'install.packages(c("bookdown", "rmarkdown",
+          "tidyverse","data.table","devtools","ks","nlme",
+          "AICcmodavg","rgdal","maps","mapdata","png","marmap","rerddap","vegan",
+          "mgcv","ggplot2","rpart", "Kendall","zoo","colorRamps","heatwaveR",
+          "Hmisc","raster","grid","gridExtra","ncdf4","readxl","reshape2",
+          "RColorBrewer","cowplot","stats","geosphere","readr","sp","openxlsx",
+          "lubridate", "rgeos","kableExtra","here","geosphere","purrr","remotes", 
+          "rvest","xml2","ggrepel","kernlab","formatR","sf", "ggspatial"), dependencies = TRUE)
+          devtools::install_github("NOAA-EDAB/ecodata")
+          devtools::install_github("NOAA-EDAB/assessmentdata")
+          devtools::install_github("slucey/RSurvey/Survdat")
+          devtools::install_github("thomasp85/patchwork") '
+          
+          
+          
+          
