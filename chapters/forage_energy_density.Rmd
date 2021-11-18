@@ -19,7 +19,7 @@
 The forage fish energy denisty indicator comes from a collaborative project between UMASS Dartmouth Biology Department (Dr. Ken Oliveira, M.S student Kelcie Bean) and NEFSC Population Biology Branch (Mark Wuenschel).  The study focuses on evaluating energy content of the species in Table \@ref(tab:foragefish).
 
 ```{r foragefish, eval = T, echo = F}
-library(tidyverse)
+
 forage.tab <- data.frame('Common Name' = c('Atlantic Herring','alewife','silver hake',
                                            'butterfish','northern sandlance','Atlantic mackerel',
                                            'longfin squid','northern shortfin squid'),
