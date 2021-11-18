@@ -66,15 +66,15 @@ CHL and PPD time series were formatted for inclusion in the `ecodata` R package 
 
 Chl *a* and primary production data were also examined in relation to the long-term means of each series. The figures below show data specific to the Mid-Atlantic Bight. The code for the plots can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-mab-chl-weekly.R).
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2019. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
+<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2019. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8} -->
 
 
-```
+<!-- ``` -->
 
-In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. The code for this can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-PP-OCCI.R) 
+<!-- In the figure below, we show monthly primary productivity on an annual time step in the Mid-Atlantic Bight. The code for this can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-PP-OCCI.R)  -->
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-monthly.R"), eval = T, echo = F, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."}
-```
+<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-monthly.R"), eval = T, echo = F, fig.width=8, fig.cap = "Monthly primary production trends show the annual cycle (i.e. the peak during the summer months) and the changes over time for each month."} -->
+<!-- ``` -->
 
 ## 2018-2020 Methods
 ### Data sources
