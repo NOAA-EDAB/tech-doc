@@ -48,19 +48,19 @@ Two data frames are in the `assessmentdata` package, `stockAssessmentData` and `
 In `stockAssessmentData` we have time series. Columns are `r names(stockAssessmentData)` and the reported metrics are `r unique(stockAssessmentData$Metric)`. 
 
 
-```{r}
-#library(DT)
-datatable(head(stockAssessmentData), rownames = FALSE)
+<!-- ```{r} -->
+<!-- #library(DT) -->
+<!-- datatable(head(stockAssessmentData), rownames = FALSE) -->
 
-```
+<!-- ``` -->
 
 In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(stockAssessmentSummary))`.
 
-```{r}
+<!-- ```{r} -->
 
-datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
+<!-- datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE)) -->
 
-```
+<!-- ``` -->
 
 Assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
 
