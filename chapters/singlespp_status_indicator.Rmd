@@ -52,7 +52,7 @@ In `stockAssessmentData` we have time series. Columns are `r names(stockAssessme
 
 ```{r}
 #library(DT)
-datatable(head(stockAssessmentData), rownames = FALSE)
+DT::datatable(head(stockAssessmentData), rownames = FALSE)
 
 ```
 
@@ -60,7 +60,7 @@ In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(s
 
 ```{r}
 
-datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
+DT::datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
 
 ```
 
