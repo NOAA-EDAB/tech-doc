@@ -35,32 +35,34 @@ These 2020 stock assessment results were compiled as preliminary information by 
 
 ### Data extraction
 
-Beginning in 2020 for the 2021 SOE, we used Andy Beet's [assessmentdata package](https://github.com/NOAA-EDAB/assessmentdata) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
+Beginning in 2020 for the 2021 SOE, we used Andy Beet's [stocksmart package](https://github.com/NOAA-EDAB/stocksmart) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
 
-<!-- ```{r} -->
+The code used to work up this data can be found in [`sgaichas/stockstatusindicator`](github.com/sgaichas/stockstatusindicator). 
 
-<!-- library(assessmentdata) -->
-<!-- ``` -->
+```{r}
+
+library(stocksmart)
+```
 
 
-Two data frames are in the `assessmentdata` package, `stockAssessmentData` and `stockAssessmentSummary`.
+Two data frames are in the `stocksmart` package, `stockAssessmentData` and `stockAssessmentSummary`.
 
 In `stockAssessmentData` we have time series. Columns are `r names(stockAssessmentData)` and the reported metrics are `r unique(stockAssessmentData$Metric)`. 
 
 
-<!-- ```{r} -->
-<!-- #library(DT) -->
-<!-- datatable(head(stockAssessmentData), rownames = FALSE) -->
+```{r}
+#library(DT)
+datatable(head(stockAssessmentData), rownames = FALSE)
 
-<!-- ``` -->
+```
 
 In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(stockAssessmentSummary))`.
 
-<!-- ```{r} -->
+```{r}
 
-<!-- datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE)) -->
+datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
 
-<!-- ``` -->
+```
 
 Assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
 

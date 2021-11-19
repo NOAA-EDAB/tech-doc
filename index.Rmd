@@ -41,7 +41,7 @@ gis.dir <- here::here("gis")
 data.dir <- here::here("data")
 #Plotting and data libraries
 devtools::install_github("noaa-edab/ecodata")
-devtools::install_github("noaa-edab/assessmentdata")
+devtools::install_github("noaa-edab/stacksmart")
 #remotes::install_github("thomasp85/patchwork")
 
 library(ggplot2)
