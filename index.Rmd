@@ -42,7 +42,7 @@ data.dir <- here::here("data")
 #Plotting and data libraries
 devtools::install_github("noaa-edab/ecodata")
 devtools::install_github("noaa-edab/stocksmart")
-#remotes::install_github("thomasp85/patchwork")
+devtools::install_github("thomasp85/patchwork")
 
 library(ggplot2)
 #library(formatR)
