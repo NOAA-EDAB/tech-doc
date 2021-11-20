@@ -41,6 +41,10 @@ Distribution indicators were further formatted for inclusion in the `ecodata` R 
 
 ### Plotting
 Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-spec-dist.R).
+```{r}
+library(patchwork)
+```
+
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-species-dist.R"), fig.cap = "Aggregate species distribution depth along shelf distance (northward shift) and depth.", eval=T, echo=F}
 
 ```
