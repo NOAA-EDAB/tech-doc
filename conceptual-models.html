@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-09-28" />
+<meta name="date" content="2021-11-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1446,7 +1446,7 @@ sessionInfo(package = NULL)
 ```
 
 ```
-## R version 4.1.1 (2021-08-10)
+## R version 4.1.2 (2021-11-01)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.3 LTS
 ## 
@@ -1461,56 +1461,53 @@ sessionInfo(package = NULL)
 ## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 ## 
 ## attached base packages:
-## [1] grid      stats     graphics  grDevices utils     datasets  methods  
+## [1] grid      stats     graphics  grDevices datasets  utils     methods  
 ## [8] base     
 ## 
 ## other attached packages:
-##  [1] ggspatial_1.1.5      marmap_1.0.5         raster_3.4-5        
-##  [4] rgdal_1.5-23         sp_1.4-5             sf_0.9-8            
-##  [7] plotly_4.9.3         cowplot_1.1.1        plyr_1.8.6          
-## [10] RColorBrewer_1.1-2   readr_1.4.0          rmarkdown_2.9       
-## [13] knitr_1.33           rpart_4.1-15         vegan_2.5-7         
-## [16] lattice_0.20-41      permute_0.9-5        heatwaveR_0.4.5     
-## [19] patchwork_1.1.0.9000 stringr_1.4.0        ggrepel_0.9.1       
-## [22] kableExtra_1.3.4     here_1.0.1           ecodata_0.1.0       
-## [25] tidyr_1.1.4          dplyr_1.0.7          magrittr_2.0.1      
-## [28] ggplot2_3.3.5       
+##  [1] ggspatial_1.1.5    marmap_1.0.5       raster_3.4-5       rgdal_1.5-23      
+##  [5] sp_1.4-5           sf_0.9-8           plotly_4.9.3       cowplot_1.1.1     
+##  [9] plyr_1.8.6         RColorBrewer_1.1-2 readr_1.4.0        rmarkdown_2.9     
+## [13] knitr_1.33         rpart_4.1-15       vegan_2.5-7        lattice_0.20-41   
+## [17] permute_0.9-5      heatwaveR_0.4.5    stringr_1.4.0      ggrepel_0.9.1     
+## [21] kableExtra_1.3.4   here_1.0.1         ecodata_0.1.0      tidyr_1.1.4       
+## [25] dplyr_1.0.7        magrittr_2.0.1     ggplot2_3.3.5     
 ## 
 ## loaded via a namespace (and not attached):
 ##   [1] VGAM_1.1-5          colorspace_2.0-2    ellipsis_0.3.2     
 ##   [4] class_7.3-18        rprojroot_2.0.2     fs_1.5.0           
 ##   [7] rstudioapi_0.13     proxy_0.4-25        farver_2.1.0       
 ##  [10] remotes_2.3.0       bit64_4.0.5         fansi_0.5.0        
-##  [13] xml2_1.3.2          codetools_0.2-18    splines_4.1.1      
+##  [13] xml2_1.3.2          codetools_0.2-18    splines_4.1.2      
 ##  [16] ncdf4_1.17          cachem_1.0.4        pkgload_1.2.1      
 ##  [19] jsonlite_1.7.2      cluster_2.1.1       png_0.1-7          
-##  [22] compiler_4.1.1      httr_1.4.2          assertthat_0.2.1   
+##  [22] compiler_4.1.2      httr_1.4.2          assertthat_0.2.1   
 ##  [25] Matrix_1.3-2        fastmap_1.1.0       lazyeval_0.2.2     
 ##  [28] cli_3.0.1           htmltools_0.5.1.1   prettyunits_1.1.1  
-##  [31] tools_4.1.1         gtable_0.3.0        glue_1.4.2         
+##  [31] tools_4.1.2         gtable_0.3.0        glue_1.4.2         
 ##  [34] reshape2_1.4.4      Rcpp_1.0.5          jquerylib_0.1.4    
 ##  [37] vctrs_0.3.8         svglite_2.0.0       nlme_3.1-152       
 ##  [40] xfun_0.22           ps_1.6.0            testthat_3.0.3     
-##  [43] rvest_1.0.0         lifecycle_1.0.1     devtools_2.4.2     
-##  [46] MASS_7.3-53.1       scales_1.1.1        hms_1.0.0          
-##  [49] parallel_4.1.1      yaml_2.2.1          curl_4.3.2         
-##  [52] gridExtra_2.3       memoise_2.0.0       sass_0.3.1         
-##  [55] stringi_1.5.3       RSQLite_2.2.7       highr_0.9          
-##  [58] desc_1.3.0          e1071_1.7-6         pkgbuild_1.2.0     
-##  [61] shape_1.4.5         rlang_0.4.11        pkgconfig_2.0.3    
-##  [64] systemfonts_1.0.1   evaluate_0.14       purrr_0.3.4        
-##  [67] labeling_0.4.2      htmlwidgets_1.5.3   bit_4.0.4          
-##  [70] processx_3.5.2      tidyselect_1.1.1    bookdown_0.22      
-##  [73] R6_2.5.1            generics_0.1.0      DBI_1.1.1          
-##  [76] pillar_1.6.3        withr_2.4.2         mgcv_1.8-35        
-##  [79] units_0.7-1         survival_3.2-10     tibble_3.1.4       
-##  [82] crayon_1.4.1        KernSmooth_2.23-18  utf8_1.2.2         
-##  [85] usethis_2.0.1       data.table_1.14.0   blob_1.2.1         
-##  [88] callr_3.7.0         AICcmodavg_2.3-1    digest_0.6.27      
-##  [91] classInt_0.4-3      webshot_0.5.2       xtable_1.8-4       
-##  [94] adehabitatMA_0.3.14 unmarked_1.0.1      stats4_4.1.1       
-##  [97] munsell_0.5.0       viridisLite_0.4.0   bslib_0.2.4        
-## [100] sessioninfo_1.1.1
+##  [43] rvest_1.0.0         lifecycle_1.0.0     renv_0.13.2        
+##  [46] devtools_2.4.2      MASS_7.3-53.1       scales_1.1.1       
+##  [49] hms_1.0.0           parallel_4.1.2      yaml_2.2.1         
+##  [52] curl_4.3.2          gridExtra_2.3       memoise_2.0.0      
+##  [55] sass_0.3.1          stringi_1.5.3       RSQLite_2.2.7      
+##  [58] highr_0.9           desc_1.3.0          e1071_1.7-6        
+##  [61] pkgbuild_1.2.0      shape_1.4.5         rlang_0.4.11       
+##  [64] pkgconfig_2.0.3     systemfonts_1.0.1   evaluate_0.14      
+##  [67] purrr_0.3.4         labeling_0.4.2      htmlwidgets_1.5.3  
+##  [70] bit_4.0.4           processx_3.5.2      tidyselect_1.1.1   
+##  [73] bookdown_0.22       R6_2.5.1            generics_0.1.1     
+##  [76] DBI_1.1.1           pillar_1.6.4        withr_2.4.2        
+##  [79] mgcv_1.8-35         units_0.7-1         survival_3.2-10    
+##  [82] tibble_3.1.6        crayon_1.4.1        KernSmooth_2.23-18 
+##  [85] utf8_1.2.2          usethis_2.0.1       data.table_1.14.0  
+##  [88] blob_1.2.1          callr_3.7.0         AICcmodavg_2.3-1   
+##  [91] digest_0.6.27       classInt_0.4-3      webshot_0.5.2      
+##  [94] xtable_1.8-4        adehabitatMA_0.3.14 unmarked_1.0.1     
+##  [97] stats4_4.1.2        munsell_0.5.0       viridisLite_0.4.0  
+## [100] bslib_0.2.4         sessioninfo_1.1.1
 ```
 
 ```r
@@ -1552,9 +1549,9 @@ current.session$otherPkgs
 ##         (<https://orcid.org/0000-0002-1099-3857>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-04 17:30:15 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:31:00 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:04:23 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/ggspatial/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggspatial/1.1.5/a04dadf9f113eaa67c179ec7011034e7/ggspatial/Meta/package.rds 
 ## 
 ## $marmap
 ## Package: marmap
@@ -1583,9 +1580,9 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2020-11-19 14:50:03 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:36:55 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:09:16 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/marmap/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/marmap/1.0.5/ee1207bb3a861debf493f9aa8dbe271f/marmap/Meta/package.rds 
 ## 
 ## $raster
 ## Package: raster
@@ -1649,9 +1646,9 @@ current.session$otherPkgs
 ## Maintainer: Robert J. Hijmans <r.hijmans@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-14 15:30:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 17:48:50 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:30:41 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/raster/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/raster/3.4-5/a3ded548110163cf499d63c3932dd499/raster/Meta/package.rds 
 ## 
 ## $rgdal
 ## Package: rgdal
@@ -1707,9 +1704,9 @@ current.session$otherPkgs
 ## Maintainer: Roger Bivand <Roger.Bivand@nhh.no>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-03 10:50:03 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:30:34 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:04:02 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/rgdal/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/rgdal/1.5-23/bb6f643247d35c947e9f113567e2bf7a/rgdal/Meta/package.rds 
 ## 
 ## $sp
 ## Package: sp
@@ -1748,9 +1745,9 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 13:10:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 17:48:39 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:30:32 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/sp/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/sp/1.4-5/dfd843ee98246cf932823acf613b05dd/sp/Meta/package.rds 
 ## 
 ## $sf
 ## Package: sf
@@ -1812,9 +1809,9 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-03-17 10:50:03 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:07:02 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:45:15 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/sf/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/sf/0.9-8/d82215b501772c9faadb4dcd71395c7d/sf/Meta/package.rds 
 ## 
 ## $plotly
 ## Package: plotly
@@ -1869,9 +1866,9 @@ current.session$otherPkgs
 ## Maintainer: Carson Sievert <cpsievert1@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 14:30:02 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:37:19 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:09:37 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/plotly/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/plotly/4.9.3/f6b85d9e4ed88074ea0ede1aa74bb00e/plotly/Meta/package.rds 
 ## 
 ## $cowplot
 ## Package: cowplot
@@ -1909,9 +1906,9 @@ current.session$otherPkgs
 ## Maintainer: Claus O. Wilke <wilke@austin.utexas.edu>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-30 14:30:02 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:20:55 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:56:08 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/cowplot/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/cowplot/1.1.1/b418e8423699d11c7f2087c2bfd07da2/cowplot/Meta/package.rds 
 ## 
 ## $plyr
 ## Package: plyr
@@ -1944,9 +1941,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-03-03 14:40:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 17:48:26 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:30:22 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/plyr/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/plyr/1.8.6/ec0e5ab4e5f851f6ef32cd1d1984957f/plyr/Meta/package.rds 
 ## 
 ## $RColorBrewer
 ## Package: RColorBrewer
@@ -1966,9 +1963,9 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2014-12-07 08:28:55
-## Built: R 4.1.1; ; 2021-09-28 17:58:20 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:38:19 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/RColorBrewer/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/RColorBrewer/1.1-2/e031418365a7f7a766181ab5a41a5716/RColorBrewer/Meta/package.rds 
 ## 
 ## $readr
 ## Package: readr
@@ -2018,9 +2015,9 @@ current.session$otherPkgs
 ## Maintainer: Jim Hester <james.hester@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-10-05 08:50:03 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:11:58 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:49:08 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/readr/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/readr/1.4.0/2639976851f71f330264a9c9c3d43a61/readr/Meta/package.rds 
 ## 
 ## $rmarkdown
 ## Package: rmarkdown
@@ -2147,9 +2144,9 @@ current.session$otherPkgs
 ##         filter), Albert Krewinkel [ctb, cph] (pagebreak Lua filter)
 ## Repository: CRAN
 ## Date/Publication: 2021-06-15 14:50:07 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:17:25 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:53:20 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/rmarkdown/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/rmarkdown/2.9/912c09266d5470516df4df7a303cde92/rmarkdown/Meta/package.rds 
 ## 
 ## $knitr
 ## Package: knitr
@@ -2306,9 +2303,9 @@ current.session$otherPkgs
 ## Maintainer: Yihui Xie <xie@yihui.name>
 ## Repository: CRAN
 ## Date/Publication: 2021-04-24 06:20:02 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:17:17 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:53:13 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/knitr/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/knitr/1.33/0bc1b5da1b0eb07cd4b727e95e9ff0b8/knitr/Meta/package.rds 
 ## 
 ## $rpart
 ## Package: rpart
@@ -2340,9 +2337,9 @@ current.session$otherPkgs
 ## BugReports: https://github.com/bethatkinson/rpart/issues
 ## Packaged: 2019-04-11 15:59:38 UTC; atkinson
 ## Date/Publication: 2019-04-12 14:32:39 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-08-10 08:10:09 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-03 22:29:51 UTC; unix
 ## 
-## -- File: /opt/R/4.1.1/lib/R/library/rpart/Meta/package.rds 
+## -- File: /opt/R/4.1.2/lib/R/library/rpart/Meta/package.rds 
 ## 
 ## $vegan
 ## Package: vegan
@@ -2366,9 +2363,9 @@ current.session$otherPkgs
 ## Packaged: 2020-11-27 13:22:03 UTC; jarioksa
 ## Repository: CRAN
 ## Date/Publication: 2020-11-28 15:10:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:43:51 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:15:07 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/vegan/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/vegan/2.5-7/01771d8de354fa30c87c68e599e2429b/vegan/Meta/package.rds 
 ## 
 ## $lattice
 ## Package: lattice
@@ -2406,9 +2403,9 @@ current.session$otherPkgs
 ## Maintainer: Deepayan Sarkar <deepayan.sarkar@r-project.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-04-02 12:00:06 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 17:44:18 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:26:55 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/lattice/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/lattice/0.20-41/fbd9285028b0263d76d18c95ae51a53d/lattice/Meta/package.rds 
 ## 
 ## $permute
 ## Package: permute
@@ -2445,9 +2442,9 @@ current.session$otherPkgs
 ## Maintainer: Gavin L. Simpson <ucfagls@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-03-12 09:40:08 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:37:17 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:09:35 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/permute/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/permute/0.9-5/e367efa1f0d52cb753bdb9163b63f528/permute/Meta/package.rds 
 ## 
 ## $heatwaveR
 ## Package: heatwaveR
@@ -2488,56 +2485,9 @@ current.session$otherPkgs
 ##         [aut, ctb] (<https://orcid.org/0000-0002-3799-6126>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-07 16:10:16 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:32:59 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:06:01 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/heatwaveR/Meta/package.rds 
-## 
-## $patchwork
-## Package: patchwork
-## Type: Package
-## Title: The Composer of Plots
-## Version: 1.1.0.9000
-## Authors@R: person(given = "Thomas Lin", family = "Pedersen", role =
-##         c("cre", "aut"), email = "thomasp85@gmail.com", comment =
-##         c(ORCID = "0000-0002-5147-4711"))
-## Maintainer: Thomas Lin Pedersen <thomasp85@gmail.com>
-## Description: The 'ggplot2' package provides a strong API for
-##         sequentially building up a plot, but does not concern itself
-##         with composition of multiple plots. 'patchwork' is a package
-##         that expands the API to allow for arbitrarily complex
-##         composition of plots by, among others, providing mathematical
-##         operators for combining multiple plots. Other packages that try
-##         to address this need (but with a different approach) are
-##         'gridExtra' and 'cowplot'.
-## License: MIT + file LICENSE
-## Encoding: UTF-8
-## LazyData: true
-## Imports: ggplot2 (>= 3.0.0), gtable, grid, stats, grDevices, utils,
-##         graphics
-## RoxygenNote: 7.1.1
-## Roxygen: list(markdown = TRUE)
-## URL: https://patchwork.data-imaginist.com,
-##         https://github.com/thomasp85/patchwork
-## BugReports: https://github.com/thomasp85/patchwork/issues
-## Suggests: knitr, rmarkdown, gridGraphics, gridExtra, ragg, testthat (>=
-##         2.1.0), vdiffr, covr, png
-## VignetteBuilder: knitr
-## Author: Thomas Lin Pedersen [cre, aut]
-##         (<https://orcid.org/0000-0002-5147-4711>)
-## Built: R 4.1.1; ; 2021-09-28 18:31:16 UTC; unix
-## RemoteType: github
-## RemoteHost: api.github.com
-## RemoteRepo: patchwork
-## RemoteUsername: thomasp85
-## RemoteRef: HEAD
-## RemoteSha: 79223d3002e7bd7e715a270685c6507d684b2622
-## GithubHost: api.github.com
-## GithubRepo: patchwork
-## GithubUsername: thomasp85
-## GithubRef: HEAD
-## GithubSHA1: 79223d3002e7bd7e715a270685c6507d684b2622
-## 
-## -- File: /home/runner/work/_temp/Library/patchwork/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/heatwaveR/0.4.5/0d7c5020832b713eeae44f6614d1a951/heatwaveR/Meta/package.rds 
 ## 
 ## $stringr
 ## Package: stringr
@@ -2568,9 +2518,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-02-10 03:40:03 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:03:50 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:42:47 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/stringr/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/stringr/1.4.0/0759e6b6c0957edb1311028a49a35e76/stringr/Meta/package.rds 
 ## 
 ## $ggrepel
 ## Package: ggrepel
@@ -2637,9 +2587,9 @@ current.session$otherPkgs
 ## Maintainer: Kamil Slowikowski <kslowikowski@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-15 22:00:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:30:14 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:03:47 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/ggrepel/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggrepel/0.9.1/08ab869f37e6a7741a64ab9069bcb67d/ggrepel/Meta/package.rds 
 ## 
 ## $kableExtra
 ## Package: kableExtra
@@ -2691,9 +2641,9 @@ current.session$otherPkgs
 ## Maintainer: Hao Zhu <haozhu233@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-20 05:50:07 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:33:37 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:06:33 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/kableExtra/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/kableExtra/1.3.4/49b625e6aabe4c5f091f5850aba8ff78/kableExtra/Meta/package.rds 
 ## 
 ## $here
 ## Package: here
@@ -2729,9 +2679,9 @@ current.session$otherPkgs
 ## Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-13 07:30:02 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:33:18 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:06:17 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/here/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/here/1.0.1/24b224366f9c2e7534d2344d10d59211/here/Meta/package.rds 
 ## 
 ## $ecodata
 ## Package: ecodata
@@ -2748,27 +2698,27 @@ current.session$otherPkgs
 ## Roxygen: list(markdown = TRUE)
 ## Date: 2018-10-24
 ## Suggests: knitr, rmarkdown, dplyr, stringr, tidyr, ggplot2, lubridate,
-##         tufte, here, usethis, AICcmodavg, zoo
+##         tufte, here, usethis, AICcmodavg, mgcv, zoo
 ## VignetteBuilder: knitr
-## RoxygenNote: 7.1.0
+## RoxygenNote: 7.1.1
 ## Depends: R (>= 2.10)
 ## RemoteType: github
 ## RemoteHost: api.github.com
 ## RemoteRepo: ecodata
 ## RemoteUsername: noaa-edab
 ## RemoteRef: HEAD
-## RemoteSha: 7fadac43f01b8c2c50002cf3c170bc67b9c4c3af
+## RemoteSha: 9aaff83e2fd4a17c2417a768c84c6b3d876ea57a
 ## GithubRepo: ecodata
 ## GithubUsername: noaa-edab
 ## GithubRef: HEAD
-## GithubSHA1: 7fadac43f01b8c2c50002cf3c170bc67b9c4c3af
+## GithubSHA1: 9aaff83e2fd4a17c2417a768c84c6b3d876ea57a
 ## NeedsCompilation: no
-## Packaged: 2021-09-28 18:44:46 UTC; runner
+## Packaged: 2021-11-20 18:15:54 UTC; runner
 ## Author: Kimberly Bastille [cre, aut], Sean Hardison [aut]
 ## Maintainer: Kimberly Bastille <kimberly.bastille@noaa.gov>
-## Built: R 4.1.1; ; 2021-09-28 18:45:11 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 18:16:18 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/ecodata/Meta/package.rds 
+## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/ecodata/Meta/package.rds 
 ## 
 ## $tidyr
 ## Package: tidyr
@@ -2808,9 +2758,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-09-27 16:20:02 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:45:51 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:17:15 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/tidyr/Meta/package.rds 
+## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/tidyr/Meta/package.rds 
 ## 
 ## $dplyr
 ## Type: Package
@@ -2854,9 +2804,9 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-06-18 23:20:01 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 18:45:40 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 18:17:07 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/dplyr/Meta/package.rds 
+## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/dplyr/Meta/package.rds 
 ## 
 ## $magrittr
 ## Type: Package
@@ -2893,9 +2843,9 @@ current.session$otherPkgs
 ## Maintainer: Lionel Henry <lionel@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-17 16:20:06 UTC
-## Built: R 4.1.1; x86_64-pc-linux-gnu; 2021-09-28 17:57:24 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-20 17:37:34 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/magrittr/Meta/package.rds 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/magrittr/2.0.1/41287f1ac7d28a92f0a286ed507928d3/magrittr/Meta/package.rds 
 ## 
 ## $ggplot2
 ## Package: ggplot2
@@ -2956,9 +2906,9 @@ current.session$otherPkgs
 ## Maintainer: Thomas Lin Pedersen <thomas.pedersen@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-06-25 11:30:09 UTC
-## Built: R 4.1.1; ; 2021-09-28 18:16:23 UTC; unix
+## Built: R 4.1.2; ; 2021-11-20 17:52:32 UTC; unix
 ## 
-## -- File: /home/runner/work/_temp/Library/ggplot2/Meta/package.rds
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggplot2/3.3.5/d7566c471c7b17e095dd023b9ef155ad/ggplot2/Meta/package.rds
 ```
 
 

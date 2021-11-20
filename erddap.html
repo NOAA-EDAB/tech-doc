@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-09-28" />
+<meta name="date" content="2021-11-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -816,7 +816,7 @@ div.csl-indent {
 </div>
 <div id="accessing-data-and-build-code" class="section level3" number="1.0.2">
 <h3><span class="header-section-number">1.0.2</span> Accessing data and build code</h3>
-<p>In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled “Plotting”, and these code chunks can be used to recreate the figures found in ecosystem reporting documents where each respective indicator was included<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled “Plotting”, and these code chunks can be used to recreate the figures found in ecosystem reporting documents where each respective indicator was included<a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <p>Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators presented in ecosystem reporting documents, and these data sets are available for download through the <a href="https://github.com/NOAA-EDAB/ecodata">ecodata</a> R package.</p>
 </div>
 <div id="building-the-document" class="section level3" number="1.0.3">
@@ -828,12 +828,6 @@ div.csl-indent {
 
 </div>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R">BasePlot_source.R</a>, <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/GIS_source.R">GIS_source.R</a>, and <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/get_erddap.R">get_erddap.R</a>. The scripts <code>BasePlot_source.R</code> and <code>GIS_source.R</code> refer to deprecated code used prior to the 2019 State of the Ecosystem reports. Indicators that were not included in reports after 2018 make use of this syntax, whereas newer indicators typically use <code>ggplot2</code> for plotting.<a href="erddap.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
