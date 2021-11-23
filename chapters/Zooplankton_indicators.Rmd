@@ -60,7 +60,7 @@ Time series of zooplankton diveristy (effective shannon) (Figure \@ref(fig:zoo-d
 Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R)
 
 ### Plotting
-Code used to create the figures below can be found linked here, [copepod abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R) (\@ref(fig:copepod)), [Euphausiid and Cnidarian abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R) (\@ref(fig:euph)) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R) (\@ref(fig:zoo-div). 
+Code used to create the figures below can be found linked here, [copepod abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R) (\@ref(fig:copepod)), [Euphausiid and Cnidarian abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R) (\@ref(fig:euph)) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R) (\@ref(fig:zoo-div) ). 
 
 **Abundance anomaly**
 
