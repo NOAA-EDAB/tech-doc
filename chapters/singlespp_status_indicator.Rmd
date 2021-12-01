@@ -37,7 +37,7 @@ These 2020 stock assessment results were compiled as preliminary information by 
 
 Beginning in 2020 for the 2021 SOE, we used Andy Beet's [stocksmart package](https://github.com/NOAA-EDAB/stocksmart) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
 
-The code used to work up this data can be found in [`sgaichas/stockstatusindicator`](github.com/sgaichas/stockstatusindicator). 
+The code used to work up this data can be found in [`sgaichas/stockstatusindicator`](https://github.com/sgaichas/stockstatusindicator). 
 
 ```{r}
 
@@ -63,8 +63,33 @@ In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(s
 DT::datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
 
 ```
+In 2021, `stocksmart` was updated with all current assessments, so data extraction was simply:
 
-Assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
+```{r make-2021assess, eval=FALSE}
+assess2021 <- stockAssessmentSummary %>%
+  filter(`Science Center` == "NEFSC") %>%
+  select(c(`Stock Name`, Jurisdiction, FMP, `Science Center`, 
+           `Stock Area`, `Assessment Year`, `Last Data Year`,
+           `F Year`, `Estimated F`, Flimit, Fmsy, `F/Flimit`, 
+           `F/Fmsy`, Ftarget, `F/Ftarget`, `B Year`, `Estimated B`,
+           `B Unit`, Blimit, Bmsy, `B/Blimit`, `B/Bmsy`)) %>%
+  arrange(Jurisdiction, `Stock Name`, FMP, `Assessment Year`) %>%
+  rename(Entity.Name = `Stock Name`,
+         Assessment.Year = `Assessment Year`,
+         F.Fmsy = `F/Fmsy`,
+         B.Bmsy = `B/Bmsy`)
+write.csv(assess2021, here("assess.csv"))
+
+decode <- read.csv(here("2020decoder.csv"))
+  
+write.csv(decode, here("decoder.csv"))
+
+```
+
+Year-specific naming conventions for assess and decoder files were dropped in 2021 to facilitate future data updates.
+
+
+In 2020, assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
 
 * The `assess.csv` fields used in previous years were recreated from stockSMART to include necessary metadata:
 
