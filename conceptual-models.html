@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2021-11-23" />
+<meta name="date" content="2021-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1465,13 +1465,16 @@ sessionInfo(package = NULL)
 ## [8] base     
 ## 
 ## other attached packages:
-##  [1] ggspatial_1.1.5    marmap_1.0.5       raster_3.4-5       rgdal_1.5-23      
-##  [5] sp_1.4-5           sf_0.9-8           plotly_4.9.3       cowplot_1.1.1     
-##  [9] plyr_1.8.6         RColorBrewer_1.1-2 readr_1.4.0        rmarkdown_2.9     
-## [13] knitr_1.33         rpart_4.1-15       vegan_2.5-7        lattice_0.20-41   
-## [17] permute_0.9-5      heatwaveR_0.4.5    stringr_1.4.0      ggrepel_0.9.1     
-## [21] kableExtra_1.3.4   here_1.0.1         ecodata_0.1.0      tidyr_1.1.4       
-## [25] dplyr_1.0.7        magrittr_2.0.1     ggplot2_3.3.5     
+##  [1] patchwork_1.1.0.9000 ggspatial_1.1.5      marmap_1.0.5        
+##  [4] raster_3.4-5         rgdal_1.5-23         sp_1.4-5            
+##  [7] sf_0.9-8             plotly_4.9.3         cowplot_1.1.1       
+## [10] plyr_1.8.6           RColorBrewer_1.1-2   readr_1.4.0         
+## [13] rmarkdown_2.9        knitr_1.33           rpart_4.1-15        
+## [16] vegan_2.5-7          lattice_0.20-41      permute_0.9-5       
+## [19] heatwaveR_0.4.5      stringr_1.4.0        ggrepel_0.9.1       
+## [22] kableExtra_1.3.4     here_1.0.1           ecodata_0.1.0       
+## [25] tidyr_1.1.4          dplyr_1.0.7          magrittr_2.0.1      
+## [28] ggplot2_3.3.5       
 ## 
 ## loaded via a namespace (and not attached):
 ##   [1] VGAM_1.1-5          colorspace_2.0-2    ellipsis_0.3.2     
@@ -1517,6 +1520,53 @@ current.session$otherPkgs
 ```
 
 ```
+## $patchwork
+## Package: patchwork
+## Type: Package
+## Title: The Composer of Plots
+## Version: 1.1.0.9000
+## Authors@R: person(given = "Thomas Lin", family = "Pedersen", role =
+##         c("cre", "aut"), email = "thomasp85@gmail.com", comment =
+##         c(ORCID = "0000-0002-5147-4711"))
+## Maintainer: Thomas Lin Pedersen <thomasp85@gmail.com>
+## Description: The 'ggplot2' package provides a strong API for
+##         sequentially building up a plot, but does not concern itself
+##         with composition of multiple plots. 'patchwork' is a package
+##         that expands the API to allow for arbitrarily complex
+##         composition of plots by, among others, providing mathematical
+##         operators for combining multiple plots. Other packages that try
+##         to address this need (but with a different approach) are
+##         'gridExtra' and 'cowplot'.
+## License: MIT + file LICENSE
+## Encoding: UTF-8
+## LazyData: true
+## Imports: ggplot2 (>= 3.0.0), gtable, grid, stats, grDevices, utils,
+##         graphics
+## RoxygenNote: 7.1.1
+## Roxygen: list(markdown = TRUE)
+## URL: https://patchwork.data-imaginist.com,
+##         https://github.com/thomasp85/patchwork
+## BugReports: https://github.com/thomasp85/patchwork/issues
+## Suggests: knitr, rmarkdown, gridGraphics, gridExtra, ragg, testthat (>=
+##         2.1.0), vdiffr, covr, png
+## VignetteBuilder: knitr
+## Author: Thomas Lin Pedersen [cre, aut]
+##         (<https://orcid.org/0000-0002-5147-4711>)
+## Built: R 4.1.2; ; 2021-12-01 22:16:08 UTC; unix
+## RemoteType: github
+## RemoteHost: api.github.com
+## RemoteRepo: patchwork
+## RemoteUsername: thomasp85
+## RemoteRef: HEAD
+## RemoteSha: 79223d3002e7bd7e715a270685c6507d684b2622
+## GithubHost: api.github.com
+## GithubRepo: patchwork
+## GithubUsername: thomasp85
+## GithubRef: HEAD
+## GithubSHA1: 79223d3002e7bd7e715a270685c6507d684b2622
+## 
+## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/patchwork/1.1.0.9000/295a56e2fb4b3a9a58919e015fa20905/patchwork/Meta/package.rds 
+## 
 ## $ggspatial
 ## Package: ggspatial
 ## Type: Package
@@ -1549,7 +1599,7 @@ current.session$otherPkgs
 ##         (<https://orcid.org/0000-0002-1099-3857>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-04 17:30:15 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:06:11 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:15:55 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggspatial/1.1.5/a04dadf9f113eaa67c179ec7011034e7/ggspatial/Meta/package.rds 
 ## 
@@ -1580,7 +1630,7 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2020-11-19 14:50:03 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:13:08 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:20:52 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/marmap/1.0.5/ee1207bb3a861debf493f9aa8dbe271f/marmap/Meta/package.rds 
 ## 
@@ -1646,7 +1696,7 @@ current.session$otherPkgs
 ## Maintainer: Robert J. Hijmans <r.hijmans@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-14 15:30:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:19:39 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:41:56 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/raster/3.4-5/a3ded548110163cf499d63c3932dd499/raster/Meta/package.rds 
 ## 
@@ -1704,7 +1754,7 @@ current.session$otherPkgs
 ## Maintainer: Roger Bivand <Roger.Bivand@nhh.no>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-03 10:50:03 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:05:41 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:15:35 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/rgdal/1.5-23/bb6f643247d35c947e9f113567e2bf7a/rgdal/Meta/package.rds 
 ## 
@@ -1745,7 +1795,7 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 13:10:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:19:28 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:41:48 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/sp/1.4-5/dfd843ee98246cf932823acf613b05dd/sp/Meta/package.rds 
 ## 
@@ -1809,7 +1859,7 @@ current.session$otherPkgs
 ## Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 ## Repository: CRAN
 ## Date/Publication: 2021-03-17 10:50:03 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:39:49 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:56:40 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/sf/0.9-8/d82215b501772c9faadb4dcd71395c7d/sf/Meta/package.rds 
 ## 
@@ -1866,7 +1916,7 @@ current.session$otherPkgs
 ## Maintainer: Carson Sievert <cpsievert1@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-10 14:30:02 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:13:37 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:21:13 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/plotly/4.9.3/f6b85d9e4ed88074ea0ede1aa74bb00e/plotly/Meta/package.rds 
 ## 
@@ -1906,7 +1956,7 @@ current.session$otherPkgs
 ## Maintainer: Claus O. Wilke <wilke@austin.utexas.edu>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-30 14:30:02 UTC
-## Built: R 4.1.2; ; 2021-11-23 21:54:52 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:07:37 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/cowplot/1.1.1/b418e8423699d11c7f2087c2bfd07da2/cowplot/Meta/package.rds 
 ## 
@@ -1941,7 +1991,7 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-03-03 14:40:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:19:16 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:41:38 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/plyr/1.8.6/ec0e5ab4e5f851f6ef32cd1d1984957f/plyr/Meta/package.rds 
 ## 
@@ -1963,7 +2013,7 @@ current.session$otherPkgs
 ## NeedsCompilation: no
 ## Repository: CRAN
 ## Date/Publication: 2014-12-07 08:28:55
-## Built: R 4.1.2; ; 2021-11-23 21:30:32 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 21:49:39 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/RColorBrewer/1.1-2/e031418365a7f7a766181ab5a41a5716/RColorBrewer/Meta/package.rds 
 ## 
@@ -2015,7 +2065,7 @@ current.session$otherPkgs
 ## Maintainer: Jim Hester <james.hester@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-10-05 08:50:03 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:45:17 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:00:35 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/readr/1.4.0/2639976851f71f330264a9c9c3d43a61/readr/Meta/package.rds 
 ## 
@@ -2144,7 +2194,7 @@ current.session$otherPkgs
 ##         filter), Albert Krewinkel [ctb, cph] (pagebreak Lua filter)
 ## Repository: CRAN
 ## Date/Publication: 2021-06-15 14:50:07 UTC
-## Built: R 4.1.2; ; 2021-11-23 21:51:04 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:04:48 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/rmarkdown/2.9/912c09266d5470516df4df7a303cde92/rmarkdown/Meta/package.rds 
 ## 
@@ -2303,7 +2353,7 @@ current.session$otherPkgs
 ## Maintainer: Yihui Xie <xie@yihui.name>
 ## Repository: CRAN
 ## Date/Publication: 2021-04-24 06:20:02 UTC
-## Built: R 4.1.2; ; 2021-11-23 21:50:55 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:04:42 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/knitr/1.33/0bc1b5da1b0eb07cd4b727e95e9ff0b8/knitr/Meta/package.rds 
 ## 
@@ -2363,7 +2413,7 @@ current.session$otherPkgs
 ## Packaged: 2020-11-27 13:22:03 UTC; jarioksa
 ## Repository: CRAN
 ## Date/Publication: 2020-11-28 15:10:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:21:17 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:26:48 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/vegan/2.5-7/01771d8de354fa30c87c68e599e2429b/vegan/Meta/package.rds 
 ## 
@@ -2403,7 +2453,7 @@ current.session$otherPkgs
 ## Maintainer: Deepayan Sarkar <deepayan.sarkar@r-project.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-04-02 12:00:06 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:14:48 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:38:07 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/lattice/0.20-41/fbd9285028b0263d76d18c95ae51a53d/lattice/Meta/package.rds 
 ## 
@@ -2442,7 +2492,7 @@ current.session$otherPkgs
 ## Maintainer: Gavin L. Simpson <ucfagls@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-03-12 09:40:08 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:13:34 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:21:11 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/permute/0.9-5/e367efa1f0d52cb753bdb9163b63f528/permute/Meta/package.rds 
 ## 
@@ -2485,7 +2535,7 @@ current.session$otherPkgs
 ##         [aut, ctb] (<https://orcid.org/0000-0002-3799-6126>)
 ## Repository: CRAN
 ## Date/Publication: 2021-01-07 16:10:16 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:08:30 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:17:34 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/heatwaveR/0.4.5/0d7c5020832b713eeae44f6614d1a951/heatwaveR/Meta/package.rds 
 ## 
@@ -2518,7 +2568,7 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2019-02-10 03:40:03 UTC
-## Built: R 4.1.2; ; 2021-11-23 21:36:26 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 21:54:09 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/stringr/1.4.0/0759e6b6c0957edb1311028a49a35e76/stringr/Meta/package.rds 
 ## 
@@ -2587,7 +2637,7 @@ current.session$otherPkgs
 ## Maintainer: Kamil Slowikowski <kslowikowski@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-01-15 22:00:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:05:21 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:15:19 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggrepel/0.9.1/08ab869f37e6a7741a64ab9069bcb67d/ggrepel/Meta/package.rds 
 ## 
@@ -2641,7 +2691,7 @@ current.session$otherPkgs
 ## Maintainer: Hao Zhu <haozhu233@gmail.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-02-20 05:50:07 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:09:18 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:18:06 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/kableExtra/1.3.4/49b625e6aabe4c5f091f5850aba8ff78/kableExtra/Meta/package.rds 
 ## 
@@ -2679,7 +2729,7 @@ current.session$otherPkgs
 ## Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 ## Repository: CRAN
 ## Date/Publication: 2020-12-13 07:30:02 UTC
-## Built: R 4.1.2; ; 2021-11-23 22:08:54 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:17:50 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/here/1.0.1/24b224366f9c2e7534d2344d10d59211/here/Meta/package.rds 
 ## 
@@ -2707,16 +2757,16 @@ current.session$otherPkgs
 ## RemoteRepo: ecodata
 ## RemoteUsername: noaa-edab
 ## RemoteRef: HEAD
-## RemoteSha: 51952967fc17cacb16c0afba5bca401cb7afc6f1
+## RemoteSha: 01a87ccb5d446b92360612ab7b9ccfcf829d0423
 ## GithubRepo: ecodata
 ## GithubUsername: noaa-edab
 ## GithubRef: HEAD
-## GithubSHA1: 51952967fc17cacb16c0afba5bca401cb7afc6f1
+## GithubSHA1: 01a87ccb5d446b92360612ab7b9ccfcf829d0423
 ## NeedsCompilation: no
-## Packaged: 2021-11-23 22:22:13 UTC; runner
+## Packaged: 2021-12-01 22:27:34 UTC; runner
 ## Author: Kimberly Bastille [cre, aut], Sean Hardison [aut]
 ## Maintainer: Kimberly Bastille <kimberly.bastille@noaa.gov>
-## Built: R 4.1.2; ; 2021-11-23 22:22:42 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:27:58 UTC; unix
 ## 
 ## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/ecodata/Meta/package.rds 
 ## 
@@ -2758,7 +2808,7 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-09-27 16:20:02 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:23:56 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:28:56 UTC; unix
 ## 
 ## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/tidyr/Meta/package.rds 
 ## 
@@ -2804,7 +2854,7 @@ current.session$otherPkgs
 ## Maintainer: Hadley Wickham <hadley@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-06-18 23:20:01 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 22:23:45 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 22:28:47 UTC; unix
 ## 
 ## -- File: /home/runner/work/tech-doc/tech-doc/renv/library/R-4.1/x86_64-pc-linux-gnu/dplyr/Meta/package.rds 
 ## 
@@ -2843,7 +2893,7 @@ current.session$otherPkgs
 ## Maintainer: Lionel Henry <lionel@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2020-11-17 16:20:06 UTC
-## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-11-23 21:29:30 UTC; unix
+## Built: R 4.1.2; x86_64-pc-linux-gnu; 2021-12-01 21:48:53 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/magrittr/2.0.1/41287f1ac7d28a92f0a286ed507928d3/magrittr/Meta/package.rds 
 ## 
@@ -2906,7 +2956,7 @@ current.session$otherPkgs
 ## Maintainer: Thomas Lin Pedersen <thomas.pedersen@rstudio.com>
 ## Repository: CRAN
 ## Date/Publication: 2021-06-25 11:30:09 UTC
-## Built: R 4.1.2; ; 2021-11-23 21:49:57 UTC; unix
+## Built: R 4.1.2; ; 2021-12-01 22:04:00 UTC; unix
 ## 
 ## -- File: /home/runner/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/ggplot2/3.3.5/d7566c471c7b17e095dd023b9ef155ad/ggplot2/Meta/package.rds
 ```
