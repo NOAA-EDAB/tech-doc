@@ -1,0 +1,44 @@
+# Atlantic Highly Migratory Species Stock Status 
+
+**Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022), State of the Ecosystem - Mid-Atlantic (2022)
+
+**Indicator category**: Synthesis of published information
+
+**Contributor(s)**: Jennifer Cudney, Ben Duffin, Dan Crear, Tobey Curtis
+  
+**Data steward**: Jennifer Cudney, <Jennifer.Cudney@noaa.gov>
+  
+**Point of contact**: Jennifer Cudney, <Jennifer.Cudney@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+Data shared were collected from Atlantic HMS SAFE Reports (see 2021 report, https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports), Fishery Stock Status Determinations webpage (https://www.fisheries.noaa.gov/national/population-assessments/fishery-stock-status-updates), SEDAR assessments (www.sedarweb.org), ICCAT assessments (https://www.iccat.int/en/assess.html).
+
+
+
+### Data analysis
+Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). Species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries. We selected the most precautionary metrics for Fyr/Fmsy (high-end) and Byr/Bmsy (low-end). 
+
+Stock status information was plotted on a Kobe chart using modified code from the 2021 SOE Technical Documentation. Although Gulf of Mexico stock information is provided, we only plotted Atlantic stocks to maintain relevance. Atlantic blacknose shark was considered an outlier due to an Fyr/Fmsy = 22.53. The y-axis is not scaled to include this species in the Kobe plot, so it was added in the top left segment of the box with the Fyr/Fmsy. The grey box lists species with unknown F/Fmsy and/or B/Bmsy.
+
+
+### Data processing
+Code for processing Atlantic HMS Stock status data can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R). 
+
+
+### Plotting
+Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R).
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R")}
+
+```
+
+### Resources
+NOAA. 2021. 2020 Stock Assessment and Fishery Evaluation Report: Atlantic Highly Migratory Species. Atlantic Highly Migratory Species Management Division, Silver Spring, MD. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports
+
+
