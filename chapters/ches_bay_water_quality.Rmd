@@ -4,9 +4,9 @@
 
 **Indicator category**: Published method; Database pull with analysis
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2019)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2019,2022)
 
-**Contributor(s)**: Qian Zhang, Rebecca Murphy, Richard Tian, Melinda Forsyth, Emily Trentacoste, Jeni Keisman, and Peter Tango. 
+**Contributor(s)**: Qian Zhang, Richard Tian, and Peter Tango
   
 **Data steward**: Qian Zhang, <qzhang@chesapeakebay.net>
   
@@ -32,11 +32,11 @@ Salinity and water temperature data were used to compute the vertical density st
 
 **Indicator calculation**
 
-The multimetric indicator quantifies the fraction of segment-DU-criterion combinations that meet all applicable season-specific thresholds for each 3-year assessment period from 1985-1987 to 2015-2017. For each 3-year assessment period, all applicable segment-DU-criterion combinations were evaluated in a binomial fashion and scored 1 for “in attainment” and 0 for “nonattainment”. The classified status of each segment-DU-criterion combination was weighted via segments’ surface area and summed to obtain the multimetric index score. This weighting scheme was adopted for two reasons: (1) segments vary in size over four orders of magnitude, and (2) surface area of each segment does not change with time or DUs, unlike seasonally variable habitat volume or bottom water area [@usepa2017]. For more details, refer to the Methods section of @zhang2018.
+The multimetric indicator quantifies the fraction of segment-DU-criterion combinations that meet all applicable season-specific thresholds for each 3-year assessment period from 1985-1987 to 2017-2019. For each 3-year assessment period, all applicable segment-DU-criterion combinations were evaluated in a binomial fashion and scored 1 for “in attainment” and 0 for “nonattainment”. The classified status of each segment-DU-criterion combination was weighted via segments’ surface area and summed to obtain the multimetric index score. This weighting scheme was adopted for two reasons: (1) segments vary in size over four orders of magnitude, and (2) surface area of each segment does not change with time or DUs, unlike seasonally variable habitat volume or bottom water area [@usepa2017]. For more details, refer to the Methods section of @zhang2018.
 
-The indicator provides an integrated measure of Chesapeake Bay’s water quality condition (Figure 1). In 2015-2017, 42% of all tidal water segment-DU-criterion combinations are estimated to have met or exceeded applicable water quality criteria thresholds, which marks the best 3-year status since 1985-1987. The indicator has a positive and statistically significant trend from 1985 to 2017, which shows that Chesapeake Bay is on a positive trajectory toward recovery. This pattern was statistically linked to total nitrogen reduction, indicating responsiveness of attainment status to management actions implemented to reduce nutrients in the system. 
+The indicator provides an integrated measure of Chesapeake Bay’s water quality condition (Figure 1). In 2017-2019, 33.1% of all tidal water segment-DU-criterion combinations are estimated to have met or exceeded applicable water quality criteria thresholds, which marks the best 3-year status since 1985-1987. The indicator has a positive and statistically significant trend from 1985-1987 to 2017-2019, which shows that Chesapeake Bay is on a positive trajectory toward recovery. This pattern was statistically linked to total nitrogen reduction, indicating responsiveness of attainment status to management actions implemented to reduce nutrients in the system. 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-wq.R"),fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2015-2017. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-wq.R"),fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the multimetric indicator score for estimated Chesapeake Bay water quality standards attainment for each 3-year assessment period between 1985-1987 and 2017-2019. A significant positive trend for the time series is shown by the orange line (p < 0.05)."}
 
 ```
 
@@ -46,7 +46,7 @@ Patterns of attainment of individual DUs are variable (Figure 2). Changes in OW-
 
 ```{r,fig.width = 5, fig.asp = 0.45, fig.cap = "Time series of the estimated attainment of water quality standards (i.e., DO: dissolved oxygen; CHLA: chlorophyll-a; Clarity/SAV: water clarity/submerged aquatic vegetation) for five Chesapeake Bay designated uses (MSN: migratory spawning and nursery; OW: open water; DW: deep water; DC: deep channel; SW: shallow water) for each 3-year assessment period between 1985-1987 and 2015-2017."}
 
-knitr::include_graphics(file.path(image.dir, "cb_water_quality_attainment.png"))
+knitr::include_graphics(file.path(image.dir, "cb_water_quality_attainment_2022.png"))
 
 ```
 
