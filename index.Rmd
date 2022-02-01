@@ -44,7 +44,7 @@ devtools::install_github("thomasp85/patchwork")
 
 library(ggplot2)
 #library(formatR)
-library(magrittr)
+#library(magrittr)
 library(dplyr)
 library(tidyr)
 library(ecodata)
