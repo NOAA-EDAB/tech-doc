@@ -4,7 +4,7 @@
 
 **Indicator category**: Database pull with analysis
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2019,2020), State of the Ecosystem - New England (2019, 2020)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2019+), State of the Ecosystem - New England (2019+)
 
 **Contributor(s)**: James Gartland, Matt Camisa, Rebecca Peters, Sean Lucey
   

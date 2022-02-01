@@ -2,7 +2,7 @@
 
 **Description**: Marine Heatwave
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020, 2021), Mid-Atlantic (2020, 2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020+), Mid-Atlantic (2020+)
 
 **Indicator category**: Published methods, Database pull with analysis
 

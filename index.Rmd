@@ -38,7 +38,7 @@ r.dir <- here::here("R")
 gis.dir <- here::here("gis")
 data.dir <- here::here("data")
 #Plotting and data libraries
-devtools::install_github("noaa-edab/ecodata")
+remotes::install_github("noaa-edab/ecodata")
 devtools::install_github("noaa-edab/stocksmart")
 devtools::install_github("thomasp85/patchwork")
 

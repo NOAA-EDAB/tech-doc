@@ -2,7 +2,7 @@
 
 **Description**: Mappings of species into aggregate group categories for different analyses
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
 
 **Indicator category**: Synthesis of published information 
 

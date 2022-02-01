@@ -2,7 +2,7 @@
 
 **Description**: Chlorophyll *a* and Primary Production
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021), State of the Ecosystem - Mid-Atlantic (2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
 
 **Indicator category**: Database pull; Database pull with analysis; Published methods
 

@@ -2,7 +2,7 @@
 
 **Description**: Aquaculture indicators
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019 (Different Methods), 2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
 
 **Indicator category**: Synthesis of published information
 
