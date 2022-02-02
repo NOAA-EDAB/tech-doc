@@ -35,7 +35,7 @@ R code used in extraction and processing [gridded](https://github.com/NOAA-EDAB/
 
 ### Plotting
 
-Code used to build the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-SST-insitu.R).
+Code used to build the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL_MAB.Rmd-shelf-seasonal-sst-anomaly-gridded.R).
 
 ```{r MAB-SST, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-shelf-seasonal-sst-anomaly-gridded.R"), echo = F, fig.align="center", fig.cap="MAB seasonal sea surface temperature time series overlaid onto 2019 seasonal spatial anomalies."}
 
