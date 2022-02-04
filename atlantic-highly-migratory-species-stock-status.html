@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-02-02" />
+<meta name="date" content="2022-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -845,15 +845,350 @@ div.csl-indent {
 <h3><span class="header-section-number">26.1.2</span> Data analysis</h3>
 <p>Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). Species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries. We selected the most precautionary metrics for Fyr/Fmsy (high-end) and Byr/Bmsy (low-end).</p>
 <p>Stock status information was plotted on a Kobe chart using modified code from the 2021 SOE Technical Documentation. Although Gulf of Mexico stock information is provided, we only plotted Atlantic stocks to maintain relevance. Atlantic blacknose shark was considered an outlier due to an Fyr/Fmsy = 22.53. The y-axis is not scaled to include this species in the Kobe plot, so it was added in the top left segment of the box with the Fyr/Fmsy. The grey box lists species with unknown F/Fmsy and/or B/Bmsy.</p>
+The table below shows naming conventions used in the plot.
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Species_Abbreviation
+</th>
+<th style="text-align:left;">
+Common_Name
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ATL BET
+</td>
+<td style="text-align:left;">
+Atlantic bigeye
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL BET
+</td>
+<td style="text-align:left;">
+Atlantic bigeye
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL YFT
+</td>
+<td style="text-align:left;">
+atlantic yellowfin
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL YFT
+</td>
+<td style="text-align:left;">
+atlantic yellowfin
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA ALB
+</td>
+<td style="text-align:left;">
+North Atlantic albacore
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA ALB
+</td>
+<td style="text-align:left;">
+North Atlantic albacore
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SKJ
+</td>
+<td style="text-align:left;">
+West atlantic skipjack
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SKJ
+</td>
+<td style="text-align:left;">
+West atlantic skipjack
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SWO
+</td>
+<td style="text-align:left;">
+North Atlantic swordfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SWO
+</td>
+<td style="text-align:left;">
+North Atlantic swordfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SA SWO
+</td>
+<td style="text-align:left;">
+South Atlantic swordfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SA SWO
+</td>
+<td style="text-align:left;">
+South Atlantic swordfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUM
+</td>
+<td style="text-align:left;">
+blue marlin
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUM
+</td>
+<td style="text-align:left;">
+blue marlin
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WHX
+</td>
+<td style="text-align:left;">
+white marlin (and roundscale spearfish)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WHX
+</td>
+<td style="text-align:left;">
+white marlin (and roundscale spearfish)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WA SAI
+</td>
+<td style="text-align:left;">
+West Atlantic sailfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WA SAI
+</td>
+<td style="text-align:left;">
+West Atlantic sailfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NWA POR
+</td>
+<td style="text-align:left;">
+Northwest Atlantic porbeagle
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NWA POR
+</td>
+<td style="text-align:left;">
+Northwest Atlantic porbeagle
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA BSH
+</td>
+<td style="text-align:left;">
+North Atlantic blue
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA BSH
+</td>
+<td style="text-align:left;">
+North Atlantic blue
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SMA
+</td>
+<td style="text-align:left;">
+North Atlantic shortfin mako shark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA SMA
+</td>
+<td style="text-align:left;">
+North Atlantic shortfin mako shark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSB
+</td>
+<td style="text-align:left;">
+sandbar shark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSB
+</td>
+<td style="text-align:left;">
+sandbar shark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SBK
+</td>
+<td style="text-align:left;">
+Atlantic blacktip
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SBK
+</td>
+<td style="text-align:left;">
+Atlantic blacktip
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUS
+</td>
+<td style="text-align:left;">
+dusky
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUS
+</td>
+<td style="text-align:left;">
+dusky
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SPL
+</td>
+<td style="text-align:left;">
+scalloped hammerhead
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SPL
+</td>
+<td style="text-align:left;">
+scalloped hammerhead
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SAS
+</td>
+<td style="text-align:left;">
+Atlantic sharpnose shark - Atlantic stock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SAS
+</td>
+<td style="text-align:left;">
+Atlantic sharpnose shark - Atlantic stock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SBN
+</td>
+<td style="text-align:left;">
+Atlantic blacknose shark - Atlantic stock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL SBN
+</td>
+<td style="text-align:left;">
+Atlantic blacknose shark - Atlantic stock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SFT
+</td>
+<td style="text-align:left;">
+finetooth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SFT
+</td>
+<td style="text-align:left;">
+finetooth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL DGS
+</td>
+<td style="text-align:left;">
+Atlantic smooth dogfish
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ATL DGS
+</td>
+<td style="text-align:left;">
+Atlantic smooth dogfish
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="data-processing-17" class="section level3" number="26.1.3">
 <h3><span class="header-section-number">26.1.3</span> Data processing</h3>
-<p>Code for processing Atlantic HMS Stock status data can be found <a href="https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R">here</a>.</p>
+<p>Code for processing Atlantic HMS Stock status data can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R">here</a>.</p>
 </div>
 <div id="plotting-20" class="section level3" number="26.1.4">
 <h3><span class="header-section-number">26.1.4</span> Plotting</h3>
 <p>Code used to create the figure below can be <a href="https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R">here</a>.
-<img src="images/unnamed-chunk-26-1.png" width="672" /></p>
+<img src="images/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 <div id="resources-2" class="section level3" number="26.1.5">
 <h3><span class="header-section-number">26.1.5</span> Resources</h3>
