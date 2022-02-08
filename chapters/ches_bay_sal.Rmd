@@ -1,8 +1,8 @@
-# Chesapeake Bay Salinity
+# Chesapeake Bay Salinity and Temperature
 
-**Description**: Chesapeake Bay Salinity
+**Description**: Chesapeake Bay Salinity and Temperature
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2020)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020+)
 
 **Indicator category**: Database pull with analysis
 
