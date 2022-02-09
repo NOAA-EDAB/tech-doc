@@ -73,7 +73,7 @@ The plot below was built using the code found
 
 #### Wind and Scientific Surveys
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-survey-table.R"), fig.cap="Survey mitigation timeline.}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-survey-table.R"), fig.cap="Survey mitigation timeline."}
 
 ```
 
