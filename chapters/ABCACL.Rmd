@@ -1,0 +1,49 @@
+# MAFMC ABC/ACL and catch
+
+**Description**: The catch limit (either ABC or ACL) and total catch from 2012 - 2020 for all MAFMC species and sector (commercial or recreational), if appropriate.
+
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2022) 
+
+**Indicator category**: Synthesis of published information, Database pull
+
+**Contributor(s)**: Jessica Coakley, Kiley Dancy, Jose Montanez, Julia Beaty, Karson Coutre, Jason Didden
+  
+**Data steward**: Brandon Muffley <bmuffley@mafmc.org>
+  
+**Point of contact**: Brandon Muffley <bmuffley@mafmc.org>
+  
+**Public availability statement**: Source data are publicly available
+
+## Methods
+
+### Data Sources
+
+MAFMC Fishery Information Documents, Stock Assessment reports, SSC reports, GARFO catch/landings database, MRIP queries 
+
+### Data Analysis
+
+ABCs are set by the SSC, ACLs (if appropriate) developed by the Council; recreational data from MRIP, commercial catch from either the NEFSC assessment lead or GARFO database. Each species, depending upon data availability, sectors, fleets etc., goes through a different data processing process
+
+Each species, depending upon data availability, sectors, fleets etc., goes through a different data analysis process.
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
+
+### Plotting
+
+The plot below was built using the code found
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl.R"), eval = T, echo = F, fig.cap = "."}
+
+```
+
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl-catch.R"), eval = T, echo = F, fig.cap = "."}
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl-stacked.R"), eval = T, echo = F, fig.cap = "."}
+
+```

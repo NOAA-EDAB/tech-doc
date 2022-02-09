@@ -1,0 +1,37 @@
+# Submerged Aquatic Vegetation
+
+**Description**: Chesapeake Bay Submerged Aquatic Vegetation Trends
+
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2022) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: David Wilcox, Brooke Landry, Christopher Patrick
+  
+**Data steward**: David Wilcox <dwilcox@vims.edu>
+  
+**Point of contact**: David Wilcox <dwilcox@vims.edu>
+  
+**Public availability statement**: Source data are NOT publicly available. Please email David Wilcox at dwilcox@vims.edu for further information about the submerged aquatic vegetation indicator.
+
+## Methods
+
+### Data Sources
+Data for this indicator comes from the aerial survey of submerged aquatic vegetation coverage in the Chesapeake Bay: https://www.chesapeakeprogress.com/abundant-life/sav
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sav.R).
+
+### Plotting
+
+The plot below was built using the code found
+[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R"), eval = T, echo = F, fig.cap = "."}
+
+```
+
+
+
+
