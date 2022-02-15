@@ -54,8 +54,8 @@ library(ggrepel)
 library(stringr)
 library(patchwork)
 library(heatwaveR)
-library(grid)
-library(vegan)
+#library(grid)
+#library(vegan)
 library(rpart)
 library(knitr)
 library(rmarkdown)
@@ -68,9 +68,9 @@ library(plotly)
 #GIS libraries
 library(sf)
 library(rgdal)
-library(raster)
-library(marmap)
-library(ggspatial)
+#library(raster)
+#library(marmap)
+#library(ggspatial)
 
 
 #Time series constants
