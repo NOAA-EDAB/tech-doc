@@ -64,7 +64,7 @@ library(RColorBrewer)
 
 library(plyr)
 library(cowplot)
-library(plotly)
+#library(plotly)
 #GIS libraries
 library(sf)
 library(rgdal)
