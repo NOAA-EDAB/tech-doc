@@ -74,22 +74,22 @@ library(cowplot)
 
 
 #Time series constants
-# shade.alpha <- 0.3
-# shade.fill <- "lightgrey"
-# lwd <- 1
-# pcex <- 2
-# trend.alpha <- 0.5
-# trend.size <- 2
-# hline.size <- 1
-# hline.alpha <- 0.35
-# hline.lty <- "dashed"
-# label.size <- 5
-# hjust.label <- 1.5
-# letter_size <- 4
-# feeding.guilds1 <- c("Piscivore","Planktivore","Benthivore","Benthos")
-# feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
-# x.shade.min <- 2011 
-# x.shade.max <- 2021
+ shade.alpha <- 0.3
+ shade.fill <- "lightgrey"
+ lwd <- 1
+ pcex <- 2
+ trend.alpha <- 0.5
+ trend.size <- 2
+ hline.size <- 1
+ hline.alpha <- 0.35
+ hline.lty <- "dashed"
+ label.size <- 5
+ hjust.label <- 1.5
+ letter_size <- 4
+ feeding.guilds1 <- c("Piscivore","Planktivore","Benthivore","Benthos")
+ feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
+ x.shade.min <- 2011 
+ x.shade.max <- 2021
 # #Function for custom ggplot facet labels
 # label <- function(variable,value){
 #   return(facet_names[value])
