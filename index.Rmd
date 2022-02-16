@@ -90,37 +90,37 @@ library(cowplot)
  feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
  x.shade.min <- 2011 
  x.shade.max <- 2021
-# #Function for custom ggplot facet labels
-# label <- function(variable,value){
-#   return(facet_names[value])
-# }
-# 
-# 
-# #Map line parameters
-# map.lwd <- 0.4
-# #CRS
-# crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
-# #Coastline shapefile
-# # coast <- ne_countries(scale = 10,
-# #                           continent = "North America",
-# #                           returnclass = "sf") %>%
-# #              sf::st_transform(crs = crs)
-# # # #State polygons
-# # ne_states <- ne_states(country = "united states of america",
-# #                                       returnclass = "sf") %>%
-# #   sf::st_transform(crs = crs)
-# # #high-res polygon of Maine
-# # new_england <- read_sf(gis.dir,"new_england")
-# #EPU shapefile
-# epu_sf <- ecodata::epu_sf %>% 
-#   filter(EPU %in% c("MAB","GB","GOM"))
-# #identifiers
-# council <- "Mid-Atlantic Fishery Management Council"
-# council_abbr <- "MAFMC"
-# epu <- "Mid-Atlantic Bight"
-# epu_abbr <- "MAB"
-# region <- "Mid-Atlantic"
-# region_abbr <- "MA"
+#Function for custom ggplot facet labels
+label <- function(variable,value){
+  return(facet_names[value])
+}
+
+
+#Map line parameters
+map.lwd <- 0.4
+#CRS
+crs <- "+proj=longlat +lat_1=35 +lat_2=45 +lat_0=40 +lon_0=-77 +x_0=0 +y_0=0 +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
+#Coastline shapefile
+# coast <- ne_countries(scale = 10,
+#                           continent = "North America",
+#                           returnclass = "sf") %>%
+#              sf::st_transform(crs = crs)
+# # #State polygons
+# ne_states <- ne_states(country = "united states of america",
+#                                       returnclass = "sf") %>%
+#   sf::st_transform(crs = crs)
+# #high-res polygon of Maine
+# new_england <- read_sf(gis.dir,"new_england")
+#EPU shapefile
+epu_sf <- ecodata::epu_sf %>%
+  filter(EPU %in% c("MAB","GB","GOM"))
+#identifiers
+council <- "Mid-Atlantic Fishery Management Council"
+council_abbr <- "MAFMC"
+epu <- "Mid-Atlantic Bight"
+epu_abbr <- "MAB"
+region <- "Mid-Atlantic"
+region_abbr <- "MA"
 ```
 
 (ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
