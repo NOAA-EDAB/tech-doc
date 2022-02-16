@@ -47,7 +47,7 @@ The plot below was built using the code found
 
 ```
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n-spring.R"), eval = T, echo = F, fig.cap = "Expected number of species per 1000 individuals for Spring NEFSC bottom trawl survey."}
+<!-- ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n-spring.R"), eval = T, echo = F, fig.cap = "Expected number of species per 1000 individuals for Spring NEFSC bottom trawl survey."} -->
 
-```
+<!-- ``` -->
 
