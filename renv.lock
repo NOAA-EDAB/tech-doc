@@ -548,6 +548,13 @@
       "Repository": "CRAN",
       "Hash": "41287f1ac7d28a92f0a286ed507928d3"
     },
+    "mapdata": {
+      "Package": "mapdata",
+      "Version": "2.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "24d44d79d566ec6a618bef7afd7aedfe"
+    },
     "maps": {
       "Package": "maps",
       "Version": "3.4.0",
