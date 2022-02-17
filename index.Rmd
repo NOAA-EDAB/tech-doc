@@ -62,6 +62,7 @@ library(knitr)
 library(rmarkdown)
 library(readr)
 library(RColorBrewer)
+library(DT)
 
 library(plyr)
 library(cowplot)
