@@ -68,10 +68,10 @@ library(plyr)
 library(cowplot)
 #library(plotly)
 #GIS libraries
-#library(sf)
+library(sf)
 #library(rgdal)
 #library(raster)
-#library(marmap)
+library(marmap)
 #library(ggspatial)
 
 
