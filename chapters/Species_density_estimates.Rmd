@@ -27,7 +27,7 @@ Current and historical species distributions are based on the NEFSC Bottom Trawl
 ### Data analysis
 
 Code used for species density analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_density_analysis.R). 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=T, echo=F}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=F, echo=T}
 
 ```
 
