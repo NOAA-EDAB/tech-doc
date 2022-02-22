@@ -2,7 +2,7 @@
 
 **Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018,2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018,2019, 2020, 2021) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
 
 **Indicator category**: Database pull with analysis
 
@@ -42,10 +42,25 @@ Data were formatted for inclusion in the ecodata R package using the R script fo
 Code used to build the community engagement indicator plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-comm-eng.R). 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-commercial-engagement.R"), eval = T, fig.cap= "Commercial engagement in the Mid-Atlantic."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-commercial-engagement.R"), eval = T, fig.cap= "Commercial engagement, reliance and environmental justice vulnerability for thetop commercial fishing communities in the Mid-Atlantic. (* Scored high (1.00 and above)) for both commercial engagement and reliance indicators)."}
 ```
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recreational-engagement.R"), eval = T, fig.cap= "Recreational engagement in the Mid-Atlantic."}
+```{r , fig.cap = "Environmental justice indicators (Poverty index, population composition index, and personal disruption index) for top commercial fishing communities in the Mid-Atlantic.", fig.width=50}
+
+
+knitr::include_graphics(c(file.path(image.dir, "EJ_Commercial_MAB.png")))
+
+```
+
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recreational-engagement.R"), eval = T, fig.cap= "Recreational engagement, reliance and environmental justice vulnerability for the top recreational fishing communities in the Mid-Atlantic. (* Scored high (1.00 and above)) for both recreational engagement and reliance indicators)."}
+```
+
+```{r , fig.cap = "Environmental justice indicators (Poverty index, population composition index, and personal disruption index) for top recreational fishing communities in the Mid-Atlantic.", fig.width=50}
+
+
+knitr::include_graphics(c(file.path(image.dir, "EJ_Recreational_MAB.png")))
+
 ```
 
 

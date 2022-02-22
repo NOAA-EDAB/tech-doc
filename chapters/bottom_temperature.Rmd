@@ -3,7 +3,7 @@
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 
 **Indicator category**: Extensive analysis; not yet published
-Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019, 2020, 2021); State of the Ecosystem - Mid-Atlantic Bight (2019, 2020, 2021)
+Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019+); State of the Ecosystem - Mid-Atlantic Bight (2019+)
 
 **Contributor(s)**: Paula Fratantoni, paula.fratantoni@noaa.gov
 

@@ -2,7 +2,7 @@
 
 **Description**: Species mean depth, along-shelf distance, and distance to coastline
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
 **Indicator category**: Extensive analysis; not yet published
 

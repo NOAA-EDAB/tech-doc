@@ -30,8 +30,12 @@ Persistent hotspots were computed with the sf and raster R packages.
 
 ### Plotting
 
-```{r, fig.cap="Seasonal temperature anomaly map of Chesapeake Bay."}
-knitr::include_graphics(file.path(image.dir, "protected_spp_hotspot_4_panel.png"))
+```{r, fig.cap="North Atlantic Right Whale hotspot maps."}
+knitr::include_graphics(file.path(image.dir, "NARW_hotpsot_persistence_2_1_2022_TPW.png"))
+```
+
+```{r, fig.cap="Hotspot maps for all protected groups (Seabirds, Cetaceans, and Turtles."}
+knitr::include_graphics(file.path(image.dir, "seabirds_cetaceans_turtles_hotspot_persistence_2_1_2022_TPW.png"))
 ```
 
 

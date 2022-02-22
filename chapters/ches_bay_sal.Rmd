@@ -34,6 +34,14 @@ Code for processing salinity data can be found [here](https://github.com/NOAA-ED
 
 ### Plotting
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-sal.R"), echo = F, fig.align="center", eval = T, fig.cap="Buoy data showing unprecedented fresh water in Chesapeake Bay, 2018-2019."}
+Code used to build the plots below can be found here ([Salinity](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-sal.R), [Temperature](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R))
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-sal.R"), echo = F, fig.align="center", eval = T, fig.cap="Buoy data showing unprecedented fresh water in Chesapeake Bay."}
 
 ```
+
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R"), echo = F, fig.align="center", eval = T, fig.cap="Buoy data showing unprecedented fresh water in Chesapeake Bay."}
+
+```
+

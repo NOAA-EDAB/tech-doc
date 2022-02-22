@@ -38,6 +38,6 @@ Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/e
 
 ```
 
-```{r, fig.cap="Mid-Atlantic Marine Heatwave events in 2020.",code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year.R"), eval = T, echo=F}
+```{r, fig.cap="Mid-Atlantic Marine Heatwave events in 2021.",code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year.R"), eval = T, echo=F}
 
 ```
