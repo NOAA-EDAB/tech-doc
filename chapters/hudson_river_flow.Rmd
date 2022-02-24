@@ -1,0 +1,41 @@
+# Hudson River Flow
+
+**Description**: Mean annual flow of the Hudson River in cubic meters per second at the USGS gauge 01358000 at Green Island, New York.
+
+**Found In**: 2022 Indicator Catalog
+
+**Indicator category**: 
+
+**Contributor(s)**: Laura Gruenburg, Janet Nye, Kurt Heim
+  
+**Data steward**: Laura Gruenburg <laura.gruenburg@stonybrook.edu>
+  
+**Point of contact**: Laura Gruenburg <laura.gruenburg@stonybrook.edu>
+
+**Public availability statement**: Source data are publicly available
+
+## Methods
+### Data Sources
+
+River gauge data from USGS gauge 01358000 was obtained from [USGS water data](https://waterdata.usgs.gov/nwis/uv?site_no=01358000).
+
+### Data Analysis
+
+Mean annual flow rate was calculated by averaging all flow rate data for each year. Cubic feet per second were converted to cubic meters per second.  Attached code shows this process in detail.
+
+A linear trend and a nonlinear GAM were calculated for the resulting annual mean flow rate time series.  Attached code shows this process in detail.
+
+### Data Processing
+
+Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hudson_river_flow.R).
+
+### Plotting
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-hudson-river-flow.R"), echo = F, fig.align="center", eval = T, fig.cap="Mean Annual flow of the Hudson River at USGS gauge 01358000 at Green Island, New York."}
+
+```
+
+## References
+
+
+

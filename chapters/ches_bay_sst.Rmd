@@ -34,8 +34,9 @@ Code for processing Chesapeake Bay temperature data can be found [here](https://
 
 
 ### Plotting
-Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-sst.R)
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-sst.R"), echo = F, eval = T, fig.cap="Maps of seasonal SST anomalies are generated for an SST range of +5.0 - -5.0 C. Positive values show current-season temperatures above the long-term seasonal average, whereas negative values show current-season temperatures below the long-term seasonal average.."}
+Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-sst.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ches-bay-sst.R"), echo = F, eval = T, fig.cap="Maps of seasonal SST anomalies are generated for an SST range of +5.0 - -5.0 C. Positive values show current-season temperatures above the long-term seasonal average, whereas negative values show current-season temperatures below the long-term seasonal average."}
 
 ```
 

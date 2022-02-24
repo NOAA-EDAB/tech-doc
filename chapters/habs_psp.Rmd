@@ -1,0 +1,69 @@
+# Harmful Algal Blooms - Paralitic Shellfish Poisoning Indicator
+
+**Description**: Paralytic Shellfish Poisoning (PSP) toxins in the Gulf of Maine
+
+**Found In**: 2022 Indicator Catalog
+
+**Indicator category**: Published methods, Database pull
+
+**Contributor(s)**: Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch, Silver Spring, MD.  Ayman Mabrouk, NOAA/NOS NCCOS Marine Spatial Ecology Division, Silver Spring, MD.
+  
+**Data steward**: Moe Nelson <david.moe.nelson@noaa.gov>
+  
+**Point of contact**: Moe Nelson <david.moe.nelson@noaa.gov>
+
+**Public availability statement**: Source data are NOT publicly available. Data can be acquired upon request.
+
+## Methods
+### Data Sources
+
+Original data were collected by the State of Maine, Department of Marine Resources, which tests coastal shellfish areas for biotoxins weekly, annually beginning in March and going through October or later when necessary.  
+
+Data set was provided by Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch, Silver Spring, MD. Graphics and summaries were developed by Ayman Mabrouk, NOAA/NOS NCCOS Marine Spatial Ecology Division, Biogeography Branch, Silver Spring, MD.
+Original data were collected by the State of Maine, Department of Marine Resources, which samples and tests blue mussels (*Mytilis edulis*) in coastal shellfish areas for HAB biotoxins on a weekly basis from March through October.  
+
+[Maine Department of Marine Resources – Biotoxins in Maine](https://www.maine.gov/dmr/shellfish-sanitation-management/programs/biotoxininfo.html)
+
+[Massachusetts Division of Marine Fisheries](https://www.mass.gov/service-details/psp-red-tide-monitoring)
+
+[Massachusetts Division of Marine Fisheries – Shellfish classification areas](https://www.mass.gov/service-details/shellfish-classification-areas)
+
+[New Hampshire Department of Environmental Services](https://www.des.nh.gov/water/healthy-swimming/harmful-algal-blooms)
+
+### Data Analysis
+
+Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of PSP toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as ""ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (Chung 2010).
+
+
+Data include total number of samples at multiple locations collected in each calendar year (2005-2019), numbers of samples above and below the PSP threshold of 44 ug/100g, and percentage of samples above the threshold.  Simple bar and line graphs are used to plot the values for each variable as time series, 2005-2019.
+Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/
+
+### Data Processing
+
+Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
+
+
+#Plotting
+The script used to develop the figure in the SOE Indicator Catalog can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+
+```
+
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp-closures.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+
+```
+
+
+## References
+
+Chung, L.L. 2010.  Measuring paralytic shellfish toxins in mussels from New Hampshire coastal waters using zwitterionic hydrophilic liquid chromatography/electrospray mass spectrometry. Master's Theses and Capstones. 539.  https://scholars.unh.edu/thesis/539
+
+Kleindinst, J.L., D.M. Anderson, D.J. McGillicuddy Gr., R.P. Stumpf, K.M. Fisher, D.A. Couture, J.M. Hickey, and C. Nash.  2014.  Categorizing the severity of paralytic shellfish poisoning outbreaks in the Gulf of Maine for forecasting and management.  Deep-Sea Research II 103:277-287.
+
+NOAA/NCCOS.  2021.  Gulf of Maine Alexandrium catenella Predictive Models.  Interactive website with operational Nowcast/Forecast simulation.  https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/"
+
+
+
+
