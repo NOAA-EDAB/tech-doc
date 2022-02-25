@@ -1,0 +1,55 @@
+# Sandlance
+
+**Description**: Sandlance survey data from Stellwagen Bank National Marine Sanctuary
+
+**Found In**: 2022 Indicator Catalog
+
+**Indicator category**: Published methods
+
+**Contributor(s)**: David N. Wiley, Tammy L. Silva
+  
+**Data steward**: Moe Nelson <david.moe.nelson@noaa.gov>
+  
+**Point of contact**: Moe Nelson <david.moe.nelson@noaa.gov>
+
+**Public availability statement**:Source data are publicly available.
+
+## Methods
+### Data Sources
+
+This data set is taken directly from Table 1, Silva et al. 2020.  See full citation in "References" section below.
+
+### Data Analysis
+
+Data processing and analysis methods are described in Silva et al. 2020.  The catch counts of sand lance and observational counts of humpback whales and great shearwater were used to derive spatial metrics (center of gravity, and inertia) for each species.  Equations for these spatial metrics are provided in Table 2 of Silva et al. 2020. The spatial metrics (center of gravity,  inertia) were used to calculate the global index of collocation (GIC) to quantify spatial overlap between pairs of species for each cruise.  GICs for species pairs are reported in Table 3 of Silva et al. 2020, but data were not sufficient to calculate GICs for each pair of species in each cruise.
+
+
+
+### Data Processing
+
+Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sandlance.R).
+
+### Plotting
+
+Code use to build the plot below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna_NE.Rmd-sandlance-colocation.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-sandlance.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+
+```
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-sandlance-colocation.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+
+```
+
+
+```{r, fig.cap=""}
+
+image.dir <- here::here("images")
+
+knitr::include_graphics(file.path(image.dir, "Stellwagen_sand_lance_sampling_map_1.jpg"))
+```
+
+
+## References
+
+Silva, T.L., D.N. Wiley, M.A. Thompson, P. Hong, L. Kaufman, J.J. Suca, J.K. Llopiz, H. Baumann, and G. Fay.  2020.  High collocation of sand lance and protected top predators: Implications for conservation and management.  Conservation Science and Practice 2020;e274.  https://doi.org/10.1111/csp2.274
