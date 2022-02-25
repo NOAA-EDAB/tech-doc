@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>36 Marine Heatwave | Technical Documentation, State of the Ecosystem Report</title>
+  <title>48 Sandlance | Technical Documentation, State of the Ecosystem Report</title>
   <meta name="description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="36 Marine Heatwave | Technical Documentation, State of the Ecosystem Report" />
+  <meta property="og:title" content="48 Sandlance | Technical Documentation, State of the Ecosystem Report" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="NOAA-EDAB/tech-doc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="36 Marine Heatwave | Technical Documentation, State of the Ecosystem Report" />
+  <meta name="twitter:title" content="48 Sandlance | Technical Documentation, State of the Ecosystem Report" />
   
   <meta name="twitter:description" content="This book documents each indicator and analysis used in State of the Ecosystem reporting" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="new-england-harmful-algal-bloom-indicator.html"/>
-<link rel="next" href="verified-records-of-southern-kingfish.html"/>
+<link rel="prev" href="safmc-managed-spp.html"/>
+<link rel="next" href="submerged-aquatic-vegetation.html"/>
 <script src="asset/header-attrs-2.11/header-attrs.js"></script>
 <script src="asset/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -905,57 +905,41 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="marine-heatwave" class="section level1" number="36">
-<h1><span class="header-section-number">36</span> Marine Heatwave</h1>
-<p><strong>Description</strong>: Marine Heatwave</p>
-<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2020+), Mid-Atlantic (2020+)</p>
-<p><strong>Indicator category</strong>: Published methods, Database pull with analysis</p>
-<p><strong>Contributor(s)</strong>: Vincent Saba</p>
-<p><strong>Data steward</strong>: Kimberly Bastille <a href="mailto:kimberly.bastille@noaa.gov" class="email">kimberly.bastille@noaa.gov</a></p>
-<p><strong>Point of contact</strong>: Vincent Saba <a href="mailto:vincent.saba@noaa.gov" class="email">vincent.saba@noaa.gov</a></p>
-<p><strong>Public availability statement</strong>:</p>
-<div id="methods-37" class="section level2" number="36.1">
-<h2><span class="header-section-number">36.1</span> Methods</h2>
-<p>Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>.</p>
-<div id="data-sources-39" class="section level3" number="36.1.1">
-<h3><span class="header-section-number">36.1.1</span> Data sources</h3>
-<p>NOAA high-res OISST (daily, 25-km, 1982-2019) <a href="https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&amp;tid=79458&amp;vid=2423" class="uri">https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&amp;tid=79458&amp;vid=2423</a></p>
+<div id="sandlance" class="section level1" number="48">
+<h1><span class="header-section-number">48</span> Sandlance</h1>
+<p><strong>Description</strong>: Sandlance survey data from Stellwagen Bank National Marine Sanctuary</p>
+<p><strong>Found In</strong>: 2022 Indicator Catalog</p>
+<p><strong>Indicator category</strong>: Published methods</p>
+<p><strong>Contributor(s)</strong>: David N. Wiley, Tammy L. Silva</p>
+<p><strong>Data steward</strong>: Moe Nelson <a href="mailto:david.moe.nelson@noaa.gov" class="email">david.moe.nelson@noaa.gov</a></p>
+<p><strong>Point of contact</strong>: Moe Nelson <a href="mailto:david.moe.nelson@noaa.gov" class="email">david.moe.nelson@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>:Source data are publicly available.</p>
+<div id="methods-49" class="section level2" number="48.1">
+<h2><span class="header-section-number">48.1</span> Methods</h2>
+<div id="data-sources-51" class="section level3" number="48.1.1">
+<h3><span class="header-section-number">48.1.1</span> Data Sources</h3>
+<p>This data set is taken directly from Table 1, Silva et al. 2020. See full citation in “References” section below.</p>
 </div>
-<div id="data-extraction-25" class="section level3" number="36.1.2">
-<h3><span class="header-section-number">36.1.2</span> Data extraction</h3>
-<p>Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret. Each EPU’s time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.</p>
+<div id="data-analysis-49" class="section level3" number="48.1.2">
+<h3><span class="header-section-number">48.1.2</span> Data Analysis</h3>
+<p>Data processing and analysis methods are described in Silva et al. 2020. The catch counts of sand lance and observational counts of humpback whales and great shearwater were used to derive spatial metrics (center of gravity, and inertia) for each species. Equations for these spatial metrics are provided in Table 2 of Silva et al. 2020. The spatial metrics (center of gravity, inertia) were used to calculate the global index of collocation (GIC) to quantify spatial overlap between pairs of species for each cruise. GICs for species pairs are reported in Table 3 of Silva et al. 2020, but data were not sufficient to calculate GICs for each pair of species in each cruise.</p>
 </div>
-<div id="data-analysis-38" class="section level3" number="36.1.3">
-<h3><span class="header-section-number">36.1.3</span> Data analysis</h3>
-<p>The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011. These metrics were run R using <a href="https://robwschlegel.github.io/heatwaveR/" class="uri">https://robwschlegel.github.io/heatwaveR/</a></p>
+<div id="data-processing-36" class="section level3" number="48.1.3">
+<h3><span class="header-section-number">48.1.3</span> Data Processing</h3>
+<p>Code for processing salinity data can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sandlance.R">here</a>.</p>
 </div>
-<div id="data-processing-26" class="section level3" number="36.1.4">
-<h3><span class="header-section-number">36.1.4</span> Data processing</h3>
-<p>Marine Heatwave data were formatted for inclusion in the <code>ecodata</code> R package using this <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_heatwave.R">R code</a>.</p>
+<div id="plotting-40" class="section level3" number="48.1.4">
+<h3><span class="header-section-number">48.1.4</span> Plotting</h3>
+<p>Code use to build the plot below can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna_NE.Rmd-sandlance-colocation.R">here</a>.</p>
+<p><img src="images/unnamed-chunk-61-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="images/unnamed-chunk-62-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="images/Stellwagen_sand_lance_sampling_map_1.jpg" width="370" /></p>
 </div>
-<div id="plotting-28" class="section level3" number="36.1.5">
-<h3><span class="header-section-number">36.1.5</span> Plotting</h3>
-<p>Code used for the plots below can be found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-heatwave_mab.R">here</a>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
-<img src="images/unnamed-chunk-46-1.png" alt="Cumulative and maximum marine heatwave in the Mid-Atlantic" width="672" />
-<p class="caption">
-Figure 36.1: Cumulative and maximum marine heatwave in the Mid-Atlantic
-</p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-47"></span>
-<img src="images/unnamed-chunk-47-1.png" alt="Mid-Atlantic Marine Heatwave events in 2021." width="672" />
-<p class="caption">
-Figure 36.2: Mid-Atlantic Marine Heatwave events in 2021.
-</p>
-</div>
+<div id="references-3" class="section level2" number="48.2">
+<h2><span class="header-section-number">48.2</span> References</h2>
+<p>Silva, T.L., D.N. Wiley, M.A. Thompson, P. Hong, L. Kaufman, J.J. Suca, J.K. Llopiz, H. Baumann, and G. Fay. 2020. High collocation of sand lance and protected top predators: Implications for conservation and management. Conservation Science and Practice 2020;e274. <a href="https://doi.org/10.1111/csp2.274" class="uri">https://doi.org/10.1111/csp2.274</a></p>
 
-</div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-hobday2016" class="csl-entry">
-Hobday, Alistair J., Lisa V. Alexander, Sarah E. Perkins, Dan A. Smale, Sandra C. Straub, Eric C. J. Oliver, Jessica A. Benthuysen, et al. 2016. <span>“A Hierarchical Approach to Defining Marine Heatwaves.”</span> <em>Progress in Oceanography</em> 141: 227–38. https://doi.org/<a href="https://doi.org/10.1016/j.pocean.2015.12.014">https://doi.org/10.1016/j.pocean.2015.12.014</a>.
 </div>
 </div>
             </section>
@@ -963,8 +947,8 @@ Hobday, Alistair J., Lisa V. Alexander, Sarah E. Perkins, Dan A. Smale, Sandra C
           </div>
         </div>
       </div>
-<a href="new-england-harmful-algal-bloom-indicator.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="verified-records-of-southern-kingfish.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="safmc-managed-spp.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="submerged-aquatic-vegetation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="asset/gitbook-2.6.7/js/app.min.js"></script>
@@ -995,7 +979,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/marine_heatwave.Rmd",
+"link": "https://github.com/NOAA-EDAB/tech-doc/edit/master/chapters/sandlance.Rmd",
 "text": "Edit"
 },
 "history": {
