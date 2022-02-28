@@ -2,7 +2,7 @@
 
 **Description**: Survdat (Survey database)
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020, 2022), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020, 2022)
 
 **Indicator category**: Database pull
 
@@ -93,8 +93,15 @@ station count to get the EPU mean.  Finally, the mean biomasses are summed by [a
 
 
 ### Plotting
-Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-agg-bio.R)
+Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-agg-bio.R).
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-aggregate-biomass.R"), fig.cap="Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the NEFSC Bottom Trawl Survey are shown in black, with NEAMAP shown in red.",  echo = F, fig.align='default',warning = F}
+
+```
+
+#### Survey Diversity 
+Code used to create the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna_MAB.Rmd-survey-shannon.R).
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-survey-shannon.R"), fig.cap="Survey diversity measure for the Mid-Atlantic Bight.",  echo = F, fig.align='default',warning = F}
 
 ```

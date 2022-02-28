@@ -25,7 +25,7 @@ The plot showing the number of warm core ring formations and regime shift replic
 
 
 ### Data extraction 
-The data from @gangopadhyay2019 as well as 2018 and 2019 points were provided by Avijit Gangopandhyay, *School for Marine Science and Technology, University of Massachusetts Dartmouth, MA*. 
+The data from @gangopadhyay2019 were provided by Avijit Gangopandhyay, *School for Marine Science and Technology, University of Massachusetts Dartmouth, MA*. 
 
 ### Data analysis
 A sequential regime shift detection algorithm was used to identify the regimes evident in the warm core ring formation time-series.  See @gangopadhyay2019 for details.
@@ -39,6 +39,6 @@ The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-warm-core-rings.R). 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-wcr.R"), eval = T, fig.cap= " Interannual Variability of the WCR formation between 1980 and 2019. The regime shift (denoted by the split in the red solid line) is significant at the turn of the century.  Figure reproduced with permission from Gangopadhyay, et al. (2019).  2018 and 2019 data points based on personal communication with A. Gangopadhyay (2020)."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-wcr.R"), eval = T, fig.cap= " Interannual Variability of the WCR formation. The regime shift (denoted by the split in the red solid line) is significant at the turn of the century.  Figure reproduced with permission from Gangopadhyay, et al. (2019)."}
 
 ```
