@@ -1,0 +1,36 @@
+# Atlantic HMS POP CPUE
+
+**Description**: CPUE from pelagic observer program (POP) observed hauls, presented as number of fish per haul, is provided for the northeast (shelf-wide) by year/species from 1992-2019.
+
+**Indicator category**: Database pull with analysis
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+
+**Contributor(s)**: Tobey Curtis, Jennifer Cudney
+  
+**Data steward**:  Tobey Curtis, Jennifer Cudney
+  
+**Point of contact**:  Jennifer Cudney <jennifer.cudney@noaa.gov>
+  
+**Public availability statement**: Source data are NOT publicly available. Pelagic observer data is considered confidential data, and must be screened to ensure that data meet requirements for "rule of three" at the set and vessel level before they can be distributed. 
+
+
+## Methods
+
+### Data sources
+Data for this indicator were compiled by NOAA Southeast Fisheries Science Center, Larry Beerkircher. 
+
+
+### Data analysis
+Data were pulled from NOAA SEFSC databases and summarized by year and species. 
+
+### Data Processing 
+Code used to process this data can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
+
+### Plotting
+
+Code used to build the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna_MAB.Rmd-hms-cpue-sharks.R).
+
+```{r shark-cpue, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-hms-cpue-sharks.R"), echo = F, fig.align="center", fig.cap="Species groupings based on list from Debbie Duarte - missing Boonethead, Atlantic Angel shark, Sixgill shark, sevengill shark, nurse shark, white shark, basking shark, lemon shark.."}
+
+```
