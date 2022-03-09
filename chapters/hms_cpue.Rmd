@@ -31,6 +31,8 @@ Code used to process this data can be found on github - [NOAA-EDAB/ecodata](http
 
 Code used to build the figure below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna_MAB.Rmd-hms-cpue-sharks.R).
 
-```{r shark-cpue, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-hms-cpue-sharks.R"), echo = F, fig.align="center", fig.cap="Species groupings based on list from Debbie Duarte - missing Boonethead, Atlantic Angel shark, Sixgill shark, sevengill shark, nurse shark, white shark, basking shark, lemon shark.."}
+```{r shark-cpue, echo = F, fig.align="center", fig.cap="Species groupings based on list from Debbie Duarte - missing Boonethead, Atlantic Angel shark, Sixgill shark, sevengill shark, nurse shark, white shark, basking shark, lemon shark.."}
+
+knitr::include_graphics(c(file.path(image.dir, "hms_pop_cpue.PNG")))
 
 ```
