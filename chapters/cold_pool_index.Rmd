@@ -49,11 +49,14 @@ https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1972–2019 ({\bar{T}}_{i,\ 1972-2019}) between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1972–2019 $$({\bar{T}}_{i,\ 1972-2019})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
-\begin{equation}
-{{Model}__CPI}_y=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1972-2019})\ }}{n}
-\end{equation}
+
+
+$${{Model}__CPI}_y=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1972-2019})\ }}{n}$$
+
+
+
 
 where n is the number of grid cells over the Cold Pool domain.
 
@@ -61,9 +64,9 @@ where n is the number of grid cells over the Cold Pool domain.
 
 The temporal component of the Cold Pool was calculated using the persistence index (Model_PI). Model_PI measures the duration of the Cold Pool and is estimated using the month when bottom temperature rises above 10˚C after the Cold Pool is formed each year. We first selected the area over the cold pool domain in which bottom temperature falls below 10˚C between June and October. We then calculated the “residual month” in each grid cell, i, in the Cold Pool domain as the difference between the month when bottom temperature rises above 10˚C in year y and the average of those months over the period 1972–2019. Then, Model_PI was calculated as the mean “residual month” over the Cold Pool domain:
 
-\begin{equation}
-{PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1972-2019})\ }}{n}
-\end{equation}
+
+$${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1972-2019})\ }}{n}$$
+
 
 #### Spatial Extent Index (Model_SEI)
 
@@ -75,11 +78,10 @@ Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were
 
 Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5˚C during the stratified seasons over the period of 1958-2007 (Chen et al., 2018; Chen and Curchitser, 2020). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (Seidov et al., 2016a, 2016b) (https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:
 
-\begin{equation}
-{BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}\
-\end{equation}
+$${BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}\$$
 
-where T_{i,d}^{Climatology} is the NWARC bottom temperature in the grid cell i for the decade d and {\bar{T}}_{i,\ d}^{ROMS-NWA}\ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. 
+
+where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell i for the decade d and $${\bar{T}}_{i,\ d}^{ROMS-NWA}$$ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. 
 
 ### Data processing
 
@@ -99,6 +101,7 @@ The plot below was built using the code found
 
 ## 2021 Methods
 **Point of Contact:**: Zhoumin Chen <zhuomin.chen@uconn.edu>
+
 ### Data Sources
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
 
