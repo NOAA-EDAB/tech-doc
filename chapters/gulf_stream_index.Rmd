@@ -4,8 +4,8 @@
 
 **Indicator category**: Published method
 
-**Found in**: State of the Ecosystem - New England (2019 (Different Methods), 2020, 2021), 
-State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020, 2021) 
+**Found in**: State of the Ecosystem - New England (2019 (Different Methods), 2020, 2021, 2022), 
+State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020, 2021, 2022) 
 
 **Contributor(s)**: Zhuomin Chen, Young-oh Kwon
   
@@ -35,7 +35,7 @@ The Gulf Stream index data set was formatted for inclusion in the `ecodata` R pa
 The plot below was built using the code found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-GSI.R). 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-gsi.R"), eval = T, echo=F, fig.cap="Gulf Stream Index" }
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-gsi.R"), eval = T, echo=F, fig.cap="Index representing changes in the location of the Gulf Stream north wall. Positive values represent a more northerly" }
 
 ```
 

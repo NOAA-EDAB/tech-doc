@@ -43,11 +43,11 @@ Code for processing Atlantic HMS Stock status data can be found [here](https://g
 
 ### Plotting
 Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R).
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R")}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R"), fig.cap="Summary of single species status for HMS stocks; key to species names above."}
 
 ```
 
-### Resources
+### References
 NOAA. 2021. 2020 Stock Assessment and Fishery Evaluation Report: Atlantic Highly Migratory Species. Atlantic Highly Migratory Species Management Division, Silver Spring, MD. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports
 
 

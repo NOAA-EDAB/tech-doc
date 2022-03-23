@@ -44,7 +44,7 @@ NA
 
 ### Data analysis
 
-Samples were analyzed for proximate composition and energy density from NEFSC spring and fall bottom trawl surveys. Predictive relationships between the percent dry weight of samples and energy density were developed, and samples collected from current surveys are currently being analyzed for percentage dry weight to enable estimation of energy content (@Bean2020). The energy density of forage species differed from prior studies in the 1980s and 1990s (@steimle1985, @lawson1998, Table \@ref(fig:tab)).
+Samples were analyzed for proximate composition and energy density from NEFSC spring and fall bottom trawl surveys. Predictive relationships between the percent dry weight of samples and energy density were developed, and samples collected from current surveys are currently being analyzed for percentage dry weight to enable estimation of energy content (@Bean2020). The energy density of forage species differed from prior studies in the 1980s and 1990s (@steimle1985, @lawson1998, Table \@ref(tab:foragefish)).
 
 Sampling and laboratory analysis is ongoing, with the goal of continuing routine monitoring of energy density of these species. 
 
@@ -54,8 +54,8 @@ Code for building the table used in the SOE can be found
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-forage.R). 
 
 ### Plotting
-Code used to develop this plot can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R)
+Code used to develop this plot can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R).
 
-```{r tab, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R"), echo = F, eval = T, warning = F, message=F}
+```{r tab, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R"), echo = F, eval = T, warning = F, message=F, fig.cap="Forage fish mean energy density mean and standard deviation by season and year, compared with 1980s and 1990s."}
 
 ```
