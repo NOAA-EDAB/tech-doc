@@ -34,7 +34,7 @@ Data were formatted for inclusion in the `ecodata` R package using the R code fo
 The plot below was built using the code found
 [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-spp-rev.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-spp-rev.R"), eval = T, echo = F, fig.cap = "Top five species revenue found in wind development areas."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-spp-rev.R"), eval = T, echo = F, fig.cap = "Top five MAFMC species revenue found in wind development areas."}
 
 ```
 
