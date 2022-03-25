@@ -24,8 +24,8 @@ Fisheries dependent data for the Northeast Shelf extend back several decades. Da
 ```{r calibration1, eval = T, echo = F}
 com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
                          Years = c('1964 - 1981', '1982 - 1993', '> 1994'))
-knitr::kable(com.tables, caption="Data formats", booktabs = T) %>% 
-  kableExtra::kable_styling(full_width = F)
+knitr::kable(com.tables, caption="Data formats", booktabs = T) #%>% 
+  #kableExtra::kable_styling(full_width = F)
 
 ```
 
@@ -50,8 +50,8 @@ gear.table <- data.frame('gear code' = c(1,2,3,4,5,6,7,8,9),
 names(gear.table) <- c("","Major gear")
 
 
-knitr::kable(gear.table, caption = "Gear types used in commercial landings",  booktabs=T) %>%
-  kableExtra::kable_styling(full_width = F)
+knitr::kable(gear.table, caption = "Gear types used in commercial landings",  booktabs=T)# %>%
+  #kableExtra::kable_styling(full_width = F)
 ```
 
 Several species have additional steps after the data is pulled from CFDBS.  Skates are typically landed as a species complex.  In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another.  Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine.  Comlands pulls from the State database and replaces the less accurate numbers from the federal database.

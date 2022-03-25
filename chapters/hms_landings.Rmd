@@ -36,7 +36,7 @@ Price per pound was used to determine the ex-vessel value. For landings with pri
 High migratory landings include 26 species of tunas, sharks and swordfish.
 
 Data were processed and analyzed using SAS and Microsoft Excel pivot tables. 
-The count of dealers and vessels in each regional species/management group sum was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential. Additionally, ratios of landings reported by dealers/fishermen were compared in each regional species/managment group sum to determine if any one entity cotnributed more than ⅔ of the total which would require it being marked as confidential.
+The count of dealers and vessels in each regional species/management group sum was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential. Additionally, ratios of landings reported by dealers/fishermen were compared in each regional species/managment group sum to determine if any one entity contributed more than 2/3 of the total which would require it being marked as confidential.
 
 ### Data Processing 
 

@@ -1,4 +1,4 @@
-# Harmful Algal Blooms - Paralitic Shellfish Poisoning Indicator
+# Harmful Algal Blooms - Paralytic Shellfish Poisoning Indicator
 
 **Description**: Paralytic Shellfish Poisoning (PSP) toxins in the Gulf of Maine
 

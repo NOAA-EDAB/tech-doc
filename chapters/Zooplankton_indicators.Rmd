@@ -23,7 +23,7 @@ Zooplankton data are from the National Oceanographic and Atmospheric Administrat
 Data are from the publicly available zooplankton dataset on the NOAA File Transfer Protocol (FTP) server. The excel file has a list of excluded samples and cruises based on @Kane2007 and @Kane2011.
 
 R code used in extraction process.
-```{r, echo = T, eval = F}
+```{r, echo = F, eval = F}
 # load data
 URL='ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/EcoMon_Plankton_Data_v3_0.xlsx'
 ZPD=openxlsx::read.xlsx(URL, sheet='Data')

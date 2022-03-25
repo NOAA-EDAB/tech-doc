@@ -30,8 +30,8 @@ forage.tab <- data.frame('Common Name' = c('Atlantic Herring','alewife','silver 
 names(forage.tab) <- c("Common Name","Scientific Name")
 
 
-knitr::kable(forage.tab, caption = "List of forage fish study species.",  booktabs=T) %>%
-  kableExtra::kable_styling(full_width = F)
+knitr::kable(forage.tab, caption = "List of forage fish study species.",  booktabs=T) #%>%
+ # kableExtra::kable_styling(full_width = F)
 ```
 
 

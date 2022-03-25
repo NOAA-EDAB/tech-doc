@@ -33,8 +33,8 @@ df <- data.frame(
 )
 
 knitr::kable(df,
-             caption="Coordinates used in NOAA ERSST V5 data extraction.",  booktabs=T) %>%
-  kableExtra::kable_styling(full_width = F) 
+             caption="Coordinates used in NOAA ERSST V5 data extraction.",  booktabs=T) #%>%
+  #kableExtra::kable_styling(full_width = F) 
 ```
 
 R code used in extracting time series of long-term SST data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/long-term-sst-extraction.R).

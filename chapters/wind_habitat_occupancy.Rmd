@@ -40,6 +40,20 @@ Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/
 
 ```
 
-```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE}
+<!-- # ```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE} -->
+<!-- #  -->
+<!-- # ``` -->
+
+
+```{r wind-map, fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE}
+
+image.dir <- here::here("images")
+
+knitr::include_graphics(file.path(image.dir, "wind_hab_occupancy.png"))
 
 ```
+
+
+
+
+
