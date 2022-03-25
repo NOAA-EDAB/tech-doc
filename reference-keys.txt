@@ -111,7 +111,6 @@ fig:unnamed-chunk-89
 fig:unnamed-chunk-90
 tab:unnamed-chunk-91
 tab:wind-table
-fig:wind-map
 fig:copepod
 fig:euph
 fig:zoo-div
@@ -322,7 +321,7 @@ data-analysis-28
 data-processing-20
 plotting-20
 references
-harmful-algal-blooms---paralitic-shellfish-poisoning-indicator
+harmful-algal-blooms---paralytic-shellfish-poisoning-indicator
 methods-28
 data-sources-30
 data-analysis-29
