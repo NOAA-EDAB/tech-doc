@@ -42,6 +42,12 @@ fig:diaMAB
 fig:prettyNE
 fig:prettyMA
 fig:unnamed-chunk-28
+fig:pprmab-1
+fig:pprmab-2
+fig:pprmab-3
+fig:pprmab-4
+fig:pprmab-5
+fig:pprmab-6
 tab:epuinputs
 fig:EPUmap
 fig:unnamed-chunk-29
@@ -50,6 +56,8 @@ fig:tab
 fig:unnamed-chunk-30
 fig:unnamed-chunk-31
 fig:unnamed-chunk-32
+fig:unnamed-chunk-34
+fig:unnamed-chunk-35
 fig:unnamed-chunk-36
 fig:unnamed-chunk-37
 fig:shark-cpue
@@ -104,12 +112,12 @@ fig:epustrata
 fig:unnamed-chunk-80
 fig:unnamed-chunk-81
 fig:th-maps
+fig:unnamed-chunk-83
 fig:unnamed-chunk-84
-fig:unnamed-chunk-85
+fig:unnamed-chunk-87
 fig:unnamed-chunk-88
 fig:unnamed-chunk-89
-fig:unnamed-chunk-90
-tab:unnamed-chunk-91
+tab:unnamed-chunk-90
 tab:wind-table
 fig:copepod
 fig:euph
@@ -194,7 +202,6 @@ data-sources-11
 data-analysis-10
 data-processing-8
 plotting-8
-resources
 chesapeake-bay-water-quality-standards-attainment
 methods-11
 data-sources-12
@@ -228,7 +235,6 @@ methods-15
 data-sources-17
 data-extraction-10
 data-analysis-16
-resources-1
 comdat
 methods-16
 data-sources-18
@@ -320,13 +326,11 @@ data-extraction-18
 data-analysis-28
 data-processing-20
 plotting-20
-references
 harmful-algal-blooms---paralytic-shellfish-poisoning-indicator
 methods-28
 data-sources-30
 data-analysis-29
 data-processing-21
-references-1
 harbor-porpoise-and-gray-seal-bycatch
 methods-29
 data-sources-31
@@ -345,7 +349,6 @@ data-sources-33
 data-analysis-32
 data-processing-23
 plotting-23
-references-2
 highly-migratory-species-landings
 methods-32
 data-sources-34
@@ -362,7 +365,6 @@ data-sources-36
 data-analysis-35
 data-processing-25
 plotting-25
-references-3
 inshoresurvdat
 methods-34
 data-sources-37
@@ -428,13 +430,11 @@ data-sources-44
 data-extraction-27
 data-processing-30
 plotting-32
-resources-2
 phytoplankton-size-class
 methods-42
 data-sources-45
 data-analysis-42
 plotting-33
-resources-3
 plankton-diversity
 methods-43
 data-sources-46
@@ -487,7 +487,6 @@ data-sources-53
 data-analysis-50
 data-processing-38
 plotting-41
-references-4
 submerged-aquatic-vegetation
 methods-51
 data-sources-54
