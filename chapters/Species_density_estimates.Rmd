@@ -33,7 +33,7 @@ Code used for species density analysis can be found [here](https://github.com/NO
 
 ### Plotting
 
-```{r kde-fig, fig.cap="Current and historical sea scallop kernel density estimates derived from spring survey data. Current estimates derived from 2016-2018 data.", echo = F, eval = T}
+```{r kde-fig, fig.cap="Current and historical sea scallop kernel density estimates derived from spring survey data. Current estimates derived from 2016-2018 data.", echo = F, eval = T, out.width="90%"}
 knitr::include_graphics(file.path(image.dir, "species_density_estimate.png"))
 ```
 

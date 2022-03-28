@@ -41,7 +41,3 @@ Code for plotting Georges Bank and Gulf of Maine bottom temperature time series 
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-weekly-phyto-size.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic phytoplankton size class."}
 
 ```
-
-### Resources
-
-

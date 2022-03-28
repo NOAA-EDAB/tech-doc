@@ -32,7 +32,7 @@ Original data were collected by the State of Maine, Department of Marine Resourc
 
 ### Data Analysis
 
-Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of PSP toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as ""ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (Chung 2010).
+Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of PSP toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as ""ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@Chung2010).
 
 
 Data include total number of samples at multiple locations collected in each calendar year (2005-2019), numbers of samples above and below the PSP threshold of 44 ug/100g, and percentage of samples above the threshold.  Simple bar and line graphs are used to plot the values for each variable as time series, 2005-2019.
@@ -46,23 +46,16 @@ Code for processing salinity data can be found [here](https://github.com/NOAA-ED
 #Plotting
 The script used to develop the figure in the SOE Indicator Catalog can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R).
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R"), echo = F, fig.align="center", eval = T, fig.cap="Percent of state samples that are found to have PSP"}
 
 ```
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp-closures.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp-closures.R"), echo = F, out.width = "80%", fig.align="center", eval = T, fig.cap="Massachusetts Fishery closures due to PSP. "}
 
 ```
 
 
-## References
-
-Chung, L.L. 2010.  Measuring paralytic shellfish toxins in mussels from New Hampshire coastal waters using zwitterionic hydrophilic liquid chromatography/electrospray mass spectrometry. Master's Theses and Capstones. 539.  https://scholars.unh.edu/thesis/539
-
-Kleindinst, J.L., D.M. Anderson, D.J. McGillicuddy Gr., R.P. Stumpf, K.M. Fisher, D.A. Couture, J.M. Hickey, and C. Nash.  2014.  Categorizing the severity of paralytic shellfish poisoning outbreaks in the Gulf of Maine for forecasting and management.  Deep-Sea Research II 103:277-287.
-
-NOAA/NCCOS.  2021.  Gulf of Maine Alexandrium catenella Predictive Models.  Interactive website with operational Nowcast/Forecast simulation.  https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/"
 
 
 

@@ -95,9 +95,10 @@ See the [workedExample vignette](https://NOAA-EDAB.github.io/eofindices/articles
 
 Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here](https://noaa-edab.github.io/eofindices/articles/currentIndices.html)
 
-##### Mid-Atlantic Bight (MAB)
+#### Mid-Atlantic Bight (MAB)
 
-```{r, pprmab,  echo=FALSE, out.width='50%'}
+
+```{r, pprmab,  echo=FALSE, out.width='50%', fig.cap="Ecosystem overfishing indicators."}
 knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0_80.png"))
 knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))

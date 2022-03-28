@@ -34,8 +34,3 @@ Code for processing salinity data can be found [here](https://github.com/NOAA-ED
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-hudson-river-flow.R"), echo = F, fig.align="center", eval = T, fig.cap="Mean Annual flow of the Hudson River at USGS gauge 01358000 at Green Island, New York."}
 
 ```
-
-## References
-
-
-

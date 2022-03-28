@@ -23,25 +23,28 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 
 ### Data Sources
 Three bottom temperature products are used to get bottom temperature from 1958 to 2021:
+
 1.	Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) 
 PERIOD: 1958-1992
 INITIAL RESOLUTION: ~7km
 REGRID: 1/10°
-(Shchepetkin and McWilliams, 2005)
+(@Shchepetkin2005)
 https://www.sciencedirect.com/science/article/pii/S1463500304000484
+
 2.	Global Ocean Physics Reanalysis (Glorys reanalysis)
 PERIOD: 1993-2019
 INITIAL RESOLUTION: 1/12°
 REGRID: 1/10°
 https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION
+
 3.	Global Ocean Physics Analysis and Forecast updated Daily 
 PERIOD: 2020-2021
 INITIAL RESOLUTION: 1/12°
 REGRID: 1/10°
-(Fernandez and Lellouche, 2018; Lellouche et al., 2018)
+(@Fernandez2018; @Lellouche2018)
 https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION
 
-Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (Seidov et al., 2016a, 2016b).
+Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (@Seidov2016a, @Seidov2016b).
 INITIAL RESOLUTION: 1/10°
 https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology
 
@@ -77,7 +80,7 @@ The Bottom temperature data are from ROMS-NWA between 1958 and 1992, from Glorys
 
 Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed. 
 
-Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (Chen et al., 2018; Chen and Curchitser, 2020). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (Seidov et al., 2016a, 2016b) (https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:
+Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (@Chen2018; @Chen2020). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (@Seidov2016a, @Seidov2016b) (https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:
 
 $${BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}$$
 
@@ -107,7 +110,7 @@ The plot below was built using the code found
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
 
 ### Data Analysis
-Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following Chen et al., 2018.
+Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following @Chen2018.
 
 ### Data processing
 
@@ -138,19 +141,10 @@ This data represents the annual mean bottom temperature residual for Sept-Oct in
 ### Data analysis
 Methods published @miller2016, [original MATLAB source code](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/cold_pool_analysis.txt) used in that paper was provided by Jon Hare and used in this analysis.
 
-### Resources 
-Chen, Z., Curchitser, E., Chant, R., and Kang, D. 2018. Seasonal Variability of the Cold Pool Over the Mid-Atlantic Bight Continental Shelf. Journal of Geophysical Research: Oceans, 123: 8203–8226.
 
-Chen, Z., and Curchitser, E. N. 2020. Interannual Variability of the Mid‐Atlantic Bight Cold Pool. Journal of Geophysical Research: Oceans, 125. https://onlinelibrary.wiley.com/doi/10.1029/2020JC016445 (Accessed 13 January 2021).
 
-Fernandez, E., and Lellouche, J. M. 2018. Product user manual for the global ocean physical reanalysis product GLORYS12V1. Copernicus Product User Manual, 4: 1–15.
 
-Lellouche, J.-M., Greiner, E., Le Galloudec, O., Garric, G., Regnier, C., Drevillon, M., Benkiran, M., et al. 2018. Recent updates to the Copernicus Marine Service global ocean monitoring and forecasting real-time 112° high-resolution system. Ocean Science, 14: 1093–1126.
 
-Miller, T. J., Hare, J. A., and Alade, L. A. 2016. A state-space approach to incorporating environmental effects on recruitment in an age-structured assessment model with an application to southern New England yellowtail flounder. Canadian Journal of Fisheries and Aquatic Sciences, 73: 1261–1270.
 
-Seidov, D., Baranova, O. K., Johnson, D. R., Boyer, T. P., Mishonov, A. V., and Parsons, A. R. 2016a. Northwest Atlantic Regional Climatology (NCEI Accession 0155889). NOAA National Centers for Environmental Information. https://www.ncei.noaa.gov/archive/accession/0155889 (Accessed 25 March 2021).
 
-Seidov, D., Baranova, O. K., Boyer, T., Cross, S. L., Mishonov, A. V., and Parsons, A. R. 2016b. Northwest Atlantic regional ocean climatology.: 3.2 MB. U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Service, National Centers for Environmental Information.
 
-Shchepetkin, A. F., and McWilliams, J. C. 2005. The regional oceanic modeling system (ROMS): a split-explicit, free-surface, topography-following-coordinate oceanic model. Ocean Modelling, 9: 347–404.

@@ -62,6 +62,3 @@ Data were collected directly from state aquaculture reports. Oyster harvest data
 
 ### Data analysis
 No data analyses occurred for this indicator.
-
-
-

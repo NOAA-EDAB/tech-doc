@@ -38,7 +38,8 @@ spp <- spp %>%
   dplyr::select(Group, NESPP3, 'Common Name', 'Scientific Name')
  
 knitr::kable(spp, caption="Species grouping", booktabs=T, longtable = T) %>%
-  kableExtra::kable_styling(latex_options = c("repeat_header"), font_size = 8) %>%
+  kableExtra::kable_styling(
+    latex_options = c("repeat_header","scale_down"), font_size = 5) %>%
   kableExtra::collapse_rows(columns = 1)
 
 ```

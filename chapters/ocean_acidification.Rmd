@@ -17,17 +17,17 @@
 
 ## Methods
 
-The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, [seasonal dynamics of pH in shelf waters in the Mid-Atlantic](https://noaa-edab.github.io/tech-doc/ocean-acidification.html#ref-Wright2020), was synthesized from Wright-Fairbanks et al. (2020). The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-present), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic and the Gulf of Maine. These plots were developed using openly accessible, quality-controlled data from vessel-based discrete samples and glider-based measurements of pH (see Data Sources).
+The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, [seasonal dynamics of pH in shelf waters in the Mid-Atlantic](https://noaa-edab.github.io/tech-doc/ocean-acidification.html#ref-Wright2020), was synthesized from @Wright2020. The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-present), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic and the Gulf of Maine. These plots were developed using openly accessible, quality-controlled data from vessel-based discrete samples and glider-based measurements of pH (see Data Sources).
 
 
 ### Data sources
 
-Glider-based pH observations began in the southern Mid-Atlantic Bight region in May 2018 (Saba et al. 2019), and seasonal glider pH missions thereafter began in February 2019 (Wright-Fairbanks et al. 2020; although no deployments occurred in 2020 as a result of the COVID pandemic). The glider pH observation program expanded spatially, with additional deployments in the northern MAB (New York Bight) and the Gulf of Maine, starting in February 2021. A typical glider mission runs for about 4 weeks, covers 500 km, and collects data though the full water column. Full-resolution delayed-mode glider datasets containing raw pH voltages can be found on [RUCOOL's Glider ERDDAP Server](http://slocum-data.marine.rutgers.edu/erddap/index.html). Fully-processed and time-shifted pH glider datasets can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/glider_data/).
+Glider-based pH observations began in the southern Mid-Atlantic Bight region in May 2018 (@Saba2019), and seasonal glider pH missions thereafter began in February 2019 (@Wright2020; although no deployments occurred in 2020 as a result of the COVID pandemic). The glider pH observation program expanded spatially, with additional deployments in the northern MAB (New York Bight) and the Gulf of Maine, starting in February 2021. A typical glider mission runs for about 4 weeks, covers 500 km, and collects data though the full water column. Full-resolution delayed-mode glider datasets containing raw pH voltages can be found on [RUCOOL's Glider ERDDAP Server](http://slocum-data.marine.rutgers.edu/erddap/index.html). Fully-processed and time-shifted pH glider datasets can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/glider_data/).
 
 
-Vessel-based discrete pH data were mined from the Coastal Ocean Data Analysis Product in North America, version v2021 ([CODAP-NA](https://essd.copernicus.org/articles/13/2777/2021/); Jiang et al. 2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves.
+Vessel-based discrete pH data were mined from the Coastal Ocean Data Analysis Product in North America, version v2021 ([CODAP-NA](https://essd.copernicus.org/articles/13/2777/2021/); @Jiang2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves.
 
-Additionally, two recent vessel-based datasets that were not included in CODAP-NA (Jiang et al. 2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys (June 2019, Cruise ID HB1902; August 2019, Cruise ID GU1902) and include quality-controlled spectrophotometric-based pH measurements on discrete water samples. Data can be requested from Chris Melrose (chris.melrose@noaa.gov).
+Additionally, two recent vessel-based datasets that were not included in CODAP-NA (@Jiang2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys (June 2019, Cruise ID HB1902; August 2019, Cruise ID GU1902) and include quality-controlled spectrophotometric-based pH measurements on discrete water samples. Data can be requested from Chris Melrose (chris.melrose@noaa.gov).
 
 ### Data extraction
 
@@ -38,7 +38,7 @@ Glider data were processed and quality-controlled by software technician Lori Ga
 
 ### Data processing
 
-For processing and quality-control procedures of glider-based data, see Wright-Fairbanks et al. (2020). Glider data used in this synthesis were limited to summer only (June - August).
+For processing and quality-control procedures of glider-based data, see @Wright2020. Glider data used in this synthesis were limited to summer only (June - August).
 
 Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Mexico and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
 
@@ -52,29 +52,18 @@ For the plot of U.S. Northeast Shelf, bottom pH was defined as the median of the
 Code for data manipulation and plotting can be found here: https://github.com/lgarzio/cinar-soe.
 
 
-```{r mab-oa, fig.cap = "Bottom pH (summer only: June-August) on the U.S. Northeast Shelf plotted from available quality-controlled vessel- and glider-based datasets from 2007-present. Right panel: Summer 2021 glider-based pH observations on the Mid-Atlantic Bight shelf. North track glider mission (data provider: Charles Flagg, Stony Brook University) ran from 07/20/2021 to 08/20/2021. South track glider mission (data provider: Grace Saba, Rutgers University) ran from 07/16/2021 to 08/20/2021."}
+```{r mab-oa, fig.cap = "Bottom pH (summer only: June-August) on the U.S. Northeast Shelf plotted from available quality-controlled vessel- and glider-based datasets from 2007-present. Right panel: Summer 2021 glider-based pH observations on the Mid-Atlantic Bight shelf. North track glider mission (data provider: Charles Flagg, Stony Brook University) ran from 07/20/2021 to 08/20/2021. South track glider mission (data provider: Grace Saba, Rutgers University) ran from 07/16/2021 to 08/20/2021.", out.width="90%"}
 
 knitr::include_graphics(file.path(image.dir, "Saba_Fig_SOE_MAFMC - Grace Saba.png"))
 
 ```
 
 
-```{r ne-oa, fig.cap = "Bottom pH (summer only: June-August) on the U.S. Northeast Shelf plotted from available quality-controlled vessel- and glider-based datasets from 2007-present. Right panel: Summer 2021 glider-based pH observations in the Gulf of Maine (data provider: Neal Pettigrew, University of Maine). Glider mission ran from 06/30/2021 to 07/21/2021. "}
+```{r ne-oa, fig.cap = "Bottom pH (summer only: June-August) on the U.S. Northeast Shelf plotted from available quality-controlled vessel- and glider-based datasets from 2007-present. Right panel: Summer 2021 glider-based pH observations in the Gulf of Maine (data provider: Neal Pettigrew, University of Maine). Glider mission ran from 06/30/2021 to 07/21/2021. ", out.width="90%"}
 
 knitr::include_graphics(file.path(image.dir, "Saba_Fig_SOE_NEFMC - Grace Saba.png"))
 
 ```
 
-### Resources
-
-Humphreys, M. P., Gregor, L., Pierrot, D., van Heuven, S. M. A. C., Lewis, E. R., and Wallace, D. W. R. (2020). PyCO2SYS: marine carbonate system calculations in Python. Zenodo. doi:10.5281/zenodo.3744275.
-
-Jiang, L.-Q., Feely, R. A., Wanninkhof, R., Greeley, D., Barbero, L., Alin, S., Carter, B. R., Pierrot, D., Featherstone, C., Hooper, J., Melrose, C., Monacci, N., Sharp, J. D., Shellito, S., Xu, Y.-Y., Kozyr, A., Byrne, R. H., Cai, W.-J., Cross, J., Johnson, G. C., Hales, B., Langdon, C., Mathis, J., Salisbury, J., and Townsend, D. W.: Coastal Ocean Data Analysis Product in North America (CODAP-NA) – an internally consistent data product for discrete inorganic carbon, oxygen, and nutrients on the North American ocean margins, Earth Syst. Sci. Data, 13, 2777–2799, https://doi.org/10.5194/essd-13-2777-2021, 2021. 
-
-Lewis, E. and Wallace, D. W. R. (1998) Program Developed for CO2 System Calculations, ORNL/CDIAC-105, Carbon Dioxide Inf. Anal. Cent., Oak Ridge Natl. Lab., Oak Ridge, Tenn., 38 pp., https://salish-sea.pnnl.gov/media/ORNL-CDIAC-105.pdf.
-
-Saba, G.K., Wright-Fairbanks, E., Chen, B., Cai, W.-J., Barnard, A.H., Jones, C.P., Branham, C.W., Wang, K., Miles, T. 2019. The development and validation of a profiling glider Deep ISFET pH sensor for high resolution coastal ocean acidification monitoring. Frontiers in Marine Science 6: 664, https://doi.org/10.3389/fmars.2019.00664.
-
-Wright-Fairbanks, Elizabeth K., Travis N. Miles, Wei-Jun Cai, Baoshan Chen, and Grace K. Saba. 2020. “Autonomous Observation of Seasonal Carbonate Chemistry Dynamics in the Mid-Atlantic Bight.” Journal of Geophysical Research: Oceans 125 (11): e2020JC016505. https://doi.org/https://doi.org/10.1029/2020JC016505. 
 
 
