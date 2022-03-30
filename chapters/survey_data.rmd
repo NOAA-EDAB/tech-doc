@@ -74,12 +74,10 @@ indicators.  For the purposes of the aggregate biomass indicators, fall and spri
 survey data are treated separately.  Additionally, all length data is dropped and 
 species seperated by sex at the catch level are merged back together.
 
-Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu) based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not
-create a perfect match for the EPU boundaries it allows us to calculate the variance
-associated with the index as the survey was designed. 
+Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu) based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not create a perfect match for the EPU boundaries it allows us to calculate the variance associated with the index as the survey was designed. 
 
 
-```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata.", out.width="90%",echo = F}
+```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata." , out.width="90%",echo = F}
 
 knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
 

@@ -76,7 +76,7 @@ southern.sp <- data.frame('Common Name' = comnames,
                           'Scientific Name' = scinames,
                           Group = type)
 
-knitr::kable(southern.sp, booktabs = TRUE,
+knitr::kable(southern.sp, booktabs = TRUE, longtable = T,
       caption = "Southern Species that were examined within the NEFSC trawl survey data") %>% 
   kableExtra::column_spec(2, italic = TRUE)
 

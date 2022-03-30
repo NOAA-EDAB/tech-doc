@@ -42,7 +42,7 @@ Code use to build the plot below can be found [here](https://github.com/NOAA-EDA
 ```
 
 
-```{r, fig.cap="This map graphic depicts the grab sample locations in SBNMS, with cumulative catch at each from 2013 through 2019."}
+```{r, fig.cap="This map graphic depicts the grab sample locations in SBNMS, with cumulative catch at each from 2013 through 2019.", out.width="80%"}
 
 image.dir <- here::here("images")
 

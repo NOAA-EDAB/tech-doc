@@ -24,25 +24,23 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 ### Data Sources
 Three bottom temperature products are used to get bottom temperature from 1958 to 2021:
 
-1.	Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) 
-PERIOD: 1958-1992
-INITIAL RESOLUTION: ~7km
-REGRID: 1/10°
-(@Shchepetkin2005)
-https://www.sciencedirect.com/science/article/pii/S1463500304000484
+1.	Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) (@Shchepetkin2005)
+- PERIOD: 1958-1992
+- INITIAL RESOLUTION: ~7km
+- REGRID: 1/10°
 
-2.	Global Ocean Physics Reanalysis (Glorys reanalysis)
-PERIOD: 1993-2019
-INITIAL RESOLUTION: 1/12°
-REGRID: 1/10°
-https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION
 
-3.	Global Ocean Physics Analysis and Forecast updated Daily 
-PERIOD: 2020-2021
-INITIAL RESOLUTION: 1/12°
-REGRID: 1/10°
-(@Fernandez2018; @Lellouche2018)
-https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION
+2.	Global Ocean Physics Reanalysis (Glorys reanalysis) (@Fernandez2018)
+- PERIOD: 1993-2019
+- INITIAL RESOLUTION: 1/12°
+- REGRID: 1/10°
+- https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION
+
+3.	Global Ocean Physics Analysis and Forecast updated Daily (@Lellouche2018)
+- PERIOD: 2020-2021
+- INITIAL RESOLUTION: 1/12°
+- REGRID: 1/10°
+- https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION
 
 Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (@Seidov2016a, @Seidov2016b).
 INITIAL RESOLUTION: 1/10°
@@ -52,7 +50,7 @@ https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1972–2019 $$({\bar{T}}_{i,\ 1972-2019})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1972-2019})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
 
 
