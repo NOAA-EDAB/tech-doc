@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-03-28" />
+<meta name="date" content="2022-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -925,27 +925,31 @@ div.csl-indent {
 <h3><span class="header-section-number">15.1.1</span> Data Sources</h3>
 <p>Three bottom temperature products are used to get bottom temperature from 1958 to 2021:</p>
 <ol style="list-style-type: decimal">
-<li>Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA)
-PERIOD: 1958-1992
-INITIAL RESOLUTION: ~7km
-REGRID: 1/10°</li>
+<li>Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) (<span class="citation">Shchepetkin and McWilliams (<a href="#ref-Shchepetkin2005" role="doc-biblioref">2005</a>)</span>)</li>
 </ol>
-<ol class="example" style="list-style-type: decimal">
-<li><a href="https://www.sciencedirect.com/science/article/pii/S1463500304000484" class="uri">https://www.sciencedirect.com/science/article/pii/S1463500304000484</a></li>
-</ol>
+<ul>
+<li>PERIOD: 1958-1992</li>
+<li>INITIAL RESOLUTION: ~7km</li>
+<li>REGRID: 1/10°</li>
+</ul>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Global Ocean Physics Reanalysis (Glorys reanalysis)
-PERIOD: 1993-2019
-INITIAL RESOLUTION: 1/12°
-REGRID: 1/10°
-<a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION</a></p></li>
-<li><p>Global Ocean Physics Analysis and Forecast updated Daily
-PERIOD: 2020-2021
-INITIAL RESOLUTION: 1/12°
-REGRID: 1/10°
-(<span class="citation">E. Fernandez and Lellouche (<a href="#ref-Fernandez2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">Lellouche et al. (<a href="#ref-Lellouche2018" role="doc-biblioref">2018</a>)</span>)
-<a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION</a></p></li>
+<li>Global Ocean Physics Reanalysis (Glorys reanalysis) (<span class="citation">E. Fernandez and Lellouche (<a href="#ref-Fernandez2018" role="doc-biblioref">2018</a>)</span>)</li>
 </ol>
+<ul>
+<li>PERIOD: 1993-2019</li>
+<li>INITIAL RESOLUTION: 1/12°</li>
+<li>REGRID: 1/10°</li>
+<li><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION</a></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Global Ocean Physics Analysis and Forecast updated Daily (<span class="citation">Lellouche et al. (<a href="#ref-Lellouche2018" role="doc-biblioref">2018</a>)</span>)</li>
+</ol>
+<ul>
+<li>PERIOD: 2020-2021</li>
+<li>INITIAL RESOLUTION: 1/12°</li>
+<li>REGRID: 1/10°</li>
+<li><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION</a></li>
+</ul>
 <p>Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>).
 INITIAL RESOLUTION: 1/10°
 <a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology" class="uri">https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology</a></p>
@@ -954,7 +958,7 @@ INITIAL RESOLUTION: 1/10°
 <h3><span class="header-section-number">15.1.2</span> Data Analysis</h3>
 <div id="cold-pool-index-model_cpi" class="section level4" number="15.1.2.1">
 <h4><span class="header-section-number">15.1.2.1</span> Cold Pool Index (Model_CPI)</h4>
-<p>The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1972–2019 <span class="math display">\[({\bar{T}}_{i,\ 1972-2019})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
+<p>The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 <span class="math display">\[({\bar{T}}_{i,\ 1972-2019})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
 <p><span class="math display">\[{{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1972-2019})\ }}{n}\]</span></p>
 <p>where n is the number of grid cells over the Cold Pool domain.</p>
 </div>
@@ -1057,6 +1061,9 @@ Seidov, Dan, Olga K. Baranova, Tim P. Boyer, Scott L. Cross, Alexey V. Mishonov,
 </div>
 <div id="ref-Seidov2016a" class="csl-entry">
 Seidov, Dan, Olga K. Baranova, Daphne R. Johnson, Tim P. Boyer, Alexey V. Mishonov, and A. Rost Parsons. 2016. <span>“Northwest Atlantic Regional Climatology (NCEI Accession 0155889).”</span> NOAA National Centers for Environmental Information. <a href="https://doi.org/10.7289/V5RF5S2Q">https://doi.org/10.7289/V5RF5S2Q</a>.
+</div>
+<div id="ref-Shchepetkin2005" class="csl-entry">
+Shchepetkin, Alexander F., and James C. McWilliams. 2005. <span>“The Regional Oceanic Modeling System (ROMS): A Split-Explicit, Free-Surface, Topography-Following-Coordinate Oceanic Model.”</span> <em>Ocean Modelling</em> 9 (4): 347–404. https://doi.org/<a href="https://doi.org/10.1016/j.ocemod.2004.08.002">https://doi.org/10.1016/j.ocemod.2004.08.002</a>.
 </div>
 </div>
             </section>
