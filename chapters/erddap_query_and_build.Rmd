@@ -19,7 +19,7 @@ Start a local build of the SOE bookdown document by first cloning the project's 
 
 #### A note on data structures
 
-The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R)).
+The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/ecodata/tree/master/R)).
 
 [^1]: There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/get_erddap.R). The scripts `BasePlot_source.R` and `GIS_source.R` refer to deprecated code used prior to the 2019 State of the Ecosystem reports. Indicators that were not included in reports after 2018 make use of this syntax, whereas newer indicators typically use `ggplot2` for plotting.
 

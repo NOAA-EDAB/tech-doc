@@ -22,7 +22,35 @@ These data were compiled from MAFMC Fishery Information Documents, Stock Assessm
 
 ### Data Analysis
 
-Allowable Biological Catch (ABC) for each managed stock is set by the MAFMC Science and Statistical Committee(SSC), Annual Catch Limit (ACL) (if appropriate) developed by the Council; recreational data from MRIP, commercial catch from either the NEFSC assessment lead or GARFO database. Each species, depending upon data availability, sectors, fleets etc., goes through a different data processing process.
+Each stock has a threshold and catch value assigned to it from the sources above. The table below shows where the information comes from for each stock. 
+
+|  Stock            | Fishery      |  Threshold Used  |  
+|-------------------|--------------|------------------|
+| Ocean Quahog      |   NA         | NA  |
+| Surfclam          |   NA         | NA  |
+| Summer Flounder   | Recreational | NA  |
+| Summer Flounder   | Commercial   | NA  |
+| Scup              | Recreational | NA  |
+| Scup              | Commercial   | NA  |
+| Atlantic Mackerel | Recreational | ABC |
+| Atlantic Mackerel | Commercial   | ABC |
+| Black Sea Bass    | Recreational | NA  |
+| Black Sea Bass    | Commercial   | NA  |
+| Butterfish        | NA           | NA  |
+| Longfin Squid     | NA           | NA  |
+| Illex Squid       | NA           | NA  |
+| Golden Tilefish   | NA           | TAL |
+| Blueline Tilefish | Recreational | NA  |
+| Blueline Tilefish | Commercial   | NA  |
+| Bluefish          | Both         | ABC |
+| Spiny Dogfish     | Both         | ABC | 
+| Chub Mackerel     | Both         | ACL |
+
+
+
+Allowable Biological Catch (ABC) for each managed stock is set by the MAFMC Science and Statistical Committee(SSC), Annual Catch Limit (ACL) (if appropriate) is developed by the Council; recreational data come from [MRIP](https://www.fisheries.noaa.gov/topic/recreational-fishing-data) (Marine Recreational Information Program), commercial catch from either the NEFSC assessment lead or GARFO database. 
+
+Each species, depending upon data availability, sectors, fleets etc., goes through a different data processing process. 
 
 ### Data Processing 
 
