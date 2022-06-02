@@ -31,11 +31,24 @@ Data was synthesized from state specific sources, listed below.
 
 * [State of Maryland, Aquaculture Coordinating Council](https://calendarmedia.blob.core.windows.net/assets/1495a281-9eab-422a-9f90-a16ac9686db8.pdf) 
 
-### Data Extraction
-Production data was pulled from the state sources above. 
+### Data Extraction/Analysis
+Production described as the number of oysters harvested is collected by individual states. This means that time series maybe vary by state. A table of start dates are shown below. Individual state information is available at the above links.  
 
-### Data analysis
-Divsion of production in pieces by shellfish lease area acres to calculate production per acre.
+Only the New England State of the Ecosystem includes aquaculture information as there are reporting issues and many states are do not have available data in the Mid-Atlantic States.  
+
+| State         | Timeseries Start Year |
+|---------------|-----------------------|
+| Maine         | 2009  |
+| New Hampshire | 2013  |
+| Massachusetts | 2009  |
+| Rhode Island  | 2009  |
+| New Jersey    | 2012* |
+| Maryland      | 2012  |
+| Virginia      | 2009  |
+* only includes data through 2016. 
+
+
+NO further analysis was conducted on these. 
 
 ### Data processing
 

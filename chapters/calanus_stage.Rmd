@@ -12,14 +12,14 @@
   
 **Point of contact**: Ryan Morse <ryan.morse@noaa.gov>
   
-**Public availability statement**:  Please contact Harvey Walsh <harvey.wlsh@noaa.gov> for raw data. 
+**Public availability statement**:  Please contact Harvey Walsh <harvey.walsh@noaa.gov> for raw data. 
 
 
   
 ## Methods
 
 ### Data sources
-Please contact Harvey Walsh harvey.wlsh@noaa.gov for raw data. Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
+Please contact Harvey Walsh harvey.walsh@noaa.gov for raw data. Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
 
 
 ### Data analysis
