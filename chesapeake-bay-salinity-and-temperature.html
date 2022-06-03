@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-06-02" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -920,8 +920,8 @@ div.csl-indent {
 <h2><span class="header-section-number">11.1</span> Methods</h2>
 <div id="data-sources-10" class="section level3" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> Data sources</h3>
-<p>The National Oceanic and Atmospheric Administration’s (NOAA) Chesapeake Bay Interpretive Buoy System (CBIBS) is a network of observing platforms (buoys) that collect meteorological, oceanographic, and water-quality data and relay that information using wireless technology. The stations have been in place since 2007. The Sting Ray station was deployed in July of 2008 and has been monitoring conditions on and off since then. The data is recorded in situ and sent to a server over a cellular modem.</p>
-<p>The standard CBIBS instrument is a WETLabs WQM mounted in the buoy well approximately 0.5 meters below the surface. Seabird purchased WETLabs and are now the manufacturer of the instruments. The WQM instruments are calibrated and swapped out on a regular basis. Salinity is stored as a double with the units of PSU.</p>
+<p>The National Oceanic and Atmospheric Administration’s (NOAA) Chesapeake Bay Interpretive Buoy System (<a href="https://buoybay.noaa.gov/data">CBIBS</a>) is a network of observing platforms (buoys) that collect meteorological, oceanographic, and water-quality data and relay that information using wireless technology. The stations have been in place since 2007. The Sting Ray station was deployed in July of 2008 and has been monitoring conditions on and off since then. The data is recorded in situ and sent to a server over a cellular modem.</p>
+<p>The standard CBIBS instrument is a WETLabs WQM (water quality monitor) mounted in the buoy well approximately 0.5 meters below the surface. Seabird purchased WETLabs and are now the manufacturer of the instruments. The WQM instruments are calibrated and swapped out on a regular basis. Salinity is stored as a <code>double</code> with the units of PSU.</p>
 </div>
 <div id="data-extraction-7" class="section level3" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Data extraction</h3>
@@ -929,7 +929,8 @@ div.csl-indent {
 </div>
 <div id="data-analysis-8" class="section level3" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Data analysis</h3>
-<p>The data is processed by a <a href="https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py">python script</a>. This creates an array and runs the data through a qartod routine. The result is a set of flags. Only the good data is used in the plot below.</p>
+<p>The data is processed with a <a href="https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py">python script</a>. This creates an array and runs the data through a <a href="https://ioos.noaa.gov/project/qartod/">QARTOD</a> (Quality Assurance/Quality Control of Real-Time Oceanographic Data) routine. The result is a set of flags. Only the good data is used in the plot below.</p>
+<p>The stations include annapolis (<a href="https://buoybay.noaa.gov/locations/annapolis">AN</a>), goose reef (<a href="https://buoybay.noaa.gov/locations/gooses-reef">GR</a>), potomac (<a href="https://buoybay.noaa.gov/locations/potomac">PL</a>), and york-split (<a href="https://buoybay.noaa.gov/locations/york-spit">YS</a>).</p>
 </div>
 <div id="data-processing-7" class="section level3" number="11.1.4">
 <h3><span class="header-section-number">11.1.4</span> Data processing</h3>

@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-06-02" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -914,44 +914,63 @@ div.csl-indent {
 <p><strong>Indicator category</strong>:Published methods, Extensive analysis, not yet published</p>
 <p><strong>Contributor(s)</strong>: Hubert du Pontavice, Vincent Saba, Zhuomin Chen</p>
 <p><strong>Data steward</strong>: Kimberly Bastille <a href="mailto:Kimberly.bastille@noaa.gov" class="email">Kimberly.bastille@noaa.gov</a></p>
-<p><strong>Point of contact</strong>: Hubert du Pontavice <a href="mailto:hubert.dupontavice@princeton.edu" class="email">hubert.dupontavice@princeton.edu</a></p>
-<p><strong>Public availability statement</strong>: Source data are NOT publicly available.Please email <a href="mailto:hubert.dupontavice@princeton.edu" class="email">hubert.dupontavice@princeton.edu</a> for further information and accessing the ROMS-NWA bottom temperature data.</p>
+<p><strong>Point of contact</strong>: Hubert du Pontavice <a href="mailto:hubert.dupontavice@noaa.gov" class="email">hubert.dupontavice@noaa.gov</a></p>
+<p><strong>Public availability statement</strong>: Source data are NOT publicly available. Please email <a href="mailto:hubert.dupontavice@noaa.gov" class="email">hubert.dupontavice@noaa.gov</a> for further information and accessing the ROMS-NWA bottom temperature data.</p>
 <div id="methods-13" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> Methods</h2>
 <p>The methodology for the cold pool index changed between 2020, 2021, and 2022 SOEs. The most recent methods and at the top with older methods below those.</p>
 <p>The cold pool is an area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight.</p>
 <div id="data-sources-15" class="section level3" number="15.1.1">
 <h3><span class="header-section-number">15.1.1</span> Data Sources</h3>
-<p>Three bottom temperature products are used to get bottom temperature from 1958 to 2021:</p>
-<ol style="list-style-type: decimal">
-<li>Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) (<span class="citation">Shchepetkin and McWilliams (<a href="#ref-Shchepetkin2005" role="doc-biblioref">2005</a>)</span>)</li>
-</ol>
-<ul>
-<li>PERIOD: 1958-1992</li>
-<li>INITIAL RESOLUTION: ~7km</li>
-<li>REGRID: 1/10°</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Global Ocean Physics Reanalysis (Glorys reanalysis) (<span class="citation">E. Fernandez and Lellouche (<a href="#ref-Fernandez2018" role="doc-biblioref">2018</a>)</span>)</li>
-</ol>
-<ul>
-<li>PERIOD: 1993-2019</li>
-<li>INITIAL RESOLUTION: 1/12°</li>
-<li>REGRID: 1/10°</li>
-<li><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION</a></li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Global Ocean Physics Analysis and Forecast updated Daily (<span class="citation">Lellouche et al. (<a href="#ref-Lellouche2018" role="doc-biblioref">2018</a>)</span>)</li>
-</ol>
-<ul>
-<li>PERIOD: 2020-2021</li>
-<li>INITIAL RESOLUTION: 1/12°</li>
-<li>REGRID: 1/10°</li>
-<li><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION" class="uri">https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION</a></li>
-</ul>
-<p>Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>).
-INITIAL RESOLUTION: 1/10°
-<a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology" class="uri">https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology</a></p>
+<p>Three bottom temperature products are used to get bottom temperature from 1958 to 2021 (table below).</p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="22%" />
+<col width="7%" />
+<col width="20%" />
+<col width="8%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Description</th>
+<th>Period</th>
+<th>Initial Resolution</th>
+<th>REGRID</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ROMS</td>
+<td>Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA)</td>
+<td>1958-1992</td>
+<td>~7km</td>
+<td>1/10°</td>
+<td><span class="citation">Shchepetkin and McWilliams (<a href="#ref-Shchepetkin2005" role="doc-biblioref">2005</a>)</span></td>
+</tr>
+<tr class="even">
+<td>GLORYS</td>
+<td>Global Ocean Physics Reanalysis (<a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION">Glorys reanalysis</a>)</td>
+<td>1993-2019</td>
+<td>1/12°</td>
+<td>1/10°</td>
+<td><span class="citation">E. Fernandez and Lellouche (<a href="#ref-Fernandez2018" role="doc-biblioref">2018</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Global forecast</td>
+<td><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION">Global Ocean Physics Analysis and Forecast updated Daily</a></td>
+<td>2020-2021</td>
+<td>1/12°</td>
+<td>1/10°</td>
+<td><span class="citation">Lellouche et al. (<a href="#ref-Lellouche2018" role="doc-biblioref">2018</a>)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, we use bottom temperature from the <a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology">Northwest Atlantic Regional Climatology</a> to estimate a monthly decadal bias (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>).
+INITIAL RESOLUTION: 1/10°</p>
 </div>
 <div id="data-analysis-13" class="section level3" number="15.1.2">
 <h3><span class="header-section-number">15.1.2</span> Data Analysis</h3>
