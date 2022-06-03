@@ -70,7 +70,7 @@ Chl *a* and primary production data were also examined in relation to the long-t
 library(patchwork)
 ```
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for 2019. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations in the Mid-Atlantic are shown by the colored line for the most recent year. The long-term mean is shown in black, and shading indicates +/- 1 sample SD.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
 
 
 ```

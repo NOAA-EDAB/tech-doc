@@ -10,9 +10,9 @@
   
 **Data steward**: Kimberly Bastille <Kimberly.bastille@noaa.gov>
   
-**Point of contact**: Hubert du Pontavice <hubert.dupontavice@princeton.edu>
+**Point of contact**: Hubert du Pontavice <hubert.dupontavice@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available.Please email hubert.dupontavice@princeton.edu for further information and accessing the ROMS-NWA bottom temperature data.
+**Public availability statement**: Source data are NOT publicly available. Please email hubert.dupontavice@noaa.gov for further information and accessing the ROMS-NWA bottom temperature data.
 
 ## Methods
 The methodology for the cold pool index changed between 2020, 2021, and 2022 SOEs. The most recent methods and at the top with older methods below those.
@@ -22,29 +22,17 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 
 
 ### Data Sources
-Three bottom temperature products are used to get bottom temperature from 1958 to 2021:
+Three bottom temperature products are used to get bottom temperature from 1958 to 2021 (table below). 
 
-1.	Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) (@Shchepetkin2005)
-- PERIOD: 1958-1992
-- INITIAL RESOLUTION: ~7km
-- REGRID: 1/10°
+| Data            | Description          |Period | Initial Resolution | REGRID | Reference              |
+|-----------------|----------------------|-------|--------------------|--------|------------------------|
+| ROMS | Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) | 1958-1992 | ~7km | 1/10° | @Shchepetkin2005 |
+| GLORYS | Global Ocean Physics Reanalysis ([Glorys reanalysis](https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION)) | 1993-2019 | 1/12° | 1/10° | @Fernandez2018 |
+| Global forecast | [Global Ocean Physics Analysis and Forecast updated Daily](https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION)| 2020-2021 |  1/12° | 1/10° | @Lellouche2018 |
 
-
-2.	Global Ocean Physics Reanalysis (Glorys reanalysis) (@Fernandez2018)
-- PERIOD: 1993-2019
-- INITIAL RESOLUTION: 1/12°
-- REGRID: 1/10°
-- https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION
-
-3.	Global Ocean Physics Analysis and Forecast updated Daily (@Lellouche2018)
-- PERIOD: 2020-2021
-- INITIAL RESOLUTION: 1/12°
-- REGRID: 1/10°
-- https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION
-
-Furthermore, we use bottom temperature from the Northwest Atlantic Regional Climatology to estimate a monthly decadal bias (@Seidov2016a, @Seidov2016b).
+Furthermore, we use bottom temperature from the [Northwest Atlantic Regional Climatology](https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology) to estimate a monthly decadal bias (@Seidov2016a, @Seidov2016b).
 INITIAL RESOLUTION: 1/10°
-https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology
+
 
 ### Data Analysis
 
