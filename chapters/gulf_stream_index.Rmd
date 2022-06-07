@@ -4,8 +4,8 @@
 
 **Indicator category**: Published method
 
-**Found in**: State of the Ecosystem - New England (2019 (Different Methods), 2020, 2021, 2022), 
-State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020, 2021, 2022) 
+**Found in**: State of the Ecosystem - New England (2019 (Different Methods), 2020+), 
+State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+) 
 
 **Contributor(s)**: Zhuomin Chen, Young-oh Kwon
   
@@ -13,14 +13,15 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020, 2021, 202
   
 **Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
   
-**Public availability statement**: Source data are publicly available at [CMENS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047). Index data are NOT publically available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
+**Public availability statement**: Source data are publicly available at [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047). Index data are NOT publicly available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
 
 ## Methods
 The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.
 
-### Data sources
+This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year. 
 
-GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING).  http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047
+### Data sources
+Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047).
 
 ### Data analysis
 

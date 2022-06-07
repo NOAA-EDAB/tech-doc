@@ -27,7 +27,7 @@ Tabular data provided by Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impact
 
 ### Data Analysis
 
-The spatial distribution and abundance of cyst cells from the annual survey are used to drive an ecosystem forecast model for the Gulf of Maine (@Anderson2005, @Li2009, @Li2020, @McGillicuddy2011). The model also includes many other inputs of dynamic oceanographic data such as currents, temperature, and nutrients. Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/
+The spatial distribution and abundance of cyst cells from the annual survey are used to drive an ecosystem forecast model for the Gulf of Maine (@Anderson2005, @Li2009, @Li2020, @McGillicuddy2011). The model also includes many other inputs of dynamic oceanographic data such as currents, temperature, and nutrients. Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/.
 
 ### Data Processing
 

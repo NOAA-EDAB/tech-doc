@@ -17,9 +17,8 @@
 ## Methods
 ### Data Sources
 
-Original data were collected by the State of Maine, Department of Marine Resources, which tests coastal shellfish areas for biotoxins weekly, annually beginning in March and going through October or later when necessary.  
-
 Data set was provided by Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch, Silver Spring, MD. Graphics and summaries were developed by Ayman Mabrouk, NOAA/NOS NCCOS Marine Spatial Ecology Division, Biogeography Branch, Silver Spring, MD.
+
 Original data were collected by the State of Maine, Department of Marine Resources, which samples and tests blue mussels (*Mytilis edulis*) in coastal shellfish areas for HAB biotoxins on a weekly basis from March through October.  
 
 [Maine Department of Marine Resources – Biotoxins in Maine](https://www.maine.gov/dmr/shellfish-sanitation-management/programs/biotoxininfo.html)
@@ -32,18 +31,19 @@ Original data were collected by the State of Maine, Department of Marine Resourc
 
 ### Data Analysis
 
-Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of PSP toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as ""ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@Chung2010).
+Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of Paralytic Shellfish Poison (PSP) toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as "ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@Chung2010).
 
 
 Data include total number of samples at multiple locations collected in each calendar year (2005-2019), numbers of samples above and below the PSP threshold of 44 ug/100g, and percentage of samples above the threshold.  Simple bar and line graphs are used to plot the values for each variable as time series, 2005-2019.
-Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/
+Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/.
 
 ### Data Processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
 
 
-#Plotting
+### Plotting
+
 The script used to develop the figure in the SOE Indicator Catalog can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R).
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R"), echo = F, fig.align="center", eval = T, fig.cap="Percent of state samples that are found to have PSP"}

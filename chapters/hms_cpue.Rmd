@@ -18,11 +18,49 @@
 ## Methods
 
 ### Data sources
-Data for this indicator were compiled by NOAA Southeast Fisheries Science Center, Larry Beerkircher. 
+Data for this indicator were compiled by NOAA Southeast Fisheries Science Center, Larry Beerkircher. These data come from the NOAA Southeast Fisheries Science Center databases holding the Atlantic highly migratory species information from the pelagic observer program. 
+
+The Southeast Pelagic Observer Program monitors the pelagic longline fleet all along the Northeast U.S. Shelf. This covers approximately 1000 hauls per year and targets 8% coverage of the fishing effort. 
 
 
 ### Data analysis
-Data were pulled from NOAA SEFSC databases and summarized by year and species. 
+
+Catch per unit effort was calculated as number of individuals per haul and summarized by year and species. 
+
+The species groupings are available in the table below. 
+
+| Category       | Common Name          | Species Name                 |
+|----------------|----------------------|------------------------------|
+| Small Coastal  | Atlantic Sharpnose   | *Rhizoprionodon terraenovae* |
+| Small Coastal  | Blacknose            | *Carcharhinus acronotus*     |
+| Small Coastal  | Bonnethead           | *Sphyrna tiburo*             |
+| Small Coastal  | Finetooth            | *Carcharhinus isodon*        |
+| Large Coastal  | Blacktip             | *Carcharhinus limbatus*      |  
+| Large Coastal  | Bull                 | *Carcharhinus leucas*        |
+| Large Coastal  | Great Hammerhead     | *Sphyrna mokarran*           |
+| Large Coastal  | Lemon                | *Negaprion brevirostris*     |
+| Large Coastal  | Nurse                | *Ginglymostoma cirratum*     |
+| Large Coastal  | Sandbar              | *Carcharhinus plumbeus*      |
+| Large Coastal  | Scalloped Hammerhead | *Sphyrna lewini*             |
+| Large Coastal  | Silky                | *Carcharhinus falciformis*   |
+| Large Coastal  | Smooth Hammerhead    | *Sphyrna zygaena*            | 
+| Large Coastal  | Spinner              | *Carcharhinus brevipinna*    |
+| Large Coastal  | Tiger                | *Galeocerdo cuvier*          |
+| Prohibited     | Atlantic Angel       | *Squatina dumeril*           |
+| Prohibited     | Basking              | *Cetorhinus maximus*         |
+| Prohibited     | Bigeye Thresher      | *Alopias superciliosus*      |
+| Prohibited     | Bignose              | *Carcharhinus altimus*       |
+| Prohibited     | Night                | *Carcharhinus signatus*      |
+| Prohibited     | Sand Tiger           | *Carcharias taurus*          |
+| Prohibited     | Sevengill            | *Notorynchus cepedianus*     |
+| Prohibited     | Sixgill              | *Hexanchus griseus*          |
+| Prohibited     | White                | *Carcharodon carcharias*     |
+| Pelagic        | Blue                 | *Prionace glauca*            |
+| Pelagic        | Dusky                | *Carcharhinus obscurus*      |
+| Pelagic        | Oceanic Whitetip     | *Carcharhinus longimanus*    |
+| Pelagic        | Porbeagle            | *Lamna nasus*                |
+| Pelagic        | Shortfin Mako        | *Isurus oxyrinchus*          |
+| Pelagic        | Thresher             | *Alopias vulpinus*           |
 
 ### Data Processing 
 Code used to process this data can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
