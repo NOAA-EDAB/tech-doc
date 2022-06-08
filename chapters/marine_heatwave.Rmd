@@ -24,7 +24,7 @@ NOAA high-res OISST (daily, 25-km, 1982-2019)   https://www.esrl.noaa.gov/psd/cg
 Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret.  Each EPU's time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.
 
 ### Data analysis
-The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/
+The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/.
 
 ### Data processing 
 Marine Heatwave data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_heatwave.R).

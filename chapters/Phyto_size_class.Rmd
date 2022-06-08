@@ -33,6 +33,9 @@ Statistics, including the arithmetic mean, standard deviation, and coefficient o
 
 The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data location within an ecoregion from the statistic and anomaly files. The median values, which are equivalent to the geometric mean, were used for the CHL and PP data. 
 
+### Data processing
+
+Code used to process the phytoplankton size class inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_phyto_size.R). 
 
 ### Plotting 
 
