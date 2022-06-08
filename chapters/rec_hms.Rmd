@@ -16,16 +16,56 @@
 
 
 ## Methods
-We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in species manages by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC) and fleet effort diversity using the effective Shannon index. 
 
 ### Data sources
-All recreational shark fishing indicator data, in were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. 
+All recreational shark fishing indicator data were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. 
 
-Data sets were queried by region on the MRIP site, and for the purposes of the State of the Ecosystem reports, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+From the main [Recreational fisheries statistics queries](https://www.fisheries.noaa.gov/data-tools/recreational-fisheries-statistics-queries) page, the [download query](https://www.st.nmfs.noaa.gov/SASStoredProcess/do?) link is available. From here the following selections made include:
+
+| Prompt            | Selected                            |
+|-------------------|-------------------------------------|
+| Minimum Year      | 1981                                |
+| Maximum Year      | *Max year available                 |
+| Data Type         | Estimate: Catch                     |
+| Wave Options      | All Waves                           |   
+| Geographical Area | Not Specified                       |
+| Species           | *26 Species outlined in table below |
+| Output            | Download CSV as ZIP File            |
+
+The ZIP file was used in the following analysis. 
+
 
 ### Data analysis
 
-MRIP data were grouped used the shark species groupings found in [this table](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/hms-mrip/species_list.csv).
+Data regions "4 = New England"  and "5 = Mid-Atlantic" were selected for as to remove data from regions not relevant to the State of the Ecosystem reports. The data were then grouped into categories using the table below. This species list was the list used in the above "species" section in the MRIP query.  Data were grouped by year, category and region, and the sum of all the landings for each was used as the indicator for recreational shark harvest. 
+
+| Category       | Common Name          | Species Name                 |
+|----------------|----------------------|------------------------------|
+| Small Coastal  | Atlantic Sharpnose   | *Rhizoprionodon terraenovae* |
+| Small Coastal  | Blacknose            | *Carcharhinus acronotus*     |
+| Small Coastal  | Bonnethead           | *Sphyrna tiburo*             |
+| Small Coastal  | Finetooth            | *Carcharhinus isodon*        |
+| Large Coastal  | Blacktip             | *Carcharhinus limbatus*      |  
+| Large Coastal  | Bull                 | *Carcharhinus leucas*        |
+| Large Coastal  | Great Hammerhead     | *Sphyrna mokarran*           |
+| Large Coastal  | Lemon                | *Negaprion brevirostris*     |
+| Large Coastal  | Nurse                | *Ginglymostoma cirratum*     |
+| Large Coastal  | Sandbar              | *Carcharhinus plumbeus*      |
+| Large Coastal  | Scalloped Hammerhead | *Sphyrna lewini*             |
+| Large Coastal  | Silky                | *Carcharhinus falciformis*   |
+| Large Coastal  | Smooth Hammerhead    | *Sphyrna zygaena*            | 
+| Large Coastal  | Spinner              | *Carcharhinus brevipinna*    |
+| Large Coastal  | Tiger                | *Galeocerdo cuvier*          |
+| Prohibited     | Atlantic Angel       | *Squatina dumeril*           |
+| Prohibited     | Basking              | *Cetorhinus maximus*         |
+| Prohibited     | Bigeye Thresher      | *Alopias superciliosus*      |
+| Prohibited     | White                | *Carcharodon carcharias*     |
+| Pelagic        | Blue                 | *Prionace glauca*            |
+| Pelagic        | Dusky                | *Carcharhinus obscurus*      |
+| Pelagic        | Oceanic Whitetip     | *Carcharhinus longimanus*    |
+| Pelagic        | Porbeagle            | *Lamna nasus*                |
+| Pelagic        | Shortfin Mako        | *Isurus oxyrinchus*          |
+| Pelagic        | Thresher             | *Alopias vulpinus*           |
 
 ### Data processing
 

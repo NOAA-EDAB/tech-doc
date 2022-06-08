@@ -17,7 +17,11 @@
 ## Methods
 
 ### Data Sources
-Data for this indicator comes from the aerial survey of submerged aquatic vegetation coverage in the Chesapeake Bay: https://www.chesapeakeprogress.com/abundant-life/sav
+Data for this indicator comes from the aerial survey of submerged aquatic vegetation coverage in the Chesapeake Bay: https://www.chesapeakeprogress.com/abundant-life/sav.
+
+### Data Extraction
+
+### Data Analysis
 
 ### Data Processing 
 

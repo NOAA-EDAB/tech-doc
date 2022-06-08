@@ -16,7 +16,7 @@
 
 
 ## Methods
-We used total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimated both recreational catch diversity in species manages by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC) and fleet effort diversity using the effective Shannon index. 
+We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimate both recreational catch diversity in species managed by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC), and fleet effort diversity using the effective Shannon index. 
 
 ### Data sources
 All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
