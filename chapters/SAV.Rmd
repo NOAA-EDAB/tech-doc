@@ -20,8 +20,10 @@
 Data for this indicator comes from the aerial survey of submerged aquatic vegetation coverage in the Chesapeake Bay: https://www.chesapeakeprogress.com/abundant-life/sav.
 
 ### Data Extraction
+The data is available in excel spreadsheet form using the Downloads `Data (.xlsx)` link. The data used is in the “Salinity zone totals” tab and the hectares column can be extracted for each salinity zone.
 
-### Data Analysis
+### Data Analysis 
+The [analysis and methods](https://d18lev1ok5leia.cloudfront.net/chesapeakeprogress/chart-assets/submerged-aquatic-vegetation-sav-abundance-1984-2019/Analysis-and-Methods_2020-Submerged-Aquatic-Vegetation_Prelim_070621_final.pdf) are described at the Chesapeake progress page.  
 
 ### Data Processing 
 
