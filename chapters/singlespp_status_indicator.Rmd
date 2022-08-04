@@ -5,7 +5,7 @@
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
-**Indicator category**: Synthesis of published information
+**Indicator category**: Synthesis of published information (StockSMART)
 
 **Contributor(s)**: Sarah Gaichas, Andy Beet, Jeff Vieser, Chris Legault
 
