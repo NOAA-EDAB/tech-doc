@@ -11,6 +11,8 @@ bibliography: ["bibliography/introduction.bib","bibliography/aggregate_groups.bi
 geometry: "left=1.0in, right=1.0in, top=1.0in, bottom=1.0in, includefoot"
 biblio-style: apalike
 link-citations: true
+toc: 
+  collapse: section
 github-repo: NOAA-EDAB/tech-doc
 description: "This book documents each indicator and analysis used in State of the Ecosystem reporting"
 ---
