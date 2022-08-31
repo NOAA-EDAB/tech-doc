@@ -6,7 +6,7 @@ bookdown::gitbook:
     toolbar:
       position: static
     toc:
-      collapse: section
+      collapse: subsection
       before: |
         <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
       after: |
