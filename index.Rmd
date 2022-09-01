@@ -5,13 +5,13 @@ date: "`r format(Sys.Date(), '%e %B %Y')`"
 site: bookdown::bookdown_site
 knit: "bookdown::render_book"
 output: 
-  bookdown::gitbook:
-     toc:
-      collapse: chapter
-      before: |
-        <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
-      after: |
-        <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+bookdown::gitbook:
+toc:
+  collapse: chapter
+  before: |
+   <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+  after: |
+   <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
 always_allow_html: true
 documentclass: book
 bibliography: ["bibliography/introduction.bib","bibliography/aggregate_groups.bib","bibliography/seasonal_sst_anomaly_maps.bib","bibliography/Aquaculture.bib","bibliography/Bennet_indicator.bib","bibliography/bottom_temperature.bib","bibliography/Revenue_Diversity.bib","bibliography/ches_bay_water_quality.bib","bibliography/CHL_PPD.bib","bibliography/ecosystem_overfishing.bib","bibliography/comm_eng.bib","bibliography/calanus_stage.bib","bibliography/ches_bay_temp.bib","bibliography/conceptmods.bib","bibliography/Condition.bib","bibliography/EPU.bib","bibliography/Expected_Number.bib","bibliography/phyto_size_class.bib", "bibliography/cold_pool_index.bib", "bibliography/sandlance.bib", "bibliography/gulf_stream_index.bib","bibliography/habitat_vulnerability.bib","bibliography/Ich_div.bib","bibliography/long_term_sst.bib","bibliography/MAB_HAB.bib","bibliography/NE_HAB.bib", "bibliography/habs.bib","bibliography/occupancy.bib","bibliography/productivity_tech_memo.bib","bibliography/RW.bib","bibliography/seabird_ne.bib","bibliography/slopewater_proportions.bib","bibliography/Species_dist.bib","bibliography/survey_data.bib","bibliography/thermal_hab_proj.bib","bibliography/trend_analysis.bib","bibliography/zooplankton.bib","bibliography/cold_pool_index.bib","bibliography/forage_energy_density.bib","bibliography/marine_heatwave.bib","bibliography/protected_species_hotspots.bib","bibliography/ocean_acidification.bib", "bibliography/wind_habitat_occupancy.bib","bibliography/warm_core_rings.bib", "bibliography/glossary.bib","packages.bib"]
