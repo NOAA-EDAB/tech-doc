@@ -1,17 +1,36 @@
+# bookdown::gitbook:
+#   lib_dir: asset
+#   css: css/style.css
+#   split_by: chapter
+#   config:
+#    toc:
+#       collapse: chapter
+#         before: |
+#            <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+#         after: |
+#            <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+#    toolbar:
+#       position: static
+#     edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+#     download: ["pdf"]
+# bookdown::pdf_book:
+#   keep_tex: yes
+#   
+  
+  
+  
+  
 bookdown::gitbook:
-  lib_dir: asset
   css: css/style.css
-  split_by: chapter
   config:
-   toc:
-      collapse: chapter
-        before: |
-           <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
-        after: |
-           <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
-   toolbar:
-      position: static
-    edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
-    download: ["pdf"]
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+      after: |
+        <li><a href="https://github.com/NOAA-EDAB/tech-doc"></a></li>
+        <li><a href="./"Published with bookdown</a></li>
+    edit:
+      link: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
 bookdown::pdf_book:
   keep_tex: yes
