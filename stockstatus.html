@@ -24,7 +24,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-09-01" />
+<meta name="date" content="2022-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,16 +33,16 @@
   
 <link rel="prev" href="seasonal-sst-anomalies.html"/>
 <link rel="next" href="slopewater-proportions.html"/>
-<script src="asset/header-attrs-2.11/header-attrs.js"></script>
-<script src="asset/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="asset/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="asset/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -51,20 +51,18 @@
 
 
 
-<link href="asset/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="asset/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="asset/kePrint-0.0.1/kePrint.js"></script>
-<link href="asset/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="asset/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="asset/bsTable-3.3.7/bootstrapTable.js"></script>
-<script src="asset/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="asset/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="asset/datatables-binding-0.20/datatables.js"></script>
-<link href="asset/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="asset/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="asset/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
-<link href="asset/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="asset/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -892,7 +890,8 @@ div.csl-indent {
 <li><a href="glossary.html#glossary" id="toc-glossary"><span class="toc-section-number">68</span> Glossary</a></li>
 <li><a href="references.html#references" id="toc-references">References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/NOAA-EDAB/tech-doc"></a></li>
+<li><a href="./"Published with bookdown</a></li>
 
 </ul>
 
@@ -938,45 +937,45 @@ div.csl-indent {
 <p>The code used to work up this data can be found in <a href="https://github.com/sgaichas/stockstatusindicator"><code>sgaichas/stockstatusindicator</code></a>.</p>
 <p>Two data frames are in the <code>stocksmart</code> package, <code>stockAssessmentData</code> and <code>stockAssessmentSummary</code>.</p>
 <p>In <code>stockAssessmentData</code> we have time series. Columns are StockName, Year, Value, Metric, Description, Units, AssessmentYear, Jurisdiction, FMP, CommonName, ScientificName, ITIS, UpdateType, StockArea, RegionalEcosystem and the reported metrics are Catch, Fmort, Recruitment, Abundance, Index.</p>
-<div id="htmlwidget-80f5895e1146d2e62bfd" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-80f5895e1146d2e62bfd">{"x":{"filter":"none","vertical":false,"data":[["Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank"],[1913,1914,1915,1916,1917,1918],[7,30,40,53,82,73],["Catch","Catch","Catch","Catch","Catch","Catch"],["Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)"],["Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons"],[2020,2020,2020,2020,2020,2020],["NEFMC","NEFMC","NEFMC","NEFMC","NEFMC","NEFMC"],["Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies"],["Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish"],["Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus"],[166774,166774,166774,166774,166774,166774],[null,null,null,null,null,null],["Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank"],["Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>StockName<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n      <th>Metric<\/th>\n      <th>Description<\/th>\n      <th>Units<\/th>\n      <th>AssessmentYear<\/th>\n      <th>Jurisdiction<\/th>\n      <th>FMP<\/th>\n      <th>CommonName<\/th>\n      <th>ScientificName<\/th>\n      <th>ITIS<\/th>\n      <th>UpdateType<\/th>\n      <th>StockArea<\/th>\n      <th>RegionalEcosystem<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,6,11]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c413c5fe04dbc6b9580c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c413c5fe04dbc6b9580c">{"x":{"filter":"none","vertical":false,"data":[["Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank","Acadian redfish - Gulf of Maine / Georges Bank"],[1913,1914,1915,1916,1917,1918],[7,30,40,53,82,73],["Catch","Catch","Catch","Catch","Catch","Catch"],["Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)","Reported Catch - Total (Mean)"],["Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons"],[2020,2020,2020,2020,2020,2020],["NEFMC","NEFMC","NEFMC","NEFMC","NEFMC","NEFMC"],["Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies","Northeast Multispecies"],["Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish","Acadian redfish"],["Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus","Sebastes fasciatus"],[166774,166774,166774,166774,166774,166774],[null,null,null,null,null,null],["Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank","Gulf of Maine / Georges Bank"],["Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf","Northeast Shelf"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>StockName<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n      <th>Metric<\/th>\n      <th>Description<\/th>\n      <th>Units<\/th>\n      <th>AssessmentYear<\/th>\n      <th>Jurisdiction<\/th>\n      <th>FMP<\/th>\n      <th>CommonName<\/th>\n      <th>ScientificName<\/th>\n      <th>ITIS<\/th>\n      <th>UpdateType<\/th>\n      <th>StockArea<\/th>\n      <th>RegionalEcosystem<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,6,11]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>In <code>stockAssessmentSummary</code> we have assessment metadata. Columns are Stock Name, Jurisdiction, FMP, Science Center, Regional Ecosystem, FSSI Stock?, ITIS Taxon Serial Number, Scientific Name, Common Name, Stock Area, Assessment Year, Assessment Month, Last Data Year, Update Type, Review Result, Assessment Model, Model Version, Lead Lab, Citation, Final Assessment Report 1, Final Assessment Report 2, Point of Contact, Life History Data, Abundance Data, Catch Data, Assessment Level, Assessment Frequency, Assessment Type, Model Category, Catch Input Data, Abundance Input Data, Biological Input Data, Ecosystem Linkage, Composition Input Data, F Year, Estimated F, F Unit, F Basis, Flimit, Flimit Basis, Fmsy, Fmsy Basis, F/Flimit, F/Fmsy, Ftarget, Ftarget Basis, F/Ftarget, B Year, Estimated B, B Unit, B Basis, Blimit, Blimit Basis, Bmsy, Bmsy Basis, B/Blimit, B/Bmsy, MSY, MSY Unit.</p>
-<div id="htmlwidget-10250609b4c8f4a9d7b9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-10250609b4c8f4a9d7b9">{"x":{"filter":"none","vertical":false,"data":[["Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Atlantic Small Coastal Shark Complex"],["Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS"],["Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species"],["SEFSC","SEFSC","SEFSC","SEFSC","SEFSC","SEFSC"],["Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory"],["N","N","N","N","N","N"],[172419,172419,172419,172419,172419,null],["Thunnus alalunga","Thunnus alalunga","Thunnus alalunga","Thunnus alalunga","Thunnus alalunga",null],["Albacore","Albacore","Albacore","Albacore","Albacore",null],["North Atlantic","North Atlantic","North Atlantic","North Atlantic","North Atlantic",null],[2007,2009,2013,2016,2020,2007],[7,10,10,10,10,11],[2005,2007,2011,2015,2019,2005],["Full Update","Full Update","Full Update","Full Update",null,"Benchmark"],["Full acceptance","Full acceptance","Full acceptance","Full acceptance","Full acceptance","Full acceptance"],["MultifanCL","Multifan CL","Multifan CL","Aspic","Production Model","BSP (Bayesian Surplus Production) model"],[null,null,null,null,"Biodyn Algorithm in ADMB",null],["ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","Panama City Laboratory (SEFSC)"],["http://www.iccat.int/Documents/Meetings/Docs/2007_ALB%20STOCK%20ASSESS%20REP_AUG_07.pdf","http://www.iccat.int/Documents/Meetings/Docs/2009_ALB_ASSESS_ENG.pdf","http://www.iccat.int/Documents/Meetings/Docs/2013_ALB_ASSESS_REP_ENG.pdf","http://iccat.es/Documents/Meetings/Docs/2016_ALB_REPORT_ENG.pdf","http://iccat.es/Documents/Meetings/Docs/2016_ALB_REPORT_ENG.pdf","SEDAR 13 Stock assessment report.  Small Coastal Shark complex, Atlantic sharpnose, blacknose, bonnethead and finetooth shark.  NOAA/NMFS Highly Migratory Species Division, 1315 East-West Highway, Silver Spring, MD 20910 (web site: http://www.sefsc.noaa.gov/sedar/Sedar_Workshops.jsp?WorkshopNum=13)."],["REPORT OF THE 2007 ICCAT ALBACO RE STOCK ASSESSMENT SESSION","REPORT OF THE 2009 ICCAT ALBACO RE STOCK ASSESSMENT SESSION",null,"Albacore 2016 Assessment Report","REPORT OF THE 2020 ICCAT ATLANTIC ALBACORE STOCK ASSESSMENT MEETING","Small Coastal Shark Complex, Atlantic Sharpnose, Blacknose, Bonnethead, and Finetooth Shark"],[null,null,null,null,null,null],["Victor Restrepo","Michael Schirripa, Craig Brown","Michael Schirripa, Craig Brown","Rishi Sharma, Craig Brown","Matt Lauretta","Enric Cortes"],[2,2,3,3,3,2],[1,1,1,1,1,1],[2,2,2,1,1,1],[4,4,4,3,3,3],[2,2,2,2,2,1],[null,null,null,null,"Operational",null],[null,null,null,null,3,null],[null,null,null,null,3,null],[null,null,null,null,2,null],[null,null,null,null,3,null],[null,null,null,null,0,null],[null,null,null,null,1,null],[2005,2007,2011,2014,2018,2005],[0.272000014781952,0.181999996304512,0.10700000077486,0.0520000010728836,0.0590000003576279,0.0230000000447035],["Apical F","Apical F","Apical F","Apical F","Harvest Rate","Exploitation Rate"],["Max F at Age","Max F Rate at Age","Max F Rate at Age","Max F Rate at Age","Catch / Exploitable Biomass","Catch / Biomass"],[0.180999994277954,null,null,null,0.0930000022053719,0.090999998152256],["Fmsy","Fmsy","Fmsy","Fmsy","Fmsy","Fmsy"],[0.180999994277954,0.174999997019768,0.149000003933907,0.0970000028610229,0.0930000022053719,0.090999998152256],["Direct estimate","Direct estimate","Direct estimate","Direct estimate","Direct Estimate","Calculated as r/2"],[1.5,null,null,null,0.63400000333786,0.25],[1.5,1.03999996185303,0.720000028610229,0.540000021457672,0.63400000333786,0.25],[0.180999994277954,0.174999997019768,0.149000003933907,null,null,0.068000003695488],["Fmsy",null,null,null,null,"0.75*Fmsy"],[1.5,1.03999996185303,0.720000028610229,0.540000021457672,null,0.340000003576279],[2005,2007,2011,2015,2019,2005],[135270,33397.98046875,76243,555363,508074,51605000],["Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons","Number of Fish"],["Total Stock Biomass","Spawning Biomass","Spawning Biomass","Total Stock Biomass","Total Stock Biomass","Total Stock Abundance"],[null,null,56700,163026.796875,153962,21979854],["Bmsy",null,"0.7 * Bmsy","0.4*Bmsy","0.4*Bmsy","(1-M)*Bmsy (assuming M=0.262 for the complex)"],[167000,53660,81110,407567,384905,29783000],["Bmsy proxy","Bmsy proxy","Direct Estimate","Direct Estimate","Direct Estimate","K/2"],[0.810000002384186,null,1.34500002861023,3.40000009536743,3.29999995231628,2.34999990463257],[0.810000002384186,0.621999979019165,0.939999997615814,1.36000001430511,1.32000005245209,1.69000005722046],[30230,29000,31680,37082,36816,2623000],[null,null,"Metric Tons","Metric Tons","Metric Tons",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Stock Name<\/th>\n      <th>Jurisdiction<\/th>\n      <th>FMP<\/th>\n      <th>Science Center<\/th>\n      <th>Regional Ecosystem<\/th>\n      <th>FSSI Stock?<\/th>\n      <th>ITIS Taxon Serial Number<\/th>\n      <th>Scientific Name<\/th>\n      <th>Common Name<\/th>\n      <th>Stock Area<\/th>\n      <th>Assessment Year<\/th>\n      <th>Assessment Month<\/th>\n      <th>Last Data Year<\/th>\n      <th>Update Type<\/th>\n      <th>Review Result<\/th>\n      <th>Assessment Model<\/th>\n      <th>Model Version<\/th>\n      <th>Lead Lab<\/th>\n      <th>Citation<\/th>\n      <th>Final Assessment Report 1<\/th>\n      <th>Final Assessment Report 2<\/th>\n      <th>Point of Contact<\/th>\n      <th>Life History Data<\/th>\n      <th>Abundance Data<\/th>\n      <th>Catch Data<\/th>\n      <th>Assessment Level<\/th>\n      <th>Assessment Frequency<\/th>\n      <th>Assessment Type<\/th>\n      <th>Model Category<\/th>\n      <th>Catch Input Data<\/th>\n      <th>Abundance Input Data<\/th>\n      <th>Biological Input Data<\/th>\n      <th>Ecosystem Linkage<\/th>\n      <th>Composition Input Data<\/th>\n      <th>F Year<\/th>\n      <th>Estimated F<\/th>\n      <th>F Unit<\/th>\n      <th>F Basis<\/th>\n      <th>Flimit<\/th>\n      <th>Flimit Basis<\/th>\n      <th>Fmsy<\/th>\n      <th>Fmsy Basis<\/th>\n      <th>F/Flimit<\/th>\n      <th>F/Fmsy<\/th>\n      <th>Ftarget<\/th>\n      <th>Ftarget Basis<\/th>\n      <th>F/Ftarget<\/th>\n      <th>B Year<\/th>\n      <th>Estimated B<\/th>\n      <th>B Unit<\/th>\n      <th>B Basis<\/th>\n      <th>Blimit<\/th>\n      <th>Blimit Basis<\/th>\n      <th>Bmsy<\/th>\n      <th>Bmsy Basis<\/th>\n      <th>B/Blimit<\/th>\n      <th>B/Bmsy<\/th>\n      <th>MSY<\/th>\n      <th>MSY Unit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[6,10,11,12,22,23,24,25,26,28,29,30,31,32,33,34,35,38,40,42,43,44,46,47,48,51,53,55,56,57]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-04a8ac811b8782155b63" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-04a8ac811b8782155b63">{"x":{"filter":"none","vertical":false,"data":[["Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Albacore - North Atlantic","Atlantic Small Coastal Shark Complex"],["Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS","Atlantic HMS"],["Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species","Consolidated Atlantic Highly Migratory Species"],["SEFSC","SEFSC","SEFSC","SEFSC","SEFSC","SEFSC"],["Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory","Atlantic Highly Migratory"],["N","N","N","N","N","N"],[172419,172419,172419,172419,172419,null],["Thunnus alalunga","Thunnus alalunga","Thunnus alalunga","Thunnus alalunga","Thunnus alalunga",null],["Albacore","Albacore","Albacore","Albacore","Albacore",null],["North Atlantic","North Atlantic","North Atlantic","North Atlantic","North Atlantic",null],[2007,2009,2013,2016,2020,2007],[7,10,10,10,10,11],[2005,2007,2011,2015,2019,2005],["Full Update","Full Update","Full Update","Full Update",null,"Benchmark"],["Full acceptance","Full acceptance","Full acceptance","Full acceptance","Full acceptance","Full acceptance"],["MultifanCL","Multifan CL","Multifan CL","Aspic","Production Model","BSP (Bayesian Surplus Production) model"],[null,null,null,null,"Biodyn Algorithm in ADMB",null],["ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","ICCAT-SCRS","Panama City Laboratory (SEFSC)"],["http://www.iccat.int/Documents/Meetings/Docs/2007_ALB%20STOCK%20ASSESS%20REP_AUG_07.pdf","http://www.iccat.int/Documents/Meetings/Docs/2009_ALB_ASSESS_ENG.pdf","http://www.iccat.int/Documents/Meetings/Docs/2013_ALB_ASSESS_REP_ENG.pdf","http://iccat.es/Documents/Meetings/Docs/2016_ALB_REPORT_ENG.pdf","http://iccat.es/Documents/Meetings/Docs/2016_ALB_REPORT_ENG.pdf","SEDAR 13 Stock assessment report.  Small Coastal Shark complex, Atlantic sharpnose, blacknose, bonnethead and finetooth shark.  NOAA/NMFS Highly Migratory Species Division, 1315 East-West Highway, Silver Spring, MD 20910 (web site: http://www.sefsc.noaa.gov/sedar/Sedar_Workshops.jsp?WorkshopNum=13)."],["REPORT OF THE 2007 ICCAT ALBACO RE STOCK ASSESSMENT SESSION","REPORT OF THE 2009 ICCAT ALBACO RE STOCK ASSESSMENT SESSION",null,"Albacore 2016 Assessment Report","REPORT OF THE 2020 ICCAT ATLANTIC ALBACORE STOCK ASSESSMENT MEETING","Small Coastal Shark Complex, Atlantic Sharpnose, Blacknose, Bonnethead, and Finetooth Shark"],[null,null,null,null,null,null],["Victor Restrepo","Michael Schirripa, Craig Brown","Michael Schirripa, Craig Brown","Rishi Sharma, Craig Brown","Matt Lauretta","Enric Cortes"],[2,2,3,3,3,2],[1,1,1,1,1,1],[2,2,2,1,1,1],[4,4,4,3,3,3],[2,2,2,2,2,1],[null,null,null,null,"Operational",null],[null,null,null,null,3,null],[null,null,null,null,3,null],[null,null,null,null,2,null],[null,null,null,null,3,null],[null,null,null,null,0,null],[null,null,null,null,1,null],[2005,2007,2011,2014,2018,2005],[0.272000014781952,0.181999996304512,0.10700000077486,0.0520000010728836,0.0590000003576279,0.0230000000447035],["Apical F","Apical F","Apical F","Apical F","Harvest Rate","Exploitation Rate"],["Max F at Age","Max F Rate at Age","Max F Rate at Age","Max F Rate at Age","Catch / Exploitable Biomass","Catch / Biomass"],[0.180999994277954,null,null,null,0.0930000022053719,0.090999998152256],["Fmsy","Fmsy","Fmsy","Fmsy","Fmsy","Fmsy"],[0.180999994277954,0.174999997019768,0.149000003933907,0.0970000028610229,0.0930000022053719,0.090999998152256],["Direct estimate","Direct estimate","Direct estimate","Direct estimate","Direct Estimate","Calculated as r/2"],[1.5,null,null,null,0.63400000333786,0.25],[1.5,1.03999996185303,0.720000028610229,0.540000021457672,0.63400000333786,0.25],[0.180999994277954,0.174999997019768,0.149000003933907,null,null,0.068000003695488],["Fmsy",null,null,null,null,"0.75*Fmsy"],[1.5,1.03999996185303,0.720000028610229,0.540000021457672,null,0.340000003576279],[2005,2007,2011,2015,2019,2005],[135270,33397.98046875,76243,555363,508074,51605000],["Metric Tons","Metric Tons","Metric Tons","Metric Tons","Metric Tons","Number of Fish"],["Total Stock Biomass","Spawning Biomass","Spawning Biomass","Total Stock Biomass","Total Stock Biomass","Total Stock Abundance"],[null,null,56700,163026.796875,153962,21979854],["Bmsy",null,"0.7 * Bmsy","0.4*Bmsy","0.4*Bmsy","(1-M)*Bmsy (assuming M=0.262 for the complex)"],[167000,53660,81110,407567,384905,29783000],["Bmsy proxy","Bmsy proxy","Direct Estimate","Direct Estimate","Direct Estimate","K/2"],[0.810000002384186,null,1.34500002861023,3.40000009536743,3.29999995231628,2.34999990463257],[0.810000002384186,0.621999979019165,0.939999997615814,1.36000001430511,1.32000005245209,1.69000005722046],[30230,29000,31680,37082,36816,2623000],[null,null,"Metric Tons","Metric Tons","Metric Tons",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Stock Name<\/th>\n      <th>Jurisdiction<\/th>\n      <th>FMP<\/th>\n      <th>Science Center<\/th>\n      <th>Regional Ecosystem<\/th>\n      <th>FSSI Stock?<\/th>\n      <th>ITIS Taxon Serial Number<\/th>\n      <th>Scientific Name<\/th>\n      <th>Common Name<\/th>\n      <th>Stock Area<\/th>\n      <th>Assessment Year<\/th>\n      <th>Assessment Month<\/th>\n      <th>Last Data Year<\/th>\n      <th>Update Type<\/th>\n      <th>Review Result<\/th>\n      <th>Assessment Model<\/th>\n      <th>Model Version<\/th>\n      <th>Lead Lab<\/th>\n      <th>Citation<\/th>\n      <th>Final Assessment Report 1<\/th>\n      <th>Final Assessment Report 2<\/th>\n      <th>Point of Contact<\/th>\n      <th>Life History Data<\/th>\n      <th>Abundance Data<\/th>\n      <th>Catch Data<\/th>\n      <th>Assessment Level<\/th>\n      <th>Assessment Frequency<\/th>\n      <th>Assessment Type<\/th>\n      <th>Model Category<\/th>\n      <th>Catch Input Data<\/th>\n      <th>Abundance Input Data<\/th>\n      <th>Biological Input Data<\/th>\n      <th>Ecosystem Linkage<\/th>\n      <th>Composition Input Data<\/th>\n      <th>F Year<\/th>\n      <th>Estimated F<\/th>\n      <th>F Unit<\/th>\n      <th>F Basis<\/th>\n      <th>Flimit<\/th>\n      <th>Flimit Basis<\/th>\n      <th>Fmsy<\/th>\n      <th>Fmsy Basis<\/th>\n      <th>F/Flimit<\/th>\n      <th>F/Fmsy<\/th>\n      <th>Ftarget<\/th>\n      <th>Ftarget Basis<\/th>\n      <th>F/Ftarget<\/th>\n      <th>B Year<\/th>\n      <th>Estimated B<\/th>\n      <th>B Unit<\/th>\n      <th>B Basis<\/th>\n      <th>Blimit<\/th>\n      <th>Blimit Basis<\/th>\n      <th>Bmsy<\/th>\n      <th>Bmsy Basis<\/th>\n      <th>B/Blimit<\/th>\n      <th>B/Bmsy<\/th>\n      <th>MSY<\/th>\n      <th>MSY Unit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[6,10,11,12,22,23,24,25,26,28,29,30,31,32,33,34,35,38,40,42,43,44,46,47,48,51,53,55,56,57]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>In 2021, <code>stocksmart</code> was updated with all current assessments, so data extraction was simply:</p>
 <p>Year-specific naming conventions for assess and decoder files were dropped in 2021 to facilitate future data updates.</p>
 <p>In 2020, assessment summary data were extracted from <code>stockAssessmentSummary</code> for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser.</p>
 <ul>
 <li>The <code>assess.csv</code> fields used in previous years were recreated from stockSMART to include necessary metadata:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="stockstatus.html#cb1-1" aria-hidden="true" tabindex="-1"></a>new2019assess <span class="ot">&lt;-</span> stockAssessmentSummary <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="stockstatus.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Science Center</span><span class="st">`</span> <span class="sc">==</span> <span class="st">&quot;NEFSC&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="stockstatus.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Entity.Name =</span> <span class="st">`</span><span class="at">Stock Name</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="stockstatus.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_all</span>(<span class="fu">list</span>(<span class="sc">~</span><span class="fu">make.names</span>(.)))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="stockstatus.html#cb23-1" aria-hidden="true" tabindex="-1"></a>new2019assess <span class="ot">&lt;-</span> stockAssessmentSummary <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="stockstatus.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Science Center</span><span class="st">`</span> <span class="sc">==</span> <span class="st">&quot;NEFSC&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="stockstatus.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Entity.Name =</span> <span class="st">`</span><span class="at">Stock Name</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="stockstatus.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_all</span>(<span class="fu">list</span>(<span class="sc">~</span><span class="fu">make.names</span>(.)))</span></code></pre></div>
 <ul>
 <li>Add 2020 assessments and write <code>2020assess.csv</code> data contribution:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="stockstatus.html#cb2-1" aria-hidden="true" tabindex="-1"></a>prelim2020 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">&quot;NE Stock Assessment Results.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="stockstatus.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Assessment.Year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="stockstatus.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Entity.Name =</span> Stock,</span>
-<span id="cb2-4"><a href="stockstatus.html#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">FSSI.Stock. =</span> FSSI,</span>
-<span id="cb2-5"><a href="stockstatus.html#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Estimated.F =</span> Best.F,</span>
-<span id="cb2-6"><a href="stockstatus.html#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Estimated.B =</span> Best.B,</span>
-<span id="cb2-7"><a href="stockstatus.html#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Review.Result =</span> Review.Type) <span class="sc">%&gt;%</span></span>
-<span id="cb2-8"><a href="stockstatus.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Year, Status.Stock., Record.Status, TimeSeries.Data.,</span>
-<span id="cb2-9"><a href="stockstatus.html#cb2-9" aria-hidden="true" tabindex="-1"></a>            Survey.Links., Adequate, Minimum.F, Maximum.F,</span>
-<span id="cb2-10"><a href="stockstatus.html#cb2-10" aria-hidden="true" tabindex="-1"></a>            Minimum.B, Maximum.B, </span>
-<span id="cb2-11"><a href="stockstatus.html#cb2-11" aria-hidden="true" tabindex="-1"></a>            Stock.Level.Relative.to.Bmsy<span class="sc">:</span>Decision.memo.related.to.inadequate.rebuilding.progress))</span>
-<span id="cb2-12"><a href="stockstatus.html#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="stockstatus.html#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="stockstatus.html#cb2-14" aria-hidden="true" tabindex="-1"></a>update2020assess <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(new2019assess, prelim2020)</span>
-<span id="cb2-15"><a href="stockstatus.html#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="stockstatus.html#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(update2020assess, <span class="fu">here</span>(<span class="st">&quot;2020assess.csv&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="stockstatus.html#cb24-1" aria-hidden="true" tabindex="-1"></a>prelim2020 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">&quot;NE Stock Assessment Results.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="stockstatus.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Assessment.Year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="stockstatus.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Entity.Name =</span> Stock,</span>
+<span id="cb24-4"><a href="stockstatus.html#cb24-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">FSSI.Stock. =</span> FSSI,</span>
+<span id="cb24-5"><a href="stockstatus.html#cb24-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Estimated.F =</span> Best.F,</span>
+<span id="cb24-6"><a href="stockstatus.html#cb24-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Estimated.B =</span> Best.B,</span>
+<span id="cb24-7"><a href="stockstatus.html#cb24-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Review.Result =</span> Review.Type) <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="stockstatus.html#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Year, Status.Stock., Record.Status, TimeSeries.Data.,</span>
+<span id="cb24-9"><a href="stockstatus.html#cb24-9" aria-hidden="true" tabindex="-1"></a>            Survey.Links., Adequate, Minimum.F, Maximum.F,</span>
+<span id="cb24-10"><a href="stockstatus.html#cb24-10" aria-hidden="true" tabindex="-1"></a>            Minimum.B, Maximum.B, </span>
+<span id="cb24-11"><a href="stockstatus.html#cb24-11" aria-hidden="true" tabindex="-1"></a>            Stock.Level.Relative.to.Bmsy<span class="sc">:</span>Decision.memo.related.to.inadequate.rebuilding.progress))</span>
+<span id="cb24-12"><a href="stockstatus.html#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="stockstatus.html#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="stockstatus.html#cb24-14" aria-hidden="true" tabindex="-1"></a>update2020assess <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(new2019assess, prelim2020)</span>
+<span id="cb24-15"><a href="stockstatus.html#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="stockstatus.html#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(update2020assess, <span class="fu">here</span>(<span class="st">&quot;2020assess.csv&quot;</span>))</span></code></pre></div>
 <p>The <code>decoder.csv</code> data contribution was updated in December 2020 to retain only Entity.Name, Council, and Code fields (used by <code>get_stocks</code>):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="stockstatus.html#cb3-1" aria-hidden="true" tabindex="-1"></a>newdecoder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">&quot;2019decoder.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="stockstatus.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Entity.Name, Code, Council)</span>
-<span id="cb3-3"><a href="stockstatus.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="stockstatus.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(newdecoder, <span class="fu">here</span>(<span class="st">&quot;2020decoder.csv&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="stockstatus.html#cb25-1" aria-hidden="true" tabindex="-1"></a>newdecoder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">&quot;2019decoder.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="stockstatus.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Entity.Name, Code, Council)</span>
+<span id="cb25-3"><a href="stockstatus.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="stockstatus.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(newdecoder, <span class="fu">here</span>(<span class="st">&quot;2020decoder.csv&quot;</span>))</span></code></pre></div>
 <p>For the 2017-2020 SOEs, each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary), and the spreadsheets were updated by hand:</p>
 <ul>
 <li><p><strong>Bcur</strong>: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)</p></li>
@@ -1024,14 +1023,14 @@ Figure 54.2: Summary of single species status for NEFMC and jointly managed stoc
 <a href="slopewater-proportions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="asset/gitbook-2.6.7/js/app.min.js"></script>
-<script src="asset/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="asset/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="asset/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="asset/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="asset/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="asset/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="asset/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1063,16 +1062,13 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["tech_doc.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
 },
 "toc": {
-"collapse": "chapter"
-},
-"toolbar": {
-"position": "static"
+"collapse": "section"
 }
 });
 });
