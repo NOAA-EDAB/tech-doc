@@ -12,14 +12,15 @@
   
 **Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
   
-**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/gf_condition_soe_v1.html).
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://github.com/Laurels1/Condition/tree/master/data).
 
 
 ## Methods
 Relative condition (Kn) was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
 $$Kn = W/W',$$ where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn bottom trawl survey, from 1992-present. 
 
-Where data allowed, predicted length-weight parameters were calculated for $W’$ by species, sex and season over the time period 1992-2012. When sample sizes of individual fish weights and lengths were too low, parameters were calculated for aggregated spring and fall survey data over the same time period. Fall survey relative condition was calculated by Ecological Production Unit (EPU) for females only, as trends tended to be similar for males and females.
+
+For this work, length-weight coefficients from @Wigley2003 were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution. 
 
 The `Condition` package used for calculations and plotting of fish condition factor can be found on [GitHub](https://github.com/Laurels1/Condition).
 
@@ -30,14 +31,13 @@ Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collect
 Data were extracted from NEFSC's survey database (SVDBS) using the R script found [here](https://github.com/Laurels1/Condition/blob/master/R/pull_from_svdbs.R) 
 
 ### Data analysis
-The following growth curve was fit through individual fish lengths and weights from the NEFSC bottom trawl survey data from 1992-2012 to produce reference length-weight parameters:
 
+Relative condition is calculated by fish species and EPU as ($Kn$ formula found above) where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Predicted weight was calculated as: 
 
 $$\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},$$
 
-where length is in cm and weight is in kg. Fall survey data were used where sample sizes allowed for growth curve estimation, otherwise data from spring and fall seasons were combined. 
-
-Individual fish lengths from the NEFSC fall bottom trawl survey from 1992-2017 were then used to calculate predicted weights using the reference length-weight parameters. Relative condition ($Kn$) was calculated annually for females by species and EPU by dividing individual fish weights by the predicted weight. 
+where $Fall coef$ and $Fall exp$ are from @Wigley2003.
+ 
 
 The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R) was used in the analysis of fish condition.
 
@@ -45,7 +45,7 @@ The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelCon
 ### Plotting
 Code for plotting the fish condition indicator can be found [here](https://github.com/Laurels1/Condition/blob/master/R/Condition_plot_viridis_final.R).
 
-```{r, fig.cap=" Condition factor for fish species in the MAB. MAB data are missing for 2017 due to survey delays."}
+```{r, fig.cap=" Condition factor for fish species in the MAB. MAB data are missing for 2017 due to survey delays and for 2020 due to Covid."}
 
 image.dir <- here::here("images")
 
