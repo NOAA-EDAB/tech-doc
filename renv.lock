@@ -970,7 +970,7 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "1.0.2",
+      "Version": "1.0.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "3bf0219f19d9f5b3c682acbb3546a151"
