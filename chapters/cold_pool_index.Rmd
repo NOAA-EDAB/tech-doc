@@ -38,11 +38,11 @@ INITIAL RESOLUTION: 1/10°
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1972-2019})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1958-2021})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
 
 
-$${{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1972-2019})\ }}{n}$$
+$${{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1958-2021})\ }}{n}$$
 
 
 
@@ -55,7 +55,7 @@ where n is the number of grid cells over the Cold Pool domain.
 The temporal component of the Cold Pool was calculated using the persistence index (Model_PI). Model_PI measures the duration of the Cold Pool and is estimated using the month when bottom temperature rises above 10C after the Cold Pool is formed each year. We first selected the area over the cold pool domain in which bottom temperature falls below 10C between June and October. We then calculated the “residual month” in each grid cell, i, in the Cold Pool domain as the difference between the month when bottom temperature rises above 10C in year y and the average of those months over the period 1972–2019. Then, Model_PI was calculated as the mean “residual month” over the Cold Pool domain:
 
 
-$${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1972-2019})\ }}{n}$$
+$${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-2021})\ }}{n}$$
 
 
 #### Spatial Extent Index (Model_SEI)
