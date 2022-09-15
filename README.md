@@ -10,7 +10,8 @@ Technical documentation for State of the Ecosystem indicators and general method
 |--------------|-----------|--------------|----------------------------|
 |2020 | [Technical Documentation, State of the Ecosystem 2020](https://doi.org/10.25923/64pf-sc70) | [State of the Ecosystem: Mid-Atlantic 2020](https://doi.org/10.25923/1f8j-d564) | [State of the Ecosystem: New England 2020](https://doi.org/10.25923/4tdk-eg57) |
 | 2021 | [Technical Documentation, State of the Ecosystem 2021](https://repository.library.noaa.gov/view/noaa/29277) | [State of the Ecosystem: Mid-Atlantic 2021](https://doi.org/10.25923/jd1w-dc26) | [State of the Ecosystem: New England 2021](https://doi.org/10.25923/6pww-mw45]) |
-
+| 2022 | [Technical Documentation, State of the Ecosystem 2022](
+https://doi.org/10.25923/xq8b-dn10) | [State of the Ecosystem: Mid-Atlantic 2022](https://doi.org/10.25923/5s5y-0h81) | [State of the Ecosystem: New England 2022](https://doi.org/10.25923/ypv2-mw79]) |
 
 
 
