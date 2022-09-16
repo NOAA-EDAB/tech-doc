@@ -86,6 +86,13 @@
       "Repository": "CRAN",
       "Hash": "84a03997fbb5acfb3c9b43bad88fea1f"
     },
+    "abind": {
+      "Package": "abind",
+      "Version": "1.4-5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4f57884290cc75ab22f4af9e9d4ca862"
+    },
     "adehabitatMA": {
       "Package": "adehabitatMA",
       "Version": "0.3.14",
@@ -366,6 +373,13 @@
       "Repository": "CRAN",
       "Hash": "08ab869f37e6a7741a64ab9069bcb67d"
     },
+    "ggspatial": {
+      "Package": "ggspatial",
+      "Version": "1.1.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e9c8859b6fcc17724b93d87134ca36e0"
+    },
     "glue": {
       "Package": "glue",
       "Version": "1.6.2",
@@ -449,6 +463,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "7ab57a6de7f48a8dc84910d1eca42883"
+    },
+    "jpeg": {
+      "Package": "jpeg",
+      "Version": "0.1-9",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "441ee36360a57b363f4fa3df0c364630"
     },
     "jquerylib": {
       "Package": "jquerylib",
@@ -625,6 +646,13 @@
       "Repository": "CRAN",
       "Hash": "09eb987710984fc2905c7129c7d85e65"
     },
+    "plotly": {
+      "Package": "plotly",
+      "Version": "4.10.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fbb11e44d057996ca5fe40d959cacfb0"
+    },
     "plotrix": {
       "Package": "plotrix",
       "Version": "3.8-2",
@@ -638,6 +666,20 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "9c17c6ee41639ebdc1d7266546d3b627"
+    },
+    "png": {
+      "Package": "png",
+      "Version": "0.1-7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "03b7076c234cb3331288919983326c55"
+    },
+    "prettymapr": {
+      "Package": "prettymapr",
+      "Version": "0.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2c6a2aec97aec439daecd68d67653868"
     },
     "prettyunits": {
       "Package": "prettyunits",
@@ -730,6 +772,20 @@
       "Repository": "CRAN",
       "Hash": "bb5996d0bd962d214a11140d77589917"
     },
+    "rgdal": {
+      "Package": "rgdal",
+      "Version": "1.5-32",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7e8f18c3a55c90a44ea05e0620c05a7e"
+    },
+    "rjson": {
+      "Package": "rjson",
+      "Version": "0.2.21",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f9da75e6444e95a1baf8ca24909d63b9"
+    },
     "rlang": {
       "Package": "rlang",
       "Version": "1.0.5",
@@ -743,6 +799,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "0f3eaa1547e2c6880d4de1c043ac6826"
+    },
+    "rosm": {
+      "Package": "rosm",
+      "Version": "0.2.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "28c1e811f574441769c93e5367726c8e"
     },
     "rpart": {
       "Package": "rpart",
