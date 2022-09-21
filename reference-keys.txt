@@ -576,7 +576,7 @@ data-extraction-38
 data-analysis-62
 data-processing-47
 plotting-54
-wind-energy-delvelopment-timeline
+wind-energy-development-timeline
 methods-64
 data-sources-67
 data-analysis-63

@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2022-09-19" />
+<meta name="date" content="2022-09-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -830,14 +830,14 @@ div.csl-indent {
 <li class="chapter" data-level="62.1.5" data-path="warm-core-rings.html"><a href="warm-core-rings.html#plotting-54"><i class="fa fa-check"></i><b>62.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="63" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html"><i class="fa fa-check"></i><b>63</b> Wind Energy Delvelopment Timeline</a>
+<li class="chapter" data-level="63" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html"><i class="fa fa-check"></i><b>63</b> Wind Energy Development Timeline</a>
 <ul>
-<li class="chapter" data-level="63.1" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html#methods-64"><i class="fa fa-check"></i><b>63.1</b> Methods</a>
+<li class="chapter" data-level="63.1" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html#methods-64"><i class="fa fa-check"></i><b>63.1</b> Methods</a>
 <ul>
-<li class="chapter" data-level="63.1.1" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html#data-sources-67"><i class="fa fa-check"></i><b>63.1.1</b> Data Sources</a></li>
-<li class="chapter" data-level="63.1.2" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html#data-analysis-63"><i class="fa fa-check"></i><b>63.1.2</b> Data Analysis</a></li>
-<li class="chapter" data-level="63.1.3" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html#data-processing-48"><i class="fa fa-check"></i><b>63.1.3</b> Data Processing</a></li>
-<li class="chapter" data-level="63.1.4" data-path="wind-energy-delvelopment-timeline.html"><a href="wind-energy-delvelopment-timeline.html#plotting-55"><i class="fa fa-check"></i><b>63.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="63.1.1" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html#data-sources-67"><i class="fa fa-check"></i><b>63.1.1</b> Data Sources</a></li>
+<li class="chapter" data-level="63.1.2" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html#data-analysis-63"><i class="fa fa-check"></i><b>63.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="63.1.3" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html#data-processing-48"><i class="fa fa-check"></i><b>63.1.3</b> Data Processing</a></li>
+<li class="chapter" data-level="63.1.4" data-path="wind-energy-development-timeline.html"><a href="wind-energy-development-timeline.html#plotting-55"><i class="fa fa-check"></i><b>63.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="64" data-path="wea-fishing-port-landings.html"><a href="wea-fishing-port-landings.html"><i class="fa fa-check"></i><b>64</b> WEA Fishing Port Landings</a>
@@ -978,7 +978,7 @@ INITIAL RESOLUTION: 1/10°</p>
 <h3><span class="header-section-number">15.1.2</span> Data Analysis<a href="cold-pool-index.html#data-analysis-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="cold-pool-index-model_cpi" class="section level4 hasAnchor" number="15.1.2.1">
 <h4><span class="header-section-number">15.1.2.1</span> Cold Pool Index (Model_CPI)<a href="cold-pool-index.html#cold-pool-index-model_cpi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 <span class="math display">\[({\bar{T}}_{i,\ 1958-2021})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
+<p>The Cold Pool Index (Model_CPI) was adapted from <span class="citation">T. Miller, Hare, and Alade (<a href="#ref-miller2016" role="doc-biblioref">2016</a>)</span> based on the method developed in <span class="citation">duPontavice et al. (<a href="#ref-dupontavice2022" role="doc-biblioref">2022</a>)</span>. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 <span class="math display">\[({\bar{T}}_{i,\ 1958-2021})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
 <p><span class="math display">\[{{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1958-2021})\ }}{n}\]</span></p>
 <p>where n is the number of grid cells over the Cold Pool domain.</p>
 </div>
@@ -994,7 +994,7 @@ INITIAL RESOLUTION: 1/10°</p>
 <p>Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed.</p>
 <p>Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (<span class="citation">Chen et al. (<a href="#ref-Chen2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">Chen and Curchitser (<a href="#ref-Chen2020" role="doc-biblioref">2020</a>)</span>). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>) (<a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology" class="uri">https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology</a>). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:</p>
 <p><span class="math display">\[{BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}\]</span></p>
-<p>where <span class="math display">\[T_{i,d}^{Climatology}\]</span> is the NWARC bottom temperature in the grid cell i for the decade d and <span class="math display">\[{\bar{T}}_{i,\ d}^{ROMS-NWA}\]</span> is the average ROMS-NWA bottom temperature over the decade d in the grid cell i.</p>
+<p>where <span class="math display">\[T_{i,d}^{Climatology}\]</span> is the NWARC bottom temperature in the grid cell i for the decade d and <span class="math display">\[{\bar{T}}_{i,\ d}^{ROMS-NWA}\]</span> is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. All above methods <span class="citation">duPontavice et al. (<a href="#ref-dupontavice2022" role="doc-biblioref">2022</a>)</span>.</p>
 </div>
 </div>
 <div id="data-processing-11" class="section level3 hasAnchor" number="15.1.3">
@@ -1069,6 +1069,9 @@ Chen, Zhuomin, and Enrique N. Curchitser. 2020. <span>“Interannual Variability
 </div>
 <div id="ref-Chen2018" class="csl-entry">
 Chen, Zhuomin, Enrique Curchitser, Robert Chant, and Dujuan Kang. 2018. <span>“Seasonal Variability of the Cold Pool over the Mid-Atlantic Bight Continental Shelf.”</span> <em>Journal of Geophysical Research: Oceans</em> 123 (11): 8203–26. https://doi.org/<a href="https://doi.org/10.1029/2018JC014148">https://doi.org/10.1029/2018JC014148</a>.
+</div>
+<div id="ref-dupontavice2022" class="csl-entry">
+duPontavice, Hubert, Timothy J Miller, Brian C Stock, Zhuomin Chen, and Vincent S Saba. 2022. <span>“<span class="nocase">Ocean model-based covariates improve a marine fish stock assessment when observations are limited</span>.”</span> <em>ICES Journal of Marine Science</em> 79 (4): 1259–73. <a href="https://doi.org/10.1093/icesjms/fsac050">https://doi.org/10.1093/icesjms/fsac050</a>.
 </div>
 <div id="ref-Fernandez2018" class="csl-entry">
 E. Fernandez, and J. M. Lellouche. 2018. <span>“Product User Manual for the Global Ocean Physical Reanalysis Product GLORYS12V1.”</span> <em>Copernicus Product User Manual</em> 4: 1–15.
