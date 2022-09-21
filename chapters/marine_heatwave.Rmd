@@ -18,7 +18,7 @@
 Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in @hobday2016.  
 
 ### Data sources
-NOAA high-res OISST (daily, 25-km, 1982-2019)   https://www.esrl.noaa.gov/psd/cgi-bin/db_search/DBListFiles.pl?did=132&tid=79458&vid=2423
+[NOAA high-res OISST (daily, 25-km, 1982-2019)](https://www.esrl.noaa.gov/psd)
 
 ### Data extraction 
 Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret.  Each EPU's time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.
@@ -31,7 +31,7 @@ Marine Heatwave data were formatted for inclusion in the `ecodata` R package usi
 
 ### Plotting
 
-Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-heatwave_mab.R).
+Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL_MAB.Rmd-heatwave.R).
 
 
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave.R"), eval = T, echo=F, fig.cap="Cumulative and maximum marine heatwave in the Mid-Atlantic", fig.align="center"}

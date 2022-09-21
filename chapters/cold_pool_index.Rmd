@@ -38,7 +38,7 @@ INITIAL RESOLUTION: 1/10°
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from Miller et al. (2016). Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1958-2021})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from @miller2016 based on the method developed in @dupontavice2022. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1958-2021})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
 
 
@@ -71,7 +71,7 @@ Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corre
 $${BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}$$
 
 
-where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell i for the decade d and $${\bar{T}}_{i,\ d}^{ROMS-NWA}$$ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. 
+where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell i for the decade d and $${\bar{T}}_{i,\ d}^{ROMS-NWA}$$ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. All above methods @dupontavice2022.
 
 ### Data processing
 

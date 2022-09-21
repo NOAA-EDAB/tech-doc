@@ -6,7 +6,7 @@
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Heather Baertlein, Jackie Wilson, George Silva
+**Contributor(s)**: Heather Baertlein, Jackie Wilson, George Silva, Jennifer Cudney
   
 **Data steward**: Kimberly Bastille
   

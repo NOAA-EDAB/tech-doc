@@ -132,8 +132,21 @@ knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 
 ```
 
-<!-- **References** -->
 
-<!-- Hare JA, Morrison WE, Nelson MW, Stachura MM, Teeters EJ, Griffis RB, et al. (2016) A Vulnerability Assessment of Fish and Invertebrates to Climate Change on the Northeast US Continental Shelf. PLoS ONE 11(2): e0146756. https://doi.org/10.1371/journal.pone.0146756 -->
+The table below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
 
-<!-- -------------- -->
+| DOIs |
+| --- |
+| [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) |
+| [NEFMC SOE 2020](https://doi.org/10.25923/4tdk-eg57) |
+| [Technical Documentation SOE 2020](https://doi.org/10.25923/64pf-sc70) |
+| [MAFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29525) |
+| [NEFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29524) |
+| [Technical Documentation SOE 2021](https://repository.library.noaa.gov/view/noaa/29277) |
+| [MAFMC SOE 2022](https://doi.org/10.25923/5s5y-0h81) |
+| [NEFMC SOE 2022](https://doi.org/10.25923/ypv2-mw79) |
+| [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10) |
+
+
+
+

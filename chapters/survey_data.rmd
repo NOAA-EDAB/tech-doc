@@ -58,13 +58,13 @@ The output from Survdat is an RData file that contains all the station and biolo
 as noted above, from the NEFSC Spring Bottom Trawl Survey and NEFSC Fall Bottom Trawl Survey.  The RData
 file is a data.table, a powerful wrapper for the base data.frame (https://cran.r-project.org/web/packages/data.table/data.table.pdf).
 There are also a series of tools that have been developed in order to utilize the Survdat data set
-(https://github.com/slucey/RSurvey).
+(https://github.com/NOAA-EDAB/survdat).
 
 ### Data sources
 Survdat is a database query of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
 
 ### Data extraction 
-Extraction methods are described above. The R code found [here](https://github.com/slucey/RSurvey/blob/master/Survdat.r) was used in the survey data extraction process.
+Extraction methods are described above. The R code found [here](https://noaa-edab.github.io/survdat/) was used in the survey data extraction process.
 
 
 ### Data analysis
