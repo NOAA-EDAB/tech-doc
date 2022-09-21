@@ -1,4 +1,4 @@
-# Atlantic HMS POP CPUE
+# Highly Migratory Species POP Catch Per Unit Effort
 
 **Description**: CPUE from pelagic observer program (POP) observed hauls, presented as number of fish per haul, is provided for the northeast (shelf-wide) by year/species from 1992-2019.
 
