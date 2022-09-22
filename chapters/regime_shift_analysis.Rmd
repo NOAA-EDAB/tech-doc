@@ -1,0 +1,43 @@
+# Regime Shift Analysis
+
+
+**Description**: regime shift analysis
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+), State of the Ecosystem - Mid-Atlantic (2023+)
+
+**Indicator category**: 
+
+**Contributor(s)**: Kimberly Bastille
+
+**Data steward**: NA
+
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+
+**Public availability statement**: NA
+
+
+## Methods
+The regime analysis uses the [`rpart`](https://cran.r-project.org/web/packages/rpart/vignettes/longintro.pdf) package to calculate breaks in the time series. `rpart` creates regression trees using classification and recursive partitioning. This methodology was outlined "Classification and regression trees", a 1984 book written by Leo Breiman and others.
+
+The code used to calculate the statistics behind the plotting visuals can be found in [`ecodata`](https://github.com/NOAA-EDAB/ecodata/blob/master/R/StatREGIME.R). Lines 12-16 show the tree calculations and the pruning. 
+
+There are many ways to calculate regime shifts. This method had been applied previously for select indicators and has been scaled up to apply to other time series datasets for the State of the Ecosystem reports. 
+
+### Data source(s)
+NA
+
+### Data extraction
+NA
+
+### Data analysis
+
+The red vertical lines indicate the years in which a shift occurs. 
+
+**Example plot**
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-long-term-sst.R"), echo = F, fig.align="center", eval = T, fig.cap=""}
+
+```
+
+
+
+
