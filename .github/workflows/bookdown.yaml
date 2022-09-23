@@ -20,9 +20,11 @@ jobs:
         run: |
           sudo apt-get install  libgdal-dev libcurl4-gnutls-dev libgit2-dev libudunits2-dev
 
-      - name: Install pandoc 
-        run: |
-          brew install pandoc
+      - name: Install Pandoc
+        #if: ${{ ! github.event.inputs.ghpages }}
+        uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: '2.17.1.1'
 
       - name: Cache Renv packages
         uses: actions/cache@v1
