@@ -1,0 +1,35 @@
+# Forage Fish Biomass Indices 
+
+
+**Description**: Forage Fish Biomass Indices 
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023), State of the Ecosystem - Mid-Atlantic (2023)
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sarah Gaichas, James Gartland, Brian Smith, Elizabeth Ng, Michael Celestino, Anthony Wood, Katie Drew, Abigail Tyrell, and James Thorson
+  
+**Data steward**: Sarah Gaichas, <Sarah.Gaichas@noaa.gov>
+
+**Point of contact**: Sarah Gaichas, <Sarah.Gaichas@noaa.gov>
+
+**Public availability statement**: Source data are publicly available. All data and code available on GitHub at [sgaichas/bluefishdiet](https://github.com/sgaichas/bluefishdiet). 
+  
+
+## Methods
+
+
+### Data sources
+
+Data used to develop this indicator comes from diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys as well as Optimal Interpolation Sea Surface Temperature (OISST). 
+
+NEFSC bottom trawl survey diet data, NEAMAP bottom trawl survey diet data all available here https://github.com/Laurels1/Condition/raw/master/data/allfh.RData (NEFSC 1973-2020) and here https://github.com/sgaichas/bluefishdiet/tree/main/fhdat (NEAMAP and NEFSC 2021) as well as OISST 1985-2021 from https://downloads.psl.noaa.gov/Datasets/noaa.oisst.v2.highres/sst.day.mean.[year].v2.nc 
+
+### Data extraction 
+
+### Data analysis
+Code used to develop this indicator is [available here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/SOE-VASTForageIndices.R). 
+
+
+### Plotting
+
