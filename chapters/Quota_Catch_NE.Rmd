@@ -1,0 +1,49 @@
+# Quota and Catch - New England *DRAFT*
+
+**Description**: The catch limit (either ABC or ACL) and total catch for all NEFMC species and sector (commercial or recreational), if appropriate.
+
+**Found in**:  State of the Ecosystem - New England (2023) 
+
+**Indicator category**: Synthesis of published information, Database pull
+
+**Contributor(s)**: 
+  
+**Data steward**: 
+  
+**Point of contact**: 
+  
+**Public availability statement**: Source data are publicly available
+
+## Methods
+
+### Data Sources
+
+Data found in SIS. 
+
+### Data Analysis
+
+Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each Fisheries Management Plan (FMP). 
+
+|  FMP              | Quota Type  |  Fishing Year    |  
+|-------------------|-------------|------------------|
+| Atlantic Herring  |  ABC        | January 1 through December 31
+| Atlantic Sea Scallop | | Apr 1 - Mar 31
+| Red Crab | |  Apr 1 - Mar 31
+| Skates | | May 1 through April 30
+| Groundfish | | May 1 through April 30
+| Monkfish  | | May 1 through April 30
+| Golden Tilefish | | November 1 through October 31
+
+
+
+
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here]().
+
+### Plotting
+
+The plot below was built using the code found
+[here](). 
+
