@@ -41,6 +41,7 @@ remotes::install_github("noaa-edab/ecodata")
 remotes::install_github("noaa-edab/stocksmart")
 remotes::install_github("thomasp85/patchwork")
 #remotes::install_github("andybeet/arfit")
+install.packages("ggpubr")
 
 library(ggplot2)
 #library(formatR)
