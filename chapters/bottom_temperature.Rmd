@@ -34,8 +34,23 @@ Derived bottom temperature data were formatted for inclusion in the `ecodata` R 
 
 ### Plotting
 
-Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-bot-temp.R). 
+#### Mid-Atlantic
+Code for plotting Mid-Atlantic bottom temperature map and time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL_MAB.Rmd-seasonal-bt-anom-gridded.R).
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-bottom-temp.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic annual bottom temperature anomalies (Red = GLORYS, Black = in situ)."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-seasonal-bt-anom-gridded.R"), eval=TRUE, echo = FALSE, fig.cap = "Seasonal bottom temperature in the Mid-Atlantic."}
+
+```
+
+#### New England
+
+Code for plotting Georges Bank and Gulf of Maine bottom temperature map can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-NE-seasonal-bt-anom-gridded.R).
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-seasonal-bt-anom-gridded.R"), eval=TRUE, echo = FALSE, fig.cap = "Seasonal bottom temperature map in the New England."}
+
+```
+
+Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-NE-seasonal-bt-anom.R). 
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-seasonal-bt-anom.R"), eval=TRUE, echo = FALSE, fig.cap = "Seasonal bottom temperature time series in the New England."}
 
 ```
