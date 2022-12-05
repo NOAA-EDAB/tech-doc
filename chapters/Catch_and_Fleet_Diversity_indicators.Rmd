@@ -18,8 +18,7 @@
 Diversity estimates have been developed to understand whether specialization, or alternatively stovepiping, is occurring in fisheries of the Northeastern Large Marine Ecosystem. We use the average effective Shannon indices for species revenue at the permit level, for all permits landing any amount of [NEFMC](https://www.nefmc.org/) or [MAFMC](http://www.mafmc.org/) Fishery Management Plan (FMP) species within a year (including both Monkfish and Spiny Dogfish). We also use the effective Shannon index of fleet revenue diversity and count of active fleets to assess the extent to which the distribution of fishing changes across fleet segments.
 
 ### Data sources
-Data for these diversity estimates comes from a variety of sources, including the
-Commercial Fishery Dealer Database, Vessel Trip Reports, Clam logbooks, vessel characteristics from Permit database, WPU series producer price index. These data are typically not available to the public.
+Data for these diversity estimates comes from a variety of sources, including the Commercial Fishery Dealer Database, Vessel Trip Reports, Clam logbooks, vessel characteristics from Permit database, WPU series producer price index. These data are typically not available to the public.
 
 ### Data extraction 
 The following describes both the permit-level species and fleet diversity data generation. Price data was extracted from the Commercial Fishery Dealer database (CFDERS) and linked to Vessel Trip Reports by a heirarchical matching algorithm that matched date and port of landing at its highest resolution. Code used in these analyses is available upon request.

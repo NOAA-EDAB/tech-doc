@@ -2,7 +2,7 @@
 
 **Description**: Cold Pool Index - three annual cold pool indices (and the standard errors) between 1958 and 2021. 
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2020 (Different Methods), 2021 (Different Methods), 2022)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020 (Different Methods), 2021 (Different Methods), 2022+)
 
 **Indicator category**:Published methods, Extensive analysis, not yet published
 
@@ -22,13 +22,13 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 
 
 ### Data Sources
-Three bottom temperature products are used to get bottom temperature from 1958 to 2021 (table below). 
+Three bottom temperature products are used to get bottom temperature from 1958 to 2022 (table below). 
 
 | Data            | Description          |Period | Initial Resolution | REGRID | Reference              |
 |-----------------|----------------------|-------|--------------------|--------|------------------------|
 | ROMS | Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA) | 1958-1992 | ~7km | 1/10° | @Shchepetkin2005 |
 | GLORYS | Global Ocean Physics Reanalysis ([Glorys reanalysis](https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION)) | 1993-2019 | 1/12° | 1/10° | @Fernandez2018 |
-| Global forecast | [Global Ocean Physics Analysis and Forecast updated Daily](https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION)| 2020-2021 |  1/12° | 1/10° | @Lellouche2018 |
+| Global forecast | [Global Ocean Physics Analysis and Forecast updated Daily](https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION)| 2020-2022 |  1/12° | 1/10° | @Lellouche2018 |
 
 Furthermore, we use bottom temperature from the [Northwest Atlantic Regional Climatology](https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology) to estimate a monthly decadal bias (@Seidov2016a, @Seidov2016b).
 INITIAL RESOLUTION: 1/10°
@@ -38,11 +38,11 @@ INITIAL RESOLUTION: 1/10°
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from @miller2016 based on the method developed in @dupontavice2022. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2021 $$({\bar{T}}_{i,\ 1958-2021})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from @miller2016 based on the method developed in @dupontavice2022. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2022 $$({\bar{T}}_{i,\ 1958-2022})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
 
 
-$${{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1958-2021})\ }}{n}$$
+$${{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1958-2022})\ }}{n}$$
 
 
 
@@ -55,14 +55,14 @@ where n is the number of grid cells over the Cold Pool domain.
 The temporal component of the Cold Pool was calculated using the persistence index (Model_PI). Model_PI measures the duration of the Cold Pool and is estimated using the month when bottom temperature rises above 10C after the Cold Pool is formed each year. We first selected the area over the cold pool domain in which bottom temperature falls below 10C between June and October. We then calculated the “residual month” in each grid cell, i, in the Cold Pool domain as the difference between the month when bottom temperature rises above 10C in year y and the average of those months over the period 1972–2019. Then, Model_PI was calculated as the mean “residual month” over the Cold Pool domain:
 
 
-$${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-2021})\ }}{n}$$
+$${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-2022})\ }}{n}$$
 
 
 #### Spatial Extent Index (Model_SEI)
 
 The spatial component of the Cold Pool and the habitat provided by the cold pool was calculated using the Spatial Extent Index (Model_SEI). The Model_SEI is estimated by the number of cells where bottom temperature remains below 10C for at least 2 months between June and September. 
 
-The Bottom temperature data are from ROMS-NWA between 1958 and 1992, from Glorys reanalysis between 1993 and 2019 and from Global Ocean Physics for 2020 and 2021.
+The Bottom temperature data are from ROMS-NWA between 1958 and 1992, from Glorys reanalysis between 1993 and 2019 and from Global Ocean Physics for 2020, 2021, and 2022.
 
 Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed. 
 

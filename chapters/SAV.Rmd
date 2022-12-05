@@ -2,7 +2,7 @@
 
 **Description**: Chesapeake Bay Submerged Aquatic Vegetation Trends
 
-**Found in**:  State of the Ecosystem - Mid-Atlantic (2022) 
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2022+) 
 
 **Indicator category**: Database pull with analysis
 
@@ -34,7 +34,7 @@ Data were formatted for inclusion in the `ecodata` R package using the R code fo
 The plot below was built using the code found
 [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R"), eval = T, echo = F, fig.cap = "Submerged Aquatic Vegetation (SAV) coverage in tidal fresh and high salinity regions of the Chesapeake Bay.."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R"), eval = T, echo = F, fig.cap = "Submerged Aquatic Vegetation (SAV) coverage in tidal fresh and high salinity regions of the Chesapeake Bay."}
 
 ```
 

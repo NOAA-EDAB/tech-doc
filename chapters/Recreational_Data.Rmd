@@ -39,13 +39,9 @@ Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Se
 
 ### Data analysis
 
-
-
 **Recreational fleet effort diversity**
 
 Code used to for effort diversity data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/rec_effort_div_analysis.R). 
-
-
 
 **Recreational catch diversity**
 
