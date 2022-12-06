@@ -3,7 +3,8 @@
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 
 **Indicator category**: Extensive analysis; not yet published
-Found in: State of the Ecosystem - Gulf of Maine & Georges Bank (2019+); State of the Ecosystem - Mid-Atlantic Bight (2019+)
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2019+); State of the Ecosystem - Mid-Atlantic Bight (2019+)
 
 **Contributor(s)**: Paula Fratantoni, paula.fratantoni@noaa.gov
 
@@ -34,8 +35,8 @@ Derived bottom temperature data were formatted for inclusion in the `ecodata` R 
 
 ### Plotting
 
-Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-NE-seasonal-bt-anom.R). 
+Code for plotting Georges Bank and Gulf of Maine bottom temperature time series can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-NE-bottom-temp-insituglorys.R). 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-seasonal-bt-anom.R"), eval=TRUE, echo = FALSE, fig.cap = "Seasonal bottom temperature time series in the New England."}
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-bottom-temp-insituglorys.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic annual bottom temperature anomalies (Red = GLORYS, Black = in situ)."}
 
 ```
