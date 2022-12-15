@@ -48,7 +48,7 @@ Predators with highest diet similarity to Bluefish from the NEFSC diet database 
 
 Diets from all 22 piscivores (including bluefish) were combined for the 20 forage fish (bluefish prey) groups at each surveyed location, and the mean weight of forage fish per predator stomach at each location was calculated. Data for each station included station ID, year, season, date, latitude, longitude, vessel, mean bluefish prey weight (g), mean piscivore length (cm), number of piscivore species, and sea surface temperature (degrees C). Because approximately 10% of survey stations were missing in-situ sea water temperature measurements, National Oceanic and Atmospheric Administration Optimum Interpolation Sea Surface Temperature (NOAA OI SST) V2 High Resolution Dataset [@Reynolds2007] data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov were used to fill gaps. For survey stations with in-situ temperature measurements, the in-situ measurement was retained. For survey stations with missing temperature data, OI SST was substituted for input into VAST models.
 
-The final dataset input to VAST is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/fhdat/allfh.Rdata). 
+The final dataset input to VAST is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/fhdat/bluepyagg_stn_all_OISST.rds). 
 
 #### VAST Modeling
 
