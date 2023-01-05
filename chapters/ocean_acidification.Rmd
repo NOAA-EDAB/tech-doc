@@ -40,7 +40,7 @@ Glider data were processed and quality-controlled by software technician Lori Ga
 
 For processing and quality-control procedures of glider-based data, see @Wright2020. Glider data used in this synthesis were limited to summer only (June - August).
 
-Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Mexico and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
+Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Maine and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
 
 Three maps were constructed: 1) A plot of bottom pH in summer over the entire U.S. Northeast Shelf (all available data from 2007-present and includes both glider-based measurements and vessel-based discrete pH samples); 2) pH profiles from two gliders deployed in the Mid-Atlantic during summer 2021; and 3) Glider-based pH profiles from a deployment during summer in Gulf of Maine.
 
