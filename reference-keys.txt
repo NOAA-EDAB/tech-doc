@@ -123,7 +123,6 @@ fig:unnamed-chunk-91
 fig:unnamed-chunk-92
 tab:wind-table
 fig:copepod
-fig:euph
 fig:zoo-div
 fig:neusmap1
 erddap
