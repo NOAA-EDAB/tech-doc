@@ -1,4 +1,4 @@
-# Quota and Catch - New England *DRAFT*
+# Quota and Catch - New England 
 
 **Description**: The catch limit (either ABC or ACL) and total catch for all NEFMC species and sector (commercial or recreational), if appropriate.
 
@@ -6,11 +6,11 @@
 
 **Indicator category**: Synthesis of published information, Database pull
 
-**Contributor(s)**: 
+**Contributor(s)**: Kimberly Bastille
   
-**Data steward**: 
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Point of contact**: 
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
 **Public availability statement**: Source data are publicly available
 
