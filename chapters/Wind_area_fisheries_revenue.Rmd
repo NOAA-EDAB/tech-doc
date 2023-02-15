@@ -51,9 +51,9 @@ dt<- ecodata::wea_landings_rev %>%
                 perc_revenue_max = paste0(perc_revenue_max, " %")) %>% 
   dplyr::rename("Maximum Percent Total Annual Regional Species Landings"="perc_landings_max",
     "Maximum Percent Total Annual Regional Species Revenue"="perc_revenue_max") 
-kable(dt, caption = "Top ten species Landings and Revenue from Wind Energy Areas." ) %>% 
+k<- kable(dt, caption = "Top ten species Landings and Revenue from Wind Energy Areas." ) %>% 
   kable_classic(full_width = F, html_font = "Cambria")
-  landscape()
+kableExtra::landscape(k)
 ```
 
 
