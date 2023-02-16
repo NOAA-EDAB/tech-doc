@@ -478,7 +478,7 @@ data-sources-51
 data-analysis-47
 data-processing-36
 plotting-39
-quota-and-catch---new-england-draft
+quota-and-catch---new-england
 methods-48
 data-sources-52
 data-analysis-48
