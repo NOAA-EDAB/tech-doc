@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2023-02-22" />
+<meta name="date" content="2023-02-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -962,75 +962,29 @@ div.csl-indent {
 <p>The cold pool is an area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight.</p>
 <div id="data-sources-15" class="section level3 hasAnchor" number="15.1.1">
 <h3><span class="header-section-number">15.1.1</span> Data Sources<a href="cold-pool-index.html#data-sources-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Three bottom temperature products are used to get bottom temperature from 1958 to 2022 (table below).</p>
-<table>
-<colgroup>
-<col width="17%" />
-<col width="22%" />
-<col width="7%" />
-<col width="20%" />
-<col width="8%" />
-<col width="24%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Data</th>
-<th>Description</th>
-<th>Period</th>
-<th>Initial Resolution</th>
-<th>REGRID</th>
-<th>Reference</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ROMS</td>
-<td>Numerical simulation of the NWA Ocean was performed with the Regional Ocean Modelling System (ROMS-NWA)</td>
-<td>1958-1992</td>
-<td>~7km</td>
-<td>1/10°</td>
-<td><span class="citation">Shchepetkin and McWilliams (<a href="#ref-Shchepetkin2005" role="doc-biblioref">2005</a>)</span></td>
-</tr>
-<tr class="even">
-<td>GLORYS</td>
-<td>Global Ocean Physics Reanalysis (<a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_REANALYSIS_PHY_001_030/INFORMATION">Glorys reanalysis</a>)</td>
-<td>1993-2019</td>
-<td>1/12°</td>
-<td>1/10°</td>
-<td><span class="citation">E. Fernandez and Lellouche (<a href="#ref-Fernandez2018" role="doc-biblioref">2018</a>)</span></td>
-</tr>
-<tr class="odd">
-<td>Global forecast</td>
-<td><a href="https://resources.marine.copernicus.eu/product-detail/GLOBAL_ANALYSIS_FORECAST_PHY_001_024/INFORMATION">Global Ocean Physics Analysis and Forecast updated Daily</a></td>
-<td>2020-2022</td>
-<td>1/12°</td>
-<td>1/10°</td>
-<td><span class="citation">Lellouche et al. (<a href="#ref-Lellouche2018" role="doc-biblioref">2018</a>)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Furthermore, we use bottom temperature from the <a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology">Northwest Atlantic Regional Climatology</a> to estimate a monthly decadal bias (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>).
-INITIAL RESOLUTION: 1/10°</p>
+<p>The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the (Bottom Temperature - High Resolution)[<a href="https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html" class="uri">https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html</a>] chapter and in <span class="citation"><span>“A High-Resolution Ocean Bottom Temperature Product for the Northeast u.s. Continental Shelf Marine Ecosystem”</span> (<a href="#ref-duPontavice2023" role="doc-biblioref">2023</a>)</span>.</p>
 </div>
 <div id="data-analysis-12" class="section level3 hasAnchor" number="15.1.2">
 <h3><span class="header-section-number">15.1.2</span> Data Analysis<a href="cold-pool-index.html#data-analysis-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>####Cold Pool Domain</p>
+<p>The first step was to define the Cold Pool domain, which is typically located within the MAB and the southern flank of Georges Bank (<span class="citation">Chen et al. (<a href="#ref-Chen2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">(<a href="#ref-Houghton1982" role="doc-biblioref"><strong>Houghton1982?</strong></a>)</span>; <span class="citation">Lentz (<a href="#ref-Lentz2017" role="doc-biblioref">2017a</a>)</span>). Here, we delineated a spatial domain covering the management area of the SNEMA yellowtail flounder (since this method was initially developed to study the Cold Pool impact on yellowtail flounder recruitment) comprising the MAB and in the SNE shelf between the 20 and 200 m isobaths (<span class="citation">Chen et al. (<a href="#ref-Chen2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">Chen and Curchitser (<a href="#ref-Chen2020" role="doc-biblioref">2020</a>)</span>). We restricted the time period from June (to match the start of the settlement period; <span class="citation">SULLIVAN, COWEN, and STEVES (<a href="#ref-Sullivan2005" role="doc-biblioref">2005</a>)</span>) to September (which is the average end date of the Cold Pool (calendar day 269) estimated by <span class="citation">Chen and Curchitser (<a href="#ref-Chen2020" role="doc-biblioref">2020</a>)</span>. The Cold Pool domain was defined as the area, wherein average bottom temperature was cooler than 10°C between June and September from 1959 to 2022. We then developed the three Cold Pool indices using bottom temperature from ocean models.</p>
 <div id="cold-pool-index-model_cpi" class="section level4 hasAnchor" number="15.1.2.1">
 <h4><span class="header-section-number">15.1.2.1</span> Cold Pool Index (Model_CPI)<a href="cold-pool-index.html#cold-pool-index-model_cpi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The Cold Pool Index (Model_CPI) was adapted from <span class="citation">T. Miller, Hare, and Alade (<a href="#ref-miller2016" role="doc-biblioref">2016</a>)</span> based on the method developed in <span class="citation">duPontavice et al. (<a href="#ref-dupontavice2022" role="doc-biblioref">2022</a>)</span>. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1958–2022 <span class="math display">\[({\bar{T}}_{i,\ 1958-2022})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
+<p>The Cold Pool Index (Model_CPI) was adapted from <span class="citation">T. Miller, Hare, and Alade (<a href="#ref-miller2016" role="doc-biblioref">2016</a>)</span> based on the method developed in <span class="citation">duPontavice et al. (<a href="#ref-dupontavice2022" role="doc-biblioref">2022</a>)</span>. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1959–2022 <span class="math display">\[({\bar{T}}_{i,\ 1958-2022})\]</span> between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:</p>
 <p><span class="math display">\[{{CPI}_y}=\ \frac{\sum_{i=1}^{n}{{(T}_{i,\ y}\ -\ {\bar{T}}_{i,\ 1958-2022})\ }}{n}\]</span></p>
 <p>where n is the number of grid cells over the Cold Pool domain.</p>
 </div>
 <div id="persistence-index-model_pi" class="section level4 hasAnchor" number="15.1.2.2">
 <h4><span class="header-section-number">15.1.2.2</span> Persistence Index (Model_PI)<a href="cold-pool-index.html#persistence-index-model_pi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The temporal component of the Cold Pool was calculated using the persistence index (Model_PI). Model_PI measures the duration of the Cold Pool and is estimated using the month when bottom temperature rises above 10C after the Cold Pool is formed each year. We first selected the area over the cold pool domain in which bottom temperature falls below 10C between June and October. We then calculated the “residual month” in each grid cell, i, in the Cold Pool domain as the difference between the month when bottom temperature rises above 10C in year y and the average of those months over the period 1972–2019. Then, Model_PI was calculated as the mean “residual month” over the Cold Pool domain:</p>
+<p>The temporal component of the Cold Pool was calculated using the persistence index (Model_PI). Model_PI measures the duration of the Cold Pool and is estimated using the month when bottom temperature rises above 10C after the Cold Pool is formed each year. We first selected the area over the cold pool domain in which bottom temperature falls below 10C between June and October. We then calculated the “residual month” in each grid cell, i, in the Cold Pool domain as the difference between the month when bottom temperature rises above 10C in year y and the average of those months over the period 1959–2022. Then, Model_PI was calculated as the mean “residual month” over the Cold Pool domain:</p>
 <p><span class="math display">\[{PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-2022})\ }}{n}\]</span></p>
 </div>
 <div id="spatial-extent-index-model_sei" class="section level4 hasAnchor" number="15.1.2.3">
 <h4><span class="header-section-number">15.1.2.3</span> Spatial Extent Index (Model_SEI)<a href="cold-pool-index.html#spatial-extent-index-model_sei" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The spatial component of the Cold Pool and the habitat provided by the cold pool was calculated using the Spatial Extent Index (Model_SEI). The Model_SEI is estimated by the number of cells where bottom temperature remains below 10C for at least 2 months between June and September.</p>
-<p>The Bottom temperature data are from ROMS-NWA between 1958 and 1992, from Glorys reanalysis between 1993 and 2019 and from Global Ocean Physics for 2020, 2021, and 2022.</p>
+<p>The Bottom temperature data is the average ROMS-NWA bottom temperature over the decade <span class="math display">\[d\]</span> in the grid cell <span class="math display">\[i\]</span>. All above methods <span class="citation">(<a href="#ref-duPontavice2022" role="doc-biblioref"><strong>duPontavice2022?</strong></a>)</span>.</p>
 <p>Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed.</p>
-<p>Bottom temperature from ROMS-NWA (used for the period 1958-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (<span class="citation">Chen et al. (<a href="#ref-Chen2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">Chen and Curchitser (<a href="#ref-Chen2020" role="doc-biblioref">2020</a>)</span>). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>) (<a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology" class="uri">https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology</a>). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:</p>
+<p>Bottom temperature from ROMS-NWA (used for the period 1959-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (<span class="citation">Chen et al. (<a href="#ref-Chen2018" role="doc-biblioref">2018</a>)</span>; <span class="citation">Chen and Curchitser (<a href="#ref-Chen2020" role="doc-biblioref">2020</a>)</span>). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (<span class="citation">Seidov, Baranova, Johnson, et al. (<a href="#ref-Seidov2016a" role="doc-biblioref">2016</a>)</span>, <span class="citation">Seidov, Baranova, Boyer, et al. (<a href="#ref-Seidov2016b" role="doc-biblioref">2016</a>)</span>) (<a href="https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology" class="uri">https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology</a>). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:</p>
 <p><span class="math display">\[{BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}\]</span></p>
 <p>where <span class="math display">\[T_{i,d}^{Climatology}\]</span> is the NWARC bottom temperature in the grid cell i for the decade d and <span class="math display">\[{\bar{T}}_{i,\ d}^{ROMS-NWA}\]</span> is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. All above methods <span class="citation">duPontavice et al. (<a href="#ref-dupontavice2022" role="doc-biblioref">2022</a>)</span>.</p>
 </div>
@@ -1099,6 +1053,9 @@ This data represents the annual mean bottom temperature residual for Sept-Oct in
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-duPontavice2023" class="csl-entry">
+<span>“A High-Resolution Ocean Bottom Temperature Product for the Northeast u.s. Continental Shelf Marine Ecosystem.”</span> 2023. <em>Progress in Oceanography</em> 210: 102948. https://doi.org/<a href="https://doi.org/10.1016/j.pocean.2022.102948">https://doi.org/10.1016/j.pocean.2022.102948</a>.
+</div>
 <div id="ref-Chen2020" class="csl-entry">
 Chen, Zhuomin, and Enrique N. Curchitser. 2020. <span>“Interannual Variability of the Mid-Atlantic Bight Cold Pool.”</span> <em>Journal of Geophysical Research: Oceans</em> 125 (8): e2020JC016445. https://doi.org/<a href="https://doi.org/10.1029/2020JC016445">https://doi.org/10.1029/2020JC016445</a>.
 </div>
@@ -1108,11 +1065,8 @@ Chen, Zhuomin, Enrique Curchitser, Robert Chant, and Dujuan Kang. 2018. <span>�
 <div id="ref-dupontavice2022" class="csl-entry">
 duPontavice, Hubert, Timothy J Miller, Brian C Stock, Zhuomin Chen, and Vincent S Saba. 2022. <span>“<span class="nocase">Ocean model-based covariates improve a marine fish stock assessment when observations are limited</span>.”</span> <em>ICES Journal of Marine Science</em> 79 (4): 1259–73. <a href="https://doi.org/10.1093/icesjms/fsac050">https://doi.org/10.1093/icesjms/fsac050</a>.
 </div>
-<div id="ref-Fernandez2018" class="csl-entry">
-E. Fernandez, and J. M. Lellouche. 2018. <span>“Product User Manual for the Global Ocean Physical Reanalysis Product Glorys12v1.”</span> <em>Copernicus Product User Manual</em> 4: 1–15.
-</div>
-<div id="ref-Lellouche2018" class="csl-entry">
-Lellouche, J.-M., E. Greiner, O. Le Galloudec, G. Garric, C. Regnier, M. Drevillon, M. Benkiran, et al. 2018. <span>“Recent Updates to the Copernicus Marine Service Global Ocean Monitoring and Forecasting Real-Time 1/12 Degree High-Resolution System.”</span> <em>Ocean Science</em> 14 (5): 1093–1126. <a href="https://doi.org/10.5194/os-14-1093-2018">https://doi.org/10.5194/os-14-1093-2018</a>.
+<div id="ref-Lentz2017" class="csl-entry">
+———. 2017a. <span>“Seasonal Warming of the Middle Atlantic Bight Cold Pool.”</span> <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. https://doi.org/<a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.
 </div>
 <div id="ref-miller2016" class="csl-entry">
 Miller, Timothy, Jon Hare, and Larry Alade. 2016. <span>“A State-Space Approach to Incorporating Environmental Effects on Recruitment in an Age-Structured Assessment Model with an Application to Southern New England Yellowtail Flounder.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 73 (February). <a href="https://doi.org/10.1139/cjfas-2015-0339">https://doi.org/10.1139/cjfas-2015-0339</a>.
@@ -1123,8 +1077,8 @@ Seidov, Dan, Olga K. Baranova, Tim P. Boyer, Scott L. Cross, Alexey V. Mishonov,
 <div id="ref-Seidov2016a" class="csl-entry">
 Seidov, Dan, Olga K. Baranova, Daphne R. Johnson, Tim P. Boyer, Alexey V. Mishonov, and A. Rost Parsons. 2016. <span>“Northwest Atlantic Regional Climatology (NCEI Accession 0155889).”</span> NOAA National Centers for Environmental Information. <a href="https://doi.org/10.7289/V5RF5S2Q">https://doi.org/10.7289/V5RF5S2Q</a>.
 </div>
-<div id="ref-Shchepetkin2005" class="csl-entry">
-Shchepetkin, Alexander F., and James C. McWilliams. 2005. <span>“The Regional Oceanic Modeling System (ROMS): A Split-Explicit, Free-Surface, Topography-Following-Coordinate Oceanic Model.”</span> <em>Ocean Modelling</em> 9 (4): 347–404. https://doi.org/<a href="https://doi.org/10.1016/j.ocemod.2004.08.002">https://doi.org/10.1016/j.ocemod.2004.08.002</a>.
+<div id="ref-Sullivan2005" class="csl-entry">
+SULLIVAN, MARK C., ROBERT K. COWEN, and BRIAN P. STEVES. 2005. <span>“Evidence for Atmosphere–Ocean Forcing of Yellowtail Flounder (Limanda Ferruginea) Recruitment in the Middle Atlantic Bight.”</span> <em>Fisheries Oceanography</em> 14 (5): 386–99. https://doi.org/<a href="https://doi.org/10.1111/j.1365-2419.2005.00343.x">https://doi.org/10.1111/j.1365-2419.2005.00343.x</a>.
 </div>
 </div>
             </section>
