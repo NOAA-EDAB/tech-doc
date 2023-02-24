@@ -2,7 +2,7 @@
 
 **Description**: Integrated persistent annual hotspots derived from at-sea observations of seabirds, cetaceans and sea turtles collected on systematic ship and aerial surveys
 
-**Found in**: State of the Ecosystem - Mid-Atlantic (2022), State of the Ecosystem - New England (2022)
+**Found in**: State of the Ecosystem - Mid-Atlantic (2022+), State of the Ecosystem - New England (2022+)
 
 **Indicator category**: Extensive analysis, not yet published, Database pull with analysis
 
@@ -12,20 +12,25 @@
   
 **Point of contact**: Timothy P. White <timothy.white@boem.gov>
   
-**Public availability statement**: Source data are NOT publicly available
+**Public availability statement**: Source data are publicly available. Please contact Timothy White for more details. 
 
 ## Methods
-The data presented here represent integrated persistent annual hotspots derived from at-sea observations of seabirds, cetaceans and sea turtles collected on systematic ship and aerial surveys.
 
+Individual hotspot richness maps represent annual persistent hotspots of 71 species and also common taxa challenging to identify to the species level on at-sea surveys but whose abundance and spatial patterns significantly contribute to richness and diversity on the Atlantic EEZ (seabirds, n = 49; marine mammals, n=18, turtles, n= 4). The integrated maps represent very high densities and very high persistence; however, one or both parameters can be adjusted to identify other important locations, for example, to reveal areas of high density and moderate persistence. Individual species-specific hotspots were defined using the 75th percentile of the annual density distribution on gridded segmented transects. This density threshold identified locations of enhanced abundance on daily gridded transects. Persistence probabilities for each grid cell were quantified by summing the number of times a given cell was classified as a hotspot to produce a spatial organization of hotspots coupled with persistence probabilities ranging from 0 to 1. These probabilities were thresholded also using the 75th percentile to locate highly persistent areas of single-species hotspots and summing across each grid cell to resolve multi-species hotspots. The minimum survey effort for each cell in the grid was five days.
 
 ### Data sources
-Individual hotspot richness maps represent summed annual persistent hotspots of 82 species (sea turtles, n=5; cetaceans, n = 29; seabirds, n= 48).   Hotspot richness values also include 20 common and abundant seabird taxa challenging to identify to the species level on aerial surveys but whose abundance and spatial patterns significantly contribute to seabird richness and diversity on the Atlantic EEZ (e.g., loon sp.; phalarope sp.). Federal, state, and academic institutions embraced systematic aerial and ship-based surveys to examine seabird, cetacean, and sea turtle distribution and abundance on the Atlantic Outer Continental Shelf in the 1970s.  Federal agencies (BOEM, NOAA, USFWS, and the US Navy) continue seasonal surveys under the Atlantic Marine Assessment Program for Protect species (AMAPPS) and others. AMAPPS covers broad areas of the Atlantic EEZ to assess mangaged stocks of protected species and the potential impacts of offshore energy production on marine wildlife populations. Observer-based programs use two main survey methods to estimate densities at sea from ships and aircraft 1) the strip-width method (@White2020) and 2 ) distance sampling (@Palka2017). The annual persistent hotspot maps presented here of seabirds, cetaceans, and sea turtles were derived from observations and survey effort archived in the Bureau of Ocean Energy Management's Northwest Atlantic Seabird Catalog; NOAA Northeast Fisheries Science Center's (NEFSC) AMAPPS database; NEFSC's Right Whale Aerial Survey database; and MassCEC's database of surveys off southern New England.
+
+The annual persistent hotspot maps presented here of seabirds, cetaceans, and sea turtles were derived from observations and survey effort archived in publically available databases such as the Bureau of Ocean Energy Management’s Northwest Atlantic Seabird Catalog; NOAA Northeast Fisheries Science Center’s (NEFSC) AMAPPS database; NEFSC’s Right Whale Aerial Survey database; and the MassCEC/NEAq database of cetacean and turtle surveys. Observer-based programs use two main survey methods to estimate densities at sea from ships and aircraft 1) the strip-width method (@White2020) and 2) distance sampling @Palka2017). 
+
 
 ### Data analysis
-All detailed data processing steps are not currently included in this document, but general steps are outlined.  Species-specific persistent hotspots were computed with observations and survey effort collected on ship and aerial surveys from 1978-2019.  Species-specific hotspots were derived with daily timesteps on 20 x 20 km grids representing the Atlantic EEZ. Hotspot probabilities (i.e., persistence) were derived by summing the number of daily hotspots divided by the number of time steps (@Gende2006), which produced a continuum of probabilistic hotspots ranging from 0 to 1 across a final species-specific grid.  Annual hotspot richness maps were derived  by summing the species-specifc grid cells with high persistence.
+
+All detailed data processing steps are not currently included in this document, but general steps are outlined. Species-specific persistent hotspots were computed with observations and survey effort collected on ship and aerial surveys from 1978-2020. Species-specific hotspots were derived with daily timesteps on 10 x 10 km grids covering the Atlantic EEZ. Hotspot probabilities (i.e., persistence) were derived by summing the number of daily hotspots divided by the number of time steps (@Gende2006), which produced a continuum of probabilistic hotspots ranging from 0 to 1 across a final species-specific grid. Annual hotspot richness maps were derived by summing the species-specific grid cells with high persistence.
+
 
 ### Data processing
-Persistent hotspots were computed with the sf and raster R packages.
+
+Persistent hotspots were computed with the `sf` and `raster` R packages.
 
 
 ### Plotting
