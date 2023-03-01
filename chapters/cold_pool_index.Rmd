@@ -22,12 +22,12 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 
 
 ### Data Sources
-The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the (Bottom Temperature - High Resolution)[https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html] chapter and in @duPontavice2023.
+The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the [Bottom Temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html) chapter and in @duPontavice2023.
 
 
 ### Data Analysis 
 
-####Cold Pool Domain
+#### Cold Pool Domain
 
 The first step was to define the Cold Pool domain, which is typically located within the MAB and the southern flank of Georges Bank (@Chen2018; @Houghton1982; @Lentz2017). Here, we delineated a spatial domain covering the management area of the SNEMA yellowtail flounder (since this method was initially developed to study the Cold Pool impact on yellowtail flounder recruitment) comprising the MAB and in the SNE shelf between the 20 and 200 m isobaths (@Chen2018; @Chen2020). We restricted the time period from June (to match the start of the settlement period; @Sullivan2005) to September (which is the average end date of the Cold Pool (calendar day 269) estimated by @Chen2020. The Cold Pool domain was defined as the area, wherein average bottom temperature was cooler than 10°C between June and September from 1959 to 2022. We then developed the three Cold Pool indices using bottom temperature from ocean models.
 
@@ -57,7 +57,7 @@ $${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-202
 
 The spatial component of the Cold Pool and the habitat provided by the cold pool was calculated using the Spatial Extent Index (Model_SEI). The Model_SEI is estimated by the number of cells where bottom temperature remains below 10C for at least 2 months between June and September. 
 
-The Bottom temperature data is the average ROMS-NWA bottom temperature over the decade $$d$$ in the grid cell $$i$$. All above methods @duPontavice2022.
+The Bottom temperature data is the average ROMS-NWA bottom temperature over the decade $$d$$ in the grid cell $$i$$. All above methods @dupontavice2022.
 
 Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed. 
 

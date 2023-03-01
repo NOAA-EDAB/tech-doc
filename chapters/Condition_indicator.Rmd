@@ -49,5 +49,5 @@ Code for plotting the fish condition indicator can be found [here](https://githu
 
 image.dir <- here::here("images")
 
-knitr::include_graphics(file.path(image.dir, "MAB_Condition_allsex_2022_viridis.jpg"))
+knitr::include_graphics(file.path(image.dir, "MAB_Condition_allsex_2023_viridis.jpg"))
 ```
