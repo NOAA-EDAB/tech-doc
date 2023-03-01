@@ -2,7 +2,7 @@
 
 **Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022), State of the Ecosystem - Mid-Atlantic (2022)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+)
 
 **Indicator category**: Synthesis of published information
 
