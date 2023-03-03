@@ -432,6 +432,9 @@ methods-40
 data-sources-44
 data-extraction-25
 data-analysis-40
+detrended-data
+climatology
+indictaors
 data-processing-30
 plotting-33
 ocean-acidification
@@ -638,6 +641,13 @@ methods-70
 data-sources-74
 data-extraction-42
 data-analysis-70
+annual-abundance-anomalies
+copepod
+euphausiids-and-cnidarians
+seasonal-abundance
+zooplankton-diversity
 data-processing-53
 plotting-61
+abundance-anomaly
+zooplankton-diversity-1
 glossary

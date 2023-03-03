@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2023-03-01" />
+<meta name="date" content="2023-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -939,7 +939,7 @@ div.csl-indent {
 <p><strong>Contributor(s)</strong>: Ryan Morse, Kevin Friedland</p>
 <p><strong>Data steward</strong>: Harvey Walsh, <a href="mailto:harvey.walsh@noaa.gov" class="email">harvey.walsh@noaa.gov</a>; Mike Jones, <a href="mailto:michael.jones@noaa.gov" class="email">michael.jones@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Ryan Morse, <a href="mailto:ryan.morse@noaa.gov" class="email">ryan.morse@noaa.gov</a>; Harvey Walsh, <a href="mailto:harvey.walsh@noaa.gov" class="email">harvey.walsh@noaa.gov</a>; Kevin Friedland, <a href="mailto:kevin.friedland@noaa.gov" class="email">kevin.friedland@noaa.gov</a></p>
-<p><strong>Public availability statement</strong>: Source data are publicly available <a href="ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/">here</a>. Derived data can be found <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html">here</a>.</p>
+<p><strong>Public availability statement</strong>: Source data through 2019 are publicly available <a href="ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/">here</a>, and data through 2021 are available upon request from <a href="mailto:harvey.walsh@noaa.gov" class="email">harvey.walsh@noaa.gov</a>. Derived data can be found <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html">here</a>.</p>
 <div id="methods-70" class="section level2 hasAnchor" number="69.1">
 <h2><span class="header-section-number">69.1</span> Methods<a href="zooabund.html#methods-70" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="data-sources-74" class="section level3 hasAnchor" number="69.1.1">
@@ -948,22 +948,31 @@ div.csl-indent {
 </div>
 <div id="data-extraction-42" class="section level3 hasAnchor" number="69.1.2">
 <h3><span class="header-section-number">69.1.2</span> Data extraction<a href="zooabund.html#data-extraction-42" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Data are from the publicly available zooplankton dataset on the NOAA File Transfer Protocol (FTP) server. The excel file has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-Kane2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-Kane2011" role="doc-biblioref">2011</a>)</span>.</p>
-<p>R code used in extraction process.</p>
+<p>Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-Kane2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-Kane2011" role="doc-biblioref">2011</a>)</span> in addition to other collection details.</p>
 </div>
 <div id="data-analysis-70" class="section level3 hasAnchor" number="69.1.3">
 <h3><span class="header-section-number">69.1.3</span> Data analysis<a href="zooabund.html#data-analysis-70" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Annual abundance anomalies</strong></p>
+<div id="annual-abundance-anomalies" class="section level4 hasAnchor" number="69.1.3.1">
+<h4><span class="header-section-number">69.1.3.1</span> Annual abundance anomalies<a href="zooabund.html#annual-abundance-anomalies" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Data are processed similarly to <span class="citation">Kane (<a href="#ref-Kane2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Perretti et al. (<a href="#ref-Perretti2017" role="doc-biblioref">2017b</a>)</span>, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in <span class="citation">Morse et al. (<a href="#ref-Morse2017" role="doc-biblioref">2017</a>)</span>. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year.</p>
 <p>Code used for zooplankton data analysis can be found <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R">here</a>.</p>
-<p><strong><em>Copepod</em></strong></p>
+</div>
+<div id="copepod" class="section level4 hasAnchor" number="69.1.3.2">
+<h4><span class="header-section-number">69.1.3.2</span> Copepod<a href="zooabund.html#copepod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Abundance anomalies (Figure <a href="zooabund.html#fig:copepod">69.1</a>) are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for <em>Centropages typicus</em>, <em>Pseudocalanus</em> spp., <em>Calanus finmarchicus</em>, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of <em>Pseudocalanus</em> spp., <em>Centropages hamatus</em>, <em>Centropages typicus</em>, and <em>Temora longicornis</em>, and subtracting the abundance anomaly of <em>Calanus finmarchicus</em>. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, <em>Calanus finmarchicus</em>.</p>
-<p><strong><em>Euphausiids and Cnidarians</em></strong></p>
+</div>
+<div id="euphausiids-and-cnidarians" class="section level4 hasAnchor" number="69.1.3.3">
+<h4><span class="header-section-number">69.1.3.3</span> Euphausiids and Cnidarians<a href="zooabund.html#euphausiids-and-cnidarians" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Stratified abundance of euphausiids and cnidarians were included in the 2020 State of the Ecosystem reports (Figure <a href="#fig:euph"><strong>??</strong></a>). These were calculated as the log of estimated absolute number of individuals.</p>
-<p><strong>Seasonal abundance</strong></p>
+</div>
+<div id="seasonal-abundance" class="section level4 hasAnchor" number="69.1.3.4">
+<h4><span class="header-section-number">69.1.3.4</span> Seasonal abundance<a href="zooabund.html#seasonal-abundance" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit.</p>
-<p><strong>Zooplankton Diversity</strong></p>
-<p>Time series of zooplankton diveristy (effective shannon) (Figure <a href="zooabund.html#fig:zoo-div">69.2</a>) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above.</p>
+</div>
+<div id="zooplankton-diversity" class="section level4 hasAnchor" number="69.1.3.5">
+<h4><span class="header-section-number">69.1.3.5</span> Zooplankton Diversity<a href="zooabund.html#zooplankton-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Time series of zooplankton diversity (effective shannon) (Figure <a href="zooabund.html#fig:zoo-div">69.2</a>) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above.</p>
+</div>
 </div>
 <div id="data-processing-53" class="section level3 hasAnchor" number="69.1.4">
 <h3><span class="header-section-number">69.1.4</span> Data processing<a href="zooabund.html#data-processing-53" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -971,15 +980,18 @@ div.csl-indent {
 </div>
 <div id="plotting-61" class="section level3 hasAnchor" number="69.1.5">
 <h3><span class="header-section-number">69.1.5</span> Plotting<a href="zooabund.html#plotting-61" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Code used to create the figures below can be found linked here, <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R">copepod abundance</a> (<a href="zooabund.html#fig:copepod">69.1</a>), <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-euph-cnid.R">Euphausiid and Cnidarian abundance</a> (<a href="#fig:euph"><strong>??</strong></a>) and <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R">zooplankton diversity</a> (<a href="zooabund.html#fig:zoo-div">69.2</a> ).</p>
-<p><strong>Abundance anomaly</strong></p>
+<p>Code used to create the figures below can be found linked here, <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R">zooplankton abundance</a> (<a href="zooabund.html#fig:copepod">69.1</a>) and <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R">zooplankton diversity</a> (<a href="zooabund.html#fig:zoo-div">69.2</a> ).</p>
+<div id="abundance-anomaly" class="section level4 hasAnchor" number="69.1.5.1">
+<h4><span class="header-section-number">69.1.5.1</span> Abundance anomaly<a href="zooabund.html#abundance-anomaly" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="figure"><span style="display:block;" id="fig:copepod"></span>
-<img src="images/copepod-1.png" alt="Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight." width="672" />
+<img src="images/copepod-1.png" alt="Pteropods and *Psuedocalanus spp.* zooplankton abundance anomaly in the Mid-Atlantic." width="672" />
 <p class="caption">
-Figure 69.1: Large (red) and small-bodied (blue) copepod abundance in the Mid-Atlantic Bight.
+Figure 69.1: Pteropods and <em>Psuedocalanus spp.</em> zooplankton abundance anomaly in the Mid-Atlantic.
 </p>
 </div>
-<p><strong>Zooplankton Diversity</strong></p>
+</div>
+<div id="zooplankton-diversity-1" class="section level4 hasAnchor" number="69.1.5.2">
+<h4><span class="header-section-number">69.1.5.2</span> Zooplankton Diversity<a href="zooabund.html#zooplankton-diversity-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="figure"><span style="display:block;" id="fig:zoo-div"></span>
 <img src="images/zoo-div-1.png" alt="Zooplankton diversity in the Mid-Atlantic Bight." width="768" />
 <p class="caption">
@@ -987,6 +999,7 @@ Figure 69.2: Zooplankton diversity in the Mid-Atlantic Bight.
 </p>
 </div>
 
+</div>
 </div>
 </div>
 </div>

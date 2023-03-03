@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2023-03-01" />
+<meta name="date" content="2023-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -942,10 +942,10 @@ div.csl-indent {
 <p><strong>Public availability statement</strong>:</p>
 <div id="methods-40" class="section level2 hasAnchor" number="39.1">
 <h2><span class="header-section-number">39.1</span> Methods<a href="marine-heatwave.html#methods-40" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>. Heatwaves are defined as temperatures that exceed the 90th percentile for at least 5 consecutive days for surface heatwaves and at least 30 consecutive days for bottom heatwaves.</p>
 <div id="data-sources-44" class="section level3 hasAnchor" number="39.1.1">
 <h3><span class="header-section-number">39.1.1</span> Data sources<a href="marine-heatwave.html#data-sources-44" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://www.esrl.noaa.gov/psd">NOAA high-res OISST (daily, 25-km, 1982-2019)</a></p>
+<p><a href="https://www.esrl.noaa.gov/psd">NOAA high-res OISST (daily, 25-km, 1982-2022)</a></p>
 </div>
 <div id="data-extraction-25" class="section level3 hasAnchor" number="39.1.2">
 <h3><span class="header-section-number">39.1.2</span> Data extraction<a href="marine-heatwave.html#data-extraction-25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -953,7 +953,21 @@ div.csl-indent {
 </div>
 <div id="data-analysis-40" class="section level3 hasAnchor" number="39.1.3">
 <h3><span class="header-section-number">39.1.3</span> Data analysis<a href="marine-heatwave.html#data-analysis-40" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011. These metrics were run R using <a href="https://robwschlegel.github.io/heatwaveR/" class="uri">https://robwschlegel.github.io/heatwaveR/</a>.</p>
+<p>Changes in the marine heatwave analysis in 2023 are outlined below.</p>
+<div id="detrended-data" class="section level4 hasAnchor" number="39.1.3.1">
+<h4><span class="header-section-number">39.1.3.1</span> Detrended Data<a href="marine-heatwave.html#detrended-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Before analysis was conducted, the data was detrended in order to capture extreme events by removing the overall warming temperature trend.</p>
+</div>
+<div id="climatology" class="section level4 hasAnchor" number="39.1.3.2">
+<h4><span class="header-section-number">39.1.3.2</span> Climatology<a href="marine-heatwave.html#climatology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In 2023 the climatological period shifted from 1982-2011 to 1982-2022, now using the whole time series as the climatology.</p>
+</div>
+<div id="indictaors" class="section level4 hasAnchor" number="39.1.3.3">
+<h4><span class="header-section-number">39.1.3.3</span> Indictaors<a href="marine-heatwave.html#indictaors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In reports prior to 2023, heatwave Maximum Intensity (maximum temperature observed during a
+heatwave event - deg. C) and Cumulative Intensity (sum of daily intensity anomalies - deg. C x days) were include. We now include Maximum Intensity and Number of Days in a heatwave state (N days).</p>
+<p>The marine heatwave metrics are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2022. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2022. These metrics were run using <a href="https://robwschlegel.github.io/heatwaveR/"><code>heatwaveR</code></a>.</p>
+</div>
 </div>
 <div id="data-processing-30" class="section level3 hasAnchor" number="39.1.4">
 <h3><span class="header-section-number">39.1.4</span> Data processing<a href="marine-heatwave.html#data-processing-30" class="anchor-section" aria-label="Anchor link to header"></a></h3>
