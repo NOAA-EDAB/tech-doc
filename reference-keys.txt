@@ -310,6 +310,10 @@ methods-23
 data-sources-26
 data-extraction-16
 data-analysis-23
+forage-fish-in-bluefish-diets
+vast-input-dataset
+vast-modeling
+spatial-forage-indices
 plotting-18
 forage-fish-energy-density
 methods-24
@@ -433,10 +437,9 @@ marine-heatwave
 methods-40
 data-sources-44
 data-extraction-25
-data-analysis-40
-detrended-data
 climatology
 indictaors
+data-analysis-40
 data-processing-30
 plotting-33
 ocean-acidification

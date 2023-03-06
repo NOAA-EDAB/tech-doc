@@ -939,35 +939,46 @@ div.csl-indent {
 <p><strong>Contributor(s)</strong>: Vincent Saba</p>
 <p><strong>Data steward</strong>: Kimberly Bastille <a href="mailto:kimberly.bastille@noaa.gov" class="email">kimberly.bastille@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Vincent Saba <a href="mailto:vincent.saba@noaa.gov" class="email">vincent.saba@noaa.gov</a></p>
-<p><strong>Public availability statement</strong>:</p>
+<p><strong>Public availability statement</strong>: Source data are publicly available. Please email <a href="mailto:vincent.saba@noaa.gov" class="email">vincent.saba@noaa.gov</a> for further information and queries of the marine heatwave indicator data.</p>
 <div id="methods-40" class="section level2 hasAnchor" number="39.1">
 <h2><span class="header-section-number">39.1</span> Methods<a href="marine-heatwave.html#methods-40" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>. Heatwaves are defined as temperatures that exceed the 90th percentile for at least 5 consecutive days for surface heatwaves and at least 30 consecutive days for bottom heatwaves.</p>
+<p>Marine heatwaves (MHWs) measure not just anomalously high temperature, but how long the ecosystem is subjected to the high temperature. They are driven by both atmospheric and oceanographic factors and can have dramatic impacts on marine ecosystems. Marine heatwaves are measured in terms of intensity (water temperature) and duration (the cumulative number of degree days) using measurements of sea surface temperature (surface MHWs) or a combination of observations and models of bottom temperature (bottom MHWs).</p>
+<p><em>2023-</em>
+Recent research by <span class="citation">Jacox et al. (<a href="#ref-jacox_thermal_2020" role="doc-biblioref">2020</a>)</span> and <span class="citation">Jacox et al. (<a href="#ref-jacox_global_2022" role="doc-biblioref">2022</a>)</span> have modified the MHW methodology originally developed by <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>The new MHW indices use the entire temperature time-series for the baseline climatology (e.g. 1982-2022 in the 2023 report) and the global warming trend is removed (i.e. we detrended the data to create a shifting baseline instead of a fixed baseline) . This new MHW method allows us to discern true extreme events from long-term ocean warming (climate change). Surface MHW events are based on the criteria of a warming event that lasts for five or more days with temperatures above the 90th percentile of the historical daily climatology (1982-2022). Bottom MHW events are defined as a warming event that lasts for thirty or more days with bottom temperatures above the 90th percentile of the historical daily climatology (1982-2022). The longer time period criterion for bottom temperature is due to the longer persistence time of ocean bottom temperature anomalies in the U.S. northeast shelf (<span class="citation">Chen et al. (<a href="#ref-chen_seasonal_2021" role="doc-biblioref">2021</a>)</span>).</p>
+<p>The new MHW indices can now discern extreme events that truly are “extreme” rather than occupying most of the year as was the case in the Gulf of Maine in 2021 using previous methods. Because this approach moves from a fixed baseline to a shifting baseline by detrending ocean temperature data and using the entire time-series as a climatology, the global warming signal is removed and thus we are left with extremes in the variability of ocean temperature. A combination of long-term ocean warming and MHWs should be used to assess total heat stress on marine organisms.</p>
+<p><em>2020-2022</em>
+Marine heatwave (surface only) analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>.</p>
 <div id="data-sources-44" class="section level3 hasAnchor" number="39.1.1">
 <h3><span class="header-section-number">39.1.1</span> Data sources<a href="marine-heatwave.html#data-sources-44" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://www.esrl.noaa.gov/psd">NOAA high-res OISST (daily, 25-km, 1982-2022)</a></p>
+<p><em>2023-</em></p>
+<p><em>2020-2022</em>
+<a href="https://www.esrl.noaa.gov/psd">NOAA high-res OISST (daily, 25-km, 1982-2019)</a></p>
+<p>Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in <span class="citation">Hobday et al. (<a href="#ref-hobday2016" role="doc-biblioref">2016</a>)</span>. Heatwaves are defined as temperatures that exceed the 90th percentile for at least 5 consecutive days for surface heatwaves and at least 30 consecutive days for bottom heatwaves.</p>
 </div>
 <div id="data-extraction-25" class="section level3 hasAnchor" number="39.1.2">
 <h3><span class="header-section-number">39.1.2</span> Data extraction<a href="marine-heatwave.html#data-extraction-25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret. Each EPU’s time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.</p>
-</div>
-<div id="data-analysis-40" class="section level3 hasAnchor" number="39.1.3">
-<h3><span class="header-section-number">39.1.3</span> Data analysis<a href="marine-heatwave.html#data-analysis-40" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Changes in the marine heatwave analysis in 2023 are outlined below.</p>
-<div id="detrended-data" class="section level4 hasAnchor" number="39.1.3.1">
-<h4><span class="header-section-number">39.1.3.1</span> Detrended Data<a href="marine-heatwave.html#detrended-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>2023-</em>
+#### Detrended Data</p>
 <p>Before analysis was conducted, the data was detrended in order to capture extreme events by removing the overall warming temperature trend.</p>
-</div>
-<div id="climatology" class="section level4 hasAnchor" number="39.1.3.2">
-<h4><span class="header-section-number">39.1.3.2</span> Climatology<a href="marine-heatwave.html#climatology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="climatology" class="section level4 hasAnchor" number="39.1.2.1">
+<h4><span class="header-section-number">39.1.2.1</span> Climatology<a href="marine-heatwave.html#climatology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In 2023 the climatological period shifted from 1982-2011 to 1982-2022, now using the whole time series as the climatology.</p>
 </div>
-<div id="indictaors" class="section level4 hasAnchor" number="39.1.3.3">
-<h4><span class="header-section-number">39.1.3.3</span> Indictaors<a href="marine-heatwave.html#indictaors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="indictaors" class="section level4 hasAnchor" number="39.1.2.2">
+<h4><span class="header-section-number">39.1.2.2</span> Indictaors<a href="marine-heatwave.html#indictaors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In reports prior to 2023, heatwave Maximum Intensity (maximum temperature observed during a
 heatwave event - deg. C) and Cumulative Intensity (sum of daily intensity anomalies - deg. C x days) were include. We now include Maximum Intensity and Number of Days in a heatwave state (N days).</p>
 <p>The marine heatwave metrics are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2022. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2022. These metrics were run using <a href="https://robwschlegel.github.io/heatwaveR/"><code>heatwaveR</code></a>.</p>
+<p><em>2020-2022</em>
+Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret. Each EPU’s time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.</p>
 </div>
+</div>
+<div id="data-analysis-40" class="section level3 hasAnchor" number="39.1.3">
+<h3><span class="header-section-number">39.1.3</span> Data analysis<a href="marine-heatwave.html#data-analysis-40" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>2023-</em></p>
+<p><em>2020-2022</em>
+The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011. These metrics were run R using <a href="https://robwschlegel.github.io/heatwaveR/" class="uri">https://robwschlegel.github.io/heatwaveR/</a>.</p>
 </div>
 <div id="data-processing-30" class="section level3 hasAnchor" number="39.1.4">
 <h3><span class="header-section-number">39.1.4</span> Data processing<a href="marine-heatwave.html#data-processing-30" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -983,9 +994,9 @@ Figure 39.1: Cumulative and maximum marine heatwave in the Mid-Atlantic
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-49"></span>
-<img src="images/unnamed-chunk-49-1.png" alt="Mid-Atlantic Marine Heatwave events in 2021." width="672" />
+<img src="images/unnamed-chunk-49-1.png" alt="Mid-Atlantic Marine Heatwave events in 2022 in the Mid-Atlantic." width="672" />
 <p class="caption">
-Figure 39.2: Mid-Atlantic Marine Heatwave events in 2021.
+Figure 39.2: Mid-Atlantic Marine Heatwave events in 2022 in the Mid-Atlantic.
 </p>
 </div>
 
@@ -994,8 +1005,17 @@ Figure 39.2: Mid-Atlantic Marine Heatwave events in 2021.
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-chen_seasonal_2021" class="csl-entry">
+Chen, Zhuomin, Young-Oh Kwon, Ke Chen, Paula Fratantoni, Glen Gawarkiewicz, Terrence M. Joyce, Timothy J. Miller, Janet A. Nye, Vincent S. Saba, and Brian C. Stock. 2021. <span>“Seasonal <span>Prediction</span> of <span>Bottom</span> <span>Temperature</span> on the <span>Northeast</span> <span>U</span>.<span>S</span>. <span>Continental</span> <span>Shelf</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 126 (5): e2021JC017187. <a href="https://doi.org/10.1029/2021JC017187">https://doi.org/10.1029/2021JC017187</a>.
+</div>
 <div id="ref-hobday2016" class="csl-entry">
 Hobday, Alistair J., Lisa V. Alexander, Sarah E. Perkins, Dan A. Smale, Sandra C. Straub, Eric C. J. Oliver, Jessica A. Benthuysen, et al. 2016. <span>“A Hierarchical Approach to Defining Marine Heatwaves.”</span> <em>Progress in Oceanography</em> 141: 227–38. https://doi.org/<a href="https://doi.org/10.1016/j.pocean.2015.12.014">https://doi.org/10.1016/j.pocean.2015.12.014</a>.
+</div>
+<div id="ref-jacox_global_2022" class="csl-entry">
+Jacox, Michael G., Michael A. Alexander, Dillon Amaya, Emily Becker, Steven J. Bograd, Stephanie Brodie, Elliott L. Hazen, Mercedes Pozo Buil, and Desiree Tommasi. 2022. <span>“Global Seasonal Forecasts of Marine Heatwaves.”</span> <em>Nature</em> 604 (7906): 486–90. <a href="https://doi.org/10.1038/s41586-022-04573-9">https://doi.org/10.1038/s41586-022-04573-9</a>.
+</div>
+<div id="ref-jacox_thermal_2020" class="csl-entry">
+Jacox, Michael G., Michael A. Alexander, Steven J. Bograd, and James D. Scott. 2020. <span>“Thermal Displacement by Marine Heatwaves.”</span> <em>Nature</em> 584 (7819): 82–86. <a href="https://doi.org/10.1038/s41586-020-2534-z">https://doi.org/10.1038/s41586-020-2534-z</a>.
 </div>
 </div>
             </section>
