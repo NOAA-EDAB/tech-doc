@@ -18,32 +18,39 @@
 
 ### Data Sources
 
-Data found in SIS. 
+Data found in NFMS [Species Information System (SIS)](https://apps-st.fisheries.noaa.gov/sis/#no-back-button). 
+
+SIS Annual Catch Limit reports were used to collate data for each Fisheries Management Plan (FMP). The Allowable Biological Catch and Grand Total Catch (Commercial + Recreational) were recorded. 
 
 ### Data Analysis
 
-Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each Fisheries Management Plan (FMP). 
+Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each FMP. 
 
 |  FMP              | Quota Type  |  Fishing Year    |  
 |-------------------|-------------|------------------|
-| Atlantic Herring  |  ABC        | January 1 through December 31
-| Atlantic Sea Scallop | | Apr 1 - Mar 31
-| Red Crab | |  Apr 1 - Mar 31
-| Skates | | May 1 through April 30
-| Groundfish | | May 1 through April 30
-| Monkfish  | | May 1 through April 30
-| Golden Tilefish | | November 1 through October 31
-
-
+| Atlantic Herring  |  ABC       | January 1 through December 31
+| Atlantic Sea Scallop | ABC | Apr 1 - Mar 31
+| Red Crab | ABC |  Apr 1 - Mar 31
+| Skates | ABC  | May 1 through April 30
+| Groundfish | ABC | May 1 through April 30
+| Monkfish  | ABC  | May 1 through April 30
+| Golden Tilefish | ABC | November 1 through October 31
 
 
 
 ### Data Processing 
 
-Data were formatted for inclusion in the `ecodata` R package using the R code found [here]().
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
 
 ### Plotting
 
 The plot below was built using the code found
-[here](). 
+[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-catch.R). 
 
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-catch.R"), eval = T, echo = F, fig.cap = "Ratio of catch to ACL in New England."}
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-stacked.R"), eval = T, echo = F, fig.cap = "Total ACL in New England."}
+
+```
