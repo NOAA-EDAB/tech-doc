@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2023-03-03" />
+<meta name="date" content="2023-03-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -944,11 +944,12 @@ div.csl-indent {
 <h2><span class="header-section-number">45.1</span> Methods<a href="quota-and-catch---new-england.html#methods-46" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="data-sources-51" class="section level3 hasAnchor" number="45.1.1">
 <h3><span class="header-section-number">45.1.1</span> Data Sources<a href="quota-and-catch---new-england.html#data-sources-51" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Data found in SIS.</p>
+<p>Data found in NFMS <a href="https://apps-st.fisheries.noaa.gov/sis/#no-back-button">Species Information System (SIS)</a>.</p>
+<p>SIS Annual Catch Limit reports were used to collate data for each Fisheries Management Plan (FMP). The Allowable Biological Catch and Grand Total Catch (Commercial + Recreational) were recorded.</p>
 </div>
 <div id="data-analysis-46" class="section level3 hasAnchor" number="45.1.2">
 <h3><span class="header-section-number">45.1.2</span> Data Analysis<a href="quota-and-catch---new-england.html#data-analysis-46" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each Fisheries Management Plan (FMP).</p>
+<p>Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each FMP.</p>
 <table>
 <thead>
 <tr class="header">
@@ -965,32 +966,32 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Atlantic Sea Scallop</td>
-<td></td>
+<td>ABC</td>
 <td>Apr 1 - Mar 31</td>
 </tr>
 <tr class="odd">
 <td>Red Crab</td>
-<td></td>
+<td>ABC</td>
 <td>Apr 1 - Mar 31</td>
 </tr>
 <tr class="even">
 <td>Skates</td>
-<td></td>
+<td>ABC</td>
 <td>May 1 through April 30</td>
 </tr>
 <tr class="odd">
 <td>Groundfish</td>
-<td></td>
+<td>ABC</td>
 <td>May 1 through April 30</td>
 </tr>
 <tr class="even">
 <td>Monkfish</td>
-<td></td>
+<td>ABC</td>
 <td>May 1 through April 30</td>
 </tr>
 <tr class="odd">
 <td>Golden Tilefish</td>
-<td></td>
+<td>ABC</td>
 <td>November 1 through October 31</td>
 </tr>
 </tbody>
@@ -998,12 +999,24 @@ div.csl-indent {
 </div>
 <div id="data-processing-36" class="section level3 hasAnchor" number="45.1.3">
 <h3><span class="header-section-number">45.1.3</span> Data Processing<a href="quota-and-catch---new-england.html#data-processing-36" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Data were formatted for inclusion in the <code>ecodata</code> R package using the R code found <a href="">here</a>.</p>
+<p>Data were formatted for inclusion in the <code>ecodata</code> R package using the R code found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R">here</a>.</p>
 </div>
 <div id="plotting-39" class="section level3 hasAnchor" number="45.1.4">
 <h3><span class="header-section-number">45.1.4</span> Plotting<a href="quota-and-catch---new-england.html#plotting-39" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The plot below was built using the code found
-<a href="">here</a>.</p>
+<a href="https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-catch.R">here</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
+<img src="images/unnamed-chunk-60-1.png" alt="Ratio of catch to ACL in New England." width="672" />
+<p class="caption">
+Figure 45.1: Ratio of catch to ACL in New England.
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-61"></span>
+<img src="images/unnamed-chunk-61-1.png" alt="Total ACL in New England." width="672" />
+<p class="caption">
+Figure 45.2: Total ACL in New England.
+</p>
+</div>
 
 </div>
 </div>
