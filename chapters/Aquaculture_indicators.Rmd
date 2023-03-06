@@ -45,10 +45,9 @@ Only the New England State of the Ecosystem includes aquaculture information as 
 | New Jersey    | 2012* |
 | Maryland      | 2012  |
 | Virginia      | 2009  |
-* only includes data through 2016. 
+\* only includes data through 2016.
 
-
-NO further analysis was conducted on these. 
+No further analysis was conducted on these. 
 
 ### Data processing
 

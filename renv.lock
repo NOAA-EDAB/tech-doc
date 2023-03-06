@@ -9,6 +9,13 @@
     ]
   },
   "Packages": {
+      "AICcmodavg": {
+        "Package": "AICcmodavg",
+        "Version": "2.3-1",
+        "Source": "Repository",
+        "Repository": "CRAN",
+        "Hash": "6142bb2ebc5c663816b9f88b09d8be07"
+    },
     "DBI": {
       "Package": "DBI",
       "Version": "1.1.3",

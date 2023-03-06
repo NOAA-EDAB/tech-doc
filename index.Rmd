@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 knit: "bookdown::render_book"
 always_allow_html: true
 documentclass: book
-bibliography: ["bibliography/introduction.bib","bibliography/aggregate_groups.bib","bibliography/seasonal_sst_anomaly_maps.bib","bibliography/Aquaculture.bib","bibliography/Bennet_indicator.bib","bibliography/bottom_temperature.bib","bibliography/bottom_temp_highres.bib","bibliography/Revenue_Diversity.bib","bibliography/ches_bay_water_quality.bib","bibliography/CHL_PPD.bib","bibliography/ecosystem_overfishing.bib","bibliography/comm_eng.bib","bibliography/calanus_stage.bib","bibliography/ches_bay_temp.bib","bibliography/conceptmods.bib","bibliography/Condition.bib","bibliography/EPU.bib","bibliography/Expected_Number.bib","bibliography/phyto_size_class.bib","bibliography/cold_pool_index.bib","bibliography/sandlance.bib","bibliography/gulf_stream_index.bib","bibliography/habitat_vulnerability.bib","bibliography/Ich_div.bib","bibliography/long_term_sst.bib","bibliography/MAB_HAB.bib","bibliography/NE_HAB.bib", "bibliography/habs.bib","bibliography/occupancy.bib","bibliography/productivity_tech_memo.bib","bibliography/RW.bib","bibliography/seabird_ne.bib","bibliography/slopewater_proportions.bib","bibliography/Species_dist.bib","bibliography/survey_data.bib","bibliography/thermal_hab_proj.bib","bibliography/trend_analysis.bib","bibliography/zooplankton.bib","bibliography/cold_pool_index.bib","bibliography/forage_energy_density.bib","bibliography/marine_heatwave.bib","bibliography/protected_species_hotspots.bib","bibliography/ocean_acidification.bib","bibliography/wind_habitat_occupancy.bib","bibliography/warm_core_rings.bib", "bibliography/glossary.bib","packages.bib"]
+bibliography: ["bibliography/introduction.bib","bibliography/aggregate_groups.bib","bibliography/seasonal_sst_anomaly_maps.bib","bibliography/Aquaculture.bib","bibliography/Bennet_indicator.bib","bibliography/bottom_temperature.bib","bibliography/bottom_temp_highres.bib","bibliography/Revenue_Diversity.bib","bibliography/ches_bay_water_quality.bib","bibliography/phytoplankton.bib","bibliography/ecosystem_overfishing.bib","bibliography/comm_eng.bib","bibliography/calanus_stage.bib","bibliography/ches_bay_temp.bib","bibliography/conceptmods.bib","bibliography/Condition.bib","bibliography/EPU.bib","bibliography/Expected_Number.bib","bibliography/cold_pool_index.bib","bibliography/sandlance.bib","bibliography/gulf_stream_index.bib","bibliography/habitat_vulnerability.bib","bibliography/Ich_div.bib","bibliography/long_term_sst.bib","bibliography/MAB_HAB.bib","bibliography/NE_HAB.bib","bibliography/habs.bib","bibliography/occupancy.bib","bibliography/productivity_tech_memo.bib","bibliography/RW.bib","bibliography/seabird_ne.bib","bibliography/slopewater_proportions.bib","bibliography/Species_dist.bib","bibliography/survey_data.bib","bibliography/thermal_hab_proj.bib","bibliography/trend_analysis.bib","bibliography/zooplankton.bib","bibliography/cold_pool_index.bib","bibliography/forage_energy_density.bib","bibliography/marine_heatwave.bib","bibliography/protected_species_hotspots.bib","bibliography/ocean_acidification.bib","bibliography/wind_habitat_occupancy.bib","bibliography/warm_core_rings.bib", "bibliography/glossary.bib","packages.bib"]
 geometry: "left=1.0in, right=1.0in, top=1.0in, bottom=1.0in, includefoot"
 biblio-style: apalike
 link-citations: true
@@ -17,9 +17,9 @@ description: "This book documents each indicator and analysis used in State of t
 
 # Introduction {-}
 
-The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports. The most recent and usable html version of this document can be found at the [NOAA EDAB Github](https://noaa-edab.github.io/tech-doc/). The PDF version of this document is for archiving only. The [PDF version](https://doi.org/10.25923/64pf-sc70) from previous years is archived in NOAA's Institutional Repository. 
+The purpose of this document is to collate the methods used to access, collect, process, and analyze derived data ("indicators") used to describe the status and trend of social, economical, ecological, and biological conditions in the Northeast Shelf Large Marine Ecosystem (see figure, below). These indicators are further synthesized in State of the Ecosystem Reports produced annually by the [Northeast Fisheries Science Center](https://www.nefsc.noaa.gov/) for the [New England Fisheries Management Council](https://www.nefmc.org/) and the [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/). The metadata for each indicator (in accordance with the [Public Access to Research Results (PARR) directive](http://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/ostp_public_access_memo_2013.pdf)) and the methods used to construct each indicator are described in the subsequent chapters, with each chapter title corresponding to an indicator or analysis present in State of the Ecosystem Reports. The most recent and usable html version of this document can be found at the [NOAA EDAB Github](https://noaa-edab.github.io/tech-doc/). The PDF version of this document is for archiving only. The [PDF version](https://repository.library.noaa.gov/welcome) from previous years is archived in NOAA's Institutional Repository. 
 
-Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act (MSA) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
+Indicators included in this document were selected to clearly align with management objectives, which is required for integrated ecosystem assessment [@levin_integrated_2009], and has been advised many times in the literature [@degnbol_review_2004; @jennings_indicators_2005; @rice_framework_2005; @link_translating_2005]. A difficulty with practical implementation of this in ecosystem reporting can be the lack of clearly specified ecosystem-level management objectives (although some have been suggested [@murawski_definitions_2000]). In our case, considerable effort had already been applied to derive both general goals and operational objectives from both US legislation such as the Magnuson-Stevens Fisheries Conservation and Management Act ([MSA](https://www.fisheries.noaa.gov/resource/document/magnuson-stevens-fishery-conservation-and-management-act)) and regional sources [@depiper_operationalizing_2017]. These objectives are somewhat general and would need refinement together with managers and stakeholders, however, they serve as a useful starting point to structure ecosystem reporting.
 
 ```{r setup, echo=FALSE, message = FALSE, warning = FALSE, results='hide'}
 knitr::opts_chunk$set(echo = F, 
@@ -51,7 +51,7 @@ library(ecodata)
 library(here)
 library(kableExtra)
 library(ggrepel)
-library(stringr)
+#library(stringr)
 library(patchwork)
 library(heatwaveR)
 library(gridExtra)
@@ -63,6 +63,7 @@ library(rmarkdown)
 library(readr)
 library(RColorBrewer)
 library(DT)
+library(AICcmodavg)
 
 library(plyr)
 library(cowplot)
@@ -90,8 +91,8 @@ library(ggspatial)
  letter_size <- 4
  feeding.guilds1 <- c("Piscivore","Planktivore","Benthivore","Benthos")
  feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
- x.shade.min <- 2011 
- x.shade.max <- 2021
+ x.shade.min <- 2012 
+ x.shade.max <- 2022
 #Function for custom ggplot facet labels
 label <- function(variable,value){
   return(facet_names[value])
@@ -136,20 +137,18 @@ knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 
 The table below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
 
-```markdown
- DOIs 
- --- 
- [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) 
- [NEFMC SOE 2020](https://doi.org/10.25923/4tdk-eg57) 
- [Technical Documentation SOE 2020](https://doi.org/10.25923/64pf-sc70) 
- [MAFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29525) 
- [NEFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29524) 
- [Technical Documentation SOE 2021](https://repository.library.noaa.gov/view/noaa/29277) 
- [MAFMC SOE 2022](https://doi.org/10.25923/5s5y-0h81) 
- [NEFMC SOE 2022](https://doi.org/10.25923/ypv2-mw79) 
- [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10) 
+**DOIs**
+*  [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) 
+*  [NEFMC SOE 2020](https://doi.org/10.25923/4tdk-eg57) 
+*  [Technical Documentation SOE 2020](https://doi.org/10.25923/64pf-sc70) 
+*  [MAFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29525) 
+*  [NEFMC SOE 2021](https://repository.library.noaa.gov/view/noaa/29524) 
+*  [Technical Documentation SOE 2021](https://repository.library.noaa.gov/view/noaa/29277) 
+*  [MAFMC SOE 2022](https://doi.org/10.25923/5s5y-0h81) 
+*  [NEFMC SOE 2022](https://doi.org/10.25923/ypv2-mw79) 
+*  [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10) 
 
-```
+
 
 
 

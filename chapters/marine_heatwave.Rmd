@@ -12,7 +12,7 @@
   
 **Point of contact**: Vincent Saba <vincent.saba@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: Source data are publicly available. Please email vincent.saba@noaa.gov for further information and queries of the marine heatwave indicator data.
 
 ## Methods
 
@@ -35,9 +35,27 @@ Marine heatwave (surface only) analysis for Georges Bank, Gulf of Maine, and the
 *2020-2022*
 [NOAA high-res OISST (daily, 25-km, 1982-2019)](https://www.esrl.noaa.gov/psd)
 
+Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in @hobday2016.  Heatwaves are defined as temperatures that exceed the 90th percentile for at least 5 consecutive days for surface heatwaves and at least 30 consecutive days for bottom heatwaves. 
+
+
 ### Data extraction 
 
 *2023-*
+#### Detrended Data
+
+Before analysis was conducted, the data was detrended in order to capture extreme events by removing the overall warming temperature trend.
+
+
+#### Climatology
+
+In 2023 the climatological period shifted from 1982-2011 to 1982-2022, now using the whole time series as the climatology. 
+
+#### Indictaors
+
+In reports prior to 2023, heatwave Maximum Intensity (maximum temperature observed during a
+heatwave event - deg. C) and Cumulative Intensity (sum of daily intensity anomalies - deg. C x days) were include. We now include Maximum Intensity and Number of Days in a heatwave state (N days).
+
+The marine heatwave metrics  are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2022.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2022.  These metrics were run using [`heatwaveR`](https://robwschlegel.github.io/heatwaveR/).
 
 *2020-2022*
 Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret.  Each EPU's time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.
@@ -49,11 +67,9 @@ Each yearly file (global) was downloaded, concatenated into a single netcdf file
 *2020-2022*
 The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/.
 
+
 ### Data processing 
 
-*2023-*
-
-*2020-2022*
 Marine Heatwave data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_heatwave.R).
 
 ### Plotting
@@ -65,6 +81,8 @@ Code used for the plots below can be found [here](https://github.com/NOAA-EDAB/e
 
 ```
 
-```{r, fig.cap="Mid-Atlantic Marine Heatwave events in 2022.",code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year-detrended.R"), eval = T, echo=F}
+
+```{r, fig.cap="Mid-Atlantic Marine Heatwave events in 2022 in the Mid-Atlantic.",code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-heatwave-year-detrended.R"), eval = T, echo=F}
 
 ```
+

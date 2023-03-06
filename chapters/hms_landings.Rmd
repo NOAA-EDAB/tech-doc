@@ -2,7 +2,7 @@
 
 **Description**: Atlantic Highly Migratory Species Landings
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021+)
 
 **Indicator category**: Database pull with analysis
 
@@ -12,14 +12,14 @@
   
 **Point of contact**: Jennifer Cudney <jennifer.cudney@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available
+**Public availability statement**: Source data are NOT publicly available.
 
 ## Methods
 ### Data Sources
 Data from eDealer database (https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting) and Bluefin Tuna Dealer reports on SAFIS (https://www.accsp.org/what-we-do/safis/).  The eDealer data were supplemented with ACCSP records, GulfFIN records, and vessel logbook catches for which no dealer reports were submitted.
 
 ### Data Analysis
-Data, from 2015-2019, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database. Additional landings of these HMS not in eDealer were found in ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook records. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS .
+Data were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database. Additional landings of these HMS not in eDealer were found in ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook records. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS .
 
 Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, often results in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings. Therefore, searches for duplicate reports of the same landing were conducted and eliminated prior to summarizing the data for the Fisheries of the United States.
 

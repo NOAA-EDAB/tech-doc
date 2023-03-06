@@ -3,7 +3,7 @@
 
 **Description**: Commercial landings data pull
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019,2020, 2021), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019,2020, 2021)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
 **Indicator category**: Database pull
 
@@ -89,17 +89,12 @@ Fisheries dependent data from Comlands is used in several indicators for the Sta
 
 ### Plotting
 The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R). 
+here ([Mid-Atlantic](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R)[/New England](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R)). 
 
-<!-- # ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = T, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 } -->
-<!-- #  -->
-<!-- # ``` -->
-
-```{r , eval = T, echo=F, fig.cap="Mid-Atlantic commercial landings.", fig.align="center", fig.height=7 }
-image.dir <- here::here("images")
-
-knitr::include_graphics(file.path(image.dir, "landings.PNG"))
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = T, echo=F, fig.cap="Total commercial landings (black), total U.S. seafood landings (blue), and Mid-Atlantic managed U.S. seafood landings (red).", fig.align="center"}
 
 ```
 
 
+
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R"), eval=TRUE, echo=FALSE, fig.cap="Total commercial landings (black), total U.S. seafood landings (blue), and New England managed U.S. seafood landings (red) for Georges Bank and the Gulf of Maine. Open circles represent years lacking NAFO data. mt = metric ton"}
