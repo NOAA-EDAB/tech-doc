@@ -28,13 +28,13 @@ Each stock has a threshold and catch value assigned to it from the sources above
 
 |  FMP              | Quota Type  |  Fishing Year    |  
 |-------------------|-------------|------------------|
-| Atlantic Herring  |  ABC       | January 1 through December 31
-| Atlantic Sea Scallop | ABC | Apr 1 - Mar 31
-| Red Crab | ABC |  Apr 1 - Mar 31
-| Skates | ABC  | May 1 through April 30
-| Groundfish | ABC | May 1 through April 30
-| Monkfish  | ABC  | May 1 through April 30
-| Golden Tilefish | ABC | November 1 through October 31
+| Atlantic Herring  |  ACL       | January 1 through December 31
+| Atlantic Sea Scallop | ACL | Apr 1 - Mar 31
+| Red Crab | ACL |  Apr 1 - Mar 31
+| Skates | ACL  | May 1 through April 30
+| Groundfish | ACL | May 1 through April 30
+| Monkfish  | ACL  | May 1 through April 30
+| Golden Tilefish | ACL | November 1 through October 31
 
 
 

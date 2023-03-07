@@ -2,7 +2,7 @@
 
 **Description**: Survdat (Survey database)
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018, 2019, 2020, 2022), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019, 2020, 2022)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
 **Indicator category**: Database pull
 

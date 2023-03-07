@@ -18,21 +18,20 @@
 
 Marine heatwaves (MHWs) measure not just anomalously high temperature, but how long the ecosystem is subjected to the high temperature. They are driven by both atmospheric and oceanographic factors and can have dramatic impacts on marine ecosystems. Marine heatwaves are measured in terms of intensity (water temperature) and duration (the cumulative number of degree days) using measurements of sea surface temperature (surface MHWs) or a combination of observations and models of bottom temperature (bottom MHWs). 
 
-*2023-*
+**2023-**
+
 Recent research by @jacox_thermal_2020 and @jacox_global_2022 have modified the MHW methodology originally developed by @hobday2016.  
 
 The new MHW indices use the entire temperature time-series for the baseline climatology (e.g. 1982-2022 in the 2023 report) and the global warming trend is removed (i.e. we detrended the data to create a shifting baseline instead of a fixed baseline) .  This new MHW method allows us to discern true extreme events from long-term ocean warming (climate change).  Surface MHW events are based on the criteria of a warming event that lasts for five or more days with temperatures above the 90th percentile of the historical daily climatology (1982-2022).  Bottom MHW events are defined as a warming event that lasts for thirty or more days with bottom temperatures above the 90th percentile of the historical daily climatology (1982-2022).  The longer time period criterion for bottom temperature is due to the longer persistence time of ocean bottom temperature anomalies in the U.S. northeast shelf (@chen_seasonal_2021).  
 
 The new MHW indices can now discern extreme events that truly are “extreme” rather than occupying most of the year as was the case in the Gulf of Maine in 2021 using previous methods.  Because this approach moves from a fixed baseline to a shifting baseline by detrending ocean temperature data and using the entire time-series as a climatology, the global warming signal is removed and thus we are left with extremes in the variability of ocean temperature.  A combination of long-term ocean warming and MHWs should be used to assess total heat stress on marine organisms.
 
-*2020-2022*
+**2020-2022**
+
 Marine heatwave (surface only) analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in @hobday2016.  
 
 ### Data sources
 
-*2023-*
-
-*2020-2022*
 [NOAA high-res OISST (daily, 25-km, 1982-2019)](https://www.esrl.noaa.gov/psd)
 
 Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlantic Bight according to the definition in @hobday2016.  Heatwaves are defined as temperatures that exceed the 90th percentile for at least 5 consecutive days for surface heatwaves and at least 30 consecutive days for bottom heatwaves. 
@@ -40,31 +39,13 @@ Marine heatwave analysis for Georges Bank, Gulf of Maine, and the Middle Atlanti
 
 ### Data extraction 
 
-*2023-*
-#### Detrended Data
-
-Before analysis was conducted, the data was detrended in order to capture extreme events by removing the overall warming temperature trend.
-
-
-#### Climatology
-
-In 2023 the climatological period shifted from 1982-2011 to 1982-2022, now using the whole time series as the climatology. 
-
-#### Indictaors
-
-In reports prior to 2023, heatwave Maximum Intensity (maximum temperature observed during a
-heatwave event - deg. C) and Cumulative Intensity (sum of daily intensity anomalies - deg. C x days) were include. We now include Maximum Intensity and Number of Days in a heatwave state (N days).
-
-The marine heatwave metrics  are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2022.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2022.  These metrics were run using [`heatwaveR`](https://robwschlegel.github.io/heatwaveR/).
-
-*2020-2022*
 Each yearly file (global) was downloaded, concatenated into a single netcdf file using nco (Unix), and then cropped to the USNES region using Ferret.  Each EPU's time-series of SST was averaged using .shp file boundaries for the MAB, GB, and GOM (also done in Ferret) and saved to the three .csv files.
 
 ### Data analysis
 
-*2023-*
+**2023-** Maximum Intensity and Duration - Number of Days in a heatwave state (N days) are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December of the most recent year. The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-most recent year.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/.
 
-*2020-2022*
+**2020-2022**
 The marine heatwave metrics Maximum Intensity [deg. C] and Cumulative Intensity [deg. C x days] are calculated using NOAA OISST daily sea surface temperature data (25-km resolution) from January 1982 to December 2019.  The heatwaves are calculated based on the algorithms in Hobday et al. 2016 and by using a climatology of 1982-2011.  These metrics were run R using https://robwschlegel.github.io/heatwaveR/.
 
 
