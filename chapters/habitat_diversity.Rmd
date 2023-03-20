@@ -1,0 +1,128 @@
+# Habitat Diversity 
+
+**Description**: Species richness was derived from the Northeast Regional Habitat Assessment models for 55 common species sampled by the 2000-2019 spring and fall NEFSC bottom trawl surveys. The joint species distribution model controls for differences in capture efficiency across survey vessels.
+ 
+
+**Indicator category**: Extensive analysis
+
+**Found in**: State of the Ecosystem - New England (2023), 
+State of the Ecosystem - Mid-Atlantic (2023) 
+
+**Contributor(s)**: Chris Haak <ChrisHaak@gmail.com>
+  
+**Data steward**: Laurel Smith <laurel.smith@noaa.gov>
+  
+**Point of contact**: Laurel Smith <laurel.smith@noaa.gov>
+  
+**Public availability statement**: This analysis is based on NEFSC bottom trawl survey data which are publicly available. Please reached out to Laurel Smith with questions.
+
+
+## Methods
+
+
+### Data sources
+
+Abundance data were extracted from the NEFSC’s SVDBS database using Survdat for 55 fish species regularly sampled on spring and fall NEFSC bottom trawl surveys:
+
+| Species included in NRHA Diversity Index: |
+| Acadian Redfish |
+| Alewife |
+| American Lobster |
+| American Plaice |
+| American Shad |
+| Atlantic Cod |
+| Altantic Croaker |
+| Atlantic Herring |
+| Atlantic Mackerel |
+| Barndoor Skate |
+| Black Sea Bass |
+| Blackbelly Rosefish |
+| Blueback Herring |
+| Bluefish |
+| Butterfish |
+| Chain Dogfish |
+| Clearnose Skate |
+| Fawn Cusk Eel |
+| Fourbeard Rockling |
+| Fourspot Flounder |
+| Goosefish |
+| Gulf Stream Flounder |
+| Haddock |
+| Horseshoe Crab |
+| Jonah Crab |
+| Little Skate |
+| Longfin Squid |
+| Longhorn Sculpin |
+| Northern Searobin |
+| Northern Shortfin Squid |
+| Northern Shrimp |
+| Ocean Pout |
+| Offshore Hake |
+| Pollock |
+| Red Hake |
+| Roseete Skate |
+| Scup |
+| Sea Raven |
+| Sea Scallop |
+| Silver Hake |
+| Smooth Dogfish |
+| Smooth Skate |
+| Spiny Dogfish |
+| Spot |
+| Spotted Hake |
+| Striped Searobin |
+| Summer Flounder |
+| Thorny Skate |
+| Weakfish |
+| White Hake |
+| Windowpane Flounder |
+| Winter Flounder |
+| Winter Skate |
+| Witch FLounder |
+| Yellowtail Flounder |
+
+Data were converted to presence/absence for species richness modeling.
+
+### Data analysis
+
+#### Species Richness 
+
+Estimated species richness is the number of unique species expected to be observed in NEFSC bottom trawl surveys conducted in a given ecological production unit (EPU) and year, based on a fitted joint-species distribution/habitat suitability model (considering only the 55 commonly-occurring species listed above).
+
+ 
+#### Model Fitting
+
+
+A spatiotemporal joint species distribution model was fitted to n=13231 observations of presence/absence in the Spring and Fall NEFSC bottom trawl surveys for the years 2000-2019, using the [Community Level Basis Function Model (CBFM) framework](https://github.com/fhui28/CBFM) with a binomial error distribution and logistic link function.  The probability of presence was modeled as a function of environmental predictor variables (using smooth terms), a vessel effect (factor) to account for changes in sampling gear, as well as spatiotemporal (Lat, Lon, Month) and temporal (Year) random effects, which were estimated hierarchically through a set of species-common basis functions. The model thus controls for differences in capture efficiency across survey vessels, permitting predictions on a common scale (here calibrated to the RFV Albatross IV).
+
+#### Environmental Covariates
+
+Covariate values (i.e., environmental parameters) corresponding to the approximate location (and time, when applicable) of each observation (i.e., tow) were extracted from the following sources:
+Monthly mean surface and bottom temperature, surface and bottom salinity, and sea surface height anomaly were obtained from the GLORYS12V1 reanalysis (@Lellouche2012), as were annual minimum and maximum surface and bottom temperatures.
+
+Monthly mean underwater optical parameters, including the intensity (photosynthetically active radiation - PAR) and spectral composition (hue angle) of downwelling light at mid-water column, were estimated from remote sensing data, following the methods of @Lee2005 and @Lee2022, respectively.
+
+Hydrodynamic stress near the seabed (95th quantile) was obtained from the USGS Sea Floor Stress and Sediment Mobility database (Dalyander et al. 2012).
+
+
+Annually-integrated chlorophyll was obtained from the Oceancolour-CCI (version 5) release (https://www.oceancolour.org/).
+
+Bathymetric position index (BPI), benthic structural complexity, and sediment type data were estimated following the methods described at: https://www.conservationgateway.org/ConservationByGeography/NorthAmerica/UnitedStates/edc/reportsdata/marine/namera/namera/Pages/default.aspx/
+
+#### Estimating Richness
+
+Simulating from the fitted model, we generated 100 random draws of “joint” predictions of the species assemblage observed in the survey, taking into account species residual covariances (see @Wilkinson2021 for additional details). We used these to produce estimates of the mean species richness (and corresponding 95% prediction intervals) across all observations within each ecological production unit (EPU) for each modeled year (2000-2019).
+
+
+
+### Data Processing
+
+The Habitat Diversity indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habitat_diversity.R).
+
+### Plotting
+
+Code used to develop the figure below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-habitat-richness.R).
+
+```{r habitat-richness, fig.cap="Habitat model-based species richness for 55 common species sampled by NEFSC bottom trawl surveys.", code=readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-habitat-richness.R"), fig.asp=0.8}
+```
+
