@@ -1,0 +1,39 @@
+# Gray Seal Pups
+
+**Description**: Gray seal pup counts 
+ 
+
+**Indicator category**: Extensive analysis
+
+**Found in**: State of the Ecosystem - New England (2023)
+
+**Contributor(s)**: Stephanie Wood
+  
+**Data steward**: Stephanie Wood <Stephanie.Wood@noaa.gov>
+  
+**Point of contact**: Stephanie Wood <Stephanie.Wood@noaa.gov>
+  
+**Public availability statement**: Reach out to Stephanie Wood <stephanie.wood@noaa.gov> for data. 
+
+
+## Methods
+
+### Data sources
+
+Data comes from NOAA's NEFSC Aerial Surveys (@wood2022).
+
+### Data analysis
+
+Image processing and modelling is described in a NEFSC center reference document (@wood2022). 
+
+### Data Processing
+
+The gray seal pup indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sealpups.R).
+
+### Plotting
+
+Code used to develop the figure below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seal-pups.R).
+
+```{r sealpups, fig.cap="Pup counts at the 4 modeled sites: Monomoy, Muskeget, Nomans Land, and Seal.", code=readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seal-pups.R"), fig.asp=0.8}
+```
+
