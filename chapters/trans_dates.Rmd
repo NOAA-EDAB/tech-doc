@@ -1,0 +1,42 @@
+# Transition Dates 
+
+**Description**: Sea surface transition dates
+ 
+
+**Indicator category**: Extensive analysis
+
+**Found in**: State of the Ecosystem - New England (2023), 
+State of the Ecosystem - Mid-Atlantic (2023) 
+
+**Contributor(s)**: Kevin Friedland <kevin.friedland@noaa.gov>
+  
+**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+  
+**Public availability statement**: Data is publically available. 
+
+
+## Methods
+
+
+### Data sources
+
+Data comes from NOAA's high resolution blended analysis of daily sea surface temperature on a 1/4 degree grid and is available online at [Physical Science Labratory](https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html). 
+
+### Data analysis
+
+Analysis was recreated from @friedland2015. 
+
+
+### Data Processing
+
+The Transiton Date indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_transition_dates.R).
+
+### Plotting
+
+Code used to develop the figure below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-transdates.R).
+
+```{r transdates, fig.cap="Ocean summer length in Mid-Atlantic: the annual total number of days between the spring thermal transition date and the fall thermal transition date. The transition dates are defined as the day of the year when surface temperatures changeover from cool to warm conditions in the spring and back to cool conditions in the fall.", code=readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-transdates.R"), fig.asp=0.8}
+```
+
