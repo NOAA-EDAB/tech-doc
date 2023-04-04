@@ -72,11 +72,11 @@ Code used to develop this indicator from the full set of VAST model index output
 ### Plotting
 Code use to build the plots below can be found here - [MAB](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-index.R) and [NE](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-forage-index.R). 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-index.R"), eval = T, echo=F, fig.cap="Mid-Atlantic Bight forage biomass index"}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-forage-index.R"), eval = T, echo=F, fig.cap="Mid-Atlantic Bight forage biomass index."}
 
 ```
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-forage-index.R"), eval = T, echo=F, fig.cap="Georges Bank and Gulf of Maine forage biomass index"}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-forage-index.R"), eval = T, echo=F, fig.cap="Georges Bank and Gulf of Maine forage biomass index."}
 
 ```
