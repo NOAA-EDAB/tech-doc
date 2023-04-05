@@ -78,9 +78,9 @@ The extract only includes species with more than $1,000 in landings in the regio
 
 
 ### Data analysis
-High migratory landings include 19 species of tunas, sharks and swordfish (table \@(tab:hms-spp)).
+High migratory landings include 19 species of tunas, sharks and swordfish (table \@ref(tab:hmsspp)).
 
-```{r hms-spp, eval = T, echo = F}
+```{r hmsspp, eval = T, echo = F}
 
 rec_spp <- read.csv(here::here("data","hms_species.csv")) 
 

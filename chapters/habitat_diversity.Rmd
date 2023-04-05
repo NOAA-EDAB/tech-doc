@@ -24,64 +24,64 @@ State of the Ecosystem - Mid-Atlantic (2023)
 
 Abundance data were extracted from the NEFSC’s SVDBS database using Survdat for 55 fish species regularly sampled on spring and fall NEFSC bottom trawl surveys:
 
-| Species included in NRHA Diversity Index: 
-| Common Name            | Scientific Name     |
+Species included in NRHA Diversity Index: 
+| Common Name             | Scientific Name                   |
 |-------------------------|-----------------------------------|
-| Acadian Redfish | *Sebastes fasciatus* |
-| Alewife |         *Alosa pseudoharengus* |
-| American Lobster | *Homarus americanus* |
-| American Plaice | *Hippoglossoides platessoides* |
-| American Shad | *Alosa sapidissima* |
-| Atlantic Cod | *Gadus morhua* |
-| Altantic Croaker | *Micropogonias undulatus*  |
-| Atlantic Herring | *Clupea harengus* |
-| Atlantic Mackerel | *Scomber scombrus* |
-| Barndoor Skate | *Dipturus laevis* |
-| Black Sea Bass | *Centropristis striata* | 
-| Blackbelly Rosefish | *Helicolenus dactylopterus* |
-| Blueback Herring | *Alosa aestivalis* |
-| Bluefish | *Pomatomus saltatrix* |
-| Butterfish | *Peprilus triacanthus* |
-| Chain Dogfish | *Scyliorhinus retifer* |
-| Clearnose Skate | *Rostroraja eglanteria* |
-| Fawn Cusk Eel | *Lepophidium profundorum* |
-| Fourbeard Rockling | *Enchelyopus cimbrius* |
-| Fourspot Flounder | *Hippoglossina oblonga* |
-| Goosefish | *Lophius americanus* |
-| Gulf Stream Flounder | *Citharichthys arctifrons* |
-| Haddock | *Melanogrammus aeglefinus* |
-| Horseshoe Crab | *Limulus polyphemus* |
-| Jonah Crab | *Cancer borealis* |
-| Little Skate | *Leucoraja erinaceus* |
-| Longfin Squid | *Doryteuthis (Amerigo) pealeii* |
-| Longhorn Sculpin | *Myoxocephalus octodecemspinosus* |
-| Northern Searobin | *Prionotus carolinus* |
-| Northern Shortfin Squid | *Illex illecebrosus* |
-| Northern Shrimp | *Pandalus borealis* |
-| Ocean Pout | *Zoarces americanus* |
-| Offshore Hake | *Merluccius albidus* |
-| Pollock | *Pollachius pollachius* |
-| Red Hake | *Urophycis chuss*  |
-| Rosette Skate | *Leucoraja garmani* |
-| Scup | *Stenotomus chrysops* |
-| Sea Raven | *Hemitripterus americanus* |
-| Sea Scallop |  *Placopecten magellanicus* |
-| Silver Hake | *Merluccius bilinearis* |
-| Smooth Dogfish | *Mustelus canis* |
-| Smooth Skate | *Malacoraja senta* |
-| Spiny Dogfish | *Squalus acanthias* |
-| Spot | *Leiostomus xanthurus* |
-| Spotted Hake | *Urophycis regia*  |
-| Striped Searobin | *Prionotus evolans* |
-| Summer Flounder | *Paralichthys dentatus* |
-| Thorny Skate | *Amblyraja radiata* |
-| Weakfish | *Cynoscion regalis* |
-| White Hake | *Urophycis tenuis* |
-| Windowpane Flounder | *Scophthalmus aquosus* |
-| Winter Flounder | *Pseudopleuronectes americanus* |
-| Winter Skate | *Leucoraja ocellata* |
-| Witch FLounder | *Glyptocephalus cynoglossus* |
-| Yellowtail Flounder | *Myzopsetta ferruginea* |
+| Acadian Redfish         | *Sebastes fasciatus*              |
+| Alewife                 | *Alosa pseudoharengus*            |
+| American Lobster        | *Homarus americanus*              |
+| American Plaice         | *Hippoglossoides platessoides*    |
+| American Shad           | *Alosa sapidissima*               |
+| Atlantic Cod            | *Gadus morhua*                    |
+| Altantic Croaker        | *Micropogonias undulatus*         |
+| Atlantic Herring        | *Clupea harengus*                 |
+| Atlantic Mackerel       | *Scomber scombrus*                |
+| Barndoor Skate          | *Dipturus laevis*                 |
+| Black Sea Bass          | *Centropristis striata*           | 
+| Blackbelly Rosefish     | *Helicolenus dactylopterus*       |
+| Blueback Herring        | *Alosa aestivalis*                |
+| Bluefish                | *Pomatomus saltatrix*             |
+| Butterfish              | *Peprilus triacanthus*            |
+| Chain Dogfish           | *Scyliorhinus retifer*            |
+| Clearnose Skate         | *Rostroraja eglanteria*           |
+| Fawn Cusk Eel           | *Lepophidium profundorum*         |
+| Fourbeard Rockling      | *Enchelyopus cimbrius*            |
+| Fourspot Flounder       | *Hippoglossina oblonga*           |
+| Goosefish               | *Lophius americanus*              |
+| Gulf Stream Flounder    | *Citharichthys arctifrons*        |
+| Haddock                 | *Melanogrammus aeglefinus*        |
+| Horseshoe Crab          | *Limulus polyphemus*              |
+| Jonah Crab              | *Cancer borealis*                 |
+| Little Skate            | *Leucoraja erinaceus*             |
+| Longfin Squid           | *Doryteuthis (Amerigo) pealeii*   |
+| Longhorn Sculpin        | *Myoxocephalus octodecemspinosus* |
+| Northern Searobin       | *Prionotus carolinus*             |
+| Northern Shortfin Squid | *Illex illecebrosus*              |
+| Northern Shrimp         | *Pandalus borealis*               |
+| Ocean Pout              | *Zoarces americanus*              |
+| Offshore Hake           | *Merluccius albidus*              |
+| Pollock                 | *Pollachius pollachius*           |
+| Red Hake                | *Urophycis chuss*                 |
+| Rosette Skate           | *Leucoraja garmani*               |
+| Scup                    | *Stenotomus chrysops*             |
+| Sea Raven               | *Hemitripterus americanus*        |
+| Sea Scallop             |  *Placopecten magellanicus*       |
+| Silver Hake             | *Merluccius bilinearis*           |
+| Smooth Dogfish          | *Mustelus canis*                  |
+| Smooth Skate            | *Malacoraja senta*                |
+| Spiny Dogfish           | *Squalus acanthias*               |
+| Spot                    | *Leiostomus xanthurus*            |
+| Spotted Hake            | *Urophycis regia*                 |
+| Striped Searobin        | *Prionotus evolans*               |
+| Summer Flounder         | *Paralichthys dentatus*           |
+| Thorny Skate            | *Amblyraja radiata*               |
+| Weakfish                | *Cynoscion regalis*               |
+| White Hake              | *Urophycis tenuis*                |
+| Windowpane Flounder     | *Scophthalmus aquosus*            |
+| Winter Flounder         | *Pseudopleuronectes americanus*   |
+| Winter Skate            | *Leucoraja ocellata*              |
+| Witch Flounder          | *Glyptocephalus cynoglossus*      |
+| Yellowtail Flounder     | *Myzopsetta ferruginea*           |
 
 
 
