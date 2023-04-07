@@ -1,4 +1,4 @@
-# Bennet Indicator
+# Bennet Indicator {#bennet}
 
 **Description**: Bennet Indicator
 
