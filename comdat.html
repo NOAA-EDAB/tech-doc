@@ -208,15 +208,15 @@ div.csl-indent {
 <li class="chapter" data-level="4.2.3" data-path="aquaculture.html"><a href="aquaculture.html#data-analysis-1"><i class="fa fa-check"></i><b>4.2.3</b> Data analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="bennet-indicator.html"><a href="bennet-indicator.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a>
+<li class="chapter" data-level="5" data-path="bennet.html"><a href="bennet.html"><i class="fa fa-check"></i><b>5</b> Bennet Indicator</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
+<li class="chapter" data-level="5.1" data-path="bennet.html"><a href="bennet.html#methods-3"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-sources-4"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="5.1.2" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
-<li class="chapter" data-level="5.1.3" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="5.1.4" data-path="bennet-indicator.html"><a href="bennet-indicator.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
-<li class="chapter" data-level="5.1.5" data-path="bennet-indicator.html"><a href="bennet-indicator.html#plotting-1"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
+<li class="chapter" data-level="5.1.1" data-path="bennet.html"><a href="bennet.html#data-sources-4"><i class="fa fa-check"></i><b>5.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bennet.html"><a href="bennet.html#data-extraction-3"><i class="fa fa-check"></i><b>5.1.2</b> Data extraction</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bennet.html"><a href="bennet.html#data-analysis-2"><i class="fa fa-check"></i><b>5.1.3</b> Data analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bennet.html"><a href="bennet.html#data-processing-1"><i class="fa fa-check"></i><b>5.1.4</b> Data processing</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bennet.html"><a href="bennet.html#plotting-1"><i class="fa fa-check"></i><b>5.1.5</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="bottom-temperature---glorys.html"><a href="bottom-temperature---glorys.html"><i class="fa fa-check"></i><b>6</b> Bottom temperature - GLORYS</a>
@@ -985,7 +985,7 @@ div.csl-indent {
 <p><strong>Contributor(s)</strong>: Sean Lucey</p>
 <p><strong>Data steward</strong>: Sean Lucey, <a href="mailto:Sean.Lucey@noaa.gov" class="email">Sean.Lucey@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Sean Lucey, <a href="mailto:Sean.Lucey@noaa.gov" class="email">Sean.Lucey@noaa.gov</a></p>
-<p><strong>Public availability statement</strong>: Raw data are not publically available due to confidentiality of individual fishery participants. Derived indicator outputs are
+<p><strong>Public availability statement</strong>: Raw data are not publicly available due to confidentiality of individual fishery participants. Derived indicator outputs are
 available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html">here</a>.</p>
 <div id="methods-15" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> Methods<a href="comdat.html#methods-15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1185,7 +1185,9 @@ Mid-Atlantic
 </div>
 <div id="data-analysis-13" class="section level3 hasAnchor" number="15.1.3">
 <h3><span class="header-section-number">15.1.3</span> Data analysis<a href="comdat.html#data-analysis-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections. The most straightforward use of this data are the aggregate landings indicators. These are calculated by first assigning the various species into <a href="aggroups.html#aggroups">aggregate groups</a>. Species are also marked by which management body manages them. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed or not. Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region. Both the total and those landings managed by the management body receiving the report are reported. Proportions of managed landings to total landings are also reported in tabular form.</p>
+<p>Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections (ie. <a href="bennet.html#bennet">bennet index</a>). The most straightforward use of this data are the region total and aggregate landings indicators. Regional totals sum landings three ways: 1) All landings regardless of management authority and eventual use (i.e. food or bait), 2) All landings used for seafood but regardless of management authority, and 3) All landings used for seafood and managed by the regional fisheries management council for whom the report is presented.</p>
+<p>Landings are also calculated by aggregate groups per region. These are calculated by first assigning the various species into <a href="aggroups.html#aggroups">aggregate groups</a>. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.</p>
+<p>These are calculated by first assigning the various species into <a href="aggroups.html#aggroups">aggregate groups</a>. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.</p>
 </div>
 <div id="plotting-11" class="section level3 hasAnchor" number="15.1.4">
 <h3><span class="header-section-number">15.1.4</span> Plotting<a href="comdat.html#plotting-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>

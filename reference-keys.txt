@@ -155,7 +155,7 @@ methods-2017-2019
 data-sources-3
 data-extraction-2
 data-analysis-1
-bennet-indicator
+bennet
 methods-3
 data-sources-4
 data-extraction-3
