@@ -25,6 +25,8 @@ State of the Ecosystem - Mid-Atlantic (2023)
 Abundance data were extracted from the NEFSC’s SVDBS database using Survdat for 55 fish species regularly sampled on spring and fall NEFSC bottom trawl surveys:
 
 Species included in NRHA Diversity Index: 
+
+
 | Common Name             | Scientific Name                   |
 |-------------------------|-----------------------------------|
 | Acadian Redfish         | *Sebastes fasciatus*              |

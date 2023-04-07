@@ -20,7 +20,7 @@ library(rmarkdown)
   
 **Point of contact**: Richard Pace, richard.pace@noaa.gov
   
-**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html)
+**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html).
 
 ## Methods
 

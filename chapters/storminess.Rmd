@@ -23,11 +23,11 @@ European Centre for Medium-Range Weather Forecasts atmospheric reanalysis versio
 
 ### Data Extraction
 The following variables were extracted from the input data: 
-+ 10m_u_component_of_wind
-+ '10m_v_component_of_wind
-+ Mean_sea_level_pressure
-+ Mean_wave_period
-+ significant_height_of_combined_wind_waves_and_swell
+ + 10m_u_component_of_wind
+ + '10m_v_component_of_wind
+ + Mean_sea_level_pressure
+ + Mean_wave_period
+ + significant_height_of_combined_wind_waves_and_swell
 
 Extractions were limited to the region bounded by 80°W, 50°N, 60°W, and 20°N.  
 

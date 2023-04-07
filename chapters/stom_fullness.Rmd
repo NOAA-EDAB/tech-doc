@@ -12,7 +12,7 @@
   
 **Point of contact**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
-**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures). Derived stomach fullness data are available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/) (STILL NEEDS SOE DATA REFERENCE!).
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [Food Habits Database (FHDBS)](https://inport.nmfs.noaa.gov/inport) for access procedures). Derived stomach fullness data are available.
 
 
 ## Methods

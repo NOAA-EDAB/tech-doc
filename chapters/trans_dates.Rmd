@@ -1,6 +1,6 @@
 # Transition Dates 
 
-**Description**: Sea surface transition dates
+**Description**: Sea surface temperature transition dates
  
 
 **Indicator category**: Extensive analysis

@@ -1,7 +1,7 @@
 # Regime Shift Analysis
 
 
-**Description**: regime shift analysis
+**Description**: Qualitative regime shift analysis with plotting tool
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+), State of the Ecosystem - Mid-Atlantic (2023+)
 

@@ -35,7 +35,7 @@ knitr::kable(rec_spp, caption="Species included in recreational catch diversity 
 ```
 
 
-Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2019. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the Marine Recreational Fishery Statistics Survey (MRFSS) Participation Time Series Query, and includes data from 1981 - 2016. 
+Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2021. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the Marine Recreational Fishery Statistics Survey (MRFSS) Participation Time Series Query, and includes data from 1981 - 2016. 
 
 ### Data analysis
 
