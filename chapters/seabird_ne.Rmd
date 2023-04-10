@@ -19,7 +19,7 @@
 
 **Chick diet**
 
-Common tern (*Sterna hirundo*) chick diet was quantified at each of the seven nesting sites (Fig. \@ref(fig:nest-sites) ) by observing chick provisioning from portable observation blinds. The locations of observation blinds within each site were chosen to maximize the number of visible nests, and provisioning observations took place between mid-June and early August annually. Observations of chick diet were made during one or two, three to four hour periods throughout the day, but typically proceed according to nest activity levels (moreso in the morning hours). Observations began with chicks as soon as they hatched, and continue until the chicks fledged or died. 
+Common tern (*Sterna hirundo*) chick diet was quantified at each of the seven nesting sites by observing chick provisioning from portable observation blinds. The locations of observation blinds within each site were chosen to maximize the number of visible nests, and provisioning observations took place between mid-June and early August annually. Observations of chick diet were made during one or two, three to four hour periods throughout the day, but typically proceed according to nest activity levels (moreso in the morning hours). Observations began with chicks as soon as they hatched, and continue until the chicks fledged or died. 
 
 Most common tern prey species were identifiable to the species level due to distinct size, color and shape. However, when identification was not possible or was unclear, prey species were listed as "unknown" or "unknown fish". More detailed methods can be found in @hall2000. 
 
