@@ -12,7 +12,7 @@
 
 **Point of contact**: Sean Lucey, <Sean.Lucey@noaa.gov>
 
-**Public availability statement**: Raw data are not publically available due to confidentiality of individual fishery participants.  Derived indicator outputs are
+**Public availability statement**: Raw data are not publicly available due to confidentiality of individual fishery participants.  Derived indicator outputs are
 available [here](https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html).
 
 
@@ -84,7 +84,12 @@ The landings data were formatted for inclusion in the `ecodata` R package with t
 
 ### Data analysis
 
-Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data are the aggregate landings indicators.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Species are also marked by which management body manages them.  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed or not.  Both managed and unmanaged totals are added together to get the final amount of total landings for that aggregate group within its respective region.  Both the total and those landings managed by the management body receiving the report are reported.  Proportions of managed landings to total landings are also reported in tabular form.
+Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections (ie. [bennet index](#bennet)).  The most straightforward use of this data are the region total and aggregate landings indicators.  Regional totals sum landings three ways: 1) All landings regardless of management authority and eventual use (i.e. food or bait), 2) All landings used for seafood but regardless of management authority, and 3) All landings used for seafood and managed by the regional fisheries management council for whom the report is presented.
+
+Landings are also calculated by aggregate groups per region.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
+
+  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
+
 
 ### Plotting
 The plot below was built using the code found
