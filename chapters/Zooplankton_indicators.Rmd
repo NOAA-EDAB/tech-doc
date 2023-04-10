@@ -37,7 +37,7 @@ Abundance anomalies are computed from the expected abundance on the day of sampl
 
 #### Euphausiids and Cnidarians 
 
-Stratified abundance of euphausiids and cnidarians were included in the 2020 State of the Ecosystem reports (Figure \@ref(fig:euph)). These were calculated as the log of estimated absolute number of individuals. 
+Stratified abundance of euphausiids and cnidarians were included in the 2020 State of the Ecosystem reports. These were calculated as the log of estimated absolute number of individuals. 
 
 
 #### Seasonal abundance
@@ -46,7 +46,7 @@ Time series of zooplankton abundance in the spring and fall months have been pre
 
 #### Zooplankton Diversity
 
-Time series of zooplankton diversity (effective shannon) (Figure \@ref(fig:zoo-div)) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above. 
+Time series of zooplankton diversity (effective shannon) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above. 
 
 ### Data processing
 
