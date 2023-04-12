@@ -101,6 +101,6 @@ here ([Mid-Atlantic](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scri
 
 
 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R"), eval=TRUE, echo=FALSE, fig.cap="Total commercial seafood landings (black) and New England managed seafood landings (red)."}
+```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R"), eval=TRUE, echo=FALSE, fig.cap="Total commercial landings (black), total U.S. seafood landings (blue), and New England managed U.S. seafood landings (red)."}
 ```
 
