@@ -1,0 +1,36 @@
+name: State of the Ecosystem - Tech Doc Submission
+description: Use this issue template to submit tech doc information for the State of the Ecosystem reports.
+title: "[Submission]: "
+labels: ["submission"]
+assignees: "BBeltz1"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the State of the Ecosystem reports! Please reach out to nefsc.soe.leads@noaa.gov with any questions or concerns. In the following sections, please outline the methods used for these indicator data. Please include any documentation when available (i.e. links to code, published works, etc). If easier, you may include a write up of your methods in a separate document and upload that file below.
+  - type: textarea
+    id: data_source
+    attributes:
+      label: Data Source(s)
+      description: Describe data sources here, with links wherever applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: data_processing
+    attributes:
+      label: Data Processing
+      description: How were data processed? At minimum, please include a text description of the processing steps. Code may be uploaded as a supporting file below. If code is published elsewhere, please provide a link.
+    validations:
+      required: false
+  - type: textarea
+    id: data_analysis
+    attributes:
+      label: Data Analysis
+      description: How were the data analyzed? Please provide a description of analytical methods, upload any relevant code and/or link to appropriate sources. At minimum, please include a text description of the analytical steps. Code may be uploaded as a supporting file below.
+    validations:
+      required: false
+  - type: textarea
+    id: bibliography
+    attributes:
+      label: Bibiography
+      description: Use this space to enter citations for above fields, preferably in BibTeX format. Otherwise, please upload a bibliography as a supporting file below.
