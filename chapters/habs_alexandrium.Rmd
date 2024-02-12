@@ -1,4 +1,4 @@
-# Harmful Algal Bloom - Alexandrium Indicator
+# Harmful Algal Bloom - Alexandrium Indicator {#habs}
 
 **Description**: *Alexandrium catenella* annual cyst abundance in the Gulf of Maine
 

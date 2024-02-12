@@ -1,4 +1,4 @@
-# Slopewater proportions
+# Slopewater proportions {#slopewater}
 
 **Description**: Percent total of water type observed in the deep Northeast Channel (150-200 m water depth).
 

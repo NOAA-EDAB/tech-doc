@@ -1,4 +1,4 @@
-# Fish Productivity Indicator
+# Fish Productivity Indicator {#productivity_anomaly}
  
 **Description**: Groundfish productivity estimated as the ratio of small fish to large fish
 

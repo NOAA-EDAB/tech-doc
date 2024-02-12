@@ -1,4 +1,4 @@
-# Fish Condition Indicator
+# Fish Condition Indicator {#condition}
 
 **Description**: Relative condition
 

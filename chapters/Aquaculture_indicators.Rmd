@@ -1,4 +1,4 @@
-# Aquaculture
+# Aquaculture {#aquaculture}
 
 **Description**: Aquaculture indicators
 

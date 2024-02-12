@@ -1,4 +1,4 @@
-# Fisheries Revenue in Wind Development Areas
+# Fisheries Revenue in Wind Development Areas {#wind_revenue}
 
 **Description**: Top Species Revenue from Wind Development Areas
 

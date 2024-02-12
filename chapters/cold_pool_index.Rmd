@@ -1,4 +1,4 @@
-# Cold Pool Index
+# Cold Pool Index {#cold_pool}
 
 **Description**: Cold Pool Index - three annual cold pool indices (and the standard errors) between 1958 and 2021. 
 

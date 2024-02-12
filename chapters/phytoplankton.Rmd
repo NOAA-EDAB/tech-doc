@@ -1,4 +1,4 @@
-# Phytoplankton {#phytoplankton}
+# Phytoplankton {#chl_pp}
 
 **Description**: Phytoplankton products - Chlorophyll *a*, Primary Production, and Phytoplankton Size Class
 

@@ -1,4 +1,4 @@
-# Seasonal SST Anomalies
+# Seasonal SST Anomalies {#seasonal_sst_anomaly_gridded}
 
 **Description**: Seasonal SST Anomalies
 

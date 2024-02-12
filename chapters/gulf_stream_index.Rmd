@@ -1,4 +1,4 @@
-# Gulf Stream Index
+# Gulf Stream Index {#gsi}
 
 **Description**: Annual time series of the Gulf Stream index
 

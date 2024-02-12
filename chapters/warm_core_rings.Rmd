@@ -1,4 +1,4 @@
-# Warm Core Rings
+# Warm Core Rings {#wcr}
 
 **Description**: Warm Core Rings
 

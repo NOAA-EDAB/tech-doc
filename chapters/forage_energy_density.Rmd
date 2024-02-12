@@ -1,4 +1,4 @@
-# Forage Fish Energy Density
+# Forage Fish Energy Density {#energy_density}
 
 **Description**: Forage Engery Density indicators
 

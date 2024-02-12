@@ -1,4 +1,4 @@
-# Marine Heatwave
+# Marine Heatwave {#heatwave}
 
 **Description**: Marine Heatwave
 

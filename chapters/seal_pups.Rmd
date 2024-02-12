@@ -1,4 +1,4 @@
-# Gray Seal Pups
+# Gray Seal Pups {#seal_pups}
 
 **Description**: Gray seal pup counts 
  

@@ -1,4 +1,4 @@
-# Bottom temperature - High Resolution
+# Bottom temperature - High Resolution {#bottom_temp_seasonal_gridded}
 
 **Description**: Seasonal bottom temperatures on the Northeast Continental Shelf between 1959 and 2022 in a 1/12° grid. 
 

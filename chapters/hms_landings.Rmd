@@ -1,4 +1,4 @@
-# Highly Migratory Species Landings
+# Highly Migratory Species Landings {#hms_landings}
 
 **Description**: Atlantic Highly Migratory Species Landings
 

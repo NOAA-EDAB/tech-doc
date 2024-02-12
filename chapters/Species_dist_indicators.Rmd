@@ -1,4 +1,4 @@
-# Species Distribution Indicators
+# Species Distribution Indicators {#species_dist}
 
 **Description**: Species mean depth, along-shelf distance, and distance to coastline
 

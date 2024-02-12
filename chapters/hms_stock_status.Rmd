@@ -1,4 +1,4 @@
-# Highly Migratory Species Stock Status 
+# Highly Migratory Species Stock Status {#hms_stock_status}
 
 **Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
 

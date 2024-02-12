@@ -1,4 +1,4 @@
-# Bottom temperature - in situ
+# Bottom temperature - in situ {#bottom_temp}
 
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 

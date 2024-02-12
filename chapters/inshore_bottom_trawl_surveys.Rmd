@@ -1,4 +1,4 @@
-# Inshore bottom trawl surveys {#inshoresurvdat}
+# Inshore bottom trawl surveys {#mab_inshore_survey}
 
 **Description**: Inshore surveys include the Northeast Area Monitoring and Assessment Program (NEAMAP) survey, Massachusetts Division of Marine Fisheries Bottom Trawl Survey, and Maine/New Hampshire Inshore Trawl Survey. 
 
