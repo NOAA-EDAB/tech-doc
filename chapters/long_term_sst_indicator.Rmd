@@ -42,12 +42,3 @@ R code used in extracting time series of long-term SST data can be found [here](
 ### Data Processing
 
 Data were formatted for inclusion in the `ecodata` R package with the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_long_term_sst.R).
-
-
-### Plotting
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-long-term-sst.R). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-long-term-sst.R"), eval = T, echo=F, fig.cap="Long-term sea surface temperatures on the Northeast Continental Shelf.", fig.align="center", fig.height=7 }
-
-```

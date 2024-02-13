@@ -51,11 +51,4 @@ Sampling and laboratory analysis is ongoing, with the goal of continuing routine
 ### Data processing
 
 Code for building the table used in the SOE can be found 
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-forage.R). 
-
-### Plotting
-Code used to develop this plot can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R).
-
-```{r tab, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-energy-density.R"), echo = F, eval = T, warning = F, message=F, fig.cap="Forage fish mean energy density mean and standard deviation by season and year, compared with 1980s and 1990s."}
-
-```
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-forage.R).

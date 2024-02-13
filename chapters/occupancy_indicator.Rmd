@@ -82,10 +82,4 @@ An annual field was then estimated using raw data observations for a year, seaso
 Prior to fitting the occupancy models, predictor variables were tested for multi-collinearity and removed if found to be correlated. The final model variables were then chosen utilizing a model selection process as shown by @Murphy2010 and implemented with the R package `rfUtilities` [@rfUtilities-package]. Occupancy models were then fit as two-factor classification models (absence as 0 and presence as 1) using the `randomForest` R package [@randomForest]. 
 
 #### Selection criteria and variable importance
-The `irr` R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.  
-
-### Plotting
-
-```{r occupancy-MAB, fig.cap="Summer flounder spring (A) and fall (B) occupancy habitat area in the Northeast Large Marine Ecosystem. ", echo = F, fig.show='hold', warning = F, message = F,fig.pos='H'}
-knitr::include_graphics(file.path(image.dir, "habitat_occupancy_plot.png"))
-```
+The `irr` R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.

@@ -29,38 +29,6 @@ Using raster data of modeled VTR data using the Fishing Footprint method, we int
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_revenue.R).
 
-### Plotting
-
-The plot below was built using the code found
-[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-spp-rev.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-spp-rev.R"), eval = T, echo = F, fig.cap = "Top five MAFMC species revenue found in wind development areas."}
-
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-landings-rev.R"), eval = T, echo = F, fig.cap = "Species landings revenue range found in wind development areas."}
-
-```
-
-\* Landings and revenue for these species are likely underestimated due to limited coverage of these fisheries in historic reporting requirements for vessels issued federal permits by the NMFS Greater Atlantic Regional Fisheries Office.  However, such limitations also suggest an inaccurately higher proportion of such landings and revenues in existing lease areas. ** Clearnose skates were reported separately from skates, which is presumed to include all skates managed under the Northeast skate complex. *** Based on comparison with other data sources, the high values for Illex squid are likely overestimates affected by the methods used to model logbook data to estimate spatial overlap of fishing operations with wind energy areas.
-
-
-<!-- ```{r,  eval = T, echo = F, fig.cap = "Species landings revenue range found in wind development areas."} -->
-<!-- dt<- ecodata::wea_landings_rev %>%  -->
-<!--   dplyr::select("NEFMC, MAFMC, and ASMFC Managed Species",  -->
-<!--                 "perc_landings_max","perc_revenue_max" ) %>%  -->
-<!--  dplyr::slice_head(n =10) %>%  -->
-<!--   dplyr::mutate(perc_landings_max = paste0(perc_landings_max, " %"), -->
-<!--                 perc_revenue_max = paste0(perc_revenue_max, " %")) %>%  -->
-<!--   dplyr::rename("Maximum Percent Total Annual Regional Species Landings"="perc_landings_max", -->
-<!--     "Maximum Percent Total Annual Regional Species Revenue"="perc_revenue_max")  -->
-<!-- k<- kable(dt, caption = "Top ten species Landings and Revenue from Wind Energy Areas." ) %>%  -->
-<!--   kable_classic(full_width = F, html_font = "Cambria") -->
-<!-- kableExtra::landscape(k) -->
-<!--``` -->
-
-
-
 ## Methods 2021
 ### Data Sources
 

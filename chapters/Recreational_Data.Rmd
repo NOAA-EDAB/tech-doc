@@ -51,18 +51,3 @@ Code used to for catch diversity data analysis can be found [here](https://githu
 ### Data processing
 
 Recreational fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec.R).
-
-
-### Plotting
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recdat-diversity.R"), eval = T, echo = F, fig.cap = "Recreational effort diversity and diversity of recreational catch in the Mid-Atlantic."}
-
-```
-
- 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-recdat-landings.R"), fig.cap = "Total recreational seafood harvest in the Mid-Atlantic.", eval=T, echo=F}
-
-```
-
-

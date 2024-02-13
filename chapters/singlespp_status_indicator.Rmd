@@ -160,15 +160,3 @@ For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. 
 
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
-
-### Plotting
-
-The script used to develop the figure in the State of the Ecosystem report can be found here ([MAB](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-stock-status.R) and [NE](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_NE.Rmd-stock-status.R) ).
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-stock-status.R"), warning=F, fig.cap ="Summary of single species status for MAFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=F}
-
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-stock-status.R"), warning=F, fig.cap ="Summary of single species status for NEFMC and jointly managed stocks.", fig.width = 8, fig.asp = 0.65, eval=T, echo=F}
-
-```

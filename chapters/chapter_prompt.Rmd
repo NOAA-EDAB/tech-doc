@@ -28,10 +28,4 @@ Short narrative describing how indicator data were analyzed. If analytical steps
 ### Data processing
 From this point on, the EDAB team will take over. In the sections above please outline all steps in the indicator development. The goal is to make the indicator as transparent and reproducible as possible. 
 
-EDAB will include description and links to processing code. 
-
-### Plotting
-
-EDAB will include link to plotting code and a visualization of the data (preferably the one used in an SOE or Memo).
-
-
+EDAB will include description and links to processing code.

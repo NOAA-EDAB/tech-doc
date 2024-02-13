@@ -31,16 +31,3 @@ All detailed data processing steps are not currently included in this document, 
 ### Data processing
 
 Persistent hotspots were computed with the `sf` and `raster` R packages.
-
-
-### Plotting
-
-```{r, fig.cap="North Atlantic Right Whale hotspot map."}
-knitr::include_graphics(file.path(image.dir, "NARW_hotpsot_persistence_2_1_2022_TPW.png"))
-```
-
-```{r, fig.cap="Hotspot map for all protected groups (Seabirds, Cetaceans, and Turtles)."}
-knitr::include_graphics(file.path(image.dir, "seabirds_cetaceans_turtles_hotspot_persistence_2_1_2022_TPW.png"))
-```
-
-

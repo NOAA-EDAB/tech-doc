@@ -55,21 +55,3 @@ Each species, depending upon data availability, sectors, fleets etc., goes throu
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl.R"), eval = T, echo = F, fig.cap = "Total ABC or ACL means and ranges throughout the eight years of data avaliable."}
-
-```
-
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl-catch.R"), eval = T, echo = F, fig.cap = "Fishing limit compared to catch for each avalaible managed stock. Dashed line is 1 where limit equals catch. Red line is the mean for all stocks."}
-
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-abcacl-stacked.R"), eval = T, echo = F, fig.cap = "Cumulative limit for all stocks with limits greater that 10,000 lbs."}
-
-```

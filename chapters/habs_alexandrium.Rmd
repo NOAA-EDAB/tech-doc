@@ -32,24 +32,3 @@ The spatial distribution and abundance of cyst cells from the annual survey are 
 ### Data Processing
 
 Code for processing *Alexandrium* cyst data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
-
-### Plotting
-
-The script used to develop the figure in the SOE Indicator Catalog can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-alex.R).
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-alex.R"), echo = F, eval = T, fig.cap="Gulf of Maine Alexandrium Cyst abundance."}
-
-```
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-alex-distibution.R"), echo = F, fig.align="center", eval = T,out.width = "80%", fig.cap="Gulf of Maine Alexandrium Cyst distribution."}
-
-```
-
-```{r , echo = F, fig.align="center", eval = T, out.width = "80%"}
-knitr::include_graphics(file.path(image.dir, "HAB_dashboard_GMaine_July8_2021 - David Nelson - NOAA Federal.png"))
-```
-
-
-
-

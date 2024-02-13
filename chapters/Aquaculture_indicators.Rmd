@@ -54,13 +54,6 @@ No further analysis was conducted on these.
 Aquaculture data were formatted for inclusion in the `ecodata` R package using the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
 
 
-### Plotting
-Code for plotting data included in the State of the Ecosystem report can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-aquaculture.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-aquaculture-pieces.R"), fig.cap="Total oyster production in peices from areas leased for New England states.",echo = F, eval =T, warning = F, message=F}
-```
-
-
 ## Methods 2017-2019
 Aquaculture data included in the State of the Ecosystem (SOE) report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
 

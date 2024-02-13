@@ -31,15 +31,6 @@ The GSI is calculated based on the method presented by @perez-hernandez2014. It 
 
 The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R).
 
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-GSI.R). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-gsi.R"), eval = T, echo=F, fig.cap="Index representing changes in the location of the Gulf Stream north wall. Positive values represent a more northerly" }
-
-```
-
 ## 2019 Methods
 
 Summarized from @joyce2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 

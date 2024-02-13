@@ -28,16 +28,3 @@ The [analysis and methods](https://d18lev1ok5leia.cloudfront.net/chesapeakeprogr
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sav.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-sav.R"), eval = T, echo = F, fig.cap = "Submerged Aquatic Vegetation (SAV) coverage in tidal fresh and high salinity regions of the Chesapeake Bay."}
-
-```
-
-
-
-
