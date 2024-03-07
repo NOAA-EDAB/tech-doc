@@ -1,4 +1,4 @@
-# Chesapeake Bay Salinity and Temperature {#ches_bay_sal}
+# Chesapeake Bay Salinity and Temperature {#ch_bay_sal}
 
 **Description**: Chesapeake Bay Salinity and Temperature
 

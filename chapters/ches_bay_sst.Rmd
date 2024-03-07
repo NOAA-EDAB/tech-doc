@@ -1,4 +1,4 @@
-# Chesapeake Bay Seasonal SST Anomalies {#ches_bay_sst}
+# Chesapeake Bay Seasonal SST Anomalies {#ch_bay_sst}
 
 **Description**:  Chesapeake Bay Seasonal SST Anomalies
 
