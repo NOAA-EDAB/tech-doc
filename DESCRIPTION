@@ -11,6 +11,9 @@ Depends:
   devtools,
   here,
   knitr,
-  kableExtra
+  kableExtra,
+  ecodata
+Remotes:
+  NOAA-EDAB/ecodata
 
   
