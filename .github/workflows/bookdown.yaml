@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - brandon_url_changes
+      - andytest1
       
   pull_request:
     branches:
