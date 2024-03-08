@@ -8,6 +8,9 @@ Depends:
   rmarkdown,
   tidyverse,
   data.table,
-  devtools
+  devtools,
+  here,
+  knitr,
+  kableExtra
 
   
