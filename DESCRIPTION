@@ -12,7 +12,8 @@ Depends:
   here,
   knitr,
   kableExtra,
-  ecodata
+  ecodata,
+  stocksmart
 Remotes:
   NOAA-EDAB/ecodata,
   NOAA-EDAB/stocksmart
