@@ -24,16 +24,3 @@ Data for annual sea surface tempature (SST) cycles were derived from the NOAA op
 Daily mean sea surface temperature data for 2017 and for each year during the period of 1981-2012 were downloaded from the NOAA [OI SST V2 site](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html) to derive the long-term climatological mean for the period. The use of a 30-year climatological reference period is a standard procedure for metereological observing [@WMO2017]. These reference periods serve as benchmarks for comparing current or recent observations, and for the development of standard anomaly data sets. The reference period of 1982-2012 was chosen to be consistent with previous versions of the State of the Ecosystem report. 
 
 R code used in extraction and processing can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/annual_sst_cycles_extraction_and_processing.R).
-
-
-### Data analysis 
-We calculated the long-term mean and standard deviation of SST over the period of 1982-2012 for each EPU, as well as the daily mean for 2017.  
-
-R code used for analysis and plotting can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/annual_sst_cycles_analysis_and_plotting.R).
-
-```{r , out.width="80%", fig.asp = 0.45, fig.cap = "Long-term mean SSTs for the Mid-Atlantic Bight (A), Georges Bank (B), and Gulf of Maine (C). Orange and cyan shading show where the 2017 daily SST values were above or below the long-term mean respectively; red and dark blue shades indicate days when the 2017 mean exceeded +/- 1 standard deviation from the long-term mean.", echo = F, fig.align="center", eval=T }
- 
-knitr::include_graphics(file.path(image.dir, "annual_SST_cycle_plot.png"))
-
-```
-

@@ -1,4 +1,4 @@
-# Warm Core Rings
+# Warm Core Rings {#wcr}
 
 **Description**: Warm Core Rings
 
@@ -31,14 +31,4 @@ The data from @gangopadhyay2019 were provided by Avijit Gangopandhyay, *School f
 A sequential regime shift detection algorithm was used to identify the regimes evident in the warm core ring formation time-series.  See @gangopadhyay2019 for details.
 
 ### Data processing
-Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R). 
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-warm-core-rings.R). 
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-wcr.R"), eval = T, fig.cap= " Interannual Variability of the WCR formation. The regime shift (denoted by the split in the red solid line) is significant at the turn of the century.  Figure reproduced with permission from Gangopadhyay, et al. (2019)."}
-
-```
+Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R).

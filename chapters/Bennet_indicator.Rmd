@@ -43,13 +43,3 @@ Total revenue change between time $t$ and $t+1$ is the sum of the VI and PI. Sin
 ### Data processing
 
 Bennet indicator time series were formatted for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_bennet.R).
-
-
-### Plotting
-Code for plotting the bennet indicator can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-bennet.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-bennet.R"), eval=TRUE, echo = FALSE,  fig.cap = "Revenue change from the long-term mean in 2015 dollars (black), Price (PI), and Volume Indicators (VI) for commercial landings in the Mid-Atlantic."}
-
-```
-
-

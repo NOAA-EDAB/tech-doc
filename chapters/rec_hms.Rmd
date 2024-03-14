@@ -70,12 +70,3 @@ Data regions "4 = New England"  and "5 = Mid-Atlantic" were selected for as to r
 ### Data processing
 
 Recreational shark fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec_hms.R).
-
-
-### Plotting
-
-Code used to create the plot below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-rec_hms.R).
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-rec_hms.R"), fig.cap = "Total recreational shark landings in the New England.", eval=T, echo=F}
-
-```

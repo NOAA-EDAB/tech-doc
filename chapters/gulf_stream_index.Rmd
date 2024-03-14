@@ -1,4 +1,4 @@
-# Gulf Stream Index
+# Gulf Stream Index {#gsi}
 
 **Description**: Annual time series of the Gulf Stream index
 
@@ -30,15 +30,6 @@ The GSI is calculated based on the method presented by @perez-hernandez2014. It 
 ### Data Processing
 
 The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-GSI.R). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-gsi.R"), eval = T, echo=F, fig.cap="Index representing changes in the location of the Gulf Stream north wall. Positive values represent a more northerly" }
-
-```
 
 ## 2019 Methods
 

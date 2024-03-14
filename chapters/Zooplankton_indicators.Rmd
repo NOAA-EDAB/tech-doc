@@ -1,4 +1,4 @@
-# Zooplankton {#zooabund}
+# Zooplankton {#zoo_abundance_anom}
 
 **Description**: Annual time series of zooplankton abundance
 
@@ -51,19 +51,3 @@ Time series of zooplankton diversity (effective shannon) was calculated using 42
 ### Data processing
 
 Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R).
-
-### Plotting
-Code used to create the figures below can be found linked here, [zooplankton abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-MAB-zoo-abund.R) (\@ref(fig:copepod)) and [zooplankton diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts//LTL.Rmd-MAB-zoo-abund1.R) (\@ref(fig:zoo-div)). 
-
-#### Abundance anomaly
-
-```{r copepod, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-abund.R"), fig.cap= "Pteropods and *Psuedocalanus spp.* zooplankton abundance anomaly in the Mid-Atlantic.",  echo = F, fig.align='default',warning = F,fig.show = 'hold'}
-
-```
-
-
-#### Zooplankton Diversity
-
-```{r zoo-div, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-diversity.R"), fig.width = 8, fig.asp = .35, fig.cap="Zooplankton diversity in the Mid-Atlantic Bight."}
-
-```

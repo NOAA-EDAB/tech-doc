@@ -1,4 +1,4 @@
-# Harbor Porpoise and Gray Seal Bycatch
+# Harbor Porpoise and Gray Seal Bycatch {#harborporpoise}
 
 
 **Description**: Harbor Porpoise and Gray Seal Indicator
@@ -30,15 +30,3 @@ Annual gillnet bycatch estimates are documented in the CRDs. These feed into the
 Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
 
 Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_harborporpoise.R) and [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_grayseal.R).
-
-
-### Plotting
-Code used to plot data can be found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R) and [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-grayseal.R).
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-harborporpoise.R"), eval = T, echo=F, fig.cap="Estimated Harbor porpoise bycatch and the potential biological removal."}
-
-```
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-grayseal.R"), eval = T, echo=F, fig.cap="Estimated Gray Seal bycatch and the potential biological removal."}
-
-```

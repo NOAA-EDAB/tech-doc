@@ -46,14 +46,4 @@ https://coastwatch.noaa.gov/cw/user-resources/coastwatch-utilities.html
 Python code used for database pull and analysis can be [found here.](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/cbibs)
 
 ### Data processing
-Code for processing Chesapeake Bay temperature data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_temp.R). 
-
-### Plotting
-Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R)
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-ch-bay-temp.R"), echo = F, eval = T, fig.cap="Chesapeake Bay temperature anomaly."}
-
-```
-
-```{r, fig.cap="Seasonal temperature anomaly map of Chesapeake Bay."}
-knitr::include_graphics(file.path(image.dir, "ches-temp-temp.png"))
-```
+Code for processing Chesapeake Bay temperature data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_temp.R).

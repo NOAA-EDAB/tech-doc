@@ -89,18 +89,3 @@ Fisheries dependent data from Comlands is used in several indicators for the Sta
 Landings are also calculated by aggregate groups per region.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
 
   These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
-
-
-### Plotting
-The plot below was built using the code found
-here ([Mid-Atlantic](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R)[/New England](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R)). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-comdat-total-landings.R"), eval = T, echo=F, fig.cap="Total commercial landings (black), total U.S. seafood landings (blue), and Mid-Atlantic managed U.S. seafood landings (red).", fig.align="center"}
-
-```
-
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-comdat-total-landings.R"), eval=TRUE, echo=FALSE, fig.cap="Total commercial landings (black), total U.S. seafood landings (blue), and New England managed U.S. seafood landings (red)."}
-```
-

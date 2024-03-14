@@ -30,30 +30,4 @@ For the purposes of this indicator, the Northeast Shelf was broken into three ge
 
 ### Data processing
 
-Code used to format wind lease area and habitat occupancy overlap for inclusion in the `ecodata` package can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_occupancy.R). 
-
-### Plotting
-
-Code used to build the [table](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-wind_habitat_table.R) and [figure below](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-eval%20%3D%20T.R).
-
-```{r wind-table, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-occupancy.R"), eval=TRUE, echo=FALSE, out.width='70%'}
-
-```
-
-<!-- # ```{r wind-map,code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wind-map.R"), fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE} -->
-<!-- #  -->
-<!-- # ``` -->
-
-
-```{r wind-map, fig.cap="Map of BOEM existing (black) and proposed (red) lease areas as of February 2019.", message=FALSE, results=FALSE}
-
-image.dir <- here::here("images")
-
-knitr::include_graphics(file.path(image.dir, "wind_hab_occupancy.png"))
-
-```
-
-
-
-
-
+Code used to format wind lease area and habitat occupancy overlap for inclusion in the `ecodata` package can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_occupancy.R).

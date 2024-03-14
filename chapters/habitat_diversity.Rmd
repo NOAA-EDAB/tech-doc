@@ -1,4 +1,4 @@
-# Habitat Diversity 
+# Habitat Diversity {#habitat_diversity}
 
 **Description**: Species richness was derived from the Northeast Regional Habitat Assessment models for 55 common species sampled by the 2000-2019 spring and fall NEFSC bottom trawl surveys. The joint species distribution model controls for differences in capture efficiency across survey vessels.
  
@@ -125,11 +125,3 @@ Simulating from the fitted model, we generated 100 random draws of “joint” p
 ### Data Processing
 
 The Habitat Diversity indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habitat_diversity.R).
-
-### Plotting
-
-Code used to develop the figure below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-habitat-richness.R).
-
-```{r habitat-richness, fig.cap="Habitat model-based species richness for 55 common species sampled by NEFSC bottom trawl surveys.", code=readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-habitat-richness.R"), fig.asp=0.8}
-```
-
