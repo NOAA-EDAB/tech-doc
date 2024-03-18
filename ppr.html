@@ -472,7 +472,7 @@ div.csl-indent {
 <li class="chapter" data-level="30.1.1" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-sources-33"><i class="fa fa-check"></i><b>30.1.1</b> Data sources</a></li>
 <li class="chapter" data-level="30.1.2" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-analysis-29"><i class="fa fa-check"></i><b>30.1.2</b> Data analysis</a></li>
 <li class="chapter" data-level="30.1.3" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#data-processing-22"><i class="fa fa-check"></i><b>30.1.3</b> Data Processing</a></li>
-<li class="chapter" data-level="30.1.4" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#plotting-1"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="30.1.4" data-path="habitat-vulnerability.html"><a href="habitat-vulnerability.html#plotting"><i class="fa fa-check"></i><b>30.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="harborporpoise.html"><a href="harborporpoise.html"><i class="fa fa-check"></i><b>31</b> Harbor Porpoise and Gray Seal Bycatch</a>
@@ -510,7 +510,7 @@ div.csl-indent {
 <li class="chapter" data-level="34.1.1" data-path="harmful-algal-bloom-indicator---new-england.html"><a href="harmful-algal-bloom-indicator---new-england.html#data-sources-37"><i class="fa fa-check"></i><b>34.1.1</b> Data sources</a></li>
 <li class="chapter" data-level="34.1.2" data-path="harmful-algal-bloom-indicator---new-england.html"><a href="harmful-algal-bloom-indicator---new-england.html#data-extraction-21"><i class="fa fa-check"></i><b>34.1.2</b> Data extraction</a></li>
 <li class="chapter" data-level="34.1.3" data-path="harmful-algal-bloom-indicator---new-england.html"><a href="harmful-algal-bloom-indicator---new-england.html#data-analysis-33"><i class="fa fa-check"></i><b>34.1.3</b> Data analysis</a></li>
-<li class="chapter" data-level="34.1.4" data-path="harmful-algal-bloom-indicator---new-england.html"><a href="harmful-algal-bloom-indicator---new-england.html#plotting-2"><i class="fa fa-check"></i><b>34.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="34.1.4" data-path="harmful-algal-bloom-indicator---new-england.html"><a href="harmful-algal-bloom-indicator---new-england.html#plotting-1"><i class="fa fa-check"></i><b>34.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="35" data-path="harmful-algal-blooms---paralytic-shellfish-poisoning-indicator.html"><a href="harmful-algal-blooms---paralytic-shellfish-poisoning-indicator.html"><i class="fa fa-check"></i><b>35</b> Harmful Algal Blooms - Paralytic Shellfish Poisoning Indicator</a>
@@ -609,7 +609,7 @@ div.csl-indent {
 <li class="chapter" data-level="44.1.1" data-path="ocean_acidification.html"><a href="ocean_acidification.html#data-sources-48"><i class="fa fa-check"></i><b>44.1.1</b> Data sources</a></li>
 <li class="chapter" data-level="44.1.2" data-path="ocean_acidification.html"><a href="ocean_acidification.html#data-extraction-26"><i class="fa fa-check"></i><b>44.1.2</b> Data extraction</a></li>
 <li class="chapter" data-level="44.1.3" data-path="ocean_acidification.html"><a href="ocean_acidification.html#data-processing-33"><i class="fa fa-check"></i><b>44.1.3</b> Data processing</a></li>
-<li class="chapter" data-level="44.1.4" data-path="ocean_acidification.html"><a href="ocean_acidification.html#plotting-3"><i class="fa fa-check"></i><b>44.1.4</b> Plotting</a></li>
+<li class="chapter" data-level="44.1.4" data-path="ocean_acidification.html"><a href="ocean_acidification.html#plotting-2"><i class="fa fa-check"></i><b>44.1.4</b> Plotting</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="45" data-path="chl_pp.html"><a href="chl_pp.html"><i class="fa fa-check"></i><b>45</b> Phytoplankton</a>
@@ -972,62 +972,8 @@ div.csl-indent {
 <div id="fogarty-and-ryther-indices" class="section level5 hasAnchor" number="18.1.2.3.2">
 <h5><span class="header-section-number">18.1.2.3.2</span> Fogarty and Ryther Indices<a href="ppr.html#fogarty-and-ryther-indices" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Total annual (wet weight) landings are calculated for a given EPU (summed over all species). The units for both primary production and landings are in <span class="math inline">\(mt km^{-2} year^1\)</span>. A factor of (1/9) is used to convert landings to weight in carbon. The area in <span class="math inline">\(km^2\)</span> of each EPU is obtained from the shapefile used to define the area.</p>
-</div>
-</div>
-<div id="plotting" class="section level4 hasAnchor" number="18.1.2.4">
-<h4><span class="header-section-number">18.1.2.4</span> Plotting<a href="ppr.html#plotting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Four plots are produced for each EPU:</p>
-<ul>
-<li>The normalized PPR index (along with the associated landings).</li>
-<li>Total primary production</li>
-<li>Mean trophic level of the species included in the index (weighted by their landings)</li>
-<li>Species composition of landings</li>
-<li>The Fogarty index (with reference levels)</li>
-<li>The Ryther Index (with reference levels)</li>
-</ul>
-<p>All created using the <a href="https://github.com/NOAA-EDAB/eofindices">eofindices</a></p>
-<p>See the <a href="https://NOAA-EDAB.github.io/eofindices/articles/workedExample2021.html">workedExample vignette</a> in the <a href="https://github.com/NOAA-EDAB/eofindices/">eofindices</a> package for plotting code.</p>
-<p>Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit <a href="https://noaa-edab.github.io/eofindices/articles/currentIndices.html">here</a></p>
-</div>
-<div id="mid-atlantic-bight-mab" class="section level4 hasAnchor" number="18.1.2.5">
-<h4><span class="header-section-number">18.1.2.5</span> Mid-Atlantic Bight (MAB)<a href="ppr.html#mid-atlantic-bight-mab" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure"><span style="display:block;" id="fig:pprmab-1"></span>
-<img src="images/PPR-MAB-0_80.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.1: Ecosystem overfishing indicators.
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:pprmab-2"></span>
-<img src="images/MTL-MAB-0_80.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.2: Ecosystem overfishing indicators.
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:pprmab-3"></span>
-<img src="images/PP-MAB.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.3: Ecosystem overfishing indicators.
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:pprmab-4"></span>
-<img src="images/composition-MAB-0_80.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.4: Ecosystem overfishing indicators.
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:pprmab-5"></span>
-<img src="images/ryther-index-MAB.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.5: Ecosystem overfishing indicators.
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:pprmab-6"></span>
-<img src="images/fogarty-index-Constant-MAB.png" alt="Ecosystem overfishing indicators." width="50%" />
-<p class="caption">
-Figure 18.6: Ecosystem overfishing indicators.
-</p>
-</div>
 
+</div>
 </div>
 </div>
 </div>

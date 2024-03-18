@@ -17,12 +17,6 @@ fig:prettyNE
 fig:prettyMA
 tab:epuinputs
 fig:EPUmap
-fig:pprmab-1
-fig:pprmab-2
-fig:pprmab-3
-fig:pprmab-4
-fig:pprmab-5
-fig:pprmab-6
 tab:foragefish
 tab:habitatdesc
 tab:closuresrc
@@ -167,8 +161,6 @@ data-extraction-12
 data-analysis-15
 primary-production-required
 fogarty-and-ryther-indices
-plotting
-mid-atlantic-bight-mab
 exp_n
 methods-19
 data-sources-20
@@ -260,7 +252,7 @@ data-analysis-29
 hcva-methods
 methods-for-linking-habitat-vulnerability-results-with-species
 data-processing-22
-plotting-1
+plotting
 harborporpoise
 methods-32
 data-sources-34
@@ -285,7 +277,7 @@ diarrhetic-shellfish-poisoning
 data-sources-37
 data-extraction-21
 data-analysis-33
-plotting-2
+plotting-1
 harmful-algal-blooms---paralytic-shellfish-poisoning-indicator
 methods-36
 data-sources-38
@@ -342,7 +334,7 @@ methods-45
 data-sources-48
 data-extraction-26
 data-processing-33
-plotting-3
+plotting-2
 chl_pp
 current-methods
 data-sources-49
