@@ -78,32 +78,5 @@ The index is then normalized by dividing the index in year t by the total primar
 
 Total annual (wet weight) landings are calculated for a given EPU (summed over all species). The units for both primary production and landings are in $mt km^{-2} year^1$. A factor of (1/9) is used to convert landings to weight in carbon. The area in $km^2$ of each EPU is obtained from the shapefile used to define the area.
 
-#### Plotting
 
-Four plots are produced for each EPU:
-
--   The normalized PPR index (along with the associated landings).
--   Total primary production
--   Mean trophic level of the species included in the index (weighted by their landings)
--   Species composition of landings
--   The Fogarty index (with reference levels)
--   The Ryther Index (with reference levels)
-
-All created using the [eofindices](https://github.com/NOAA-EDAB/eofindices)
-
-See the [workedExample vignette](https://NOAA-EDAB.github.io/eofindices/articles/workedExample2021.html) in the [eofindices](https://github.com/NOAA-EDAB/eofindices/) package for plotting code.
-
-Figures for Mid-Atlantic Bight are presented in this document. For Georges Bank and the Gulf of Maine, please visit [here](https://noaa-edab.github.io/eofindices/articles/currentIndices.html)
-
-#### Mid-Atlantic Bight (MAB)
-
-
-```{r, pprmab,  echo=FALSE, out.width='50%', fig.cap="Ecosystem overfishing indicators."}
-knitr::include_graphics(paste0(imagePath,"/PPR-MAB-0_80.png"))
-knitr::include_graphics(paste0(imagePath,"/MTL-MAB-0_80.png"))
-knitr::include_graphics(paste0(imagePath,"/PP-MAB.png"))
-knitr::include_graphics(paste0(imagePath,"/composition-MAB-0_80.png"))
-knitr::include_graphics(paste0(imagePath,"/ryther-index-MAB.png"))
-knitr::include_graphics(paste0(imagePath,"/fogarty-index-Constant-MAB.png"))
-```
 
