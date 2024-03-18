@@ -1,4 +1,4 @@
-# Single Species Status Indicator {#stockstatus} {#stock_status}
+# Single Species Status Indicator {#stock_status}
 
 
 **Description**: Summary of the most recent stock assessment results for each assessed species.

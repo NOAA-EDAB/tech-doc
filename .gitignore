@@ -35,5 +35,4 @@ rsconnect/
 # bookdown files
 _book/
 _bookdown_files/
-packages.bib
 _book/*.json
