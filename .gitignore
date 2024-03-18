@@ -33,7 +33,7 @@ vignettes/*.pdf
 rsconnect/
 .Rproj.user
 # bookdown files
-_book/
+_book/*
 _bookdown_files/
 packages.bib
 _book/*.json
