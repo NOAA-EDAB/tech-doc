@@ -6,9 +6,9 @@
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Lisa L. Colburn, Changua Weng
+**Contributor(s)**: Lisa L. Colburn, Changhua Weng
   
-**Data steward**: Changua Weng <changhua.weng@noaa.gov>
+**Data steward**: Changhua Weng <changhua.weng@noaa.gov>
 
 **Point of contact**: Lisa L. Colburn <lisa.colburn@noaa.gov>
   
