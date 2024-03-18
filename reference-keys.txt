@@ -98,7 +98,7 @@ data-sources-10
 data-extraction-7
 data-analysis-6
 data-processing-7
-ch_bay_sst
+ch_bay_temp
 methods-10
 data-sources-11
 data-analysis-7
@@ -369,7 +369,7 @@ methods-50
 data-sources-54
 data-analysis-48
 data-processing-38
-recreational-shark-fishing-indicators
+rec_hms
 methods-51
 data-sources-55
 data-analysis-49

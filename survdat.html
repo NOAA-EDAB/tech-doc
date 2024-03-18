@@ -278,13 +278,13 @@ div.csl-indent {
 <li class="chapter" data-level="11.1.4" data-path="ch_bay_sal.html"><a href="ch_bay_sal.html#data-processing-7"><i class="fa fa-check"></i><b>11.1.4</b> Data processing</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="ch_bay_sst.html"><a href="ch_bay_sst.html"><i class="fa fa-check"></i><b>12</b> Chesapeake Bay Seasonal SST Anomalies</a>
+<li class="chapter" data-level="12" data-path="ch_bay_temp.html"><a href="ch_bay_temp.html"><i class="fa fa-check"></i><b>12</b> Chesapeake Bay Seasonal SST Anomalies</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="ch_bay_sst.html"><a href="ch_bay_sst.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a>
+<li class="chapter" data-level="12.1" data-path="ch_bay_temp.html"><a href="ch_bay_temp.html#methods-10"><i class="fa fa-check"></i><b>12.1</b> Methods</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="ch_bay_sst.html"><a href="ch_bay_sst.html#data-sources-11"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="12.1.2" data-path="ch_bay_sst.html"><a href="ch_bay_sst.html#data-analysis-7"><i class="fa fa-check"></i><b>12.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="12.1.3" data-path="ch_bay_sst.html"><a href="ch_bay_sst.html#data-processing-8"><i class="fa fa-check"></i><b>12.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="12.1.1" data-path="ch_bay_temp.html"><a href="ch_bay_temp.html#data-sources-11"><i class="fa fa-check"></i><b>12.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="12.1.2" data-path="ch_bay_temp.html"><a href="ch_bay_temp.html#data-analysis-7"><i class="fa fa-check"></i><b>12.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="12.1.3" data-path="ch_bay_temp.html"><a href="ch_bay_temp.html#data-processing-8"><i class="fa fa-check"></i><b>12.1.3</b> Data processing</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="ches_bay_wq.html"><a href="ches_bay_wq.html"><i class="fa fa-check"></i><b>13</b> Chesapeake Bay Water Quality Standards Attainment</a>
@@ -664,13 +664,13 @@ div.csl-indent {
 <li class="chapter" data-level="49.1.3" data-path="recdat.html"><a href="recdat.html#data-processing-38"><i class="fa fa-check"></i><b>49.1.3</b> Data processing</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="50" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html"><i class="fa fa-check"></i><b>50</b> Recreational Shark Fishing Indicators</a>
+<li class="chapter" data-level="50" data-path="rec_hms.html"><a href="rec_hms.html"><i class="fa fa-check"></i><b>50</b> Recreational Shark Fishing Indicators</a>
 <ul>
-<li class="chapter" data-level="50.1" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#methods-51"><i class="fa fa-check"></i><b>50.1</b> Methods</a>
+<li class="chapter" data-level="50.1" data-path="rec_hms.html"><a href="rec_hms.html#methods-51"><i class="fa fa-check"></i><b>50.1</b> Methods</a>
 <ul>
-<li class="chapter" data-level="50.1.1" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-sources-55"><i class="fa fa-check"></i><b>50.1.1</b> Data sources</a></li>
-<li class="chapter" data-level="50.1.2" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-analysis-49"><i class="fa fa-check"></i><b>50.1.2</b> Data analysis</a></li>
-<li class="chapter" data-level="50.1.3" data-path="recreational-shark-fishing-indicators.html"><a href="recreational-shark-fishing-indicators.html#data-processing-39"><i class="fa fa-check"></i><b>50.1.3</b> Data processing</a></li>
+<li class="chapter" data-level="50.1.1" data-path="rec_hms.html"><a href="rec_hms.html#data-sources-55"><i class="fa fa-check"></i><b>50.1.1</b> Data sources</a></li>
+<li class="chapter" data-level="50.1.2" data-path="rec_hms.html"><a href="rec_hms.html#data-analysis-49"><i class="fa fa-check"></i><b>50.1.2</b> Data analysis</a></li>
+<li class="chapter" data-level="50.1.3" data-path="rec_hms.html"><a href="rec_hms.html#data-processing-39"><i class="fa fa-check"></i><b>50.1.3</b> Data processing</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="51" data-path="regime-shift-analysis.html"><a href="regime-shift-analysis.html"><i class="fa fa-check"></i><b>51</b> Regime Shift Analysis</a>
@@ -1015,6 +1015,8 @@ Figure 64.1: Map of the Northeast Shelf broken into the four Ecological Producti
 </p>
 </div>
 <p>Prior to 2020, Survdat was first post stratified into EPUs by labeling stations by the EPU they fell within using the <code>over</code> function from the <code>rgdal</code> R package <span class="citation">(<a href="#ref-rgdal">Bivand, Keitt, and Rowlingson 2018</a>)</span>. Next, the total number of stations within each EPU per year is counted using unique station records. Biomass is summed by species per year per EPU. Those sums are divided by the appropriate station count to get the EPU mean. Finally, the mean biomasses are summed by <a href="#aggroups">aggregate groups</a>. These steps are encompassed in the <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_agg_bio.R">processing code</a>, which also includes steps taken to format the data set for inclusion in the <code>ecodata</code> R package.</p>
+<p><strong>catalog link</strong>
+No associated catalog page</p>
 
 </div>
 </div>
