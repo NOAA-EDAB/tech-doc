@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - master
-      - brandon_url_changes
-      - andytest1
+      - dev
       
   pull_request:
     branches:
