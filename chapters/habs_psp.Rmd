@@ -40,23 +40,3 @@ Operational Harmful Algal Bloom forecast is served online at https://coastalscie
 ### Data Processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
-
-
-### Plotting
-
-The script used to develop the figure in the SOE Indicator Catalog can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R).
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp.R"), echo = F, fig.align="center", eval = T, fig.cap="Percent of state samples that are found to have PSP"}
-
-```
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_NE.Rmd-habs-psp-closures.R"), echo = F, out.width = "80%", fig.align="center", eval = T, fig.cap="Massachusetts Fishery closures due to PSP. "}
-
-```
-
-
-
-
-
-

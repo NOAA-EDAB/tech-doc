@@ -53,20 +53,3 @@ For wave height data, the same thresholds are used with the exception of gale_th
 The data were analyzed at their base 1-hour temporal and 30 km spatial resolutions.  At each gridpoint falling within a region (e.g. southern Mid-Atlantic bight) the raw data were screened to identify winds exceeding the gale threshold. Then each point was further analyzed to determine if at least 3 consecutive hours exceeded the threshold.  If more than 25% of the grid points within the region met these criteria, an event was indicated and the annual event tally for the region was increased by one, provided it was separated from a previous event by >96 hours. 
 
 Code used to process storminess data for inclusion in `ecodata` can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_storminess.R).
-
-### Plotting
-`ecodata` code for data manipulation and plotting can be found here: https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL_MAB.Rmd-storminess.R
-
-```{r, echo = F, fig.align="center", fig.cap=""}
-
-knitr::include_graphics(c(file.path(image.dir, "storminess_N_events.png")))
-
-```
-
-Additional plots were generated externally, with the data processing code outputting the relevant time series of storm counts.  Individual sample plots are available at https://github.com/nrcc-cornell/regional-swh/tree/main/graphs
-
-```{r, echo = F, fig.align="center", fig.cap=""}
-
-knitr::include_graphics(c(file.path(image.dir, "storminess_N_events_region.png")))
-
-```

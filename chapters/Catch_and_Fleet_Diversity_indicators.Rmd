@@ -1,4 +1,4 @@
-# Catch and Fleet Diversity
+# Catch and Fleet Diversity {#commercial_div}
 
 **Description**: Permit-level species diversity and Council-level fleet diversity.
 
@@ -58,12 +58,3 @@ for all $k$, where $p_{kt}$ represents the proportion of total revenue generated
 ### Data processing
 
 Catch and fleet diversity indicators were formatted for inclusion in the `ecodata` R package using the R script  found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_commercial_div.R).
-
-### Plotting
-
-Code for plotting the catch and fleet diversity indicator can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions.Rmd-comm-div.R). 
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-commercial-div.R"), fig.cap = "Fleet diversity and fleet count in the Mid-Atlantic.", fig.align="center", eval=T, echo=F}
-
-```
-

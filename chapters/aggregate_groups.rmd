@@ -1,4 +1,4 @@
-# Aggregate Groups {#aggroups}
+# Aggregate Groups {#species_groupings}
 
 **Description**: Mappings of species into aggregate group categories for different analyses
 

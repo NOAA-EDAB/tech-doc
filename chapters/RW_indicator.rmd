@@ -1,4 +1,4 @@
-# Right Whale Abundance 
+# Right Whale Abundance {#narw}
 
 
 ```{r,  echo = F, message=F}
@@ -38,19 +38,3 @@ Analysis for right whale abundance estimates is provided by @Pace2017, and code 
 ### Data processing
 
 Time series of right whale  and calf abundance estimates were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_narw.R).
-
-
-
-### Plotting
-Code used create the plots below can be found at these links, NARW [population estimates](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-NARW-abundance.R) and [calf births](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-NARW-calf-abundance.R).
-
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-narw-abundance.R"), fig.cap="North Atlantic right whale population estimates shown with 95% credible intervals.",echo = F, message=F, warning=F,  fig.pos='H', fig.height = 4.5, fig.width=7}
-
-```
-
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-NARW-calf-abundance.R"), fig.cap="North Atlantic right whale calf births.",echo = F, message=F, warning=F,  fig.pos='H', fig.height = 4.5, fig.width=7}
-
-```
-

@@ -1,4 +1,4 @@
-# Ecosystem Overfishing
+# Ecosystem Overfishing {#ppr}
 
 **Description**: Ecosystem Overfishing Indices (Primary Production Required, Fogarty, Ryther)
 

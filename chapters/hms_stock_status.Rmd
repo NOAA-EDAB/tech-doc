@@ -1,4 +1,4 @@
-# Highly Migratory Species Stock Status 
+# Highly Migratory Species Stock Status {#hms_stock_status}
 
 **Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
 
@@ -39,15 +39,4 @@ kable(stock_status)
 ```
 
 ### Data processing
-Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R). 
-
-
-### Plotting
-Code used to create the figure below can be [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R).
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-stock-status.R"), fig.cap="Summary of single species status for HMS stocks; key to species names above."}
-
-```
-
-
+Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R).

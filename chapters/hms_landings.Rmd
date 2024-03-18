@@ -1,4 +1,4 @@
-# Highly Migratory Species Landings
+# Highly Migratory Species Landings {#hms_landings}
 
 **Description**: Atlantic Highly Migratory Species Landings
 
@@ -41,18 +41,6 @@ The count of dealers and vessels in each regional species/management group sum w
 ### Data Processing 
 
 HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_landings.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R"), eval = T, echo = F, fig.cap = "Highly migratory species landings."}
-
-```
-
-
-
 
 ## Methods 2020
 

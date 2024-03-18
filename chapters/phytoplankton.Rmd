@@ -1,4 +1,4 @@
-# Phytoplankton {#phytoplankton}
+# Phytoplankton {#chl_pp}
 
 **Description**: Phytoplankton products - Chlorophyll *a*, Primary Production, and Phytoplankton Size Class
 
@@ -75,31 +75,7 @@ The ecological production unit (EPU) shapefile that excludes the estuaries was u
 
 CHL and PPD time series were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_chl_pp.R).
 
-Code used to process the phytoplankton size class inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_phyto_size.R). 
-
-### Plotting
-
-
-CHL and PP data are also examined in relation to the long-term means of each series. The figures below show data specific to the Mid-Atlantic Bight. The code for the plots can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-mab-chl-weekly.R).
-
-```{r}
-library(patchwork)
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-chl-weekly.R"), fig.cap="Weekly chlorophyll concentrations (top) and primary production (bottom) in the Mid-Atlantic are shown by the colored line for the most recent year. The long-term mean is shown in black, and shading indicates +/- 1 sample standard deviation.",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H',fig.height = 4,fig.width = 8}
-
-
-```
-
-
-Code for plotting Phytoplankton Size Class in the Mid-Atlantic can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-weekly-phyto-size.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-weekly-phyto-size.R"), eval=TRUE, echo = FALSE, fig.cap = "Mid-Atlantic chlorophyll concentration by size class relative to the long-term climatology. The shaded regions are the weekly climatologies for the three size classes. The solid lines represent the weekly microplankton (green) and nanoplankton (orange) chlorophyll concentrations for the representative year."}
-
-```
-
-
-
+Code used to process the phytoplankton size class inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_phyto_size.R).
 
 ## 2018-2020 Methods
 ### Data sources

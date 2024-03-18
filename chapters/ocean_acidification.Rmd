@@ -1,4 +1,4 @@
-# Ocean Acidification
+# Ocean Acidification {#ocean_acidification}
 
 **Description**: Maps of regional carbonate chemistry
 

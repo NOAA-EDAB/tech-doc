@@ -1,4 +1,4 @@
-# WEA Fishing Port Landings 
+# WEA Fishing Port Landings {#wind_port}
 
 **Description**: Port Landings from within Wind Lease Areas and Community Social Vulnerability Indicators
 
@@ -33,24 +33,3 @@ Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WE
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_port.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-port-rev.R).
-
-#### Mid-Atlantic
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-wea-port-rev.R"), eval = T, echo = F, fig.cap = "Percent of Mid-Atlantic port revenue from Wind Energy Areas (WEA) in descending order from most to least port revenue from WEA."}
-
-```
-
-#### New England
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-wea-port-rev.R"), eval = T, echo = F, fig.cap = "Percent of New England port revenue from Wind Energy Areas (WEA) in descending order from most to least port revenue from WEA."}
-
-```
-
-
-
-
-
-

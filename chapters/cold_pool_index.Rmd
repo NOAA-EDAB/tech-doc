@@ -1,4 +1,4 @@
-# Cold Pool Index
+# Cold Pool Index {#cold_pool}
 
 **Description**: Cold Pool Index - three annual cold pool indices (and the standard errors) between 1958 and 2021. 
 
@@ -72,18 +72,6 @@ where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell
 
 Code used to process the cold pool inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cold_pool.R). 
 
-### Plotting
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool.R). 
-
-
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R"), fig.cap="Cold Pool parameters, Index, Extent, and Persistance",echo = F, fig.show='hold', fig.align='default',warning = F, message = F,fig.pos='H'}
-
-```
-
-
-
 ## 2021 Methods
 **Point of Contact:**: Zhoumin Chen <zhuomin.chen@uconn.edu>
 
@@ -95,19 +83,7 @@ Depth-averaged spatial temperature is calculated based on the daily Cold Pool da
 
 ### Data processing
 
-Code used to process the cold pool inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cold_pool.R). 
-
-### Plotting
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/LTL.Rmd-cold_pool_map.R). 
-
-```{r, fig.cap=" "}
-knitr::include_graphics(file.path(image.dir, "cold_pool_area.png"))
-```
-
-<!-- ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool_map.R"), fig.cap = "Cold Pool Index", fig.align="center", eval=T, echo=F} -->
-<!-- ``` -->
-
+Code used to process the cold pool inidcator can be found in the `ecodata` package [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cold_pool.R).
 
 ## 2020 Methods
 **Point of Contact:**: Chris Melrose <chris.melrose@noaa.gov>

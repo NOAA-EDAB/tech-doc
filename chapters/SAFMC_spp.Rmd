@@ -87,15 +87,4 @@ The presence/absence of "southern" species was broadly examined for all species 
 
 ### Data processing
 
-Blue runner (*Caranx crysos*) data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_blue_runner.R). 
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-blue-runner.R). 
-
-
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-blue-runner.R"), eval = T, fig.cap= "Blue runner presence on the Northeast shelf."}
-
-```
-
+Blue runner (*Caranx crysos*) data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_blue_runner.R).

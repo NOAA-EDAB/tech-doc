@@ -41,16 +41,3 @@ Each stock has a threshold and catch value assigned to it from the sources above
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
-
-### Plotting
-
-The plot below was built using the code found
-[here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-catch.R). 
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-catch.R"), eval = T, echo = F, fig.cap = "Ratio of catch to ACL in New England."}
-
-```
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_NE.Rmd-abcacl-stacked.R"), eval = T, echo = F, fig.cap = "Total ACL in New England."}
-
-```

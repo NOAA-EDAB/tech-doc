@@ -1,4 +1,4 @@
-# Gray Seal Pups
+# Gray Seal Pups {#seal_pups}
 
 **Description**: Gray seal pup counts 
  
@@ -29,11 +29,3 @@ Image processing and modelling is described in a NEFSC center reference document
 ### Data Processing
 
 The gray seal pup indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sealpups.R).
-
-### Plotting
-
-Code used to develop the figure below can be found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seal-pups.R).
-
-```{r sealpups, fig.cap="Pup counts at the 4 modeled sites: Monomoy, Muskeget, Nomans Land, and Seal.", code=readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_NE.Rmd-seal-pups.R"), fig.asp=0.8}
-```
-

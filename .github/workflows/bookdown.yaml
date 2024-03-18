@@ -1,57 +1,45 @@
+# build Bookdown
+
 on:
   push:
-    branches: master
+    branches:
+      - master
+      - brandon_url_changes
+      - andytest1
+      
+  pull_request:
+    branches:
+      - master
 
-name: bookdown
+
+name: build-book
+
+env:
+  isExtPR: ${{ github.event.pull_request.head.repo.fork == true }}
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GH_PAT }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-      
-      - name: Install libcurl 
-        run: |
-          sudo apt-get install  libgdal-dev libcurl4-gnutls-dev libgit2-dev libudunits2-dev
+      - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Install Pandoc
-        #if: ${{ ! github.event.inputs.ghpages }}
-        uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-r@v2
         with:
-          pandoc-version: '2.17.1.1'
+          use-public-rspm: true
 
-      - name: Cache Renv packages
-        uses: actions/cache@v1
-        with:
-          path: $HOME/.local/share/renv
-          key: r-${{ hashFiles('renv.lock') }}
-          restore-keys: r-
+      - uses: r-lib/actions/setup-r-dependencies@v2
 
-      - name: Cache bookdown results
-        uses: actions/cache@v1
-        with:
-          path: _bookdown_files
-          key: bookdown-${{ hashFiles('**/*Rmd') }}
-          restore-keys: bookdown-
-          
-      - name: Install packages
-        run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
-        
-      - name: Build site
+      - name: Build book
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
-
+        
       - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: _book # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch

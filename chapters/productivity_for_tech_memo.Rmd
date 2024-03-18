@@ -1,4 +1,4 @@
-# Fish Productivity Indicator
+# Fish Productivity Indicator {#productivity_anomaly}
  
 **Description**: Groundfish productivity estimated as the ratio of small fish to large fish
 
@@ -36,9 +36,3 @@ Further details of methods described in @perretti_regime_2017.
 ### Data processing
 
 Productivity data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_productivity_anomaly.R).
-
-### Plotting
-
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-productivity-anomaly.R"), echo = F, eval = T, message=F, warning=F, fig.cap = "Groundfish productivity across all stocks in the Mid-Atlantic Bight."}
-
-```

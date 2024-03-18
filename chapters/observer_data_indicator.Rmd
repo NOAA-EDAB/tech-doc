@@ -30,13 +30,3 @@ SQL query for observer data extraction can be found [here](https://github.com/NO
 
 ### Data analysis
 Time series were summed by year and plotted, and mapped data for individual records were plotted according to the location where gear was hauled. As coordinate data were not always available for each record, the map does not include all occurrences of southern kingfish, but was included for spatial context.
-
-### Plotting
-
-Code used to produce the plot below can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/observer_data_plotting.R).
-
-```{r SK-plot, fig.align='center', echo = F, fig.cap = "Verified records of Southern Kingfish occurrence in the Mid-Atlantic.", out.width='80%'}
-image.dir <- here::here('images')
-
-knitr::include_graphics(file.path(image.dir, 'southern_kingfish.PNG'))
-```
