@@ -46,3 +46,6 @@ For detailed analytical methods, see @joyce2019.
 ### Data processing and plotting
 
 Data processing and plotting remained the same between years. 
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/gsi.html>

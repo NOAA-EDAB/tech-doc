@@ -64,3 +64,6 @@ The species groupings are available in the table below.
 
 ### Data Processing 
 Code used to process this data can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/hms_cpue.html>

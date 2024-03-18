@@ -31,3 +31,6 @@ All detailed data processing steps are not currently included in this document, 
 ### Data processing
 
 Persistent hotspots were computed with the `sf` and `raster` R packages.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/persistent_hotspots.html>

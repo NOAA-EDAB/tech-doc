@@ -1,6 +1,6 @@
 # Ocean Acidification {#ocean_acidification}
 
-**Description**: Maps of regional carbonate chemistry
+**Description**: Maps and variability of regional carbonate chemistry and other oceanographic properties
 
 **Indicator category**: Synthesis of published information or openly accessible datasets
 
@@ -17,16 +17,22 @@
 
 ## Methods
 
-The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, [seasonal dynamics of pH in shelf waters in the Mid-Atlantic](https://noaa-edab.github.io/tech-doc/ocean-acidification.html#ref-Wright2020), was synthesized from @Wright2020. The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-present), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic Bight (MAB) and the Gulf of Maine. The plots in the 2023 State of the Ecosystem reports, maps of bottom summer aragonite saturation ($\Omega_{Arag}$) and locations where summer bottom $\Omega_{Arag}$ reached lab-derived sensitivity levels of designated target species, were developed using openly accessible, quality-controlled data from vessel-based discrete samples and glider-based measurements (see Data Sources).
+The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, seasonal dynamics of pH in shelf waters in the Mid-Atlantic, was synthesized from Wright-Fairbanks et al. (2020). The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-2021), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic Bight (MAB) and the Gulf of Maine. The plots in the State of the Ecosystem 2023 reports included maps of bottom summer aragonite saturation (ΩArag, or omega) over the entire U.S. Northeast Shelf (2007-2022) and locations where summer bottom ΩArag reached lab-derived sensitivity levels of designated target species. 
+
+The products developed for the State of the Ecosystem 2024 reports include: plots of the seasonal progression (Spring-Fall 2023) of oceanographic properties (including temperature, chlorophyll, dissolved oxygen, pH, and aragonite saturation state) on the New Jersey coastal shelf; plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023; static and animated maps of summer-time bottom pH and aragonite saturation state on the U.S. Northeast Shelf (2007-2023); and maps of locations where species sensitivity levels for aragonite saturation state were reached in bottom water during the summer (2007-2023). 
+
+Products from all State of the Ecosystem reports to date were developed using openly accessible, quality-controlled data from vessel-based discrete samples and glider-based measurements (see Data Sources), and data from published laboratory-based experimental studies (see Plotting).
 
 ### Data sources
 
-Glider-based observations of pH pH (and other variables including temperature, salinity, chlorophyll-*a*, and dissolved oxygen) began in the southern Mid-Atlantic Bight region in May 2018 (@Saba2019), and seasonal glider pH missions thereafter began in February 2019 (@Wright2020; although no deployments occurred in 2020 as a result of the COVID pandemic). Simultaneous measurements from the glider's pH, temperature, and salinity sensors enable the derivation of total alkalinity and calculation of other carbonate system parameters including $\Omega_{Arag}$. The glider pH observation program expanded spatially, with additional deployments in the northern MAB (New York Bight) and the Gulf of Maine, starting in February 2021. A typical glider mission runs for about 4 weeks, covers 500 km, and collects data though the full water column. Full-resolution delayed-mode glider datasets containing raw pH voltages can be found on [RUCOOL's Glider ERDDAP Server](http://slocum-data.marine.rutgers.edu/erddap/index.html). Fully-processed and time-shifted pH glider datasets can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/glider_data/).
+Glider-based observations of pH (and other variables including temperature, salinity, chlorophyll-a, and dissolved oxygen) began in the southern MAB region in May 2018 (Saba et al. 2019), and seasonal glider pH missions thereafter began in February 2019 (Wright-Fairbanks et al. 2020; although no deployments occurred in 2020 as a result of the COVID pandemic). Simultaneous measurements from the glider's pH, temperature, and salinity sensors enable the derivation of total alkalinity and calculation of other carbonate system parameters including aragonite saturation state (ΩArag). The glider pH observation program expanded spatially and temporally, with additional deployments in the northern MAB (New York Bight) and the Gulf of Maine, starting in February 2021. A typical glider mission runs for about 4 weeks, covers 500 km, and collects data though the full water column. 
 
+For the 2023 glider data cross-section plots (2023 seasonal progression of oceanographic properties on the New Jersey coastal shelf and plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023): 
+Full-resolution delayed-mode glider datasets from six deployments (Spring-Fall 2023) were downloaded from the RUCOOL Glider ERDDAP server. These datasets were QC’d and pH was calculated from raw variables (where applicable) using python code, and the final processed NetCDF datasets containing all relevant metadata can be found here.
 
-Vessel-based discrete carbinate chemistry data were mined from the Coastal Ocean Data Analysis Product in North America, version v2021 ([CODAP-NA](https://essd.copernicus.org/articles/13/2777/2021/); @Jiang2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves.
-
-Additionally, two recent vessel-based datasets that were not included in CODAP-NA (@Jiang2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys (June 2019, Cruise ID HB1902; August 2019, Cruise ID GU1902; August 2021, Cruise ID PC2104)) and include quality-controlled spectrophotometric-based pH measurements on discrete water samples. Data can be accessed through the [NCEI Ocean Carbon and Acidification Data Portal](https://www.ncei.noaa.gov/access/ocean-carbon-acidification-data-system-portal/).
+For the summer 2007-2023 bottom-water pH and aragonite saturation state data synthesis (static and animated maps of summer-time bottom pH and aragonite saturation state on the U.S. Northeast Shelf [2007-2023]; maps of summer-time bottom locations where species sensitivity levels for aragonite saturation state were reached [2007-2023]):
+Full-resolution delayed-mode glider datasets from seven deployments were downloaded from the RUCOOL Glider ERDDAP server and the IOOS Glider DAC ERDDAP server (SBU01 2022-2023 deployments). These datasets were QC’d and pH was calculated from raw variables (where applicable) using python code, and the final processed NetCDF datasets containing all relevant metadata for each glider deployment used in the synthesis can be found here. Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from glider-based (and vessel-based, see below) measurements can be found here.
+Vessel-based data were mined from the Coastal Ocean Data Analysis Product in North America, version v2021 (Jiang et al. 2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves. Additionally, four recent vessel-based datasets that were not included in CODAP-NA (Jiang et al. 2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys: June 2019 (Cruise ID HB1902), August 2019 (Cruise ID GU1902), August 2021 (Cruise ID PC2104), June 2022 (Cruise ID HB2204). These datasets were downloaded via the NCEI Ocean Carbon and Acidification Data Portal. Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from vessel-based (and glider-based, see above) measurements can be found here.
 
 ### Data extraction
 
@@ -34,22 +40,21 @@ Glider data were processed and quality-controlled by software technician Lori Ga
 
 [CODAP-NA data](https://www.ncei.noaa.gov/data/oceans/ncei/ocads/metadata/0219960.html) were accessed and downloaded on October 14, 2021. 
 
-EcoMon datasets were accessed and downloaded on October 13, 2022.
+EcoMon datasets were accessed and downloaded on October 13, 2022 (Cruise IDs HB1902, GU1902, PC2104) and November 17, 2023 (Cruise ID HB2204).
 
 ### Data processing
 
-For processing and quality-control procedures of glider-based data, see @Wright2020. Glider data used in this synthesis were limited to summer only (June - August).
+For processing and quality-control procedures of glider-based data, see Wright-Fairbanks et al. (2020). For the 2023 glider data cross-section plots (2023 seasonal progression of oceanographic properties on the New Jersey coastal shelf and plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023): datasets were QC’d and pH was calculated from raw variables (where applicable) using python code, and the final processed NetCDF datasets containing all relevant metadata can be found here.
 
-Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Maine and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
+Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Mexico and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
 
-For vessel-based datasets, when $\Omega_{Arag}$ was unavailable it was calculated using PyCO2SYS (@Humphreys2022) with inputs of pressure, temperature, salinity, total alkalinity, and pH.
+For vessel-based datasets, when ΩArag was unavailable it was calculated using PyCO2SYS (Humphreys et al. 2020) with inputs of pressure, temperature, salinity, total alkalinity, and pH.
 
+For MAB glider datasets, total alkalinity was calculated from salinity using a linear relationship determined from in situ water sampling data taken during glider deployment and recovery in addition to ship-based water samples (Wright-Fairbanks et al. 2020). For the Gulf of Maine glider dataset, total alkalinity was calculated from temperature and salinity using Table 3 Equation IV in McGarry et al. (2021). Calculations for ΩArag were then conducted using PyCO2SYS (Humphreys et al. 2020) with inputs of pressure, temperature, salinity, total alkalinity, and pH.
 
-For MAB glider datasets, total alkalinity was calculated from salinity using a linear relationship determined from *in situ* water sampling data taken during glider deployment and recovery in addition to ship-based water samples (@Wright2020). For the Gulf of Maine glider dataset, total alkalinity was calculated from temperature and salinity using Table 3 Equation IV in @McGarry2021. Calculations for $\Omega_{Arag}$ were then conducted using PyCO2SYS (@Humphreys2022) with inputs of pressure, temperature, salinity, totalalkalinity, and pH.
-
+Bottom water values were defined as the median of the measurements (or calculated ΩArag values) within the deepest 1m of a glider profile or, for vessel-based measurements, the deepest measurement of a vertical CTD/Rosette cast where water samples were collected, for profiles deeper than 10m. In order to validate whether the deepest depth was at or near the bottom, the sampling depth was compared to water column depth (when provided) or water depths extracted from a GEBCO bathymetry grid based on the sample collection coordinates. Any glider profiles/vessel-based casts with the deepest measurement shallower than the bottom 20% of total water column depth were removed. This allowed for a sliding scale instead of providing a strict cut off (e.g., 1 m above the bottom). Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from glider- and vessel-based measurements can be found here.
 
 ### Plotting
-
 
 1. A plot of bottom $\Omega_{Arag}$ in summer over the entire U.S. Northeast Shelf (all available data from 2007-present and includes both glider-based measurements and vessel-based discrete samples)
   + This map is included in both MAFMC and NEFMC reports.
@@ -79,5 +84,6 @@ knitr::include_graphics(here::here(file.path("images", "Saba_Fig_SOE_NEFMC - Gra
 
 ```
 
-
+**catalog link**
+<https://noaa-edab.github.io/catalog/ocean_acidification.html>
 

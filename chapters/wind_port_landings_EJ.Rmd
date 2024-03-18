@@ -33,3 +33,6 @@ Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WE
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_port.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wind_port.html>

@@ -67,3 +67,6 @@ Spring, fall, and annual prey indices were developed for the full VAST extrapola
 Full VAST model results for Fall, Spring, and Annual models, along with diagnostics, are available at [this link](https://sgaichas.github.io/bluefishdiet/VASTcovariates_forageindex_WP.html).
 
 Code used to develop this indicator from the full set of VAST model index outputs is [available here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/SOE-VASTForageIndices.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/forage_index.html>

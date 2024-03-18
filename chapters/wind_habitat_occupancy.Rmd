@@ -31,3 +31,6 @@ For the purposes of this indicator, the Northeast Shelf was broken into three ge
 ### Data processing
 
 Code used to format wind lease area and habitat occupancy overlap for inclusion in the `ecodata` package can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_occupancy.R).
+
+**catalog link**
+No associated catalog page

@@ -40,3 +40,6 @@ kable(stock_status)
 
 ### Data processing
 Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/hms_stock_status.html>

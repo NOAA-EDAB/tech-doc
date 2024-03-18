@@ -1,4 +1,4 @@
-# Recreational Shark Fishing Indicators
+# Recreational Shark Fishing Indicators {#rec_hms}
 
 **Description**: Recreational Shark Landings
 
@@ -70,3 +70,6 @@ Data regions "4 = New England"  and "5 = Mid-Atlantic" were selected for as to r
 ### Data processing
 
 Recreational shark fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec_hms.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/rec_hms.html>

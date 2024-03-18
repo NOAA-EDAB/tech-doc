@@ -30,3 +30,6 @@ Code used for species density analysis can be found [here](https://github.com/NO
 ```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=F, echo=F}
 
 ```
+
+**catalog link**
+No associated catalog page

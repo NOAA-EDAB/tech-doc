@@ -52,3 +52,6 @@ Sampling and laboratory analysis is ongoing, with the goal of continuing routine
 
 Code for building the table used in the SOE can be found 
 [here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-forage.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/energy_density.html>

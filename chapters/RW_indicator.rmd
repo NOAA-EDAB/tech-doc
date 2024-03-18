@@ -38,3 +38,6 @@ Analysis for right whale abundance estimates is provided by @Pace2017, and code 
 ### Data processing
 
 Time series of right whale  and calf abundance estimates were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_narw.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/narw.html>

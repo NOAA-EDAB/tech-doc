@@ -67,3 +67,6 @@ No data analysis steps took place for this indicator.
 ### Plotting
 
 The script used to develop the figure in the SOE report can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ne_hab_plotting.R).
+
+**catalog link**
+No associated catalog page

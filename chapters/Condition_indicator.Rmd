@@ -40,3 +40,6 @@ where $Fall coef$ and $Fall exp$ are from @Wigley2003.
  
 
 The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R) was used in the analysis of fish condition.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/condition.html>

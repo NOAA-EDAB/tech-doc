@@ -36,3 +36,6 @@ Further details of methods described in @perretti_regime_2017.
 ### Data processing
 
 Productivity data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_productivity_anomaly.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/productivity_anomaly.html>

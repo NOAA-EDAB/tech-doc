@@ -160,3 +160,6 @@ For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. 
 
 
 <!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/stock_status.html>

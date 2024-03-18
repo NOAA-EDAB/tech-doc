@@ -35,3 +35,6 @@ The indicators were developed using the methodology described in @Jacob2010, @Ja
 ### Data processing
 
 Data were formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_engagement.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/engagement.html>

@@ -89,3 +89,6 @@ Fisheries dependent data from Comlands is used in several indicators for the Sta
 Landings are also calculated by aggregate groups per region.  These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
 
   These are calculated by first assigning the various species into [aggregate groups](#aggroups).  Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not.  Proportions of managed landings to total landings are also calculated and have been reported in some reports.
+  
+**catalog link**
+<https://noaa-edab.github.io/catalog/comdat.html>

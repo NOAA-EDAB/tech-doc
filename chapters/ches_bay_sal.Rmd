@@ -33,3 +33,6 @@ The stations include annapolis ([AN](https://buoybay.noaa.gov/locations/annapoli
 
 ### Data processing
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_sal.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/ch_bay_sal.html>

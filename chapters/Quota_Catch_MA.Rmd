@@ -55,3 +55,6 @@ Each species, depending upon data availability, sectors, fleets etc., goes throu
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/abc_acl.html>
