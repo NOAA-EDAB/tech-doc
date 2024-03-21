@@ -53,3 +53,6 @@ OffExpCab_Miles: Offshore Export Cable Length OCS-A 0482, OCS-A 0519 OCS-A 0490 
 ### Data Processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_dev_speed.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wind_dev_speed.html>

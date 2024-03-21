@@ -32,3 +32,6 @@ The spatial distribution and abundance of cyst cells from the annual survey are 
 ### Data Processing
 
 Code for processing *Alexandrium* cyst data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/habs.html>

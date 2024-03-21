@@ -125,3 +125,6 @@ Simulating from the fitted model, we generated 100 random draws of “joint” p
 ### Data Processing
 
 The Habitat Diversity indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habitat_diversity.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/habitat_diversity.html>

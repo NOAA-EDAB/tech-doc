@@ -40,3 +40,6 @@ Operational Harmful Algal Bloom forecast is served online at https://coastalscie
 ### Data Processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
+
+**catalog link**
+No associated catalog page

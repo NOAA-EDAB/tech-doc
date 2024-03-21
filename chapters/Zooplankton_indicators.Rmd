@@ -51,3 +51,6 @@ Time series of zooplankton diversity (effective shannon) was calculated using 42
 ### Data processing
 
 Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/zoo_abundance_anom.html>

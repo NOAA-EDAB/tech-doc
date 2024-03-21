@@ -32,3 +32,6 @@ A sequential regime shift detection algorithm was used to identify the regimes e
 
 ### Data processing
 Warm core ring data were formatted for inclusion in the `ecodata` R package using this [R code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_warm_core_rings.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wcr.html>

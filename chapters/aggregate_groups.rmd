@@ -77,7 +77,8 @@ More information about the Mid-Atlantic Fisheries Management Council is availabl
 
 Species lists are pulled from SVDBS and CFDBS.  They are merged using the ITIS code.  Classifications from Garrison and Link [@garrison2000dietary] and Link et al. [@link2006EMAX] are added manually. The R code used in the extraction process can be found [here](https://github.com/slucey/RSurvey/blob/master/Species_list.R).
 
-
+**catalog link**
+<https://noaa-edab.github.io/catalog/species_groupings.html>
 
 
 

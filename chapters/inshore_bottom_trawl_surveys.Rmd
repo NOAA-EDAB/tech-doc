@@ -51,3 +51,8 @@ Biomass indices were provided as stratified mean biomass (kg `r ifelse(knitr::is
 Stratified mean biomass was also calculated for the MA Inshore Bottom Trawl Survey. These calculations followed those used to find stratified mean biomass by feeding guild in the NEFSC Bottom Trawl Survey and are described in greater detail [here](#survdat). The R code used to derive the stratified mean biomass indices for MA Inshore time series is provided below. 
 
 R code used for analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/inshore_survey_analysis.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/mab_inshore_survey.html>
+<https://noaa-edab.github.io/catalog/mass_inshore_survey.html>
+<https://noaa-edab.github.io/catalog/ne_inshore_survey.html>

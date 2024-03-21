@@ -30,5 +30,9 @@ Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal t
 
 
 ### Data processing
+All temperature observations are subject to rigorous quality control protocols following community standards. Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges. Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes. We choose to use the up or down cast data depending on which is cleanest and based on the deployment method. Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software). Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity. 
 
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/bottom_temp.html>

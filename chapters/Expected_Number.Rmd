@@ -37,3 +37,6 @@ The number of species represented in these samples of 1000 fishes are then avera
 
 ### Data processing
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_exp_n.R).
+
+**catalog page**
+<https://noaa-edab.github.io/catalog/exp_n.html>
