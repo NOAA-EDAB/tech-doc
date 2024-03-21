@@ -176,6 +176,8 @@ methods-21
 data-sources-22
 data-extraction-14
 data-analysis-18
+survey
+stock-assessments
 data-processing-14
 wind_revenue
 methods-22
@@ -197,10 +199,13 @@ data-sources-26
 data-extraction-16
 data-analysis-22
 forage-fish-in-bluefish-diets
+soe
+soe-1
 predators-feeding-similarly-to-bluefish
 vast-input-dataset
 vast-modeling
 spatial-forage-indices
+forage-center-of-gravity
 energy_density
 methods-25
 data-sources-27
