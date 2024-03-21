@@ -2,7 +2,7 @@
  
 **Description**: Fish productivity estimated from surveys and assessments
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (201-2018, 2020, 2022-2024), State of the Ecosystem - Mid-Atlantic (2017-2020, 2022-2024)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017-2018, 2020, 2022-2024), State of the Ecosystem - Mid-Atlantic (2017-2020, 2022-2024)
 
 **Indicator category**: Database pull with analysis; Published methods
 
