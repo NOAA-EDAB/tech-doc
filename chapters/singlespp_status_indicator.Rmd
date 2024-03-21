@@ -13,7 +13,8 @@
 
 **Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
 
-**Public availability statement**: All stock assessment results are publicly available (see Data Sources). Summarized data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/assess_soe_v1.htmlTable?No,Entity_Name,Science_Center,Assessment_Year,Last_Data_Year,Assessment_Level,Citation,Comments,Best_F,F_Year,Flimit,Fmsy,F_Flimit,F_Fmsy,Best_B,B_Year,B_Blimit,B_Bmsy,Stock_Level_Relative_to_Bmsy,Bmsy,Blim).
+**Public availability statement**: All stock assessment results are publicly available at https://apps-st.fisheries.noaa.gov/stocksmart?app=homepage. 
+.
 
 ## Methods
 
@@ -22,22 +23,10 @@
 
 "Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. These metrics are reported to the a national repository, [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage).
 
-Recent stock assessment updates for each species are available on the Northeast Fisheries Science Center (NEFSC) website using the form here: https://apps-nefsc.fisheries.noaa.gov/saw/sasi/sasi_report_options.php
-
-For example, to download the 2020 assessment data, use the form by checking the boxes: Year--2020
-
-Check each available 2020 species and stock area in turn, downloaded .zip of "all files". 
-
-Species with 2020 updates included: Acadian redfish, Atlantic halibut, Atlantic herring, Atlantic Sea Scallop, Atlantic surfclam, Atlantic wolffish, Butterfish, Longfin squid, Ocean Pout, Ocean quahog, Red Hake (2 stocks), Silver hake (2 stocks), Windowpane flounder (2 stocks), Winter flounder (3 stocks). 
-
-These 2020 stock assessment results were compiled as preliminary information by Jeff Vieser, who provided the spreadsheet `NE Stock Assessment Results.xlsx` 10 December 2020. These results are considered preliminary until uploaded to StockSMART.
-
 
 ### Data extraction
 
 Beginning in 2020 for the 2021 SOE, we used Andy Beet's [stocksmart package](https://github.com/NOAA-EDAB/stocksmart) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
-
-The code used to work up this data can be found in [`sgaichas/stockstatusindicator`](https://github.com/sgaichas/stockstatusindicator). 
 
 ```{r}
 
@@ -51,7 +40,7 @@ In `stockAssessmentData` we have time series. Columns are `r names(stockAssessme
 
 
 ```{r}
-#library(DT)
+
 DT::datatable(head(stockAssessmentData), rownames = FALSE)
 
 ```
@@ -63,7 +52,8 @@ In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(s
 DT::datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
 
 ```
-In 2021, `stocksmart` was updated with all current assessments, so data extraction was simply:
+
+For 2021-2023, `stocksmart` was updated with all current assessments, so data extraction was simply:
 
 ```{r make-2021assess, eval=FALSE}
 assess2021 <- stockAssessmentSummary %>%
@@ -154,7 +144,10 @@ R code used to process the stock status data set for inclusion in the `ecodata` 
 ### Data analysis
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
 
-For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
+For the 2021 SOE to present, stockSMART variables `F/Fmsy` and `B/Bmsy` are renamed `F.Fmsy` and `B.Bmsy`, then plotted for each species on an x-y plot, where `B.Bmsy` is on the x axis and `F.Fmsy` is on the y axis. The code used to work up this data for the 2024 report can be found at https://sgaichas.github.io/stockstatusindicator/StockStatus2023.html. 
+
+
+2017-2020 SOEs: For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
 
 <!--What packages or libraries did you use in your work flow?-->
 

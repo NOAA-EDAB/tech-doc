@@ -1,11 +1,11 @@
-# Forage Fish Biomass Indices {#forage_index} 
+# Forage Fish Indices {#forage_index} 
 
 
-**Description**: Forage Fish Biomass Indices 
+**Description**: Forage fish biomass and center of gravity indices 
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023), State of the Ecosystem - Mid-Atlantic (2023)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+), State of the Ecosystem - Mid-Atlantic (2023+)
 
-**Indicator category**: Extensive analysis, not yet published
+**Indicator category**: Extensive analysis, Published methods
 
 **Contributor(s)**: Sarah Gaichas, James Gartland, Brian Smith, Elizabeth Ng, Michael Celestino, Anthony Wood, Katie Drew, Abigail Tyrell, and James Thorson
   
@@ -13,19 +13,21 @@
 
 **Point of contact**: Sarah Gaichas, <Sarah.Gaichas@noaa.gov>
 
-**Public availability statement**: Source data are publicly available. All data and code available on GitHub at [sgaichas/bluefishdiet](https://github.com/sgaichas/bluefishdiet). 
+**Public availability statement**: Source data are publicly available. All data and code available on GitHub at https://github.com/NOAA-EDAB/forageindex
   
 
 ## Methods
 
-Forage fish indices were developed in support of the Bluefish Research Track stock assessment working group. Key methods are briefly reported here. Detailed methods. results, and model diagnostics are available in the [full working paper posted here](https://sgaichas.github.io/bluefishdiet/VASTcovariates_forageindex_WP.html). 
+Forage fish indices were developed in support of the Bluefish Research Track stock assessment working group in 2022 and extended for the 2023 and subsequent State of the Ecosystem reports. Key methods are briefly reported here. Detailed methods, results, and model diagnostics are available in @gaichas_assessing_2023. 
 
 Small pelagic forage species are difficult to survey directly, so we developed a novel method of assessing small pelagic fish aggregate abundance using predator diet data. We used piscivore diet data collected from multiple bottom trawl surveys within a Vector Autoregressive Spatio-Temporal (VAST, @thorson2017; @thorson2019) model to assess trends of small pelagic forage species on the Northeast US shelf. This approach uses survey-sampled predator stomach contents as observations to develop a survey index for forage fish, following @ng2021, which used predator stomach data to create a biomass index for a single prey, Atlantic herring. 
 
-We adapted the approach of @ng2021 to get an index for "bluefish prey" in aggregate rather than a single prey species. We include inshore and offshore regions by combining results across two regional bottom trawl surveys surveys, the Northeast Fisheries Science Center (NEFSC) survey and the Northeast Area Monitoring and Assessment Program (NEAMAP) survey, as was done for summer flounder biomass in @perretti2019. Finally, since bluefish themselves are somewhat sparsely sampled by the surveys, we aggregate all predators that have a similar diet composition to bluefish to better represent bluefish prey biomass. 
+We adapted the approach of @ng2021 to get an index for small pelagics in aggregate rather than a single prey species. We include inshore and offshore regions by combining results across two regional bottom trawl surveys surveys, the Northeast Fisheries Science Center (NEFSC) survey and the Northeast Area Monitoring and Assessment Program (NEAMAP) survey, as was done for summer flounder biomass in @perretti2019. Finally, we aggregate all predators that have a similar diet composition to bluefish to better represent generalist pelagic piscivore prey ("forage fish") biomass. 
+
+Minor changes to the prey included in the forage index were made between the Bluefish Research Track/2023 SOE and the index published in @gaichas_assessing_2023 and used in the 2024 SOE. A comparison of these methods, and of the index extended back in time to the 1970s and 1980s, is presented at https://noaa-edab.github.io/forageindex/SOEforageindex.html. 
 
 ### Data sources  
-Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal-sst-anomalies.html). 
+Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal_sst_anomaly_gridded.html). 
 
 ### Data extraction  
 NEFSC survey diet data were extracted and provided by Brian Smith (NEFSC). NEAMAP survey diet data were extracted and processed by James Gartland (VIMS). Code to extract the OISST information was modified from [code](https://github.com/kimberly-bastille/ecopull/blob/main/.github/workflows/pull_satellite_data.yml) kindly provided by Kim Bastille  pulling daily gridded SST for each year 1985-2021 using her code starting line 260, as well as Kim’s nc_to_raster function for NEUS shelf from at [this link](https://github.com/kimberly-bastille/ecopull/blob/main/R/utils.R). The full OISST extraction script is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/pull_OISST.R) with visualizations of survey in-situ temperatures compared with OISST at [this link](https://sgaichas.github.io/bluefishdiet/SSTmethods.html) 
@@ -35,38 +37,53 @@ The steps involved to estimate the forage index included defining the input data
 
 #### Forage fish in bluefish diets
 
+Prey categories such as fish unidentified, Osteichthyes, and unidentified animal remains were not included in the prey list. Although unidentified fish and Osteichthyes can comprise a significant portion of bluefish stomach contents, we cannot assume that unidentified fish in other predator stomachs represent unidentified fish in bluefish stomachs.
+
+##### 2024+ SOE
+Using NEFSC (1973-2021), and NEAMAP (2007-2021) survey diet data, 21 small pelagic prey groups were identified with at least 25 bluefish stomachs across both datasets. Atlantic mackerel were also included despite being encountered in only 14 stomachs, due to their historic importance as bluefish prey [@collette_bigelow_2002].
+
+Sensitivity of index results to changes in the prey groups is reported in @gaichas_assessing_2023. Trends were not sensitive to the minor change in prey inclusion between this method and the one used in the 2023 SOE. 
+
+##### 2023 SOE
 Using NEFSC bottom trawl survey diet data from 1973-2021, 20 small pelagic groups were identified as major bluefish prey with 10 or more observations (in descending order of observations): Longfin squids (*Doryteuthis* formerly *Loligo* sp.), Anchovy family (Engraulidae), bay anchovy (*Anchoa mitchilli*), Atlantic butterfish, (*Peprilus triachanthus*), Cephalopoda, (*Anchoa hepsetus*), red eye round herring (*Etrumeus teres*), Sandlance (*Ammodytes* sp.), scup (*Stenotomus chrysops*), silver hake (*Merluccius bilinearis*), shortfin squids (*Illex* sp.), Atlantic herring (*Clupea harengus*), Herring family (Clupeidae), Bluefish (*Pomatomus saltatrix*), silver anchovy (*Engraulis eurystole*), longfin inshore squid (*Doryteuthis pealeii*), Atlantic mackerel (*Scomber scombrus*), flatfish (Pleuronectiformes), weakfish (*Cynoscion regalis*), and Atlantic menhaden (*Brevoortia tyrannus*). 
 
-Prey categories such as fish unidentified, Osteichthyes, and unidentified animal remains were not included in the prey list. Although unidentified fish and Osteichthyes can comprise a significant portion of bluefish stomach contents, we cannot assume that unidentified fish in other predator stomachs represent unidentified fish in bluefish stomachs.
 
 #### Predators feeding similarly to bluefish 
 
 All size classes of 50 fish predators captured in the NEFSC bottom trawl survey were grouped by diet similarity to identify the size classes of piscivore species with the most similar diet to bluefish in the region.  Diet similarity analysis was completed using the Schoener similarity index (@schoener1970; B. Smith, pers. comm.), and is available available via [this link on the NEFSC food habits shiny app](https://fwdp.shinyapps.io/tm2020/#4_DIET_OVERLAP_AND_TROPHIC_GUILDS). The working group evaluated several clustering methods to develop the predator list (see [this link with detailed cluster results](https://sgaichas.github.io/bluefishdiet/PreySimilarityUpdate.html)). 
 
-Predators with highest diet similarity to Bluefish from the NEFSC diet database (1973-2020) include Atlantic cod, Atlantic halibut, buckler dory, cusk, fourspot flounder, goosefish, longfin squid, shortfin squid, pollock, red hake, sea raven, silver hake, spiny dogfish, spotted hake, striped bass, summer flounder, thorny skate, weakfish, and white hake. The NEAMAP survey operates closer to shore than the current NEFSC survey. The NEAMAP dataset includes predators sampled by the NEFSC survey and adds two species, Spanish mackerel and spotted sea trout, not captured by the NEFSC survey offshore but included based on working group expert judgement of prey similarity to bluefish. Predator size classes included are listed in Table 2 of the forage fish index working paper at [this link](https://sgaichas.github.io/bluefishdiet/VASTcovariates_forageindex_WP.html). 
+Predators with highest diet similarity to Bluefish from the NEFSC diet database (1973-2020) include Atlantic cod, Atlantic halibut, buckler dory, cusk, fourspot flounder, goosefish, longfin squid, shortfin squid, pollock, red hake, sea raven, silver hake, spiny dogfish, spotted hake, striped bass, summer flounder, thorny skate, weakfish, and white hake. The NEAMAP survey operates closer to shore than the current NEFSC survey. The NEAMAP dataset includes predators sampled by the NEFSC survey and adds two species, Spanish mackerel and spotted sea trout, not captured by the NEFSC survey offshore but included based on working group expert judgement of prey similarity to bluefish. Predator size classes included are listed in Table 2 of @gaichas_assessing_2023 at https://cdnsciencepub.com/doi/full/10.1139/cjfas-2023-0093. 
 
 #### VAST Input Dataset
 
-Diets from all 22 piscivores (including bluefish) were combined for the 20 forage fish (bluefish prey) groups at each surveyed location, and the mean weight of forage fish per predator stomach at each location was calculated. Data for each station included station ID, year, season, date, latitude, longitude, vessel, mean bluefish prey weight (g), mean piscivore length (cm), number of piscivore species, and sea surface temperature (degrees C). Because approximately 10% of survey stations were missing in-situ sea water temperature measurements, National Oceanic and Atmospheric Administration Optimum Interpolation Sea Surface Temperature (NOAA OI SST) V2 High Resolution Dataset [@Reynolds2007] data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov were used to fill gaps. For survey stations with in-situ temperature measurements, the in-situ measurement was retained. For survey stations with missing temperature data, OI SST was substituted for input into VAST models.
+Diets from all 22 piscivores (including bluefish) were combined for the 21 forage fish (bluefish prey) groups at each surveyed location, and the mean weight of forage fish per predator stomach at each location was calculated. Data for each station included station ID, year, season, date, latitude, longitude, vessel, mean bluefish prey weight (g), mean piscivore length (cm), number of piscivore species, and sea surface temperature (degrees C). Because approximately 10% of survey stations were missing in-situ sea water temperature measurements, National Oceanic and Atmospheric Administration Optimum Interpolation Sea Surface Temperature (NOAA OI SST) V2 High Resolution Dataset [@Reynolds2007] data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov were used to fill gaps. For survey stations with in-situ temperature measurements, the in-situ measurement was retained. For survey stations with missing temperature data, OI SST was substituted for input into VAST models.
 
-The final dataset input to VAST is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/fhdat/bluepyagg_stn_all_OISST.rds). 
+The 2023 SOE dataset input to VAST is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/fhdat/bluepyagg_stn_all_OISST.rds). 
 
-#### VAST Modeling
+Operational updates to the forage index submitted to the State of the Ecosystem report (2024+) are in the forageindex github repository: https://github.com/NOAA-EDAB/forageindex
 
-Models were developed combining all data for the year ("Annual") and with separate data for "Spring" (collection months January - June) and "Fall" (collection months July-December) to align with assumptions used in the bluefish stock assessment. Modeled years included 1985-2021 to align with other data inputs in the bluefish stock assessment. 
-VAST is structured to estimate fixed and random effects across two linear predictors, which are then multiplied to estimate an index of the quantity of interest. Following what @ng2021 did for herring, we apply a Poisson-link delta model to estimate expected prey mass per predator stomach. However, we use a higher resolution (500 knots, estimated by k-means clustering of the data), to define the spatial dimensions of each seasonal model. Two step model selection first compared whether the data supported estimation of spatial and spatio-temporal random effects, and then evaluated whether catchability covariates improved fits. Best fit models included spatial and spatio-temporal random effects, with predator mean length, number of predator species, and sea surface temperature as catchability covariates. See [this link for detailed results of model selection](https://sgaichas.github.io/bluefishdiet/VASTcovariates_forageindex_WP.html). 
+Data input files are in the folder fhdat and were processed with the script VASTforage_ProcessInputDat.R in that folder: https://github.com/NOAA-EDAB/forageindex/blob/main/fhdat/VASTforage_ProcessInputDat.R
 
-Similar to findings of @ng2021, a vessel effect was not supported, but the predator length covariate may more directly model vessel differences in predator catch that affect stomach contents than modeling a vessel catchability covariate directly. @ng2021 found that predator length covariates were strongly supported as catchability covariates (larger predators being more likely to have more prey in stomachs). In our aggregate predator dataset, we also found the strong support for including the number of predators as a catchability covariate. The rationale for including number of predator species is that more species "sampling" the prey field at a particular station may result in a higher encounter rate (more stations with positive bluefish prey in stomachs). Water temperature was also supported as a catchability covariate, perhaps because temperature affects predator feeding rate.
+The 2024 SOE dataset input to VAST is available at [this link](https://github.com/NOAA-EDAB/forageindex/blob/main/fhdat/bluepyagg_stn_all_OISST_1982-2022.rds). 
 
-Although the forage fish index is based on trawl-surveyed fish predators and the area swept of the net capturing predators is available, determining the actual area swept of the predators "sampling" the prey field is less clear. Therefore, we set area swept to 1 as recommended for "sampling gears" with unknown effective sampling areas, which means our forage abundance index does not have an interpretable scale, but should be proportional to actual forage biomass [@thorson2019]. 
+
+#### VAST modeling
+
+Approaches, model selection, and bias correction are described in detail in @gaichas_assessing_2023. 
+
+VAST models were run using the script VASTunivariate_seasonalforageindex_operational.R in the folder VASTscripts: https://github.com/NOAA-EDAB/forageindex/blob/main/VASTscripts/VASTunivariate_seasonalforageindex_operational.R
+
+Model output was saved in the folder SOEpyindex for three different time series options: 1973-2022, 1982-2022, and 1985-2022.
 
 #### Spatial Forage Indices
 
-Spring, fall, and annual prey indices were developed for the full VAST extrapolation grid, as well as [survey strata-based EPU definitions](https://noaa-edab.github.io/tech-doc/survdat.html#fig:epustrata). NEFSC survey strata definitions are built into the VAST `northwest-atlantic` extrapolation grid. The forage index was calculated and bias corrected [@thorson2016] for all defined strata within VAST.
+The script to create the 2024+ SOE forage indices from the VAST output is in the SOEpyindex folder: https://github.com/NOAA-EDAB/forageindex/blob/main/SOEpyindex/SOE-VASTForageIndices.R
 
-Full VAST model results for Fall, Spring, and Annual models, along with diagnostics, are available at [this link](https://sgaichas.github.io/bluefishdiet/VASTcovariates_forageindex_WP.html).
 
-Code used to develop this indicator from the full set of VAST model index outputs is [available here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/SOE-VASTForageIndices.R).
+#### Forage Center of Gravity
+
+Center of Gravity is a standard output of VAST models. Forage center of gravity indices were introduced in the 2024 SOE from the same model as the forage indices. Code to extract the center of gravity output is at https://noaa-edab.github.io/forageindex/SOEforageindex.html#5_Center_of_gravity_exploration, along with visualizations of the center of gravity indicator for spring and fall models. 
+
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/forage_index.html>
