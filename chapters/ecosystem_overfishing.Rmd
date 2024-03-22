@@ -46,7 +46,7 @@ $$PPR_t = \sum_{i=1}^{n_t}  \left(\frac{landings_{t,i}}{9}\right) \left(\frac{1}
 
 where $n_t$ = number of species in time $t$, $landings_{t,i}$ = landings of species $i$ in time $t$, $TL_i$ is the trophic level of species $i$, $TE$ = Trophic efficiency. The PPR estimate assumes a 9:1 ratio for the conversion of wet weight to carbon and a 15% transfer efficiency per trophic level, ($TE$ = 0.15)
 
-The index is presented as a percentage of [estimated primary production](https://noaa-edab.github.io/tech-doc/chl-pp.html) (PP) available over the geographic region of interest, termed an [Ecological Production Unit](https://noaa-edab.github.io/tech-doc/comdat.html) (EPU). The scaled index is estimated by dividing the PPR index in year $t$ by the estimated primary production in time $t$.
+The index is presented as a percentage of [estimated primary production](#chl_pp) (PP) available over the geographic region of interest, termed an [Ecological Production Unit](#epu) (EPU). The scaled index is estimated by dividing the PPR index in year $t$ by the estimated primary production in time $t$.
 
 $$scaledPPR_t = \frac{PPR_t}{PP_t}$$
 
@@ -54,15 +54,15 @@ The species selected in each year were determined by their cumulative contributi
 
 #### Data sources
 
-Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca), and primary production estimates are derived from [satellites](https://noaa-edab.github.io/tech-doc/chl-pp.html). Some of these data are typically not available to the public.
+Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca), and primary production estimates are derived from [satellites](#chl_pp). Some of these data are typically not available to the public.
 
 #### Data extraction
 
-Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](https://noaa-edab.github.io/tech-doc/comdat.html)
+Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](#comdat)
 
-Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese2019fishbase] in tandem with the package [eofindices.](https://github.com/NOAA-EDAB/eofindices/)
+Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese2019fishbase] in tandem with the package [eofindices.](https://noaa-edab.github.io/eofindices/)
 
-Primary Production is estimated using the methods described in the chapter [Chlorophyll a and Primary Production.](https://noaa-edab.github.io/tech-doc/chl-pp.html)
+Primary Production is estimated using the methods described in the chapter [Chlorophyll a and Primary Production.](#chl-pp)
 
 #### Data analysis
 
@@ -70,7 +70,7 @@ Primary Production is estimated using the methods described in the chapter [Chlo
 
 Annual (wet weight) landings are calculated for each species for a given EPU. For each year the landings are sorted in descending order by species and the cumulative landings are calculated. The species that accounted for the top 80% of total cumulative landings are selected. The trophic level for each of these species are then obtained from fishbase/sealifebase. At this point the PPR index is calculated. The units of the index are $gCyear^{-1}$ for the EPU. The index is converted to $gCm^{-2}year^{-1}$ by dividing by the area (in $m^2$) of the EPU.
 
-To normalize the index the total Primary Production for the given EPU is required. This is calculated as described in the chapter [Chlorophyll a and Primary Production](https://noaa-edab.github.io/tech-doc/chl-pp.html). The units are also converted to $gCm^{-2}year^{-1}$.
+To normalize the index the total Primary Production for the given EPU is required. This is calculated as described in the chapter [Chlorophyll a and Primary Production](#chl_pp). The units are also converted to $gCm^{-2}year^{-1}$.
 
 The index is then normalized by dividing the index in year t by the total primary production in time $t$.
 
