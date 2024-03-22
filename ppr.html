@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2024-03-21" />
+<meta name="date" content="2024-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -948,25 +948,25 @@ div.csl-indent {
 <p>The index for Primary Production Required (PPR) was adapted from <span class="citation">(<a href="#ref-pauly1995ppr">D. Pauly and Christensen 1995b</a>)</span>.</p>
 <p><span class="math display">\[PPR_t = \sum_{i=1}^{n_t}  \left(\frac{landings_{t,i}}{9}\right) \left(\frac{1}{TE}\right)^{TL_i-1}\]</span></p>
 <p>where <span class="math inline">\(n_t\)</span> = number of species in time <span class="math inline">\(t\)</span>, <span class="math inline">\(landings_{t,i}\)</span> = landings of species <span class="math inline">\(i\)</span> in time <span class="math inline">\(t\)</span>, <span class="math inline">\(TL_i\)</span> is the trophic level of species <span class="math inline">\(i\)</span>, <span class="math inline">\(TE\)</span> = Trophic efficiency. The PPR estimate assumes a 9:1 ratio for the conversion of wet weight to carbon and a 15% transfer efficiency per trophic level, (<span class="math inline">\(TE\)</span> = 0.15)</p>
-<p>The index is presented as a percentage of <a href="https://noaa-edab.github.io/tech-doc/chl-pp.html">estimated primary production</a> (PP) available over the geographic region of interest, termed an <a href="https://noaa-edab.github.io/tech-doc/comdat.html">Ecological Production Unit</a> (EPU). The scaled index is estimated by dividing the PPR index in year <span class="math inline">\(t\)</span> by the estimated primary production in time <span class="math inline">\(t\)</span>.</p>
+<p>The index is presented as a percentage of <a href="chl_pp.html#chl_pp">estimated primary production</a> (PP) available over the geographic region of interest, termed an <a href="epu.html#epu">Ecological Production Unit</a> (EPU). The scaled index is estimated by dividing the PPR index in year <span class="math inline">\(t\)</span> by the estimated primary production in time <span class="math inline">\(t\)</span>.</p>
 <p><span class="math display">\[scaledPPR_t = \frac{PPR_t}{PP_t}\]</span></p>
 <p>The species selected in each year were determined by their cumulative contribution to total landings. A threshold of at least 80% of the total landings is used.</p>
 <div id="data-sources-19" class="section level4 hasAnchor" number="18.1.2.1">
 <h4><span class="header-section-number">18.1.2.1</span> Data sources<a href="ppr.html#data-sources-19" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a>, and primary production estimates are derived from <a href="https://noaa-edab.github.io/tech-doc/chl-pp.html">satellites</a>. Some of these data are typically not available to the public.</p>
+<p>Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a>, and primary production estimates are derived from <a href="chl_pp.html#chl_pp">satellites</a>. Some of these data are typically not available to the public.</p>
 </div>
 <div id="data-extraction-12" class="section level4 hasAnchor" number="18.1.2.2">
 <h4><span class="header-section-number">18.1.2.2</span> Data extraction<a href="ppr.html#data-extraction-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter <a href="https://noaa-edab.github.io/tech-doc/comdat.html">Commercial Landings Data.</a></p>
-<p>Trophic level information for each species is obtained from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a> using the R package <a href="https://github.com/ropensci/rfishbase">rfishbase</a> <span class="citation">(<a href="#ref-froese2019fishbase">Froese and Pauly 2019</a>)</span> in tandem with the package <a href="https://github.com/NOAA-EDAB/eofindices/">eofindices.</a></p>
-<p>Primary Production is estimated using the methods described in the chapter <a href="https://noaa-edab.github.io/tech-doc/chl-pp.html">Chlorophyll a and Primary Production.</a></p>
+<p>Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter <a href="comdat.html#comdat">Commercial Landings Data.</a></p>
+<p>Trophic level information for each species is obtained from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a> using the R package <a href="https://github.com/ropensci/rfishbase">rfishbase</a> <span class="citation">(<a href="#ref-froese2019fishbase">Froese and Pauly 2019</a>)</span> in tandem with the package <a href="https://noaa-edab.github.io/eofindices/">eofindices.</a></p>
+<p>Primary Production is estimated using the methods described in the chapter <a href="#chl-pp">Chlorophyll a and Primary Production.</a></p>
 </div>
 <div id="data-analysis-15" class="section level4 hasAnchor" number="18.1.2.3">
 <h4><span class="header-section-number">18.1.2.3</span> Data analysis<a href="ppr.html#data-analysis-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="primary-production-required" class="section level5 hasAnchor" number="18.1.2.3.1">
 <h5><span class="header-section-number">18.1.2.3.1</span> Primary Production Required<a href="ppr.html#primary-production-required" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Annual (wet weight) landings are calculated for each species for a given EPU. For each year the landings are sorted in descending order by species and the cumulative landings are calculated. The species that accounted for the top 80% of total cumulative landings are selected. The trophic level for each of these species are then obtained from fishbase/sealifebase. At this point the PPR index is calculated. The units of the index are <span class="math inline">\(gCyear^{-1}\)</span> for the EPU. The index is converted to <span class="math inline">\(gCm^{-2}year^{-1}\)</span> by dividing by the area (in <span class="math inline">\(m^2\)</span>) of the EPU.</p>
-<p>To normalize the index the total Primary Production for the given EPU is required. This is calculated as described in the chapter <a href="https://noaa-edab.github.io/tech-doc/chl-pp.html">Chlorophyll a and Primary Production</a>. The units are also converted to <span class="math inline">\(gCm^{-2}year^{-1}\)</span>.</p>
+<p>To normalize the index the total Primary Production for the given EPU is required. This is calculated as described in the chapter <a href="chl_pp.html#chl_pp">Chlorophyll a and Primary Production</a>. The units are also converted to <span class="math inline">\(gCm^{-2}year^{-1}\)</span>.</p>
 <p>The index is then normalized by dividing the index in year t by the total primary production in time <span class="math inline">\(t\)</span>.</p>
 </div>
 <div id="fogarty-and-ryther-indices" class="section level5 hasAnchor" number="18.1.2.3.2">

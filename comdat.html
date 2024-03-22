@@ -23,7 +23,7 @@
 <meta name="author" content="Northeast Fisheries Science Center" />
 
 
-<meta name="date" content="2024-03-21" />
+<meta name="date" content="2024-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -926,11 +926,10 @@ div.csl-indent {
 <p><strong>Contributor(s)</strong>: Sean Lucey</p>
 <p><strong>Data steward</strong>: Sean Lucey, <a href="mailto:Sean.Lucey@noaa.gov" class="email">Sean.Lucey@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Sean Lucey, <a href="mailto:Sean.Lucey@noaa.gov" class="email">Sean.Lucey@noaa.gov</a></p>
-<p><strong>Public availability statement</strong>: Raw data are not publicly available due to confidentiality of individual fishery participants. Derived indicator outputs are
-available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_soe_v1.html">here</a>.</p>
+<p><strong>Public availability statement</strong>: Raw data are not publicly available due to confidentiality of individual fishery participants.</p>
 <div id="methods-15" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> Methods<a href="comdat.html#methods-15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s on are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by National Marine Fisheries Service (NMFS) Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table <a href="comdat.html#tab:calibration1">15.1</a> below.</p>
+<p>Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by National Marine Fisheries Service (NMFS) Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table <a href="comdat.html#tab:calibration1">15.1</a> below.</p>
 <table>
 <caption><span id="tab:calibration1">Table 15.1: </span>Data formats</caption>
 <thead>
@@ -954,14 +953,14 @@ available <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/group_landings_s
 </tr>
 </tbody>
 </table>
-<p>Comlands is an R database pull that consolidates the landings records from 1964 on and attempts to associate them with NAFO statistical areas (Figure <a href="comdat.html#fig:StatAreaMap">15.1</a>). The script is divided into three sections. The first pulls domestic landings data from the yearly landings tables and merges them into a single data source. The second section applies an algorithm to associate landings that are not allocated to a statistical area using similar characteristics of the trip to trips with known areas. The final section pulls foreign landings from the Northwest Atlantic Fisheries Organization website and rectifies species and gear codes so they can be merged along with domestic landings.</p>
+<p>The landings records data are pulled from the Commercial database from 1964 to present year and algorithm is applied to associate landings that are not allocated to a statistical area using similar characteristics of the trip to trips with known areas. Foreign landings are then pulled from the Northwest Atlantic Fisheries Organization (<a href="https://www.nafo.int/">NAFO</a>) website and merged with domestic landings.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:StatAreaMap"></span>
-<img src="images/Stat_Area_Map.jpg" alt="Map of the North Atlantic Fisheries Organization (NAFO) Statistical Areas.  Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated." width="50%" />
+<img src="images/Stat_Area_Map.jpg" alt="Map of the Greater Atlantic Region Statistical Areas.  Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated." width="50%" />
 <p class="caption">
-Figure 15.1: Map of the North Atlantic Fisheries Organization (NAFO) Statistical Areas. Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated.
+Figure 15.1: Map of the Greater Atlantic Region Statistical Areas. Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated.
 </p>
 </div>
-<p>During the first section, the Comlands script pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record. The script includes a toggle to use landed weights as opposed to live weights. For all but shellfish species, live weights are used for the State of the Ecosystem report. Due to the volume of data contained within each yearly landings table, landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class. All weights are then converted from pounds to metric tons. Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish. Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.</p>
+<p>The R package <a href="https://noaa-edab.github.io/comlandr/"><code>comlandr</code></a> is used to pull the data. Specifically, the package pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record. The package allows for landed weights as well as live weights. For all but shellfish species, live weights are used for the State of the Ecosystem report. Landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class. All weights are then converted from pounds to metric tons. Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish. Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.</p>
 <table>
 <caption><span id="tab:geartypes">Table 15.2: </span>Gear types used in commercial landings</caption>
 <thead>
@@ -1009,8 +1008,8 @@ Figure 15.1: Map of the North Atlantic Fisheries Organization (NAFO) Statistical
 </tr>
 </tbody>
 </table>
-<p>Several species have additional steps after the data is pulled from CFDBS. Skates are typically landed as a species complex. In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another. Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine. Comlands pulls from the State database and replaces the less accurate numbers from the federal database.</p>
-<p>The majority of landings data are associated with a NAFO Statistical Area. For those that are not, Comlands attempts to assign them to an area using similar characteristics of trips where the area is known. To simplify this task, landings data are further aggregated into quarter and half year, small and large vessels, and eight major gear categories (Table <a href="comdat.html#tab:geartypes">15.2</a>). Landings are then proportioned to areas that meet similar characteristics based on the proportion of landings in each area by that temporal/vessel/gear combination. If a given attribute is unknown, the algorithm attempts to assign it one, once again based on matched characteristics of known trips. Statistical areas are then assigned to their respective <a href="epu.html#epu">Ecological Production Unit</a> (Table <a href="comdat.html#tab:statareas">15.3</a>).</p>
+<p>Several species have additional steps after the data is pulled from CFDBS. Skates are typically landed as a species complex. In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another. Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine. The <code>comlandr</code> package pulls from the State database and replaces the less accurate numbers from the federal database.</p>
+<p>The majority of landings data are associated with a Greater Atlantic Region Statistical Areas (Figure <a href="comdat.html#fig:StatAreaMap">15.1</a>). For those that are not, the package attempts to assign them to an area using similar characteristics of trips where the area is known. To simplify this task, landings data are further aggregated into quarter and half year, small and large vessels, and eight major gear categories (Table <a href="comdat.html#tab:geartypes">15.2</a>). Landings are then proportioned to areas that meet similar characteristics based on the proportion of landings in each area by that temporal/vessel/gear combination. If a given attribute is unknown, the algorithm attempts to assign it one, once again based on matched characteristics of known trips. Statistical areas are then assigned to their respective <a href="epu.html#epu">Ecological Production Unit</a> (Table <a href="comdat.html#tab:statareas">15.3</a>).</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:statareas">Table 15.3: </span><span id="tab:statareas">Table 15.4: </span>Statistical areas making up each EPU
@@ -1052,26 +1051,24 @@ Mid-Atlantic
 </tr>
 </tbody>
 </table>
-<p>The final step of Comlands is to pull the foreign landings from the <a href="https://www.nafo.int/Data/frames">NAFO database</a>. US landings are removed from this extraction so as not to be double counted. NAFO codes and CFDBS codes differ so the script rectifies those codes to ensure that the data is seamlessly merged into the domestic landings. Foreign landings are flagged so that they can be removed if so desired.</p>
+<p>The final step is to pull the foreign landings from the <a href="https://www.nafo.int/Data/">NAFO database</a>. US landings are removed from this extraction so as not to be double counted. NAFO codes and CFDBS codes differ so the package rectifies those codes to ensure that the data is seamlessly merged into the domestic landings. Foreign landings are flagged so that they can be removed if so desired.</p>
 <div id="data-sources-16" class="section level3 hasAnchor" number="15.1.1">
 <h3><span class="header-section-number">15.1.1</span> Data sources<a href="comdat.html#data-sources-16" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Comland is a database query of the NEFSC commercial fishery database (CFDBS). More information about the CFDBS is available <a href="https://inport.nmfs.noaa.gov/inport/item/27401">here</a>.</p>
+<p>A database query of the NEFSC commercial fishery database (CFDBS). More information about the CFDBS is available <a href="https://inport.nmfs.noaa.gov/inport/item/27401">here</a>.</p>
 </div>
 <div id="data-extraction-9" class="section level3 hasAnchor" number="15.1.2">
 <h3><span class="header-section-number">15.1.2</span> Data extraction<a href="comdat.html#data-extraction-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://github.com/NOAA-EDAB/comlandr"><code>comlandr</code></a> is a package used to extract relevant data from the database.</p>
+<p><a href="https://noaa-edab.github.io/comlandr/"><code>comlandr</code></a> is an R package used to extract relevant data from the database.</p>
 <div id="data-processing-11" class="section level4 hasAnchor" number="15.1.2.1">
 <h4><span class="header-section-number">15.1.2.1</span> Data Processing<a href="comdat.html#data-processing-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The landings data were formatted for inclusion in the <code>ecodata</code> R package with this <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_comdat.R">R code</a>.</p>
+<p>The landings data were formatted for inclusion in the <a href="https://noaa-edab.github.io/ecodata/"><code>ecodata</code></a> R package</p>
 </div>
 </div>
 <div id="data-analysis-12" class="section level3 hasAnchor" number="15.1.3">
 <h3><span class="header-section-number">15.1.3</span> Data analysis<a href="comdat.html#data-analysis-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Fisheries dependent data from Comlands is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections (ie. <a href="bennet.html#bennet">bennet index</a>). The most straightforward use of this data are the region total and aggregate landings indicators. Regional totals sum landings three ways: 1) All landings regardless of management authority and eventual use (i.e. food or bait), 2) All landings used for seafood but regardless of management authority, and 3) All landings used for seafood and managed by the regional fisheries management council for whom the report is presented.</p>
-<p>Landings are also calculated by aggregate groups per region. These are calculated by first assigning the various species into <a href="#aggroups">aggregate groups</a>. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.</p>
-<p>These are calculated by first assigning the various species into <a href="#aggroups">aggregate groups</a>. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.</p>
-<p><strong>catalog link</strong>
-<a href="https://noaa-edab.github.io/catalog/comdat.html" class="uri">https://noaa-edab.github.io/catalog/comdat.html</a></p>
+<p>Fisheries dependent data is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections (ie. <a href="bennet.html#bennet">bennet index</a>). The most straightforward use of this data are the region total and aggregate landings indicators. Regional totals sum landings three ways: 1) All landings regardless of management authority and eventual use (i.e. food or bait), 2) All landings used for seafood but regardless of management authority, and 3) All landings used for seafood and managed by the regional fisheries management council for whom the report is presented.</p>
+<p>Landings are also calculated by aggregate groups per region. These are calculated by first assigning the various species into <a href="species_groupings.html#species_groupings">aggregate groups</a>. Landings are then summed by year, <a href="epu.html#epu">EPU</a>, aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.</p>
+<p><strong>catalog link</strong> <a href="https://noaa-edab.github.io/catalog/comdat.html" class="uri">https://noaa-edab.github.io/catalog/comdat.html</a></p>
 
 </div>
 </div>
