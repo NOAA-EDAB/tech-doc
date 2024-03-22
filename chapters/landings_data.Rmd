@@ -6,11 +6,11 @@
 
 **Indicator category**: Database pull
 
-**Contributor(s)**: Sean Lucey
+**Contributor(s)**: Andy Beet
 
-**Data steward**: Sean Lucey, [Sean.Lucey\@noaa.gov](mailto:Sean.Lucey@noaa.gov){.email}
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
 
-**Point of contact**: Sean Lucey, [Sean.Lucey\@noaa.gov](mailto:Sean.Lucey@noaa.gov){.email}
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
 
 **Public availability statement**: Raw data are not publicly available due to confidentiality of individual fishery participants.
 
