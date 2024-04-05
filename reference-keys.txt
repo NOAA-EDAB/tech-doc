@@ -22,8 +22,6 @@ tab:habitatdesc
 tab:closuresrc
 tab:hmsspp
 tab:coordinates
-fig:mab-oa
-fig:ne-oa
 eq:two
 eq:three
 eq:one
@@ -98,7 +96,7 @@ data-sources-10
 data-extraction-7
 data-analysis-6
 data-processing-7
-ch_bay_temp
+ches_bay_sst
 methods-10
 data-sources-11
 data-analysis-7
