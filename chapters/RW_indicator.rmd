@@ -14,30 +14,27 @@ library(rmarkdown)
 
 **Indicator category**: Synthesis of published information; Published methods
 
-**Contributor(s)**: Christopher D. Orphanides
+**Contributor(s)**: Debra Palka
   
-**Data steward**: Chris Orphanides, chris.orphanides@noaa.gov
+**Data steward**: Debra Palka, debra.palka@noaa.gov
   
-**Point of contact**: Richard Pace, richard.pace@noaa.gov
+**Point of contact**: Daniel Linden, daniel.linden@noaa.gov
   
 **Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html).
 
 ## Methods
 
 ### Data sources
-The North Atlantic right whale abundance estimates were taken from a published document [see @Pace2017], except for the most recent 2016 and 2017 estimates. Abundance estimates from 2016 and 2017 were taken from the 2016 National Oceanographic and Atmospheric Administration marine mammal stock assessment [@Hayes2017] and an unpublished 2017 stock assessment.
+The North Atlantic right whale abundance estimates were taken from a published document [see @Linden_pop_2023].
 
-Calves birth estimates are taken from a published report [@narw2019] put out yearly by the North American Right Whale Consortium. 
+Calves birth estimates are available in @Pace2017, with more recent years shared [here](https://www.fisheries.noaa.gov/gallery/north-atlantic-right-whale-calving-season-archive).
 
 ### Data extraction 
 Data were collected from existing reports and validated by report authors. 
 
 ### Data analysis
-Analysis for right whale abundance estimates is provided by @Pace2017, and code can be found in the [supplemental materials](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fece3.3406&file=ece33406-sup-0001-SupInfo.docx). 
+Analysis for right whale abundance estimates is based on methods by @Pace2017, as documented most recently by @Linden_pop_2023. Data and code can be found in the following Github repository: [NEFSC/PSD-NARW_popsize](https://github.com/NEFSC/PSD-NARW_popsize). 
 
 ### Data processing
 
 Time series of right whale  and calf abundance estimates were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_narw.R).
-
-**catalog link**
-<https://noaa-edab.github.io/catalog/narw.html>
