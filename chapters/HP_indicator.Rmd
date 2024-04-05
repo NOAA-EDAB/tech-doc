@@ -29,8 +29,7 @@ Annual gillnet bycatch estimates are documented in the CRDs. These feed into the
 ### Data analysis
 Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
 
-Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_harborporpoise.R) and [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_grayseal.R).
+Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_harborporpoise.R).
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/harborporpoise.html>
-<https://noaa-edab.github.io/catalog/grayseal.html>
