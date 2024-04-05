@@ -1,7 +1,7 @@
-# Harbor Porpoise Bycatch {#harborporpoise}
+# Gray Seal Bycatch {#grayseal}
 
 
-**Description**: Harbor Porpoise Bycatch Indicator
+**Description**: Gray Seal Bycatch Indicator
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
 
