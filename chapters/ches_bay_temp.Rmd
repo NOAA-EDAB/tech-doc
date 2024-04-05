@@ -1,4 +1,4 @@
-# Chesapeake Bay Temperature Anomaly {#ches_bay_sst}
+# Chesapeake Bay Temperature Anomaly {#ch_bay_temp}
 
 **Description**: Chesapeake Bay Satellite Sea Surface Temperature
 
@@ -47,4 +47,4 @@ Python code used for database pull and analysis can be [found here.](https://git
 Code for processing Chesapeake Bay temperature data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_temp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/ches_bay_sst.html>
+<https://noaa-edab.github.io/catalog/ch_bay_temp.html>
