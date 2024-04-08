@@ -1,6 +1,6 @@
 # tech-doc
 
-[![Travis-CI Build Status](https://travis-ci.org/NOAA-EDAB/tech-doc.svg?branch=master)](https://travis-ci.org/NOAA-EDAB/tech-doc)
+[![build-book](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml/badge.svg)](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml)
 ![gitleaks](https://github.com/NOAA-EDAB/tech-doc/workflows/gitleaks/badge.svg)
 
 Technical documentation for State of the Ecosystem indicators and general methods. 
