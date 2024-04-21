@@ -1,0 +1,33 @@
+# Gulf of Maine Atlantic Salmon {#gom_salmon}
+
+**Description**: The data presented here are time series of documented Atlantic salmon returns to Gulf of Maine Rivers since 1972 and return rates for two sea winter returns from hatchery smolt stockings.
+
+**Found in**:  State of the Ecosystem - New England (2024) 
+
+**Indicator category**: Published methods; Synthesis of published information
+
+**Contributor(s)**: Jon Kocik, Justin Stevens and Tim Sheehan
+  
+**Data steward**: Debra Palka <debra.palka@noaa.gov>
+  
+**Point of contact**: Jon Kocik <john.kocik@noaa.gov>; Tim Sheehan <tim.sheehan@noaa.gov>; Debra Palka <debra.palka@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+
+### Data Extraction
+Data extraction described in Stevens et al. 2023.
+
+### Data Analysis 
+Data analysis described in Stevens et al. 2023.  
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gom_salmon.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/gom_salmon.html>
