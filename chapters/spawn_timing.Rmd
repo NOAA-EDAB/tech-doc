@@ -1,0 +1,52 @@
+# Spawning Timing {#spawn_timing}
+
+**Description**: Maturity information for groundfish is used to evaluate changes in spawning seasonality.
+
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2024) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Mark Wuenschel
+  
+**Data steward**: Mark Wuenschel <mark.wuenschel@noaa.gov>
+  
+**Point of contact**: Mark Wuenschel <mark.wuenschel@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+Spawning phenology of haddock and yellowtail flounder was evaluated using macroscopic maturity data collected during routine NEFSC spring and fall bottom trawl surveys.
+
+The macroscopic maturity classification scheme includes six stages – immature, developing, ripe, running ripe, spent, and resting- and criteria are described in Burnett et al. (1989). Beginning in the fall of 2006, the classification of ripe changed, from >50% of eggs hydrated (clear) to the presence of any hydrated eggs. In this scheme, fish mature once in their life, and then cycle through developing to resting stages annually.
+
+As batch spawners, haddock and yellowtail flounder would be developing leading up to spawning, then undergo cycles of ripe and running ripe as individual batches mature, hydrate and are released. After each batch is released, they would return to a developing stage and repeat until the last batch is released, after which they would proceed to the spent and resting stages. Therefore individuals in the developing stage could either be prespawning, or in between batches, which cannot be distinguished macroscopically (ovarian histology can differentiate these two based on the presence of postovulatory follicles). At the population level, the occurrence of developing fish with some ripe is indicative of active spawning. The present analysis is restricted to mature females, since males are generally prepared to spawn over a broader time period than females. Histological verification of the macroscopic staging, and formal quantification of error rates have not been evaluated for haddock or yellowtail flounder. However, for species that have been evaluated, the error rates have been relatively low (McBride et al. 2013, Wuenschel and Deroba 2019). The rates of misclassifications are minor compared to the volume of correct classifications.
+
+### Data Extraction
+Input datasets are available at: https://github.com/sgaichas/spawntiming
+
+### Data Analysis 
+The same series of summary/diagnostic plots are presented for each species and stock area. The data summaries allow visual interpretation of patterns and trends. The function ecodata::geom_gls was applied to detect trends.
+
+Multinomial regression results are reported but figures not shown in catalog. This is for information.
+
+For yellowtail flounder, multinomial logistic regression was used to summarize and evaluate the relative significance of sampling week, bottom temperature, and time block on the spawning condition of fish sampled during spring surveys. For this analysis, developing fish were considered ‘prespawning’, both ripe and ripe and running classes were considered ‘spawning’, and the spent and resting classes were combined into ‘postspawning’. Although there is some order to these three classifications, they represent more of a cycle, and given Yellowtail Flounder are batch spawners and go from developing to ripe and back to developing multiple times before becoming spent. Therefore, multinomial regression was chosen over ordinal regression. The stock specific multinomial log- linear models took the form:
+
+(Spawning condition) ~ (Week of year) + (Bottom Temperature) + (Time block)
+
+Where spawning condition of individual fish is Prespawning, spawning, postspawning; as outlined above), Week of Year, Bottom Temperature (°C), and Time block (10year periods) are associated with each sample. Models were fit using multinom function in the nnet library (Venables and Ripley 2002) in R with Hess= True to calculate coefficient standard errors. The three probabilities (prespawning, spawning, postspawning) sum to one, only two need to be estimated. The resulting odds ratios were used to estimate probabilities using the R package ggeffects (Ludecke 2018) for visualizations of marginal effects. The significance of variables in the model was evaluated with likelihood ratio test using Anova in the R package (car) (Fox and Weisberg 2019). 
+
+### Data Processing 
+The survey data was not edited in any way, and it is likely there are some erroneous classifications included, therefore caution should be exercised when interpreting subsets of the data where sample sizes become limited.
+
+Haddock data was analyzed for each of the two stock regions (Georges Bank-GB and Gulf of Maine-GOM) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1970 to 2019 was analyzed.
+
+Yellowtail flounder data was analyzed for each of the three stock regions (Cape Cod-Gulf of Maine (CC), Georges Bank (GB), and Southern New England (SNE)) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1971 to 2023 was analyzed for the spring survey and the period 1981-2022 was analyzed for the fall survey.
+
+For simplicity, both ripe and running ripe stages, which both represent spawning active fish (Brown-Peterson et al. 2010), were combined into a single ripe stage. The mean size of mature females that were sampled was also calculated for the following reasons; 1) for many species larger and older females are ready to spawn earlier in the year and spawn for a longer period (Trippel 1995), and 2) size based sampling protocols have changed over the years, especially with the development of FSCS 2.0 (in fall of 2011) that enabled greater flexibility to sample more of the larger fish captured. The bottom temperature at collection and day of year associated with mature females sampled were also plotted to evaluate trends. For the spring surveys, the proportions in each maturity stage were also summarized by temperature bin (1 °C) and week of year to evaluate influence of each. These relations (binned bottom temperature and week of year) were also summarized by decade to explore temporal changes over the past few decades (1970s to 2020s).
+
+All code to process input data is available at: https://sgaichas.github.io/spawntiming/SpawnTimingIndicatorSOE.html
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/spawn_timing.html>
