@@ -1,0 +1,36 @@
+#Mesozooplankton Biomass at Wilkinson Basin  {#wbts_mesozooplankton}
+
+**Description**: Mesozooplankton biomass at the Wilkinson Basin Time Series Station (WBTS): 2005-2022
+
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2024) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Jeffrey Runge, Emma Dullaert, Cameron Thompson, Rebecca Jones
+  
+**Data steward**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Point of contact**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Public availability statement**: Source data are NOT publicly available.
+
+## Methods
+
+### Data Sources
+Mesozooplankton biomass data can be found in (J. Runge can provide xlsx spreadsheet if needed):
+
+https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_2004_2017.html
+
+https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_start_2020.html
+
+### Data Extraction
+-No response-
+
+### Data Analysis 
+Please refer to Runge J, Karp Boss L, Dullaert E, Ji, R, Motyka J, Young-Morse R, Pugh, D, Shellito S, Vandemark D.  2023.  Sustained monitoring of zooplankton populations at the Coastal Maine Time Series (CMTS) and Wilkinson Basin Time Series (WBTS) stations in the western Gulf of Maine: Results from 2005-2022. Sterling (VA): U.S. Department of the Interior, Bureau of Ocean Energy Management. 40 p. Report No.: OCS Study BOEM 2023-015. Contract No.: CA M19AC00022.
+
+### Data Processing 
+Please refer to Runge J, Karp Boss L, Dullaert E, Ji, R, Motyka J, Young-Morse R, Pugh, D, Shellito S, Vandemark D.  2023.  Sustained monitoring of zooplankton populations at the Coastal Maine Time Series (CMTS) and Wilkinson Basin Time Series (WBTS) stations in the western Gulf of Maine: Results from 2005-2022. Sterling (VA): U.S. Department of the Interior, Bureau of Ocean Energy Management. 40 p. Report No.: OCS Study BOEM 2023-015. Contract No.: CA M19AC00022.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wbts_mesozooplankton.html>
