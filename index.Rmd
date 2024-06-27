@@ -147,7 +147,10 @@ The table below shows which versions of all related products correspond to a spe
 *  [Technical Documentation SOE 2021](https://repository.library.noaa.gov/view/noaa/29277) 
 *  [MAFMC SOE 2022](https://doi.org/10.25923/5s5y-0h81) 
 *  [NEFMC SOE 2022](https://doi.org/10.25923/ypv2-mw79) 
-*  [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10) 
+*  [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10)
+*  [MAFMC SOE 2023](https://doi.org/10.25923/vy6j-w454) 
+*  [NEFMC SOE 2023](https://doi.org/10.25923/9sb9-nj66) 
+*  [Technical Documentation SOE 2023](https://doi.org/10.25923/5scc-rm92)
 
 
 
