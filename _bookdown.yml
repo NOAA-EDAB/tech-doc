@@ -84,7 +84,7 @@ rmd_files:
     -   "chapters/stock_status.Rmd"
     -   "chapters/engagement.Rmd"
     -   "chapters/aquaculture.Rmd"
-    -   "chapters/wind_dev_speed.Rmd"
+    -   "chapters/Wind_dev_speed.Rmd"
     -   "chapters/wind_port.Rmd"
     -   "chapters/wind_revenue.Rmd"  
 #
