@@ -36,7 +36,7 @@ rmd_files:
     -   "chapters/hms_landings.Rmd"
     -   "chapters/hms_stock_status.Rmd"
     -   "chapters/HMS_species_distribution.Rmd"
-    -   "chapters/narw.Rmd"
+    -   "chapters/narw.rmd"
     -   "chapters/productivity_anomaly.Rmd"
     -   "chapters/seal_pups.Rmd"
     -   "chapters/gom_salmon.Rmd"
