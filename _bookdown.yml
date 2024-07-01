@@ -1,5 +1,5 @@
 book_filename: "tech_doc"
-Rmd_files:
+rmd_files:
     - "index.Rmd"
   
   
@@ -113,7 +113,7 @@ Rmd_files:
     -   "chapters/Species_density_estimates.Rmd"
     -   "chapters/stom_fullness.Rmd"
     -   "chapters/storminess.Rmd"
-    -   "chapters/survey_data.Rmd"
+    #-   "chapters/survey_data.Rmd"
     -   "chapters/Thermal_hab_proj_indicator.Rmd"
     -   "chapters/Trend_analysis.Rmd"
     -   "chapters/observer_data_indicator.Rmd"
