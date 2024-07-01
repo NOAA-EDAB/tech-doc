@@ -1,126 +1,126 @@
 book_filename: "tech_doc"
-rmd_files:
-  - "index.Rmd"
+Rmd_files:
+    - "index.Rmd"
   
   
 #################### LOWER TROPHIC ##################
-  -   "chapters/sectionHeaders/ltl.rmd" 
-  -   "chapters/ches_bay_wq.rmd"
-  -   "chapters/chl_pp.rmd"
-  #-   "chapters/phyto_size.rmd" *Currently shares tech doc page with chl_pp
-  #-   "chapters/annual_chl_pp.rmd" *Turned off in catalog
-  -   "chapters/habs.rmd"
-  -   "chapters/SAV.rmd"
-  #-   "chapters/calanus_variation.rmd" *Missing tech doc page
-  -   "chapters/wbts_mesozooplankton.rmd"
-  -   "chapters/zoo_abundance_anom.rmd"
-  #-   "chapters/zoo_diversity.rmd" *Missing tech doc page
+    -   "chapters/sectionHeaders/ltl.rmd" 
+    -   "chapters/ches_bay_wq.Rmd"
+    -   "chapters/chl_pp.Rmd"
+    #-   "chapters/phyto_size.Rmd" *Currently shares tech doc page with chl_pp
+    #-   "chapters/annual_chl_pp.Rmd" *Turned off in catalog
+    -   "chapters/habs.Rmd"
+    -   "chapters/SAV.Rmd"
+    #-   "chapters/calanus_variation.Rmd" *Missing tech doc page
+    -   "chapters/wbts_mesozooplankton.Rmd"
+    -   "chapters/zoo_abundance_anom.Rmd"
+    #-   "chapters/zoo_diversity.Rmd" *Missing tech doc page
 #
 #
 # #################### MEGAFAUNA ##################
     -   "chapters/sectionHeaders/megafauna.rmd"
-    #-   "chapters/aggregate_biomass.rmd" *Missing tech doc page
-    -   "chapters/mab_inshore_survey.rmd"
-    #-   "chapters/mass_inshore_survey.rmd" *Shares tech doc page with mab_inshore_survey
-    #-   "chapters/ne_inshore_survey.rmd" *Shares tech doc page with mab_inshore_survey
-    #-   "chapters/osw_survey_impact.rmd" *Missing tech doc page
-    -   "chapters/condition.rmd"
-    -   "chapters/habitat_diversity.rmd"
-    -   "chapters/species_dist.rmd"
-    -   "chapters/energy_density.rmd"
-    -   "chapters/spawn_timing.rmd"
-    -   "chapters/exp_n.rmd"
-    -   "chapters/forage_index.rmd"
-    -   "chapters/harborporpoise.rmd"
-    -   "chapters/hms_cpue.rmd"
-    -   "chapters/hms_landings.rmd"
-    -   "chapters/hms_stock_status.rmd"
-    -   "chapters/HMS_species_distribution.rmd"
-    -   "chapters/narw.rmd"
-    -   "chapters/productivity_anomaly.rmd"
-    -   "chapters/seal_pups.rmd"
-    -   "chapters/gom_salmon.rmd"
-    -   "chapters/grayseal.rmd"
-    -   "chapters/seabird_ne.rmd"
-    -   "chapters/species_groupings.rmd"  
+    #-   "chapters/aggregate_biomass.Rmd" *Missing tech doc page
+    -   "chapters/mab_inshore_survey.Rmd"
+    #-   "chapters/mass_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
+    #-   "chapters/ne_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
+    #-   "chapters/osw_survey_impact.Rmd" *Missing tech doc page
+    -   "chapters/condition.Rmd"
+    -   "chapters/habitat_diversity.Rmd"
+    -   "chapters/species_dist.Rmd"
+    -   "chapters/energy_density.Rmd"
+    -   "chapters/spawn_timing.Rmd"
+    -   "chapters/exp_n.Rmd"
+    -   "chapters/forage_index.Rmd"
+    -   "chapters/harborporpoise.Rmd"
+    -   "chapters/hms_cpue.Rmd"
+    -   "chapters/hms_landings.Rmd"
+    -   "chapters/hms_stock_status.Rmd"
+    -   "chapters/HMS_species_distribution.Rmd"
+    -   "chapters/narw.Rmd"
+    -   "chapters/productivity_anomaly.Rmd"
+    -   "chapters/seal_pups.Rmd"
+    -   "chapters/gom_salmon.Rmd"
+    -   "chapters/grayseal.Rmd"
+    -   "chapters/seabird_ne.Rmd"
+    -   "chapters/species_groupings.Rmd"  
 #
 #
 # #################### OCEANOGRAPHIC ##################
     -   "chapters/sectionHeaders/oceanographic.rmd" 
-    -   "chapters/bottom_temp.rmd"
-    #-   "chapters/bottom_temp_comp.rmd" *Missing tech doc page
-    -   "chapters/bottom_temp_seasonal_gridded.rmd"
-    -   "chapters/seasonal_sst_anomaly_gridded.rmd"
-    #-   "chapters/seasonal_oisst_anom.rmd" *Missing tech doc page
-    -   "chapters/trans_dates.rmd"
-    -   "chapters/long_term_sst.rmd"
-    -   "chapters/cold_pool.rmd"
-    -   "chapters/gsi.rmd"
-    -   "chapters/slopewater.rmd"
-    -   "chapters/persistent_hotspots.rmd"
-    -   "chapters/wcr.rmd"
-    #-   "chapters/thermal_habitat_area.rmd" *Missing tech doc page
-    #-   "chapters/thermal_habitat_persistence.rmd" *Missing tech doc page
-    -   "chapters/ch_bay_sal.rmd"
-    -   "chapters/ch_bay_temp.rmd"
-    -   "chapters/ches_bay_sst.rmd"
-    #-   "chapters/ches_bay_synthesis.rmd" *Missing tech doc page
-    -   "chapters/heatwave.rmd"
-    #-   "chapters/heatwave_year.rmd" *Shares tech doc page with heatwave
-    #-   "chapters/timing_shifts.rmd" *Missing tech doc page
-    #-   "chapters/observation_synthesis.rmd" *Missing tech doc page
-    -   "chapters/ocean_acidification.rmd"  
+    -   "chapters/bottom_temp.Rmd"
+    #-   "chapters/bottom_temp_comp.Rmd" *Missing tech doc page
+    -   "chapters/bottom_temp_seasonal_gridded.Rmd"
+    -   "chapters/seasonal_sst_anomaly_gridded.Rmd"
+    #-   "chapters/seasonal_oisst_anom.Rmd" *Missing tech doc page
+    -   "chapters/trans_dates.Rmd"
+    -   "chapters/long_term_sst.Rmd"
+    -   "chapters/cold_pool.Rmd"
+    -   "chapters/gsi.Rmd"
+    -   "chapters/slopewater.Rmd"
+    -   "chapters/persistent_hotspots.Rmd"
+    -   "chapters/wcr.Rmd"
+    #-   "chapters/thermal_habitat_area.Rmd" *Missing tech doc page
+    #-   "chapters/thermal_habitat_persistence.Rmd" *Missing tech doc page
+    -   "chapters/ch_bay_sal.Rmd"
+    -   "chapters/ch_bay_temp.Rmd"
+    -   "chapters/ches_bay_sst.Rmd"
+    #-   "chapters/ches_bay_synthesis.Rmd" *Missing tech doc page
+    -   "chapters/heatwave.Rmd"
+    #-   "chapters/heatwave_year.Rmd" *Shares tech doc page with heatwave
+    #-   "chapters/timing_shifts.Rmd" *Missing tech doc page
+    #-   "chapters/observation_synthesis.Rmd" *Missing tech doc page
+    -   "chapters/ocean_acidification.Rmd"  
 #
 #
 # ######################## ECONOMIC ##################
     -   "chapters/sectionHeaders/economic.rmd"
-    -   "chapters/comdat.rmd"
-    -   "chapters/commercial_div.rmd"
-    -   "chapters/ppr.rmd"
-    -   "chapters/recdat.rmd"
-    -   "chapters/rec_hms.rmd"
-    -   "chapters/abc_acl.rmd"
-    -   "chapters/bennet.rmd"
-    -   "chapters/stock_status.rmd"
-    -   "chapters/engagement.rmd"
-    -   "chapters/aquaculture.rmd"
-    -   "chapters/wind_dev_speed.rmd"
-    -   "chapters/wind_port.rmd"
-    -   "chapters/wind_revenue.rmd"  
+    -   "chapters/comdat.Rmd"
+    -   "chapters/commercial_div.Rmd"
+    -   "chapters/ppr.Rmd"
+    -   "chapters/recdat.Rmd"
+    -   "chapters/rec_hms.Rmd"
+    -   "chapters/abc_acl.Rmd"
+    -   "chapters/bennet.Rmd"
+    -   "chapters/stock_status.Rmd"
+    -   "chapters/engagement.Rmd"
+    -   "chapters/aquaculture.Rmd"
+    -   "chapters/wind_dev_speed.Rmd"
+    -   "chapters/wind_port.Rmd"
+    -   "chapters/wind_revenue.Rmd"  
 #
 #
 # ######################## LEGACY PAGES ##################
-  -   "chapters/erddap_query_and_build.Rmd"
-  -   "chapters/Annual_SST_cycle_indicator.Rmd"
-  -   "chapters/bottom_temperature_GLORYS.Rmd"
-  -   "chapters/calanus_stage.Rmd"
-  -   "chapters/conceptualmodels.Rmd"
-  -   "chapters/EPU.Rmd"
-  #-   "chapters/forage_anomaly.Rmd"
-  -   "chapters/occupancy_indicator.Rmd"
-  -   "chapters/habitat_vulnerability.Rmd"
-  -   "chapters/MAB_HABs_indicator.Rmd"
-  -   "chapters/NE_HABs_indicator.Rmd"
-  -   "chapters/habs_psp.Rmd"
-  -   "chapters/hudson_river_flow.Rmd"
-  #-   "chapters/Ich_div_indicator.Rmd"
-  -   "chapters/plankton_diversity.Rmd"
-  -   "chapters/Quota_Catch_NE.Rmd"
-  -   "chapters/rec_hms.Rmd"
-  -   "chapters/regime_shift_analysis.Rmd"
-  -   "chapters/SAFMC_spp.Rmd"
-  -   "chapters/sandlance.Rmd"
-  -   "chapters/Species_density_estimates.Rmd"
-  -   "chapters/stom_fullness.Rmd"
-  -   "chapters/storminess.Rmd"
-  -   "chapters/survey_data.rmd"
-  -   "chapters/Thermal_hab_proj_indicator.Rmd"
-  -   "chapters/Trend_analysis.Rmd"
-  -   "chapters/observer_data_indicator.Rmd"
-  -   "chapters/Seabird_MAB.Rmd"
-  -   "chapters/wind_habitat_occupancy.Rmd"
-  -   "chapters/pl_lan_glossary.Rmd"
-  -   "chapters/references.Rmd"
+    -   "chapters/erddap_query_and_build.Rmd"
+    -   "chapters/Annual_SST_cycle_indicator.Rmd"
+    -   "chapters/bottom_temperature_GLORYS.Rmd"
+    -   "chapters/calanus_stage.Rmd"
+    -   "chapters/conceptualmodels.Rmd"
+    -   "chapters/EPU.Rmd"
+    #-   "chapters/forage_anomaly.Rmd"
+    -   "chapters/occupancy_indicator.Rmd"
+    -   "chapters/habitat_vulnerability.Rmd"
+    -   "chapters/MAB_HABs_indicator.Rmd"
+    -   "chapters/NE_HABs_indicator.Rmd"
+    -   "chapters/habs_psp.Rmd"
+    -   "chapters/hudson_river_flow.Rmd"
+    #-   "chapters/Ich_div_indicator.Rmd"
+    -   "chapters/plankton_diversity.Rmd"
+    -   "chapters/Quota_Catch_NE.Rmd"
+    -   "chapters/rec_hms.Rmd"
+    -   "chapters/regime_shift_analysis.Rmd"
+    -   "chapters/SAFMC_spp.Rmd"
+    -   "chapters/sandlance.Rmd"
+    -   "chapters/Species_density_estimates.Rmd"
+    -   "chapters/stom_fullness.Rmd"
+    -   "chapters/storminess.Rmd"
+    -   "chapters/survey_data.Rmd"
+    -   "chapters/Thermal_hab_proj_indicator.Rmd"
+    -   "chapters/Trend_analysis.Rmd"
+    -   "chapters/observer_data_indicator.Rmd"
+    -   "chapters/Seabird_MAB.Rmd"
+    -   "chapters/wind_habitat_occupancy.Rmd"
+    -   "chapters/pl_lan_glossary.Rmd"
+    -   "chapters/references.Rmd"
 before_chapter_script: _common.R
 delete_merged_file: false
 output_dir: "_book"
