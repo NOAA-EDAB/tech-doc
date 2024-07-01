@@ -42,7 +42,7 @@ rmd_files:
     -   "chapters/gom_salmon.Rmd"
     -   "chapters/grayseal.Rmd"
     -   "chapters/seabird_ne.Rmd"
-    -   "chapters/species_groupings.Rmd"  
+    -   "chapters/species_groupings.rmd"  
 #
 #
 # #################### OCEANOGRAPHIC ##################
@@ -90,6 +90,7 @@ rmd_files:
 #
 #
 # ######################## LEGACY PAGES ##################
+    -   "chapters/sectionHeaders/legacy.rmd" 
     -   "chapters/erddap_query_and_build.Rmd"
     -   "chapters/Annual_SST_cycle_indicator.Rmd"
     -   "chapters/bottom_temperature_GLORYS.Rmd"
@@ -113,7 +114,7 @@ rmd_files:
     -   "chapters/Species_density_estimates.Rmd"
     -   "chapters/stom_fullness.Rmd"
     -   "chapters/storminess.Rmd"
-    #-   "chapters/survey_data.Rmd"
+    -   "chapters/survdat.rmd"
     -   "chapters/Thermal_hab_proj_indicator.Rmd"
     -   "chapters/Trend_analysis.Rmd"
     -   "chapters/observer_data_indicator.Rmd"
