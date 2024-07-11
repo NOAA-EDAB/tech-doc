@@ -136,7 +136,7 @@ knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 ```
 
 
-The table below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
+The list below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
 
 **DOIs**
 *  [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) 

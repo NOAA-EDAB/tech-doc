@@ -140,13 +140,13 @@ region_abbr <- "MA"
 (ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
-```{r neusmap, message = FALSE, warning=FALSE, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap)'}
+```{r neusmap, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F, fig.cap='(ref:neusmap)'}
 knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 
 ```
 
 
-The table below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
+The list below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
 
 **DOIs**
 *  [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) 
@@ -230,7 +230,9 @@ Salinity and water temperature data were used to compute the vertical density st
 The multimetric indicator quantifies the fraction of segment-DU-criterion combinations that meet all applicable season-specific thresholds for each 3-year assessment period from 1985-1987 to 2017-2019. For each 3-year assessment period, all applicable segment-DU-criterion combinations were evaluated in a binomial fashion and scored 1 for “in attainment” and 0 for “nonattainment”. The classified status of each segment-DU-criterion combination was weighted via segments’ surface area and summed to obtain the multimetric index score. This weighting scheme was adopted for two reasons: (1) segments vary in size over four orders of magnitude, and (2) surface area of each segment does not change with time or DUs, unlike seasonally variable habitat volume or bottom water area [@usepa2017]. For more details, refer to the Methods section of @zhang2018.
 
 The indicator provides an integrated measure of Chesapeake Bay’s water quality condition (Figure 1). In 2017-2019, 33.1% of all tidal water segment-DU-criterion combinations are estimated to have met or exceeded applicable water quality criteria thresholds, which marks the best 3-year status since 1985-1987. The indicator has a positive and statistically significant trend from 1985-1987 to 2017-2019, which shows that Chesapeake Bay is on a positive trajectory toward recovery. This pattern was statistically linked to total nitrogen reduction, indicating responsiveness of attainment status to management actions implemented to reduce nutrients in the system. 
-Patterns of attainment of individual DUs are variable (Figure 2). Changes in OW-DO, DC-DO, and water clarity/SAV have shown long-term improvements, which have contributed to overall attainment indicator improvement. By contrast, the MSN-DO attainment experienced a sharp spike in the first few assessment periods but generally degraded after the 1997-1999, which has implications to the survival, growth, and reproduction of the migratory and resident tidal freshwater fish during spawning and nursery season in the tidal freshwater to low-salinity habitats. The status and trends of tidal segments’ attainment may be used to inform siting decisions of aquaculture operations in Chesapeake Bay.### Data processing
+Patterns of attainment of individual DUs are variable (Figure 2). Changes in OW-DO, DC-DO, and water clarity/SAV have shown long-term improvements, which have contributed to overall attainment indicator improvement. By contrast, the MSN-DO attainment experienced a sharp spike in the first few assessment periods but generally degraded after the 1997-1999, which has implications to the survival, growth, and reproduction of the migratory and resident tidal freshwater fish during spawning and nursery season in the tidal freshwater to low-salinity habitats. The status and trends of tidal segments’ attainment may be used to inform siting decisions of aquaculture operations in Chesapeake Bay.
+
+### Data processing
 
 The indicator data set was formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ches_bay_wq.R). 
 
@@ -376,7 +378,7 @@ knitr::opts_chunk$set(
 
 **Description**: *Alexandrium catenella* annual cyst abundance in the Gulf of Maine
 
-**Found In:**: 2022 Indicator Catalog
+**Found In:**: Northeast U.S. Ecosystem Indicator Catalog
 
 **Indicator category**: Published methods, Database pull with analysis
 
@@ -3440,7 +3442,7 @@ knitr::opts_chunk$set(
 
 **Description**: Bennet Indicator
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018, 2019, 2020, 2021, 2024), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021, 2024) 
 
 **Indicator category**: Database pull with analysis
 
@@ -3540,7 +3542,7 @@ In `stockAssessmentData` we have time series. Columns are `r names(stockAssessme
 
 ```{r}
 
-DT::datatable(head(stockAssessmentData), rownames = FALSE)
+DT::datatable(head(stockAssessmentData), rownames = FALSE, options = list(scrollX = TRUE))
 
 ```
 
@@ -3865,7 +3867,7 @@ Data were formatted for inclusion in the `ecodata` R package using the R code fo
 **catalog link**
 <https://noaa-edab.github.io/catalog/wind_dev_speed.html>
 
-<!--chapter:end:chapters/wind_dev_speed.Rmd-->
+<!--chapter:end:chapters/Wind_dev_speed.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
