@@ -41,7 +41,7 @@ In `stockAssessmentData` we have time series. Columns are `r names(stockAssessme
 
 ```{r}
 
-DT::datatable(head(stockAssessmentData), rownames = FALSE)
+DT::datatable(head(stockAssessmentData), rownames = FALSE, options = list(scrollX = TRUE)
 
 ```
 

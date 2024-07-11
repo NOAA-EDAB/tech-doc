@@ -2,7 +2,7 @@
 
 **Description**: *Alexandrium catenella* annual cyst abundance in the Gulf of Maine
 
-**Found In:**: 2022 Indicator Catalog
+**Found In:**: Northeast U.S. Ecosystem Indicator Catalog
 
 **Indicator category**: Published methods, Database pull with analysis
 
