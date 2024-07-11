@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>48 Bennet Indicator | Technical Documentation, State of the Ecosystem Report</title>
 <meta name="author" content="Northeast Fisheries Science Center">
-<meta name="description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) Indicator...">
+<meta name="description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021, 2024), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021, 2024)...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
 <meta property="og:title" content="48 Bennet Indicator | Technical Documentation, State of the Ecosystem Report">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) Indicator...">
+<meta property="og:description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021, 2024), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021, 2024)...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="48 Bennet Indicator | Technical Documentation, State of the Ecosystem Report">
-<meta name="twitter:description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021) Indicator...">
+<meta name="twitter:description" content="Description: Bennet Indicator Found in: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021, 2024), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021, 2024)...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -172,7 +172,7 @@
 <span class="header-section-number">48</span> Bennet Indicator<a class="anchor" aria-label="anchor" href="#bennet"><i class="fas fa-link"></i></a>
 </h1>
 <p><strong>Description</strong>: Bennet Indicator</p>
-<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021)</p>
+<p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018, 2019, 2020, 2021, 2024), State of the Ecosystem - Mid-Atlantic (2018, 2019, 2020, 2021, 2024)</p>
 <p><strong>Indicator category</strong>: Database pull with analysis</p>
 <p><strong>Contributor(s)</strong>: John Walden</p>
 <p><strong>Data steward</strong>:Kimberly Bastille, <a href="mailto:kimberly.bastille@noaa.gov" class="email">kimberly.bastille@noaa.gov</a></p>
@@ -209,9 +209,9 @@ The price indicator (PI) is calculated as follows:
 <span class="math display">\[PI = \frac{1}{2}(\sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t+1}p_{j}^{t} + \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t+1} - \sum_{j=1}^{J}y_{j}^{t}p_{j}^{t})\]</span>
 Total revenue change between time <span class="math inline">\(t\)</span> and <span class="math inline">\(t+1\)</span> is the sum of the VI and PI. Since revenue change is being driven by changes in the individual prices and quantities landed of each species group, changes at the species group level can be examined separately by taking advantage of the additive property of the indicator. For example, if there are five different species groups, the sum of the VI for each group will equal the overall VI, and the sum of the PI for each group will equal the overall PI.</p>
 </div>
-<div id="data-processing-40" class="section level3" number="48.1.4">
+<div id="data-processing-41" class="section level3" number="48.1.4">
 <h3>
-<span class="header-section-number">48.1.4</span> Data processing<a class="anchor" aria-label="anchor" href="#data-processing-40"><i class="fas fa-link"></i></a>
+<span class="header-section-number">48.1.4</span> Data processing<a class="anchor" aria-label="anchor" href="#data-processing-41"><i class="fas fa-link"></i></a>
 </h3>
 <p>Bennet indicator time series were formatted for inclusion in the <code>ecodata</code> R package using the R code found <a href="https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_bennet.R">here</a>.</p>
 <p><strong>catalog link</strong>
@@ -250,7 +250,7 @@ Lim, Siew Hoon, and CA Knox Lovell. 2009. <span>“<span class="nocase">Profit a
 <li><a class="nav-link" href="#data-sources-52"><span class="header-section-number">48.1.1</span> Data sources</a></li>
 <li><a class="nav-link" href="#data-extraction-29"><span class="header-section-number">48.1.2</span> Data extraction</a></li>
 <li><a class="nav-link" href="#data-analysis-48"><span class="header-section-number">48.1.3</span> Data analysis</a></li>
-<li><a class="nav-link" href="#data-processing-40"><span class="header-section-number">48.1.4</span> Data processing</a></li>
+<li><a class="nav-link" href="#data-processing-41"><span class="header-section-number">48.1.4</span> Data processing</a></li>
 </ul>
 </li>
 </ul>
@@ -270,7 +270,7 @@ Lim, Siew Hoon, and CA Knox Lovell. 2009. <span>“<span class="nocase">Profit a
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 10 July 2024.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 11 July 2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
