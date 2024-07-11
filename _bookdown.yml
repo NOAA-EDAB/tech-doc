@@ -3,6 +3,16 @@ rmd_files:
     - "index.Rmd"
   
   
+# ######################## METHODS ##################
+    -   "chapters/sectionHeaders/methods.rmd"
+    -   "chapters/erddap_query_and_build.Rmd"
+    -   "chapters/Trend_analysis.Rmd"
+    -   "chapters/survdat.rmd"
+    -   "chapters/EPU.Rmd"
+    -   "chapters/conceptualmodels.Rmd"
+    -   "chapters/pl_lan_glossary.Rmd"
+#
+#  
 #################### LOWER TROPHIC ##################
     -   "chapters/sectionHeaders/ltl.rmd" 
     -   "chapters/ches_bay_wq.Rmd"
@@ -87,16 +97,6 @@ rmd_files:
     -   "chapters/Wind_dev_speed.Rmd"
     -   "chapters/wind_port.Rmd"
     -   "chapters/wind_revenue.Rmd"  
-#
-#
-# ######################## METHODS ##################
-    -   "chapters/sectionHeaders/methods.rmd"
-    -   "chapters/erddap_query_and_build.Rmd"
-    -   "chapters/Trend_analysis.Rmd"
-    -   "chapters/survdat.rmd"
-    -   "chapters/EPU.Rmd"
-    -   "chapters/conceptualmodels.Rmd"
-    -   "chapters/pl_lan_glossary.Rmd"
 #
 #
 # ######################## LEGACY PAGES ##################

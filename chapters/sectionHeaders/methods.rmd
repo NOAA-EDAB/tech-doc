@@ -1,1 +1,1 @@
-# (PART\*) Methods {.unnumbered}
+# (PART\*) General Methods {.unnumbered}
