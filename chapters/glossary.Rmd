@@ -243,7 +243,7 @@ Plankton consisting of small animals and the immature stages of larger animals, 
 (ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
-```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F, fig.cap='(ref:neusmap)'}
-knitr::include_graphics(here::here("images/journal.pone.0146756.g002.PNG"))
- 
+```{r neusmap, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F, fig.cap='(ref:neusmap)'}
+knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
+
 ```
