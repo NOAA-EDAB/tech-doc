@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>27 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report</title>
+<title>33 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report</title>
 <meta name="author" content="Northeast Fisheries Science Center">
 <meta name="description" content="Description: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf. Indicator category: Extensive analysis; not yet published Found in: State of the Ecosystem - Gulf...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
-<meta property="og:title" content="27 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report">
+<meta property="og:title" content="33 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Description: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf. Indicator category: Extensive analysis; not yet published Found in: State of the Ecosystem - Gulf...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="27 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report">
+<meta name="twitter:title" content="33 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report">
 <meta name="twitter:description" content="Description: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf. Indicator category: Extensive analysis; not yet published Found in: State of the Ecosystem - Gulf...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -73,71 +73,71 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Introduction</a></li>
+<li class="book-part">General Methods</li>
+<li><a class="" href="erddap.html"><span class="header-section-number">1</span> Data and Code Access</a></li>
+<li><a class="" href="trend-analysis.html"><span class="header-section-number">2</span> Trend Analysis</a></li>
+<li><a class="" href="survdat.html"><span class="header-section-number">3</span> Survey Data</a></li>
+<li><a class="" href="epu.html"><span class="header-section-number">4</span> Ecological Production Units</a></li>
+<li><a class="" href="conceptual-models.html"><span class="header-section-number">5</span> Conceptual Models</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">6</span> Glossary</a></li>
 <li class="book-part">Lower Trophic Levels</li>
-<li><a class="" href="ches_bay_wq.html"><span class="header-section-number">1</span> Chesapeake Bay Water Quality Standards Attainment</a></li>
-<li><a class="" href="chl_pp.html"><span class="header-section-number">2</span> Phytoplankton</a></li>
-<li><a class="" href="habs.html"><span class="header-section-number">3</span> Harmful Algal Bloom - Alexandrium Indicator</a></li>
-<li><a class="" href="SAV.html"><span class="header-section-number">4</span> Submerged Aquatic Vegetation</a></li>
-<li><a class="" href="wbts_mesozooplankton.html"><span class="header-section-number">5</span> Mesozooplankton Biomass at Wilkinson Basin</a></li>
-<li><a class="" href="zoo_abundance_anom.html"><span class="header-section-number">6</span> Zooplankton</a></li>
+<li><a class="" href="ches_bay_wq.html"><span class="header-section-number">7</span> Chesapeake Bay Water Quality Standards Attainment</a></li>
+<li><a class="" href="chl_pp.html"><span class="header-section-number">8</span> Phytoplankton</a></li>
+<li><a class="" href="habs.html"><span class="header-section-number">9</span> Harmful Algal Bloom - Alexandrium Indicator</a></li>
+<li><a class="" href="SAV.html"><span class="header-section-number">10</span> Submerged Aquatic Vegetation</a></li>
+<li><a class="" href="wbts_mesozooplankton.html"><span class="header-section-number">11</span> Mesozooplankton Biomass at Wilkinson Basin</a></li>
+<li><a class="" href="zoo_abundance_anom.html"><span class="header-section-number">12</span> Zooplankton</a></li>
 <li class="book-part">Megafauna</li>
-<li><a class="" href="mab_inshore_survey.html"><span class="header-section-number">7</span> Inshore bottom trawl surveys</a></li>
-<li><a class="" href="condition.html"><span class="header-section-number">8</span> Fish Condition Indicator</a></li>
-<li><a class="" href="habitat_diversity.html"><span class="header-section-number">9</span> Habitat Diversity</a></li>
-<li><a class="" href="species_dist.html"><span class="header-section-number">10</span> Species Distribution Indicators</a></li>
-<li><a class="" href="energy_density.html"><span class="header-section-number">11</span> Forage Fish Energy Density</a></li>
-<li><a class="" href="spawn_timing.html"><span class="header-section-number">12</span> Spawning Timing</a></li>
-<li><a class="" href="exp_n.html"><span class="header-section-number">13</span> Expected Number of Species</a></li>
-<li><a class="" href="forage_index.html"><span class="header-section-number">14</span> Forage Fish Indices</a></li>
-<li><a class="" href="harborporpoise.html"><span class="header-section-number">15</span> Harbor Porpoise Bycatch</a></li>
-<li><a class="" href="hms_cpue.html"><span class="header-section-number">16</span> Highly Migratory Species POP Catch Per Unit Effort</a></li>
-<li><a class="" href="hms_landings.html"><span class="header-section-number">17</span> Highly Migratory Species Landings</a></li>
-<li><a class="" href="hms_stock_status.html"><span class="header-section-number">18</span> Highly Migratory Species Stock Status</a></li>
-<li><a class="" href="HMS_species_distribution.html"><span class="header-section-number">19</span> Cetacean Distribution Shifts</a></li>
-<li><a class="" href="narw.html"><span class="header-section-number">20</span> Right Whale Abundance</a></li>
-<li><a class="" href="productivity_anomaly.html"><span class="header-section-number">21</span> Fish Productivity Indicators</a></li>
-<li><a class="" href="seal_pups.html"><span class="header-section-number">22</span> Gray Seal Pups</a></li>
-<li><a class="" href="gom_salmon.html"><span class="header-section-number">23</span> Gulf of Maine Atlantic Salmon</a></li>
-<li><a class="" href="grayseal.html"><span class="header-section-number">24</span> Gray Seal Bycatch</a></li>
-<li><a class="" href="seabird_ne.html"><span class="header-section-number">25</span> Seabird diet and productivity - New England</a></li>
-<li><a class="" href="species_groupings.html"><span class="header-section-number">26</span> Aggregate Groups</a></li>
+<li><a class="" href="mab_inshore_survey.html"><span class="header-section-number">13</span> Inshore bottom trawl surveys</a></li>
+<li><a class="" href="condition.html"><span class="header-section-number">14</span> Fish Condition Indicator</a></li>
+<li><a class="" href="habitat_diversity.html"><span class="header-section-number">15</span> Habitat Diversity</a></li>
+<li><a class="" href="species_dist.html"><span class="header-section-number">16</span> Species Distribution Indicators</a></li>
+<li><a class="" href="energy_density.html"><span class="header-section-number">17</span> Forage Fish Energy Density</a></li>
+<li><a class="" href="spawn_timing.html"><span class="header-section-number">18</span> Spawning Timing</a></li>
+<li><a class="" href="exp_n.html"><span class="header-section-number">19</span> Expected Number of Species</a></li>
+<li><a class="" href="forage_index.html"><span class="header-section-number">20</span> Forage Fish Indices</a></li>
+<li><a class="" href="harborporpoise.html"><span class="header-section-number">21</span> Harbor Porpoise Bycatch</a></li>
+<li><a class="" href="hms_cpue.html"><span class="header-section-number">22</span> Highly Migratory Species POP Catch Per Unit Effort</a></li>
+<li><a class="" href="hms_landings.html"><span class="header-section-number">23</span> Highly Migratory Species Landings</a></li>
+<li><a class="" href="hms_stock_status.html"><span class="header-section-number">24</span> Highly Migratory Species Stock Status</a></li>
+<li><a class="" href="HMS_species_distribution.html"><span class="header-section-number">25</span> Cetacean Distribution Shifts</a></li>
+<li><a class="" href="narw.html"><span class="header-section-number">26</span> Right Whale Abundance</a></li>
+<li><a class="" href="productivity_anomaly.html"><span class="header-section-number">27</span> Fish Productivity Indicators</a></li>
+<li><a class="" href="seal_pups.html"><span class="header-section-number">28</span> Gray Seal Pups</a></li>
+<li><a class="" href="gom_salmon.html"><span class="header-section-number">29</span> Gulf of Maine Atlantic Salmon</a></li>
+<li><a class="" href="grayseal.html"><span class="header-section-number">30</span> Gray Seal Bycatch</a></li>
+<li><a class="" href="seabird_ne.html"><span class="header-section-number">31</span> Seabird diet and productivity - New England</a></li>
+<li><a class="" href="species_groupings.html"><span class="header-section-number">32</span> Aggregate Groups</a></li>
 <li class="book-part">Oceanographic &amp; Habitat</li>
-<li><a class="active" href="bottom_temp.html"><span class="header-section-number">27</span> Bottom temperature - in situ</a></li>
-<li><a class="" href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">28</span> Bottom temperature - High Resolution</a></li>
-<li><a class="" href="seasonal_sst_anomaly_gridded.html"><span class="header-section-number">29</span> Seasonal SST Anomalies</a></li>
-<li><a class="" href="trans_dates.html"><span class="header-section-number">30</span> Transition Dates</a></li>
-<li><a class="" href="long_term_sst.html"><span class="header-section-number">31</span> Long-term Sea Surface Temperature</a></li>
-<li><a class="" href="cold_pool.html"><span class="header-section-number">32</span> Cold Pool Index</a></li>
-<li><a class="" href="gsi.html"><span class="header-section-number">33</span> Gulf Stream Index</a></li>
-<li><a class="" href="slopewater.html"><span class="header-section-number">34</span> Slopewater proportions</a></li>
-<li><a class="" href="persistent_hotspots.html"><span class="header-section-number">35</span> Protected Species Hotspots</a></li>
-<li><a class="" href="wcr.html"><span class="header-section-number">36</span> Warm Core Rings</a></li>
-<li><a class="" href="ch_bay_sal.html"><span class="header-section-number">37</span> Chesapeake Bay Salinity and Temperature</a></li>
-<li><a class="" href="ch_bay_temp.html"><span class="header-section-number">38</span> Chesapeake Bay Temperature Anomaly</a></li>
-<li><a class="" href="ches_bay_sst.html"><span class="header-section-number">39</span> Chesapeake Bay Seasonal SST Anomalies</a></li>
-<li><a class="" href="heatwave.html"><span class="header-section-number">40</span> Marine Heatwave</a></li>
-<li><a class="" href="ocean_acidification.html"><span class="header-section-number">41</span> Ocean Acidification</a></li>
+<li><a class="active" href="bottom_temp.html"><span class="header-section-number">33</span> Bottom temperature - in situ</a></li>
+<li><a class="" href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">34</span> Bottom temperature - High Resolution</a></li>
+<li><a class="" href="seasonal_sst_anomaly_gridded.html"><span class="header-section-number">35</span> Seasonal SST Anomalies</a></li>
+<li><a class="" href="trans_dates.html"><span class="header-section-number">36</span> Transition Dates</a></li>
+<li><a class="" href="long_term_sst.html"><span class="header-section-number">37</span> Long-term Sea Surface Temperature</a></li>
+<li><a class="" href="cold_pool.html"><span class="header-section-number">38</span> Cold Pool Index</a></li>
+<li><a class="" href="gsi.html"><span class="header-section-number">39</span> Gulf Stream Index</a></li>
+<li><a class="" href="slopewater.html"><span class="header-section-number">40</span> Slopewater proportions</a></li>
+<li><a class="" href="persistent_hotspots.html"><span class="header-section-number">41</span> Protected Species Hotspots</a></li>
+<li><a class="" href="wcr.html"><span class="header-section-number">42</span> Warm Core Rings</a></li>
+<li><a class="" href="ch_bay_sal.html"><span class="header-section-number">43</span> Chesapeake Bay Salinity and Temperature</a></li>
+<li><a class="" href="ch_bay_temp.html"><span class="header-section-number">44</span> Chesapeake Bay Temperature Anomaly</a></li>
+<li><a class="" href="ches_bay_sst.html"><span class="header-section-number">45</span> Chesapeake Bay Seasonal SST Anomalies</a></li>
+<li><a class="" href="heatwave.html"><span class="header-section-number">46</span> Marine Heatwave</a></li>
+<li><a class="" href="ocean_acidification.html"><span class="header-section-number">47</span> Ocean Acidification</a></li>
 <li class="book-part">Economic &amp; Social</li>
-<li><a class="" href="comdat.html"><span class="header-section-number">42</span> Commercial Landings Data</a></li>
-<li><a class="" href="commercial_div.html"><span class="header-section-number">43</span> Catch and Fleet Diversity</a></li>
-<li><a class="" href="ppr.html"><span class="header-section-number">44</span> Ecosystem Overfishing</a></li>
-<li><a class="" href="recdat.html"><span class="header-section-number">45</span> Recreational Fishing Indicators</a></li>
-<li><a class="" href="rec_hms.html"><span class="header-section-number">46</span> Recreational Shark Fishing Indicators</a></li>
-<li><a class="" href="abc_acl.html"><span class="header-section-number">47</span> MAFMC ABC/ACL and Catch</a></li>
-<li><a class="" href="bennet.html"><span class="header-section-number">48</span> Bennet Indicator</a></li>
-<li><a class="" href="stock_status.html"><span class="header-section-number">49</span> Single Species Status Indicator</a></li>
-<li><a class="" href="engagement.html"><span class="header-section-number">50</span> Fishery Reliance and Social Vulnerability</a></li>
-<li><a class="" href="aquaculture.html"><span class="header-section-number">51</span> Aquaculture</a></li>
-<li><a class="" href="wind_dev_speed.html"><span class="header-section-number">52</span> Wind Energy Development Timeline</a></li>
-<li><a class="" href="wind_port.html"><span class="header-section-number">53</span> WEA Fishing Port Landings</a></li>
-<li><a class="" href="wind_revenue.html"><span class="header-section-number">54</span> Fisheries Revenue in Wind Development Areas</a></li>
-<li class="book-part">Methods</li>
-<li><a class="" href="erddap.html"><span class="header-section-number">55</span> Data and Code Access</a></li>
-<li><a class="" href="trend-analysis.html"><span class="header-section-number">56</span> Trend Analysis</a></li>
-<li><a class="" href="survdat.html"><span class="header-section-number">57</span> Survey Data</a></li>
-<li><a class="" href="epu.html"><span class="header-section-number">58</span> Ecological Production Units</a></li>
-<li><a class="" href="conceptual-models.html"><span class="header-section-number">59</span> Conceptual Models</a></li>
-<li><a class="" href="glossary.html"><span class="header-section-number">60</span> Glossary</a></li>
+<li><a class="" href="comdat.html"><span class="header-section-number">48</span> Commercial Landings Data</a></li>
+<li><a class="" href="commercial_div.html"><span class="header-section-number">49</span> Catch and Fleet Diversity</a></li>
+<li><a class="" href="ppr.html"><span class="header-section-number">50</span> Ecosystem Overfishing</a></li>
+<li><a class="" href="recdat.html"><span class="header-section-number">51</span> Recreational Fishing Indicators</a></li>
+<li><a class="" href="rec_hms.html"><span class="header-section-number">52</span> Recreational Shark Fishing Indicators</a></li>
+<li><a class="" href="abc_acl.html"><span class="header-section-number">53</span> MAFMC ABC/ACL and Catch</a></li>
+<li><a class="" href="bennet.html"><span class="header-section-number">54</span> Bennet Indicator</a></li>
+<li><a class="" href="stock_status.html"><span class="header-section-number">55</span> Single Species Status Indicator</a></li>
+<li><a class="" href="engagement.html"><span class="header-section-number">56</span> Fishery Reliance and Social Vulnerability</a></li>
+<li><a class="" href="aquaculture.html"><span class="header-section-number">57</span> Aquaculture</a></li>
+<li><a class="" href="wind_dev_speed.html"><span class="header-section-number">58</span> Wind Energy Development Timeline</a></li>
+<li><a class="" href="wind_port.html"><span class="header-section-number">59</span> WEA Fishing Port Landings</a></li>
+<li><a class="" href="wind_revenue.html"><span class="header-section-number">60</span> Fisheries Revenue in Wind Development Areas</a></li>
 <li class="book-part">Legacy Pages</li>
 <li><a class="" href="annual-sst-cycles.html"><span class="header-section-number">61</span> Annual SST Cycles</a></li>
 <li><a class="" href="bottom-temperature---glorys.html"><span class="header-section-number">62</span> Bottom temperature - GLORYS</a></li>
@@ -168,9 +168,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bottom_temp" class="section level1" number="27">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bottom_temp" class="section level1" number="33">
 <h1>
-<span class="header-section-number">27</span> Bottom temperature - in situ<a class="anchor" aria-label="anchor" href="#bottom_temp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33</span> Bottom temperature - in situ<a class="anchor" aria-label="anchor" href="#bottom_temp"><i class="fas fa-link"></i></a>
 </h1>
 <p><strong>Description</strong>: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.</p>
 <p><strong>Indicator category</strong>: Extensive analysis; not yet published</p>
@@ -179,31 +179,31 @@
 <p><strong>Data steward</strong>: Kimberly Bastille, <a href="mailto:kimberly.bastille@noaa.gov" class="email">kimberly.bastille@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Paula Fratantoni, <a href="mailto:paula.fratantoni@noaa.gov" class="email">paula.fratantoni@noaa.gov</a></p>
 <p><strong>Public availability statement</strong>: Source data are publicly available at <a href="ftp://ftp.nefsc.noaa.gov/pub/hydro/matlab_files/yearly" class="uri">ftp://ftp.nefsc.noaa.gov/pub/hydro/matlab_files/yearly</a> and in the World Ocean Database housed at <a href="http://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html" class="uri">http://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html</a> under institute code number 258.</p>
-<div id="methods-26" class="section level2" number="27.1">
+<div id="methods-30" class="section level2" number="33.1">
 <h2>
-<span class="header-section-number">27.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-26"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-30"><i class="fas fa-link"></i></a>
 </h2>
-<div id="data-sources-28" class="section level3" number="27.1.1">
+<div id="data-sources-32" class="section level3" number="33.1.1">
 <h3>
-<span class="header-section-number">27.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-28"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-32"><i class="fas fa-link"></i></a>
 </h3>
 <p>The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.</p>
 </div>
-<div id="data-extraction-17" class="section level3" number="27.1.2">
+<div id="data-extraction-21" class="section level3" number="33.1.2">
 <h3>
-<span class="header-section-number">27.1.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-17"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33.1.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-21"><i class="fas fa-link"></i></a>
 </h3>
 <p>While all processed hydrographic data are archived in an Oracle database (OCDBS), we work from Matlab-formatted files stored locally.</p>
 </div>
-<div id="data-analysis-27" class="section level3" number="27.1.3">
+<div id="data-analysis-31" class="section level3" number="33.1.3">
 <h3>
-<span class="header-section-number">27.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-27"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-31"><i class="fas fa-link"></i></a>
 </h3>
 <p>Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four <a href="epu.html#epu">Ecological Production Units</a> (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by <span class="citation">David G. Mountain (<a href="#ref-mountain1991">1991</a>)</span>. The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.</p>
 </div>
-<div id="data-processing-21" class="section level3" number="27.1.4">
+<div id="data-processing-22" class="section level3" number="33.1.4">
 <h3>
-<span class="header-section-number">27.1.4</span> Data processing<a class="anchor" aria-label="anchor" href="#data-processing-21"><i class="fas fa-link"></i></a>
+<span class="header-section-number">33.1.4</span> Data processing<a class="anchor" aria-label="anchor" href="#data-processing-22"><i class="fas fa-link"></i></a>
 </h3>
 <p>All temperature observations are subject to rigorous quality control protocols following community standards. Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges. Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes. We choose to use the up or down cast data depending on which is cleanest and based on the deployment method. Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software). Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity.</p>
 <p>Derived bottom temperature data were formatted for inclusion in the <code>ecodata</code> R package using the R code found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R">here</a>.</p>
@@ -220,18 +220,18 @@ Mountain, David G. 1991. <span>“The Volume of Shelf Water in the Middle Atlant
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="species_groupings.html"><span class="header-section-number">26</span> Aggregate Groups</a></div>
-<div class="next"><a href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">28</span> Bottom temperature - High Resolution</a></div>
+<div class="prev"><a href="species_groupings.html"><span class="header-section-number">32</span> Aggregate Groups</a></div>
+<div class="next"><a href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">34</span> Bottom temperature - High Resolution</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#bottom_temp"><span class="header-section-number">27</span> Bottom temperature - in situ</a></li>
+<li><a class="nav-link" href="#bottom_temp"><span class="header-section-number">33</span> Bottom temperature - in situ</a></li>
 <li>
-<a class="nav-link" href="#methods-26"><span class="header-section-number">27.1</span> Methods</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#data-sources-28"><span class="header-section-number">27.1.1</span> Data sources</a></li>
-<li><a class="nav-link" href="#data-extraction-17"><span class="header-section-number">27.1.2</span> Data extraction</a></li>
-<li><a class="nav-link" href="#data-analysis-27"><span class="header-section-number">27.1.3</span> Data analysis</a></li>
-<li><a class="nav-link" href="#data-processing-21"><span class="header-section-number">27.1.4</span> Data processing</a></li>
+<a class="nav-link" href="#methods-30"><span class="header-section-number">33.1</span> Methods</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-sources-32"><span class="header-section-number">33.1.1</span> Data sources</a></li>
+<li><a class="nav-link" href="#data-extraction-21"><span class="header-section-number">33.1.2</span> Data extraction</a></li>
+<li><a class="nav-link" href="#data-analysis-31"><span class="header-section-number">33.1.3</span> Data analysis</a></li>
+<li><a class="nav-link" href="#data-processing-22"><span class="header-section-number">33.1.4</span> Data processing</a></li>
 </ul>
 </li>
 </ul>

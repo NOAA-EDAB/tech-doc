@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>59 Conceptual Models | Technical Documentation, State of the Ecosystem Report</title>
+<title>5 Conceptual Models | Technical Documentation, State of the Ecosystem Report</title>
 <meta name="author" content="Northeast Fisheries Science Center">
 <meta name="description" content="Description: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem Found in: State of the Ecosystem - Gulf of...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
-<meta property="og:title" content="59 Conceptual Models | Technical Documentation, State of the Ecosystem Report">
+<meta property="og:title" content="5 Conceptual Models | Technical Documentation, State of the Ecosystem Report">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Description: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem Found in: State of the Ecosystem - Gulf of...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="59 Conceptual Models | Technical Documentation, State of the Ecosystem Report">
+<meta name="twitter:title" content="5 Conceptual Models | Technical Documentation, State of the Ecosystem Report">
 <meta name="twitter:description" content="Description: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem Found in: State of the Ecosystem - Gulf of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -73,71 +73,71 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Introduction</a></li>
+<li class="book-part">General Methods</li>
+<li><a class="" href="erddap.html"><span class="header-section-number">1</span> Data and Code Access</a></li>
+<li><a class="" href="trend-analysis.html"><span class="header-section-number">2</span> Trend Analysis</a></li>
+<li><a class="" href="survdat.html"><span class="header-section-number">3</span> Survey Data</a></li>
+<li><a class="" href="epu.html"><span class="header-section-number">4</span> Ecological Production Units</a></li>
+<li><a class="active" href="conceptual-models.html"><span class="header-section-number">5</span> Conceptual Models</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">6</span> Glossary</a></li>
 <li class="book-part">Lower Trophic Levels</li>
-<li><a class="" href="ches_bay_wq.html"><span class="header-section-number">1</span> Chesapeake Bay Water Quality Standards Attainment</a></li>
-<li><a class="" href="chl_pp.html"><span class="header-section-number">2</span> Phytoplankton</a></li>
-<li><a class="" href="habs.html"><span class="header-section-number">3</span> Harmful Algal Bloom - Alexandrium Indicator</a></li>
-<li><a class="" href="SAV.html"><span class="header-section-number">4</span> Submerged Aquatic Vegetation</a></li>
-<li><a class="" href="wbts_mesozooplankton.html"><span class="header-section-number">5</span> Mesozooplankton Biomass at Wilkinson Basin</a></li>
-<li><a class="" href="zoo_abundance_anom.html"><span class="header-section-number">6</span> Zooplankton</a></li>
+<li><a class="" href="ches_bay_wq.html"><span class="header-section-number">7</span> Chesapeake Bay Water Quality Standards Attainment</a></li>
+<li><a class="" href="chl_pp.html"><span class="header-section-number">8</span> Phytoplankton</a></li>
+<li><a class="" href="habs.html"><span class="header-section-number">9</span> Harmful Algal Bloom - Alexandrium Indicator</a></li>
+<li><a class="" href="SAV.html"><span class="header-section-number">10</span> Submerged Aquatic Vegetation</a></li>
+<li><a class="" href="wbts_mesozooplankton.html"><span class="header-section-number">11</span> Mesozooplankton Biomass at Wilkinson Basin</a></li>
+<li><a class="" href="zoo_abundance_anom.html"><span class="header-section-number">12</span> Zooplankton</a></li>
 <li class="book-part">Megafauna</li>
-<li><a class="" href="mab_inshore_survey.html"><span class="header-section-number">7</span> Inshore bottom trawl surveys</a></li>
-<li><a class="" href="condition.html"><span class="header-section-number">8</span> Fish Condition Indicator</a></li>
-<li><a class="" href="habitat_diversity.html"><span class="header-section-number">9</span> Habitat Diversity</a></li>
-<li><a class="" href="species_dist.html"><span class="header-section-number">10</span> Species Distribution Indicators</a></li>
-<li><a class="" href="energy_density.html"><span class="header-section-number">11</span> Forage Fish Energy Density</a></li>
-<li><a class="" href="spawn_timing.html"><span class="header-section-number">12</span> Spawning Timing</a></li>
-<li><a class="" href="exp_n.html"><span class="header-section-number">13</span> Expected Number of Species</a></li>
-<li><a class="" href="forage_index.html"><span class="header-section-number">14</span> Forage Fish Indices</a></li>
-<li><a class="" href="harborporpoise.html"><span class="header-section-number">15</span> Harbor Porpoise Bycatch</a></li>
-<li><a class="" href="hms_cpue.html"><span class="header-section-number">16</span> Highly Migratory Species POP Catch Per Unit Effort</a></li>
-<li><a class="" href="hms_landings.html"><span class="header-section-number">17</span> Highly Migratory Species Landings</a></li>
-<li><a class="" href="hms_stock_status.html"><span class="header-section-number">18</span> Highly Migratory Species Stock Status</a></li>
-<li><a class="" href="HMS_species_distribution.html"><span class="header-section-number">19</span> Cetacean Distribution Shifts</a></li>
-<li><a class="" href="narw.html"><span class="header-section-number">20</span> Right Whale Abundance</a></li>
-<li><a class="" href="productivity_anomaly.html"><span class="header-section-number">21</span> Fish Productivity Indicators</a></li>
-<li><a class="" href="seal_pups.html"><span class="header-section-number">22</span> Gray Seal Pups</a></li>
-<li><a class="" href="gom_salmon.html"><span class="header-section-number">23</span> Gulf of Maine Atlantic Salmon</a></li>
-<li><a class="" href="grayseal.html"><span class="header-section-number">24</span> Gray Seal Bycatch</a></li>
-<li><a class="" href="seabird_ne.html"><span class="header-section-number">25</span> Seabird diet and productivity - New England</a></li>
-<li><a class="" href="species_groupings.html"><span class="header-section-number">26</span> Aggregate Groups</a></li>
+<li><a class="" href="mab_inshore_survey.html"><span class="header-section-number">13</span> Inshore bottom trawl surveys</a></li>
+<li><a class="" href="condition.html"><span class="header-section-number">14</span> Fish Condition Indicator</a></li>
+<li><a class="" href="habitat_diversity.html"><span class="header-section-number">15</span> Habitat Diversity</a></li>
+<li><a class="" href="species_dist.html"><span class="header-section-number">16</span> Species Distribution Indicators</a></li>
+<li><a class="" href="energy_density.html"><span class="header-section-number">17</span> Forage Fish Energy Density</a></li>
+<li><a class="" href="spawn_timing.html"><span class="header-section-number">18</span> Spawning Timing</a></li>
+<li><a class="" href="exp_n.html"><span class="header-section-number">19</span> Expected Number of Species</a></li>
+<li><a class="" href="forage_index.html"><span class="header-section-number">20</span> Forage Fish Indices</a></li>
+<li><a class="" href="harborporpoise.html"><span class="header-section-number">21</span> Harbor Porpoise Bycatch</a></li>
+<li><a class="" href="hms_cpue.html"><span class="header-section-number">22</span> Highly Migratory Species POP Catch Per Unit Effort</a></li>
+<li><a class="" href="hms_landings.html"><span class="header-section-number">23</span> Highly Migratory Species Landings</a></li>
+<li><a class="" href="hms_stock_status.html"><span class="header-section-number">24</span> Highly Migratory Species Stock Status</a></li>
+<li><a class="" href="HMS_species_distribution.html"><span class="header-section-number">25</span> Cetacean Distribution Shifts</a></li>
+<li><a class="" href="narw.html"><span class="header-section-number">26</span> Right Whale Abundance</a></li>
+<li><a class="" href="productivity_anomaly.html"><span class="header-section-number">27</span> Fish Productivity Indicators</a></li>
+<li><a class="" href="seal_pups.html"><span class="header-section-number">28</span> Gray Seal Pups</a></li>
+<li><a class="" href="gom_salmon.html"><span class="header-section-number">29</span> Gulf of Maine Atlantic Salmon</a></li>
+<li><a class="" href="grayseal.html"><span class="header-section-number">30</span> Gray Seal Bycatch</a></li>
+<li><a class="" href="seabird_ne.html"><span class="header-section-number">31</span> Seabird diet and productivity - New England</a></li>
+<li><a class="" href="species_groupings.html"><span class="header-section-number">32</span> Aggregate Groups</a></li>
 <li class="book-part">Oceanographic &amp; Habitat</li>
-<li><a class="" href="bottom_temp.html"><span class="header-section-number">27</span> Bottom temperature - in situ</a></li>
-<li><a class="" href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">28</span> Bottom temperature - High Resolution</a></li>
-<li><a class="" href="seasonal_sst_anomaly_gridded.html"><span class="header-section-number">29</span> Seasonal SST Anomalies</a></li>
-<li><a class="" href="trans_dates.html"><span class="header-section-number">30</span> Transition Dates</a></li>
-<li><a class="" href="long_term_sst.html"><span class="header-section-number">31</span> Long-term Sea Surface Temperature</a></li>
-<li><a class="" href="cold_pool.html"><span class="header-section-number">32</span> Cold Pool Index</a></li>
-<li><a class="" href="gsi.html"><span class="header-section-number">33</span> Gulf Stream Index</a></li>
-<li><a class="" href="slopewater.html"><span class="header-section-number">34</span> Slopewater proportions</a></li>
-<li><a class="" href="persistent_hotspots.html"><span class="header-section-number">35</span> Protected Species Hotspots</a></li>
-<li><a class="" href="wcr.html"><span class="header-section-number">36</span> Warm Core Rings</a></li>
-<li><a class="" href="ch_bay_sal.html"><span class="header-section-number">37</span> Chesapeake Bay Salinity and Temperature</a></li>
-<li><a class="" href="ch_bay_temp.html"><span class="header-section-number">38</span> Chesapeake Bay Temperature Anomaly</a></li>
-<li><a class="" href="ches_bay_sst.html"><span class="header-section-number">39</span> Chesapeake Bay Seasonal SST Anomalies</a></li>
-<li><a class="" href="heatwave.html"><span class="header-section-number">40</span> Marine Heatwave</a></li>
-<li><a class="" href="ocean_acidification.html"><span class="header-section-number">41</span> Ocean Acidification</a></li>
+<li><a class="" href="bottom_temp.html"><span class="header-section-number">33</span> Bottom temperature - in situ</a></li>
+<li><a class="" href="bottom_temp_seasonal_gridded.html"><span class="header-section-number">34</span> Bottom temperature - High Resolution</a></li>
+<li><a class="" href="seasonal_sst_anomaly_gridded.html"><span class="header-section-number">35</span> Seasonal SST Anomalies</a></li>
+<li><a class="" href="trans_dates.html"><span class="header-section-number">36</span> Transition Dates</a></li>
+<li><a class="" href="long_term_sst.html"><span class="header-section-number">37</span> Long-term Sea Surface Temperature</a></li>
+<li><a class="" href="cold_pool.html"><span class="header-section-number">38</span> Cold Pool Index</a></li>
+<li><a class="" href="gsi.html"><span class="header-section-number">39</span> Gulf Stream Index</a></li>
+<li><a class="" href="slopewater.html"><span class="header-section-number">40</span> Slopewater proportions</a></li>
+<li><a class="" href="persistent_hotspots.html"><span class="header-section-number">41</span> Protected Species Hotspots</a></li>
+<li><a class="" href="wcr.html"><span class="header-section-number">42</span> Warm Core Rings</a></li>
+<li><a class="" href="ch_bay_sal.html"><span class="header-section-number">43</span> Chesapeake Bay Salinity and Temperature</a></li>
+<li><a class="" href="ch_bay_temp.html"><span class="header-section-number">44</span> Chesapeake Bay Temperature Anomaly</a></li>
+<li><a class="" href="ches_bay_sst.html"><span class="header-section-number">45</span> Chesapeake Bay Seasonal SST Anomalies</a></li>
+<li><a class="" href="heatwave.html"><span class="header-section-number">46</span> Marine Heatwave</a></li>
+<li><a class="" href="ocean_acidification.html"><span class="header-section-number">47</span> Ocean Acidification</a></li>
 <li class="book-part">Economic &amp; Social</li>
-<li><a class="" href="comdat.html"><span class="header-section-number">42</span> Commercial Landings Data</a></li>
-<li><a class="" href="commercial_div.html"><span class="header-section-number">43</span> Catch and Fleet Diversity</a></li>
-<li><a class="" href="ppr.html"><span class="header-section-number">44</span> Ecosystem Overfishing</a></li>
-<li><a class="" href="recdat.html"><span class="header-section-number">45</span> Recreational Fishing Indicators</a></li>
-<li><a class="" href="rec_hms.html"><span class="header-section-number">46</span> Recreational Shark Fishing Indicators</a></li>
-<li><a class="" href="abc_acl.html"><span class="header-section-number">47</span> MAFMC ABC/ACL and Catch</a></li>
-<li><a class="" href="bennet.html"><span class="header-section-number">48</span> Bennet Indicator</a></li>
-<li><a class="" href="stock_status.html"><span class="header-section-number">49</span> Single Species Status Indicator</a></li>
-<li><a class="" href="engagement.html"><span class="header-section-number">50</span> Fishery Reliance and Social Vulnerability</a></li>
-<li><a class="" href="aquaculture.html"><span class="header-section-number">51</span> Aquaculture</a></li>
-<li><a class="" href="wind_dev_speed.html"><span class="header-section-number">52</span> Wind Energy Development Timeline</a></li>
-<li><a class="" href="wind_port.html"><span class="header-section-number">53</span> WEA Fishing Port Landings</a></li>
-<li><a class="" href="wind_revenue.html"><span class="header-section-number">54</span> Fisheries Revenue in Wind Development Areas</a></li>
-<li class="book-part">Methods</li>
-<li><a class="" href="erddap.html"><span class="header-section-number">55</span> Data and Code Access</a></li>
-<li><a class="" href="trend-analysis.html"><span class="header-section-number">56</span> Trend Analysis</a></li>
-<li><a class="" href="survdat.html"><span class="header-section-number">57</span> Survey Data</a></li>
-<li><a class="" href="epu.html"><span class="header-section-number">58</span> Ecological Production Units</a></li>
-<li><a class="active" href="conceptual-models.html"><span class="header-section-number">59</span> Conceptual Models</a></li>
-<li><a class="" href="glossary.html"><span class="header-section-number">60</span> Glossary</a></li>
+<li><a class="" href="comdat.html"><span class="header-section-number">48</span> Commercial Landings Data</a></li>
+<li><a class="" href="commercial_div.html"><span class="header-section-number">49</span> Catch and Fleet Diversity</a></li>
+<li><a class="" href="ppr.html"><span class="header-section-number">50</span> Ecosystem Overfishing</a></li>
+<li><a class="" href="recdat.html"><span class="header-section-number">51</span> Recreational Fishing Indicators</a></li>
+<li><a class="" href="rec_hms.html"><span class="header-section-number">52</span> Recreational Shark Fishing Indicators</a></li>
+<li><a class="" href="abc_acl.html"><span class="header-section-number">53</span> MAFMC ABC/ACL and Catch</a></li>
+<li><a class="" href="bennet.html"><span class="header-section-number">54</span> Bennet Indicator</a></li>
+<li><a class="" href="stock_status.html"><span class="header-section-number">55</span> Single Species Status Indicator</a></li>
+<li><a class="" href="engagement.html"><span class="header-section-number">56</span> Fishery Reliance and Social Vulnerability</a></li>
+<li><a class="" href="aquaculture.html"><span class="header-section-number">57</span> Aquaculture</a></li>
+<li><a class="" href="wind_dev_speed.html"><span class="header-section-number">58</span> Wind Energy Development Timeline</a></li>
+<li><a class="" href="wind_port.html"><span class="header-section-number">59</span> WEA Fishing Port Landings</a></li>
+<li><a class="" href="wind_revenue.html"><span class="header-section-number">60</span> Fisheries Revenue in Wind Development Areas</a></li>
 <li class="book-part">Legacy Pages</li>
 <li><a class="" href="annual-sst-cycles.html"><span class="header-section-number">61</span> Annual SST Cycles</a></li>
 <li><a class="" href="bottom-temperature---glorys.html"><span class="header-section-number">62</span> Bottom temperature - GLORYS</a></li>
@@ -168,9 +168,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conceptual-models" class="section level1" number="59">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conceptual-models" class="section level1" number="5">
 <h1>
-<span class="header-section-number">59</span> Conceptual Models<a class="anchor" aria-label="anchor" href="#conceptual-models"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> Conceptual Models<a class="anchor" aria-label="anchor" href="#conceptual-models"><i class="fas fa-link"></i></a>
 </h1>
 <p><strong>Description</strong>: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem</p>
 <p><strong>Found in</strong>: State of the Ecosystem - Gulf of Maine &amp; Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)</p>
@@ -179,37 +179,37 @@
 <p><strong>Data steward</strong>: Sarah Gaichas, <a href="mailto:sarah.gaichas@noaa.gov" class="email">sarah.gaichas@noaa.gov</a></p>
 <p><strong>Point of contact</strong>: Sarah Gaichas, <a href="mailto:sarah.gaichas@noaa.gov" class="email">sarah.gaichas@noaa.gov</a></p>
 <p><strong>Public availability statement</strong>: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public (see Data Sources below).</p>
-<div id="methods-60" class="section level2" number="59.1">
+<div id="methods-3" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">59.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-60"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>Conceptual models were constructed to facilitate multidisciplinary analysis and discussion of the linked social-ecological system for integrated ecosystem assessment. The overall process was to first identify the components of the model (focal groups, human activities, environmental drivers, and objectives), and then to document criteria for including groups and linkages and what the specific links were between the components.</p>
 <p>The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-ecosystem-components">overview conceptual model for the Northern California Current Large Marine Ecosystem (NCC)</a>, with models for each <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#overview">focal ecosystem component</a> that detailed the <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#ecologicalinteractions">ecological</a>, <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#environmentalDrivers">environmental</a>, and <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#humanActivities">human system</a> linkages. Another set of conceptual models outlined <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-habitat">habitat</a> linkages.</p>
 <p>An inital conceptual model for Georges Bank and the Gulf of Maine was outlined at the 2015 ICES WGNARS meeting. It specified four categories: Large scale drivers, focal ecosystem components, human activities, and human well being. Strategic management objectives were included in the conceptual model, which had not been done in the NCC. Focal ecosystem components were defined as aggregate species groups that had associated US management objectives (outlined within WGNARS for IEAs, see <span class="citation">DePiper et al. (<a href="#ref-depiper_operationalizing_2017">2017</a>)</span>): groundfish, forage fish, fished invertebrates, living habitat, and protected species. These categories roughly align with Fishery Managment Plans (FMPs) for the New England Fishery Management Council. The Mid-Atlantic conceptual model was developed along similar lines, but the focal groups included demersals, forage fish, squids, medium pelagics, clams/quahogs, and protected species to better align with the Mid Atlantic Council’s FMPs.</p>
 <div class="inline-figure"><img src="images/GBGOMconceptual1.png" width="80%"></div>
 <p>After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html">spreadsheet</a>. Submodels were then merged together by common components using the “merge” function in the (currently unavailable) desktop version of Mental Modeler (<a href="http://www.mentalmodeler.org/#home" class="uri">http://www.mentalmodeler.org/#home</a>; <span class="citation">Gray et al. (<a href="#ref-gray_mental_2013">2013</a>)</span>). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) <a href="epu.html#epu">Ecological Production Units</a>.</p>
-<div id="data-sources-64" class="section level3" number="59.1.1">
+<div id="data-sources-3" class="section level3" number="5.1.1">
 <h3>
-<span class="header-section-number">59.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-64"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-3"><i class="fas fa-link"></i></a>
 </h3>
-<div id="ecological-submodels" class="section level4" number="59.1.1.1">
+<div id="ecological-submodels" class="section level4" number="5.1.1.1">
 <h4>
-<span class="header-section-number">59.1.1.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels"><i class="fas fa-link"></i></a>
 </h4>
 <p>Published food web (EMAX) models for each subregion <span class="citation">(<a href="#ref-link_documentation_2006">J. S. Link et al. 2006</a>; <a href="#ref-link_northeast_2008">Jason Link et al. 2008</a>)</span>, food habits data collected by NEFSC trawl surveys <span class="citation">(<a href="#ref-smith_trophic_2010">B. E. Smith and Link 2010</a>)</span>, and other literature sources <span class="citation">(<a href="#ref-smith_consumption_2015">L. A. Smith et al. 2015</a>)</span> were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups.</p>
 </div>
-<div id="environmental-submodels" class="section level4" number="59.1.1.2">
+<div id="environmental-submodels" class="section level4" number="5.1.1.2">
 <h4>
-<span class="header-section-number">59.1.1.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels"><i class="fas fa-link"></i></a>
 </h4>
 <p>Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted.
 Sources for Georges Bank included <span class="citation">Backus and Bourne (<a href="#ref-backus_georges_1987">1987</a>)</span> and <span class="citation">Townsend et al. (<a href="#ref-townsend_oceanography_2006">2006</a>)</span>.
 Sources for the Gulf of Maine included <span class="citation">Peter C. Smith (<a href="#ref-smith_mean_1983">1983</a>)</span>, <span class="citation">Peter C. Smith et al. (<a href="#ref-smith_interannual_2001">2001</a>)</span>, <span class="citation">Mupparapu and Brown (<a href="#ref-mupparapu_role_2002">2002</a>)</span>, <span class="citation">Townsend et al. (<a href="#ref-townsend_oceanography_2006">2006</a>)</span>, <span class="citation">Peter C. Smith et al. (<a href="#ref-smith_regime_2012">2012</a>)</span>, and <span class="citation">David G. Mountain (<a href="#ref-mountain_labrador_2012">2012b</a>)</span>.<br>
-Sources for the Mid Atlantic Bight included <span class="citation">R. W. Houghton et al. (<a href="#ref-houghton_middle_1982">1982</a>)</span>, <span class="citation">Beardsley et al. (<a href="#ref-beardsley_nantucket_1985">1985</a>)</span>, <span class="citation">Lentz (<a href="#ref-lentz_climatology_2003">2003</a>)</span>, <span class="citation">David G. Mountain (<a href="#ref-mountain_variability_2003">2003</a>)</span>, <span class="citation">Glenn et al. (<a href="#ref-glenn_biogeochemical_2004">2004</a>)</span>, <span class="citation">Sullivan, Cowen, and Steves (<a href="#ref-sullivan_evidence_2005">2005</a>)</span>, <span class="citation">Castelao et al. (<a href="#ref-castelao_seasonal_2008">2008</a>)</span>, <span class="citation">Shearman and Lentz (<a href="#ref-shearman_long-term_2009">2009</a>)</span>, <span class="citation">Castelao, Glenn, and Schofield (<a href="#ref-castelao_temperature_2010">2010</a>)</span>, <span class="citation">Gong, Kohut, and Glenn (<a href="#ref-gong_seasonal_2010">2010</a>)</span>, <span class="citation">Gawarkiewicz et al. (<a href="#ref-gawarkiewicz_direct_2012">2012</a>)</span>, <span class="citation">Forsyth, Andres, and Gawarkiewicz (<a href="#ref-forsyth_recent_2015">2015</a>)</span>, <span class="citation">Fratantoni, Holzwarth-Davis, and Taylor (<a href="#ref-fratantoni_description_2015">2015</a>)</span>, <span class="citation">W. G. Zhang and Gawarkiewicz (<a href="#ref-zhang_dynamics_2015">2015</a>)</span>, <span class="citation">Timothy J. Miller, Hare, and Alade (<a href="#ref-miller_state-space_2016">2016</a>)</span>, and <span class="citation">Lentz (<a href="#ref-lentz_seasonal_2017">2017b</a>)</span>.</p>
+Sources for the Mid Atlantic Bight included <span class="citation">R. W. Houghton et al. (<a href="#ref-houghton_middle_1982">1982</a>)</span>, <span class="citation">Beardsley et al. (<a href="#ref-beardsley_nantucket_1985">1985</a>)</span>, <span class="citation">Lentz (<a href="#ref-lentz_climatology_2003">2003</a>)</span>, <span class="citation">David G. Mountain (<a href="#ref-mountain_variability_2003">2003</a>)</span>, <span class="citation">Glenn et al. (<a href="#ref-glenn_biogeochemical_2004">2004</a>)</span>, <span class="citation">Sullivan, Cowen, and Steves (<a href="#ref-sullivan_evidence_2005">2005</a>)</span>, <span class="citation">Castelao et al. (<a href="#ref-castelao_seasonal_2008">2008</a>)</span>, <span class="citation">Shearman and Lentz (<a href="#ref-shearman_long-term_2009">2009</a>)</span>, <span class="citation">Castelao, Glenn, and Schofield (<a href="#ref-castelao_temperature_2010">2010</a>)</span>, <span class="citation">Gong, Kohut, and Glenn (<a href="#ref-gong_seasonal_2010">2010</a>)</span>, <span class="citation">Gawarkiewicz et al. (<a href="#ref-gawarkiewicz_direct_2012">2012</a>)</span>, <span class="citation">Forsyth, Andres, and Gawarkiewicz (<a href="#ref-forsyth_recent_2015">2015</a>)</span>, <span class="citation">Fratantoni, Holzwarth-Davis, and Taylor (<a href="#ref-fratantoni_description_2015">2015</a>)</span>, <span class="citation">W. G. Zhang and Gawarkiewicz (<a href="#ref-zhang_dynamics_2015">2015</a>)</span>, <span class="citation">Timothy J. Miller, Hare, and Alade (<a href="#ref-miller_state-space_2016">2016</a>)</span>, and <span class="citation">Lentz (<a href="#ref-lentz_seasonal_2017">2017a</a>)</span>.</p>
 </div>
-<div id="human-dimensions-submodels" class="section level4" number="59.1.1.3">
+<div id="human-dimensions-submodels" class="section level4" number="5.1.1.3">
 <h4>
-<span class="header-section-number">59.1.1.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels"><i class="fas fa-link"></i></a>
 </h4>
 <p>Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports &amp; Commercial Fisheries Dealer databases, Northeast Fishery Observer Program &amp; Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from <span class="citation">Färe, Kirkley, and Walden (<a href="#ref-fare_adjusting_2006">2006</a>)</span>, <span class="citation">Walden et al. (<a href="#ref-walden_productivity_2012">2012</a>)</span>, <span class="citation">M.-Y. Lee and Thunberg (<a href="#ref-lee_inverse_2013">2013</a>)</span>, <span class="citation">M.-Y. Lee (<a href="#ref-lee_hedonic_2014">2014</a>)</span>, and <span class="citation">M.-Y. Lee, Steinback, and Wallmo (<a href="#ref-lee_applying_2017">2017</a>)</span>. Bycatch of protected species was taken from <span class="citation">Waring et al. (<a href="#ref-waring_us_2015">2015</a>)</span>, with additional insights from <span class="citation">Bisack and Magnusson (<a href="#ref-bisack_measuring_2014">2014</a>)</span>. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.</p>
 <p>Habitat-fishery linkages were drawn from unpublished reports, including:</p>
@@ -232,47 +232,47 @@ Sources for the Mid Atlantic Bight included <span class="citation">R. W. Houghto
 <p>Sources for cultural practices and attachments links included <span class="citation">Daniel Pauly (<a href="#ref-pauly_putting_1997">1997</a>)</span>, <span class="citation">McGoodwin (<a href="#ref-mcgoodwin_understanding_2001">2001</a>)</span>, <span class="citation">St Martin (<a href="#ref-st_martin_making_2001">2001</a>)</span>, <span class="citation">Norris-Raynbird (<a href="#ref-norris-raynbird_for_2004">2004</a>)</span>, <span class="citation">Pollnac et al. (<a href="#ref-pollnac_toward_2006">2006</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_defining_2007">2007</a>)</span>, <span class="citation">Clay and Olson (<a href="#ref-clay_definingfishing_2008">2008</a>)</span>, <span class="citation">Everett and Aitchison (<a href="#ref-everett_role_2008">2008</a>)</span>, <span class="citation">Donkersloot (<a href="#ref-donkersloot_politics_2010">2010</a>)</span>, <span class="citation">Lord (<a href="#ref-lord_understanding_2011">2011</a>)</span>, <span class="citation">Halpern et al. (<a href="#ref-halpern_index_2012">2012</a>)</span>, <span class="citation">Wynveen, Kyle, and Sutton (<a href="#ref-wynveen_natural_2012">2012</a>)</span>, <span class="citation">Cortes-Vazquez and Zedalis (<a href="#ref-cortes-vazquez_identity_2013">2013</a>)</span>, <span class="citation">Koehn, Reineman, and Kittinger (<a href="#ref-koehn_progress_2013">2013</a>)</span>, <span class="citation">Potschin and Haines-Young (<a href="#ref-potschin_landscapes_2013">2013</a>)</span>, <span class="citation">Reed et al. (<a href="#ref-reed_beyond_2013">2013</a>)</span>, <span class="citation">Urquhart and Acott (<a href="#ref-urquhart_constructing_2013">2013</a>)</span>, <span class="citation">Blasiak et al. (<a href="#ref-blasiak_paradigms_2014">2014</a>)</span>, <span class="citation">Klain, Satterfield, and Chan (<a href="#ref-klain_what_2014">2014</a>)</span>, <span class="citation">Poe, Norman, and Levin (<a href="#ref-poe_cultural_2014">2014</a>)</span>, <span class="citation">Brown (<a href="#ref-brown_we_2015">2015</a>)</span>, <span class="citation">Donatuto and Poe (<a href="#ref-donatuto_evaluating_2015">2015</a>)</span>, <span class="citation">Khakzad and Griffith (<a href="#ref-khakzad_role_2016">2016</a>)</span>, <span class="citation">Oberg et al. (<a href="#ref-oberg_surviving_2016">2016</a>)</span>, and <span class="citation">Seara, Clay, and Colburn (<a href="#ref-seara_perceived_2016">2016</a>)</span>.</p>
 </div>
 </div>
-<div id="data-extraction-36" class="section level3" number="59.1.2">
+<div id="data-extraction-3" class="section level3" number="5.1.2">
 <h3>
-<span class="header-section-number">59.1.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-36"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-3"><i class="fas fa-link"></i></a>
 </h3>
-<div id="ecological-submodels-1" class="section level4" number="59.1.2.1">
+<div id="ecological-submodels-1" class="section level4" number="5.1.2.1">
 <h4>
-<span class="header-section-number">59.1.2.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>“Data” included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information.</p>
 <p>Example FEAST sql script for Cod weighted diet on Georges Bank can be found <a href="https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/conceptual_models_extraction.sql">here</a>.
 Queries for different species are standardized by the FEAST application and would differ only in the svspp code.</p>
 </div>
-<div id="environmental-submodels-1" class="section level4" number="59.1.2.2">
+<div id="environmental-submodels-1" class="section level4" number="5.1.2.2">
 <h4>
-<span class="header-section-number">59.1.2.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.</p>
 </div>
-<div id="human-dimensions-submodels-1" class="section level4" number="59.1.2.3">
+<div id="human-dimensions-submodels-1" class="section level4" number="5.1.2.3">
 <h4>
-<span class="header-section-number">59.1.2.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found <a href="data/top10_prim1_common_mode.xlsx">here</a> for each region (New England or Mid-Atlantic as defined by states).</p>
 <p>Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model <span class="citation">(<a href="#ref-steinback_scott_northeast_2006">Steinback and Thunberg 2006</a>)</span> was used as the basis for the strength of the employment linkages.</p>
 </div>
 </div>
-<div id="data-analysis-59" class="section level3" number="59.1.3">
+<div id="data-analysis-3" class="section level3" number="5.1.3">
 <h3>
-<span class="header-section-number">59.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-59"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-3"><i class="fas fa-link"></i></a>
 </h3>
 <!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
-<div id="ecological-submodels-2" class="section level4" number="59.1.3.1">
+<div id="ecological-submodels-2" class="section level4" number="5.1.3.1">
 <h4>
-<span class="header-section-number">59.1.3.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3.1</span> Ecological submodels<a class="anchor" aria-label="anchor" href="#ecological-submodels-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html">spreadsheet</a>.</p>
 <p>Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat’s important mediation function.</p>
-<p>EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table <a href="conceptual-models.html#tab:groups">59.1</a>. “Linked groups” directly support or impact the Focal groups as described above.</p>
+<p>EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table <a href="conceptual-models.html#tab:groups">5.1</a>. “Linked groups” directly support or impact the Focal groups as described above.</p>
 <div class="inline-table"><table class="table" style="font-size: 8px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:groups">Table 59.1: </span><span id="tab:groups">Table 59.2: </span>Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.
+<span id="tab:groups">Table 5.1: </span><span id="tab:groups">Table 5.2: </span>Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -753,79 +753,79 @@ Sum of Sharks-pelagic and coastal
 </tr>
 </tbody>
 </table></div>
-<p>Ecological submodels were constructed and visualized in Mental Modeler (Fig. <a href="conceptual-models.html#fig:draftGOMeco">59.1</a>). Here, we show only the Gulf of Maine submodels as examples.</p>
+<p>Ecological submodels were constructed and visualized in Mental Modeler (Fig. <a href="conceptual-models.html#fig:draftGOMeco">5.1</a>). Here, we show only the Gulf of Maine submodels as examples.</p>
 <div class="figure">
 <span style="display:block;" id="fig:draftGOMeco"></span>
 <img src="images/MM_GoM_Ecological.png" alt="Gulf of Maine Ecological submodel" width="80%"><p class="caption">
-Figure 59.1: Gulf of Maine Ecological submodel
+Figure 5.1: Gulf of Maine Ecological submodel
 </p>
 </div>
 </div>
-<div id="environmental-submodels-2" class="section level4" number="59.1.3.2">
+<div id="environmental-submodels-2" class="section level4" number="5.1.3.2">
 <h4>
-<span class="header-section-number">59.1.3.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3.2</span> Environmental submodels<a class="anchor" aria-label="anchor" href="#environmental-submodels-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>Environmental submodels were designed to link key oceanographic processes in each ecosystem production unit to the four general habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) with emphasis on the most important physical processes in each ecosystem based on expert knowledge as supported by literature review. The basis of each submodel were environmental variables observable at management-relevant scales as identified by <a href="http://ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGRSP/2014/WGNARS14.pdf">WGNARS</a>: Surface and Bottom Water Temperature and Salinity, Freshwater Input, and Stratification (as well as sea ice timing and cover, which is not relevant to the northeast US shelf). Key drivers changing these observable variables and thus structuring habitat dynamics in each <a href="epu.html#epu">Ecological Production Units</a> were added to the model using expert consensus.</p>
-Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. <a href="conceptual-models.html#fig:draftGOMenv">59.2</a>).
+Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. <a href="conceptual-models.html#fig:draftGOMenv">5.2</a>).
 <div class="figure">
 <span style="display:block;" id="fig:draftGOMenv"></span>
 <img src="images/MM_GoM_Climate.png" alt="Gulf of Maine Environmental submodel" width="80%"><p class="caption">
-Figure 59.2: Gulf of Maine Environmental submodel
+Figure 5.2: Gulf of Maine Environmental submodel
 </p>
 </div>
 </div>
-<div id="human-dimensions-submodels-2" class="section level4" number="59.1.3.3">
+<div id="human-dimensions-submodels-2" class="section level4" number="5.1.3.3">
 <h4>
-<span class="header-section-number">59.1.3.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3.3</span> Human dimensions submodels<a class="anchor" aria-label="anchor" href="#human-dimensions-submodels-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.</p>
-<p>No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model <span class="citation">(<a href="#ref-steinback_scott_northeast_2006">Steinback and Thunberg 2006</a>)</span> was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available <span class="citation">(<a href="#ref-das_chhandita_northeast_2013">Das, Chhandita 2013</a>, <a href="#ref-das_chhandita_overview_2014">2014</a>)</span>. Human activities and objectives for the conceptual sub model are defined in <span class="citation">DePiper et al. (<a href="#ref-depiper_operationalizing_2017">2017</a>)</span>. As shown in Figure <a href="conceptual-models.html#fig:draftGOMhuman">59.3</a>, human dimensions submodels were also initially constructed and visualized in Mental Modeler.</p>
+<p>No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model <span class="citation">(<a href="#ref-steinback_scott_northeast_2006">Steinback and Thunberg 2006</a>)</span> was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available <span class="citation">(<a href="#ref-das_chhandita_northeast_2013">Das, Chhandita 2013</a>, <a href="#ref-das_chhandita_overview_2014">2014</a>)</span>. Human activities and objectives for the conceptual sub model are defined in <span class="citation">DePiper et al. (<a href="#ref-depiper_operationalizing_2017">2017</a>)</span>. As shown in Figure <a href="conceptual-models.html#fig:draftGOMhuman">5.3</a>, human dimensions submodels were also initially constructed and visualized in Mental Modeler.</p>
 <div class="figure">
 <span style="display:block;" id="fig:draftGOMhuman"></span>
 <img src="images/MM_GoM_Human_Connections.png" alt="Gulf of Maine Human dimensions submodel" width="80%"><p class="caption">
-Figure 59.3: Gulf of Maine Human dimensions submodel
+Figure 5.3: Gulf of Maine Human dimensions submodel
 </p>
 </div>
 </div>
-<div id="merged-models" class="section level4" number="59.1.3.4">
+<div id="merged-models" class="section level4" number="5.1.3.4">
 <h4>
-<span class="header-section-number">59.1.3.4</span> Merged models<a class="anchor" aria-label="anchor" href="#merged-models"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3.4</span> Merged models<a class="anchor" aria-label="anchor" href="#merged-models"><i class="fas fa-link"></i></a>
 </h4>
 <p>All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia (<a href="http://dia-installer.de/" class="uri">http://dia-installer.de/</a>) with color codes for each model component type for improved readability. Examples for each system are below.</p>
 <div class="figure">
 <span style="display:block;" id="fig:diaGB"></span>
 <img src="images/GBoverview5.png" alt="Georges Bank conceptual model" width="80%"><p class="caption">
-Figure 59.4: Georges Bank conceptual model
+Figure 5.4: Georges Bank conceptual model
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:diaGOM"></span>
 <img src="images/GoMoverview4.png" alt="Gulf of Maine conceptual model" width="80%"><p class="caption">
-Figure 59.5: Gulf of Maine conceptual model
+Figure 5.5: Gulf of Maine conceptual model
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:diaMAB"></span>
 <img src="images/MAB_3.png" alt="Mid-Atlantic Bight conceptual model" width="80%"><p class="caption">
-Figure 59.6: Mid-Atlantic Bight conceptual model
+Figure 5.6: Mid-Atlantic Bight conceptual model
 </p>
 </div>
 </div>
-<div id="communication-tools" class="section level4" number="59.1.3.5">
+<div id="communication-tools" class="section level4" number="5.1.3.5">
 <h4>
-<span class="header-section-number">59.1.3.5</span> Communication tools<a class="anchor" aria-label="anchor" href="#communication-tools"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3.5</span> Communication tools<a class="anchor" aria-label="anchor" href="#communication-tools"><i class="fas fa-link"></i></a>
 </h4>
 <p>The merged models were redrawn for use in communications with the public. These versions lead off the State of the Ecosystem reports for both Fishery Management Councils to provide an overview of linkages between environmental drivers, ecological, and human systems.</p>
 <div class="figure">
 <span style="display:block;" id="fig:prettyNE"></span>
 <img src="images/GOM_GB_conmod_overview.jpg" alt="New England conceptual model for public communication" width="80%"><p class="caption">
-Figure 59.7: New England conceptual model for public communication
+Figure 5.7: New England conceptual model for public communication
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:prettyMA"></span>
 <img src="images/MAB_conmod_overview.jpg" alt="Mid-Atlantic conceptual model for public communication" width="80%"><p class="caption">
-Figure 59.8: Mid-Atlantic conceptual model for public communication
+Figure 5.8: Mid-Atlantic conceptual model for public communication
 </p>
 </div>
 <!--
@@ -857,253 +857,36 @@ sessionInfo(package = NULL)
 #> [6] methods   base     
 #> 
 #> other attached packages:
-#>  [1] stocksmart_0.6.28 rmarkdown_2.27    knitr_1.48       
-#>  [4] kableExtra_1.4.0  here_1.0.1        ecodata_5.0.1    
-#>  [7] lubridate_1.9.3   forcats_1.0.0     stringr_1.5.1    
-#> [10] dplyr_1.1.4       purrr_1.0.2       readr_2.1.5      
-#> [13] tidyr_1.3.1       tibble_3.2.1      ggplot2_3.5.1    
-#> [16] tidyverse_2.0.0  
+#>  [1] knitr_1.48       kableExtra_1.4.0 here_1.0.1      
+#>  [4] ecodata_5.0.1    lubridate_1.9.3  forcats_1.0.0   
+#>  [7] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.2     
+#> [10] readr_2.1.5      tidyr_1.3.1      tibble_3.2.1    
+#> [13] ggplot2_3.5.1    tidyverse_2.0.0 
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] gtable_0.3.5      xfun_0.45         bslib_0.7.0      
-#>  [4] htmlwidgets_1.6.4 tzdb_0.4.0        vctrs_0.6.5      
-#>  [7] tools_4.4.1       crosstalk_1.2.1   generics_0.1.3   
-#> [10] parallel_4.4.1    fansi_1.0.6       highr_0.11       
-#> [13] pkgconfig_2.0.3   lifecycle_1.0.4   compiler_4.4.1   
-#> [16] munsell_0.5.1     htmltools_0.5.8.1 sass_0.4.9       
-#> [19] yaml_2.3.9        pillar_1.9.0      crayon_1.5.3     
-#> [22] jquerylib_0.1.4   DT_0.33           cachem_1.1.0     
-#> [25] tidyselect_1.2.1  digest_0.6.36     stringi_1.8.4    
-#> [28] bookdown_0.40     rprojroot_2.0.4   fastmap_1.2.0    
-#> [31] grid_4.4.1        colorspace_2.1-0  cli_3.6.3        
-#> [34] magrittr_2.0.3    utf8_1.2.4        withr_3.0.0      
-#> [37] scales_1.3.0      bit64_4.0.5       timechange_0.3.0 
-#> [40] bit_4.0.5         hms_1.1.3         memoise_2.0.1    
-#> [43] evaluate_0.24.0   viridisLite_0.4.2 rlang_1.1.4      
-#> [46] downlit_0.4.4     glue_1.7.0        xml2_1.3.6       
-#> [49] svglite_2.1.3     rstudioapi_0.16.0 vroom_1.6.5      
-#> [52] jsonlite_1.8.8    R6_2.5.1          systemfonts_1.1.0
-#> [55] fs_1.6.4
+#>  [1] sass_0.4.9        utf8_1.2.4        generics_0.1.3   
+#>  [4] xml2_1.3.6        stringi_1.8.4     hms_1.1.3        
+#>  [7] digest_0.6.36     magrittr_2.0.3    evaluate_0.24.0  
+#> [10] grid_4.4.1        timechange_0.3.0  bookdown_0.40    
+#> [13] fastmap_1.2.0     rprojroot_2.0.4   jsonlite_1.8.8   
+#> [16] fansi_1.0.6       viridisLite_0.4.2 scales_1.3.0     
+#> [19] jquerylib_0.1.4   cli_3.6.3         crayon_1.5.3     
+#> [22] rlang_1.1.4       bit64_4.0.5       munsell_0.5.1    
+#> [25] withr_3.0.0       cachem_1.1.0      yaml_2.3.9       
+#> [28] parallel_4.4.1    tools_4.4.1       tzdb_0.4.0       
+#> [31] memoise_2.0.1     colorspace_2.1-0  vctrs_0.6.5      
+#> [34] R6_2.5.1          lifecycle_1.0.4   bit_4.0.5        
+#> [37] fs_1.6.4          vroom_1.6.5       pkgconfig_2.0.3  
+#> [40] pillar_1.9.0      bslib_0.7.0       gtable_0.3.5     
+#> [43] glue_1.7.0        systemfonts_1.1.0 highr_0.11       
+#> [46] xfun_0.45         tidyselect_1.2.1  rstudioapi_0.16.0
+#> [49] htmltools_0.5.8.1 svglite_2.1.3     rmarkdown_2.27   
+#> [52] compiler_4.4.1    downlit_0.4.4
 
 
 #Use this to output a detailed list of the package information
 current.session <- sessionInfo(package = NULL)
 current.session$otherPkgs
-#> $stocksmart
-#> Package: stocksmart
-#> Title: Provides access to NOAAs stock SMART data
-#> Version: 0.6.28
-#> Authors@R: person(given = "Andy",family = "Beet",
-#>       role = c("aut", "cre"), email =
-#>       "andrew.beet@noaa.gov", comment = c(ORCID =
-#>       "0000-0001-8270-7090"))
-#> Description: A data package serving all data found on
-#>       NOAAs stock SMART website
-#> URL: https://github.com/NOAA-EDAB/stocksmart
-#> BugReports:
-#>       https://github.com/NOAA-EDAB/stocksmart/issues
-#> License: file LICENSE
-#> Encoding: UTF-8
-#> LazyData: true
-#> Roxygen: list(markdown = TRUE)
-#> RoxygenNote: 7.2.3
-#> Depends: R (>= 3.6)
-#> Imports: dplyr, tidyr, magrittr, rlang, ggplot2,
-#>       tibble
-#> Suggests: here, knitr, rmarkdown
-#> VignetteBuilder: knitr
-#> NeedsCompilation: no
-#> Packaged: 2024-07-10 17:31:55 UTC; runner
-#> Author: Andy Beet [aut, cre]
-#>       (<https://orcid.org/0000-0001-8270-7090>)
-#> Maintainer: Andy Beet <andrew.beet@noaa.gov>
-#> Built: R 4.4.1; ; 2024-07-10 17:31:56 UTC; unix
-#> RemoteType: github
-#> RemoteHost: api.github.com
-#> RemoteRepo: stocksmart
-#> RemoteUsername: NOAA-EDAB
-#> RemotePkgRef: NOAA-EDAB/stocksmart
-#> RemoteRef: HEAD
-#> RemoteSha: 73259b9f25a197ce3c583c242a5be8504d057319
-#> GithubRepo: stocksmart
-#> GithubUsername: NOAA-EDAB
-#> GithubRef: HEAD
-#> GithubSHA1: 73259b9f25a197ce3c583c242a5be8504d057319
-#> 
-#> -- File: /home/runner/work/_temp/Library/stocksmart/Meta/package.rds 
-#> 
-#> $rmarkdown
-#> Type: Package
-#> Package: rmarkdown
-#> Title: Dynamic Documents for R
-#> Version: 2.27
-#> Authors@R: c( person("JJ", "Allaire", ,
-#>       "jj@posit.co", role = "aut"), person("Yihui",
-#>       "Xie", , "xie@yihui.name", role = c("aut",
-#>       "cre"), comment = c(ORCID =
-#>       "0000-0003-0645-5666")), person("Christophe",
-#>       "Dervieux", , "cderv@posit.co", role = "aut",
-#>       comment = c(ORCID = "0000-0003-4474-2498")),
-#>       person("Jonathan", "McPherson", ,
-#>       "jonathan@posit.co", role = "aut"),
-#>       person("Javier", "Luraschi", role = "aut"),
-#>       person("Kevin", "Ushey", , "kevin@posit.co",
-#>       role = "aut"), person("Aron", "Atkins", ,
-#>       "aron@posit.co", role = "aut"),
-#>       person("Hadley", "Wickham", ,
-#>       "hadley@posit.co", role = "aut"), person("Joe",
-#>       "Cheng", , "joe@posit.co", role = "aut"),
-#>       person("Winston", "Chang", ,
-#>       "winston@posit.co", role = "aut"),
-#>       person("Richard", "Iannone", , "rich@posit.co",
-#>       role = "aut", comment = c(ORCID =
-#>       "0000-0003-3925-190X")), person("Andrew",
-#>       "Dunning", role = "ctb", comment = c(ORCID =
-#>       "0000-0003-0464-5036")), person("Atsushi",
-#>       "Yasumoto", role = c("ctb", "cph"), comment =
-#>       c(ORCID = "0000-0002-8335-495X", cph = "Number
-#>       sections Lua filter")), person("Barret",
-#>       "Schloerke", role = "ctb"), person("Carson",
-#>       "Sievert", role = "ctb", comment = c(ORCID =
-#>       "0000-0002-4958-2844")), person("Devon",
-#>       "Ryan", , "dpryan79@gmail.com", role = "ctb",
-#>       comment = c(ORCID = "0000-0002-8549-0971")),
-#>       person("Frederik", "Aust", ,
-#>       "frederik.aust@uni-koeln.de", role = "ctb",
-#>       comment = c(ORCID = "0000-0003-4900-788X")),
-#>       person("Jeff", "Allen", , "jeff@posit.co", role
-#>       = "ctb"), person("JooYoung", "Seo", role =
-#>       "ctb", comment = c(ORCID =
-#>       "0000-0002-4064-6012")), person("Malcolm",
-#>       "Barrett", role = "ctb"), person("Rob",
-#>       "Hyndman", , "Rob.Hyndman@monash.edu", role =
-#>       "ctb"), person("Romain", "Lesur", role =
-#>       "ctb"), person("Roy", "Storey", role = "ctb"),
-#>       person("Ruben", "Arslan", ,
-#>       "ruben.arslan@uni-goettingen.de", role =
-#>       "ctb"), person("Sergio", "Oller", role =
-#>       "ctb"), person(given = "Posit Software, PBC",
-#>       role = c("cph", "fnd")), person(, "jQuery UI
-#>       contributors", role = c("ctb", "cph"), comment
-#>       = "jQuery UI library; authors listed in
-#>       inst/rmd/h/jqueryui/AUTHORS.txt"),
-#>       person("Mark", "Otto", role = "ctb", comment =
-#>       "Bootstrap library"), person("Jacob",
-#>       "Thornton", role = "ctb", comment = "Bootstrap
-#>       library"), person(, "Bootstrap contributors",
-#>       role = "ctb", comment = "Bootstrap library"),
-#>       person(, "Twitter, Inc", role = "cph", comment
-#>       = "Bootstrap library"), person("Alexander",
-#>       "Farkas", role = c("ctb", "cph"), comment =
-#>       "html5shiv library"), person("Scott", "Jehl",
-#>       role = c("ctb", "cph"), comment = "Respond.js
-#>       library"), person("Ivan", "Sagalaev", role =
-#>       c("ctb", "cph"), comment = "highlight.js
-#>       library"), person("Greg", "Franko", role =
-#>       c("ctb", "cph"), comment = "tocify library"),
-#>       person("John", "MacFarlane", role = c("ctb",
-#>       "cph"), comment = "Pandoc templates"), person(,
-#>       "Google, Inc.", role = c("ctb", "cph"), comment
-#>       = "ioslides library"), person("Dave",
-#>       "Raggett", role = "ctb", comment = "slidy
-#>       library"), person(, "W3C", role = "cph",
-#>       comment = "slidy library"), person("Dave",
-#>       "Gandy", role = c("ctb", "cph"), comment =
-#>       "Font-Awesome"), person("Ben", "Sperry", role =
-#>       "ctb", comment = "Ionicons"), person(,
-#>       "Drifty", role = "cph", comment = "Ionicons"),
-#>       person("Aidan", "Lister", role = c("ctb",
-#>       "cph"), comment = "jQuery StickyTabs"),
-#>       person("Benct Philip", "Jonsson", role =
-#>       c("ctb", "cph"), comment = "pagebreak Lua
-#>       filter"), person("Albert", "Krewinkel", role =
-#>       c("ctb", "cph"), comment = "pagebreak Lua
-#>       filter") )
-#> Maintainer: Yihui Xie <xie@yihui.name>
-#> Description: Convert R Markdown documents into a
-#>       variety of formats.
-#> License: GPL-3
-#> URL: https://github.com/rstudio/rmarkdown,
-#>       https://pkgs.rstudio.com/rmarkdown/
-#> BugReports:
-#>       https://github.com/rstudio/rmarkdown/issues
-#> Depends: R (>= 3.0)
-#> Imports: bslib (>= 0.2.5.1), evaluate (>= 0.13),
-#>       fontawesome (>= 0.5.0), htmltools (>= 0.5.1),
-#>       jquerylib, jsonlite, knitr (>= 1.43), methods,
-#>       tinytex (>= 0.31), tools, utils, xfun (>=
-#>       0.36), yaml (>= 2.1.19)
-#> Suggests: digest, dygraphs, fs, rsconnect, downlit
-#>       (>= 0.4.0), katex (>= 1.4.0), sass (>= 0.4.0),
-#>       shiny (>= 1.6.0), testthat (>= 3.0.3), tibble,
-#>       vctrs, cleanrmd, withr (>= 2.4.2), xml2
-#> VignetteBuilder: knitr
-#> Config/Needs/website: rstudio/quillt, pkgdown
-#> Encoding: UTF-8
-#> RoxygenNote: 7.3.1
-#> SystemRequirements: pandoc (>= 1.14) -
-#>       http://pandoc.org
-#> NeedsCompilation: no
-#> Packaged: 2024-05-15 13:12:30 UTC; yihui
-#> Author: JJ Allaire [aut], Yihui Xie [aut, cre]
-#>       (<https://orcid.org/0000-0003-0645-5666>),
-#>       Christophe Dervieux [aut]
-#>       (<https://orcid.org/0000-0003-4474-2498>),
-#>       Jonathan McPherson [aut], Javier Luraschi
-#>       [aut], Kevin Ushey [aut], Aron Atkins [aut],
-#>       Hadley Wickham [aut], Joe Cheng [aut], Winston
-#>       Chang [aut], Richard Iannone [aut]
-#>       (<https://orcid.org/0000-0003-3925-190X>),
-#>       Andrew Dunning [ctb]
-#>       (<https://orcid.org/0000-0003-0464-5036>),
-#>       Atsushi Yasumoto [ctb, cph]
-#>       (<https://orcid.org/0000-0002-8335-495X>,
-#>       Number sections Lua filter), Barret Schloerke
-#>       [ctb], Carson Sievert [ctb]
-#>       (<https://orcid.org/0000-0002-4958-2844>),
-#>       Devon Ryan [ctb]
-#>       (<https://orcid.org/0000-0002-8549-0971>),
-#>       Frederik Aust [ctb]
-#>       (<https://orcid.org/0000-0003-4900-788X>), Jeff
-#>       Allen [ctb], JooYoung Seo [ctb]
-#>       (<https://orcid.org/0000-0002-4064-6012>),
-#>       Malcolm Barrett [ctb], Rob Hyndman [ctb],
-#>       Romain Lesur [ctb], Roy Storey [ctb], Ruben
-#>       Arslan [ctb], Sergio Oller [ctb], Posit
-#>       Software, PBC [cph, fnd], jQuery UI
-#>       contributors [ctb, cph] (jQuery UI library;
-#>       authors listed in
-#>       inst/rmd/h/jqueryui/AUTHORS.txt), Mark Otto
-#>       [ctb] (Bootstrap library), Jacob Thornton [ctb]
-#>       (Bootstrap library), Bootstrap contributors
-#>       [ctb] (Bootstrap library), Twitter, Inc [cph]
-#>       (Bootstrap library), Alexander Farkas [ctb,
-#>       cph] (html5shiv library), Scott Jehl [ctb, cph]
-#>       (Respond.js library), Ivan Sagalaev [ctb, cph]
-#>       (highlight.js library), Greg Franko [ctb, cph]
-#>       (tocify library), John MacFarlane [ctb, cph]
-#>       (Pandoc templates), Google, Inc. [ctb, cph]
-#>       (ioslides library), Dave Raggett [ctb] (slidy
-#>       library), W3C [cph] (slidy library), Dave Gandy
-#>       [ctb, cph] (Font-Awesome), Ben Sperry [ctb]
-#>       (Ionicons), Drifty [cph] (Ionicons), Aidan
-#>       Lister [ctb, cph] (jQuery StickyTabs), Benct
-#>       Philip Jonsson [ctb, cph] (pagebreak Lua
-#>       filter), Albert Krewinkel [ctb, cph] (pagebreak
-#>       Lua filter)
-#> Repository: RSPM
-#> Date/Publication: 2024-05-17 11:40:02 UTC
-#> Built: R 4.4.0; ; 2024-05-18 04:08:57 UTC; unix
-#> RemoteType: standard
-#> RemotePkgRef: rmarkdown
-#> RemoteRef: rmarkdown
-#> RemoteRepos:
-#>       https://packagemanager.posit.co/cran/__linux__/jammy/latest
-#> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-22.04
-#> RemoteSha: 2.27
-#> 
-#> -- File: /home/runner/work/_temp/Library/rmarkdown/Meta/package.rds 
-#> 
 #> $knitr
 #> Package: knitr
 #> Type: Package
@@ -2283,7 +2066,7 @@ Lee, Min-Yang, and Eric M. Thunberg. 2013. <span>“An <span>Inverse</span> <spa
 Lentz, S. J. 2003. <span>“A Climatology of Salty Intrusions over the Continental Shelf from <span>Georges</span> <span>Bank</span> to <span>Cape</span> <span>Hatteras</span>.”</span> <em>Journal of Geophysical Research</em> 108 (C10). <a href="https://doi.org/10.1029/2003JC001859">https://doi.org/10.1029/2003JC001859</a>.
 </div>
 <div id="ref-lentz_seasonal_2017" class="csl-entry">
-———. 2017b. <span>“Seasonal Warming of the <span>Middle</span> <span>Atlantic</span> <span>Bight</span> <span>Cold</span> <span>Pool</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. <a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.
+———. 2017a. <span>“Seasonal Warming of the <span>Middle</span> <span>Atlantic</span> <span>Bight</span> <span>Cold</span> <span>Pool</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 122 (2): 941–54. <a href="https://doi.org/10.1002/2016JC012201">https://doi.org/10.1002/2016JC012201</a>.
 </div>
 <div id="ref-link_documentation_2006" class="csl-entry">
 Link, J. S., C. T. Griswold, E. T. Methratta, and J. Gunnard, eds. 2006. <em>Documentation for the <span>Energy</span> <span>Modeling</span> and <span>Analysis</span> <span class="nocase">eXercise</span> (<span>EMAX</span>). <span>Northeast</span> <span>Fish</span>. <span>Sci</span>. <span>Cent</span>. <span>Ref</span>. <span>Doc</span>. 06-15</em>. Northeast <span>Fish</span>. <span>Sci</span>. <span>Cent</span>. <span>Ref</span>. <span>Doc</span>. Woods Hole, MA: US Dep. Commer., National Marine Fisheries Service.
@@ -2386,17 +2169,17 @@ Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. <span>“Dynamics of the Dire
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="epu.html"><span class="header-section-number">58</span> Ecological Production Units</a></div>
-<div class="next"><a href="glossary.html"><span class="header-section-number">60</span> Glossary</a></div>
+<div class="prev"><a href="epu.html"><span class="header-section-number">4</span> Ecological Production Units</a></div>
+<div class="next"><a href="glossary.html"><span class="header-section-number">6</span> Glossary</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#conceptual-models"><span class="header-section-number">59</span> Conceptual Models</a></li>
+<li><a class="nav-link" href="#conceptual-models"><span class="header-section-number">5</span> Conceptual Models</a></li>
 <li>
-<a class="nav-link" href="#methods-60"><span class="header-section-number">59.1</span> Methods</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#data-sources-64"><span class="header-section-number">59.1.1</span> Data sources</a></li>
-<li><a class="nav-link" href="#data-extraction-36"><span class="header-section-number">59.1.2</span> Data extraction</a></li>
-<li><a class="nav-link" href="#data-analysis-59"><span class="header-section-number">59.1.3</span> Data analysis</a></li>
+<a class="nav-link" href="#methods-3"><span class="header-section-number">5.1</span> Methods</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-sources-3"><span class="header-section-number">5.1.1</span> Data sources</a></li>
+<li><a class="nav-link" href="#data-extraction-3"><span class="header-section-number">5.1.2</span> Data extraction</a></li>
+<li><a class="nav-link" href="#data-analysis-3"><span class="header-section-number">5.1.3</span> Data analysis</a></li>
 </ul>
 </li>
 </ul>
