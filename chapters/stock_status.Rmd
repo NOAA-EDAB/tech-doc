@@ -1,0 +1,158 @@
+# Single Species Status Indicator {#stock_status}
+
+
+**Description**: Summary of the most recent stock assessment results for each assessed species.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Synthesis of published information (StockSMART)
+
+**Contributor(s)**: Sarah Gaichas, Andy Beet, Jeff Vieser, Chris Legault
+
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+
+**Public availability statement**: All stock assessment results are publicly available at https://apps-st.fisheries.noaa.gov/stocksmart?app=homepage. 
+.
+
+## Methods
+
+### Data sources
+<!--Please provide a text description of data sources, inlcuding primary collection methods. What equipment was used to turn signal to data? From which vessel were data collected and how? What quality control procedures were employed, if any?--> 
+
+"Data" used for this indicator are the outputs of stock assessment models and review processes, including reference points (proxies for fishing mortality limits and stock biomass targets and limits), and the current fishing mortality rate and biomass of each stock. These metrics are reported to the a national repository, [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage).
+
+
+### Data extraction
+
+Beginning in 2020 for the 2021 SOE, we used Andy Beet's [stocksmart package](https://github.com/NOAA-EDAB/stocksmart) to extract assessment results from [Stock SMART](https://www.st.nmfs.noaa.gov/stocksmart?app=homepage). 
+
+```{r}
+
+library(stocksmart)
+```
+
+
+Two data frames are in the `stocksmart` package, `stockAssessmentData` and `stockAssessmentSummary`.
+
+In `stockAssessmentData` we have time series. Columns are `r names(stockAssessmentData)` and the reported metrics are `r unique(stockAssessmentData$Metric)`. 
+
+
+```{r}
+
+DT::datatable(head(stockAssessmentData), rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+In `stockAssessmentSummary` we have assessment metadata. Columns are `r (names(stockAssessmentSummary))`.
+
+```{r}
+
+DT::datatable(head(stockAssessmentSummary), rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+For 2021-2023, `stocksmart` was updated with all current assessments, so data extraction was simply:
+
+```{r make-2021assess, eval=FALSE}
+assess2021 <- stockAssessmentSummary %>%
+  filter(`Science Center` == "NEFSC") %>%
+  select(c(`Stock Name`, Jurisdiction, FMP, `Science Center`, 
+           `Stock Area`, `Assessment Year`, `Last Data Year`,
+           `F Year`, `Estimated F`, Flimit, Fmsy, `F/Flimit`, 
+           `F/Fmsy`, Ftarget, `F/Ftarget`, `B Year`, `Estimated B`,
+           `B Unit`, Blimit, Bmsy, `B/Blimit`, `B/Bmsy`)) %>%
+  arrange(Jurisdiction, `Stock Name`, FMP, `Assessment Year`) %>%
+  rename(Entity.Name = `Stock Name`,
+         Assessment.Year = `Assessment Year`,
+         F.Fmsy = `F/Fmsy`,
+         B.Bmsy = `B/Bmsy`)
+write.csv(assess2021, here("assess.csv"))
+
+decode <- read.csv(here("2020decoder.csv"))
+  
+write.csv(decode, here("decoder.csv"))
+
+```
+
+Year-specific naming conventions for assess and decoder files were dropped in 2021 to facilitate future data updates.
+
+
+In 2020, assessment summary data were extracted from `stockAssessmentSummary` for 2019 and prior records, and the 2020 assessments results were added from the preliminary results provided by Jeff Vieser. 
+
+* The `assess.csv` fields used in previous years were recreated from stockSMART to include necessary metadata:
+
+```{r newassess, echo=TRUE, eval=FALSE}
+
+new2019assess <- stockAssessmentSummary %>%
+  filter(`Science Center` == "NEFSC") %>%
+  rename(Entity.Name = `Stock Name`) %>%
+  rename_all(list(~make.names(.)))
+
+```
+
+* Add 2020 assessments and write `2020assess.csv` data contribution:
+
+```{r addrow-replace, echo=TRUE, eval=FALSE}
+
+prelim2020 <- read.csv(here("NE Stock Assessment Results.csv")) %>%
+  filter(Assessment.Year == 2020) %>%
+  rename(Entity.Name = Stock,
+         FSSI.Stock. = FSSI,
+         Estimated.F = Best.F,
+         Estimated.B = Best.B,
+         Review.Result = Review.Type) %>%
+  select(-c(Year, Status.Stock., Record.Status, TimeSeries.Data.,
+            Survey.Links., Adequate, Minimum.F, Maximum.F,
+            Minimum.B, Maximum.B, 
+            Stock.Level.Relative.to.Bmsy:Decision.memo.related.to.inadequate.rebuilding.progress))
+
+
+update2020assess <- bind_rows(new2019assess, prelim2020)
+
+write.csv(update2020assess, here("2020assess.csv"))
+
+```
+
+The `decoder.csv` data contribution was updated in December 2020 to retain only Entity.Name, Council, and Code fields (used by `get_stocks`):
+
+```{r newdecoder, echo=TRUE, eval=FALSE}
+
+newdecoder <- read.csv(here("2019decoder.csv")) %>%
+  select(Entity.Name, Code, Council)
+
+write.csv(newdecoder, here("2020decoder.csv"))
+
+```
+
+
+For the 2017-2020 SOEs, each assessment document was searched to find the following information (often but not always summarized under a term of reference to determine stock status in the executive summary), and the spreadsheets were updated by hand:
+
+*    **Bcur**: current year biomass, (most often spawning stock biomass (SSB) or whatever units the reference points are in)
+
+*    **Fcur**: current year fishing mortality, F
+
+*    **Bref**: biomass reference point, a proxy of Bmsy (the target)
+
+*    **Fref**: fishing mortality reference point, a proxy of Fmsy
+
+### Data processing
+
+R code used to process the stock status data set for inclusion in the `ecodata` R package can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_stocks.R).
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section-->
+
+For the 2021 SOE to present, stockSMART variables `F/Fmsy` and `B/Bmsy` are renamed `F.Fmsy` and `B.Bmsy`, then plotted for each species on an x-y plot, where `B.Bmsy` is on the x axis and `F.Fmsy` is on the y axis. The code used to work up this data for the 2024 report can be found at https://sgaichas.github.io/stockstatusindicator/StockStatus2023.html. 
+
+
+2017-2020 SOEs: For each assessed species, Bcur is divided by Bref and Fcur is divided by Fref. They are then plotted for each species on an x-y plot, with Bcur/Bref on the x axis, and Fcur/Fref on the y axis. 
+
+<!--What packages or libraries did you use in your work flow?-->
+
+
+<!--Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.-->
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/stock_status.html>

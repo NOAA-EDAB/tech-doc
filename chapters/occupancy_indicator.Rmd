@@ -83,3 +83,6 @@ Prior to fitting the occupancy models, predictor variables were tested for multi
 
 #### Selection criteria and variable importance
 The `irr` R package [@irr] was used to calculate Area Under the ROC Curve (AUC) and Cohen's Kappa for assessing accuracy of occupancy habitat models. Variable importance was assessed by plotting the occurrence of a variable as a root variable versus the mean minimum node depth for the variable [@randomForestExplainer], as well as by plotting the Gini index decrease versus accuracy decrease.
+
+**catalog link**
+No associated catalog page

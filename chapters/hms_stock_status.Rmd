@@ -29,7 +29,7 @@ Stock status information was plotted on a Kobe chart using modified code from th
 
 
 The table below shows naming conventions used in the plot. 
-```{r}
+```{r stock-status, echo = F,eval = T}
 stock_status<-ecodata::hms_stock_status %>% 
   tidyr::separate(Var, c("Species_Abbreviation", "Common_Name"), ":") %>% 
   dplyr::select(Species_Abbreviation, Common_Name) %>% 
@@ -40,3 +40,6 @@ kable(stock_status)
 
 ### Data processing
 Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/hms_stock_status.html>

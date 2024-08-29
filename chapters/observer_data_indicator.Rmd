@@ -30,3 +30,6 @@ SQL query for observer data extraction can be found [here](https://github.com/NO
 
 ### Data analysis
 Time series were summed by year and plotted, and mapped data for individual records were plotted according to the location where gear was hauled. As coordinate data were not always available for each record, the map does not include all occurrences of southern kingfish, but was included for spatial context.
+
+**catalog link**
+No associated catalog page

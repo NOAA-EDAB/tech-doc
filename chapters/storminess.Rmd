@@ -34,7 +34,7 @@ Extractions were limited to the region bounded by 80°W, 50°N, 60°W, and 20°N
 Extraction code fetch_data.py is available at:  https://github.com/nrcc-cornell/regional-swh  
 Data were subset into five regions: southern Mid-Atlantic bight, northern Mid-Atlantic bight, Georges Bank, western Gulf of Maine, eastern Gulf of Maine.
 
-```{r, echo = F, fig.align="center", fig.cap=""}
+```{r storminess1, echo = F, fig.align="center", fig.cap=""}
 
 knitr::include_graphics(c(file.path(image.dir, "NEUS_regions.png")))
 
@@ -53,3 +53,6 @@ For wave height data, the same thresholds are used with the exception of gale_th
 The data were analyzed at their base 1-hour temporal and 30 km spatial resolutions.  At each gridpoint falling within a region (e.g. southern Mid-Atlantic bight) the raw data were screened to identify winds exceeding the gale threshold. Then each point was further analyzed to determine if at least 3 consecutive hours exceeded the threshold.  If more than 25% of the grid points within the region met these criteria, an event was indicated and the annual event tally for the region was increased by one, provided it was separated from a previous event by >96 hours. 
 
 Code used to process storminess data for inclusion in `ecodata` can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_storminess.R).
+
+**catalog page**
+No associated catalog page

@@ -1,0 +1,35 @@
+# Gray Seal Bycatch {#grayseal}
+
+
+**Description**: Gray Seal Bycatch Indicator
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
+
+**Indicator category**: Synthesis of published information; Published methods
+
+**Contributor(s)**: Kristin Precoda, Christopher D. Orphanides, Debra Palka
+  
+**Data steward**: Debra Palka <debra.palka@noaa.gov>
+
+**Point of contact**: Debra Palka <debra.palka@noaa.gov>
+
+**Public availability statement**: Source data are available in public [stock assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region).
+  
+
+## Methods
+
+
+### Data sources
+Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed in [Marine Mammal Protection Stock Assessments](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/northeast-fisheries-science-center-publications). 
+
+
+### Data extraction 
+Annual gillnet bycatch estimates are documented in the CRDs. These feed into the Stock Assessment Reports which report both the annual bycatch estimate and the mean 5-year estimate. 
+
+### Data analysis
+Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+
+Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_grayseal.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/grayseal.html>

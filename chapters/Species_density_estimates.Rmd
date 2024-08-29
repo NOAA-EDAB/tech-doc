@@ -16,7 +16,7 @@
 
 
 ## Methods
-We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (e.g. Figure \@ref(fig:kde-fig)). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
+We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (Figures not available). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
 
 Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. A wide array of KDEs for many ecologically and economically important species on the Northeast US Continental Shelf are available [here](https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html).
 
@@ -27,6 +27,7 @@ Current and historical species distributions are based on the NEFSC Bottom Trawl
 ### Data analysis
 
 Code used for species density analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_density_analysis.R). 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=F, echo=F}
 
-```
+
+**catalog link**
+No associated catalog page

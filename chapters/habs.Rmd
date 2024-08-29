@@ -1,0 +1,37 @@
+# Harmful Algal Bloom - Alexandrium Indicator {#habs}
+
+**Description**: *Alexandrium catenella* annual cyst abundance in the Gulf of Maine
+
+**Found In:**: Northeast U.S. Ecosystem Indicator Catalog
+
+**Indicator category**: Published methods, Database pull with analysis
+
+**Contributor(s)**: Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch, Silver Spring MD
+  
+**Data steward**: Moe Nelson <david.moe.nelson@noaa.gov>
+  
+**Point of contact**: Moe Nelson <david.moe.nelson@noaa.gov>
+
+**Public availability statement**: Source data are NOT publicly available. Data were provided upon request by Yizhen Li.  Data are also used in operational HAB forecast models, freely available to the public.
+
+
+## Methods
+### Data Sources
+
+*Alexandrium* cysts in sediments of the Gulf of Maine have been monitored through a cooperative effort of NOAA, WHOI, and other partners for over twenty years.  Sampling methods are described in @Anderson2005.  In the annual survey cruises, samples are obtained with a Craib corer, and *Alexandrium* cysts are counted from the top 1- cm of sediment layer. Results are extrapolated to estimate overall cyst abundance in the eastern, western, and entire Gulf of Maine.Results are reported as estimated total numbers of cells (10 to the 16th power) in Eastern Gulf of Maine (east of Penobscot Bay), Western Gulf of Maine (west of Penobscot Bay), Bay of Fundy (2003-2013 only), and entire Gulf of Maine.
+
+
+
+### Data Extraction
+Tabular data provided by Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch. 
+
+### Data Analysis
+
+The spatial distribution and abundance of cyst cells from the annual survey are used to drive an ecosystem forecast model for the Gulf of Maine (@Anderson2005, @Li2009, @Li2020, @McGillicuddy2011). The model also includes many other inputs of dynamic oceanographic data such as currents, temperature, and nutrients. Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/.
+
+### Data Processing
+
+Code for processing *Alexandrium* cyst data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/habs.html>

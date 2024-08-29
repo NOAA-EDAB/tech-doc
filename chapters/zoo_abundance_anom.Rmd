@@ -1,0 +1,56 @@
+# Zooplankton {#zoo_abundance_anom}
+
+**Description**: Annual time series of zooplankton abundance
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods
+
+**Contributor(s)**: Ryan Morse, Kevin Friedland
+  
+**Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>; Mike Jones, <michael.jones@noaa.gov>
+  
+**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>; Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data through 2019 are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/), and data through 2021 are available upon request from harvey.walsh@noaa.gov. Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html).
+
+## Methods
+
+### Data sources
+Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
+
+### Data extraction 
+Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on @Kane2007 and @Kane2011 in addition to other collection details.
+
+### Data analysis
+
+#### Annual abundance anomalies
+
+
+Data are processed similarly to @Kane2007 and @Perretti2017, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
+
+Code used for zooplankton data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R). 
+
+#### Copepod
+
+Abundance anomalies are computed from the expected abundance on the day of sample collection. Abundance anomaly time series are constructed for *Centropages typicus*, *Pseudocalanus* spp., *Calanus finmarchicus*, and total zooplankton biovolume. The small-large copepod size index is computed by averaging the individual abundance anomalies of *Pseudocalanus* spp., *Centropages hamatus*, *Centropages typicus*, and *Temora longicornis*, and subtracting the abundance anomaly of *Calanus finmarchicus*. This index tracks the overall dominance of the small bodied copepods relative to the largest copepod in the Northeast U.S. region, *Calanus finmarchicus*.
+
+#### Euphausiids and Cnidarians 
+
+Stratified abundance of euphausiids and cnidarians were included in the 2020 State of the Ecosystem reports. These were calculated as the log of estimated absolute number of individuals. 
+
+
+#### Seasonal abundance
+
+Time series of zooplankton abundance in the spring and fall months have been presented in the 2019 Mid-Atlantic State of the Ecosystem report. Raw abundance data were sourced from the EcoMon cruises referenced above, and ordinary kriging was used to estimate seasonal abundance over the Northeast Shelf. These data were then aggregated further into time series of mean abundance by Ecological Production Unit. 
+
+#### Zooplankton Diversity
+
+Time series of zooplankton diversity (effective shannon) was calculated using 42 zooplankton classifications collected fromt the EcoMon cruises, referenced above. 
+
+### Data processing
+
+Zooplankton abundances indicators were formatted for inclusion in the `ecodata` R package using the code at these links,  [abundance anomaly](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_abun_anom.R) and  [seasonal abundance](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_zoo_oi.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/zoo_abundance_anom.html>

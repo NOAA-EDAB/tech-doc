@@ -1,0 +1,56 @@
+# Recreational Fishing Indicators {#recdat}
+
+**Description**: A variety of indicators derived from MRIP Recreational Fisheries Statistics, including total recreational catch, total angler trips by region, annual diversity of recreational fleet effort, and annual diversity of managed species.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull with analysis
+  
+**Contributor(s)**: Geret DePiper, Scott Steinbeck
+  
+**Data steward**: Geret DePiper, <geret.depiper@noaa.gov>
+ 
+**Point of contact**: Geret DePiper, <geret.depiper@noaa.gov>
+
+**Public availability statement**: Data sets are publicly available (see Data Sources below).
+
+
+## Methods
+We use total recreational harvest as an indicator of seafood production and total recreational trips and total recreational anglers as proxies for recreational value generated from the Mid-Atlantic and New England regions respectively. We estimate both recreational catch diversity in species managed by the Fisheries Management Councils; Mid-Atlantic (MAFMC), New England (NEFMC) and Atlantic States (ASFMC), and fleet effort diversity using the effective Shannon index. 
+
+### Data sources
+All recreational fishing indicator data, including number of recreationally harvested fish, number of angler trips, and number of anglers, were downloaded from the Marine Recreational Information Program [MRIP Recreational Fisheries Statistics Queries](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) portal. Relevant metadata including information regarding data methodology updates are available at the query site. Note that 2017 data were considered preliminary at the time of the data pull. 
+
+Data sets were queried by region on the MRIP site, and for the purposes of the State of the Ecosystem reports, the "NORTH ATLANTIC" and "MID-ATLANTIC" regions were mapped to the New England and Mid-Atlantic report versions respectively. All query pages are accessible through the [MRIP Recreational Fisheries Statistics](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/queries/index) site. 
+
+The number of recreationally harvested fish was found by selecting "TOTAL HARVEST (A + B1)" on the [Catch Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page. Catch diversity estimates were also derived from the total catch time series (see below). Species included in the diversity of catch analysis can be found in Table \@ref(tab:rec-groups). The Mid-Atlantic Fishery Management Council asked that species managed by the South Atlantic Fishery Management Council be distinguished in the analysis of recreational species diversity. 
+
+
+```{r rec-groups, eval = T, echo = F}
+
+rec_spp <- read.csv(here::here("data","rec_spp_list.csv")) 
+
+knitr::kable(rec_spp, caption="Species included in recreational catch diversity analysis.") %>%
+  kableExtra::kable_styling(font_size = 8)
+```
+
+
+Angler trips (listed as "TOTAL" trips) were pulled from the MRIP [Effort Time Series Query](https://www.st.nmfs.noaa.gov/recreational-fisheries/data-and-documentation/run-a-data-query) page, and included data from 1981 - 2021. Time series of recreational fleet effort diversity were calculated from this data set (see below). The number of anglers was total number of anglers from the Marine Recreational Fishery Statistics Survey (MRFSS) Participation Time Series Query, and includes data from 1981 - 2016. 
+
+### Data analysis
+
+**Recreational fleet effort diversity**
+
+Code used to for effort diversity data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/rec_effort_div_analysis.R). 
+
+**Recreational catch diversity**
+
+Code used to for catch diversity data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/rec_catch_div_analysis.R). 
+
+
+### Data processing
+
+Recreational fishing indicators were formatted for inclusion in the `ecodata` R package using this [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_rec.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/recdat.html>

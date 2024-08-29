@@ -1,0 +1,45 @@
+# Chesapeake Bay Water Quality Standards Attainment {#ches_bay_wq}
+
+**Description**: A multimetric indicator describing the attainment status of Chesapeake Bay with respect to three water quality standards criteria, namely, dissolved oxygen, chlorophyll-a, and water clarity/submerged aquatic vegetation. 
+
+**Indicator category**: Published method; Database pull with analysis
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2019,2022)
+
+**Contributor(s)**: Qian Zhang, Richard Tian, and Peter Tango
+  
+**Data steward**: Qian Zhang, <qzhang@chesapeakebay.net>
+  
+**Point of contact**: Qian Zhang, <qzhang@chesapeakebay.net>
+  
+**Public availability statement**: Data are publicly available (see Data Sources below).
+
+## Methods
+
+To protect the aquatic living resources of Chesapeake Bay, the [Chesapeake Bay Program](https://www.chesapeakebay.net/) (CBP) partnership has developed a guidance framework of ambient water quality criteria with designated uses and assessment procedures for dissolved oxygen, chlorophyll-a, and water clarity/submerged aquatic vegetation (SAV) [@usepa2003]. To achieve consistent assessment over time and between jurisdictions, a multimetric indicator was proposed by the CBP partnership to provide a means for tracking the progress in all 92 management segments of Chesapeake Bay [@usepa2017]. This indicator has been computed for each three-year assessment period since 1985-1987, providing an integrated measure of Chesapeake Bay’s water quality condition over the last three decades.
+
+### Data sources
+
+The multimetric indicator required monitoring data on dissolved oxygen (DO) concentrations, chlorophyll-a concentrations, water clarity, SAV acreage, water temperature, and salinity. SAV acreage has been measured by the Virginia Institute of Marine Science in collaboration with the CBP, which is available via http://web.vims.edu/bio/sav/StateSegmentAreaTable.htm. Data for all other parameters were obtained from the [CBP Water Quality Database](http://www.chesapeakebay.net/data/downloads/cbp_water_quality_database_1984_present). These data have been routinely reported to the CBP by the Maryland Department of Natural Resources, Virginia Department of Environmental Quality, Old Dominion University, Virginia Institute of Marine Science, and citizen/volunteer monitoring initiatives.
+
+### Data analysis
+
+**Criteria attainment assessment**
+
+Monitoring data of DO, chlorophyll-a, and water clarity/SAV were processed and compared with water quality criteria thresholds according to different designated uses (DUs). These DUs are migratory spawning and nursery (MSN), open water (OW), deep water (DW), deep channel (DC), and shallow water (SW), which reflect the seasonal nature of water column structure and the life history needs of living resources. Station-level DO and chlorophyll-a data were spatially interpolated in three dimensions.
+
+Salinity and water temperature data were used to compute the vertical density structure of the water column, which was translated into layers of different DUs. Criteria attainment was determined by comparing violation rates over a 3-year period to a reference cumulative frequency distribution that represents the extent of allowable violation. This approach was implemented using FORTRAN codes, which are provided as a zipped folder. For water clarity/SAV, the single best year in the 3-year assessment period was compared with the segment-specific acreage goal, the water clarity goal, or a combination of both. For more details, refer to the Methods section of @zhang2018.
+
+**Indicator calculation**
+
+The multimetric indicator quantifies the fraction of segment-DU-criterion combinations that meet all applicable season-specific thresholds for each 3-year assessment period from 1985-1987 to 2017-2019. For each 3-year assessment period, all applicable segment-DU-criterion combinations were evaluated in a binomial fashion and scored 1 for “in attainment” and 0 for “nonattainment”. The classified status of each segment-DU-criterion combination was weighted via segments’ surface area and summed to obtain the multimetric index score. This weighting scheme was adopted for two reasons: (1) segments vary in size over four orders of magnitude, and (2) surface area of each segment does not change with time or DUs, unlike seasonally variable habitat volume or bottom water area [@usepa2017]. For more details, refer to the Methods section of @zhang2018.
+
+The indicator provides an integrated measure of Chesapeake Bay’s water quality condition (Figure 1). In 2017-2019, 33.1% of all tidal water segment-DU-criterion combinations are estimated to have met or exceeded applicable water quality criteria thresholds, which marks the best 3-year status since 1985-1987. The indicator has a positive and statistically significant trend from 1985-1987 to 2017-2019, which shows that Chesapeake Bay is on a positive trajectory toward recovery. This pattern was statistically linked to total nitrogen reduction, indicating responsiveness of attainment status to management actions implemented to reduce nutrients in the system. 
+Patterns of attainment of individual DUs are variable (Figure 2). Changes in OW-DO, DC-DO, and water clarity/SAV have shown long-term improvements, which have contributed to overall attainment indicator improvement. By contrast, the MSN-DO attainment experienced a sharp spike in the first few assessment periods but generally degraded after the 1997-1999, which has implications to the survival, growth, and reproduction of the migratory and resident tidal freshwater fish during spawning and nursery season in the tidal freshwater to low-salinity habitats. The status and trends of tidal segments’ attainment may be used to inform siting decisions of aquaculture operations in Chesapeake Bay.
+
+### Data processing
+
+The indicator data set was formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ches_bay_wq.R). 
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/ches_bay_wq.html>

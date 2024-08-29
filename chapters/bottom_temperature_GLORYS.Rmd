@@ -32,3 +32,6 @@ The GLORYS12V1 daily bottom temperature product was downloaded as a flat 8km gri
 ### Data processing
 
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
+
+**catalog link**
+<No associated catalog page>

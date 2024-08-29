@@ -1,0 +1,72 @@
+# Aquaculture {#aquaculture}
+
+**Description**: Aquaculture indicators
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
+
+**Indicator category**: Synthesis of published information
+
+**Contributor(s)**: Christopher Schillaci, Maine DMR, NH DES, MA DMF, RI CRMC, MD DNR
+  
+**Data steward**: Chris Schillaci <christopher.schillaci@noaa.gov>
+  
+**Point of contact**: Chris Schillaci <christopher.schillaci@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available
+
+
+
+## Methods
+
+### Data Sources 
+Data was synthesized from state specific sources, listed below. 
+
+* [State of Maine, Department of Marine Resources.](https://www.maine.gov/dmr/aquaculture/data/index.html)                
+
+* [State of New Hampshire, Marine Aquaculture Compendium](https://drive.google.com/file/d/1eCg0cP2rsjZ0AAloPuxIyDiA01urOcjR/view?usp=sharing)
+
+* [State of Massachusetts, Division of Marine Fisheries](https://www.mass.gov/service-details/dmf-annual-reports)
+
+* [State of Rhode Island, Coastal Resource Management Council](http://www.crmc.ri.gov/aquaculture.html)        
+
+* [State of Maryland, Aquaculture Coordinating Council](https://calendarmedia.blob.core.windows.net/assets/1495a281-9eab-422a-9f90-a16ac9686db8.pdf) 
+
+### Data Extraction/Analysis
+Production described as the number of oysters harvested is collected by individual states. This means that time series maybe vary by state. A table of start dates are shown below. Individual state information is available at the above links.  
+
+Only the New England State of the Ecosystem includes aquaculture information as there are reporting issues and many states are do not have available data in the Mid-Atlantic States.  
+
+| State         | Timeseries Start Year |
+|---------------|-----------------------|
+| Maine         | 2009  |
+| New Hampshire | 2013  |
+| Massachusetts | 2009  |
+| Rhode Island  | 2009  |
+| New Jersey    | 2012* |
+| Maryland      | 2012  |
+| Virginia      | 2009  |
+\* only includes data through 2016.
+
+No further analysis was conducted on these. 
+
+### Data processing
+
+Aquaculture data were formatted for inclusion in the `ecodata` R package using the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
+
+
+## Methods 2017-2019
+Aquaculture data included in the State of the Ecosystem (SOE) report were time series of number of oysters sold in Virginia, Maryland, and New Jersey. 
+
+
+### Data sources
+Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@Hudson2017a]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@ACC2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@Calvo2017]. 
+
+
+### Data extraction 
+Data were collected directly from state aquaculture reports. Oyster harvest data in MD was reported in bushels which were then converted to individual oysters by an estimate of 300 oysters bushel$^{-1}$. View processing code for this indicator [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_aquaculture.R).
+
+### Data analysis
+No data analyses occurred for this indicator.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/aquaculture.html>

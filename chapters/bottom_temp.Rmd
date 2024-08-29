@@ -1,0 +1,38 @@
+# Bottom temperature - in situ {#bottom_temp}
+
+**Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
+
+**Indicator category**: Extensive analysis; not yet published
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2019+); State of the Ecosystem - Mid-Atlantic Bight (2019+)
+
+**Contributor(s)**: Paula Fratantoni, paula.fratantoni@noaa.gov
+
+**Data steward**: Kimberly Bastille, kimberly.bastille@noaa.gov
+
+**Point of contact**: Paula Fratantoni, paula.fratantoni@noaa.gov
+
+**Public availability statement**: Source data are publicly available at ftp://ftp.nefsc.noaa.gov/pub/hydro/matlab_files/yearly and in the World Ocean Database housed at  http://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html under institute code number 258.
+
+## Methods
+
+### Data sources
+
+The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical  bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+
+### Data extraction
+
+While all processed hydrographic data are archived in an Oracle database (OCDBS), we work from Matlab-formatted files stored locally. 
+
+### Data analysis
+
+Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales.  Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four [Ecological Production Units](#epu) (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010.  The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by @mountain1991.  The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.
+
+
+### Data processing
+All temperature observations are subject to rigorous quality control protocols following community standards. Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges. Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes. We choose to use the up or down cast data depending on which is cleanest and based on the deployment method. Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software). Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity. 
+
+Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/bottom_temp.html>

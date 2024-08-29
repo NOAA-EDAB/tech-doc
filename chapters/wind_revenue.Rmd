@@ -1,0 +1,46 @@
+# Fisheries Revenue in Wind Development Areas {#wind_revenue}
+
+**Description**: Top Species Revenue from Wind Development Areas
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank 2022+ (Different Methods 2021), State of the Ecosystem - Mid-Atlantic 2022+ (Diferent Methods 2021)
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Benjamin Galuardi, Douglas Christel
+  
+**Data steward**: Doug Christel <douglas.christel@noaa.gov>
+  
+**Point of contact**: Doug Christel <douglas.christel@noaa.gov>
+  
+**Public availability statement**: Source data are NOT publicly available. Please email douglas.christel@noaa.gov for further information and queries of indicator source data.
+
+## Methods
+
+### Data Sources
+
+Modeled vessel trip report (VTR) data using the fishing footprint method (DePiper 2014 and Benjamin et al. 2017) linked with dealer reports for annual landings and revenue within wind lease areas and dealer report data for annual GARFO landings/revenue.
+
+
+### Data Analysis
+
+Using raster data of modeled VTR data using the Fishing Footprint method, we integrated dealer data and compared to existing/proposed wind lease areas to get landings/revenue in each area by year.  
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_revenue.R).
+
+## Methods 2021
+### Data Sources
+
+This indicator is derived from the data underpinning the "Sociceoeconomic Impacts of Atlantic Offshore Wind Development" web site, which can be accessed at https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development.
+
+The underlying raster data is defined in Benjamin S, Lee MY, DePiper G. 2018. Visualizing fishing data as rasters. NEFSC Ref Doc 18-12; 24 p.
+
+This raster data was then linked to the Greater Atlantic Regional Office's Data Matching Imputation System (https://www.fisheries.noaa.gov/inport/item/17328) to derive revenue estimates from the Wind Energy Areas, defined as of December 11, 2020. Of note is that the version of DMIS utilized for this reporting includes the SFCLAM data missing from the traditional DMIS dataset. All revenue estimates are deflated to 2019 dollars using the St. Louis Federal Reserve's Quarterly Implicit GDP Deflator, which can be accessed at https://fred.stlouisfed.org/data/GDPDEF.txt
+
+### Data Analysis
+Code used to analyze this data can be [found here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/WindRevenue_Code_for_Dissemination.R)
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wind_revenue.html>
+

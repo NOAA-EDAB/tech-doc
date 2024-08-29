@@ -1,0 +1,44 @@
+# Slopewater proportions {#slopewater}
+
+**Description**: Percent total of water type observed in the deep Northeast Channel (150-200 m water depth).
+
+**Indicator category**: Published methods
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2019+)
+
+**Contributors**: Paula Fratantoni, paula.fratantoni@noaa.gov; David Mountain, NOAA Fisheries, retired.
+
+**Data steward**: Kimberly Bastille, kimberly.bastille@noaa.gov
+
+**Point of contact**: Paula Fratantoni, paula.fratantoni@noaa.gov
+
+**Public availability statement**: Source data are publicly available at ftp://ftp.nefsc.noaa.gov/pub/hydro/matlab_files/yearly and in the World Ocean Database housed at  http://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html under institute code 258
+
+## Methods
+
+### Data sources
+
+The slope water composition index incorporates temperature and salinity measurements collected on Northeast Fisheries Science Center surveys between 1977-present within the geographic confines of the Northeast Channel in the Gulf of Maine.  Early measurements were made using water samples collected primarily with Niskin bottles at discreet depths, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  
+
+### Data extraction
+
+While all processed hydrographic data are archived in an Oracle database (OCDBS), we work from Matlab-formatted files stored locally. 
+
+### Data analysis
+
+Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel.  The analysis closely follows the methodology described by @mountain2012.   This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia. 
+
+For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` latitude north and 66-66.8`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated.    The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting.  The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.  
+
+The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=10 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=35), (2) Labrador Slope Water (T=6 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=34.7) and (3) Scotian Shelf Water (T=2 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=32).  As described by @mountain2012, the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm.  On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram.  Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement.  As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources).  This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources.  Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.
+
+It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant.  In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes.  Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank.  These sources are not explicitely considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates.  Code used to calculate slopewater proportions can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/slopewater_analysis.R).
+
+
+
+### Data processing
+
+Source data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_slopewater.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/slopewater.html>

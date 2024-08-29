@@ -1,3 +1,34 @@
+bookdown::bs4_book:
+  split_bib: true
+  css: style.css
+  theme:
+    primary: "#4D6F8D"
+  repo: https://github.com/NOAA-EDAB/tech-doc
+
+bookdown::gitbook:
+  css: style.css
+  # includes:
+  #   in_header: [ga_script.html]
+  config:
+    # toc:
+    #   collapse: section
+    #   before: |
+    #     <li><a href="./">Mastering Shiny</a></li>
+    edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+    download: []
+    sharing:
+      facebook: no
+      twitter: no
+      github: yes
+      all: []
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
+
 # bookdown::gitbook:
 #   lib_dir: asset
 #   css: css/style.css
@@ -20,17 +51,17 @@
   
   
   
-bookdown::gitbook:
-  css: css/style.css
-  config:
-    toc:
-      collapse: section
-      before: |
-        <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
-      after: |
-        <li><a href="https://github.com/NOAA-EDAB/tech-doc"></a></li>
-        <li><a href="./"Published with bookdown</a></li>
-    edit:
-      link: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
-bookdown::pdf_book:
-  keep_tex: yes
+#bookdown::gitbook:
+#  css: css/style.css
+#  config:
+#    toc:
+#      collapse: section
+#      before: |
+#        <li><a href="./">Technical Documentation, State of the Ecosystem Report</a></li>
+#      after: |
+#        <li><a href="https://github.com/NOAA-EDAB/tech-doc"></a></li>
+#        <li><a href="./"Published with bookdown</a></li>
+#    edit:
+#      link: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+#bookdown::pdf_book:
+#  keep_tex: yes

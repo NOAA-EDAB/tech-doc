@@ -1,0 +1,47 @@
+# Long-term Sea Surface Temperature {#long_term_sst}
+
+
+**Description**: Long-term sea-surface temperatures
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Kevin Friedland
+  
+**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+  
+**Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html).
+
+
+## Methods
+Data for long-term sea-surface temperatures were derived from the Noational Oceanographic and Atmospheric Administration (NOAA) extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+
+
+### Data sources
+This indicator is derived from the [NOAA ERSST V5 dataset](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html) [@Huang2017].
+
+
+### Data extraction 
+
+```{r coordinates, echo = F, eval = T, results='asis'}
+df <- data.frame(  
+  Longitude = c(-74,-74,-72,-70,-70,-70,-68,-68),
+  Latitude = c(40,38,40,44,42,40,44,42)
+)
+
+knitr::kable(df,
+             caption="Coordinates used in NOAA ERSST V5 data extraction.",  booktabs=T) #%>%
+  #kableExtra::kable_styling(full_width = F) 
+```
+
+R code used in extracting time series of long-term SST data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/long-term-sst-extraction.R).
+
+### Data Processing
+
+Data were formatted for inclusion in the `ecodata` R package with the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_long_term_sst.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/long_term_sst.html>

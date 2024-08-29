@@ -130,13 +130,13 @@ region_abbr <- "MA"
 (ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
-```{r neusmap, message = FALSE, warning=FALSE, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap)'}
+```{r neusmap, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F, fig.cap='(ref:neusmap)'}
 knitr::include_graphics("images/journal.pone.0146756.g002.PNG")
 
 ```
 
 
-The table below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
+The list below shows which versions of all related products correspond to a specific State of the Ecosystem report cycle. The reports and supporting products including the technical documentation are developed annually. The DOI links will be included once they are available so may lag. 
 
 **DOIs**
 *  [MAFMC SOE 2020](https://doi.org/10.25923/1f8j-d564) 
@@ -147,7 +147,10 @@ The table below shows which versions of all related products correspond to a spe
 *  [Technical Documentation SOE 2021](https://repository.library.noaa.gov/view/noaa/29277) 
 *  [MAFMC SOE 2022](https://doi.org/10.25923/5s5y-0h81) 
 *  [NEFMC SOE 2022](https://doi.org/10.25923/ypv2-mw79) 
-*  [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10) 
+*  [Technical Documentation SOE 2022](https://doi.org/10.25923/xq8b-dn10)
+*  [MAFMC SOE 2023](https://doi.org/10.25923/vy6j-w454) 
+*  [NEFMC SOE 2023](https://doi.org/10.25923/9sb9-nj66) 
+*  [Technical Documentation SOE 2023](https://doi.org/10.25923/5scc-rm92)
 
 
 

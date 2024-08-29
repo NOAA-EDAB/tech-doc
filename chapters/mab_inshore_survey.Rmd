@@ -1,0 +1,58 @@
+# Inshore bottom trawl surveys {#mab_inshore_survey}
+
+**Description**: Inshore surveys include the Northeast Area Monitoring and Assessment Program (NEAMAP) survey, Massachusetts Division of Marine Fisheries Bottom Trawl Survey, and Maine/New Hampshire Inshore Trawl Survey. 
+
+**Indicator category**: Database pull with analysis
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2019+), State of the Ecosystem - New England (2019+)
+
+**Contributor(s)**: James Gartland, Matt Camisa, Rebecca Peters, Sean Lucey
+  
+**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+  
+**Points of contact**: James Gartland (NEAMAP), <jgartlan@vims.edu>; Rebecca Peters (ME/NH survey), <rebecca.j.peters@maine.gov>; Sean Lucey (MA Inshore Survey), <sean.lucey@noaa.gov>
+  
+**Public availability statement**: Data are available upon request. 
+
+## Methods
+
+### Data Sources
+
+All inshore bottom trawl survey data sets were derived from raw survey data. NEAMAP source data are available for download [here](https://www.vims.edu/research/departments/fisheries/programs/multispecies_fisheries_research/abundance_indices/index.php). More detailed information describing NEAMAP survey methods is available on the [NEAMAP website](http://neamap.net). ME/NH inshore survey data are available upon request (see Points of Contact). Technical documentation for ME/NH survey methods and survey updates are made available through the [Maine Department of Marine Resources](https://www.maine.gov/dmr/science-research/projects/trawlsurvey/index.html). Data from the MA Inshore Bottom Trawl Survey are stored on local servers at the Northeast Fisheries Science Center (Woods Hole, MA), and are also available upon request. More information about the MA Inshore Bottom Trawl Survey is available [here](https://www.mass.gov/service-details/review-trawl-survey-updates).
+
+### Data extraction
+
+Source data from the Massachusetts DMF Bottom Trawl Survey were extracted using this [R script](https://github.com/slucey/RSurvey/blob/master/Mass_survey.R).
+
+### Data Processing
+
+The following R code was used to process inshore bottom trawl data into the `ecodata` R package.  
+
+**New England**
+
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_inshore_survdat.R
+
+**Massachusetts**
+
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mass_inshore_survey.R
+
+**Mid-Atlantic (NEAMAP)**
+
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mab_inshore_survey.R
+
+### Data Analysis
+
+Biomass indices were provided as stratified mean biomass (kg `r ifelse(knitr::is_latex_output(), 'tow\\textsuperscript{-1}', 'tow<sup>-1</sup>')`) for all inshore surveys. Time series of stratified mean biomass were calculated for ME/NH and NEAMAP surveys through the following procedure:
+
+1. All species catch weights were summed for each tow and for each feeding guild category. 
+2. The average weight per tow, associated variances and standard deviation for each survey, region, stratum, and feeding guild was calculated.
+3. Stratified mean biomass was then calculated as the sum of the weighted averages of the strata, where the weight of a given stratum was the proportion of the survey area accounted for by that stratum. 
+
+Stratified mean biomass was also calculated for the MA Inshore Bottom Trawl Survey. These calculations followed those used to find stratified mean biomass by feeding guild in the NEFSC Bottom Trawl Survey and are described in greater detail [here](#survdat). The R code used to derive the stratified mean biomass indices for MA Inshore time series is provided below. 
+
+R code used for analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/inshore_survey_analysis.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/mab_inshore_survey.html>
+<https://noaa-edab.github.io/catalog/mass_inshore_survey.html>
+<https://noaa-edab.github.io/catalog/ne_inshore_survey.html>

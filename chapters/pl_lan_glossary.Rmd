@@ -49,6 +49,9 @@ A specific geographic region of similar physical features and plankton character
 **Ecosystem Assessment:**
 A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers [@unfao]. 
 
+**Ecosystem Reorganization:**
+Regime shifts and changes in how the multiple system drivers interact can result in ecosystem reorganization as species and humans respond and adapt to the new environment.
+
 **Effort:**
 The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower [@wallace1994]. 
 
@@ -140,6 +143,9 @@ Warm-blooded animals that live in marine waters and breathe air directly. These 
 **Mortality Event: **
 The death of one or more individuals of a species. 
 
+**Multiple System Drivers:**
+Societal, biological, physical and chemical factors comprise the multiple system drivers that influence marine ecosystems through a variety of different pathways. These drivers affect fishery management objectives such as seafood production and recreational opportunities, as well as other ecosystem services we derive from the ocean.
+
 **Northeast Shelf:**
 The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The region  spans from Cape Hatteras, NC to Nova Scotia and includes the waters between the eastern coastline of the U.S and the continental shelf break. 
 
@@ -182,6 +188,9 @@ Fishing for fun or competition instead of profit like a commercial fishery. Incl
 **Recruitment:**
 The number of young fish entering the population each year at the age first caught in fishing/survey gear.
 
+**Regime Shift:**
+Large, abrupt and persistent change in the structure and function of an ecosystem.
+
 **Revenue:**
 The dollar value commercial fishermen receive for selling landed fish. 
 
@@ -221,7 +230,7 @@ Plankton consisting of small animals and the immature stages of larger animals, 
 (ref:neusmap1) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
 
 
-```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap1)'}
+```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center', out.width="75%", echo = F, fig.cap='(ref:neusmap1)'}
 knitr::include_graphics(here::here("images/journal.pone.0146756.g002.PNG"))
  
 ```

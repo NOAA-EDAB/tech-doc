@@ -1,0 +1,45 @@
+# Fish Condition Indicator {#condition}
+
+**Description**: Relative condition
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Laurel Smith
+  
+**Data steward**: Laurel Smith, <laurel.smith@noaa.gov>
+  
+**Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
+  
+**Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://github.com/Laurels1/Condition/tree/master/data).
+
+
+## Methods
+Relative condition (Kn) was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
+$$Kn = W/W',$$ where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn bottom trawl survey, from 1992-present. 
+
+
+For this work, length-weight coefficients from @Wigley2003 were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution. 
+
+The `Condition` package used for calculations and plotting of fish condition factor can be found on [GitHub](https://github.com/Laurels1/Condition).
+
+### Data sources
+Individual fish lengths (to the nearest 0.5 cm) and weights (grams) were collected on the NEFSC bottom trawl surveys from 1992-present aboard RVs Albatross IV, Delaware II and the Henry B. Bigelow  (see [Survdat](#survdat)). A small number of outlier values were removed when calculating the length-weight parameters.
+
+### Data extraction
+Data were extracted from NEFSC's survey database (SVDBS) using the R script found [here](https://github.com/Laurels1/Condition/blob/master/R/pull_from_svdbs.R) 
+
+### Data analysis
+
+Relative condition is calculated by fish species and EPU as ($Kn$ formula found above) where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Predicted weight was calculated as: 
+
+$$\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},$$
+
+where $Fall coef$ and $Fall exp$ are from @Wigley2003.
+ 
+
+The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R) was used in the analysis of fish condition.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/condition.html>

@@ -1,0 +1,33 @@
+# Right Whale Abundance {#narw}
+
+
+**Description**: Right Whale
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Synthesis of published information; Published methods
+
+**Contributor(s)**: Debra Palka
+  
+**Data steward**: Debra Palka, debra.palka@noaa.gov
+  
+**Point of contact**: Daniel Linden, daniel.linden@noaa.gov
+  
+**Public availability statement**: Source data are available from the New England Aquarium upon request. Derived data are available [here](http://comet.nefsc.noaa.gov/erddap/tabledap/protected_species_soe_v1.html).
+
+## Methods
+
+### Data sources
+The North Atlantic right whale abundance estimates were taken from a published document [see @Linden_pop_2023].
+
+Calves birth estimates are available in @Pace2017, with more recent years shared [here](https://www.fisheries.noaa.gov/gallery/north-atlantic-right-whale-calving-season-archive).
+
+### Data extraction 
+Data were collected from existing reports and validated by report authors. 
+
+### Data analysis
+Analysis for right whale abundance estimates is based on methods by @Pace2017, as documented most recently by @Linden_pop_2023. Data and code can be found in the following Github repository: [NEFSC/PSD-NARW_popsize](https://github.com/NEFSC/PSD-NARW_popsize). 
+
+### Data processing
+
+Time series of right whale  and calf abundance estimates were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_narw.R).

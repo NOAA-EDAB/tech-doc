@@ -42,3 +42,6 @@ Diet and productivity data were formatted for inclusion in the `ecodata` R packa
 Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@R-vegan]. Code for this calculation can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/seabird_ne_div_analysis.R). Diet diversity is presented along with nest productivity (+/- 1 SE).
 
 Code used to create the figures below can be found at these links, [diet diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-tern-diet-diversity.R), [prey frequencies](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R) and [common tern productivity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-aggregate-prod.R)
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/seabird_ne.html>

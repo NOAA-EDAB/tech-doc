@@ -32,3 +32,6 @@ Analysis was recreated from @friedland2015.
 ### Data Processing
 
 The Transiton Date indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_transition_dates.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/trans_dates.html>

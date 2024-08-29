@@ -1,0 +1,60 @@
+# MAFMC ABC/ACL and Catch {#abc_acl}
+
+**Description**: The catch limit (either ABC or ACL) and total catch from 2012 - present for all MAFMC species and sector (commercial or recreational), if appropriate.
+
+**Found in**:  State of the Ecosystem - Mid-Atlantic (2022) 
+
+**Indicator category**: Synthesis of published information, Database pull
+
+**Contributor(s)**: Jessica Coakley, Kiley Dancy, Jose Montanez, Julia Beaty, Karson Coutre, Jason Didden
+  
+**Data steward**: Brandon Muffley <bmuffley@mafmc.org>
+  
+**Point of contact**: Brandon Muffley <bmuffley@mafmc.org>
+  
+**Public availability statement**: Source data are publicly available
+
+## Methods
+
+### Data Sources
+
+These data were compiled from MAFMC [Fishery Information Documents](https://www.mafmc.org/fishery-performance-reports), Stock Assessment reports, [SSC reports](https://www.mafmc.org/ssc), GARFO catch/landings database, and MRIP queries. 
+
+### Data Analysis
+
+Each stock has a threshold and catch value assigned to it from the sources above. The table below shows where the information comes from for each stock. 
+
+|  Stock            | Fishery      |  Catch Threshold |  
+|-------------------|--------------|------------------|
+| Ocean Quahog      | Commercial   | ABC |
+| Surfclam          | Commercial   | ABC |
+| Summer Flounder   | Recreational | ABC |
+| Summer Flounder   | Commercial   | ABC |
+| Scup              | Recreational | ABC |
+| Scup              | Commercial   | ABC |
+| Atlantic Mackerel | Recreational | ABC |
+| Atlantic Mackerel | Commercial   | ABC |
+| Black Sea Bass    | Recreational | ABC |
+| Black Sea Bass    | Commercial   | ABC |
+| Butterfish        | Commercial   | ABC |
+| Longfin Squid     | Commercial   | ABC |
+| Illex Squid       | Commercial   | ABC |
+| Golden Tilefish   | Commercial   | TAL |
+| Blueline Tilefish | Recreational | ABC |
+| Blueline Tilefish | Commercial   | ABC |
+| Bluefish          | Both         | ABC |
+| Spiny Dogfish     | Both         | ABC | 
+| Chub Mackerel     | Both         | ACL |
+
+
+
+Allowable Biological Catch (ABC) for each managed stock is set by the MAFMC Science and Statistical Committee(SSC), Annual Catch Limit (ACL) (if appropriate) is developed by the Council; recreational data come from [MRIP](https://www.fisheries.noaa.gov/topic/recreational-fishing-data) (Marine Recreational Information Program), commercial catch from either the NEFSC assessment lead or GARFO database. 
+
+Each species, depending upon data availability, sectors, fleets etc., goes through a different data processing process. 
+
+### Data Processing 
+
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/abc_acl.html>

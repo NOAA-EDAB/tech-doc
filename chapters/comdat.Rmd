@@ -1,0 +1,87 @@
+# Commercial Landings Data {#comdat}
+
+**Description**: Commercial landings data pull
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Andy Beet
+
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
+
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
+
+**Public availability statement**: Raw data are not publicly available due to confidentiality of individual fishery participants.
+
+## Methods
+
+Fisheries dependent data for the Northeast Shelf extend back several decades. Data from the 1960s are housed in the Commercial database (CFDBS) of the Northeast Fisheries Science Center which contains the commercial fisheries dealer purchase records (weigh-outs) collected by National Marine Fisheries Service (NMFS) Statistical Reporting Specialists and state agencies from Maine to Virginia. The data format has changed slightly over the time series with three distinct time frames as noted in Table \@ref(tab:calibration1) below.
+
+```{r calibration1, eval = T, echo = F}
+com.tables <- data.frame(Table = c('WOLANDS', 'WODETS', 'CFDETS_AA'),
+                         Years = c('1964 - 1981', '1982 - 1993', '> 1994'))
+knitr::kable(com.tables, caption="Data formats", booktabs = T) #%>% 
+  #kableExtra::kable_styling(full_width = F)
+
+```
+
+The landings records data are pulled from the Commercial database from 1964 to present year and algorithm is applied to associate landings that are not allocated to a statistical area using similar characteristics of the trip to trips with known areas. Foreign landings are then pulled from the Northwest Atlantic Fisheries Organization ([NAFO](https://www.nafo.int/)) website and merged with domestic landings.
+
+```{r StatAreaMap, fig.cap="Map of the Greater Atlantic Region Statistical Areas.  Colors represent the Ecological Production Unit (EPU) with which the statistical area is associated.", echo=F, eval=T, out.width = "50%", fig.align = "center"}
+
+image.dir <- here::here('images')
+
+knitr::include_graphics(file.path(image.dir, 'Stat_Area_Map.jpg'))
+```
+
+The R package [`comlandr`](https://noaa-edab.github.io/comlandr/) is used to pull the data. Specifically, the package pulls the temporal and spatial information as well as vessel and gear characteristics associated with the landings in addition to the weight, value, and utilization code of each species in the landings record. The package allows for landed weights as well as live weights. For all but shellfish species, live weights are used for the State of the Ecosystem report. Landings are aggregated by species, utilization code, and area as well as by month, gear, and tonnage class. All weights are then converted from pounds to metric tons. Landings values are also adjusted for inflation using the Producer Price Index by Commodity for Processed Foods and Feeds: Unprocessed and Packaged Fish. Inflation is based on January of the terminal year of the data pull ensuring that all values are in current dollar prices.
+
+```{r geartypes, eval = T, echo = F}
+
+gear.table <- data.frame('gear code' = c(1,2,3,4,5,6,7,8,9),
+                         'Major gear' = c('Otter Trawls', 'Scallop Dredges',
+                                        'Other Dredges', 'Gillnets', 'Longlines',
+                                        'Seines', 'Pots/Traps', 'Midwater', 'Other'))
+names(gear.table) <- c("","Major gear")
+
+
+knitr::kable(gear.table, caption = "Gear types used in commercial landings",  booktabs=T)# %>%
+  #kableExtra::kable_styling(full_width = F)
+```
+
+Several species have additional steps after the data is pulled from CFDBS. Skates are typically landed as a species complex. In order to segregate the catch into species, the ratio of individual skate species in the NEFSC bottom trawl survey is used to disaggregate the landings. A similar algorithm is used to separate silver and offshore hake which can be mistaken for one another. Finally, Atlantic herring landings are pulled from a separate database as the most accurate weights are housed by the State of Maine. The `comlandr` package pulls from the State database and replaces the less accurate numbers from the federal database.
+
+The majority of landings data are associated with a Greater Atlantic Region Statistical Areas (Figure \@ref(fig:StatAreaMap)). For those that are not, the package attempts to assign them to an area using similar characteristics of trips where the area is known. To simplify this task, landings data are further aggregated into quarter and half year, small and large vessels, and eight major gear categories (Table \@ref(tab:geartypes)). Landings are then proportioned to areas that meet similar characteristics based on the proportion of landings in each area by that temporal/vessel/gear combination. If a given attribute is unknown, the algorithm attempts to assign it one, once again based on matched characteristics of known trips. Statistical areas are then assigned to their respective [Ecological Production Unit](#epu) (Table \@ref(tab:statareas)).
+
+```{r statareas, eval = T, echo = F}
+area.table <- data.frame(EPU = c('Gulf of Maine', 'Georges Bank', 'Mid-Atlantic'),
+                         'Stat Areas' = c('500, 510, 512, 513, 514, 515',
+                                        '521, 522, 523, 524, 525, 526, 551, 552, 561, 562',
+                                        '537, 539, 600, 612, 613, 614, 615, 616, 621, 622, 625, 626, 631, 632'))
+names(area.table) [2]<-  "Stat Areas"
+kable(area.table, caption = "Statistical areas making up each EPU") %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+The final step is to pull the foreign landings from the [NAFO database](https://www.nafo.int/Data/). US landings are removed from this extraction so as not to be double counted. NAFO codes and CFDBS codes differ so the package rectifies those codes to ensure that the data is seamlessly merged into the domestic landings. Foreign landings are flagged so that they can be removed if so desired.
+
+### Data sources
+
+A database query of the NEFSC commercial fishery database (CFDBS). More information about the CFDBS is available [here](https://inport.nmfs.noaa.gov/inport/item/27401).
+
+### Data extraction
+
+[`comlandr`](https://noaa-edab.github.io/comlandr/) is an R package used to extract relevant data from the database.
+
+#### Data Processing
+
+The landings data were formatted for inclusion in the [`ecodata`](https://noaa-edab.github.io/ecodata/) R package
+
+### Data analysis
+
+Fisheries dependent data is used in several indicators for the State of the Ecosystem report; the more complicated analyses are detailed in their own sections (ie. [bennet index](#bennet)). The most straightforward use of this data are the region total and aggregate landings indicators. Regional totals sum landings three ways: 1) All landings regardless of management authority and eventual use (i.e. food or bait), 2) All landings used for seafood but regardless of management authority, and 3) All landings used for seafood and managed by the regional fisheries management council for whom the report is presented.
+
+Landings are also calculated by aggregate groups per region. These are calculated by first assigning the various species into [aggregate groups](#species_groupings). Landings are then summed by year, [EPU](#epu), aggregate group, and whether they are managed by the regional fisheries management council or not. Proportions of managed landings to total landings are also calculated and have been reported in some reports.
+
+**catalog link** <https://noaa-edab.github.io/catalog/comdat.html>

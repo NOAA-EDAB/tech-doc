@@ -1,0 +1,38 @@
+# Chesapeake Bay Salinity and Temperature {#ch_bay_sal}
+
+**Description**: Chesapeake Bay Salinity and Temperature
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2020+)
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Bruce Vogt, Charles Pellerin
+  
+**Data steward**: Charles Pellerin, <charles.pellerin@noaa.gov>
+  
+**Point of contact**: Bruce Vogt, <bruce.vogt@noaa.gov> 
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+
+### Data sources
+The National Oceanic and Atmospheric Administration’s (NOAA) Chesapeake Bay Interpretive Buoy System ([CBIBS](https://buoybay.noaa.gov/data)) is a network of observing platforms (buoys) that collect meteorological, oceanographic, and water-quality data and relay that information using wireless technology. The stations have been in place since 2007. The Sting Ray station was deployed in July of 2008 and has been monitoring conditions on and off since then. The data is recorded in situ and sent to a server over a cellular modem. 
+
+The standard CBIBS instrument is a WETLabs WQM (water quality monitor) mounted in the buoy well approximately 0.5 meters below the surface. Seabird purchased WETLabs and are now the manufacturer of the instruments. The WQM instruments are calibrated and swapped out on a regular basis. Salinity is stored as a `double` with the units of PSU.
+
+### Data extraction 
+Data is directly inserted into a database from the real time system over the cellular network. The general public can use [this link](https://buoybay.noaa.gov/observations/data-download) to explore and pull that data from the CBIBS database. The process for data extraction for this indicator can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_extraction.txt).
+
+
+### Data analysis
+The data is processed with a [python script](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py). This creates an array and runs the data through a [QARTOD](https://ioos.noaa.gov/project/qartod/) (Quality Assurance/Quality Control of Real-Time Oceanographic Data) routine. The result is a set of flags. Only the good data is used in the plot below.
+
+The stations include annapolis ([AN](https://buoybay.noaa.gov/locations/annapolis)), goose reef ([GR](https://buoybay.noaa.gov/locations/gooses-reef)), potomac ([PL](https://buoybay.noaa.gov/locations/potomac)), and york-split ([YS](https://buoybay.noaa.gov/locations/york-spit)). 
+
+### Data processing
+Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ch_bay_sal.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/ch_bay_sal.html>
