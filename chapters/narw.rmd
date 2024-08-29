@@ -1,13 +1,6 @@
 # Right Whale Abundance {#narw}
 
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: Right Whale
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)

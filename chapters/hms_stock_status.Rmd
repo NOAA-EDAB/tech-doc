@@ -29,7 +29,7 @@ Stock status information was plotted on a Kobe chart using modified code from th
 
 
 The table below shows naming conventions used in the plot. 
-```{r}
+```{r stock-status, echo = F,eval = T}
 stock_status<-ecodata::hms_stock_status %>% 
   tidyr::separate(Var, c("Species_Abbreviation", "Common_Name"), ":") %>% 
   dplyr::select(Species_Abbreviation, Common_Name) %>% 

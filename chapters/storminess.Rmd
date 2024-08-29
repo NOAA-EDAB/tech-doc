@@ -34,7 +34,7 @@ Extractions were limited to the region bounded by 80°W, 50°N, 60°W, and 20°N
 Extraction code fetch_data.py is available at:  https://github.com/nrcc-cornell/regional-swh  
 Data were subset into five regions: southern Mid-Atlantic bight, northern Mid-Atlantic bight, Georges Bank, western Gulf of Maine, eastern Gulf of Maine.
 
-```{r, echo = F, fig.align="center", fig.cap=""}
+```{r storminess1, echo = F, fig.align="center", fig.cap=""}
 
 knitr::include_graphics(c(file.path(image.dir, "NEUS_regions.png")))
 

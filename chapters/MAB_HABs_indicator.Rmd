@@ -1,13 +1,5 @@
 # Harmful Algal Bloom Indicator - Mid Atlantic
 
-```{r, echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
-
 **Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2018)

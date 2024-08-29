@@ -34,7 +34,7 @@ NA
 The red vertical lines indicate the years in which a shift occurs. 
 
 **Example plot**
-```{r , echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r explot, echo = F, fig.align="center", eval = T, fig.cap=""}
 
 lt_sst <- ecodata::long_term_sst %>% 
   dplyr::mutate(hline = mean(Value, na.rm = TRUE))
