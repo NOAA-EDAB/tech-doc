@@ -179,6 +179,851 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
+# (PART\*) General Methods {.unnumbered}
+
+<!--chapter:end:chapters/sectionHeaders/methods.rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Data and Code Access {#erddap}
+
+### About
+
+The Technical Documentation for the State of the Ecosystem (SOE) reports is a [bookdown](https://bookdown.org) document; hosted on the NOAA Northeast Fisheries Science Center (NEFSC) Ecosystems Dynamics and Assessment Branch [Github page](https://github.com/NOAA-EDAB), and developed in R. Derived data used to populate figures in this document are queried directly from the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package or the NEFSC [ERDDAP server](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000). ERDDAP queries are made using the R package [rerddap](https://cran.r-project.org/web/packages/rerddap/vignettes/Using_rerddap.html).  
+
+```{r global-opts1, echo = FALSE}
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
+```
+### Accessing data and build code
+
+In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled "Plotting", and these code chunks can be used to recreate the figures found in ecosystem reporting documents where each respective indicator was included[^1].
+
+Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators presented in ecosystem reporting documents, and these data sets are available for download through the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package. 
+
+### Building the document
+
+Start a local build of the SOE bookdown document by first cloning the project's associated [git repository](https://github.com/NOAA-EDAB/tech-doc). Next, if you would like to build a past version of the document, use `git checkout [version_commit_hash]` to revert the project to a past commit of interest, and set `build_latest <- FALSE` in this [code chunk](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/erddap_query_and_build_code.R). This will ensure the project builds from a cached data set, and not the most updated versions present on the NEFSC ERDDAP server. Once the `tech-doc.Rproj` file is opened in RStudio, run `bookdown::serve_book()` from the console to build the document. 
+
+#### A note on data structures
+
+The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/ecodata/tree/master/R)).
+
+[^1]: There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/get_erddap.R). The scripts `BasePlot_source.R` and `GIS_source.R` refer to deprecated code used prior to the 2019 State of the Ecosystem reports. Indicators that were not included in reports after 2018 make use of this syntax, whereas newer indicators typically use `ggplot2` for plotting.
+
+**catalog link**
+No associated catalog page
+
+<!--chapter:end:chapters/erddap_query_and_build.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Trend Analysis
+
+
+**Description**: Time series trend analysis
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sean Hardison, Charles Perretti, Geret DePiper
+
+**Data steward**: NA
+
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+
+**Public availability statement**: NA
+
+
+## Methods
+Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations [see @Nicholson2004; @Wagner2013; @VonStorch1999a].  Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p < 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in State of the Ecosystem (SOE) indicators.
+
+In a simulation study [@hardison2019], we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods: a generalized least squares model selection approach, the Mann-Kendall test, and Mann-Kendall test with trend-free pre-whitening. Methods were applied to simulated time series of varying trend and autocorrelation strengths. Overall, when sample size was low (N = 10) there were high rates of false trend detection, and similarly, low rates of true trend detection. Both of these forms of error were further amplified by autocorrelation in the trend residuals. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend.
+
+We also chose to use a GLS model selection (GLS-MS) approach to evaluate indicator trends in the 2018 (and future) State of the Ecosystem reports, as this approach performed best overall in the simulation study. GLS-MS also allowed for both linear and quadratic model fits and quantification of uncertainty in trend estimates. The model selection procedure for the GLS approach fits four models to each time series and selects the best fitting model using AICc. The models are, 1) linear trend with uncorrelated residuals, 2) linear trend with correlated residuals, 3) quadratic trend with uncorrelated residuals, and 4) quadratic trend with correlated residuals. I.e., the models are of the form
+
+$$ Y_t = \alpha_0 + \alpha_1X_t + \alpha_2X_t^2 + \epsilon_t$$
+$$\epsilon_t = \rho\epsilon_{t-1} + \omega_t$$
+
+$$w_t \sim N(0, \sigma^2)$$
+
+Where $Y_t$ is the observation in time $t$, $X_t$ is the time index, $\epsilon_t$ is the residual in time $t$, and $\omega_t$ is a normally distributed random variable. Setting $\alpha_2 = 0$ yields the linear trend model, and $\rho = 0$ yields the uncorrelated residuals model.
+
+The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p < 0.05). All models were fit using the R package `nlme` [@Pinheiro2017] and AICc was calculated using the R package `AICcmodavg` [@Mazerolle2017a]. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
+
+### Data source(s)
+NA
+
+### Data extraction
+NA
+
+### Data analysis
+
+Code used for trend analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/trend_analysis.R).
+
+**catalog link**
+No associated catalog page
+
+<!--chapter:end:chapters/Trend_analysis.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Regime Shift Analysis
+
+
+**Description**: Qualitative regime shift analysis with plotting tool
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+), State of the Ecosystem - Mid-Atlantic (2023+)
+
+**Indicator category**: 
+
+**Contributor(s)**: Kimberly Bastille
+
+**Data steward**: NA
+
+**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+
+**Public availability statement**: NA
+
+
+## Methods
+The regime analysis uses the [`rpart`](https://cran.r-project.org/web/packages/rpart/vignettes/longintro.pdf) package to calculate breaks in the time series. `rpart` creates regression trees using classification and recursive partitioning. This methodology was outlined "Classification and regression trees", a 1984 book written by Leo Breiman and others.
+
+The code used to calculate the statistics behind the plotting visuals can be found in [`ecodata`](https://github.com/NOAA-EDAB/ecodata/blob/master/R/StatREGIME.R). Lines 12-16 show the tree calculations and the pruning. 
+
+There are many ways to calculate regime shifts. This method had been applied previously for select indicators and has been scaled up to apply to other time series datasets for the State of the Ecosystem reports. 
+
+### Data source(s)
+NA
+
+### Data extraction
+NA
+
+### Data analysis
+
+The red vertical lines indicate the years in which a shift occurs. 
+
+**Example plot**
+```{r , echo = F, fig.align="center", eval = T, fig.cap=""}
+
+lt_sst <- ecodata::long_term_sst %>% 
+  dplyr::mutate(hline = mean(Value, na.rm = TRUE))
+
+hline <- mean(lt_sst$Value)
+
+lt_sst %>% 
+  ggplot2::ggplot(aes(x = Time, y = Value, group = Var)) +
+  ggplot2::annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  ecodata::geom_gls() +
+  #ecodata::geom_lm(aes(x = Time, y = Value, group = Var))+
+  ecodata::geom_regime()+
+  ggplot2::geom_line() +
+  ggplot2::geom_point() +
+  ggplot2::geom_hline(aes(yintercept = hline),
+             size = hline.size,
+             alpha = hline.alpha,
+           linetype = hline.lty)+
+  ggplot2::ylab("Temperature (C)") +
+  ggplot2::xlab(element_blank())+
+  ggplot2::ggtitle("Long-term SST") +
+  ggplot2::scale_x_continuous(expand = c(0.01, 0.01), breaks = seq(1840,2020,10))+
+  ecodata::theme_facet() +
+  ggplot2::theme(strip.text=element_text(hjust=0,
+                                face = "italic"))+
+  ecodata::theme_title()
+
+
+```
+
+**catalog link**
+No associated catalog page
+
+
+
+<!--chapter:end:chapters/regime_shift_analysis.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Survey Data {#survdat}
+
+**Description**: Survdat (Survey database)
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull
+
+**Contributor(s)**: Andy Beet
+
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
+
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
+
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). 
+
+***Note: Due to the COVID-19 pandemic there were no surveys in 2020***
+
+## Methods
+The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys in the fall since 1963 and spring since 1968.  The surveys follow a stratified random design.  Fish species and several invertebrate species are enumerated on a tow by tow basis [@Azarovitz1981]. The data are housed in the NEFSC's survey database (SVDBS) maintained by the Ecosystem Survey Branch.  
+
+Direct pulls from the database are not advisable as there have been several gear modifications and vessel changes over the course of the time series [@Miller_2010].  Survdat was developed as a database query that applies the appropriate calibration factors for a seamless time series since the 1960s. As such, it is the base for many of the other analyses conducted for the State of the Ecosystem report that involve fisheries independent data.
+
+The R package [`survdat`](https://noaa-edab.github.io/survdat/) is used to pull and process the data. For the purposes of the State of the Ecosystem reports only the spring and fall data are used. `survdat` identifies those research cruises associated with the seasonal bottom trawl surveys and pulls the station and biological data. Station data includes tow identification (cruise, station, and stratum), tow location and date, as well as several environmental variables (depth, surface/bottom salinity, and surface/bottom temperature).  Stations are filtered using a station, haul, gear (SHG) code for tows prior to 2009 and a tow, operations, gear, and aquisition (TOGA) code from 2009 onward. The codes that correspond to a representative tow (SHG <= 136 or TOGA <= 1324) are the same used by assessment biologists at the NEFSC.  Biological data includes the total biomass and abundance by species, as well as lengths and number at length.
+
+`survdat` applies the calibration factors.  There are four calibrartion factors applied (Table \@ref(tab:calibration)).  Calibration factors are pulled directly from SVDBS.  Vessel conversions were made from either the NOAA Ship *Delaware II* or NOAA Ship *Henry Bigelow* to the NOAA Ship *Albatross IV* which was  the primary vessel for most of the time series.  The Albatross was decommissioned in 2009 and the Bigelow is now the primary vessel for the bottom trawl survey.
+
+```{r calibration, eval = T, echo = F}
+cal.factors <- data.frame(Name = c('Door Conversion', 'Net Conversion', 'Vessel Conversion I', 'Vessel Conversion II'),
+                          Code = c('DCF', 'GCF', 'VCF', 'BCF'),
+                          Applied = c('<1985', '1973 - 1981 (Spring)', 'Delaware II records', 'Henry Bigelow records'))
+kable(cal.factors, booktabs = TRUE,
+      caption = "Calibration factors for NEFSC trawl survey data")
+```
+
+
+### Data sources
+
+[`survdat`](https://noaa-edab.github.io/survdat/) is an R package that allows for queries of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
+
+### Data extraction 
+
+Extraction methods are described above. The R package  [`survdat`](https://noaa-edab.github.io/survdat/) was used in the survey data extraction process.
+
+
+### Data analysis
+
+The fisheries independent data obtained using `survdat` is used in a variety of
+products; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data is for the resource species aggregate biomass 
+indicators.  For the purposes of the aggregate biomass indicators, fall and spring 
+survey data are treated separately.  Additionally, all length data is dropped and 
+species separated by sex at the catch level are merged back together.
+
+Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu) based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not create a perfect match for the EPU boundaries it allows us to calculate the variance associated with the index as the survey was designed. 
+
+
+```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata." , out.width="90%",echo = F}
+
+knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
+
+```
+  
+
+Prior to 2020, `survdat` would post stratified into EPUs by labeling stations with the EPU that contained them. The total number of stations within each EPU per year was counted using unique station records. Biomass was summed by species per year per EPU.  Those sums were divided by the appropriate station count to get the EPU mean.  Finally, the mean biomasses were summed by [aggregate groups](#species_groupings). 
+
+**catalog link**
+No associated catalog page
+
+<!--chapter:end:chapters/survdat.rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Ecological Production Units {#epu}
+
+**Description**: Ecological Production Units
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+<!-- 1. Database pull -->
+<!-- 2. Database pull with analysis -->
+<!-- 3. Synthesis of published information -->
+<!-- 4. Extensive analysis, not yet published -->
+<!-- 5. Published methods -->
+**Contributor(s)**: Robert Gamble
+
+**Data steward**: NA
+
+**Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
+
+**Public availability statement**: Ecological production unit (EPU) shapefiles are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis). More information about source data used to derive EPUs can be found [here](https://www.integratedecosystemassessment.noaa.gov/sites/default/files/pdf/ne-ecological-production-units-paper.pdf).
+
+
+## Methods
+To define ecological production units (EPUs), we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
+
+We did not include information on zooplankton, benthic invertebrates, fish, protected species, or fishing patterns in our analysis. The biomass and production of the higher trophic level groups in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
+
+Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
+
+### Data sources
+Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &deg;C) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
+
+
+```{r epuinputs,  echo = F, include = T, warning = F, message = F, results='asis'}
+#Table: (\#label) Variables used in derivation of Ecological Production Units
+tab <- '
+|Variables|Sampling Method|Units|
+|:-----------------------|:-----------------------|:-----------------------|
+|Bathymetry|Soundings/Hydroacoustics|Meters|
+|Surficial Sediments|Benthic Grab|Krumbian Scale|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|dimensionless|
+|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
+|Surface Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
+|Bottom Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
+|Surface Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
+|Bottom Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
+|Stratification|Shipboard hydrography (point)|Sigma-t units (Spring and Fall)|
+|Chlorophyll-a|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
+|Chlorophyll-a gradient|Satellite Imagery (1.25 km grid)|dimensionless|
+|Chlorophyll-a span|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
+|Primary Production|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
+|Primary Production gradient|Satellite Imagery (1.25 km grid)|dimensionless|
+|Primary Production span|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
+'
+#cat(tab)
+df<-readr::read_delim(tab, delim="|")
+df<-df[-c(1,2) ,c("Variables","Sampling Method","Units")]
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'Variables used in derivation of Ecological Production Units.'
+)
+```
+
+
+The biotic measurements included satellite-derived estimates of chlorophyll *a* (CHLa) mean concentration, annual span, and CHLa gradients and related measures of primary production. Daily merged SeaWiFS/MODIS-Aqua CHLa (CHL, mg m^-3^) and SeaiWiFS photosynthetically available radiation (PAR, Einsteins m^-2^ d^-1^) scenes at 1.25 km resolution were obtained from NASA Ocean Biology Processing Group. 
+
+### Data extraction
+NA
+
+### Data analysis
+In all cases, we standardized the data to common spatial units by taking annual means of each observation type within spatial units of 10' latitude by 10' longitude to account for the disparate spatial and temporal scales at which these observations are taken. There are over 1000 spatial cells in this analysis. Shipboard sampling used to obtain direct hydrographic measurements is constrained by a minimum sampling depth of 27 m specified on the basis of prescribed safe operating procedures. As a result nearshore waters are not fully represented in our initial specifications of ecological production units. 
+
+The size of the spatial units employed further reflects a compromise between retaining spatial detail and minimizing the need for spatial interpolation of some data sets. For shipboard data sets characterized by relatively coarse spatial resolution, where necessary, we first constructed an interpolated map using an inverse distance weighting function before including it in the analysis. Although alternative interpolation schemes based on geostatistical approaches are possible, we considered the inverse distance weighting function to be both tractable and robust for this application. 
+
+We first employed a spatial principal components analysis [PCA; e.g. @Pielou1984; @Legendre1998] to examine the multivariate structure of the data and to account for any inter-correlations among the variables to be used in subsequent analysis. The variables included in the analysis exhibited generally skewed distributions and we therefore transformed each to natural logarithms prior to analysis. 
+
+The PCA was performed on the correlation matrix of the transformed observations. We selected the eigenvectors associated with eigenvalues of the dispersion matrix with scores greater than 1.0 [the Kaiser-Guttman criterion; @Legendre1998] for all subsequent analysis. These eigenvectors represent orthogonal linear combinations of the original variables used in the analysis. 
+
+We delineated ecological subunits by applying a disjoint cluster based on Euclidean distances using the K-means procedure [@Legendre1998] on the principal component scores The use of non-independent variables can strongly influence the results of classification analyses of this type [@Pielou1984], hence the interest in using the PCA results in the cluster. 
+
+The eigenvectors were represented as standard normal deviates. We used a Pseudo-F Statistic described by @Milligan1985 to objectively define the number of clusters to use in the analysis. The general approach employed is similar to that of @Host1996 for the development of regional ecosystem classifications for terrestrial systems.
+
+After the analyses were done, we next considered options for interpolation of nearshore boundaries resulting from depth-related constraints on shipboard observations. For this, we relied on information from satellite imagery. For the missing nearshore areas in the Gulf of Maine and Mid-Atlantic Bight, the satellite information for chlorophyll concentration and sea surface temperature indicated a direct extension from adjacent observations. For the Nantucket Shoals region south of Cape Cod, similarities in tidal mixing patterns reflected in chlorophyll and temperature observations indicated an affinity with Georges Bank and the boundaries were changed accordingly.
+
+Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply "Gulf of Maine" in the State of the Ecosystem), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses. 
+
+
+```{r EPUmap, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue)", fig.align='center', echo = F}
+
+knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
+
+```
+
+### Data processing
+
+Shapefiles were converted to `sf` objects for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R).
+
+**catalog link**
+No associated catalog page
+
+<!--chapter:end:chapters/EPU.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Conceptual Models
+
+**Description**: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
+
+**Indicator category**: Synthesis of published information, Extensive analysis; not yet published
+
+**Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
+
+**Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
+
+**Point of contact**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
+
+**Public availability statement**: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public (see Data Sources below).
+
+
+## Methods
+Conceptual models were constructed to facilitate multidisciplinary analysis and discussion of the linked social-ecological system for integrated ecosystem assessment. The overall process was to first identify the components of the model (focal groups, human activities, environmental drivers, and objectives), and then to document criteria for including groups and linkages and what the specific links were between the components.
+
+The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an [overview conceptual model for the Northern California Current Large Marine Ecosystem (NCC)](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-ecosystem-components), with models for each [focal ecosystem component](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#overview) that detailed the [ecological](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#ecologicalinteractions), [environmental](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#environmentalDrivers), and [human system](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#humanActivities) linkages. Another set of conceptual models outlined [habitat](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-habitat) linkages. 
+
+An inital conceptual model for Georges Bank and the Gulf of Maine was outlined at the 2015 ICES WGNARS meeting. It specified four categories: Large scale drivers, focal ecosystem components, human activities, and human well being. Strategic management objectives were included in the conceptual model, which had not been done in the NCC. Focal ecosystem components were defined as aggregate species groups that had associated US management objectives (outlined within WGNARS for IEAs, see @depiper_operationalizing_2017): groundfish, forage fish, fished invertebrates, living habitat, and protected species. These categories roughly align with Fishery Managment Plans (FMPs) for the New England Fishery Management Council. The Mid-Atlantic conceptual model was developed along similar lines, but the focal groups included demersals, forage fish, squids, medium pelagics, clams/quahogs, and protected species to better align with the Mid Atlantic Council's FMPs.
+
+```{r draftmod, echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
+```
+
+After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
+
+### Data sources
+
+#### Ecological submodels
+Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
+
+#### Environmental submodels
+Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted. 
+Sources for Georges Bank included @backus_georges_1987 and @townsend_oceanography_2006. 
+Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
+Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015, @fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
+
+#### Human dimensions submodels
+Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.
+
+Habitat-fishery linkages were drawn from unpublished reports, including:  
+
+1. Mid-Atlantic Fishery Management Council. 2016. [Amendment 16](http://www.mafmc.org/actions/msb-am16) to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
+
+2. NOAA. 2016. Deep sea coral research and technology program 2016 Report to Congress. http://www.habitat.noaa.gov/protection/corals/deepseacorals.html retrieved February 8, 2017.  
+
+3. New England Fishery Management Council. 2016. Habitat Omnibus Deep-Sea Coral Amendment: Draft. http://www.nefmc.org/library/omnibus-deep-sea-coral-amendment Retrieved Feb 8, 2017.
+
+4. Bachman et al. 2011. The Swept Area Seabed Impact (SASI) Model: A Tool for Analyzing the Effects of Fishing on Essential Fish Habitat. New England Fisheries Management Council Report. Newburyport, MA.
+
+Tourism and habitat linkages were drawn from unpublished reports, including: 
+
+1. http://neers.org/RESOURCES/Bibliographies.html                               
+
+2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm        
+
+3. Meaney, C.R. and C. Demarest. 2006. Coastal Polution and New England Fisheries. Report for the New England Fisheries Management Council. Newburyport, MA.
+
+4. List of valuation studies, by subregion and/or state, can be found at http://www.oceaneconomics.org/nonmarket/valestim.asp.
+
+Published literature on human activities in each EPU was consulted. 
+
+Sources for protected species and tourism links included @hoagland_demand_2000 and @lee_economic_2010. 
+
+Sources for links between environmental drivers and human activities included @adams_uncertainty_1973, @matzarakis_proceedings_2001, @scott_climate_2004, @hess_climate_2008, @colburn_social_2012, @jepson_development_2013, and @colburn_indicators_2016. 
+
+Sources for cultural practices and attachments links included @pauly_putting_1997, @mcgoodwin_understanding_2001, @st_martin_making_2001, @norris-raynbird_for_2004, @pollnac_toward_2006, @clay_defining_2007, @clay_definingfishing_2008, @everett_role_2008, @donkersloot_politics_2010, @lord_understanding_2011, @halpern_index_2012, @wynveen_natural_2012, @cortes-vazquez_identity_2013, @koehn_progress_2013, @potschin_landscapes_2013, @reed_beyond_2013, @urquhart_constructing_2013, @blasiak_paradigms_2014, @klain_what_2014, @poe_cultural_2014, @brown_we_2015, @donatuto_evaluating_2015, @khakzad_role_2016, @oberg_surviving_2016, and @seara_perceived_2016.  
+
+### Data extraction 
+
+#### Ecological submodels
+"Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
+
+Example FEAST sql script for Cod weighted diet on Georges Bank can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/conceptual_models_extraction.sql).
+Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
+
+#### Environmental submodels
+Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
+
+#### Human dimensions submodels
+Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data/top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
+
+Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used as the basis for the strength of the employment linkages.
+
+### Data analysis
+<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
+#### Ecological submodels
+Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). 
+
+Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
+
+EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table \@ref(tab:groups). "Linked groups" directly support or impact the Focal groups as described above.
+
+```{r groups, eval = T, echo = F}
+#read in EMAXconceptualmodgroups.csv and kable it
+#print(data.dir)
+ # # emaxgroups <- read.csv(paste0(data.dir,"/EMAXconceptualmodgroups.csv"),stringsAsFactors=F)
+ # names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
+
+
+emaxgroups <- readRDS(here::here("data","Emax.RDS")) 
+knitr::kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.", booktabs = T) %>% 
+  kableExtra::kable_styling(font_size = 8) %>% 
+  landscape()
+```
+
+
+Ecological submodels were constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMeco)). Here, we show only the Gulf of Maine submodels as examples.
+
+```{r draftGOMeco, fig.cap="Gulf of Maine Ecological submodel", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Ecological.png'))
+```
+
+#### Environmental submodels
+Environmental submodels were designed to link key oceanographic processes in each ecosystem production unit to the four general habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) with emphasis on the most important physical processes in each ecosystem based on expert knowledge as supported by literature review. The basis of each submodel were environmental variables observable at management-relevant scales as identified by [WGNARS](http://ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGRSP/2014/WGNARS14.pdf): Surface and Bottom Water Temperature and Salinity, Freshwater Input, and Stratification (as well as sea ice timing and cover, which is not relevant to the northeast US shelf). Key drivers changing these observable variables and thus structuring habitat dynamics in each [Ecological Production Units](#epu) were added to the model using expert consensus. 
+
+Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMenv)).
+```{r draftGOMenv, fig.cap="Gulf of Maine Environmental submodel", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Climate.png'))
+```
+
+#### Human dimensions submodels
+The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.
+
+No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available [@das_chhandita_northeast_2013; @das_chhandita_overview_2014]. Human activities and objectives for the conceptual sub model are defined in @depiper_operationalizing_2017. As shown in Figure \@ref(fig:draftGOMhuman), human dimensions submodels were also initially constructed and visualized in Mental Modeler.
+
+```{r draftGOMhuman, fig.cap="Gulf of Maine Human dimensions submodel", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'MM_GoM_Human_Connections.png'))
+```
+
+#### Merged models
+All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia (http://dia-installer.de/) with color codes for each model component type for improved readability. Examples for each system are below. 
+
+```{r diaGB, fig.cap="Georges Bank conceptual model", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'GBoverview5.png'))
+```
+
+
+```{r diaGOM, fig.cap="Gulf of Maine conceptual model", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'GoMoverview4.png'))
+```
+
+
+```{r diaMAB, fig.cap="Mid-Atlantic Bight conceptual model", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'MAB_3.png'))
+```
+
+#### Communication tools
+The merged models were redrawn for use in communications with the public. These versions lead off the State of the Ecosystem reports for both Fishery Management Councils to provide an overview of linkages between environmental drivers, ecological, and human systems. 
+
+```{r prettyNE, fig.cap="New England conceptual model for public communication", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'GOM_GB_conmod_overview.jpg'))
+```
+
+```{r prettyMA, fig.cap="Mid-Atlantic conceptual model for public communication", echo = F, eval = T, out.width='80%'}
+
+knitr::include_graphics(file.path(image.dir, 'MAB_conmod_overview.jpg'))
+```
+
+<!--
+What packages or libraries did you use in your work flow?
+```{r, echo = T}
+sessionInfo(package = NULL)
+
+
+#Use this to output a detailed list of the package information
+current.session <- sessionInfo(package = NULL)
+current.session$otherPkgs
+```
+
+
+Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
+```{r, echo = T, eval = F}
+# analysis code
+```
+-->
+
+**catalog link**
+No associated catalog page
+
+<!--chapter:end:chapters/conceptualmodels.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Glossary
+
+
+**Apex Predator:**
+Predators with no natural predators of their own, such as large sharks, toothed whales, seals, tunas, and billfish.
+
+**Benthivore:**
+Predator feeding on bottom-dwelling prey, such as lobster and haddock.
+
+**Benthos:**
+Organisms that live on or in the sea bottom [@madden2004], such as scallop and quahog.
+
+**Bmsy:**
+The weight (biomass) of a group of fish necessary to produce maximum sustainable yield (MSY) [@nwfsc].  
+
+**Catch:**
+The total number (or weight) of fish caught by fishing operations. The component of fish that comes into contact with fishing gear, which is retained by the gear [@unfao]. 
+
+**Climate Vulnerability:**
+The degree to which the habitat/species are unable to cope with negative impacts of climate change.
+
+**Climatology:**
+Average conditions over a specific time period. 
+
+**Cold Pool:**
+Area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight. 
+
+**Commercial Fishery:**
+Large-scale industry selling fish, shellfish and other aquatic animals. 
+
+**Community Engagement:**
+A mathematical measure of how engaged a community is in commercial fisheries. This index includes the amount of landings, dealers and permits. 
+
+**Conceptual Model:**
+A representation of the most current understanding of the major system features and processes of a particular environment [@madden2004]. 
+ 
+**Condition:**
+A mathematical measurement of the “plumpness,” or the general health of a fish or group of fishes [@wallace1994]. 
+
+**Continental Shelf:**
+Underwater portion (shelf) of the continent, extending seaward from the shore to the edge of the continental slope where the depth increases rapidly [@unfao]. 
+
+**Continental Slope:**
+Part of the continental margin; the ocean floor from the continental shelf to the continental rise [@madden2004]. 
+
+**Ecological Production Unit (EPU):**
+A specific geographic region of similar physical features and plankton characteristics supporting an ecological community within a large marine ecosystem (LME). 
+
+**Ecosystem Assessment:**
+A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers [@unfao]. 
+
+**Ecosystem Reorganization:**
+Regime shifts and changes in how the multiple system drivers interact can result in ecosystem reorganization as species and humans respond and adapt to the new environment.
+
+**Effort:**
+The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower [@wallace1994]. 
+
+**Elasmobranch:**
+Describes a group of fish without a hard bony skeleton, including sharks, skates, and rays [@unfao]. 
+
+
+**Endangered Species:**
+A species as defined in the US Endangered Species Act, that is in danger of extinction through a significant portion of its range [@noaaglos]. 
+
+
+**Energy Density:**
+A measurement of the amount of energy (calories) contained in a certain amount of food or prey organism. 
+
+**Estuary:**
+Coastal body of brackish water which may be an important nursery habitat for many species of interest. 
+
+**Estuarine:**
+Conditions found in an estuary: shallow water, high variability in water temperature, salt content, nutrients, and oxygen level.
+
+**Eutrophication:**
+The enrichment of water by nutrients causing increased growth of algae and higher forms of plant life creating an imbalance of organisms present in the water and to the quality of the water they live in [@ospar2003].  
+
+**Exclusive Economic Zone:**
+The EEZ is the area that extends from the seaward boundaries of the coastal states 3 to 200 nautical miles off the U.S. coast. Within this area, the United States claims exclusive fishery management authority over all fishery resources [@nmfs2004]. 
+
+**Feeding Guild:**
+A group of species consuming similar prey species; for example, planktivores are different species that all eat plankton. 
+
+**Fishery:**
+The combination of fish and fishers in a region, the latter fishing for similar or the same species with similar or the same gear types [@madden2004]. 
+
+**Fishery-Dependent Data:**
+Data collected directly on a fish or fishery from commercial or sport fishermen and seafood dealers. Common methods include logbooks, trip tickets, port sampling, fishery observers, and phone surveys [@wallace1994]. 
+
+**Fishery-Independent Data:**
+Stock/habitat/environmental data collected independently of the activity of the fishing sector usually on a research vessel [@unfao]. 
+
+
+**Fmsy:**
+The rate of removal of fish from a population by fishing that, if applied constantly, would result in maximum sustainable yield (MSY) [@unfao]. 
+
+**Forage Species:**
+Species used as prey by a larger predator for its food. Includes small schooling fishes such as anchovies, sardines, herrings, capelin, smelts, and menhaden [@unfao].
+ 
+**GB:**
+George’s Bank Ecological Production Unit [@techdoc]. 
+
+**GOM:**
+Gulf of Maine Ecological Production Unit [@techdoc]. 
+
+**Groundfish:**
+Group of commercially harvested ocean bottom-oriented fish in cooler regions of the Northern Hemisphere including cods, flounders, and other associated species. The exact species list varies regionally. 
+
+**Gulf Stream:**
+A warm ocean current flowing northward along the eastern United States.
+
+**Habitat:**
+1. The environment in which the fish live, including everything that surrounds and affects its life, e.g. water quality, bottom, vegetation, associated species (including food supplies); 2. The site and particular type of local environment occupied by an organism [@unfao]. 
+ 
+**Harvest:**
+The total number or weight of fish caught and kept from an area over a period of time [@wallace1994]. 
+
+**Highly Migratory Species:**
+Marine species whose life cycle includes lengthy migrations, usually through the exclusive economic zones of two or more countries as well as into international waters. This term usually is used to denote tuna and tuna-like species, sharks, swordfish, and billfish [@unfao]. 
+
+**Ichthyoplankton:**
+Fish eggs and larvae belonging to the planktonic community [@unfao]. 
+
+**Indicator:**
+1. A variable, pointer, or index. Its fluctuation reveals the variations in key elements of a system. The position and trend of the indicator in relation to reference points or values indicate the present state and dynamics of the system. Indicators provide a bridge between objectives and action [@unfao].
+
+**Landings:**
+1. The number or weight of fish unloaded by commercial fishermen or brought to shore by recreational fishermen for personal use. Landings are reported at the locations at which fish are brought to shore [@wallace1994].
+
+
+**Large Marine Ecosystem (LME):**
+A geographic area of an ocean that has distinct physical and oceanographic characteristics, productivity, and trophically dependent populations [@unfao]. 
+
+**MAB:**
+Mid-Atlantic Bight Ecological Production Unit [@techdoc]. 
+
+**Marine Heatwave:**
+Period of five or more days where sea surface temperature is warmer than 90% of all previously measured temperatures based on a 30-year historical baseline period [@hobday2016]. 
+
+**Marine Mammals:**
+Warm-blooded animals that live in marine waters and breathe air directly. These include porpoises, dolphins, whales, seals, and sea lions [@wallace2000]. 
+
+**Mortality Event: **
+The death of one or more individuals of a species. 
+
+**Multiple System Drivers:**
+Societal, biological, physical and chemical factors comprise the multiple system drivers that influence marine ecosystems through a variety of different pathways. These drivers affect fishery management objectives such as seafood production and recreational opportunities, as well as other ecosystem services we derive from the ocean.
+
+**Northeast Shelf:**
+The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The region  spans from Cape Hatteras, NC to Nova Scotia and includes the waters between the eastern coastline of the U.S and the continental shelf break. 
+
+**Ocean Acidification (OA):**
+Global-scale changes in ocean marine carbonate chemistry driven by ocean uptake of atmospheric carbon dioxide (CO2). Human-induced ocean acidification specifically refers to the significant present shifts in the marine carbonate system that are a direct result of the exponential increase in atmospheric CO2 concentrations associated with human activities like fossil fuel use [@jewett2020].
+
+**Overfished:**
+When a stock’s biomass is below the point at which stock can produce sustainable yield. The term is used when biomass has been estimated to be below a limit biological reference point: in the US when biomass is less than ½ of Bmsy [@unfao]. 
+
+**Overfishing:**
+Whenever a stock is subjected to a fishing morality greater than the fishing mortality that produces maximum sustainable yield (MSY) on a continuing basis [@unfao]. 
+
+**Phytoplankton:**
+Microscopic single-celled, free-floating algae (plants) that take up carbon dioxide and use nutrients and sunlight to produce biomass and form the base of the food web [@unfao]. 
+
+**Piscivore:**
+Predator whose diet primarily consists of fish and squid, such as cod and striped bass. 
+
+**Planktivore:**
+Predator whose diet primarily consists of plankton, such as herring and mackerel. 
+
+**Primary Production:**
+The amount of energy produced by the assimilation and fixation of inorganic carbon  and other nutrients by autotrophs (plants and certain bacteria) [@unfao]. 
+
+**Primary Production Required:**
+Indicator expressing the total amount of fish removed from an area as a fraction of the total primary production in the area [@pauly1995].
+
+**Primary Productivity:**
+The rate at which food energy is generated, or fixed, by photosynthesis or chemosynthesis.  
+
+**Probability of Occupancy:**
+The modelled chance of a species being likely to occur in a specific area. 
+
+**Productivity:**
+Relates to the birth, growth and death rates of a stock. A highly productive stock is characterized by high birth, growth, and mortality rates, and as a consequence, a high turnover and production to biomass ratios (P/B) [@unfao]. 
+
+**Recreational Fishery:**
+Fishing for fun or competition instead of profit like a commercial fishery. Includes for-hire charter and party boats, private boats, and shore-based fishing activities.
+
+**Recruitment:**
+The number of young fish entering the population each year at the age first caught in fishing/survey gear.
+
+**Regime Shift:**
+Large, abrupt and persistent change in the structure and function of an ecosystem.
+
+**Revenue:**
+The dollar value commercial fishermen receive for selling landed fish. 
+
+**Salinity:**
+The total mass of salts dissolved in seawater per unit of water; generally expressed in parts per thousands (ppt) or practical salinity units (psu) [@madden2004]. 
+
+**Satellite Imagery:**
+Imagery of the ocean surface gathered by earth-orbiting satellites [@unfao]. 
+
+**Slopewater Proportion:**
+The proportion of deep water entering the Gulf of Maine through the Northeast channel from two main water sources. The Labrador slope water is colder water moving south from Canada and Warm slope water is warmer water moving north from the southern U.S. [@techdoc].  
+
+**Socio-Economic:**
+The combination or interaction of social and economic factors and involves topics such as distributional issues, labor market structure, social and opportunity costs, community dynamics, and decision-making processes [@unfao]. 
+
+**SS:**
+Scotian Shelf Ecological Production Unit [@techdoc].
+
+**Stock:**
+A part of a fish population usually with a particular migration pattern, specific spawning grounds, and subject to a distinct fishery. Total stock refers to both juveniles and adults, either in numbers or by weight [@unfao].
+
+
+**Trophic Level:**
+Position in the food chain determined by the number of energy-transfer steps to that level. Primary producers constitute the lowest level, followed by zooplankton, etc. [@unfao].
+
+**Warm Core Ring:**
+A clockwise turning eddy of cold water surrounding warm water in the center that breaks away from the Gulf Stream as it meanders. 
+
+**Water Quality:**
+The chemical, physical, and biological characteristics of water in respect to its suitability for a particular purpose [@noaaglos]. 
+
+**Zooplankton:**
+Plankton consisting of small animals and the immature stages of larger animals, ranging from microscopic organisms to large species, such as jellyfish.
+
+
+
+(ref:neusmap1) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
+
+
+```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center', out.width="75%", echo = F, fig.cap='(ref:neusmap1)'}
+knitr::include_graphics(here::here("images/journal.pone.0146756.g002.PNG"))
+ 
+```
+
+<!--chapter:end:chapters/pl_lan_glossary.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
 # (PART\*) Lower Trophic Levels {.unnumbered}
 
 <!--chapter:end:chapters/sectionHeaders/ltl.rmd-->
@@ -4003,46 +4848,6 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Data and Code Access {#erddap}
-
-### About
-
-The Technical Documentation for the State of the Ecosystem (SOE) reports is a [bookdown](https://bookdown.org) document; hosted on the NOAA Northeast Fisheries Science Center (NEFSC) Ecosystems Dynamics and Assessment Branch [Github page](https://github.com/NOAA-EDAB), and developed in R. Derived data used to populate figures in this document are queried directly from the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package or the NEFSC [ERDDAP server](https://comet.nefsc.noaa.gov/erddap/info/index.html?page=1&itemsPerPage=1000). ERDDAP queries are made using the R package [rerddap](https://cran.r-project.org/web/packages/rerddap/vignettes/Using_rerddap.html).  
-
-```{r global-opts1, echo = FALSE}
-knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
-```
-### Accessing data and build code
-
-In this technical documentation, we hope to shine a light on the processing and analytical steps involved to get from source data to final product. This means that whenever possible, we have included the code involved in source data extraction, processing, and analyses. We have also attempted to thoroughly describe all methods in place of or in supplement to provided code. Example plotting code for each indicator is presented in sections titled "Plotting", and these code chunks can be used to recreate the figures found in ecosystem reporting documents where each respective indicator was included[^1].
-
-Source data for the derived indicators in this document are linked to in the text unless there are privacy concerns involved. In that case, it may be possible to access source data by reaching out to the Point of Contact associated with that data set. Derived data sets make up the majority of the indicators presented in ecosystem reporting documents, and these data sets are available for download through the [ecodata](https://github.com/NOAA-EDAB/ecodata) R package. 
-
-### Building the document
-
-Start a local build of the SOE bookdown document by first cloning the project's associated [git repository](https://github.com/NOAA-EDAB/tech-doc). Next, if you would like to build a past version of the document, use `git checkout [version_commit_hash]` to revert the project to a past commit of interest, and set `build_latest <- FALSE` in this [code chunk](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/erddap_query_and_build_code.R). This will ensure the project builds from a cached data set, and not the most updated versions present on the NEFSC ERDDAP server. Once the `tech-doc.Rproj` file is opened in RStudio, run `bookdown::serve_book()` from the console to build the document. 
-
-#### A note on data structures
-
-The majority of the derived time series used in State of the Ecosystem reports are in long format. This approach was taken so that all disparate data sets could be "bound" together for ease of use in our base plotting [functions]((https://github.com/NOAA-EDAB/ecodata/tree/master/R)).
-
-[^1]: There are multiple R scripts sourced throughout this document in an attempt to keep code concise. These scripts include [BasePlot_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/BasePlot_source.R), [GIS_source.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/GIS_source.R), and [get_erddap.R](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/get_erddap.R). The scripts `BasePlot_source.R` and `GIS_source.R` refer to deprecated code used prior to the 2019 State of the Ecosystem reports. Indicators that were not included in reports after 2018 make use of this syntax, whereas newer indicators typically use `ggplot2` for plotting.
-
-**catalog link**
-No associated catalog page
-
-<!--chapter:end:chapters/erddap_query_and_build.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
 # Annual SST Cycles
 
 **Description**: Annual SST Cycles
@@ -4175,323 +4980,6 @@ The Calanus Stage indicator was formatted for inclusion in the `ecodata` R packa
 <No associated catalog page>
 
 <!--chapter:end:chapters/calanus_stage.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
-# Conceptual Models
-
-**Description**: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem
-
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
-
-**Indicator category**: Synthesis of published information, Extensive analysis; not yet published
-
-**Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
-
-**Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
-
-**Point of contact**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
-
-**Public availability statement**: All source data aside from confidential commercial fisheries data (relevant only to some components of the conceptual models) are available to the public (see Data Sources below).
-
-
-## Methods
-Conceptual models were constructed to facilitate multidisciplinary analysis and discussion of the linked social-ecological system for integrated ecosystem assessment. The overall process was to first identify the components of the model (focal groups, human activities, environmental drivers, and objectives), and then to document criteria for including groups and linkages and what the specific links were between the components.
-
-The prototype conceptual model used to design Northeast US conceptual models for each ecosystem production unit (EPU) was designed by the California Current IEA program. The California Current IEA developed an [overview conceptual model for the Northern California Current Large Marine Ecosystem (NCC)](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-ecosystem-components), with models for each [focal ecosystem component](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#overview) that detailed the [ecological](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#ecologicalinteractions), [environmental](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#environmentalDrivers), and [human system](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-coastalpelagicspecies#humanActivities) linkages. Another set of conceptual models outlined [habitat](https://www.integratedecosystemassessment.noaa.gov/regions/california-current/cc-habitat) linkages. 
-
-An inital conceptual model for Georges Bank and the Gulf of Maine was outlined at the 2015 ICES WGNARS meeting. It specified four categories: Large scale drivers, focal ecosystem components, human activities, and human well being. Strategic management objectives were included in the conceptual model, which had not been done in the NCC. Focal ecosystem components were defined as aggregate species groups that had associated US management objectives (outlined within WGNARS for IEAs, see @depiper_operationalizing_2017): groundfish, forage fish, fished invertebrates, living habitat, and protected species. These categories roughly align with Fishery Managment Plans (FMPs) for the New England Fishery Management Council. The Mid-Atlantic conceptual model was developed along similar lines, but the focal groups included demersals, forage fish, squids, medium pelagics, clams/quahogs, and protected species to better align with the Mid Atlantic Council's FMPs.
-
-```{r draftmod, echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'GBGOMconceptual1.png'))
-```
-
-After the initial draft model was outlined, working groups were formed to develop three submodels following the CCE example: ecological, environmental, and human dimensions. The general approach was to specify what was being included in each group, what relationship was represented by a link between groups, what threshold of the relationship was used to determine whether a relationship was significant enough to be included (we did not want to model everything), the direction and uncertainty of the link, and documentation supporting the link between groups. This information was recorded in a [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). Submodels were then merged together by common components using the "merge" function in the (currently unavailable) desktop version of Mental Modeler (http://www.mentalmodeler.org/#home; @gray_mental_2013). The process was applied to Georges Bank (GB), the Gulf of Maine (GOM), and the Mid-Atlantic Bight (MAB) [Ecological Production Units](#epu). 
-
-### Data sources
-
-#### Ecological submodels
-Published food web (EMAX) models for each subregion [@link_documentation_2006; @link_northeast_2008], food habits data collected by NEFSC trawl surveys [@smith_trophic_2010], and other literature sources [@smith_consumption_2015] were consulted. Expert judgement was also used to adjust historical information to current conditions, and to include broad habitat linkages to Focal groups. 
-
-#### Environmental submodels
-Published literature on the primary environmental drivers (seasonal and interannual) in each EPU was consulted. 
-Sources for Georges Bank included @backus_georges_1987 and @townsend_oceanography_2006. 
-Sources for the Gulf of Maine included @smith_mean_1983, @smith_interannual_2001, @mupparapu_role_2002, @townsend_oceanography_2006, @smith_regime_2012, and @mountain_labrador_2012.  
-Sources for the Mid Atlantic Bight included @houghton_middle_1982, @beardsley_nantucket_1985, @lentz_climatology_2003, @mountain_variability_2003,   @glenn_biogeochemical_2004, @sullivan_evidence_2005, @castelao_seasonal_2008, @shearman_long-term_2009, @castelao_temperature_2010, @gong_seasonal_2010, @gawarkiewicz_direct_2012, @forsyth_recent_2015, @fratantoni_description_2015, @zhang_dynamics_2015, @miller_state-space_2016, and @lentz_seasonal_2017.
-
-#### Human dimensions submodels
-Fishery catch and bycatch information was drawn from multiple regional datasets, incuding the Greater Atlantic Regional Office Vessel Trip Reports & Commercial Fisheries Dealer databases, Northeast Fishery Observer Program & Northeast At-Sea Monitoring databases, Northeast Fishery Science Center Social Sciences Branch cost survey, and the Marine Recreational Informational Program database. Further synthesis of human welfare derived from fisheries was drawn from @fare_adjusting_2006, @walden_productivity_2012, @lee_inverse_2013, @lee_hedonic_2014, and @lee_applying_2017. Bycatch of protected species was taken from @waring_us_2015, with additional insights from @bisack_measuring_2014. The top 3 linkages were drawn for each node. For example, the top 3 recreational species for the Mid-Atlantic were used to draw linkages between the recreational fishery and species focal groups. A similar approach was used for relevant commercial fisheries in each region.
-
-Habitat-fishery linkages were drawn from unpublished reports, including:  
-
-1. Mid-Atlantic Fishery Management Council. 2016. [Amendment 16](http://www.mafmc.org/actions/msb-am16) to the Atlantic Mackerel, Squid, and Butterfish Fishery Management Plan: Measures to protect deep sea corals from Impacts of Fishing Gear. Environmental Assessment, Regulatory Impact Review, and Initial Regulatory Flexibility Analysis. Dover, DE. August, 2016. 
-
-2. NOAA. 2016. Deep sea coral research and technology program 2016 Report to Congress. http://www.habitat.noaa.gov/protection/corals/deepseacorals.html retrieved February 8, 2017.  
-
-3. New England Fishery Management Council. 2016. Habitat Omnibus Deep-Sea Coral Amendment: Draft. http://www.nefmc.org/library/omnibus-deep-sea-coral-amendment Retrieved Feb 8, 2017.
-
-4. Bachman et al. 2011. The Swept Area Seabed Impact (SASI) Model: A Tool for Analyzing the Effects of Fishing on Essential Fish Habitat. New England Fisheries Management Council Report. Newburyport, MA.
-
-Tourism and habitat linkages were drawn from unpublished reports, including: 
-
-1. http://neers.org/RESOURCES/Bibliographies.html                               
-
-2. Great Bay (GoM) resources  http://greatbay.org/about/publications.htm        
-
-3. Meaney, C.R. and C. Demarest. 2006. Coastal Polution and New England Fisheries. Report for the New England Fisheries Management Council. Newburyport, MA.
-
-4. List of valuation studies, by subregion and/or state, can be found at http://www.oceaneconomics.org/nonmarket/valestim.asp.
-
-Published literature on human activities in each EPU was consulted. 
-
-Sources for protected species and tourism links included @hoagland_demand_2000 and @lee_economic_2010. 
-
-Sources for links between environmental drivers and human activities included @adams_uncertainty_1973, @matzarakis_proceedings_2001, @scott_climate_2004, @hess_climate_2008, @colburn_social_2012, @jepson_development_2013, and @colburn_indicators_2016. 
-
-Sources for cultural practices and attachments links included @pauly_putting_1997, @mcgoodwin_understanding_2001, @st_martin_making_2001, @norris-raynbird_for_2004, @pollnac_toward_2006, @clay_defining_2007, @clay_definingfishing_2008, @everett_role_2008, @donkersloot_politics_2010, @lord_understanding_2011, @halpern_index_2012, @wynveen_natural_2012, @cortes-vazquez_identity_2013, @koehn_progress_2013, @potschin_landscapes_2013, @reed_beyond_2013, @urquhart_constructing_2013, @blasiak_paradigms_2014, @klain_what_2014, @poe_cultural_2014, @brown_we_2015, @donatuto_evaluating_2015, @khakzad_role_2016, @oberg_surviving_2016, and @seara_perceived_2016.  
-
-### Data extraction 
-
-#### Ecological submodels
-"Data" included model estimated quantities to determine whether inclusion thresholds were met for each potential link in the conceptual model. A matrix with diet composition for each modeled group is an input to the food web model. A matrix of mortalities caused by each predator and fishery on each modeled group is a direct ouput of a food web model (e.g. Ecopath). Food web model biomasss flows between species, fisheries, and detritus were summarized using algorithms implemented in visual basic by Kerim Aydin, NOAA NMFS Alaska Fisheries Science Center. Because EMAX model groups were aggregated across species, selected diet compositions for individual species were taken from the NEFSC food habits database using the FEAST program for selected species (example query below). These diet queries were consulted as supplemental information. 
-
-Example FEAST sql script for Cod weighted diet on Georges Bank can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/conceptual_models_extraction.sql).
-Queries for different species are standardized by the FEAST application and would differ only in the svspp code. 
-
-#### Environmental submodels
-Information was synthesized entirely from published sources and expert knowledge; no additional data extraction was completed for the environmental submodels.
-
-#### Human dimensions submodels
-Recreational fisheries data were extracted from the 2010-2014 MRIP datasets. Original data can be found [here]( data/top10_prim1_common_mode.xlsx) for each region (New England or Mid-Atlantic as defined by states). 
-
-Commercial fishing data was developed as part of the State of the Ecosystem Report, including revenue and food production estimates, with data extraction metodology discussed in the relevant sections of the technical document. In addition, the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used as the basis for the strength of the employment linkages.
-
-### Data analysis
-<!--Text description of analysis methods, similar in structure and detail to a peer-reviewed paper methods section.-->
-#### Ecological submodels
-Aggregated diet and mortality information was examined to determine the type of link, direction of link, and which links between which groups should be inclded in the conceptual models. Two types of ecological links were defined using food web models: prey links and predation/fishing mortality links. Prey links resulted in positve links between the prey group and the focal group, while predation/fishing mortality links resulted in negative links to the focal group to represent energy flows. The intent was to include only the most important linkages between focal groups and with other groups supporting or causing mortality on focal species groups. Therefore, threshold levels of diet and mortality were established (based on those that would select the top 1-3 prey and predators of each focal group): 10% to include a link (or add a linked group) in the model and 20% to include as a strong link. A Primary Production group was included in each model and linked to pelagic habitat to allow environmental effects on habitat to be connected to the ecologial submodel. Uncertainty for the inclusion of each link and for the magnitude of each link was qualitatively assessed and noted in the [spreadsheet](https://comet.nefsc.noaa.gov/erddap/tabledap/concept_model_2018.html). 
-
-Four habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) were included in ecological submodels as placeholders to be developed further along with habitat-specific research. Expert opinion was used to include the strongest links between each habitat type and each Focal group (noting that across species and life stages, members of these aggregate groups likely occupy many if not all of the habitat types). Link direction and strength were not specified. Environmental drivers were designed to link to habitats, rather than directly to Focal groups, to represent each habitat's important mediation function.
-
-EMAX model groups were aggregated to focal groups for the Georges Bank (GB), Gulf of Maine (GOM) and Mid-Atlantic Bight (MAB) conceptual models according to Table \@ref(tab:groups). "Linked groups" directly support or impact the Focal groups as described above.
-
-```{r groups, eval = T, echo = F}
-#read in EMAXconceptualmodgroups.csv and kable it
-#print(data.dir)
- # # emaxgroups <- read.csv(paste0(data.dir,"/EMAXconceptualmodgroups.csv"),stringsAsFactors=F)
- # names(emaxgroups) <- c("Group Type", "Region", "Conceptual model group", "EMAX group(s)", "Notes")
-
-
-emaxgroups <- readRDS(here::here("data","Emax.RDS")) 
-knitr::kable(emaxgroups, caption="Relationship between food web model groups and conceptual model focal groups. Pinnipeds not included in GB and Seabirds not included in MAB.", booktabs = T) %>% 
-  kableExtra::kable_styling(font_size = 8) %>% 
-  landscape()
-```
-
-
-Ecological submodels were constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMeco)). Here, we show only the Gulf of Maine submodels as examples.
-
-```{r draftGOMeco, fig.cap="Gulf of Maine Ecological submodel", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'MM_GoM_Ecological.png'))
-```
-
-#### Environmental submodels
-Environmental submodels were designed to link key oceanographic processes in each ecosystem production unit to the four general habitat categories (Pelagic, Seafloor and Demersal, Nearshore, and Freshwater and Estuarine) with emphasis on the most important physical processes in each ecosystem based on expert knowledge as supported by literature review. The basis of each submodel were environmental variables observable at management-relevant scales as identified by [WGNARS](http://ices.dk/sites/pub/Publication%20Reports/Expert%20Group%20Report/SSGRSP/2014/WGNARS14.pdf): Surface and Bottom Water Temperature and Salinity, Freshwater Input, and Stratification (as well as sea ice timing and cover, which is not relevant to the northeast US shelf). Key drivers changing these observable variables and thus structuring habitat dynamics in each [Ecological Production Units](#epu) were added to the model using expert consensus. 
-
-Environmental submodels were initially constructed and visualized in Mental Modeler (Fig. \@ref(fig:draftGOMenv)).
-```{r draftGOMenv, fig.cap="Gulf of Maine Environmental submodel", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'MM_GoM_Climate.png'))
-```
-
-#### Human dimensions submodels
-The top 3 species from each mode of recreational fishing (shoreside, private boat, party/charter) were used to assess the potential for missing links between the recreational fishing activity and biological focal components. Given the predominance of Mid-Atlantic groundfish in recreational fishing off New England (summer flounder, bluefish, striped bass), a Mid-Atlantic groundfish focal component was added to the Georges Bank EPU model. The magnitude of benefits generated from recreational fishing was scaled to reflect expert knowledge of target species, coupled with the MRIP data highlighted above. Scales were held consistent across the focal components within recreational fishing.
-
-No additional biological focal components were added to the commercial fishing activity, beyond what was developed in the ecological submodel. Benefits derived from commercial fishing were scaled to be consistent with the State of the Ecosystem revenue estimates, as modulated by expert knowledge and additional data sources. For example,the percentage of landings sold as food was used to map fishing activity to the commercial fishery food production objective, and the Northeast Regional Input/Output Model [@steinback_scott_northeast_2006] was used to define the strength of the employment linkages. For profitability, expert knowledge was used to reweight revenue landings, based on ancillary cost data available [@das_chhandita_northeast_2013; @das_chhandita_overview_2014]. Human activities and objectives for the conceptual sub model are defined in @depiper_operationalizing_2017. As shown in Figure \@ref(fig:draftGOMhuman), human dimensions submodels were also initially constructed and visualized in Mental Modeler.
-
-```{r draftGOMhuman, fig.cap="Gulf of Maine Human dimensions submodel", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'MM_GoM_Human_Connections.png'))
-```
-
-#### Merged models
-All links and groups from each submodel were preserved in the full merged model for each system. Mental modeler was used to merge the submodels. Full models were then re-drawn in Dia (http://dia-installer.de/) with color codes for each model component type for improved readability. Examples for each system are below. 
-
-```{r diaGB, fig.cap="Georges Bank conceptual model", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'GBoverview5.png'))
-```
-
-
-```{r diaGOM, fig.cap="Gulf of Maine conceptual model", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'GoMoverview4.png'))
-```
-
-
-```{r diaMAB, fig.cap="Mid-Atlantic Bight conceptual model", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'MAB_3.png'))
-```
-
-#### Communication tools
-The merged models were redrawn for use in communications with the public. These versions lead off the State of the Ecosystem reports for both Fishery Management Councils to provide an overview of linkages between environmental drivers, ecological, and human systems. 
-
-```{r prettyNE, fig.cap="New England conceptual model for public communication", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'GOM_GB_conmod_overview.jpg'))
-```
-
-```{r prettyMA, fig.cap="Mid-Atlantic conceptual model for public communication", echo = F, eval = T, out.width='80%'}
-
-knitr::include_graphics(file.path(image.dir, 'MAB_conmod_overview.jpg'))
-```
-
-<!--
-What packages or libraries did you use in your work flow?
-```{r, echo = T}
-sessionInfo(package = NULL)
-
-
-#Use this to output a detailed list of the package information
-current.session <- sessionInfo(package = NULL)
-current.session$otherPkgs
-```
-
-
-Include accompanying R code, pseudocode, flow of scripts, and/or link to location of code used in analyses.
-```{r, echo = T, eval = F}
-# analysis code
-```
--->
-
-**catalog link**
-No associated catalog page
-
-<!--chapter:end:chapters/conceptualmodels.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
-# Ecological Production Units {#epu}
-
-**Description**: Ecological Production Units
-
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
-
-**Indicator category**: Extensive analysis, not yet published
-
-<!-- 1. Database pull -->
-<!-- 2. Database pull with analysis -->
-<!-- 3. Synthesis of published information -->
-<!-- 4. Extensive analysis, not yet published -->
-<!-- 5. Published methods -->
-**Contributor(s)**: Robert Gamble
-
-**Data steward**: NA
-
-**Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
-
-**Public availability statement**: Ecological production unit (EPU) shapefiles are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis). More information about source data used to derive EPUs can be found [here](https://www.integratedecosystemassessment.noaa.gov/sites/default/files/pdf/ne-ecological-production-units-paper.pdf).
-
-
-## Methods
-To define ecological production units (EPUs), we assembled a set of physiographic, oceanographic and biotic variables on the Northeast U.S. Continental Shelf, an area of approximately 264,000 km within the 200 m isobath. The physiographic and hydrographic variables selected have been extensively used in previous analyses of oceanic provinces and regions [e.g @Roff2000]. Primary production estimates have also been widely employed for this purpose in conjunction with physical variables [@Longhurst2007] to define ecological provinces throughout the world ocean. 
-
-We did not include information on zooplankton, benthic invertebrates, fish, protected species, or fishing patterns in our analysis. The biomass and production of the higher trophic level groups in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
-
-Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
-
-### Data sources
-Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &deg;C) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
-
-
-```{r epuinputs,  echo = F, include = T, warning = F, message = F, results='asis'}
-#Table: (\#label) Variables used in derivation of Ecological Production Units
-tab <- '
-|Variables|Sampling Method|Units|
-|:-----------------------|:-----------------------|:-----------------------|
-|Bathymetry|Soundings/Hydroacoustics|Meters|
-|Surficial Sediments|Benthic Grab|Krumbian Scale|
-|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
-|Sea Surface Temperature|Satellite Imagery (4km grid)|dimensionless|
-|Sea Surface Temperature|Satellite Imagery (4km grid)|&deg;C annual average|
-|Surface Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
-|Bottom Temperature|Shipboard hydrography (point)|&deg;C (Spring and Fall)|
-|Surface Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
-|Bottom Salinity|Shipboard hydrography (point)|psu (Spring and Fall)|
-|Stratification|Shipboard hydrography (point)|Sigma-t units (Spring and Fall)|
-|Chlorophyll-a|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
-|Chlorophyll-a gradient|Satellite Imagery (1.25 km grid)|dimensionless|
-|Chlorophyll-a span|Satellite Imagery (1.25 km grid)|mg/C/m^3^ (annual average)|
-|Primary Production|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
-|Primary Production gradient|Satellite Imagery (1.25 km grid)|dimensionless|
-|Primary Production span|Satellite Imagery (1.25 km grid)|gC/m^3^/year (cumulative)|
-'
-#cat(tab)
-df<-readr::read_delim(tab, delim="|")
-df<-df[-c(1,2) ,c("Variables","Sampling Method","Units")]
-knitr::kable(
-  df, booktabs = TRUE,
-  caption = 'Variables used in derivation of Ecological Production Units.'
-)
-```
-
-
-The biotic measurements included satellite-derived estimates of chlorophyll *a* (CHLa) mean concentration, annual span, and CHLa gradients and related measures of primary production. Daily merged SeaWiFS/MODIS-Aqua CHLa (CHL, mg m^-3^) and SeaiWiFS photosynthetically available radiation (PAR, Einsteins m^-2^ d^-1^) scenes at 1.25 km resolution were obtained from NASA Ocean Biology Processing Group. 
-
-### Data extraction
-NA
-
-### Data analysis
-In all cases, we standardized the data to common spatial units by taking annual means of each observation type within spatial units of 10' latitude by 10' longitude to account for the disparate spatial and temporal scales at which these observations are taken. There are over 1000 spatial cells in this analysis. Shipboard sampling used to obtain direct hydrographic measurements is constrained by a minimum sampling depth of 27 m specified on the basis of prescribed safe operating procedures. As a result nearshore waters are not fully represented in our initial specifications of ecological production units. 
-
-The size of the spatial units employed further reflects a compromise between retaining spatial detail and minimizing the need for spatial interpolation of some data sets. For shipboard data sets characterized by relatively coarse spatial resolution, where necessary, we first constructed an interpolated map using an inverse distance weighting function before including it in the analysis. Although alternative interpolation schemes based on geostatistical approaches are possible, we considered the inverse distance weighting function to be both tractable and robust for this application. 
-
-We first employed a spatial principal components analysis [PCA; e.g. @Pielou1984; @Legendre1998] to examine the multivariate structure of the data and to account for any inter-correlations among the variables to be used in subsequent analysis. The variables included in the analysis exhibited generally skewed distributions and we therefore transformed each to natural logarithms prior to analysis. 
-
-The PCA was performed on the correlation matrix of the transformed observations. We selected the eigenvectors associated with eigenvalues of the dispersion matrix with scores greater than 1.0 [the Kaiser-Guttman criterion; @Legendre1998] for all subsequent analysis. These eigenvectors represent orthogonal linear combinations of the original variables used in the analysis. 
-
-We delineated ecological subunits by applying a disjoint cluster based on Euclidean distances using the K-means procedure [@Legendre1998] on the principal component scores The use of non-independent variables can strongly influence the results of classification analyses of this type [@Pielou1984], hence the interest in using the PCA results in the cluster. 
-
-The eigenvectors were represented as standard normal deviates. We used a Pseudo-F Statistic described by @Milligan1985 to objectively define the number of clusters to use in the analysis. The general approach employed is similar to that of @Host1996 for the development of regional ecosystem classifications for terrestrial systems.
-
-After the analyses were done, we next considered options for interpolation of nearshore boundaries resulting from depth-related constraints on shipboard observations. For this, we relied on information from satellite imagery. For the missing nearshore areas in the Gulf of Maine and Mid-Atlantic Bight, the satellite information for chlorophyll concentration and sea surface temperature indicated a direct extension from adjacent observations. For the Nantucket Shoals region south of Cape Cod, similarities in tidal mixing patterns reflected in chlorophyll and temperature observations indicated an affinity with Georges Bank and the boundaries were changed accordingly.
-
-Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply "Gulf of Maine" in the State of the Ecosystem), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses. 
-
-
-```{r EPUmap, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue)", fig.align='center', echo = F}
-
-knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
-
-```
-
-### Data processing
-
-Shapefiles were converted to `sf` objects for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R).
-
-**catalog link**
-No associated catalog page
-
-<!--chapter:end:chapters/EPU.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -5037,92 +5525,6 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Regime Shift Analysis
-
-
-**Description**: Qualitative regime shift analysis with plotting tool
-
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+), State of the Ecosystem - Mid-Atlantic (2023+)
-
-**Indicator category**: 
-
-**Contributor(s)**: Kimberly Bastille
-
-**Data steward**: NA
-
-**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
-
-**Public availability statement**: NA
-
-
-## Methods
-The regime analysis uses the [`rpart`](https://cran.r-project.org/web/packages/rpart/vignettes/longintro.pdf) package to calculate breaks in the time series. `rpart` creates regression trees using classification and recursive partitioning. This methodology was outlined "Classification and regression trees", a 1984 book written by Leo Breiman and others.
-
-The code used to calculate the statistics behind the plotting visuals can be found in [`ecodata`](https://github.com/NOAA-EDAB/ecodata/blob/master/R/StatREGIME.R). Lines 12-16 show the tree calculations and the pruning. 
-
-There are many ways to calculate regime shifts. This method had been applied previously for select indicators and has been scaled up to apply to other time series datasets for the State of the Ecosystem reports. 
-
-### Data source(s)
-NA
-
-### Data extraction
-NA
-
-### Data analysis
-
-The red vertical lines indicate the years in which a shift occurs. 
-
-**Example plot**
-```{r , echo = F, fig.align="center", eval = T, fig.cap=""}
-
-lt_sst <- ecodata::long_term_sst %>% 
-  dplyr::mutate(hline = mean(Value, na.rm = TRUE))
-
-hline <- mean(lt_sst$Value)
-
-lt_sst %>% 
-  ggplot2::ggplot(aes(x = Time, y = Value, group = Var)) +
-  ggplot2::annotate("rect", fill = shade.fill, alpha = shade.alpha,
-      xmin = x.shade.min , xmax = x.shade.max,
-      ymin = -Inf, ymax = Inf) +
-  ecodata::geom_gls() +
-  #ecodata::geom_lm(aes(x = Time, y = Value, group = Var))+
-  ecodata::geom_regime()+
-  ggplot2::geom_line() +
-  ggplot2::geom_point() +
-  ggplot2::geom_hline(aes(yintercept = hline),
-             size = hline.size,
-             alpha = hline.alpha,
-           linetype = hline.lty)+
-  ggplot2::ylab("Temperature (C)") +
-  ggplot2::xlab(element_blank())+
-  ggplot2::ggtitle("Long-term SST") +
-  ggplot2::scale_x_continuous(expand = c(0.01, 0.01), breaks = seq(1840,2020,10))+
-  ecodata::theme_facet() +
-  ggplot2::theme(strip.text=element_text(hjust=0,
-                                face = "italic"))+
-  ecodata::theme_title()
-
-
-```
-
-**catalog link**
-No associated catalog page
-
-
-
-<!--chapter:end:chapters/regime_shift_analysis.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
 # SAFMC managed spp
 
 **Description**: SAFMC Species on NES
@@ -5441,86 +5843,6 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Survey Data {#survdat}
-
-**Description**: Survdat (Survey database)
-
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
-
-**Indicator category**: Database pull
-
-**Contributor(s)**: Andy Beet
-
-**Data steward**: Andy Beet <andrew.beet@noaa.gov>
-
-**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
-
-**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). 
-
-***Note: Due to the COVID-19 pandemic there were no surveys in 2020***
-
-## Methods
-The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys in the fall since 1963 and spring since 1968.  The surveys follow a stratified random design.  Fish species and several invertebrate species are enumerated on a tow by tow basis [@Azarovitz1981]. The data are housed in the NEFSC's survey database (SVDBS) maintained by the Ecosystem Survey Branch.  
-
-Direct pulls from the database are not advisable as there have been several gear modifications and vessel changes over the course of the time series [@Miller_2010].  Survdat was developed as a database query that applies the appropriate calibration factors for a seamless time series since the 1960s. As such, it is the base for many of the other analyses conducted for the State of the Ecosystem report that involve fisheries independent data.
-
-The R package [`survdat`](https://noaa-edab.github.io/survdat/) is used to pull and process the data. For the purposes of the State of the Ecosystem reports only the spring and fall data are used. `survdat` identifies those research cruises associated with the seasonal bottom trawl surveys and pulls the station and biological data. Station data includes tow identification (cruise, station, and stratum), tow location and date, as well as several environmental variables (depth, surface/bottom salinity, and surface/bottom temperature).  Stations are filtered using a station, haul, gear (SHG) code for tows prior to 2009 and a tow, operations, gear, and aquisition (TOGA) code from 2009 onward. The codes that correspond to a representative tow (SHG <= 136 or TOGA <= 1324) are the same used by assessment biologists at the NEFSC.  Biological data includes the total biomass and abundance by species, as well as lengths and number at length.
-
-`survdat` applies the calibration factors.  There are four calibrartion factors applied (Table \@ref(tab:calibration)).  Calibration factors are pulled directly from SVDBS.  Vessel conversions were made from either the NOAA Ship *Delaware II* or NOAA Ship *Henry Bigelow* to the NOAA Ship *Albatross IV* which was  the primary vessel for most of the time series.  The Albatross was decommissioned in 2009 and the Bigelow is now the primary vessel for the bottom trawl survey.
-
-```{r calibration, eval = T, echo = F}
-cal.factors <- data.frame(Name = c('Door Conversion', 'Net Conversion', 'Vessel Conversion I', 'Vessel Conversion II'),
-                          Code = c('DCF', 'GCF', 'VCF', 'BCF'),
-                          Applied = c('<1985', '1973 - 1981 (Spring)', 'Delaware II records', 'Henry Bigelow records'))
-kable(cal.factors, booktabs = TRUE,
-      caption = "Calibration factors for NEFSC trawl survey data")
-```
-
-
-### Data sources
-
-[`survdat`](https://noaa-edab.github.io/survdat/) is an R package that allows for queries of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
-
-### Data extraction 
-
-Extraction methods are described above. The R package  [`survdat`](https://noaa-edab.github.io/survdat/) was used in the survey data extraction process.
-
-
-### Data analysis
-
-The fisheries independent data obtained using `survdat` is used in a variety of
-products; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data is for the resource species aggregate biomass 
-indicators.  For the purposes of the aggregate biomass indicators, fall and spring 
-survey data are treated separately.  Additionally, all length data is dropped and 
-species separated by sex at the catch level are merged back together.
-
-Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu) based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not create a perfect match for the EPU boundaries it allows us to calculate the variance associated with the index as the survey was designed. 
-
-
-```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata." , out.width="90%",echo = F}
-
-knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
-
-```
-  
-
-Prior to 2020, `survdat` would post stratified into EPUs by labeling stations with the EPU that contained them. The total number of stations within each EPU per year was counted using unique station records. Biomass was summed by species per year per EPU.  Those sums were divided by the appropriate station count to get the EPU mean.  Finally, the mean biomasses were summed by [aggregate groups](#species_groupings). 
-
-**catalog link**
-No associated catalog page
-
-<!--chapter:end:chapters/survdat.rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
 # Thermal Habitat Projections
 
 **Description**: Species Thermal Habitat Projections
@@ -5573,65 +5895,6 @@ We calculated the suitable thermal habitat both in terms of changes in 'suitable
 No associated catalog page
 
 <!--chapter:end:chapters/Thermal_hab_proj_indicator.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
-# Trend Analysis
-
-
-**Description**: Time series trend analysis
-
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
-
-**Indicator category**: Extensive analysis, not yet published
-
-**Contributor(s)**: Sean Hardison, Charles Perretti, Geret DePiper
-
-**Data steward**: NA
-
-**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
-
-**Public availability statement**: NA
-
-
-## Methods
-Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations [see @Nicholson2004; @Wagner2013; @VonStorch1999a].  Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p < 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in State of the Ecosystem (SOE) indicators.
-
-In a simulation study [@hardison2019], we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods: a generalized least squares model selection approach, the Mann-Kendall test, and Mann-Kendall test with trend-free pre-whitening. Methods were applied to simulated time series of varying trend and autocorrelation strengths. Overall, when sample size was low (N = 10) there were high rates of false trend detection, and similarly, low rates of true trend detection. Both of these forms of error were further amplified by autocorrelation in the trend residuals. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend.
-
-We also chose to use a GLS model selection (GLS-MS) approach to evaluate indicator trends in the 2018 (and future) State of the Ecosystem reports, as this approach performed best overall in the simulation study. GLS-MS also allowed for both linear and quadratic model fits and quantification of uncertainty in trend estimates. The model selection procedure for the GLS approach fits four models to each time series and selects the best fitting model using AICc. The models are, 1) linear trend with uncorrelated residuals, 2) linear trend with correlated residuals, 3) quadratic trend with uncorrelated residuals, and 4) quadratic trend with correlated residuals. I.e., the models are of the form
-
-$$ Y_t = \alpha_0 + \alpha_1X_t + \alpha_2X_t^2 + \epsilon_t$$
-$$\epsilon_t = \rho\epsilon_{t-1} + \omega_t$$
-
-$$w_t \sim N(0, \sigma^2)$$
-
-Where $Y_t$ is the observation in time $t$, $X_t$ is the time index, $\epsilon_t$ is the residual in time $t$, and $\omega_t$ is a normally distributed random variable. Setting $\alpha_2 = 0$ yields the linear trend model, and $\rho = 0$ yields the uncorrelated residuals model.
-
-The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p < 0.05). All models were fit using the R package `nlme` [@Pinheiro2017] and AICc was calculated using the R package `AICcmodavg` [@Mazerolle2017a]. In SOE time series figures, significant positive trends were colored orange, and negative trends purple. 
-
-### Data source(s)
-NA
-
-### Data extraction
-NA
-
-### Data analysis
-
-Code used for trend analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/trend_analysis.R).
-
-**catalog link**
-No associated catalog page
-
-<!--chapter:end:chapters/Trend_analysis.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -5776,246 +6039,6 @@ Code used to format wind lease area and habitat occupancy overlap for inclusion 
 No associated catalog page
 
 <!--chapter:end:chapters/wind_habitat_occupancy.Rmd-->
-
-```{r include=FALSE, cache=FALSE}
-# example R options set globally
-options(width = 60)
-
-# example chunk options set globally
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE
-  )
-```
-# Glossary
-
-
-**Apex Predator:**
-Predators with no natural predators of their own, such as large sharks, toothed whales, seals, tunas, and billfish.
-
-**Benthivore:**
-Predator feeding on bottom-dwelling prey, such as lobster and haddock.
-
-**Benthos:**
-Organisms that live on or in the sea bottom [@madden2004], such as scallop and quahog.
-
-**Bmsy:**
-The weight (biomass) of a group of fish necessary to produce maximum sustainable yield (MSY) [@nwfsc].  
-
-**Catch:**
-The total number (or weight) of fish caught by fishing operations. The component of fish that comes into contact with fishing gear, which is retained by the gear [@unfao]. 
-
-**Climate Vulnerability:**
-The degree to which the habitat/species are unable to cope with negative impacts of climate change.
-
-**Climatology:**
-Average conditions over a specific time period. 
-
-**Cold Pool:**
-Area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight. 
-
-**Commercial Fishery:**
-Large-scale industry selling fish, shellfish and other aquatic animals. 
-
-**Community Engagement:**
-A mathematical measure of how engaged a community is in commercial fisheries. This index includes the amount of landings, dealers and permits. 
-
-**Conceptual Model:**
-A representation of the most current understanding of the major system features and processes of a particular environment [@madden2004]. 
- 
-**Condition:**
-A mathematical measurement of the “plumpness,” or the general health of a fish or group of fishes [@wallace1994]. 
-
-**Continental Shelf:**
-Underwater portion (shelf) of the continent, extending seaward from the shore to the edge of the continental slope where the depth increases rapidly [@unfao]. 
-
-**Continental Slope:**
-Part of the continental margin; the ocean floor from the continental shelf to the continental rise [@madden2004]. 
-
-**Ecological Production Unit (EPU):**
-A specific geographic region of similar physical features and plankton characteristics supporting an ecological community within a large marine ecosystem (LME). 
-
-**Ecosystem Assessment:**
-A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers [@unfao]. 
-
-**Effort:**
-The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower [@wallace1994]. 
-
-**Elasmobranch:**
-Describes a group of fish without a hard bony skeleton, including sharks, skates, and rays [@unfao]. 
-
-
-**Endangered Species:**
-A species as defined in the US Endangered Species Act, that is in danger of extinction through a significant portion of its range [@noaaglos]. 
-
-
-**Energy Density:**
-A measurement of the amount of energy (calories) contained in a certain amount of food or prey organism. 
-
-**Estuary:**
-Coastal body of brackish water which may be an important nursery habitat for many species of interest. 
-
-**Estuarine:**
-Conditions found in an estuary: shallow water, high variability in water temperature, salt content, nutrients, and oxygen level.
-
-**Eutrophication:**
-The enrichment of water by nutrients causing increased growth of algae and higher forms of plant life creating an imbalance of organisms present in the water and to the quality of the water they live in [@ospar2003].  
-
-**Exclusive Economic Zone:**
-The EEZ is the area that extends from the seaward boundaries of the coastal states 3 to 200 nautical miles off the U.S. coast. Within this area, the United States claims exclusive fishery management authority over all fishery resources [@nmfs2004]. 
-
-**Feeding Guild:**
-A group of species consuming similar prey species; for example, planktivores are different species that all eat plankton. 
-
-**Fishery:**
-The combination of fish and fishers in a region, the latter fishing for similar or the same species with similar or the same gear types [@madden2004]. 
-
-**Fishery-Dependent Data:**
-Data collected directly on a fish or fishery from commercial or sport fishermen and seafood dealers. Common methods include logbooks, trip tickets, port sampling, fishery observers, and phone surveys [@wallace1994]. 
-
-**Fishery-Independent Data:**
-Stock/habitat/environmental data collected independently of the activity of the fishing sector usually on a research vessel [@unfao]. 
-
-
-**Fmsy:**
-The rate of removal of fish from a population by fishing that, if applied constantly, would result in maximum sustainable yield (MSY) [@unfao]. 
-
-**Forage Species:**
-Species used as prey by a larger predator for its food. Includes small schooling fishes such as anchovies, sardines, herrings, capelin, smelts, and menhaden [@unfao].
- 
-**GB:**
-George’s Bank Ecological Production Unit [@techdoc]. 
-
-**GOM:**
-Gulf of Maine Ecological Production Unit [@techdoc]. 
-
-**Groundfish:**
-Group of commercially harvested ocean bottom-oriented fish in cooler regions of the Northern Hemisphere including cods, flounders, and other associated species. The exact species list varies regionally. 
-
-**Gulf Stream:**
-A warm ocean current flowing northward along the eastern United States.
-
-**Habitat:**
-1. The environment in which the fish live, including everything that surrounds and affects its life, e.g. water quality, bottom, vegetation, associated species (including food supplies); 2. The site and particular type of local environment occupied by an organism [@unfao]. 
- 
-**Harvest:**
-The total number or weight of fish caught and kept from an area over a period of time [@wallace1994]. 
-
-**Highly Migratory Species:**
-Marine species whose life cycle includes lengthy migrations, usually through the exclusive economic zones of two or more countries as well as into international waters. This term usually is used to denote tuna and tuna-like species, sharks, swordfish, and billfish [@unfao]. 
-
-**Ichthyoplankton:**
-Fish eggs and larvae belonging to the planktonic community [@unfao]. 
-
-**Indicator:**
-1. A variable, pointer, or index. Its fluctuation reveals the variations in key elements of a system. The position and trend of the indicator in relation to reference points or values indicate the present state and dynamics of the system. Indicators provide a bridge between objectives and action [@unfao].
-
-**Landings:**
-1. The number or weight of fish unloaded by commercial fishermen or brought to shore by recreational fishermen for personal use. Landings are reported at the locations at which fish are brought to shore [@wallace1994].
-
-
-**Large Marine Ecosystem (LME):**
-A geographic area of an ocean that has distinct physical and oceanographic characteristics, productivity, and trophically dependent populations [@unfao]. 
-
-**MAB:**
-Mid-Atlantic Bight Ecological Production Unit [@techdoc]. 
-
-**Marine Heatwave:**
-Period of five or more days where sea surface temperature is warmer than 90% of all previously measured temperatures based on a 30-year historical baseline period [@hobday2016]. 
-
-**Marine Mammals:**
-Warm-blooded animals that live in marine waters and breathe air directly. These include porpoises, dolphins, whales, seals, and sea lions [@wallace2000]. 
-
-**Mortality Event: **
-The death of one or more individuals of a species. 
-
-**Northeast Shelf:**
-The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The region  spans from Cape Hatteras, NC to Nova Scotia and includes the waters between the eastern coastline of the U.S and the continental shelf break. 
-
-**Ocean Acidification (OA):**
-Global-scale changes in ocean marine carbonate chemistry driven by ocean uptake of atmospheric carbon dioxide (CO2). Human-induced ocean acidification specifically refers to the significant present shifts in the marine carbonate system that are a direct result of the exponential increase in atmospheric CO2 concentrations associated with human activities like fossil fuel use [@jewett2020].
-
-**Overfished:**
-When a stock’s biomass is below the point at which stock can produce sustainable yield. The term is used when biomass has been estimated to be below a limit biological reference point: in the US when biomass is less than ½ of Bmsy [@unfao]. 
-
-**Overfishing:**
-Whenever a stock is subjected to a fishing morality greater than the fishing mortality that produces maximum sustainable yield (MSY) on a continuing basis [@unfao]. 
-
-**Phytoplankton:**
-Microscopic single-celled, free-floating algae (plants) that take up carbon dioxide and use nutrients and sunlight to produce biomass and form the base of the food web [@unfao]. 
-
-**Piscivore:**
-Predator whose diet primarily consists of fish and squid, such as cod and striped bass. 
-
-**Planktivore:**
-Predator whose diet primarily consists of plankton, such as herring and mackerel. 
-
-**Primary Production:**
-The amount of energy produced by the assimilation and fixation of inorganic carbon  and other nutrients by autotrophs (plants and certain bacteria) [@unfao]. 
-
-**Primary Production Required:**
-Indicator expressing the total amount of fish removed from an area as a fraction of the total primary production in the area [@pauly1995].
-
-**Primary Productivity:**
-The rate at which food energy is generated, or fixed, by photosynthesis or chemosynthesis.  
-
-**Probability of Occupancy:**
-The modelled chance of a species being likely to occur in a specific area. 
-
-**Productivity:**
-Relates to the birth, growth and death rates of a stock. A highly productive stock is characterized by high birth, growth, and mortality rates, and as a consequence, a high turnover and production to biomass ratios (P/B) [@unfao]. 
-
-**Recreational Fishery:**
-Fishing for fun or competition instead of profit like a commercial fishery. Includes for-hire charter and party boats, private boats, and shore-based fishing activities.
-
-**Recruitment:**
-The number of young fish entering the population each year at the age first caught in fishing/survey gear.
-
-**Revenue:**
-The dollar value commercial fishermen receive for selling landed fish. 
-
-**Salinity:**
-The total mass of salts dissolved in seawater per unit of water; generally expressed in parts per thousands (ppt) or practical salinity units (psu) [@madden2004]. 
-
-**Satellite Imagery:**
-Imagery of the ocean surface gathered by earth-orbiting satellites [@unfao]. 
-
-**Slopewater Proportion:**
-The proportion of deep water entering the Gulf of Maine through the Northeast channel from two main water sources. The Labrador slope water is colder water moving south from Canada and Warm slope water is warmer water moving north from the southern U.S. [@techdoc].  
-
-**Socio-Economic:**
-The combination or interaction of social and economic factors and involves topics such as distributional issues, labor market structure, social and opportunity costs, community dynamics, and decision-making processes [@unfao]. 
-
-**SS:**
-Scotian Shelf Ecological Production Unit [@techdoc].
-
-**Stock:**
-A part of a fish population usually with a particular migration pattern, specific spawning grounds, and subject to a distinct fishery. Total stock refers to both juveniles and adults, either in numbers or by weight [@unfao].
-
-
-**Trophic Level:**
-Position in the food chain determined by the number of energy-transfer steps to that level. Primary producers constitute the lowest level, followed by zooplankton, etc. [@unfao].
-
-**Warm Core Ring:**
-A clockwise turning eddy of cold water surrounding warm water in the center that breaks away from the Gulf Stream as it meanders. 
-
-**Water Quality:**
-The chemical, physical, and biological characteristics of water in respect to its suitability for a particular purpose [@noaaglos]. 
-
-**Zooplankton:**
-Plankton consisting of small animals and the immature stages of larger animals, ranging from microscopic organisms to large species, such as jellyfish.
-
-
-
-(ref:neusmap1) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
-
-
-```{r neusmap1, message = FALSE, warning=FALSE, fig.align='center', fig.height=6, echo = F, fig.cap='(ref:neusmap1)'}
-knitr::include_graphics(here::here("images/journal.pone.0146756.g002.PNG"))
- 
-```
-
-<!--chapter:end:chapters/pl_lan_glossary.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
