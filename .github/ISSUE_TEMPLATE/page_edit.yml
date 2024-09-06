@@ -23,87 +23,87 @@ body:
       description: Select from the drop down
       options:
         - Introduction
-- 1 Data and Code Access
-- 2 Trend Analysis
-- 3 Regime Shift Analysis
-- 4 Survey Data
-- 5 Ecological Production Units
-- 6 Conceptual Models
-- 7 Glossary
-- 8 Chesapeake Bay Water Quality Standards Attainment
-- 9 Phytoplankton
-- 10 Harmful Algal Bloom - Alexandrium Indicator
-- 11 Submerged Aquatic Vegetation
-- 12 Mesozooplankton Biomass at Wilkinson Basin
-- 13 Zooplankton
-- 14 Inshore bottom trawl surveys
-- 15 Fish Condition Indicator
-- 16 Habitat Diversity
-- 17 Species Distribution Indicators
-- 18 Forage Fish Energy Density
-- 19 Spawning Timing
-- 20 Expected Number of Species
-- 21 Forage Fish Indices
-- 22 Harbor Porpoise Bycatch
-- 23 Highly Migratory Species POP Catch Per Unit Effort
-- 24 Highly Migratory Species Landings
-- 25 Highly Migratory Species Stock Status
-- 26 Cetacean Distribution Shifts
-- 27 Right Whale Abundance
-- 28 Fish Productivity Indicators
-- 29 Gray Seal Pups
-- 30 Gulf of Maine Atlantic Salmon
-- 31 Gray Seal Bycatch
-- 32 Seabird diet and productivity - New England
-- 33 Aggregate Groups
-- 34 Bottom temperature - in situ
-- 35 Bottom temperature - High Resolution
-- 36 Seasonal SST Anomalies
-- 37 Transition Dates
-- 38 Long-term Sea Surface Temperature
-- 39 Cold Pool Index
-- 40 Gulf Stream Index
-- 41 Slopewater proportions
-- 42 Protected Species Hotspots
-- 43 Warm Core Rings
-- 44 Chesapeake Bay Salinity and Temperature
-- 45 Chesapeake Bay Temperature Anomaly
-- 46 Chesapeake Bay Seasonal SST Anomalies
-- 47 Marine Heatwave
-- 48 Ocean Acidification
-- 49 Commercial Landings Data
-- 50 Catch and Fleet Diversity
-- 51 Ecosystem Overfishing
-- 52 Recreational Fishing Indicators
-- 53 Recreational Shark Fishing Indicators
-- 54 MAFMC ABC/ACL and Catch
-- 55 Bennet Indicator
-- 56 Single Species Status Indicator
-- 57 Fishery Reliance and Social Vulnerability
-- 58 Aquaculture
-- 59 Wind Energy Development Timeline
-- 60 WEA Fishing Port Landings
-- 61 Fisheries Revenue in Wind Development Areas
-- 62 Annual SST Cycles
-- 63 Bottom temperature - GLORYS
-- 64 Calanus Stage
-- 65 Habitat Occupancy Models
-- 66 Habitat Vulnerability
-- 67 Harmful Algal Bloom Indicator - Mid Atlantic
-- 68 Harmful Algal Bloom Indicator - New England
-- 69 Harmful Algal Blooms - Paralytic Shellfish Poisoning Indicator
-- 70 Hudson River Flow
-- 71 Plankton Diversity
-- 72 Quota and Catch - New England
-- 73 SAFMC managed spp
-- 74 Sandlance
-- 75 Species Density Estimates
-- 76 Stomach fullness
-- 77 Storminess Indicator
-- 78 Thermal Habitat Projections
-- 79 Verified Records of Southern Kingfish
-- 80 Waterbird productivity - Mid-Atlantic
-- 81 Wind lease areas and habitat occupancy overlap
+        - 1 Data and Code Access
+        - 2 Trend Analysis
+        - 3 Regime Shift Analysis
+        - 4 Survey Data
+        - 5 Ecological Production Units
+        - 6 Conceptual Models
+        - 7 Glossary
+        - 8 Chesapeake Bay Water Quality Standards Attainment
+        - 9 Phytoplankton
+        - 10 Harmful Algal Bloom - Alexandrium Indicator
+        - 11 Submerged Aquatic Vegetation
+        - 12 Mesozooplankton Biomass at Wilkinson Basin
+        - 13 Zooplankton
+        - 14 Inshore bottom trawl surveys
+        - 15 Fish Condition Indicator
+        - 16 Habitat Diversity
+        - 17 Species Distribution Indicators
+        - 18 Forage Fish Energy Density
+        - 19 Spawning Timing
+        - 20 Expected Number of Species
+        - 21 Forage Fish Indices
+        - 22 Harbor Porpoise Bycatch
+        - 23 Highly Migratory Species POP Catch Per Unit Effort
+        - 24 Highly Migratory Species Landings
+        - 25 Highly Migratory Species Stock Status
+        - 26 Cetacean Distribution Shifts
+        - 27 Right Whale Abundance
+        - 28 Fish Productivity Indicators
+        - 29 Gray Seal Pups
+        - 30 Gulf of Maine Atlantic Salmon
+        - 31 Gray Seal Bycatch
+        - 32 Seabird diet and productivity - New England
+        - 33 Aggregate Groups
+        - 34 Bottom temperature - in situ
+        - 35 Bottom temperature - High Resolution
+        - 36 Seasonal SST Anomalies
+        - 37 Transition Dates
+        - 38 Long-term Sea Surface Temperature
+        - 39 Cold Pool Index
+        - 40 Gulf Stream Index
+        - 41 Slopewater proportions
+        - 42 Protected Species Hotspots
+        - 43 Warm Core Rings
+        - 44 Chesapeake Bay Salinity and Temperature
+        - 45 Chesapeake Bay Temperature Anomaly
+        - 46 Chesapeake Bay Seasonal SST Anomalies
+        - 47 Marine Heatwave
+        - 48 Ocean Acidification
+        - 49 Commercial Landings Data
+        - 50 Catch and Fleet Diversity
+        - 51 Ecosystem Overfishing
+        - 52 Recreational Fishing Indicators
+        - 53 Recreational Shark Fishing Indicators
+        - 54 MAFMC ABC/ACL and Catch
+        - 55 Bennet Indicator
+        - 56 Single Species Status Indicator
+        - 57 Fishery Reliance and Social Vulnerability
+        - 58 Aquaculture
+        - 59 Wind Energy Development Timeline
+        - 60 WEA Fishing Port Landings
+        - 61 Fisheries Revenue in Wind Development Areas
+        - 62 Annual SST Cycles
+        - 63 Bottom temperature - GLORYS
+        - 64 Calanus Stage
+        - 65 Habitat Occupancy Models
+        - 66 Habitat Vulnerability
+        - 67 Harmful Algal Bloom Indicator - Mid Atlantic
+        - 68 Harmful Algal Bloom Indicator - New England
+        - 69 Harmful Algal Blooms - Paralytic Shellfish Poisoning Indicator
+        - 70 Hudson River Flow
+        - 71 Plankton Diversity
+        - 72 Quota and Catch - New England
+        - 73 SAFMC managed spp
+        - 74 Sandlance
+        - 75 Species Density Estimates
+        - 76 Stomach fullness
+        - 77 Storminess Indicator
+        - 78 Thermal Habitat Projections
+        - 79 Verified Records of Southern Kingfish
+        - 80 Waterbird productivity - Mid-Atlantic
+        - 81 Wind lease areas and habitat occupancy overlap
     validations:
       required: true
   - type: textarea
