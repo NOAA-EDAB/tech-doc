@@ -7,7 +7,7 @@
 <title>34 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report</title>
 <meta name="author" content="Northeast Fisheries Science Center">
 <meta name="description" content="Description: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf. Indicator category: Extensive analysis; not yet published Found in: State of the Ecosystem - Gulf...">
-<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="34 Bottom temperature - in situ | Technical Documentation, State of the Ecosystem Report">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Description: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf. Indicator category: Extensive analysis; not yet published Found in: State of the Ecosystem - Gulf...">
@@ -188,6 +188,7 @@
 <span class="header-section-number">34.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-33"><i class="fas fa-link"></i></a>
 </h3>
 <p>The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.</p>
+<p>Source data are publicly available at <a href="https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html" class="uri">https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html</a></p>
 </div>
 <div id="data-extraction-22" class="section level3" number="34.1.2">
 <h3>
@@ -199,7 +200,7 @@
 <h3>
 <span class="header-section-number">34.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-32"><i class="fas fa-link"></i></a>
 </h3>
-<p>Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four <a href="epu.html#epu">Ecological Production Units</a> (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by <span class="citation">David G. Mountain (<a href="#ref-mountain1991">1991</a>)</span>. The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.</p>
+<p>Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four Ecological Production Units (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a time series of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1977-present. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by David G. Mountain (1991). The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is also provided and can be added back into the anomaly time series to convert temperature anomalies to ocean bottom temperature.</p>
 </div>
 <div id="data-processing-22" class="section level3" number="34.1.4">
 <h3>
@@ -211,12 +212,6 @@
 <a href="https://noaa-edab.github.io/catalog/bottom_temp.html" class="uri">https://noaa-edab.github.io/catalog/bottom_temp.html</a></p>
 
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-mountain1991" class="csl-entry">
-Mountain, David G. 1991. <span>“The Volume of Shelf Water in the Middle Atlantic Bight: Seasonal and Interannual Variability, 1977–1987.”</span> <em>Continental Shelf Research</em> 11 (3): 251–67. <a href="https://doi.org/10.1016/0278-4343(91)90068-H">https://doi.org/10.1016/0278-4343(91)90068-H</a>.
 </div>
 </div>
   <div class="chapter-nav">
@@ -251,7 +246,7 @@ Mountain, David G. 1991. <span>“The Volume of Shelf Water in the Middle Atlant
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 1 October 2024.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 28 October 2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
