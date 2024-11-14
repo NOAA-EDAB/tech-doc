@@ -60,7 +60,7 @@ rmd_files:
     -   "chapters/sectionHeaders/oceanographic.rmd" 
     -   "chapters/bottom_temp.Rmd"
     #-   "chapters/bottom_temp_comp.Rmd" *Missing tech doc page
-    -   "chapters/bottom_temp_seasonal_gridded.Rmd"
+    -   "chapters/bottom_temp_model_gridded.Rmd"
     -   "chapters/seasonal_sst_anomaly_gridded.Rmd"
     #-   "chapters/seasonal_oisst_anom.Rmd" *Missing tech doc page
     -   "chapters/trans_dates.Rmd"

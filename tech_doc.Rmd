@@ -328,7 +328,7 @@ NA
 The red vertical lines indicate the years in which a shift occurs. 
 
 **Example plot**
-```{r , echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r explot, echo = F, fig.align="center", eval = T, fig.cap=""}
 
 lt_sst <- ecodata::long_term_sst %>% 
   dplyr::mutate(hline = mean(Value, na.rm = TRUE))
@@ -2317,7 +2317,7 @@ Stock status information was plotted on a Kobe chart using modified code from th
 
 
 The table below shows naming conventions used in the plot. 
-```{r}
+```{r stock-status, echo = F,eval = T}
 stock_status<-ecodata::hms_stock_status %>% 
   tidyr::separate(Var, c("Species_Abbreviation", "Common_Name"), ":") %>% 
   dplyr::select(Species_Abbreviation, Common_Name) %>% 
@@ -2394,13 +2394,6 @@ knitr::opts_chunk$set(
 # Right Whale Abundance {#narw}
 
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: Right Whale
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
@@ -2845,7 +2838,9 @@ knitr::opts_chunk$set(
 
 ### Data sources
 
-The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical  bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+
+Source data are publicly available at https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html 
 
 ### Data extraction
 
@@ -2853,11 +2848,10 @@ While all processed hydrographic data are archived in an Oracle database (OCDBS)
 
 ### Data analysis
 
-Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales.  Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four [Ecological Production Units](#epu) (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010.  The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by @mountain1991.  The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.
-
+Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four Ecological Production Units (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a time series of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1977-present. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by David G. Mountain (1991). The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is also provided and can be added back into the anomaly time series to convert temperature anomalies to ocean bottom temperature.
 
 ### Data processing
-All temperature observations are subject to rigorous quality control protocols following community standards. Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges. Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes. We choose to use the up or down cast data depending on which is cleanest and based on the deployment method. Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software). Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity. 
+All temperature observations are subject to rigorous quality control protocols following community standards.  Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges.  Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes.  We choose to use the up or down cast data depending on which is cleanest and based on the deployment method.  Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software).  Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity.  
 
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
 
@@ -2876,7 +2870,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Bottom temperature - High Resolution {#bottom_temp_seasonal_gridded}
+# Bottom temperature - High Resolution {#bottom_temp_model_gridded}
 
 **Description**: Seasonal bottom temperatures on the Northeast Continental Shelf between 1959 and 2022 in a 1/12° grid. 
 
@@ -2929,9 +2923,9 @@ We used the methodology presented in du Pontavice et al. (2023) based on the Nor
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp_comp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp_seasonal_gridded.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_model_gridded.html>
 
-<!--chapter:end:chapters/bottom_temp_seasonal_gridded.Rmd-->
+<!--chapter:end:chapters/bottom_temp_model_gridded.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -2963,7 +2957,7 @@ knitr::opts_chunk$set(
 ## Methods
 
 ### Data sources
-Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST)) were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA Earth System Research Laboratory's Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
+Data for seasonal sea surface tempature anomalies were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA Earth System Research Laboratory's Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
 
 
 In 2021, the Daily OISST data was updated and there are a couple papers describing and comparing the new version [@Huang2021assessment, @Huang2021improvements]. 
@@ -3309,7 +3303,9 @@ knitr::opts_chunk$set(
 
 ### Data sources
 
-The slope water composition index incorporates temperature and salinity measurements collected on Northeast Fisheries Science Center surveys between 1977-present within the geographic confines of the Northeast Channel in the Gulf of Maine.  Early measurements were made using water samples collected primarily with Niskin bottles at discreet depths, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  
+The slope water composition index incorporates temperature and salinity measurements collected on Northeast Fisheries Science Center surveys between 1977-present within the geographic confines of the Northeast Channel in the Gulf of Maine. Early measurements were made using water samples collected primarily with Niskin bottles at discreet depths, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.
+
+Source data are publicly available at https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html  
 
 ### Data extraction
 
@@ -3317,15 +3313,13 @@ While all processed hydrographic data are archived in an Oracle database (OCDBS)
 
 ### Data analysis
 
-Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel.  The analysis closely follows the methodology described by @mountain2012.   This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia. 
+Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel. The analysis closely follows the methodology described by David G. Mountain (2012a). This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia.
 
-For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` latitude north and 66-66.8`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated.    The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting.  The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.  
+For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6° latitude north and 66-66.8° longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated. The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting. The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.
 
-The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=10 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=35), (2) Labrador Slope Water (T=6 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=34.7) and (3) Scotian Shelf Water (T=2 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=32).  As described by @mountain2012, the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm.  On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram.  Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement.  As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources).  This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources.  Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.
+The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=12 °C, S=35.5), (2) Labrador Slope Water (T=6 °C, S=34.6) and (3) Scotian Shelf Water (T=2 °C, S=32). As described by David G. Mountain (2012a), the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm. On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram. Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement. As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources). This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources. Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.
 
-It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant.  In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes.  Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank.  These sources are not explicitely considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates.  Code used to calculate slopewater proportions can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/slopewater_analysis.R).
-
-
+It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant. In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes. Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank. These sources are not explicitly considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates.
 
 ### Data processing
 
@@ -5162,14 +5156,6 @@ knitr::opts_chunk$set(
 ```
 # Harmful Algal Bloom Indicator - Mid Atlantic
 
-```{r, echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
-
 **Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2018)
@@ -5237,7 +5223,7 @@ knitr::opts_chunk$set(
 **Public availability statement**: Data are publicly available (see Data Sources below).
 
 ## Methods
-The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016 (Figure \@ref(fig:NE-HAB)). Standard detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poisoning (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
+The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016. Standard detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poisoning (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
 
 #### Paralytic Shellfish Poisoning
 The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate *Alexandrium catenella*. All New England states except Maine relied on the Association of Official Analytical Chemists (AOAC) approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
@@ -5695,7 +5681,7 @@ knitr::opts_chunk$set(
 
 
 ## Methods
-We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (e.g. Figure \@ref(fig:kde-fig)). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
+We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (Figures not available). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
 
 Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. A wide array of KDEs for many ecologically and economically important species on the Northeast US Continental Shelf are available [here](https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html).
 
@@ -5706,9 +5692,7 @@ Current and historical species distributions are based on the NEFSC Bottom Trawl
 ### Data analysis
 
 Code used for species density analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_density_analysis.R). 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=F, echo=F}
 
-```
 
 **catalog link**
 No associated catalog page
@@ -5808,7 +5792,7 @@ Extractions were limited to the region bounded by 80°W, 50°N, 60°W, and 20°N
 Extraction code fetch_data.py is available at:  https://github.com/nrcc-cornell/regional-swh  
 Data were subset into five regions: southern Mid-Atlantic bight, northern Mid-Atlantic bight, Georges Bank, western Gulf of Maine, eastern Gulf of Maine.
 
-```{r, echo = F, fig.align="center", fig.cap=""}
+```{r storminess1, echo = F, fig.align="center", fig.cap=""}
 
 knitr::include_graphics(c(file.path(image.dir, "NEUS_regions.png")))
 
@@ -6021,7 +6005,7 @@ knitr::opts_chunk$set(
 
 Habitat area with a probability of occupancy greater than 0.5 was modeled for many species throughout the Northeast Large Marine Ecosystem (NE-LME) [@friedland2020]. Methodology for habitat occupancy models have been discussed in a [seperate chapter](#hab-occu). 
 
-[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas (Table \@ref(tab:wind-table)). 
+[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas. 
 
 ### Data extraction 
 
@@ -6029,7 +6013,7 @@ BOEM existing and proposed lease areas (as of Feb 2019) shape files were taken f
 
 ### Data analysis
 
-For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South). The species shown in the table below (Table \@ref(tab:wind-table))are those that have the highest average probablity of occupancy in the lease areas. 
+For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South). The species shown in the table below (Table not available) are those that have the highest average probablity of occupancy in the lease areas. 
 
 ### Data processing
 
@@ -6052,7 +6036,7 @@ knitr::opts_chunk$set(
 ```
 # References {-}
 
-```{r include=FALSE}
+```{r refs, include=FALSE}
 #`r if (knitr::is_html_output()) '# References {-}'`
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'htmlwidgets', 'webshot', 'DT',

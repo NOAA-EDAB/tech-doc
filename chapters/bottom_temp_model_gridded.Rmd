@@ -1,4 +1,4 @@
-# Bottom temperature - High Resolution {#bottom_temp_seasonal_gridded}
+# Bottom temperature - High Resolution {#bottom_temp_model_gridded}
 
 **Description**: Seasonal bottom temperatures on the Northeast Continental Shelf between 1959 and 2022 in a 1/12° grid. 
 
@@ -51,4 +51,4 @@ We used the methodology presented in du Pontavice et al. (2023) based on the Nor
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp_comp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp_seasonal_gridded.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_model_gridded.html>
