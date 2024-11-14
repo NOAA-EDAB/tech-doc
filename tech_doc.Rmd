@@ -1993,7 +1993,7 @@ We adapted the approach of @ng2021 to get an index for small pelagics in aggrega
 Minor changes to the prey included in the forage index were made between the Bluefish Research Track/2023 SOE and the index published in @gaichas_assessing_2023 and used in the 2024 SOE. A comparison of these methods, and of the index extended back in time to the 1970s and 1980s, is presented at https://noaa-edab.github.io/forageindex/SOEforageindex.html. 
 
 ### Data sources  
-Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal_sst_anomaly_gridded.html). 
+Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal_oisst_anom_gridded.html). 
 
 ### Data extraction  
 NEFSC survey diet data were extracted and provided by Brian Smith (NEFSC). NEAMAP survey diet data were extracted and processed by James Gartland (VIMS). Code to extract the OISST information was modified from [code](https://github.com/kimberly-bastille/ecopull/blob/main/.github/workflows/pull_satellite_data.yml) kindly provided by Kim Bastille  pulling daily gridded SST for each year 1985-2021 using her code starting line 260, as well as Kim’s nc_to_raster function for NEUS shelf from at [this link](https://github.com/kimberly-bastille/ecopull/blob/main/R/utils.R). The full OISST extraction script is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/pull_OISST.R) with visualizations of survey in-situ temperatures compared with OISST at [this link](https://sgaichas.github.io/bluefishdiet/SSTmethods.html) 
@@ -2937,7 +2937,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Seasonal SST Anomalies {#seasonal_sst_anomaly_gridded}
+# Seasonal SST Anomalies {#seasonal_oisst_anom_gridded}
 
 **Description**: Seasonal SST Anomalies
 
@@ -2975,9 +2975,9 @@ We calculated the long-term mean (LTM) for each season-specific stack of rasters
 R code used in extraction and processing [gridded](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom_gridded.R)  and [timeseries](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom.R)  data can found in the `ecodata` package.
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/seasonal_sst_anomaly_gridded.html>
+<https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html>
 
-<!--chapter:end:chapters/seasonal_sst_anomaly_gridded.Rmd-->
+<!--chapter:end:chapters/seasonal_oisst_anom_gridded.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally

@@ -1,4 +1,4 @@
-# Seasonal SST Anomalies {#seasonal_sst_anomaly_gridded}
+# Seasonal SST Anomalies {#seasonal_oisst_anom_gridded}
 
 **Description**: Seasonal SST Anomalies
 
@@ -36,4 +36,4 @@ We calculated the long-term mean (LTM) for each season-specific stack of rasters
 R code used in extraction and processing [gridded](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom_gridded.R)  and [timeseries](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom.R)  data can found in the `ecodata` package.
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/seasonal_sst_anomaly_gridded.html>
+<https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html>
