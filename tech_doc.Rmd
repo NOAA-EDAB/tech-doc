@@ -2818,7 +2818,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Bottom temperature - in situ {#bottom_temp}
+# Bottom temperature - in situ {#bottom_temp_insitu}
 
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 
@@ -2856,9 +2856,9 @@ All temperature observations are subject to rigorous quality control protocols f
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_insitu.html>
 
-<!--chapter:end:chapters/bottom_temp.Rmd-->
+<!--chapter:end:chapters/bottom_temp_insitu.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally

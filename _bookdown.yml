@@ -58,7 +58,7 @@ rmd_files:
 #
 # #################### OCEANOGRAPHIC ##################
     -   "chapters/sectionHeaders/oceanographic.rmd" 
-    -   "chapters/bottom_temp.Rmd"
+    -   "chapters/bottom_temp_insitu.Rmd"
     #-   "chapters/bottom_temp_comp.Rmd" *Missing tech doc page
     -   "chapters/bottom_temp_model_gridded.Rmd"
     -   "chapters/seasonal_oisst_anom_gridded.Rmd"
