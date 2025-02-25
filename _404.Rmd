@@ -1,0 +1,13 @@
+# Page not found
+## The page you are looking for has likely been moved or renamed. See below for details.
+
+**The following pages have been moved or renamed**
+
+- [Bottom Temperature - in situ](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html)
+- [Bottom Temperature - Seasonal Anomaly](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html)
+- [Bottom Temperature - Seasonal Gridded](https://noaa-edab.github.io/catalog/bottom_temp_model_gridded.html)
+- [Cetacean Distribution Shifts](https://noaa-edab.github.io/catalog/cetacean_dist.html)
+- [Thermal Habitat Persistence](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html)
+- [Seasonal OISST Anomaly Map](https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html)
+
+**If the page you are looking for is not listed above, please refer to the Table of Contents to the left. If you are having trouble finding something, please email Brandon Beltz (brandon.beltz@noaa.gov) for assistance.**
