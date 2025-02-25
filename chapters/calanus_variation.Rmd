@@ -1,0 +1,40 @@
+# Seasonal and multiannual variation in abundance of Calanus finmarchicus in the western Gulf of Maine {#calanus_variation}
+
+**Description**: The data presented here are abundance estimates (no./m2) of the planktonic copepod, Calanus finmarchicus, collected at the NERACOOS-MBON Wilkinson Basin Time Series (WBTS) station between 2005-2023.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2024+) 
+
+**Indicator category**: Published methods
+
+**Contributor(s)**: Jeffrey A. Runge, Cameron R.S. Thompson, Shawn Shellito, Emma C. Dullaert, Isabel A. Honda, Douglas Vandemark, Dylan Pugh, Riley Young-Morse, Jackie Motyka, Rebecca J. Jones, Lee Karp Boss, Rubao Ji
+  
+**Data steward**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Point of contact**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Observations from 2004 - 2017: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_2004_2017.html
+
+Observations beginning in 2020: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_start_2020.html
+
+### Data Analysis
+
+All analyses were conducted using the R programming software (R Core Team, 2023), utilizing the mgcv package for GAMs (Wood, 2023). Model estimation was conducted using Restricted Maximum Likelihood (REML) and to ensure the robustness of the model, we utilized DHARMa (Hartig, 2023) residual diagnostics to perform a Kolmogorov-Smirnov test for scaled residuals, assess dispersion, and detect outliers. The GAMs that passed the significance and diagnostic tests were then visualized using ggplot2 in R to graphically display the model outputs and trends. The GAMs of seasonal trends in a time series measurement were only depicted if the day of year smoother was significant, while the GAMs of annual climatologies were only depicted if the year smoother was significant. 
+
+Time series indices of C. finmarchicus  abundance of copepodid stages and total mesozooplankton biomassare presented in the following format: the accepted GAM of each time series variable is used to estimate the expected average value and confidence interval  to depict climatology over an annual time period, or to depict the  trend in each season over multiple years. These estimated expected average values are the indices for each variable and can be calculated for any combination of year and day of year. For depicting the annual climatology , the year is set to 2012 while days range from 1 to 365. For depicting interannual trends, a single day is set within each season (see figure captions for which day) while years vary from 2023 to 2005. A transformation by the square root was applied  to achieve a normal distribution for the analysis, and in the depicted figure these values are displayed by their untransformed number.
+
+### Data Processing 
+
+The Wilkinson Basin Time Series (WBTS) Station (42°51.7ʹN, -69°51.8ʹW, previously Station WB-7) is located 60 km from Portsmouth, New Hampshire, in the northwest corner of Wilkinson Basin at an average station depth of 257 m.  Since the start of the time series in December, 2004, it has been accessed by day trips using the University of New Hampshire research vessel, R/V Gulf Challenger. Contingent on funding support, the station was sampled at approximately monthly intervals between January, 2005- August, 2008, April, 2012-May, 2013, October, 2015-July, 2017, January, 2021- March, 2024 and at less frequent intervals in other years, for a total of 142 visits for CTD casts, 116 of which also include net tows. It continues to be sampled at approximately monthly intervals since 2020 as part of the U.S. MBON.
+
+Sampling at the WBTS and CMTS stations generally follow guidelines established by the Atlantic Zone Monitoring Program (AZMP) operated in Canadian Maritime waters by Fisheries and Oceans Canada (Mitchell et al., 2002). All samples were taken during daytime hours, typically mid-morning to mid-afternoon. 
+
+To measure zooplankton abundance and biomass, two net two casts were made using a 0.75 meter diameter single ring (CMTS and WBTS stations) or a SEA-GEAR Model 9600 twin-ring 200 µm mesh net (WBTS station). The nets were towed vertically at approx. 40 m/min with the ring starting at  5-7 meters from the bottom. The samples were preserved in 4% buffered formaldehyde. In the laboratory, samples were split with a Folsom Splitter with half of the sample designated for measurement of total zooplankton biomass and the other for taxonomic enumeration. The biomass sample split was filtered onto one or more 47 mm diameter glass fiber filters or 100-200 µm mesh nitex screens preweighed in a plastic petri dish. The split sample was poured through the filter or screen mounted in a filter holder assisted with gentle vacuum pumping, rinsed with 100 ml of tap water, dried in an oven 65°C for 24-48 h and then collectively weighed on a Mettler Toledo PG403-S microbalance (1 mg precision). The half sample for enumeration was drained of formaldehyde solution on a fine mesh screen, the contents of which were then placed in a 4 l beaker containing a known quantity of filtered seawater (typically 2500-3000 ml).  Subsamples were taken while randomly stirring with either a 25 ml Hensen-Stempel pipette or a large-mouth pipette (we used a modified turkey baster)  emptied into graduated cylinder to measure subsample volume. Multiple subsamples were taken to ensure at least 50 Calanus copepodid stages were enumerated (typically about 3% of the total half-sample) under a Leica MZ 12.5 Zoom stereo microscope. While all copepodid stages in the subsamples were enumerated, an index of C. finmarchicus abundance is calculated as the total abundance of stage C3 to adult stage C6. Water column (i.e. to net depth) biomass (g dry weight m-2) and abundance (number of individuals m-2) were calculated by dividing the measurement in the total sample (taking into account split and aliquot of subsamples) by the area of the ring net (0.4418 m2).  Net volume filtered was also determined by a General Oceanics flowmeter installed in the mouth of the net, but the geometrically determined volumes were chosen as the standard because reliable flowmeter data was not available for every cast.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/calanus_variation.html>

@@ -1,0 +1,32 @@
+# Title {#dataset}
+
+**Description**:
+
+**Found in**: State of the Ecosystem - Mid-Atlantic/New England/Indicator Catalog (YYYY) 
+
+**Indicator category**: 
+
+**Contributor(s)**: 
+  
+**Data steward**: First Last <email@domain>
+  
+**Point of contact**: First Last <email@domain>
+  
+**Public availability statement**: 
+
+## Methods
+
+### Data Sources
+
+TEXT 
+
+### Data Analysis
+
+TEXT
+
+### Data Processing 
+
+TEXT
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/dataset.html>

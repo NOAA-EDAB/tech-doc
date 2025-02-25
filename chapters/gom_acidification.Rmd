@@ -1,0 +1,32 @@
+# Gulf of Maine Weekly pCO2 and Omega-a {#gom_acidification}
+
+**Description**: The presented data are weekly averages of the partial pressure of carbon dioxide (pCO2) and the saturation state of calcium carbonate as aragonite (Omega-a), measured by the Gulf of Maine coastal buoy cooperatively operated by NOAA's Pacific Marine Ecological Laboratory (PMEL) and the University of New Hampshire's Ocean Process Analysis Laboratory. The buoy is located at 43.02 degrees North and 70.54 degrees West.  pCO2 was measured directly, while Omega-a was calculated from observed pCO2, water temperature, salinity, and total alkalinity (modeled from temperature, salinity and month, similar to McGarry et al. 2021).  The weekly averages from 2024 are depicted against the climatological bounds from observations at this site between 2006-2023.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods, Database pull with analysis
+
+**Contributor(s)**: Hunt, Christopher W; Vandemark, Douglas; Sutton, Adrienne
+  
+**Data steward**: Christopher W. Hunt <chunt@unh.edu>
+  
+**Point of contact**: Christopher W. Hunt <chunt@unh.edu>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+pCO2, salinity and water temperature data were measured by the PMEL MAPCO2 system (https://www.pmel.noaa.gov/co2/story/GOM).  Total alkalinity (used together with pCO2, temperature and salinity to estimate Omega-a) was calculated according to a multiple linear regression model developed by UNH from discrete sample data collected at the mooring site since 2004. 
+
+### Data Analysis
+
+Climatological averages and 5th/95th percentiles were calculated from all observations in a specific week, using the Matlab functions mean() and prctile(), respectively.
+
+### Data Processing 
+
+Observations of pCO2, water temperature and salinity from 2006-2023 (collected every 3 hours) were combined for the weekly climatology, with mean and 5th/95th percentile values calculated for all data within each week of the year.  Observations of pCO2, water temperature, and salinity from 2024 were averaged to weekly means.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/gom_acidification.html>

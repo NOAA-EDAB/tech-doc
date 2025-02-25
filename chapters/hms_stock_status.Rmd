@@ -1,12 +1,12 @@
-# Highly Migratory Species Stock Status {#hms_stock_status}
+# Atlantic Highly Migratory Species Stock Status  {#hms_stock_status}
 
-**Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
+**Description**:  Summary of stock assessment results for each assessed HMS species as of December 2023. 
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Synthesis of published information
 
-**Contributor(s)**: Jennifer Cudney, Ben Duffin, Dan Crear, Tobey Curtis
+**Contributor(s)**: Jennifer Cudney
   
 **Data steward**: Jennifer Cudney, <Jennifer.Cudney@noaa.gov>
   
@@ -18,9 +18,7 @@
 
 
 ### Data sources
-Data shared were collected from Atlantic HMS SAFE Reports (see 2021 report, https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports), Fishery Stock Status Determinations webpage (https://www.fisheries.noaa.gov/national/population-assessments/fishery-stock-status-updates), SEDAR assessments (www.sedarweb.org), ICCAT assessments (https://www.iccat.int/en/assess.html).
-
-
+Atlantic HMS SAFE Reports (see 2023 report, https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports), Fishery Stock Status Determinations webpage (https://www.fisheries.noaa.gov/national/population-assessments/fishery-stock-status-updates), SEDAR assessments (www.sedarweb.org), ICCAT assessments (https://www.iccat.int/en/assess.html).
 
 ### Data analysis
 Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). Species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries. We selected the most precautionary metrics for Fyr/Fmsy (high-end) and Byr/Bmsy (low-end). 
@@ -39,6 +37,8 @@ kable(stock_status)
 ```
 
 ### Data processing
+Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). The HMS SAFE report is the most accurate compilation of available stock status information (e.g., species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries).
+
 Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R).
 
 **catalog link**
