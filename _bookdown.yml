@@ -57,7 +57,7 @@ rmd_files:
     -   "chapters/grayseal.Rmd"
     -   "chapters/seabird_ne.Rmd"
     -   "chapters/cetacean_acoustic.Rmd"
-    -   "chapters/wea_sound"
+    -   "chapters/wea_sound.Rmd"
     -   "chapters/species_groupings.rmd"  
 #
 #
