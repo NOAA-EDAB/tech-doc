@@ -7,6 +7,7 @@ rmd_files:
     -   "chapters/sectionHeaders/methods.rmd"
     -   "chapters/erddap_query_and_build.Rmd"
     -   "chapters/Trend_analysis.Rmd"
+    -   "chapters/short_term_trend.Rmd"
     -   "chapters/regime_shift_analysis.Rmd"
     -   "chapters/survdat.rmd"
     -   "chapters/EPU.Rmd"
