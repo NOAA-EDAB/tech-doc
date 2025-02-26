@@ -328,7 +328,7 @@ NA
 The red vertical lines indicate the years in which a shift occurs. 
 
 **Example plot**
-```{r , echo = F, fig.align="center", eval = T, fig.cap=""}
+```{r explot, echo = F, fig.align="center", eval = T, fig.cap=""}
 
 lt_sst <- ecodata::long_term_sst %>% 
   dplyr::mutate(hline = mean(Value, na.rm = TRUE))
@@ -1315,6 +1315,153 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
+# Zooplankton Indices {#zooplankton_index}
+
+**Description**: Model-based abundance and annual center of gravity indices for zooplankton groups sampled by NEFSC surveys
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sarah Gaichas and Harvey Walsh
+  
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Public availability statement**: Source data are NOT publicly available.
+
+## Methods
+
+### Data Sources
+
+The Northeast Fisheries Science Center has conducted [zooplankton surveys](https://www.fisheries.noaa.gov/inport/item/9286) since the 1970s.
+
+The dataset through 2022 used in this analysis was obtained from Harvey Walsh. 
+
+### Data Analysis
+
+#### VAST models
+VAST is a spatio-temporal modeling framework used for index standardization [@thorson_comparing_2017; @thorson_guidance_2019].
+
+Zooplankton models were evaluated using two stages of model selection to determine whether to include
+
+1. spatial and spatio-temporal random effects, and
+
+2. "catchability" covariates affecting the observation process: day of year.
+
+Model selection script is
+https://github.com/NOAA-EDAB/zooplanktonindex/blob/main/VASTscripts/VASTunivariate_zoopindex_modselection.R
+
+Models were run using REML and without bias correction.
+
+Two different observation models were applied. The default VAST index standardization (purpose = "index2" in make_settings) uses a Gamma distribution for positive catches and an alternative "Poisson-link delta-model" using log-link for numbers-density and log-link for biomass per number (ObsModel= c(2,1)).
+
+We applied the default observation model to Calanus finmarchicus (calfin_100m3) and Large copepods (calfin_100m3 + mlucens_100m3 + calminor_100m3 + euc_100m3 + calspp_100m3) datasets.
+
+The default was used for index standardization of stomach contents data for pelagic and benthic forage indices. It is intended for continuous data, which includes biomass data and "numbers standardized to a fixed area" (see section starting at line 239 in the VAST user manual [here](https://github.com/James-Thorson-NOAA/VAST/blob/main/manual/VAST_model_structure.pdf). I am interpreting zooplankton abundance per 100 cubic meters as numbers standardized to a fixed area (volume) in applying the Gamma observation model.
+
+For data where there are some years where the species is present in all (or 0) samples, estimating the probability of encounter fails (or at least, VAST won't let you try). In these cases, the options are to treat intercepts representing temporal variability as random effects (by setting RhoConfig Beta or Epsilon entries to something other than 0), or to use a different link function.
+
+We intend for our indices to potentially be used in assessment (though as a covariate rather than an index, so maybe I'm being too strict), so the recommendation is to "minimize covariance in the estimated index by excluding any temporal correlation on model components (i.e., the intercept is a fixed effect in each year, and the spatio-temporal term is independent in each year)" [@thorson_guidance_2019].
+
+All of the small copepods datasets had at least one year where our small copepods groupings were encountered at all stations. None had years with 0 encounters.
+
+Therefore, we used a different link function, the Poisson-link fixing encounter probability=1 for any year where all samples encounter the species. We kept all other settings for index standardization the same, but set (ObsModel= c(2,4)).
+
+Model selection results are reported at this link: https://noaa-edab.github.io/zooplanktonindex/CopeModSelection.html
+
+In the second stage of model selection, the day of year covariate had mixed success. Results of the best models which both converged and had the lowest AIC are reported here: https://noaa-edab.github.io/zooplanktonindex/CopeModResults.html
+
+### Data Processing 
+
+#### Data were aggregated into groups for analysis (names indicate column names in the dataset linked above):
+A lookup of these column headings is here: https://www.fisheries.noaa.gov/inport/item/35054
+
+- Calanus finmarchicus (calfin_100m3) = “calfin” ,
+- Large copepods (calfin_100m3, mlucens_100m3, calminor_100m3, euc_100m3, calspp_100m3) = “lgcopeALL”,
+- Small copepods (all) (ctyp_100m3, pseudo_100m3, tlong_100m3, cham_100m3, para_100m3, acarspp_100m3, clauso, acarlong_100m3, fur_100m3, ost_100m3, temspp_100m3, tort_100m3, paraspp_100m3) = “smallcopeALL” and
+- Small copepods (SOE) (ctyp_100m3, pseudo_100m3, tlong_100m3, cham_100m3) = “smallcopeSOE”.
+- Euphausiids = "euph_100m3"
+- Zoopvolume = "volume_100m3"
+
+#### Data were assigned to seasonal blocks
+- Spring = January-June
+- Fall = July-December
+
+#### Years were selected for analysis
+1982 - 2022
+
+The script that processes input data is available here: https://github.com/NOAA-EDAB/zooplanktonindex/blob/main/data/VASTzoopindex_processinputs.R
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/zooplankton_index.html>
+
+<!--chapter:end:chapters/zooplankton_index.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Seasonal and multiannual variation in abundance of Calanus finmarchicus in the western Gulf of Maine {#calanus_variation}
+
+**Description**: The data presented here are abundance estimates (no./m2) of the planktonic copepod, Calanus finmarchicus, collected at the NERACOOS-MBON Wilkinson Basin Time Series (WBTS) station between 2005-2023.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2024+) 
+
+**Indicator category**: Published methods
+
+**Contributor(s)**: Jeffrey A. Runge, Cameron R.S. Thompson, Shawn Shellito, Emma C. Dullaert, Isabel A. Honda, Douglas Vandemark, Dylan Pugh, Riley Young-Morse, Jackie Motyka, Rebecca J. Jones, Lee Karp Boss, Rubao Ji
+  
+**Data steward**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Point of contact**: Jeffrey Runge <jeffrey.runge@maine.edu>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Observations from 2004 - 2017: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_2004_2017.html
+
+Observations beginning in 2020: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_start_2020.html
+
+### Data Analysis
+
+All analyses were conducted using the R programming software (R Core Team, 2023), utilizing the mgcv package for GAMs (Wood, 2023). Model estimation was conducted using Restricted Maximum Likelihood (REML) and to ensure the robustness of the model, we utilized DHARMa (Hartig, 2023) residual diagnostics to perform a Kolmogorov-Smirnov test for scaled residuals, assess dispersion, and detect outliers. The GAMs that passed the significance and diagnostic tests were then visualized using ggplot2 in R to graphically display the model outputs and trends. The GAMs of seasonal trends in a time series measurement were only depicted if the day of year smoother was significant, while the GAMs of annual climatologies were only depicted if the year smoother was significant. 
+
+Time series indices of C. finmarchicus  abundance of copepodid stages and total mesozooplankton biomassare presented in the following format: the accepted GAM of each time series variable is used to estimate the expected average value and confidence interval  to depict climatology over an annual time period, or to depict the  trend in each season over multiple years. These estimated expected average values are the indices for each variable and can be calculated for any combination of year and day of year. For depicting the annual climatology , the year is set to 2012 while days range from 1 to 365. For depicting interannual trends, a single day is set within each season (see figure captions for which day) while years vary from 2023 to 2005. A transformation by the square root was applied  to achieve a normal distribution for the analysis, and in the depicted figure these values are displayed by their untransformed number.
+
+### Data Processing 
+
+The Wilkinson Basin Time Series (WBTS) Station (42°51.7ʹN, -69°51.8ʹW, previously Station WB-7) is located 60 km from Portsmouth, New Hampshire, in the northwest corner of Wilkinson Basin at an average station depth of 257 m.  Since the start of the time series in December, 2004, it has been accessed by day trips using the University of New Hampshire research vessel, R/V Gulf Challenger. Contingent on funding support, the station was sampled at approximately monthly intervals between January, 2005- August, 2008, April, 2012-May, 2013, October, 2015-July, 2017, January, 2021- March, 2024 and at less frequent intervals in other years, for a total of 142 visits for CTD casts, 116 of which also include net tows. It continues to be sampled at approximately monthly intervals since 2020 as part of the U.S. MBON.
+
+Sampling at the WBTS and CMTS stations generally follow guidelines established by the Atlantic Zone Monitoring Program (AZMP) operated in Canadian Maritime waters by Fisheries and Oceans Canada (Mitchell et al., 2002). All samples were taken during daytime hours, typically mid-morning to mid-afternoon. 
+
+To measure zooplankton abundance and biomass, two net two casts were made using a 0.75 meter diameter single ring (CMTS and WBTS stations) or a SEA-GEAR Model 9600 twin-ring 200 µm mesh net (WBTS station). The nets were towed vertically at approx. 40 m/min with the ring starting at  5-7 meters from the bottom. The samples were preserved in 4% buffered formaldehyde. In the laboratory, samples were split with a Folsom Splitter with half of the sample designated for measurement of total zooplankton biomass and the other for taxonomic enumeration. The biomass sample split was filtered onto one or more 47 mm diameter glass fiber filters or 100-200 µm mesh nitex screens preweighed in a plastic petri dish. The split sample was poured through the filter or screen mounted in a filter holder assisted with gentle vacuum pumping, rinsed with 100 ml of tap water, dried in an oven 65°C for 24-48 h and then collectively weighed on a Mettler Toledo PG403-S microbalance (1 mg precision). The half sample for enumeration was drained of formaldehyde solution on a fine mesh screen, the contents of which were then placed in a 4 l beaker containing a known quantity of filtered seawater (typically 2500-3000 ml).  Subsamples were taken while randomly stirring with either a 25 ml Hensen-Stempel pipette or a large-mouth pipette (we used a modified turkey baster)  emptied into graduated cylinder to measure subsample volume. Multiple subsamples were taken to ensure at least 50 Calanus copepodid stages were enumerated (typically about 3% of the total half-sample) under a Leica MZ 12.5 Zoom stereo microscope. While all copepodid stages in the subsamples were enumerated, an index of C. finmarchicus abundance is calculated as the total abundance of stage C3 to adult stage C6. Water column (i.e. to net depth) biomass (g dry weight m-2) and abundance (number of individuals m-2) were calculated by dividing the measurement in the total sample (taking into account split and aliquot of subsamples) by the area of the ring net (0.4418 m2).  Net volume filtered was also determined by a General Oceanics flowmeter installed in the mouth of the net, but the geometrically determined volumes were chosen as the standard because reliable flowmeter data was not available for every cast.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/calanus_variation.html>
+
+<!--chapter:end:chapters/calanus_variation.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
 # Mesozooplankton Biomass at Wilkinson Basin  {#wbts_mesozooplankton}
 
 **Description**: Mesozooplankton biomass at the Wilkinson Basin Time Series Station (WBTS): 2005-2022
@@ -1565,6 +1712,68 @@ The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelCon
 <https://noaa-edab.github.io/catalog/condition.html>
 
 <!--chapter:end:chapters/condition.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# NE Shelf Functional Trait Indicators {#finfish_traits}
+
+**Description**: These data represent estimates of trait distributions for key functional traits amongst finfish species at each EPU on the Northeast Continental Shelf.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Extensive analysis, not yet published; Database pull with analysis
+
+**Contributor(s)**: Bart DiFiore, Kathy Mills, Scott Large
+  
+**Data steward**: Bart DiFiore <bdifiore@gmri.org>
+  
+**Point of contact**: Bart DiFiore <bdifiore@gmri.org>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Currently, the version of the NEFSC Trawl Survey used to generate the community weighted mean trait values is from <https://github.com/NOAA-EDAB/data-requests/tree/main/EwE-menhaden-AndreBuchheister>. However, any version of the trawl survey data that has corrected estimates of biomass by species at the tow scale could be used to update/recreate the index.
+
+The trait values for each species can be found at <https://github.com/bartdifiore/Fish-Functional-Traits/blob/main/Data/Derived/trait_database.csv> and the PCA ordinations of these traits can be found at <https://github.com/bartdifiore/Fish-Functional-Traits/blob/main/Data/Derived/pca_variables.csv>. I have included in this submission the derived CWM trait database that can be directly used to create all figures etc.
+
+### Data Analysis 
+
+Here, we present indices for 8 functional traits and three aggregate trait ordinations. To better understand the long-term linear change in these indicators, we fit linear mixed effects models. Specifically, at the EPU scale we estimated the linear change in the response (e.g. PCA1, PCA2, or PCA3) with time in each season in each EPU . We include year as a random intercept effect to account for systematic annual variation across EPU’s. For visualization purposes we include the long-term linear trend if the 95% confidence intervals on the slope estimate do not include zero.
+
+### Data Processing
+
+#### Development of the trait database
+
+To develop the trait database we utilized two primary sources: Beukhof et al. (2019) and Thorsen et al. (2023) FishLife database. Both data sources are based on FishBase (Froese and Pauly 2024), however provide different levels of detail. Specifically, we queried the Beukhof et al. (2019) database for finfish species encountered in the NE Shelf trawl survey. We utilized values from Beukhof et al. (2019) that were species-specific (e.g. not estimated based on averages of traits across other species of the same genus, family, class, order). For remaining species encountered on the NE Shelf, we queried the FishLife database. The FishLife database used a modeling approach to impute trait values for all fish species in FishBase based on taxonomic relatedness. Thus, if a trait for a particular species was unknown, the model generated a prediction for that trait based on taxonomic relatedness via a structural equation model.
+
+#### Principle Component Analysis of traits
+
+Many traits represent similar variation in the community. For instance, maximum observed body size and asymptotic body size (from the VB growth equation) both represent similar trait indices. To further reduce the dimensionality across traits, we conducted a principal component analysis (PCA) of the trait database. The first principal component (PCA1) explained 61.5% of the variation, while the second component (PCA2) explained 19.6% of the variation. Traits such as VB growth parameter k, length at maturity, age at maturity, maximum observed length, and VB growth parameter linf all loaded strongly on PCA1. Following, McKeon et al. (2023) we consider this PCA axis as an indicator for finfish “Pace of Life”, with higher values on this axis representing faster growth and small maximum body size. Similarly, we consider the second axis as an indicator of “Fecundity”, with higher values on the axis reflecting lower reproductive investment (smaller offspring, higher fecundity).
+
+#### Estimating trait distributions
+To generate a functional trait index, we then combined our trait database with observations of the finfish community using a community weighted mean (CWM) approach (e.g. Lavorel et al. 2008, Frainer et al. 2017). Specifically, we follow Lavorel et al. (2008), and estimate the CWM for each trait j as
+
+**Insert formula**
+
+The community weighted mean can be estimated at different spatial or temporal scales. Here we estimate the CWM for each trait at the scale of the NE Shelf, where bi is the biomass (kg) of species i captured across all tows in a year and season, or similarly at the EPU scale, where bi is the biomass (kg) of species i captured across each EPU in each year and season.
+
+All other data preparation and processing is standard to the trawl survey data prep, including species-specific vessel corrections, etc.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/finfish_traits.html>
+
+<!--chapter:end:chapters/finfish_traits.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -1993,7 +2202,7 @@ We adapted the approach of @ng2021 to get an index for small pelagics in aggrega
 Minor changes to the prey included in the forage index were made between the Bluefish Research Track/2023 SOE and the index published in @gaichas_assessing_2023 and used in the 2024 SOE. A comparison of these methods, and of the index extended back in time to the 1970s and 1980s, is presented at https://noaa-edab.github.io/forageindex/SOEforageindex.html. 
 
 ### Data sources  
-Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal_sst_anomaly_gridded.html). 
+Data used to develop this indicator comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Sea Surface Temperature (SST) data were used from in situ NEFSC and NEAMAP survey in-situ collections, as well as NOAA High Resolution SST data (Optimal Interpolation Sea Surface Temperature- OISST, @Reynolds2007), provided by the NOAA/OAR/ESRL PSL, Boulder, Colorado, USA, from their Web site at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html. This is the same source data used in [seasonal SST anomaly analyses](https://noaa-edab.github.io/tech-doc/seasonal_oisst_anom_gridded.html). 
 
 ### Data extraction  
 NEFSC survey diet data were extracted and provided by Brian Smith (NEFSC). NEAMAP survey diet data were extracted and processed by James Gartland (VIMS). Code to extract the OISST information was modified from [code](https://github.com/kimberly-bastille/ecopull/blob/main/.github/workflows/pull_satellite_data.yml) kindly provided by Kim Bastille  pulling daily gridded SST for each year 1985-2021 using her code starting line 260, as well as Kim’s nc_to_raster function for NEUS shelf from at [this link](https://github.com/kimberly-bastille/ecopull/blob/main/R/utils.R). The full OISST extraction script is available at [this link](https://github.com/sgaichas/bluefishdiet/blob/main/pull_OISST.R) with visualizations of survey in-situ temperatures compared with OISST at [this link](https://sgaichas.github.io/bluefishdiet/SSTmethods.html) 
@@ -2066,6 +2275,71 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
+# Benthic Invertebrate Indices {#benthos_index}
+
+**Description**: Aggregate macrobenthos and megabenthos invertebrate indices from fish stomach contents
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sarah Gaichas, James Gartland, Brian E. Smith, Sarah Weisberg, Sean Lucey
+  
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available. All data and code available on GitHub at <https://github.com/NOAA-EDAB/benthosindex>
+
+## Methods
+
+### Data Sources
+
+Data used to develop these indicators comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Bottom temperature data is described in [Bottom temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom_temp_seasonal_gridded.html). 
+
+### Data Analysis
+
+VAST spatio-temporal modeling [@thorson_comparing_2017; @thorson_guidance_2019] is described here.
+
+The approach follows that used for the forage fish index [@gaichas_assessing_2023], which was in turn based on @ng_predator_2021.
+
+Two stages of model selection determined whether to include:
+
+1. spatial and spatio-temporal random effects, and
+2. vessel effects, and "catchability" covariates affecting the observation process: mean predator size, number of predators, and bottom temperature.
+Using REML in stage 1, models including spatial and spatio-temporal random effects as well as anisotropy were best supported by the data. This was true for the spring dataset and the fall dataset for both macrobenthos and megabenthos.
+
+In stage 2, combinations of catchability covariates were better supported by the data than vessel effects. Model comparisons led us to the best model fit using mean predator length, number of predator species, and bottom temperature at a survey station as catchability covariates.
+
+Model selection results are reported at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+Scripts used to run the model selection and to produce the final bias corrected models are posted at <https://github.com/NOAA-EDAB/benthosindex/tree/main/VASTscripts>
+
+### Data Processing 
+
+The basic workflow is to develop a dataset of stomach contents data where fish predators act as samplers of the prey field, then fit a vector autoregressive spatio-temporal (VAST) model to this dataset to generate an index. Dataset development is described here.
+
+NEFSC survey food habits data were extracted and provided by Brian Smith (NEFSC). NEAMAP survey food habits data were extracted and processed by James Gartland (VIMS). Macrobenthos and Megabenthos categories were those used in Northeast US food web models. The Macrobenthos Rpath category has 833 food habits database species codes. The Megabenthos Rpath category has 105 food habits database species codes. All are listed at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+Benthic predator/size combinations were selected using a cluster analysis of a diet similarity matrix provided by Brian Smith. Species categorized as pelagic or piscivorous feeders were eliminated, and all other species were retained as general benthivores. This resulted in 88 predator/size combinations used to "sample" benthic invertebrates. The predator/size list is available at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+These input datasets were processed, aggregated, and combined with bottom temperature data to become VAST model input datasets using the script at [this link](https://github.com/NOAA-EDAB/benthosindex/blob/main/fhdata/VASTbenthos_ProcessInputDat.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/benthos_index.html>
+
+<!--chapter:end:chapters/benthos_index.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
 # Harbor Porpoise Bycatch {#harborporpoise}
 
 
@@ -2114,17 +2388,17 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Highly Migratory Species POP Catch Per Unit Effort {#hms_cpue}
+# Atlantic Highly Migratory Species Pelagic Observer Program CPUE {#hms_cpue}
 
-**Description**: CPUE from pelagic observer program (POP) observed hauls, presented as number of fish per haul, is provided for the northeast (shelf-wide) by year/species from 1992-2019.
+**Description**: CPUE from pelagic observer program (POP) observed hauls, presented as number of fish per haul, is provided for the northeast (i.e., the Northeast Coastal and Mid-Atlantic Bight fishing areas) by year/species from 1992-2023.
 
 **Indicator category**: Database pull with analysis
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+), State of the Ecosystem - Indicator Catalog (2024+)
 
-**Contributor(s)**: Tobey Curtis, Jennifer Cudney
+**Contributor(s)**: Jennifer Cudney, Tobey Curtis, Daniel Daye
   
-**Data steward**:  Tobey Curtis, Jennifer Cudney
+**Data steward**:  Jennifer Cudney, Tobey Curtis, Daniel Daye
   
 **Point of contact**:  Jennifer Cudney <jennifer.cudney@noaa.gov>
   
@@ -2134,7 +2408,7 @@ knitr::opts_chunk$set(
 ## Methods
 
 ### Data sources
-Data for this indicator were compiled by NOAA Southeast Fisheries Science Center, Larry Beerkircher. These data come from the NOAA Southeast Fisheries Science Center databases holding the Atlantic highly migratory species information from the pelagic observer program. 
+Data for this indicator are sourced from the NOAA Southeast Fisheries Science Center, Pelagic Observer Program. These data come from the NOAA Southeast Fisheries Science Center databases holding the Atlantic highly migratory species information from the pelagic observer program. 
 
 The Southeast Pelagic Observer Program monitors the pelagic longline fleet all along the Northeast U.S. Shelf. This covers approximately 1000 hauls per year and targets 8% coverage of the fishing effort. 
 
@@ -2179,7 +2453,9 @@ The species groupings are available in the table below.
 | Pelagic        | Thresher             | *Alopias vulpinus*           |
 
 ### Data Processing 
-Code used to process this data can be found on github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
+HMS staff sent a request for data to POP Observer Program staff (Sascha Cushner, Lawrence Beerkircher, Garry Decossas, and Scott Leach) using this form (https://forms.gle/kiMGRfUwbKJCf8Vs6). SEFSC statistician Garry Decossas completed the data pull based on submissions to the SOE from previous years, and provided the data to HMS staff. Data from the areas (MAB, NEC) and time period of interest (1992-2023) are summarized by species and year. Number of hauls per year are also provided to enable CPUE calculations of species per year. This is a data pull of ALL species reported in these areas, so there is more than just sharks in the dataset.
+
+Code used to process this data for SOE products can be found on Github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/hms_cpue.html>
@@ -2198,66 +2474,72 @@ knitr::opts_chunk$set(
 ```
 # Highly Migratory Species Landings {#hms_landings}
 
-**Description**: Atlantic Highly Migratory Species Landings
+**Description**: Aggregated Atlantic HMS landings data prepared for the Fisheries of the United States (FUS) report, spanning 2015-2023.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Database pull with analysis
 
 **Contributor(s)**: Heather Baertlein, Jackie Wilson, George Silva, Jennifer Cudney
-  
-**Data steward**: Jennifer Cudney <jennifer.cudney@noaa.gov>
-  
-**Point of contact**: Jennifer Cudney <jennifer.cudney@noaa.gov>
-  
-**Public availability statement**: Source data are NOT publicly available.
+
+**Data steward**: Jennifer Cudney [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email}
+
+**Point of contact**: Jennifer Cudney [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email}
+
+**Public availability statement**: Source data are NOT publicly available. Confidential data may be released in "any aggregate or summary form which does not directly or indirectly disclose the identity or business of any person who submits such information" (Magnuson-Stevens Act § 402(b)(3); 16 U.S.C. 1881a(b)(3)). NOAA Fisheries presents such information only if it can be aggregated or summarized at a temporal and/or spatial level to maintain confidentiality of individuals, businesses, and related business information. Data that has been properly screened to meet data standards and confidentiality are publicly available via the Fisheries of the United States (FUS) landings portal. Canadian landings information, which are included in this analysis, are not included in the FUS portal (<https://www.fisheries.noaa.gov/national/sustainable-fisheries/commercial-fisheries-landings>). Data should be aggregated to protect data confidentiality (raw data are lumped by year and species). Data were included in the final summary unless there were 2 or less dealers involved in the landings, 2 or less vessels, or if any one dealer or vessel purchased/landed more than 2/3 of the total amount for that data unit. Please email [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email} for further information and queries of source data.
 
 ## Methods
+
 ### Data Sources
-Data from eDealer database (https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting) and Bluefin Tuna Dealer reports on SAFIS (https://www.accsp.org/what-we-do/safis/).  The eDealer data were supplemented with ACCSP records, GulfFIN records, and pelagic and coastal fisheries vessel logbook catches reported to SEFSC for which no dealer reports were submitted.
+
+Data from eDealer database (<https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting>) and Bluefin Tuna Dealer reports on SAFIS (<https://www.accsp.org/what-we-do/safis/>). The eDealer data were supplemented with ACCSP records, GulfFIN records, and pelagic and coastal fisheries vessel logbook catches reported to SEFSC for which no dealer reports were submitted.
 
 ### Data Analysis
-Data, from 2015-2022, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database and the Caribbean Commercial Vessel logbook database. Additional landings of these HMS not in this dataset were collected from ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook databases. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS.
 
-Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state reporting requirements and definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, may result in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings prior to summarizing the data for analyses, including the Fisheries of the United States.
+Data, from 2015-2023, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database and the Caribbean Commercial Vessel logbook database. Additional landings of these HMS not in this dataset were collected from ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook databases. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS.
+
+Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as ""Packing"". Differences in federal and state reporting requirements and definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, may result in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings prior to summarizing the data for analyses, including the Fisheries of the United States.
 
 All reported landings were converted to live weights using conversion ratios appropriate for the species/species group and reported grade of the product. Shark fins, shark heads, shark tails, and shark bellies were not reported to live weight as these weights are included in the converted whole weight of the reported shark landing.
 
-States, where the landings occurred, were grouped into ‘ecological production units’ (EPUs), as defined by GARFO staff. “New England”, or NE, includes Maine, New Hampshire and Massachusetts, as well as landings from Canada. The “Mid-Atlantic Bight”, or MAB, includes states from Rhode Island to North Carolina. Landings in states outside of these EPUs were excluded from further summaries.
+States, where the landings occurred, were grouped into ‘ecological production units’ (EPUs), as defined by GARFO staff. “New England” includes Maine, New Hampshire and Massachusetts, as well as landings from Canada. The “Mid-Atlantic Bight” includes states from Rhode Island to North Carolina. Landings in states outside of these EPUs were excluded from further summaries.
 
 Seven HMS Management Groups represent 26 highly migratory species in the dataset. HMS Management Groups may include a single species or a group of species. HMS groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark. 
 
+On July 1, 2023, a zero-retention limit went into effect for shortfin mako sharks; therefore, 2023 landings of shortfin mako between January and June were considered “Pelagic Sharks” and in July and after were considered “Prohibited shark species”. No landings of shortfin mako were reported after June 2023 in the northeast region. 
+
 Price per pound was used to determine the ex-vessel value. For landings with a reported disposition of “Food” and prices per pound reported as “N/A”, 0, $0.01 or left blank, average prices were calculated for each species and state. Those average prices replaced the missing values to determine landings revenue. Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens.
 
-### Data Processing 
+### Data Processing
+
 Highly migratory species landings include 26 species of tunas, sharks and swordfish. Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of entities represented was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential; generally, data was marked confidential if it did not meet the "rule of three" (i.e., at least three unique entities represented).
 
 HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_landings.R).
 
 ## Methods 2020
 
-
 ### Data sources
-Data from eDealer database (https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting) and Bluefin Tuna Dealer reports on [SAFIS](https://www.accsp.org/what-we-do/safis/).  The eDealer data were supplemented with GulfFIN records and vessel logbook catches for which no dealer reports were submitted.
 
+Data from eDealer database (<https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting>) and Bluefin Tuna Dealer reports on [SAFIS](https://www.accsp.org/what-we-do/safis/). The eDealer data were supplemented with GulfFIN records and vessel logbook catches for which no dealer reports were submitted.
 
-### Data extraction 
+### Data extraction
+
 Data were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues.
 
 Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database. Additional landings of these HMS not in eDealer were found in GulfFIN records. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS .
 
-Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, often results in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings. Therefore, searches for duplicate reports of the same landing were conducted and eliminated prior to summarizing the data for the Fisheries of the United States.
+Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in "Packing" situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state definitions of who is considered the "dealer" of the product, and thus ultimately responsible for submitting the landings report, often results in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings. Therefore, searches for duplicate reports of the same landing were conducted and eliminated prior to summarizing the data for the Fisheries of the United States.
 
-Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens. 
+Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens.
 
 All reported landings were converted to live weights using conversion ratios appropriate for the species/species group and reported grade of the product. Shark fins were not reported to live weight as these weights are included in the converted whole weight of the reported shark landing.
 
-Price per pound was used to determine the ex-vessel value. For landings with prices per pound reported as “N/A”, 0, $0.01 or left blank, average prices were calculated for each species and state. Those averages replaced the missing values to determine landings revenue.
+Price per pound was used to determine the ex-vessel value. For landings with prices per pound reported as "N/A", 0, \$0.01 or left blank, average prices were calculated for each species and state. Those averages replaced the missing values to determine landings revenue.
 
-The extract only includes species with more than $1,000 in landings in the region for that year to avoid issues with data confidentiality.  Other species landed include: tiger sharks, porbeagle, bonnethead, blacknose, blue, lemon, silky and smooth hammerhead sharks. However, these are not reported because of low volume and resulting data confidentiality issues.
-
+The extract only includes species with more than \$1,000 in landings in the region for that year to avoid issues with data confidentiality. Other species landed include: tiger sharks, porbeagle, bonnethead, blacknose, blue, lemon, silky and smooth hammerhead sharks. However, these are not reported because of low volume and resulting data confidentiality issues.
 
 ### Data analysis
+
 High migratory landings include 19 species of tunas, sharks and swordfish (table \@ref(tab:hmsspp)).
 
 ```{r hmsspp, eval = T, echo = F}
@@ -2270,9 +2552,7 @@ knitr::kable(rec_spp, caption="Species included in the highly migratory species 
 
 Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of records marked as confidential and the number of states represented in each regional species sum was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential.
 
-**catalog link**
-<https://noaa-edab.github.io/catalog/hms_landings.html>
-
+**catalog link** <https://noaa-edab.github.io/catalog/hms_landings.html>
 
 <!--chapter:end:chapters/hms_landings.Rmd-->
 
@@ -2286,15 +2566,15 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Highly Migratory Species Stock Status {#hms_stock_status}
+# Atlantic Highly Migratory Species Stock Status  {#hms_stock_status}
 
-**Description**:  Summary of the most recent stock assessment results for each assessed Atlantic HMS species. 
+**Description**:  Summary of stock assessment results for each assessed HMS species as of December 2023. 
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Synthesis of published information
 
-**Contributor(s)**: Jennifer Cudney, Ben Duffin, Dan Crear, Tobey Curtis
+**Contributor(s)**: Jennifer Cudney
   
 **Data steward**: Jennifer Cudney, <Jennifer.Cudney@noaa.gov>
   
@@ -2306,9 +2586,7 @@ knitr::opts_chunk$set(
 
 
 ### Data sources
-Data shared were collected from Atlantic HMS SAFE Reports (see 2021 report, https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports), Fishery Stock Status Determinations webpage (https://www.fisheries.noaa.gov/national/population-assessments/fishery-stock-status-updates), SEDAR assessments (www.sedarweb.org), ICCAT assessments (https://www.iccat.int/en/assess.html).
-
-
+Atlantic HMS SAFE Reports (see 2023 report, https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-stock-assessment-and-fisheries-evaluation-reports), Fishery Stock Status Determinations webpage (https://www.fisheries.noaa.gov/national/population-assessments/fishery-stock-status-updates), SEDAR assessments (www.sedarweb.org), ICCAT assessments (https://www.iccat.int/en/assess.html).
 
 ### Data analysis
 Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). Species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries. We selected the most precautionary metrics for Fyr/Fmsy (high-end) and Byr/Bmsy (low-end). 
@@ -2317,7 +2595,7 @@ Stock status information was plotted on a Kobe chart using modified code from th
 
 
 The table below shows naming conventions used in the plot. 
-```{r}
+```{r stock-status, echo = F,eval = T}
 stock_status<-ecodata::hms_stock_status %>% 
   tidyr::separate(Var, c("Species_Abbreviation", "Common_Name"), ":") %>% 
   dplyr::select(Species_Abbreviation, Common_Name) %>% 
@@ -2327,6 +2605,8 @@ kable(stock_status)
 ```
 
 ### Data processing
+Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). The HMS SAFE report is the most accurate compilation of available stock status information (e.g., species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries).
+
 Code for processing Atlantic HMS Stock status data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_stock_status.R).
 
 **catalog link**
@@ -2344,7 +2624,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Cetacean Distribution Shifts {#HMS_species_distribution}
+# Cetacean Distribution Shifts {#cetacean_dist}
 
 **Description**: The data presented here are the locations of the center of core habitat for cetaceans by season as documented in 2010 versus 2017.
 
@@ -2374,12 +2654,12 @@ Centroid of spatial density distribution map from each season and species in 201
 ### Data processing
 Line transect data were processed using standard 2-team Distance sampling analysis methods, then used in generalized additive models to describe the spatiotemporal habitat-density relationships (Chavez-Rosales et al. 2022).
 
-The Cetacean distribution shifts indicator was formatted for inclusion in the `ecodata` R package using the R script  found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_species_distribution.R).
+The Cetacean distribution shifts indicator was formatted for inclusion in the `ecodata` R package using the R script  found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cetacean_dist.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/HMS_species_distribution.html>
+<https://noaa-edab.github.io/catalog/cetacean_dist.html>
 
-<!--chapter:end:chapters/HMS_species_distribution.Rmd-->
+<!--chapter:end:chapters/cetacean_dist.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -2394,13 +2674,6 @@ knitr::opts_chunk$set(
 # Right Whale Abundance {#narw}
 
 
-```{r,  echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
 **Description**: Right Whale
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
@@ -2713,6 +2986,96 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
+# Cetacean Weekly Acoustic Presence {#cetacean_acoustic}
+
+**Description**: This figure shows a summary of weekly acoustic presence of eight cetacean species summarized across two years at four recording sites in southern New England.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods
+
+**Contributor(s)**: Sofie Van Parijs, Annamaria DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Jessica McCordic, Xavier Mouy, Tim Rowell, Sara Tennant, Annabel Westell, and Genevieve Davis
+  
+**Data steward**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>
+  
+**Point of contact**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>; Genevieve Davis <genevieve.davis@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Data collected by the NEFSC Passive Acoustic Branch from four recording sites in and around the southern New England Wind Energy areas. 
+
+### Data Analysis
+
+Manual verification of the automated detections was conducted to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis can be found in Van Parijs et al (2023).
+
+### Data Processing 
+
+Species-specific vocalizations of eight cetacean were identified in the acoustic data using multiple automated detectors following the methodology described in Van Parijs et al (2023).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/cetacean_acoustic.html>
+
+<!--chapter:end:chapters/cetacean_acoustic.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Ambient sound levels SNE wind lease areas {#wea_sound}
+
+**Description**: Annual decidecade sound pressure levels from Southern New England Wind Lease Areas
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods, Synthesis of published information
+
+**Contributor(s)**: Sofie M. Van Parijs, Annamaria I. DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Jessica A. McCordic, Xavier Mouy, Timothy J. Rowell, Sara Tennant, Annabel Westell and Genevieve E. Davis
+  
+**Data steward**: Jessica McCordic <jessica.mccordic@noaa.gov>
+  
+**Point of contact**: Jessica McCordic <jessica.mccordic@noaa.gov>; Sofie Van Parijs <sofie.vanparijs@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Acoustic recorders were deployed in 7 locations on Cox’s Ledge and Nantucket Shoals between November 2020 and May 2022, with continuous recordings ranging 111 - 1010 days analyzed per site. Each recorder used a minimum sample rate of 48 kHz (Van Parijs et al. 2023). 
+
+### Data Analysis
+
+Annual medians and distribution percentiles (10th and 90th percentiles) of decidecade levels at each nominal center frequency were generated to assess temporal trends at each monitoring location. See Van Parijs et al. 2023 for more details.
+
+### Data Processing 
+
+Decidecade (one-third octave) sound pressure level (SPL) was calculated using the Soundscape Metrics Remora in the Triton Software Package (https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics). Mean decidecade SPLs per minute were calculated by integrating the mean-square 1-Hz sound pressure spectral densities over their respective frequency bands, computing the arithmetic mean per minute, and converting to decibels (db re 1uPa). Decidecade bands corresponded to standard frequency bands ranging from nominal center frequencies of 25 Hz - 20 kHz. See Van Parijs et al. 2023 for more details.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wea_sound.html>
+
+<!--chapter:end:chapters/wea_sound.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
 # Aggregate Groups {#species_groupings}
 
 **Description**: Mappings of species into aggregate group categories for different analyses
@@ -2825,7 +3188,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Bottom temperature - in situ {#bottom_temp}
+# Bottom temperature - in situ {#bottom_temp_insitu}
 
 **Description**: Time series of annual in situ bottom temperatures on the Northeast Continental Shelf.
 
@@ -2845,7 +3208,9 @@ knitr::opts_chunk$set(
 
 ### Data sources
 
-The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical  bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+The bottom temperature index incorporates near-bottom temperature measurements collected on Northeast Fisheries Science Center (NEFSC) surveys between 1977-present. Early measurements were made using surface bucket samples, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys. Near-bottom refers to the deepest observation at each station that falls within 10 m of the reported water depth. Observations encompass the entire continental shelf area extending from Cape Hatteras, NC to Nova Scotia, Canada, inclusive of the Gulf of Maine and Georges Bank.
+
+Source data are publicly available at https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html 
 
 ### Data extraction
 
@@ -2853,18 +3218,17 @@ While all processed hydrographic data are archived in an Oracle database (OCDBS)
 
 ### Data analysis
 
-Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales.  Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four [Ecological Production Units](#epu) (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a timeseries of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1981-2010.  The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by @mountain1991.  The reference period was chosen because it is the standard climatological period adopted by the World Meteorological Organization. The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is added back into the anomaly timeseries to convert temperature anomalies back to ocean bottom temperature.
-
+Ocean temperature on the Northeast U.S. Shelf varies significantly on seasonal timescales. Any attempt to resolve year-to-year changes requires that this seasonal variability be quantified and removed to avoid bias. This process is complicated by the fact that NEFSC hydrographic surveys conform to a random stratified sampling design meaning that stations are not repeated at fixed locations year after year so that temperature variability cannot be assessed at fixed station locations. Instead, we consider the variation of the average bottom temperature within four Ecological Production Units (EPUs): Middle Atlantic Bight, Georges Bank, Gulf of Maine and Scotian Shelf. Within each EPU, ocean temperature observations are extracted from the collection of measurements made within 10 m of the bottom on each survey and an area-weighted average temperature is calculated. The result of this calculation is a time series of regional average near-bottom temperature having a temporal resolution that matches the survey frequency in the database. Anomalies are subsequently calculated relative to a reference annual cycle, estimated using a multiple linear regression model to fit an annual harmonic (365-day period) to historical regional average temperatures from 1977-present. The curve fitting technique to formulate the reference annual cycle follows the methodologies outlined by David G. Mountain (1991). The resulting anomaly time series represents the difference between the time series of regional mean temperatures and corresponding reference temperatures predicted by a reference annual cycle for the same time of year. Finally, a reference annual average temperature (calculated as the average across the reference annual cycle) is also provided and can be added back into the anomaly time series to convert temperature anomalies to ocean bottom temperature.
 
 ### Data processing
-All temperature observations are subject to rigorous quality control protocols following community standards. Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges. Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes. We choose to use the up or down cast data depending on which is cleanest and based on the deployment method. Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software). Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity. 
+All temperature observations are subject to rigorous quality control protocols following community standards.  Modern CTD data are processed using software provided by the manufacture (SeaBird Inc), with steps applied to ensure sensor alignment, factory calibrations are applied and measurements are within expected ranges.  Measurements are bin-averaged to 1 decibar resolution and profiles are visually inspected for inversions and spikes.  We choose to use the up or down cast data depending on which is cleanest and based on the deployment method.  Unless there are quality issues with the data, we routinely use the down cast data for vertical deployments and we use up cast data for data collected as part of an olblique bongo net tow because these will have the cleanest flow to the CTD. Obviously bad points are flagged (ie. the source data are retained but a reversible QC flag is applied in the software).  Water samples are collected with Niskin Bottles at sea in order to permit post cruise corrections of conductivity.  
 
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_insitu.html>
 
-<!--chapter:end:chapters/bottom_temp.Rmd-->
+<!--chapter:end:chapters/bottom_temp_insitu.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -2876,7 +3240,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Bottom temperature - High Resolution {#bottom_temp_seasonal_gridded}
+# Bottom temperature - High Resolution {#bottom_temp_model_gridded}
 
 **Description**: Seasonal bottom temperatures on the Northeast Continental Shelf between 1959 and 2022 in a 1/12° grid. 
 
@@ -2929,9 +3293,9 @@ We used the methodology presented in du Pontavice et al. (2023) based on the Nor
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp_comp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp_seasonal_gridded.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_model_gridded.html>
 
-<!--chapter:end:chapters/bottom_temp_seasonal_gridded.Rmd-->
+<!--chapter:end:chapters/bottom_temp_model_gridded.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -2943,7 +3307,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Seasonal SST Anomalies {#seasonal_sst_anomaly_gridded}
+# Seasonal SST Anomalies {#seasonal_oisst_anom_gridded}
 
 **Description**: Seasonal SST Anomalies
 
@@ -2963,7 +3327,7 @@ knitr::opts_chunk$set(
 ## Methods
 
 ### Data sources
-Data for seasonal sea surface tempature anomalies (Fig. \@ref(fig:MAB-SST)) were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA Earth System Research Laboratory's Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
+Data for seasonal sea surface tempature anomalies were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set ([NOAA OISST V2](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html)) provided by NOAA Earth System Research Laboratory's Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25&deg; x 0.25&deg; global grid of SST measurements [@Reynolds2007]. 
 
 
 In 2021, the Daily OISST data was updated and there are a couple papers describing and comparing the new version [@Huang2021assessment, @Huang2021improvements]. 
@@ -2981,9 +3345,9 @@ We calculated the long-term mean (LTM) for each season-specific stack of rasters
 R code used in extraction and processing [gridded](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom_gridded.R)  and [timeseries](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom.R)  data can found in the `ecodata` package.
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/seasonal_sst_anomaly_gridded.html>
+<https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html>
 
-<!--chapter:end:chapters/seasonal_sst_anomaly_gridded.Rmd-->
+<!--chapter:end:chapters/seasonal_oisst_anom_gridded.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -3227,7 +3591,7 @@ knitr::opts_chunk$set(
 ```
 # Gulf Stream Index {#gsi}
 
-**Description**: Annual time series of the Gulf Stream index
+**Description**: Annual time series of the Gulf Stream index using satellite SSH dataset
 
 **Indicator category**: Published method
 
@@ -3240,7 +3604,7 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)
   
 **Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
   
-**Public availability statement**: Source data are publicly available at [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047). Index data are NOT publicly available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
+**Public availability statement**: Source data are publicly available at [CMEMS](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047). Index data are NOT publicly available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
 
 ## Methods
 The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.
@@ -3248,15 +3612,19 @@ The methods used to calculate the Gulf Stream Index changed between 2019 and 202
 This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year. 
 
 ### Data sources
-Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047).
+Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047).
 
 ### Data analysis
 
-The GSI is calculated based on the method presented by @perez-hernandez2014. It is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  We followed the same method, except using the dataset from [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047), which has a 0.25°x0.25° resolution. Therefore we select points every 1° between 52° and 72° and average them, and there are 21 points in total.
+The GSI is originally calculated by @perez-hernandez2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
+
+We followed the same method, except using the dataset from [CMEMS](https://doi.org/10.48670/moi-00148), which now has a 0.125°x0.125° resolution available from Jan. 1993 to Dec. 2023. We calculated the standard deviation (STD) of SSH over the time period of 1993-2018, and select points every 1° between 52° and 72°W along the latitudinal maximum STD. Later, monthly SSH of these 21 points are averaged and standarized to obtain the time series from Jan. 1993 to Dec. 2023.
+
+For detailed analytical methods, see the supplemental info of @chen_seasonal_2021.
 
 ### Data Processing
 
-The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R).
+The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R). The computation code can be found [here](https://github.com/zchenocean/Gulf-Stream-Indices/blob/main/GSI_SSH-based_using_satellite_cmems_ssh_0.125deg.ipynb).
 
 ## 2019 Methods
 
@@ -3309,7 +3677,9 @@ knitr::opts_chunk$set(
 
 ### Data sources
 
-The slope water composition index incorporates temperature and salinity measurements collected on Northeast Fisheries Science Center surveys between 1977-present within the geographic confines of the Northeast Channel in the Gulf of Maine.  Early measurements were made using water samples collected primarily with Niskin bottles at discreet depths, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.  
+The slope water composition index incorporates temperature and salinity measurements collected on Northeast Fisheries Science Center surveys between 1977-present within the geographic confines of the Northeast Channel in the Gulf of Maine. Early measurements were made using water samples collected primarily with Niskin bottles at discreet depths, mechanical bathythermographs and expendable bathythermograph probes, but by 1991 the CTD – an acronym for conductivity temperature and depth – became standard equipment on all NEFSC surveys.
+
+Source data are publicly available at https://comet.nefsc.noaa.gov/erddap/tabledap/ocdbs_v_erddap1.html  
 
 ### Data extraction
 
@@ -3317,15 +3687,13 @@ While all processed hydrographic data are archived in an Oracle database (OCDBS)
 
 ### Data analysis
 
-Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel.  The analysis closely follows the methodology described by @mountain2012.   This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia. 
+Temperature and salinity measurements are examined to assess the composition of the waters entering the Gulf of Maine through the Northeast Channel. The analysis closely follows the methodology described by David G. Mountain (2012a). This method assumes that the waters flowing into the Northeast Channel between 150 and 200 meters depth are composed of slope waters, originating offshore of the continental shelf, and shelf waters, originating on the continental shelf south of Nova Scotia.
 
-For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` latitude north and 66-66.8`r ifelse(knitr::is_latex_output(),"\\textdegree" ,'&deg;')` longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated.    The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting.  The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.  
+For each survey in the hydrographic archive, ocean temperature and salinity observations sampled in the area just inside the Northeast Channel (bounded by 42.2-42.6° latitude north and 66-66.8° longitude west) and between 150 - 200 meters depth are extracted and a volume-weighted average temperature and salinity is calculated. The volume weighting is accomplished by apportioning the area within the Northeast Channel polygon among the stations occupying the region, based on inverse distance squared weighting. The result of this calculation is a timeseries of volume-average temperature and salinity having a temporal resolution that matches the survey frequency in the database.
 
-The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=10 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=35), (2) Labrador Slope Water (T=6 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=34.7) and (3) Scotian Shelf Water (T=2 `r ifelse(knitr::is_latex_output(),"\\textdegree " ,'&deg;')`C, S=32).  As described by @mountain2012, the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm.  On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram.  Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement.  As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources).  This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources.  Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.
+The average temperature and salinity observed at depth in the Northeast Channel is assumed to be the product of mixing between three distinct sources having the following temperature and salinity characteristics: (1) Warm Slope Water (T=12 °C, S=35.5), (2) Labrador Slope Water (T=6 °C, S=34.6) and (3) Scotian Shelf Water (T=2 °C, S=32). As described by David G. Mountain (2012a), the relative proportion of each source is determined via a rudimentary 3-point mixing algorithm. On a temperature-salinity diagram, lines connecting the T-S coordinates for these three sources form a triangle, the sides of which represent mixing lines between the sources. A water sample that is a mixture of two sources will have a temperature and salinity that falls somewhere along the line connecting the two sources on the temperature-salinity diagram. Observations of temperature and salinity collected within the Northeast Channel would be expected to fall within the triangle if the water sampled is a mixture of the three sources. Simple geometry allows us to calculate the relative proportion of each source in a given measurement. As an example, a line drawn from the T-S point representing shelf water through an observed T-S in the center of the triangle will intersect the opposite side of the triangle (the mixing line connecting the coordinates of the two slope water sources). This intersecting T-S value may then be used to calculate the relative proportions (percentage) of the two slope water sources. Using this method, the percentage of Labrador slope water and Warm slope water are determined for the timeseries of volume-average temperature and salinity.
 
-It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant.  In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes.  Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank.  These sources are not explicitely considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates.  Code used to calculate slopewater proportions can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/slopewater_analysis.R).
-
-
+It should be noted that our method assumes that the temperature and salinity properties associated with the source watermasses are constant. In reality, these may vary from year to year, modified by atmospheric forcing, mixing and/or advective processes. Likewise, other sources are periodically introduced into the Northeast Channel, including intrusions of Gulf Stream water flowing into the Gulf of Maine and modified shelf water flowing out of the Gulf of Maine along the flank of Georges Bank. These sources are not explicitly considered in the 3-point mixing algorithm and may introduce errors in the proportional estimates.
 
 ### Data processing
 
@@ -3678,84 +4046,156 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Ocean Acidification {#ocean_acidification}
+# Ocean Acidification and Other Stressors {#ocean_acidification}
 
 **Description**: Maps and variability of regional carbonate chemistry and other oceanographic properties
 
-**Indicator category**: Synthesis of published information or openly accessible datasets
+**Indicator category**: Synthesis of published information, Database pull with analysis
 
-**Found in:** State of the Ecosystem - Gulf of Maine & Georges Bank (2021+); State of the Ecosystem - Mid-Atlantic Bight (2021+)
+**Found in:** State of the Ecosystem - Gulf of Maine & Georges Bank (2021+); State of the Ecosystem - Mid-Atlantic Bight (2021+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Contributor(s)**: Grace Saba, Lori Garzio
 
-**Data steward**: Grace Saba [saba\@marine.rutgers.edu](mailto:saba@marine.rutgers.edu){.email}, Lori Garzio [lgarzio\@marine.rutgers.edu](mailto:lgarzio@marine.rutgers.edu){.email}
+**Data steward**: Grace Saba [saba\@marine.rutgers.edu](mailto:saba@marine.rutgers.edu){.email}
 
-**Point of contact**: Grace Saba [saba\@marine.rutgers.edu](mailto:saba@marine.rutgers.edu){.email}, Lori Garzio [lgarzio\@marine.rutgers.edu](mailto:lgarzio@marine.rutgers.edu){.email}
+**Point of contact**: Grace Saba [saba\@marine.rutgers.edu](mailto:saba@marine.rutgers.edu){.email}
 
-**Public availability statement**: Source data is available to the public (see Data Sources).
+**Public availability statement**: Source data are publicly available (see Data Sources).
 
 ## Methods
 
-The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, seasonal dynamics of pH in shelf waters in the Mid-Atlantic, was synthesized from Wright-Fairbanks et al. (2020). The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-2021), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic Bight (MAB) and the Gulf of Maine. The plots in the State of the Ecosystem 2023 reports included maps of bottom summer aragonite saturation (ΩArag, or omega) over the entire U.S. Northeast Shelf (2007-2022) and locations where summer bottom ΩArag reached lab-derived sensitivity levels of designated target species.
+The New England Fishery Management Council (NEFMC) and Mid-Atlantic Fishery Management Council (MAFMC) have recently requested regional Ocean Acidification (OA) information in the State of the Ecosystem reports. The work included in the State of the Ecosystem 2021 report, seasonal dynamics of pH in shelf waters in the Mid-Atlantic, was synthesized from Wright-Fairbanks et al. (2020). The maps included in the State of the Ecosystem 2022 reports include a plot of bottom pH in summer over the entire U.S. Northeast Shelf (2007-2021), and glider-based pH profiles during summer 2021 in both the Mid-Atlantic Bight (MAB) and the Gulf of Maine. The plots in the State of the Ecosystem 2023 reports included maps of bottom summer aragonite saturation (ΩArag, or omega) over the entire U.S. Northeast Shelf (2007-2022) and locations where summer bottom ΩArag reached lab-derived sensitivity levels of designated target species. The products developed for the State of the Ecosystem 2024 reports included: plots of the seasonal progression (Spring-Fall 2023) of oceanographic properties (including temperature, chlorophyll, dissolved oxygen, pH, and aragonite saturation state) on the New Jersey coastal shelf; plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023; static and animated maps of summer-time bottom pH and aragonite saturation state on the U.S. Northeast Shelf (2007-2023); and maps of locations where species sensitivity levels for aragonite saturation state were reached in bottom water during the summer (2007-2023).
 
-The products developed for the State of the Ecosystem 2024 reports include: plots of the seasonal progression (Spring-Fall 2023) of oceanographic properties (including temperature, chlorophyll, dissolved oxygen, pH, and aragonite saturation state) on the New Jersey coastal shelf; plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023; static and animated maps of summer-time bottom pH and aragonite saturation state on the U.S. Northeast Shelf (2007-2023); and maps of locations where species sensitivity levels for aragonite saturation state were reached in bottom water during the summer (2007-2023).
+The products developed for the State of the Ecosystem 2025 report includes: static and animated maps of seasonal surface and bottom pH and aragonite saturation state on the U.S. Northeast Shelf, and seasonal maps of locations where species sensitivity levels for aragonite saturation state were reached in bottom-waters within the species habitat depth range (winter 2012-2024, spring 2014-2024, summer 2007-2024, fall 2013-2023); and maps of bottom temperature anomalies, bottom aragonite saturation state and surface chlorophyll anomalies for the summers of 2022-2024.
 
-Products from all State of the Ecosystem reports to date were developed using openly accessible, quality-controlled data from vessel-based discrete samples and glider-based measurements (see Data Sources), and data from published laboratory-based experimental studies (see Plotting)
+Products from all State of the Ecosystem reports to date were developed using openly accessible, quality-controlled data from vessel-based discrete samples, glider-based measurements, satellite data products from the NASA Ocean Biology Distributed Active Archive Center (OB.DAAC), and the E.U. Copernicus Marine Service Information (CMEMS) Global Ocean Physics Reanalysis (GLORYS12V1) data product (see Data Sources), and data from published laboratory-based experimental studies (see Plotting).
 
 ### Data sources
 
 Glider-based observations of pH (and other variables including temperature, salinity, chlorophyll-a, and dissolved oxygen) began in the southern MAB region in May 2018 (Saba et al. 2019), and seasonal glider pH missions thereafter began in February 2019 (Wright-Fairbanks et al. 2020; although no deployments occurred in 2020 as a result of the COVID pandemic). Simultaneous measurements from the glider's pH, temperature, and salinity sensors enable the derivation of total alkalinity and calculation of other carbonate system parameters including aragonite saturation state (ΩArag). The glider pH observation program expanded spatially and temporally, with additional deployments in the northern MAB (New York Bight) and the Gulf of Maine, starting in February 2021. A typical glider mission runs for about 4 weeks, covers 500 km, and collects data though the full water column.
 
-For the 2023 glider data cross-section plots (2023 seasonal progression of oceanographic properties on the New Jersey coastal shelf and plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023): Full-resolution delayed-mode glider datasets from six deployments (Spring-Fall 2023) were downloaded from the [RUCOOL Glider ERDDAP server](http://slocum-data.marine.rutgers.edu/erddap/index.html). These datasets were QC'd and pH was calculated from raw variables (where applicable) using [python code](https://github.com/lgarzio/phglider/blob/master/delayed_analysis/process_phglider.py), and the final processed NetCDF datasets containing all relevant metadata can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/glider_data/files_for_2023_xsection/).
+For the historical seasonal surface and bottom-water pH and aragonite saturation state data synthesis (static and animated maps of seasonal surface and bottom pH and aragonite saturation state on the U.S. Northeast Shelf; and maps of seasonal bottom locations where species sensitivity levels for aragonite saturation state were reached):
+- Full-resolution delayed-mode glider datasets are available on the [IOOS Glider DAC ERDDAP server](https://gliders.ioos.us/erddap/index.html). These datasets were QC'd by the deploying institution and pH was calculated from raw variables. Summarized data files containing combined bottom and surface pH and aragonite saturation state data from glider-based (and vessel-based, see below) measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/data_files/).
+- Vessel-based data were mined from the [Coastal Ocean Data Analysis Product in North America, version v2021](https://essd.copernicus.org/articles/13/2777/2021/) (Jiang et al. 2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves. Additionally, recent vessel-based datasets that were not included in CODAP-NA (Jiang et al. 2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys: June 2019 (Cruise ID HB1902), August 2019 (Cruise ID GU1902), October 2019 (Cruise ID GU1905), May 2021 (Cruise ID GU2102), August 2021 (Cruise ID PC2104), October 2021 (Cruise ID PC2106), June 2022 (Cruise ID HB2204), November 2022 (Cruise ID PC2205), June 2023 (Cruise ID HB2302), and the East Coast Ocean Acidification ECOA-3 Cruise (Cruise ID ECOA3). These datasets were downloaded via the [NCEI Ocean Carbon and Acidification Data Portal](https://www.ncei.noaa.gov/access/ocean-carbon-acidification-data-system-portal/). Resulting data files containing combined bottom and surface pH and aragonite saturation state data from vessel-based (and glider-based, see above) measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/data_files/).
 
-For the summer 2007-2023 bottom-water pH and aragonite saturation state data synthesis (static and animated maps of summer-time bottom pH and aragonite saturation state on the U.S. Northeast Shelf [2007-2023]; maps of summer-time bottom locations where species sensitivity levels for aragonite saturation state were reached [2007-2023]): Full-resolution delayed-mode glider datasets from seven deployments were downloaded from the [RUCOOL Glider ERDDAP server](http://slocum-data.marine.rutgers.edu/erddap/index.html) and the [IOOS Glider DAC ERDDAP server](https://gliders.ioos.us/erddap/index.html) (SBU01 2022-2023 deployments). These datasets were QC'd and pH was calculated from raw variables (where applicable) using [python code](https://github.com/lgarzio/phglider/blob/master/delayed_analysis/process_phglider.py), and the final processed NetCDF datasets containing all relevant metadata for each glider deployment used in the synthesis can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/glider_data/files_for_bottom_water_synthesis/). Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from glider-based (and vessel-based, see below) measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/bottom_water_data/). Vessel-based data were mined from the [Coastal Ocean Data Analysis Product in North America, version v2021](https://essd.copernicus.org/articles/13/2777/2021/) (Jiang et al. 2021). This data product synthesizes two decades of quality-controlled inorganic carbon system parameters (including pH, total alkalinity, dissolved inorganic carbon) along with other physical and chemical parameters (temperature, salinity, dissolved oxygen, nutrients) collected from the North American continental shelves. Additionally, four recent vessel-based datasets that were not included in CODAP-NA (Jiang et al. 2021) were included in this synthesis. These datasets were collected during more recent NOAA NEFSC Ecosystem Monitoring (EcoMon) surveys: June 2019 (Cruise ID HB1902), August 2019 (Cruise ID GU1902), August 2021 (Cruise ID PC2104), June 2022 (Cruise ID HB2204). These datasets were downloaded via the [NCEI Ocean Carbon and Acidification Data Portal](https://www.ncei.noaa.gov/access/ocean-carbon-acidification-data-system-portal/). Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from vessel-based (and glider-based, see above) measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/bottom_water_data/).
+For the maps of satellite-derived surface chlorophyll-a anomalies for summer 2022-2024, data were downloaded from the NASA Ocean Biology Distributed Active Archive Center (OB.DAAC) [Level 3 & 4 Browser](https://oceancolor.gsfc.nasa.gov/l3/).
+
+For the maps of bottom temperature anomalies for summer 2022-2024, data were extracted from the E.U. Copernicus Marine Service Information (CMEMS) [Global Ocean Physics Reanalysis (GLORYS12V1)](https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/description) dataset.
 
 ### Data extraction
 
-Glider data were processed and quality-controlled by software technician Lori Garzio at Rutgers University.
+Glider data were processed and quality-controlled by the deploying institution and are available for download on the [IOOS Glider DAC ERDDAP server](https://gliders.ioos.us/erddap/index.html).
 
-[CODAP-NA, Version 2021 data](https://www.ncei.noaa.gov/data/oceans/ncei/ocads/metadata/0219960.html) were accessed and downloaded on October 14, 2021.
+[CODAP-NA, Version 2021 data](https://www.ncei.noaa.gov/data/oceans/ncei/ocads/metadata/0219960.html) were accessed and downloaded on October 14, 2021. 
 
-EcoMon datasets were accessed and downloaded on October 13, 2022 (Cruise IDs HB1902, GU1902, PC2104) and November 17, 2023 (Cruise ID HB2204).
+EcoMon datasets were accessed and downloaded on October 13, 2022 (Cruise IDs HB1902, GU1902, PC2104), November 17, 2023 (Cruise ID HB2204), and August 21, 2024 (Cruise IDs GU1905, GU2102, PC2106, PC2205, HB2302, ECOA3).
+
+Monthly data files of SNPP-VIIRS satellite-derived chlorophyll data were downloaded from the NASA Ocean Biology Distributed Active Archive Center (OB.DAAC) [Level 3 & 4 Browser](https://oceancolor.gsfc.nasa.gov/l3/) on November 6, 2024 with the following selections:
+- Product Status: Standard
+- Instrument: SNPP-VIIRS
+- Product: Chlorophyll concentration
+- Period: Monthly
+- Resolution: 4km
+- Start Date: 2012-03-01
+- End Date: 2024-08-31
+
+Monthly data files of bottom temperature from the E.U. Copernicus Marine Service Information (CMEMS): [Global Ocean Physics Reanalysis (GLORYS12V1)](https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/description) dataset were downloaded on November 14, 2024 using the [Python Copernicus Marine Toolbox API](https://help.marine.copernicus.eu/en/articles/8283072-copernicus-marine-toolbox-api-subset)
+- Dataset ID: cmems_mod_glo_phy_my_0.083deg_P1M-m: March 2012 to June 2021
+- Dataset ID: cmems_mod_glo_phy_myint_0.083deg_P1M-m: July 2021 to August 2024
 
 ### Data processing
 
-For processing and quality-control procedures of glider-based data, see Wright-Fairbanks et al. (2020). For the 2023 glider data cross-section plots (2023 seasonal progression of oceanographic properties on the New Jersey coastal shelf and plots summarizing a multi-stressor event in the Mid-Atlantic during summer 2023): datasets were QC'd and pH was calculated from raw variables (where applicable) using [python code](https://github.com/lgarzio/phglider/blob/master/delayed_analysis/process_phglider.py), and the final processed NetCDF datasets containing all relevant metadata can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/glider_data/files_for_2023_xsection/).
+For MAB glider datasets, total alkalinity was calculated from salinity using a linear relationship determined from in situ water sampling data taken during glider deployment and recovery in addition to ship-based water samples (Wright-Fairbanks et al. 2020). For the Gulf of Maine glider datasets, total alkalinity (provided in the files) was calculated from salinity using the linear relationship (TA = 47.6 * salinity + 643.0) taken from Hunt et al 2021, figure 6, Historical regression for Gulf of Maine: https://doi.org/10.1016/j.marchem.2021.103960. Calculations for ΩArag were then conducted using PyCO2SYS (Humphreys et al. 2020) with inputs of pressure, temperature, salinity, total alkalinity, and pH. A table containing all glider deployments used in this analysis is available [here](https://github.com/lgarzio/cinar-soe/blob/master/analysis2025/glider_deployment_summary_2019_2024.csv).
 
-Data from CODAP-NA were filtered temporally to include only those collected during summer months (June-August) and were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Mexico and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
+Data from CODAP-NA v2021 were spatially limited to the U.S. Northeast Shelf. The resulting datasets included those from major vessel-based campaigns (East Coast Ocean Acidification, ECOA I and II cruises 2015 and 2018; The Gulf of Mexico and East Coast Carbon cruises, GOMECC 2007 and 2012; EcoMon 2012-2013, 2015-2019).
 
 For vessel-based datasets, when ΩArag was unavailable it was calculated using PyCO2SYS (Humphreys et al. 2020) with inputs of pressure, temperature, salinity, total alkalinity, and pH.
 
-For MAB glider datasets, total alkalinity was calculated from salinity using a linear relationship determined from in situ water sampling data taken during glider deployment and recovery in addition to ship-based water samples (Wright-Fairbanks et al. 2020). For the Gulf of Maine glider dataset, total alkalinity was calculated from temperature and salinity using Table 3 Equation IV in McGarry et al. (2021). Calculations for ΩArag were then conducted using PyCO2SYS (Humphreys et al. 2020) with inputs of pressure, temperature, salinity, total alkalinity, and pH.
+Bottom water pH and ΩArag values were defined as the median of the measurements (or calculated ΩArag values) within the deepest 1m of a glider profile or, for vessel-based measurements, the deepest measurement of a vertical CTD/Rosette cast where water samples were collected, for profiles deeper than 10m. In order to validate whether the deepest depth was at or near the bottom, the sampling depth was compared to water column depth (when provided) or water depths extracted from a [GEBCO](https://www.gebco.net/data_and_products/gridded_bathymetry_data/) bathymetry grid based on the sample collection coordinates. Any glider profiles/vessel-based casts with the deepest measurement shallower than the bottom 20% of total water column depth were removed. This allowed for a sliding scale instead of providing a strict cut off (e.g., 1 m above the bottom). 
 
-Bottom water values were defined as the median of the measurements (or calculated ΩArag values) within the deepest 1m of a glider profile or, for vessel-based measurements, the deepest measurement of a vertical CTD/Rosette cast where water samples were collected, for profiles deeper than 10m. In order to validate whether the deepest depth was at or near the bottom, the sampling depth was compared to water column depth (when provided) or water depths extracted from a [GEBCO](https://www.gebco.net/data_and_products/gridded_bathymetry_data/) bathymetry grid based on the sample collection coordinates. Any glider profiles/vessel-based casts with the deepest measurement shallower than the bottom 20% of total water column depth were removed. This allowed for a sliding scale instead of providing a strict cut off (e.g., 1 m above the bottom). Resulting data files containing combined summer-time bottom pH and aragonite saturation state data from glider- and vessel-based measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/bottom_water_data/).
+Surface water pH and ΩArag values were defined as the median of the measurements (or calculated ΩArag values) recorded at the top of a glider profile (between 2-4m depth) for profiles deeper than 10m or, for vessel-based measurements the shallowest measurement of a vertical CTD/Rosette cast where water samples were collected provided the measurement depth was <10m, or all of the surface measurements provided for underway datasets.
+
+Resulting data files containing combined bottom and surface pH and aragonite saturation state data from glider- and vessel-based measurements can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/data_files/).
+
+Seasonal averages for chlorophyll and bottom temperature were calculated by averaging monthly data files according to the groupings below, and anomalies were calculated as the difference from the mean (2012-2024).
+- Winter: December, January, February
+- Spring: March, April, May
+- Summer: June, July, August
+- Fall: September, October, November
 
 ### Plotting
 
-A set of plots was constructed for the 2024 State of the Ecosystem reports:
+A set of plots was constructed for the 2025 State of the Ecosystem reports: 
+	 
+1)	Seasonal maps of bottom-water pH on the U.S. Northeast Shelf (2007-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/bottom_pH/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples. See Figure 1 in the Ocean Acidification and Other Stressors catalog page.
+2)	Seasonal maps of bottom-water aragonite saturation state (omega) on the U.S. Northeast Shelf (2007-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/bottom_omega/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples. See Figure 2 in the Ocean Acidification and Other Stressors catalog page.
+3)	Seasonal maps of surface-water pH on the U.S. Northeast Shelf (2004-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/surface_pH/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples. See Figure 3 in the Ocean Acidification and Other Stressors catalog page.
+4)	Seasonal maps of surface-water aragonite saturation state (omega) on the U.S. Northeast Shelf (2004-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/surface_omega/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples. See Figure 4 in the Ocean Acidification and Other Stressors catalog page.
+5)	Animated maps of seasonal bottom pH on the U.S. Northeast Shelf (2007-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/bottom_pH/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples.
+6)	Animated map of seasonal bottom aragonite saturation state (omega) on the U.S. Northeast Shelf (2007-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/bottom_omega/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples.
+7)	Individual maps (by year, 2007-2024) used to make the animated maps for seasonal bottom pH on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/bottom_pH/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples.
+8)	Individual maps (by year, 2007-2024) used to make the animated maps for seasonal bottom aragonite saturation state (omega) on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/bottom_omega/). Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples.
+9)	Animated maps of seasonal surface pH on the U.S. Northeast Shelf (2004-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/surface_pH/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples.
+10)	Animated map of seasonal surface aragonite saturation state (omega) on the U.S. Northeast Shelf (2004-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/surface_omega/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples.
+11)	Individual maps (by year, 2004-2024) used to make the animated maps for seasonal surface pH on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/pH/surface_pH/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples.
+12)	Individual maps (by year, 2004-2024) used to make the animated maps for seasonal surface aragonite saturation state (omega) on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/omega/surface_omega/). Includes all available data from 2004-2024 and includes both glider-based measurements and vessel-based discrete samples.
+13)	Seasonal maps of locations where species sensitivity levels for aragonite saturation state (omega) were reached in bottom water within the species habitat depth range (2007-2024): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/bottom_omega_species_sensitivities/). 
+a.	Includes all available data from 2007-2024 and includes both glider-based measurements and vessel-based discrete samples.
+b.	Sensitivity levels of ΩArag were defined for each species as values of ΩArag where negative responses by an organism were observed during an experimental laboratory study. Typically, these laboratory experiments measure organism responses under ocean acidification conditions (lower pH, lower ΩArag) against a control under ambient conditions (higher pH, higher ΩArag). Most laboratory experiments have used a range of ΩArag between 0.5 to 2.0, which does not encompass the full range of ΩArag observed in situ. The metrics measured (e.g., survival, growth, calcification) can be different between experiments, but negative responses could include decreased survival, reduced growth, reduced calcification rate, reduced hatching success, and malformation. Because laboratory perturbation experiments testing the responses of organisms to ocean acidification conditions are a relatively new approach and logistically quite challenging, there are currently few published studies for individual species. Recent studies have also started incorporating additional stressors, which makes defining an OA-focused sensitivity level difficult. Therefore, with additional future studies, the ΩArag sensitivity levels defined here for these species are subject to change.  
+c.	For the Mid-Atlantic region, designated target species included Atlantic sea scallop (Placopecten magellanicus) and Longfin squid (Doryteuthis pealeii). The sensitivity value used for Atlantic sea scallop was ΩArag ≤ 1.1 at 9 °C, based on reduced adult calcification rate observed at this level in Cameron et al. (2022). The sensitivity value used for longfin squid was ΩArag ≤ 0.96, based on embryo and paralarvae malformation, increased time to hatching and decreased hatching success, and changes to mantle length and statolith morphology observed at this level in Zafroff et al. (2019) and Zafroff & Mooney (2020). Habitat depth ranges used for plotting the observed ΩArag values ≤ sensitivity ΩArag values for Atlantic sea scallop and longfin squid were limited to 25-200 meters (NEFSC 2014) and 0-400 meters (Jacobson et al. 2005), respectively. Bottom water data collected during 2024 were incorporated to update this product for the Mid-Atlantic species, Atlantic sea scallop and longfin squid (available [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/bottom_omega_species_sensitivities/)). See Figures 5-6 in the Ocean Acidification and Other Stressors catalog page.
+d.	For the New England region, designated target species included Atlantic cod (Gadus morhua) and American lobster (Homarus americanus). The sensitivity value used for Atlantic cod was ΩArag ≤ 1.31 at 10 °C, based on decreased larval survival observed at this level in Stiasny et al. (2016). The sensitivity value used for American lobster was ΩArag ≤ 1.09, based on decreased stage V and VI juvenile survival observed at this level in Noisette et al. (2021). Habitat depth ranges used for plotting the observed ΩArag values ≤ sensitivity ΩArag values for Atlantic cod and American lobster were limited to 10-200 meters (Gregory et al. 2004; DeCelles et al. 2017) and 10-700 meters (Mercaldo-Allen et al. 1994), respectively. Maps for Atlantic cod and American lobster do not include any 2024 data because data from this year for the Gulf of Maine are not available. However, the maps for the individual years between 2012-2023 and the combined map for this same time period are available for these species (available [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/bottom_omega_species_sensitivities/)). See Figures 7-8 in the Ocean Acidification and Other Stressors catalog page.
+14)	Maps of bottom temperature anomalies, bottom aragonite saturation state (omega) and satellite-derived surface chlorophyll anomalies for summers 2022-2024: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/plots/summer2022-2024/). Anomalies were calculated as the difference from the summer mean 2012-2024. See Figure 9 in the Ocean Acidification and Other Stressors catalog page.
 
-1.  Maps of four 2023 glider deployments on the coastal New Jersey shelf and the resulting vertical profiles of oceanographic parameters characterizing the evolution of temperature (in °C), chlorophyll, dissolved oxygen, pH, and aragonite saturation state from Spring through Early Fall. See Figure 1 in the Ocean Acidification and Other Stressors catalog page and available [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_2023_glider_xsection/temperature_chl_DO_pH_omega-2023-xsection.png).
-2.  Mission tracks of three gliders deployed off the coast of New Jersey in August and September and locations of hypoxic levels of dissolved oxygen (\< 3 mg/liter) and low aragonite saturation state (\< 1) measured along the glider mission tracks and locations of reported fish, lobster, and/or crab mortalities. See Figure 2 in the Ocean Acidification and Other Stressors catalog page.
-3.  Complete cross-sections of dissolved oxygen concentrations, pH, and aragonite saturation state measured along the associated mission tracks during the deployments of the three gliders during August and September 2023. See Figure 3 in the Ocean Acidification and Other Stressors catalog page.
-4.  Animated map of summer-time bottom pH on the U.S. Northeast Shelf (2007-2023): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/pH/). Includes all available data from 2007-2023 and includes both glider-based measurements and vessel-based discrete samples.
-5.  Animated map of summer-time bottom aragonite saturation state (omega) on the U.S. Northeast Shelf (2007-2023): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/omega/). Includes all available data from 2007-2023 and includes both glider-based measurements and vessel-based discrete samples.
-6.  Individual maps (by year, 2007-2023) used to make the animated map for summer-time bottom pH on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/pH/). Includes all available data from 2007-2023 and includes both glider-based measurements and vessel-based discrete samples.
-7.  Individual maps (by year, 2007-2023) used to make the animated map for summer-time bottom aragonite saturation state (omega) on the U.S. Northeast Shelf: access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/omega/). Includes all available data from 2007-2023 and includes both glider-based measurements and vessel-based discrete samples.
-8.  Maps of locations where species sensitivity levels for aragonite saturation state (omega) were reached in bottom water (all summer-time data 2007-2023, or by individual summers between 2007-2023): access [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/omega_species_sensitivity).
-
-```{=html}
-<!-- -->
-```
-a.  Includes all available data from 2007-2023 and includes both glider-based measurements and vessel-based discrete samples.
-b.  Sensitivity levels of ΩArag were defined for each species as values of ΩArag where negative responses by an organism were observed during an experimental laboratory study. Typically, these laboratory experiments measure organism responses under ocean acidification conditions (lower pH, lower ΩArag) against a control under ambient conditions (higher pH, higher ΩArag). Most laboratory experiments have used a range of ΩArag between 0.5 to 2.0, which does not encompass the full range of ΩArag observed in situ. The metrics measured (e.g., survival, growth, calcification) can be different between experiments, but negative responses could include decreased survival, reduced growth, reduced calcification rate, reduced hatching success, and malformation. Because laboratory perturbation experiments testing the responses of organisms to ocean acidification conditions are a relatively new approach and logistically quite challenging, there are currently few published studies for individual species. Recent studies have also started incorporating additional stressors, which makes defining an OA-focused sensitivity level difficult. Therefore, with additional future studies, the ΩArag sensitivity levels defined here for these species are subject to change.
-c.  For the Mid-Atlantic region, designated target species included Atlantic sea scallop (Placopecten magellanicus) and Longfin squid (Doryteuthis pealeii). The sensitivity value used for Atlantic sea scallop was ΩArag ≤ 1.1 at 9 °C, based on reduced adult calcification rate observed at this level in Cameron et al. (2022). The sensitivity value used for longfin squid was ΩArag ≤ 0.96, based on embryo and paralarvae malformation, increased time to hatching and decreased hatching success, and changes to mantle length and statolith morphology observed at this level in Zafroff et al. (2019) and Zafroff & Mooney (2020). Habitat depth ranges used for plotting the observed ΩArag values ≤ sensitivity ΩArag values for Atlantic sea scallop and longfin squid were limited to 25-200 meters (NEFSC 2014) and 0-400 meters (Jacobson et al. 2005), respectively. Bottom water data collected during 2023 were incorporated to update this product for the Mid-Atlantic species, Atlantic sea scallop and longfin squid (available [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/omega_species_sensitivity/)).
-d.  For the New England region, designated target species included Atlantic cod (Gadus morhua) and American lobster (Homarus americanus). The sensitivity value used for Atlantic cod was ΩArag ≤ 1.31 at 10 °C, based on decreased larval survival observed at this level in Stiasny et al. (2016). The sensitivity value used for American lobster was ΩArag ≤ 1.09, based on decreased stage V and VI juvenile survival observed at this level in Noisette et al. (2021). Habitat depth ranges used for plotting the observed ΩArag values ≤ sensitivity ΩArag values for Atlantic cod and American lobster were limited to 10-200 meters (Gregory et al. 2004; DeCelles et al. 2017) and 10-700 meters (Mercaldo-Allen et al. 1994), respectively. Because there were no additional 2023 bottom water aragonite saturation state data available in the Gulf of Maine to update this same product from the previous year's report, maps for Atlantic cod and American lobster are not included in this year's catalog page. However, the maps for the individual years between 2007-2022 and the combined map for this same time period are available for these species [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/plots/summer_bottom_water_maps/omega_species_sensitivity/).
-
-Data processing code can be found on Github [here](https://github.com/lgarzio/cinar-soe), and all data files use in these analyses and syntheses can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2024_submission/).
+Data processing code can be found on Github [here](https://github.com/lgarzio/cinar-soe), and all data files used in these analyses and plots can be found [here](https://marine.rutgers.edu/~lgarzio/cinar_soe/2025_submission/).
 
 **catalog link** <https://noaa-edab.github.io/catalog/ocean_acidification.html>
 
 <!--chapter:end:chapters/ocean_acidification.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+# example R options set globally
+options(width = 60)
+
+# example chunk options set globally
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+  )
+```
+# Gulf of Maine Weekly pCO2 and Omega-a {#gom_acidification}
+
+**Description**: The presented data are weekly averages of the partial pressure of carbon dioxide (pCO2) and the saturation state of calcium carbonate as aragonite (Omega-a), measured by the Gulf of Maine coastal buoy cooperatively operated by NOAA's Pacific Marine Ecological Laboratory (PMEL) and the University of New Hampshire's Ocean Process Analysis Laboratory. The buoy is located at 43.02 degrees North and 70.54 degrees West.  pCO2 was measured directly, while Omega-a was calculated from observed pCO2, water temperature, salinity, and total alkalinity (modeled from temperature, salinity and month, similar to McGarry et al. 2021).  The weekly averages from 2024 are depicted against the climatological bounds from observations at this site between 2006-2023.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods, Database pull with analysis
+
+**Contributor(s)**: Hunt, Christopher W; Vandemark, Douglas; Sutton, Adrienne
+  
+**Data steward**: Christopher W. Hunt <chunt@unh.edu>
+  
+**Point of contact**: Christopher W. Hunt <chunt@unh.edu>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+pCO2, salinity and water temperature data were measured by the PMEL MAPCO2 system (https://www.pmel.noaa.gov/co2/story/GOM).  Total alkalinity (used together with pCO2, temperature and salinity to estimate Omega-a) was calculated according to a multiple linear regression model developed by UNH from discrete sample data collected at the mooring site since 2004. 
+
+### Data Analysis
+
+Climatological averages and 5th/95th percentiles were calculated from all observations in a specific week, using the Matlab functions mean() and prctile(), respectively.
+
+### Data Processing 
+
+Observations of pCO2, water temperature and salinity from 2006-2023 (collected every 3 hours) were combined for the weekly climatology, with mean and 5th/95th percentile values calculated for all data within each week of the year.  Observations of pCO2, water temperature, and salinity from 2024 were averaged to weekly means.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/gom_acidification.html>
+
+<!--chapter:end:chapters/gom_acidification.Rmd-->
 
 ```{r include=FALSE, cache=FALSE}
 # example R options set globally
@@ -4515,41 +4955,39 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Fishery Reliance and Social Vulnerability {#engagement}
+# Community Social Vulnerability Indicators (CSVI) {#engagement}
 
-**Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
+**Description**: The data presented here are 2022 environmental justice indicators in top commercial and top recreational communities in Mid-Atlantic and New England regions, respectively.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Lisa L. Colburn, Changhua Weng
+**Contributor(s)**: Robert Murphy, Changhua Weng, Tanya Noteva
   
-**Data steward**: Changhua Weng <changhua.weng@noaa.gov>
+**Data steward**: Robert Murphy <robert.murphy@noaa.gov>; Changhua Weng <changhua.weng@noaa.gov>
 
-**Point of contact**: Lisa L. Colburn <lisa.colburn@noaa.gov>
+**Point of contact**: Robert Murphy <robert.murphy@noaa.gov>; Changhua Weng <changhua.weng@noaa.gov>
   
-**Public availability statement**: The source data used to construct the commercial fishing engagement and reliance indices include confidential information and are not available publicly. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. All calculated indices can be found [here](https://www.fisheries.noaa.gov/national/socioeconomics/social-indicators-coastal-communities).
+**Public availability statement**: Source data are NOT publicly available. Please email Robert Murphy <robert.murphy@noaa.gov> for further information and queries of fishing and vulnerability indicator source data.
   
-
 ## Methods
 
-
 ### Data sources
-NOAA Fisheries' Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic and fisheries variables. The social and demographic data were downloaded from the 2018 American Community Survey (ACS) 5-yr estimates Dataset at the [U.S. Census American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs/) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the SOLE server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the [Marine Recreational Information Program (MRIP)](https://www.st.nmfs.noaa.gov/recreational-fisheries/MRIP/), and for this analysis was custom requested from NOAA Fisheries headquarters.
-
+NOAA Fisheries’ Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic, and fisheries variables. The social and demographic data were downloaded from the 2022 American Community Survey (ACS) 5-yr estimates Dataset in the U.S. Census American Community Survey (ACS) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the CAMS server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the Marine Recreational Information Program (MRIP), and for this analysis was custom requested from NOAA Fisheries headquarters.
 
 ### Data extraction 
 Commercial fisheries data was pulled from the NEFSC SOLE server in Woods Hole, MA.
 
 SQL and SAS code for data extraction and processing steps can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/comm_rel_vuln_extraction.sql). 
 
-
-
 ### Data analysis
-The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @Jepson2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+The indicators were developed using the methodology described in Jacob et al. (2010), Jacob et al. (2013), Colburn and Jepson (2012) and M. Jepson and Colburn (2013). Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above 0.500; factor loadings above 0.350; Bartlett’s test of sphericity significance above 0.05; and an Armor’s Theta reliability coefficient above 0.500. Factor scores for each community were ranked based on standard deviations into the following categories: High (>=1.00SD), Medium-High 0.500-0.999 SD), Medium (0.000-0.499 SD) and Low (<0.000 SD).
+
+Note, commercial and recreational reliance indicators have been renamed as ‘population relative engagement’ indicators given that they are a proxy for how engaged each community is in fishing relative to its total population size. The calculation of these indicators remains the same.
 
 ### Data processing
+Commercial fisheries data was pulled from the NEFSC CAMS server in Woods Hole, MA.
 
 Data were formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_engagement.R).
 
@@ -5162,14 +5600,6 @@ knitr::opts_chunk$set(
 ```
 # Harmful Algal Bloom Indicator - Mid Atlantic
 
-```{r, echo = F, message=F}
-
-#Load packages
-library(knitr)
-library(rmarkdown)
-
-```
-
 **Description**: An aggregation of reported algal bloom data in Chesapeake Bay between 2007-2017.
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2018)
@@ -5237,7 +5667,7 @@ knitr::opts_chunk$set(
 **Public availability statement**: Data are publicly available (see Data Sources below).
 
 ## Methods
-The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016 (Figure \@ref(fig:NE-HAB)). Standard detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poisoning (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
+The New England Harmful Algal Bloom (HAB) indicator is a synthesis of shellfish bed closures related to the presence of HAB-associated toxins above threshold levels from 2007-2016. Standard detection methods were used to identify the presence of toxins associated with Amnesic Shellfish Poisoning (ASP), Paralytic Shellfish Poisoning (PSP), and Diarrhetic Shellfish Poisoning (DSP) by state and federal laboratories. 
 
 #### Paralytic Shellfish Poisoning
 The most common cause of shellfish bed closures in New England is the presence of paralytic shellfish toxins (PSTs) produced by the dinoflagellate *Alexandrium catenella*. All New England states except Maine relied on the Association of Official Analytical Chemists (AOAC) approved mouse bioassay method to detect PSTs in shellfish during the 2007-2016 period reported here [@Anonymous2005].
@@ -5363,39 +5793,39 @@ knitr::opts_chunk$set(
   collapse = TRUE
   )
 ```
-# Hudson River Flow
+# Hudson River Flow {hudson_river_flow}
 
 **Description**: Mean annual flow of the Hudson River in cubic meters per second at the USGS gauge 01358000 at Green Island, New York.
 
-**Found In**: 2022 Indicator Catalog
+**Found In**:
 
-**Indicator category**: 
+**Indicator category**:
 
-**Contributor(s)**: Laura Gruenburg, Janet Nye, Kurt Heim
-  
-**Data steward**: Laura Gruenburg <laura.gruenburg@stonybrook.edu>
-  
-**Point of contact**: Laura Gruenburg <laura.gruenburg@stonybrook.edu>
+**Contributor(s)**: Laura Gruenburg, Ian Maywar
+
+**Data steward**: Ian Maywar <ian.maywar@stonybrook.edu>
+
+**Point of contact**: Ian Maywar <ian.maywar@stonybrook.edu>
 
 **Public availability statement**: Source data are publicly available
 
 ## Methods
+
 ### Data Sources
 
 River gauge data from USGS gauge 01358000 was obtained from [USGS water data](https://waterdata.usgs.gov/nwis/uv?site_no=01358000).
 
 ### Data Analysis
 
-Mean annual flow rate was calculated by averaging all flow rate data for each year. Cubic feet per second were converted to cubic meters per second.  Attached code shows this process in detail.
+"Mean annual flow rate was calculated by averaging all flow rate data for each year. Cubic feet per second were converted to cubic meters per second. Attached code shows this process in detail.
 
-A linear trend and a nonlinear GAM were calculated for the resulting annual mean flow rate time series.  [Attached code](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/Gruenburg_Hudson_River_Flow.R) shows this process in detail.
+A linear trend and a nonlinear GAM were calculated for the resulting annual mean flow rate time series. Attached code shows this process in detail: <https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/Gruenburg_Hudson_River_Flow.R>"
 
 ### Data Processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hudson_river_flow.R).
 
-**catalog link**
-No associated catalog page
+**catalog link** No associated catalog page
 
 <!--chapter:end:chapters/hudson_river_flow.Rmd-->
 
@@ -5695,7 +6125,7 @@ knitr::opts_chunk$set(
 
 
 ## Methods
-We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (e.g. Figure \@ref(fig:kde-fig)). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
+We used kernel density plots to depict shifts in species' distributions over time. These figures characterize the probability of a species occurring in a given area based on Northeast Fisheries Science Center (NEFSC) Bottom Trawl Survey data. Kernel density estimates (KDEs) of distributions are shown for the period of 1970-1979 (shaded blue) and most recent three years of survey data (shaded red) (Figures not available). Results are typically visualized for spring and fall bottom trawl surveys seperately. 
 
 Three probability levels (25%, 50%, 75%) are shown for each time period, where the 25% region depicts the core area of the distribution and the 75% region shows the area occupied more broadly by the species. A wide array of KDEs for many ecologically and economically important species on the Northeast US Continental Shelf are available [here](https://www.nefsc.noaa.gov/ecosys/current-conditions/kernel-density.html).
 
@@ -5706,9 +6136,7 @@ Current and historical species distributions are based on the NEFSC Bottom Trawl
 ### Data analysis
 
 Code used for species density analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/species_density_analysis.R). 
-```{r , code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/tech-doc/master/R/stored_scripts/species_density_analysis.R"), eval=F, echo=F}
 
-```
 
 **catalog link**
 No associated catalog page
@@ -5808,7 +6236,7 @@ Extractions were limited to the region bounded by 80°W, 50°N, 60°W, and 20°N
 Extraction code fetch_data.py is available at:  https://github.com/nrcc-cornell/regional-swh  
 Data were subset into five regions: southern Mid-Atlantic bight, northern Mid-Atlantic bight, Georges Bank, western Gulf of Maine, eastern Gulf of Maine.
 
-```{r, echo = F, fig.align="center", fig.cap=""}
+```{r storminess1, echo = F, fig.align="center", fig.cap=""}
 
 knitr::include_graphics(c(file.path(image.dir, "NEUS_regions.png")))
 
@@ -6021,7 +6449,7 @@ knitr::opts_chunk$set(
 
 Habitat area with a probability of occupancy greater than 0.5 was modeled for many species throughout the Northeast Large Marine Ecosystem (NE-LME) [@friedland2020]. Methodology for habitat occupancy models have been discussed in a [seperate chapter](#hab-occu). 
 
-[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas (Table \@ref(tab:wind-table)). 
+[Bureau of Ocean Energy Management](https://www.boem.gov/) (BOEM) is the department responsible for the developement of offshore wind energy. Existing and proposed and lease areas were overlayed with habitat occupancy models to determine the species most likely to be found in the wind lease areas. 
 
 ### Data extraction 
 
@@ -6029,7 +6457,7 @@ BOEM existing and proposed lease areas (as of Feb 2019) shape files were taken f
 
 ### Data analysis
 
-For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South). The species shown in the table below (Table \@ref(tab:wind-table))are those that have the highest average probablity of occupancy in the lease areas. 
+For the purposes of this indicator, the Northeast Shelf was broken into three general areas (North, Mid and South). The species shown in the table below (Table not available) are those that have the highest average probablity of occupancy in the lease areas. 
 
 ### Data processing
 
@@ -6052,7 +6480,7 @@ knitr::opts_chunk$set(
 ```
 # References {-}
 
-```{r include=FALSE}
+```{r refs, include=FALSE}
 #`r if (knitr::is_html_output()) '# References {-}'`
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'htmlwidgets', 'webshot', 'DT',

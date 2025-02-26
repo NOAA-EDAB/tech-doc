@@ -1,0 +1,32 @@
+# Ambient sound levels SNE wind lease areas {#wea_sound}
+
+**Description**: Annual decidecade sound pressure levels from Southern New England Wind Lease Areas
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods, Synthesis of published information
+
+**Contributor(s)**: Sofie M. Van Parijs, Annamaria I. DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Jessica A. McCordic, Xavier Mouy, Timothy J. Rowell, Sara Tennant, Annabel Westell and Genevieve E. Davis
+  
+**Data steward**: Jessica McCordic <jessica.mccordic@noaa.gov>
+  
+**Point of contact**: Jessica McCordic <jessica.mccordic@noaa.gov>; Sofie Van Parijs <sofie.vanparijs@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Acoustic recorders were deployed in 7 locations on Cox’s Ledge and Nantucket Shoals between November 2020 and May 2022, with continuous recordings ranging 111 - 1010 days analyzed per site. Each recorder used a minimum sample rate of 48 kHz (Van Parijs et al. 2023). 
+
+### Data Analysis
+
+Annual medians and distribution percentiles (10th and 90th percentiles) of decidecade levels at each nominal center frequency were generated to assess temporal trends at each monitoring location. See Van Parijs et al. 2023 for more details.
+
+### Data Processing 
+
+Decidecade (one-third octave) sound pressure level (SPL) was calculated using the Soundscape Metrics Remora in the Triton Software Package (https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics). Mean decidecade SPLs per minute were calculated by integrating the mean-square 1-Hz sound pressure spectral densities over their respective frequency bands, computing the arithmetic mean per minute, and converting to decibels (db re 1uPa). Decidecade bands corresponded to standard frequency bands ranging from nominal center frequencies of 25 Hz - 20 kHz. See Van Parijs et al. 2023 for more details.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/wea_sound.html>

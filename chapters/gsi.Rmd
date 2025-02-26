@@ -1,6 +1,6 @@
 # Gulf Stream Index {#gsi}
 
-**Description**: Annual time series of the Gulf Stream index
+**Description**: Annual time series of the Gulf Stream index using satellite SSH dataset
 
 **Indicator category**: Published method
 
@@ -13,7 +13,7 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)
   
 **Point of contact**: Vincent Saba, <vincent.saba@noaa.gov>
   
-**Public availability statement**: Source data are publicly available at [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047). Index data are NOT publicly available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
+**Public availability statement**: Source data are publicly available at [CMEMS](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047). Index data are NOT publicly available so please email vincent.saba@noaa.gov for further information and queries of GSI indicator data.
 
 ## Methods
 The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.
@@ -21,15 +21,19 @@ The methods used to calculate the Gulf Stream Index changed between 2019 and 202
 This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year. 
 
 ### Data sources
-Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047).
+Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047).
 
 ### Data analysis
 
-The GSI is calculated based on the method presented by @perez-hernandez2014. It is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  We followed the same method, except using the dataset from [CMEMS](http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047), which has a 0.25°x0.25° resolution. Therefore we select points every 1° between 52° and 72° and average them, and there are 21 points in total.
+The GSI is originally calculated by @perez-hernandez2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
+
+We followed the same method, except using the dataset from [CMEMS](https://doi.org/10.48670/moi-00148), which now has a 0.125°x0.125° resolution available from Jan. 1993 to Dec. 2023. We calculated the standard deviation (STD) of SSH over the time period of 1993-2018, and select points every 1° between 52° and 72°W along the latitudinal maximum STD. Later, monthly SSH of these 21 points are averaged and standarized to obtain the time series from Jan. 1993 to Dec. 2023.
+
+For detailed analytical methods, see the supplemental info of @chen_seasonal_2021.
 
 ### Data Processing
 
-The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R).
+The Gulf Stream index data set was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R). The computation code can be found [here](https://github.com/zchenocean/Gulf-Stream-Indices/blob/main/GSI_SSH-based_using_satellite_cmems_ssh_0.125deg.ipynb).
 
 ## 2019 Methods
 
