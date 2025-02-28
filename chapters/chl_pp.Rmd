@@ -1,10 +1,10 @@
 # Phytoplankton {#chl_pp}
 
-**Description**: Phytoplankton products - Chlorophyll *a*, Primary Production, and Phytoplankton Size Class
+**Description**: Phytoplankton products: Chlorophyll *a*, Primary Production, and Phytoplankton Size Class
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+)
 
-**Indicator category**: Database pull; Database pull with analysis; Published methods
+**Indicator category**: External data pull with analysis; Published methods
 
 **Contributor(s)**: Kimberly Hyde
   
@@ -16,24 +16,24 @@
 
 
 ## Current Methods
+
 ### Data sources
 
-Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite ocean color data are acquired from the European Space Agency’s [Ocean Colour Climate Change Initiative](https://www.google.com/url?q=https://www.oceancolour.org/&sa=D&source=docs&ust=1677275485958766&usg=AOvVaw35N7q94OZQAdfGBPIBGUwB) (OC-CCI; version 6.0) and [GlobColour Project](https://www.globcolour.info/).  The OC-CCI data is the primary ocean color data source, however the data latency is approximately 6-12 months.  GlobColour ocean color data are used to supplement the OC-CCI data to complete the time series for the current year. Sea Surface Temperature (SST) data include the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder (@Casey2010; @Saha2018) and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 (@Chin2017; @Project2015) data. AVHRR Pathfinder data are used as the SST source until 2002 and MUR SST in subsequent years.
+Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite ocean color data are acquired from the European Space Agency’s [Ocean Colour Climate Change Initiative](https://www.google.com/url?q=https://www.oceancolour.org/&sa=D&source=docs&ust=1677275485958766&usg=AOvVaw35N7q94OZQAdfGBPIBGUwB) (OC-CCI; version 6.0) and [GlobColour Project](https://www.globcolour.info/).  The OC-CCI data is the primary ocean color data source, however the data latency is approximately 3-4 months.  GlobColour ocean color data are used to supplement the OC-CCI data to complete the time series for the current year. Sea Surface Temperature (SST) data include the 4 km nighttime NOAA Advanced Very High Resolution Radiometer (AVHRR) Pathfinder (@Casey2010; @Saha2018) and the Group for High Resolution Sea Surface Temperature (GHRSST) Multiscale Ultrahigh Resolution (MUR, version 4.1) Level 4 (@Chin2017; @Project2015) data. AVHRR Pathfinder data are used as the SST source until 2002 and MUR SST in subsequent years.
 
+### Data processing
 
-### Data extraction
-
-NA
-
-### Data analysis
-
-
-The L3 OC-CCI products merge data from multiple ocean color sensors (SeaWiFS, MODIS Aqua, MERIS, VIIRS, Sentinel 3A and 3B OLCI) and include chlorophyll *a* (CHL-CCI), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property (IOPs) products. The CHL-CCI blended algorithm attempts to weight the outputs of the best-performing chlorophyll algorithms based on the water types present, which improves performance in nearshore water compared to open-ocean algorithms. The L3 GlobColour products use data from the same ocean color sensors as the OC-CCI, but the chlorophyll a product is derived from the Garver, Siegel, and Maritorena (GSM) algorithm, which is a semi-analytical bio-optical model (@OReilly1998). GlobClolour also provides a photosynthetic available radiation (PAR) product, which is the mean daily photon flux density in the visible range (400 to 700 nm) that are used in the primary production calculations. The global OC-CCI, GlobColour, and the SST data are mapped to the same sinusoidal map projection and subset to the east coast region (SW longitude=82.5$^\circ$W, SW latitude=22.5$^\circ$N, NE longitude=51.5$^\circ$W, NE latitude=48.5$^\circ$N).
-
+The global OC-CCI, GlobColour, and the SST data are mapped to the same sinusoidal map projection and subset to the east coast region (SW longitude=82.5$^\circ$W, SW latitude=22.5$^\circ$N, NE longitude=51.5$^\circ$W, NE latitude=48.5$^\circ$N).
 
 #### Data Interpolation
 
-For use in the primary production model, the daily CHL and AVHRR SST data are temporally interpolated and smoothed (CHLINT and SSTINT respectively).  The interpolation increases the data coverage and is necessary to better match data collected from different sensors and different times. The daily PAR data are not affected by cloud cover and MUR SST data is a blended/gap free product so these parameters were not interpolated. Daily data at each pixel location are linearly interpolated based on days in the time series using [interpx.pro](https://github.com/callumenator/idl/blob/master/external/JHUAPL/INTERPX.PRO). Prior to interpolation, the CHL data are log-transformed to account for the log-normal distribution of chlorophyll data (@Campbell1995). The time series are processed in one-year chunks, with each yearly series including 60 days from the previous year and 60 days from the following year to improve the interpolation at the beginning and end of the year. Following interpolation, the data are smoothed with a tri-cube filter (width=7) using IDL’s [CONVOL](https://www.harrisgeospatial.com/docs/CONVOL.html) program. In order to avoid over interpolating data when there were several days of missing data in the time series, the interpolated data were removed and replaced with blank data if the window of interpolation spanned more than 7 days for CHL or 10 days for SST. 
+Daily CHL and AVHRR SST data are temporally interpolated and smoothed (CHLINT and SSTINT respectively) for use in the primary production model.  The interpolation increases the data coverage and is necessary to better match data collected from different sensors and different times. The daily PAR data are not affected by cloud cover and MUR SST data is a blended/gap free product so these parameters were not interpolated. Daily data at each pixel location are linearly interpolated based on days in the time series using [interpx.pro](https://github.com/callumenator/idl/blob/master/external/JHUAPL/INTERPX.PRO). Prior to interpolation, the CHL data are log-transformed to account for the log-normal distribution of chlorophyll data (@Campbell1995). The time series are processed in one-year chunks, with each yearly series including 60 days from the previous year and 60 days from the following year to improve the interpolation at the beginning and end of the year. Following interpolation, the data are smoothed with a tri-cube filter (width=7) using IDL’s [CONVOL](https://www.harrisgeospatial.com/docs/CONVOL.html) program. In order to avoid over interpolating data when there were several days of missing data in the time series, the interpolated data were removed and replaced with blank data if the window of interpolation spanned more than 7 days for CHL or 10 days for SST. 
+
+### Data products
+
+#### Ocean Color and Chlorophyll
+
+The L3 OC-CCI products merge data from multiple ocean color sensors (SeaWiFS, MODIS Aqua, MERIS, VIIRS, Sentinel 3A and 3B OLCI) and include chlorophyll *a* (CHL-CCI), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property (IOPs) products. The CHL-CCI blended algorithm attempts to weight the outputs of the best-performing chlorophyll algorithms based on the water types present, which improves performance in nearshore water compared to open-ocean algorithms. The L3 GlobColour products use data from the same ocean color sensors as the OC-CCI, but the chlorophyll a product is derived from the Garver, Siegel, and Maritorena (GSM) algorithm, which is a semi-analytical bio-optical model (@OReilly1998). GlobClolour also provides a photosynthetic available radiation (PAR) product, which is the mean daily photon flux density in the visible range (400 to 700 nm) that are used in the primary production calculations. 
 
 #### Primary Productivity
 
@@ -63,15 +63,22 @@ Where $\textrm{CHL}_0$ is the surface chlorophyll concentration.
 
 Phytoplankton size classes (PSC) are calculated according to @Turner2021. The regionally tuned abundance-based model is based on the three-component model of @Brewin2010 that varies as a function of SST (@Brewin2017, @Moore2020). The model uses a look-up table with parameters indexed by SST, developed using a local data set of HPLC diagnostic pigment-derived phytoplankton size fractions matched with coincident satellite SST.
 
-#### Stastistics and Anomalies
+### Data Analysis
 
-Statistics, including the arithmetic mean, geometric mean, median, standard deviation, and coefficient of variation are calculated at daily (3 and 8-day running means), weekly, monthly, and annual time steps, and for several climatological periods. Annual statistics used the monthly means as inputs to avoid a summer time bias when more data are available due to reduced cloud cover. The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period. For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year. The CHL and PP climatological statistics include data from both SeaWiFS (1997-2007) and MODIS (2008-2017). 
+#### Statistics and Anomalies
 
-Weekly, monthly and annual anomalies are calculated for each product by taking the difference between the mean of the input time period (i.e. week, month, year) and the climatological mean for the same period. Because bio-optical data are typically log-normally distributed @Campbell1995, the CHL and PP data were first log-transformed prior to taking the difference and then untransformed, resulting in an anomaly ratio.
+Gridded statistics, including the arithmetic mean, geometric mean, median, standard deviation, and coefficient of variation are calculated at daily (3 and 8-day running means), weekly, monthly, and annual time steps, and for several climatological periods. Annual statistics used the monthly means as inputs to avoid a summer time bias when more data are available due to reduced cloud cover. The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period. For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year. Prior to 2024, the climatological date range was from 1998 to the current year. Starting in 2024, the climatological period was fixed to 1998 to 2020 in order to be consistent with the climatological date range of other products. 
 
-The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data located within an ecoregion from the statistic and anomaly files. The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.
+Gridded weekly, monthly and annual anomalies are calculated for each product by taking the difference between the mean of the input time period (i.e. week, month, year) and the climatological mean for the same period. Because bio-optical data are typically log-normally distributed @Campbell1995, the CHL and PP data were first log-transformed prior to taking the difference and then untransformed, resulting in a unitless anomaly ratio.
 
-### Data processing
+#### Total Primary Production
+
+Total primary production is the annual summed primary production by ecological production unit (EPU). Gridded monthly mean data were used as inputs to the annual calculation and the monthly mean of all valid pixels within the EPU was used to fill in any missing pixels. All data converted from (mgC m^-2^ day^-1^) to (mgC pixel^-1^ day^-1^) by multiplying by the pixel area. The data within the EPU were then summed and multiplied by the number of days in the month to convert the data to (mgC EPU^-1^ month^-1^). The monthly data for each year were then summed and converted from grams carbon to metric tons carbon to return total annual primary production for each EPU (mtC EPU^-1^ year^-1^).
+
+#### Data extraction
+The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data located within an ecoregion from the statistic and anomaly images. The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.
+
+### Ecodata processing
 
 CHL and PPD time series were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_chl_pp.R).
 
@@ -107,4 +114,3 @@ where $R_6$ is $R_{rs}(670)$ (SeaWiFS) or $R_{rs}(667)$ [@SOE13].
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/chl_pp.html>
-<https://noaa-edab.github.io/catalog/phyto_size.html>
