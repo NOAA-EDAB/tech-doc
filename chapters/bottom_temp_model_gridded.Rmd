@@ -6,7 +6,7 @@
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+); State of the Ecosystem - Mid-Atlantic Bight (2023+)
 
-**Contributor(s)**: Joe Caracappa, Hubert du Pontavice, Vincent Saba, Zhuomin Chen
+**Contributor(s)**: Joe Caracappa, Vincent Saba, Zhuomin Chen
 
 **Data steward**: Joe Caracappa, joseph.caracappa@noaa.gov
 

@@ -27,7 +27,7 @@ Wind Data:
 
 ### Data Analysis
 
-Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WEA) were pulled for communities along the Northeast US Shelf from 2010 to 2019. Percent of wind lease area landings were calculated compared to total landings for those communities. Environmental Justice and Gentrification Vulnerability were then matched to these communities. 
+Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WEA) were pulled for communities along the Northeast US Shelf from 2010 to 2019. Percent of wind lease area landings were calculated compared to total landings for those communities. Social Vulnerability indicators were then matched to these communities. 
 
 
 ### Data Processing 

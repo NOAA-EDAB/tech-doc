@@ -6,11 +6,11 @@
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Laurel Smith
+**Contributor(s)**: NOAA EDAB
   
-**Data steward**: Laurel Smith, <laurel.smith@noaa.gov>
+**Data steward**: SOE Leads, <nefsc.soe.leads@noaa.gov>
   
-**Point of contact**: Laurel Smith, <laurel.smith@noaa.gov>
+**Point of contact**: SOE Leads, <nefsc.soe.leads@noaa.gov>
   
 **Public availability statement**: NEFSC survey data used in these analyses are available upon request (see [BTS metadata](https://inport.nmfs.noaa.gov/inport/item/22560) for access procedures). Derived condition data are available [here](https://github.com/Laurels1/Condition/tree/master/data).
 

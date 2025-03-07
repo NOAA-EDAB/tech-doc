@@ -6,7 +6,7 @@
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Laurel Smith
+**Contributor(s)**: NOAA EDAB
   
 **Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
   
