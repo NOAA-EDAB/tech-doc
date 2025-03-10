@@ -6,11 +6,11 @@
 
 **Indicator category**:Published methods, Extensive analysis, not yet published
 
-**Contributor(s)**: Hubert du Pontavice, Vincent Saba, Zhuomin Chen
+**Contributor(s)**: Joseph Caracappa, Vincent Saba, Zhuomin Chen
   
-**Data steward**: Kimberly Bastille <Kimberly.bastille@noaa.gov>
+**Data steward**: Joseph Caracappa <joseph.caracappa@noaa.gov>
   
-**Point of contact**: Hubert du Pontavice <hubert.dupontavice@noaa.gov>
+**Point of contact**: Joseph Caracappa <joseph.caracappa@noaa.gov>
   
 **Public availability statement**: Source data are NOT publicly available. Please email hubert.dupontavice@noaa.gov for further information and accessing the ROMS-NWA bottom temperature data.
 

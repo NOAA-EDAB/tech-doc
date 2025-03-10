@@ -6,7 +6,7 @@
 
 **Indicator category**: Published methods
 
-**Contributor(s)**: Sofie Van Parijs, Annamaria DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Jessica McCordic, Xavier Mouy, Tim Rowell, Sara Tennant, Annabel Westell, and Genevieve Davis
+**Contributor(s)**: Sofie Van Parijs, Annamaria DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Xavier Mouy, Tim Rowell, Sara Tennant, Annabel Westell, and Genevieve Davis
   
 **Data steward**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>
   

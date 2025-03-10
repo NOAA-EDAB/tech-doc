@@ -10,11 +10,11 @@ State of the Ecosystem - Mid-Atlantic (2023)
 
 **Contributor(s)**: Chris Haak <ChrisHaak@gmail.com>
   
-**Data steward**: Laurel Smith <laurel.smith@noaa.gov>
+**Data steward**: SOE Leads <nefsc.soe.leads@noaa.gov>
   
-**Point of contact**: Laurel Smith <laurel.smith@noaa.gov>
+**Point of contact**: SOE Leads <nefsc.soe.leads@noaa.gov>
   
-**Public availability statement**: This analysis is based on NEFSC bottom trawl survey data which are publicly available. Please reached out to Laurel Smith with questions.
+**Public availability statement**: This analysis is based on NEFSC bottom trawl survey data which are publicly available. Please reached out to <nefsc.soe.leads@noaa.gov> with questions.
 
 
 ## Methods

@@ -6,7 +6,7 @@
 
 **Indicator category**: Synthesis of published information, Extensive analysis; not yet published
 
-**Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Laurel Smith, Jamie Tam, Steve Traynor, Robert Wildermuth 
+**Contributor(s)**: Sarah Gaichas, Patricia Clay, Geret DePiper, Gavin Fay, Michael Fogarty, Paula Fratantoni, Robert Gamble, Sean Lucey, Charles Perretti, Patricia Pinto da Silva, Vincent Saba, Jamie Tam, Steve Traynor, Robert Wildermuth 
 
 **Data steward**: Sarah Gaichas, <sarah.gaichas@noaa.gov>
 

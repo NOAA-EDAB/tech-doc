@@ -1,6 +1,6 @@
 # Community Social Vulnerability Indicators (CSVI) {#engagement}
 
-**Description**: The data presented here are 2022 environmental justice indicators in top commercial and top recreational communities in Mid-Atlantic and New England regions, respectively.
+**Description**: The data presented here are 2022 social vulnerability indicators in top commercial and top recreational communities in Mid-Atlantic and New England regions, respectively.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+), State of the Ecosystem - Indicator Catalog (2024+)
 

@@ -6,11 +6,11 @@
 
 **Indicator category**: Published methods, Synthesis of published information
 
-**Contributor(s)**: Sofie M. Van Parijs, Annamaria I. DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Jessica A. McCordic, Xavier Mouy, Timothy J. Rowell, Sara Tennant, Annabel Westell and Genevieve E. Davis
+**Contributor(s)**: Sofie M. Van Parijs, Annamaria I. DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Xavier Mouy, Timothy J. Rowell, Sara Tennant, Annabel Westell and Genevieve E. Davis
   
-**Data steward**: Jessica McCordic <jessica.mccordic@noaa.gov>
+**Data steward**: SOE Leads <nefsc.soe.leads@noaa.gov>
   
-**Point of contact**: Jessica McCordic <jessica.mccordic@noaa.gov>; Sofie Van Parijs <sofie.vanparijs@noaa.gov>
+**Point of contact**: SOE Leads <nefsc.soe.leads@noaa.gov>; Sofie Van Parijs <sofie.vanparijs@noaa.gov>
   
 **Public availability statement**: Source data are publicly available.
 

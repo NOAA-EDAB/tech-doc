@@ -23,7 +23,7 @@ Atlantic HMS SAFE Reports (see 2023 report, https://www.fisheries.noaa.gov/atlan
 ### Data analysis
 Stock status information is compiled annually from stock assessments completed by the International Commission for the Conservation of Atlantic Tunas (ICCAT) (tunas, sharks, swordfish) and the Southeast Data Assessment and Review (SEDAR) (Atlantic HMS sharks). Species with a range of uncertainty estimates for F/Fmsy and B/Bmsy and assessments completed very recently may not be included in Stock Smart queries. We selected the most precautionary metrics for Fyr/Fmsy (high-end) and Byr/Bmsy (low-end). 
 
-Stock status information was plotted on a Kobe chart using modified code from the 2021 SOE Technical Documentation. Although Gulf of Mexico stock information is provided, we only plotted Atlantic stocks to maintain relevance. Atlantic blacknose shark was considered an outlier due to an Fyr/Fmsy = 22.53. The y-axis is not scaled to include this species in the Kobe plot, so it was added in the top left segment of the box with the Fyr/Fmsy. The grey box lists species with unknown F/Fmsy and/or B/Bmsy.
+Stock status information was plotted on a Kobe chart using modified code from the 2021 SOE Technical Documentation. Although additional stock information is provided, we only plotted Atlantic stocks to maintain relevance. Atlantic blacknose shark was considered an outlier due to an Fyr/Fmsy = 22.53. The y-axis is not scaled to include this species in the Kobe plot, so it was added in the top left segment of the box with the Fyr/Fmsy. The grey box lists species with unknown F/Fmsy and/or B/Bmsy.
 
 
 The table below shows naming conventions used in the plot. 

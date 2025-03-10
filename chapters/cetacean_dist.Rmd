@@ -6,7 +6,7 @@
 
 **Indicator category**:  Published methods.
 
-**Contributor(s)**:  Sam Chavez, Elizabeth Josephson, Debra Palka
+**Contributor(s)**:  Sam Chavez, Debra Palka
 
 **Data steward**: Debra Palka <debra.palka@noaa.gov>
   
