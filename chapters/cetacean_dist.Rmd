@@ -21,7 +21,6 @@
 ### Data sources
 Data collected during NMFS aerial and shipboard line transect abundance surveys (Palka et al. 2021). Processed data are available at https://github.com/NEFSC/READ-PSB-AMAPPS-public
 
-
 ### Data analysis
 Centroid of spatial density distribution map from each season and species in 2010 was then compared to the corresponding season and species in 2017 (Chavez-Rosales et al. 2022). 
 

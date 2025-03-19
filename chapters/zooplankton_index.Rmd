@@ -20,7 +20,7 @@
 
 The Northeast Fisheries Science Center has conducted [zooplankton surveys](https://www.fisheries.noaa.gov/inport/item/9286) since the 1970s.
 
-The dataset through 2022 used in this analysis was obtained from Harvey Walsh. 
+The dataset through 2022 used in this analysis was obtained from the Oceanography Branch. 
 
 ### Data Analysis
 

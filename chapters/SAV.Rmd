@@ -27,7 +27,7 @@ The [analysis and methods](https://d18lev1ok5leia.cloudfront.net/chesapeakeprogr
 
 ### Data Processing 
 
-Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sav.R).
+Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_SAV.R).
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/SAV.html>

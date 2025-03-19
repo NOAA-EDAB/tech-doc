@@ -4,7 +4,7 @@
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+)
 
-**Indicator category**: Port Landings from within Wind Lease Areas and Community Social Vulnerability Indicators
+**Indicator category**: Database pull with analysis
 
 **Contributor(s)**: Angela Silva, Doug Christel
   

@@ -1,6 +1,6 @@
 # Aquaculture {#aquaculture}
 
-**Description**: Aquaculture indicators
+**Description**: Oyster production: number of oysters harvested from aquaculture.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
 

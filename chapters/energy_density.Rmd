@@ -34,8 +34,6 @@ knitr::kable(forage.tab, caption = "List of forage fish study species.",  bookta
  # kableExtra::kable_styling(full_width = F)
 ```
 
-
-
 ### Data sources
 NEFSC spring and fall bottom trawl surveys. 
 
@@ -51,7 +49,7 @@ Sampling and laboratory analysis is ongoing, with the goal of continuing routine
 ### Data processing
 
 Code for building the table used in the SOE can be found 
-[here](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-forage.R).
+[here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_forage_energy_density.R).
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/energy_density.html>

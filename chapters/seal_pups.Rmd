@@ -2,7 +2,6 @@
 
 **Description**: Gray seal pup counts 
  
-
 **Indicator category**: Extensive analysis
 
 **Found in**: State of the Ecosystem - New England (2023)

@@ -37,7 +37,7 @@ The ZIP file was used in the following analysis.
 
 ### Data analysis
 
-Data regions "4 = New England"  and "5 = Mid-Atlantic" were selected for as to remove data from regions not relevant to the State of the Ecosystem reports. The data were then grouped into categories using the table below. This species list was the list used in the above "species" section in the MRIP query.  Data were grouped by year, category and region, and the sum of all the landings for each was used as the indicator for recreational shark harvest. 
+Data regions "4 = New England" and "5 = Mid-Atlantic" were selected for to remove data from regions not relevant to the State of the Ecosystem reports. The data were then grouped into categories using the table below. This species list was the list used in the above "species" section in the MRIP query.  Data were grouped by year, category and region, and the sum of all the landings for each was used as the indicator for recreational shark harvest. 
 
 | Category       | Common Name          | Species Name                 |
 |----------------|----------------------|------------------------------|

@@ -1,6 +1,6 @@
 # Fisheries Revenue in Wind Development Areas {#wind_revenue}
 
-**Description**: Top Species Revenue from Wind Development Areas
+**Description**: The data presented here include landings and revenue of species managed by the New England and Mid-Atlantic Fishery Management Councils within existing offshore wind lease areas.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank 2022+ (Different Methods 2021), State of the Ecosystem - Mid-Atlantic 2022+ (Diferent Methods 2021)
 

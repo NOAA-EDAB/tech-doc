@@ -1,6 +1,6 @@
 # Cetacean Weekly Acoustic Presence {#cetacean_acoustic}
 
-**Description**: This figure shows a summary of weekly acoustic presence of eight cetacean species summarized across two years at four recording sites in southern New England.
+**Description**: A summary of weekly acoustic presence of eight cetacean species summarized across two years at four recording sites in southern New England.
 
 **Found in**: State of the Ecosystem - Indicator Catalog (2025) 
 

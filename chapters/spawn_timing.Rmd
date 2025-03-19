@@ -29,7 +29,7 @@ Input datasets are available at: https://github.com/sgaichas/spawntiming
 ### Data Analysis 
 The same series of summary/diagnostic plots are presented for each species and stock area. The data summaries allow visual interpretation of patterns and trends. The function ecodata::geom_gls was applied to detect trends.
 
-Multinomial regression results are reported but figures not shown in catalog. This is for information.
+Multinomial regression results are reported but figures not shown in catalog.
 
 For yellowtail flounder, multinomial logistic regression was used to summarize and evaluate the relative significance of sampling week, bottom temperature, and time block on the spawning condition of fish sampled during spring surveys. For this analysis, developing fish were considered ‘prespawning’, both ripe and ripe and running classes were considered ‘spawning’, and the spent and resting classes were combined into ‘postspawning’. Although there is some order to these three classifications, they represent more of a cycle, and given Yellowtail Flounder are batch spawners and go from developing to ripe and back to developing multiple times before becoming spent. Therefore, multinomial regression was chosen over ordinal regression. The stock specific multinomial log- linear models took the form:
 
@@ -40,7 +40,7 @@ Where spawning condition of individual fish is Prespawning, spawning, postspawni
 ### Data Processing 
 The survey data was not edited in any way, and it is likely there are some erroneous classifications included, therefore caution should be exercised when interpreting subsets of the data where sample sizes become limited.
 
-Haddock data was analyzed for each of the two stock regions (Georges Bank-GB and Gulf of Maine-GOM) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1970 to 2019 was analyzed.
+Haddock data was analyzed for each of the two stock regions (Georges Bank-GB and Gulf of Maine-GOM) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1970 to 2023 was analyzed.
 
 Yellowtail flounder data was analyzed for each of the three stock regions (Cape Cod-Gulf of Maine (CC), Georges Bank (GB), and Southern New England (SNE)) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1971 to 2023 was analyzed for the spring survey and the period 1981-2022 was analyzed for the fall survey.
 

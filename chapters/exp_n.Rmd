@@ -1,18 +1,18 @@
 # Expected Number of Species {#exp_n}
 
-**Description**: Time Series of Expected Number of Species per Tow in NEFSC BTS
+**Description**: Time Series of Expected Number of Species per Tow in NEFSC Bottom Trawl Survey
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
 
 **Indicator category**: Database pull with analysis; Published methods
 
-**Contributor(s)**: Sean Lucey
+**Contributor(s)**: Sean Lucey, Andy Beet
   
-**Data steward**: Sean Lucey, <sean.lucey@noaa.gov>
+**Data steward**: Andy Beet, <andrew.beet@noaa.gov>
   
-**Point of contact**: Sean Lucey, <sean.lucey@noaa.gov>
+**Point of contact**: Andy Beet, <andrew.beet@noaa.gov>
   
-**Public availability statement**: 
+**Public availability statement**: Source data are publicly available.
 
 
   

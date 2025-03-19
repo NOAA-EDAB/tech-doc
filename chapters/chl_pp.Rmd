@@ -33,7 +33,7 @@ Daily CHL and AVHRR SST data are temporally interpolated and smoothed (CHLINT an
 
 #### Ocean Color and Chlorophyll
 
-The L3 OC-CCI products merge data from multiple ocean color sensors (SeaWiFS, MODIS Aqua, MERIS, VIIRS, Sentinel 3A and 3B OLCI) and include chlorophyll *a* (CHL-CCI), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property (IOPs) products. The CHL-CCI blended algorithm attempts to weight the outputs of the best-performing chlorophyll algorithms based on the water types present, which improves performance in nearshore water compared to open-ocean algorithms. The L3 GlobColour products use data from the same ocean color sensors as the OC-CCI, but the chlorophyll a product is derived from the Garver, Siegel, and Maritorena (GSM) algorithm, which is a semi-analytical bio-optical model (@OReilly1998). GlobClolour also provides a photosynthetic available radiation (PAR) product, which is the mean daily photon flux density in the visible range (400 to 700 nm) that are used in the primary production calculations. 
+The L3 OC-CCI products merge data from multiple ocean color sensors (SeaWiFS, MODIS Aqua, MERIS, VIIRS, Sentinel 3A and 3B OLCI) and include chlorophyll *a* (CHL-CCI), remote sensing reflectance $(R_{rs}(\lambda))$, and several inherent optical property (IOPs) products. The CHL-CCI blended algorithm weighs the outputs of the best-performing chlorophyll algorithms based on the water types present, which improves performance in nearshore water compared to open-ocean algorithms. The L3 GlobColour products use data from the same ocean color sensors as the OC-CCI, but the chlorophyll a product is derived from the Garver, Siegel, and Maritorena (GSM) algorithm, which is a semi-analytical bio-optical model (@OReilly1998). GlobClolour also provides a photosynthetic available radiation (PAR) product, which is the mean daily photon flux density in the visible range (400 to 700 nm) that are used in the primary production calculations. 
 
 #### Primary Productivity
 
@@ -76,7 +76,7 @@ Gridded weekly, monthly and annual anomalies are calculated for each product by 
 Total primary production is the annual summed primary production by ecological production unit (EPU). Gridded monthly mean data were used as inputs to the annual calculation and the monthly mean of all valid pixels within the EPU was used to fill in any missing pixels. All data converted from (mgC m^-2^ day^-1^) to (mgC pixel^-1^ day^-1^) by multiplying by the pixel area. The data within the EPU were then summed and multiplied by the number of days in the month to convert the data to (mgC EPU^-1^ month^-1^). The monthly data for each year were then summed and converted from grams carbon to metric tons carbon to return total annual primary production for each EPU (mtC EPU^-1^ year^-1^).
 
 #### Data extraction
-The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data located within an ecoregion from the statistic and anomaly images. The median values, which are equivalent to the geometric mean, were used for the CHL and PP data.
+The ecological production unit (EPU) shapefile that excludes the estuaries was used to spatially extract all data located within an ecoregion from the statistic and anomaly images. The median values were used for the CHL and PP data.
 
 ### Ecodata processing
 
