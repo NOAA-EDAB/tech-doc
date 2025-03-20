@@ -865,7 +865,7 @@ sessionInfo(package = NULL)
 #> [6] methods   base     
 #> 
 #> other attached packages:
-#>  [1] knitr_1.49       kableExtra_1.4.0 here_1.0.1      
+#>  [1] knitr_1.50       kableExtra_1.4.0 here_1.0.1      
 #>  [4] ecodata_5.0.2    lubridate_1.9.4  forcats_1.0.0   
 #>  [7] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.4     
 #> [10] readr_2.1.5      tidyr_1.3.1      tibble_3.2.1    
@@ -873,7 +873,7 @@ sessionInfo(package = NULL)
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] gtable_0.3.6      xfun_0.51         bslib_0.9.0      
-#>  [4] lattice_0.22-6    tzdb_0.4.0        vctrs_0.6.5      
+#>  [4] lattice_0.22-6    tzdb_0.5.0        vctrs_0.6.5      
 #>  [7] tools_4.4.3       generics_0.1.3    stats4_4.4.3     
 #> [10] parallel_4.4.3    pkgconfig_2.0.3   Matrix_1.7-2     
 #> [13] lifecycle_1.0.4   farver_2.1.2      compiler_4.4.3   
@@ -891,7 +891,7 @@ sessionInfo(package = NULL)
 #> [49] VGAM_1.1-13       memoise_2.0.1     evaluate_1.0.3   
 #> [52] viridisLite_0.4.2 rlang_1.1.5       downlit_0.4.4    
 #> [55] Rcpp_1.0.14       xtable_1.8-4      glue_1.8.0       
-#> [58] xml2_1.3.7        vroom_1.6.5       svglite_2.1.3    
+#> [58] xml2_1.3.8        vroom_1.6.5       svglite_2.1.3    
 #> [61] rstudioapi_0.17.1 jsonlite_1.9.1    R6_2.6.1         
 #> [64] systemfonts_1.2.1 fs_1.6.5
 
@@ -904,18 +904,18 @@ current.session$otherPkgs
 #> Type: Package
 #> Title: A General-Purpose Package for Dynamic Report
 #>       Generation in R
-#> Version: 1.49
+#> Version: 1.50
 #> Authors@R: c( person("Yihui", "Xie", role = c("aut",
 #>       "cre"), email = "xie@yihui.name", comment =
-#>       c(ORCID = "0000-0003-0645-5666")),
-#>       person("Abhraneel", "Sarma", role = "ctb"),
-#>       person("Adam", "Vogt", role = "ctb"),
-#>       person("Alastair", "Andrew", role = "ctb"),
-#>       person("Alex", "Zvoleff", role = "ctb"),
-#>       person("Amar", "Al-Zubaidi", role = "ctb"),
-#>       person("Andre", "Simon", role = "ctb", comment
-#>       = "the CSS files under inst/themes/ were
-#>       derived from the Highlight package
+#>       c(ORCID = "0000-0003-0645-5666", URL =
+#>       "https://yihui.org")), person("Abhraneel",
+#>       "Sarma", role = "ctb"), person("Adam", "Vogt",
+#>       role = "ctb"), person("Alastair", "Andrew",
+#>       role = "ctb"), person("Alex", "Zvoleff", role =
+#>       "ctb"), person("Amar", "Al-Zubaidi", role =
+#>       "ctb"), person("Andre", "Simon", role = "ctb",
+#>       comment = "the CSS files under inst/themes/
+#>       were derived from the Highlight package
 #>       http://www.andre-simon.de"), person("Aron",
 #>       "Atkins", role = "ctb"), person("Aaron",
 #>       "Wolen", role = "ctb"), person("Ashley",
@@ -1029,7 +1029,7 @@ current.session$otherPkgs
 #>       Programming techniques.
 #> Depends: R (>= 3.6.0)
 #> Imports: evaluate (>= 0.15), highr (>= 0.11),
-#>       methods, tools, xfun (>= 0.48), yaml (>=
+#>       methods, tools, xfun (>= 0.51), yaml (>=
 #>       2.1.19)
 #> Suggests: bslib, codetools, DBI (>= 0.4-1), digest,
 #>       formatR, gifski, gridSVG, htmlwidgets (>= 0.7),
@@ -1038,7 +1038,7 @@ current.session$otherPkgs
 #>       1.4), rgl (>= 0.95.1201), rlang, rmarkdown,
 #>       sass, showtext, styler (>= 1.2.0), targets (>=
 #>       0.6.0), testit, tibble, tikzDevice (>= 0.10),
-#>       tinytex (>= 0.46), webshot, rstudioapi, svglite
+#>       tinytex (>= 0.56), webshot, rstudioapi, svglite
 #> License: GPL
 #> URL: https://yihui.org/knitr/
 #> BugReports: https://github.com/yihui/knitr/issues
@@ -1049,20 +1049,21 @@ current.session$otherPkgs
 #>       (http://pandoc.org). The function rst2pdf()
 #>       requires rst2pdf
 #>       (https://github.com/rst2pdf/rst2pdf).
-#> Collate: 'block.R' 'cache.R' 'utils.R' 'citation.R'
-#>       .....
+#> Collate: 'block.R' 'cache.R' 'citation.R'
+#>       'hooks-html.R' .....
 #> RoxygenNote: 7.3.2
 #> NeedsCompilation: no
-#> Packaged: 2024-11-06 23:10:53 UTC; runner
+#> Packaged: 2025-03-15 00:17:19 UTC; runner
 #> Author: Yihui Xie [aut, cre]
-#>       (<https://orcid.org/0000-0003-0645-5666>),
-#>       Abhraneel Sarma [ctb], Adam Vogt [ctb],
-#>       Alastair Andrew [ctb], Alex Zvoleff [ctb], Amar
-#>       Al-Zubaidi [ctb], Andre Simon [ctb] (the CSS
-#>       files under inst/themes/ were derived from the
-#>       Highlight package http://www.andre-simon.de),
-#>       Aron Atkins [ctb], Aaron Wolen [ctb], Ashley
-#>       Manton [ctb], Atsushi Yasumoto [ctb]
+#>       (<https://orcid.org/0000-0003-0645-5666>,
+#>       https://yihui.org), Abhraneel Sarma [ctb], Adam
+#>       Vogt [ctb], Alastair Andrew [ctb], Alex Zvoleff
+#>       [ctb], Amar Al-Zubaidi [ctb], Andre Simon [ctb]
+#>       (the CSS files under inst/themes/ were derived
+#>       from the Highlight package
+#>       http://www.andre-simon.de), Aron Atkins [ctb],
+#>       Aaron Wolen [ctb], Ashley Manton [ctb], Atsushi
+#>       Yasumoto [ctb]
 #>       (<https://orcid.org/0000-0002-8335-495X>), Ben
 #>       Baumer [ctb], Brian Diggs [ctb], Brian Zhang
 #>       [ctb], Bulat Yapparov [ctb], Cassio Pereira
@@ -1119,15 +1120,15 @@ current.session$otherPkgs
 #>       Posit Software, PBC [cph, fnd]
 #> Maintainer: Yihui Xie <xie@yihui.name>
 #> Repository: RSPM
-#> Date/Publication: 2024-11-08 09:30:02 UTC
-#> Built: R 4.4.0; ; 2024-11-09 04:11:26 UTC; unix
+#> Date/Publication: 2025-03-16 09:20:02 UTC
+#> Built: R 4.4.0; ; 2025-03-17 15:37:05 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: knitr
 #> RemoteRef: knitr
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 1.49
+#> RemoteSha: 1.50
 #> 
 #> -- File: /home/runner/work/_temp/Library/knitr/Meta/package.rds 
 #> 
@@ -1297,11 +1298,11 @@ current.session$otherPkgs
 #> GithubRef: HEAD
 #> GithubSHA1: 8c8bb0f359e3cdf41110e52e7f6d01a396ac971e
 #> NeedsCompilation: no
-#> Packaged: 2025-03-10 14:06:41 UTC; runner
+#> Packaged: 2025-03-20 13:40:04 UTC; runner
 #> Author: Brandon Beltz [cre, aut], Kimberly Bastille
 #>       [aut], Sean Hardison [aut]
 #> Maintainer: Brandon Beltz <brandon.beltz@noaa.gov>
-#> Built: R 4.4.3; ; 2025-03-10 14:07:25 UTC; unix
+#> Built: R 4.4.3; ; 2025-03-20 13:40:47 UTC; unix
 #> 
 #> -- File: /home/runner/work/_temp/Library/ecodata/Meta/package.rds 
 #> 
@@ -1655,8 +1656,8 @@ current.session$otherPkgs
 #> Maintainer: Jennifer Bryan <jenny@posit.co>
 #> Repository: RSPM
 #> Date/Publication: 2024-01-10 23:20:02 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2025-03-04
-#>       04:43:35 UTC; unix
+#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2025-03-17
+#>       15:39:36 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: readr
 #> RemoteRef: readr
@@ -2214,7 +2215,7 @@ Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. <span>“Dynamics of the Dire
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 10 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
