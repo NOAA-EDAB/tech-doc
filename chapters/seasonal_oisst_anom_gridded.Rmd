@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Sean Hardison, Vincent Saba
   
-**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+**Data steward**: Brandon Beltz, <Brandon.Beltz@noaa.gov>
   
-**Point of contact**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+**Point of contact**: Brandon Beltz, <Brandon.Beltz@noaa.gov>
   
 **Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html).
 

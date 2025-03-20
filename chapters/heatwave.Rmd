@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Vincent Saba
   
-**Data steward**: Kimberly Bastille <kimberly.bastille@noaa.gov>
+**Data steward**: Brandon Beltz <Brandon.Beltz@noaa.gov>
   
-**Point of contact**: Vincent Saba <vincent.saba@noaa.gov>
+**Point of contact**: Brandon Beltz <Brandon.Beltz@noaa.gov>
   
 **Public availability statement**: Source data are publicly available. Please email vincent.saba@noaa.gov for further information and queries of the marine heatwave indicator data.
 

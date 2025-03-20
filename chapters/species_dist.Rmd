@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Kevin Friedland
   
-**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Data steward**: Brandon Beltz <brandon.beltz@noaa.gov>
   
-**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Point of contact**: Kevin Friedland, <brandon.beltz@noaa.gov>
   
 **Public availability statement**: Source data are available upon request (read more [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data may be downloaded [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html).
 

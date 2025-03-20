@@ -16,7 +16,7 @@
 
 ## Methods
 
-The plot showing the number of warm core ring formations and regime shift replicates figure 3 in @gangopadhyay2019.  Detailed methods on the warm core ring time series and regime shift analysis are described in the manuscript.
+Detailed methods on the warm core ring time series, regime shift analysis and production of the plots shown in the State of the Ecosystem reports and Northeast US Ecosystem Indicator Catalog are described in in @gangopadhyay2019.
 
 ### Data sources
 

@@ -7,17 +7,17 @@
 
 **Indicator category**: Database pull
 
-**Contributor(s)**: Kevin Friedland
+**Contributor(s)**: Kevin Friedland, Sarah Weisberg
   
-**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Data steward**: Brandon Beltz, <Brandon.Beltz@noaa.gov>
   
-**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Point of contact**: Brandon Beltz, <Brandon.Beltz@noaa.gov>
   
 **Public availability statement**: Source data are available [here](https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html).
 
 
 ## Methods
-Data for long-term sea-surface temperatures were derived from the Noational Oceanographic and Atmospheric Administration (NOAA) extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
+Data for long-term sea-surface temperatures were derived from the National Oceanographic and Atmospheric Administration (NOAA) extended reconstructed sea surface temperature data set (ERSST V5). The ERSST V5 dataset is parsed into 2&deg; x 2&deg; gridded bins between 1854-present with monthly temporal resolution. Data were interpolated in regions with limited spatial coverage, and heavily damped during the period between 1854-1880 when collection was inconsistent  [@Huang2017; @huang2017extended]. For this analysis, 19 bins were selected that encompassed the Northeast US Continental Shelf region [see @Friedland2007]. 
 
 
 ### Data sources

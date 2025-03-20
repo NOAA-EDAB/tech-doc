@@ -1,7 +1,6 @@
 # Right Whale Abundance {#narw}
 
-
-**Description**: Right Whale
+**Description**: North Atlantic Right Whale Abundance
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
 
@@ -31,3 +30,5 @@ Analysis for right whale abundance estimates is based on methods by @Pace2017, a
 ### Data processing
 
 Time series of right whale  and calf abundance estimates were formatted for inclusion in the `ecodata` R package using this R [code](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_narw.R).
+
+**catalog link** <https://noaa-edab.github.io/catalog/narw.html>

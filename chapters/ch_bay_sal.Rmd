@@ -1,6 +1,6 @@
 # Chesapeake Bay Salinity and Temperature {#ch_bay_sal}
 
-**Description**: Chesapeake Bay Salinity and Temperature
+**Description**: Chesapeake Bay Salinity
 
 **Found in**: State of the Ecosystem - Mid-Atlantic (2020+)
 
@@ -27,7 +27,7 @@ Data is directly inserted into a database from the real time system over the cel
 
 
 ### Data analysis
-The data is processed with a [python script](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py). This creates an array and runs the data through a [QARTOD](https://ioos.noaa.gov/project/qartod/) (Quality Assurance/Quality Control of Real-Time Oceanographic Data) routine. The result is a set of flags. Only the good data is used in the plot below.
+The data is processed with a [python script](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/ches_bay_sal_analysis.py). This creates an array and runs the data through a [QARTOD](https://ioos.noaa.gov/project/qartod/) (Quality Assurance/Quality Control of Real-Time Oceanographic Data) routine. The result is a set of flags. Only the good data is used in the final product.
 
 The stations include annapolis ([AN](https://buoybay.noaa.gov/locations/annapolis)), goose reef ([GR](https://buoybay.noaa.gov/locations/gooses-reef)), potomac ([PL](https://buoybay.noaa.gov/locations/potomac)), and york-split ([YS](https://buoybay.noaa.gov/locations/york-spit)). 
 

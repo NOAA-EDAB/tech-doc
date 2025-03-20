@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Ryan Morse, Kevin Friedland
   
-**Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>; Mike Jones, <michael.jones@noaa.gov>
+**Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>
   
-**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>; Kevin Friedland, <kevin.friedland@noaa.gov>
+**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>
   
 **Public availability statement**: Source data through 2019 are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/), and data through 2021 are available upon request from harvey.walsh@noaa.gov. Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html).
 

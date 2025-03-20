@@ -8,9 +8,9 @@
 
 **Contributor(s)**: Geret DePiper, Sarah Gaichas, Sean Hardison, Sean Lucey
   
-**Data steward**: Sean Lucey <Sean.Lucey@noaa.gov>
+**Data steward**: Sarah Gaichas <Sarah.Gaichas@noaa.gov>
   
-**Point of contact**: Sean Lucey <Sean.Lucey@noaa.gov>
+**Point of contact**: Sarah Gaichas <Sarah.Gaichas@noaa.gov>
   
 **Public availability statement**: Source data is available to the public (see Data Sources). 
 ```{r global-opts2, echo = FALSE}
