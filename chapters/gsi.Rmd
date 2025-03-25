@@ -25,7 +25,7 @@ Data used in this analysis come from Compernicus Marine Environment Monitoring S
 
 ### Data analysis
 
-The GSI is originally calculated by @perez-hernandez2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
+The GSI is originally calculated by @perez-hernandez_two_2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
 
 We followed the same method, except using the dataset from [CMEMS](https://doi.org/10.48670/moi-00148), which now has a 0.125°x0.125° resolution available from Jan. 1993 to Dec. 2023. We calculated the standard deviation (STD) of SSH over the time period of 1993-2018, and select points every 1° between 52° and 72°W along the latitudinal maximum STD. Later, monthly SSH of these 21 points are averaged and standarized to obtain the time series from Jan. 1993 to Dec. 2023.
 
@@ -37,7 +37,7 @@ The Gulf Stream index data set was formatted for inclusion in the `ecodata` R pa
 
 ## 2019 Methods
 
-Summarized from @joyce2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 
+Summarized from @joyce_meridional_2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 
 
 ### Data Sources
 
@@ -45,7 +45,7 @@ Ocean temperatures at 200 m are available at https://www.nodc.noaa.gov/OC5/3M_HE
 
 ### Data analysis
 
-For detailed analytical methods, see @joyce2019. 
+For detailed analytical methods, see @joyce_meridional_2019. 
 
 ### Data processing and plotting
 

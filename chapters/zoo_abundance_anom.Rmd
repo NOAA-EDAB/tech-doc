@@ -17,17 +17,17 @@
 ## Methods
 
 ### Data sources
-Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @Kane2007, @Kane2011, and @Morse2017.
+Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in @kane_zooplankton_2007, @kane_multiyear_2011, and @morse_distinct_2017.
 
 ### Data extraction 
-Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on @Kane2007 and @Kane2011 in addition to other collection details.
+Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on @kane_zooplankton_2007 and @kane_multiyear_2011 in addition to other collection details.
 
 ### Data analysis
 
 #### Annual abundance anomalies
 
 
-Data are processed similarly to @Kane2007 and @Perretti2017, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @Morse2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
+Data are processed similarly to @kane_zooplankton_2007 and @perretti_regime_2017, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in @morse_distinct_2017. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year. 
 
 Code used for zooplankton data analysis can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R). 
 

@@ -21,11 +21,11 @@
 
 Common tern (*Sterna hirundo*) chick diet was quantified at each of the seven nesting sites by observing chick provisioning from portable observation blinds. The locations of observation blinds within each site were chosen to maximize the number of visible nests, and provisioning observations took place between mid-June and early August annually. Observations of chick diet were made during one or two, three to four hour periods throughout the day, but typically proceed according to nest activity levels (more so in the morning hours). Observations began with chicks as soon as they hatched, and continue until the chicks fledged or died. 
 
-Most common tern prey species were identifiable to the species level due to distinct size, color and shape. However, when identification was not possible or was unclear, prey species were listed as "unknown" or "unknown fish". More detailed methods can be found in @hall2000. 
+Most common tern prey species were identifiable to the species level due to distinct size, color and shape. However, when identification was not possible or was unclear, prey species were listed as "unknown" or "unknown fish". More detailed methods can be found in @hall_composition_2000. 
 
 **Nest productivity**
 
-Common tern nest productivity, in terms of the number of fledged chicks per nest, was collected annually from fenced enclosures at island nesting sites (known as "productivity plots"). Newly hatched chicks within these enclosures were weighed, marked or banded, and observed until fledging, death, or until a 15 day period had passed when chicks were assumed to have fledged. Productivity was also quantified from observer blinds for nests outside of the productivity plots where chicks were marked for identification. More detailed methods for quantifying nest productivity can be found in @hall2004.
+Common tern nest productivity, in terms of the number of fledged chicks per nest, was collected annually from fenced enclosures at island nesting sites (known as "productivity plots"). Newly hatched chicks within these enclosures were weighed, marked or banded, and observed until fledging, death, or until a 15 day period had passed when chicks were assumed to have fledged. Productivity was also quantified from observer blinds for nests outside of the productivity plots where chicks were marked for identification. More detailed methods for quantifying nest productivity can be found in @hall_comparison_2004.
 
 
 ### Data sources
@@ -39,7 +39,7 @@ Diet and productivity data were formatted for inclusion in the `ecodata` R packa
 
 ### Data analysis
 
-Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@R-vegan]. Code for this calculation can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/seabird_ne_div_analysis.R). Diet diversity is presented along with nest productivity (+/- 1 SE).
+Raw diet data were used to create time series of mean shannon diversity through time and across study sites using the `vegan` R package [@dixon_vegan_2003]. Code for this calculation can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/seabird_ne_div_analysis.R). Diet diversity is presented along with nest productivity (+/- 1 SE).
 
 Code used to create the figures below can be found at these links, [diet diversity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-tern-diet-diversity.R), [prey frequencies](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-stacked-bar-prey-freq.R) and [common tern productivity](https://github.com/NOAA-EDAB/ecodata/blob/master/chunk-scripts/macrofauna.Rmd-aggregate-prod.R)
 

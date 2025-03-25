@@ -19,11 +19,11 @@
 
 ### Data sources
 
-Data comes from NOAA's NEFSC Aerial Surveys (@wood2022).
+Data comes from NOAA's NEFSC Aerial Surveys (@wood_gray_2022-1).
 
 ### Data analysis
 
-Image processing and modelling is described in a NEFSC center reference document (@wood2022). 
+Image processing and modelling is described in a NEFSC center reference document (@wood_gray_2022-1). 
 
 ### Data Processing
 
