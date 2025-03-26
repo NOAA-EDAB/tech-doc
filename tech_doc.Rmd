@@ -3675,7 +3675,12 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)
 ## Methods
 The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.
 
-This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year. 
+This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year.
+
+### 2025 SOE Reports and Northeast US Ecosystem Indicator Catalog
+The Gulf Stream indices presented in our 2025 SOE products are described below:
+
+The T200-based Gulf Stream Index is calculated as the standardized first principal component time series from the empirical orthogonal function (EOF) analysis of the 200 m temperature time series at the 20 base points (selected along the climatological (1954-2018) 15°C isotherm at 200 m between 74° and 55°W; 1° longitudinal resolution) and it represents the meridional fluctuation of the Gulf Stream North Wall [82,84,85]. The T200-based Western Gulf Stream Index is calculated using the same method, except only selecting the western 10 base points (instead of all 20 base points between 74° and 55°W). It suggests the meridional shift of the western part of the Gulf Stream North Wall.
 
 ### Data sources
 Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047).
