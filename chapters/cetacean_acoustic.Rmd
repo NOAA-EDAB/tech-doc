@@ -22,11 +22,11 @@ Data collected by the NEFSC Passive Acoustic Branch from four recording sites in
 
 ### Data Analysis
 
-Manual verification of the automated detections was conducted to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis can be found in Van Parijs et al (2023).
+Manual verification of the automated detections was conducted to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis can be found in @vanparijs_establishing_2023.
 
 ### Data Processing 
 
-Species-specific vocalizations of eight cetacean were identified in the acoustic data using multiple automated detectors following the methodology described in Van Parijs et al (2023).
+Species-specific vocalizations of eight cetacean were identified in the acoustic data using multiple automated detectors following the methodology described in @vanparijs_establishing_2023.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/cetacean_acoustic.html>
