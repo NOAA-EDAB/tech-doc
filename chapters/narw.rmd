@@ -17,15 +17,15 @@
 ## Methods
 
 ### Data sources
-The North Atlantic right whale abundance estimates were taken from a published document [see @Linden_pop_2023].
+The North Atlantic right whale abundance estimates were taken from a published document [see @linden_population_2023].
 
-Calves birth estimates are available in @Pace2017, with more recent years shared [here](https://www.fisheries.noaa.gov/gallery/north-atlantic-right-whale-calving-season-archive).
+Calves birth estimates are available in @pace_statespace_2017, with more recent years shared [here](https://www.fisheries.noaa.gov/gallery/north-atlantic-right-whale-calving-season-archive).
 
 ### Data extraction 
 Data were collected from existing reports and validated by report authors. 
 
 ### Data analysis
-Analysis for right whale abundance estimates is based on methods by @Pace2017, as documented most recently by @Linden_pop_2023. Data and code can be found in the following Github repository: [NEFSC/PSD-NARW_popsize](https://github.com/NEFSC/PSD-NARW_popsize). 
+Analysis for right whale abundance estimates is based on methods by @pace_statespace_2017, as documented most recently by @linden_population_2023. Data and code can be found in the following Github repository: [NEFSC/PSD-NARW_popsize](https://github.com/NEFSC/PSD-NARW_popsize). 
 
 ### Data processing
 

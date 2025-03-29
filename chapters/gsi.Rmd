@@ -18,14 +18,19 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)
 ## Methods
 The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.
 
-This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year. 
+This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year.
+
+### 2025 SOE Reports and Northeast US Ecosystem Indicator Catalog
+The Gulf Stream indices presented in our 2025 SOE products are described below:
+
+The T200-based Gulf Stream Index is calculated as the standardized first principal component time series from the empirical orthogonal function (EOF) analysis of the 200 m temperature time series at the 20 base points (selected along the climatological (1954-2018) 15°C isotherm at 200 m between 74° and 55°W; 1° longitudinal resolution) and it represents the meridional fluctuation of the Gulf Stream North Wall [82,84,85]. The T200-based Western Gulf Stream Index is calculated using the same method, except only selecting the western 10 base points (instead of all 20 base points between 74° and 55°W). It suggests the meridional shift of the western part of the Gulf Stream North Wall.
 
 ### Data sources
 Data used in this analysis come from Compernicus Marine Environment Monitoring Service [CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)](https://doi.org/10.48670/moi-00148)(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047).
 
 ### Data analysis
 
-The GSI is originally calculated by @perez-hernandez2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
+The GSI is originally calculated by @perez-hernandez_two_2014, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.  
 
 We followed the same method, except using the dataset from [CMEMS](https://doi.org/10.48670/moi-00148), which now has a 0.125°x0.125° resolution available from Jan. 1993 to Dec. 2023. We calculated the standard deviation (STD) of SSH over the time period of 1993-2018, and select points every 1° between 52° and 72°W along the latitudinal maximum STD. Later, monthly SSH of these 21 points are averaged and standarized to obtain the time series from Jan. 1993 to Dec. 2023.
 
@@ -37,7 +42,7 @@ The Gulf Stream index data set was formatted for inclusion in the `ecodata` R pa
 
 ## 2019 Methods
 
-Summarized from @joyce2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 
+Summarized from @joyce_meridional_2019, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1`r ifelse(knitr::is_latex_output(), '\\textdegree', '&deg;')` of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3$\sigma$ outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W to 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50\% of the seasonal‐interannual variance between 75`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W and 55`r ifelse(knitr::is_latex_output(), '\\textdegree ', '&deg;')`W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period. 
 
 ### Data Sources
 
@@ -45,7 +50,7 @@ Ocean temperatures at 200 m are available at https://www.nodc.noaa.gov/OC5/3M_HE
 
 ### Data analysis
 
-For detailed analytical methods, see @joyce2019. 
+For detailed analytical methods, see @joyce_meridional_2019. 
 
 ### Data processing and plotting
 

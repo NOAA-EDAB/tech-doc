@@ -8,13 +8,13 @@ Predators with no natural predators of their own, such as large sharks, toothed 
 Predator feeding on bottom-dwelling prey, such as lobster and haddock.
 
 **Benthos:**
-Organisms that live on or in the sea bottom (@madden2004), such as scallop and quahog.
+Organisms that live on or in the sea bottom (@madden_framework_2004), such as scallop and quahog.
 
 **Bmsy:**
-The weight (biomass) of a group of fish necessary to produce maximum sustainable yield (MSY) (@nwfsc).  
+The weight (biomass) of a group of fish necessary to produce maximum sustainable yield (MSY) (@noauthor_northwest_nodate).  
 
 **Catch:**
-The total number (or weight) of fish caught by fishing operations. The component of fish that comes into contact with fishing gear, which is retained by the gear (@unfao). 
+The total number (or weight) of fish caught by fishing operations. The component of fish that comes into contact with fishing gear, which is retained by the gear (@noauthor_united_nodate). 
 
 **Climate Vulnerability:**
 The degree to which the habitat/species are unable to cope with negative impacts of climate change.
@@ -32,35 +32,35 @@ Large-scale industry selling fish, shellfish and other aquatic animals.
 A mathematical measure of how engaged a community is in commercial fisheries. This index includes the amount of landings, dealers and permits. 
 
 **Conceptual Model:**
-A representation of the most current understanding of the major system features and processes of a particular environment (@madden2004). 
+A representation of the most current understanding of the major system features and processes of a particular environment (@madden_framework_2004). 
  
 **Condition:**
-A mathematical measurement of the “plumpness,” or the general health of a fish or group of fishes (@wallace1994). 
+A mathematical measurement of the “plumpness,” or the general health of a fish or group of fishes (@wallace_fisheries_1994). 
 
 **Continental Shelf:**
-Underwater portion (shelf) of the continent, extending seaward from the shore to the edge of the continental slope where the depth increases rapidly (@unfao). 
+Underwater portion (shelf) of the continent, extending seaward from the shore to the edge of the continental slope where the depth increases rapidly (@noauthor_united_nodate). 
 
 **Continental Slope:**
-Part of the continental margin; the ocean floor from the continental shelf to the continental rise (@madden2004). 
+Part of the continental margin; the ocean floor from the continental shelf to the continental rise (@madden_framework_2004). 
 
 **Ecological Production Unit (EPU):**
 A specific geographic region of similar physical features and plankton characteristics supporting an ecological community within a large marine ecosystem (LME). 
 
 **Ecosystem Assessment:**
-A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers (@unfao). 
+A social process through which the findings of science concerning the causes of ecosystem change, their consequences for human well-being, and management and policy options are presented to decision makers (@noauthor_united_nodate). 
 
 **Ecosystem Reorganization:**
 Regime shifts and changes in how the multiple system drivers interact can result in ecosystem reorganization as species and humans respond and adapt to the new environment.
 
 **Effort:**
-The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower (@wallace1994). 
+The amount of time and fishing power used to harvest fish; includes gear size, boat size, and horsepower (@wallace_fisheries_1994). 
 
 **Elasmobranch:**
-Describes a group of fish without a hard bony skeleton, including sharks, skates, and rays (@unfao). 
+Describes a group of fish without a hard bony skeleton, including sharks, skates, and rays (@noauthor_united_nodate). 
 
 
 **Endangered Species:**
-A species as defined in the US Endangered Species Act, that is in danger of extinction through a significant portion of its range (@noaaglos). 
+A species as defined in the US Endangered Species Act, that is in danger of extinction through a significant portion of its range (@united_states_noaa_2005). 
 
 
 **Energy Density:**
@@ -73,35 +73,35 @@ Coastal body of brackish water which may be an important nursery habitat for man
 Conditions found in an estuary: shallow water, high variability in water temperature, salt content, nutrients, and oxygen level.
 
 **Eutrophication:**
-The enrichment of water by nutrients causing increased growth of algae and higher forms of plant life creating an imbalance of organisms present in the water and to the quality of the water they live in (@ospar2003).  
+The enrichment of water by nutrients causing increased growth of algae and higher forms of plant life creating an imbalance of organisms present in the water and to the quality of the water they live in (@fath_eutrophication_2019).  
 
 **Exclusive Economic Zone:**
-The EEZ is the area that extends from the seaward boundaries of the coastal states 3 to 200 nautical miles off the U.S. coast. Within this area, the United States claims exclusive fishery management authority over all fishery resources (@nmfs2004). 
+The EEZ is the area that extends from the seaward boundaries of the coastal states 3 to 200 nautical miles off the U.S. coast. Within this area, the United States claims exclusive fishery management authority over all fishery resources (@service_nmfs_2004). 
 
 **Feeding Guild:**
 A group of species consuming similar prey species; for example, planktivores are different species that all eat plankton. 
 
 **Fishery:**
-The combination of fish and fishers in a region, the latter fishing for similar or the same species with similar or the same gear types (@madden2004). 
+The combination of fish and fishers in a region, the latter fishing for similar or the same species with similar or the same gear types (@madden_framework_2004). 
 
 **Fishery-Dependent Data:**
-Data collected directly on a fish or fishery from commercial or sport fishermen and seafood dealers. Common methods include logbooks, trip tickets, port sampling, fishery observers, and phone surveys (@wallace1994). 
+Data collected directly on a fish or fishery from commercial or sport fishermen and seafood dealers. Common methods include logbooks, trip tickets, port sampling, fishery observers, and phone surveys (@wallace_fisheries_1994). 
 
 **Fishery-Independent Data:**
-Stock/habitat/environmental data collected independently of the activity of the fishing sector usually on a research vessel (@unfao). 
+Stock/habitat/environmental data collected independently of the activity of the fishing sector usually on a research vessel (@noauthor_united_nodate). 
 
 
 **Fmsy:**
-The rate of removal of fish from a population by fishing that, if applied constantly, would result in maximum sustainable yield (MSY) (@unfao). 
+The rate of removal of fish from a population by fishing that, if applied constantly, would result in maximum sustainable yield (MSY) (@noauthor_united_nodate). 
 
 **Forage Species:**
-Species used as prey by a larger predator for its food. Includes small schooling fishes such as anchovies, sardines, herrings, capelin, smelts, and menhaden (@unfao).
+Species used as prey by a larger predator for its food. Includes small schooling fishes such as anchovies, sardines, herrings, capelin, smelts, and menhaden (@noauthor_united_nodate).
  
 **GB:**
-George’s Bank Ecological Production Unit (@techdoc). 
+George’s Bank Ecological Production Unit (@noauthor_technical_nodate). 
 
 **GOM:**
-Gulf of Maine Ecological Production Unit (@techdoc). 
+Gulf of Maine Ecological Production Unit (@noauthor_technical_nodate). 
 
 **Groundfish:**
 Group of commercially harvested ocean bottom-oriented fish in cooler regions of the Northern Hemisphere including cods, flounders, and other associated species. The exact species list varies regionally. 
@@ -111,35 +111,35 @@ Group of commercially harvested ocean bottom-oriented fish in cooler regions of 
 A warm ocean current flowing northward along the eastern United States.
 
 **Habitat:**
-1. The environment in which the fish live, including everything that surrounds and affects its life, e.g. water quality, bottom, vegetation, associated species (including food supplies); 2. The site and particular type of local environment occupied by an organism (@unfao). 
+1. The environment in which the fish live, including everything that surrounds and affects its life, e.g. water quality, bottom, vegetation, associated species (including food supplies); 2. The site and particular type of local environment occupied by an organism (@noauthor_united_nodate). 
  
 **Harvest:**
-The total number or weight of fish caught and kept from an area over a period of time (@wallace1994). 
+The total number or weight of fish caught and kept from an area over a period of time (@wallace_fisheries_1994). 
 
 **Highly Migratory Species:**
-Marine species whose life cycle includes lengthy migrations, usually through the exclusive economic zones of two or more countries as well as into international waters. This term usually is used to denote tuna and tuna-like species, sharks, swordfish, and billfish (@unfao). 
+Marine species whose life cycle includes lengthy migrations, usually through the exclusive economic zones of two or more countries as well as into international waters. This term usually is used to denote tuna and tuna-like species, sharks, swordfish, and billfish (@noauthor_united_nodate). 
 
 **Ichthyoplankton:**
-Fish eggs and larvae belonging to the planktonic community (@unfao). 
+Fish eggs and larvae belonging to the planktonic community (@noauthor_united_nodate). 
 
 **Indicator:**
-1. A variable, pointer, or index. Its fluctuation reveals the variations in key elements of a system. The position and trend of the indicator in relation to reference points or values indicate the present state and dynamics of the system. Indicators provide a bridge between objectives and action (@unfao).
+1. A variable, pointer, or index. Its fluctuation reveals the variations in key elements of a system. The position and trend of the indicator in relation to reference points or values indicate the present state and dynamics of the system. Indicators provide a bridge between objectives and action (@noauthor_united_nodate).
 
 **Landings:**
-1. The number or weight of fish unloaded by commercial fishermen or brought to shore by recreational fishermen for personal use. Landings are reported at the locations at which fish are brought to shore (@wallace1994).
+1. The number or weight of fish unloaded by commercial fishermen or brought to shore by recreational fishermen for personal use. Landings are reported at the locations at which fish are brought to shore (@wallace_fisheries_1994).
 
 
 **Large Marine Ecosystem (LME):**
-A geographic area of an ocean that has distinct physical and oceanographic characteristics, productivity, and trophically dependent populations (@unfao). 
+A geographic area of an ocean that has distinct physical and oceanographic characteristics, productivity, and trophically dependent populations (@noauthor_united_nodate). 
 
 **MAB:**
-Mid-Atlantic Bight Ecological Production Unit (@techdoc). 
+Mid-Atlantic Bight Ecological Production Unit (@noauthor_technical_nodate). 
 
 **Marine Heatwave:**
-Period of five or more days where sea surface temperature is warmer than 90% of all previously measured temperatures based on a 30-year historical baseline period (@hobday2016). 
+Period of five or more days where sea surface temperature is warmer than 90% of all previously measured temperatures based on a 30-year historical baseline period (@hobday_hierarchical_2016). 
 
 **Marine Mammals:**
-Warm-blooded animals that live in marine waters and breathe air directly. These include porpoises, dolphins, whales, seals, and sea lions (@wallace2000). 
+Warm-blooded animals that live in marine waters and breathe air directly. These include porpoises, dolphins, whales, seals, and sea lions (@wallace_understanding_2000). 
 
 **Microplankton**
 Phytoplankton that range in size from 20 to 200 μm.
@@ -160,13 +160,13 @@ The Northeast U.S. Continental Shelf Large Marine Ecosystem (NES LME). The regio
 Global-scale changes in ocean marine carbonate chemistry driven by ocean uptake of atmospheric carbon dioxide (CO2). Human-induced ocean acidification specifically refers to the significant present shifts in the marine carbonate system that are a direct result of the exponential increase in atmospheric CO2 concentrations associated with human activities like fossil fuel use. *(CITE????)*
 
 **Overfished:**
-When a stock’s biomass is below the point at which stock can produce sustainable yield. The term is used when biomass has been estimated to be below a limit biological reference point: in the US when biomass is less than ½ of Bmsy (@unfao). 
+When a stock’s biomass is below the point at which stock can produce sustainable yield. The term is used when biomass has been estimated to be below a limit biological reference point: in the US when biomass is less than ½ of Bmsy (@noauthor_united_nodate). 
 
 **Overfishing:**
-Whenever a stock is subjected to a fishing morality greater than the fishing mortality that produces maximum sustainable yield (MSY) on a continuing basis (@unfao). 
+Whenever a stock is subjected to a fishing morality greater than the fishing mortality that produces maximum sustainable yield (MSY) on a continuing basis (@noauthor_united_nodate). 
 
 **Phytoplankton:**
-Microscopic single-celled, free-floating algae (plants) that take up carbon dioxide and use nutrients and sunlight to produce biomass and form the base of the food web (@unfao). 
+Microscopic single-celled, free-floating algae (plants) that take up carbon dioxide and use nutrients and sunlight to produce biomass and form the base of the food web (@noauthor_united_nodate). 
 
 **Phytoplankton size class (PSC)**
 A classification scheme to group phytoplankton by size: picoplankton (0.2-2 μm), nanoplankton (2-20 μm) and microplankton (20-200 μm).
@@ -181,10 +181,10 @@ Predator whose diet primarily consists of fish and squid, such as cod and stripe
 Predator whose diet primarily consists of plankton, such as herring and mackerel. 
 
 **Primary Production:**
-The amount of energy produced by the assimilation and fixation of inorganic carbon  and other nutrients by autotrophs (plants and certain bacteria) (@unfao). 
+The amount of energy produced by the assimilation and fixation of inorganic carbon  and other nutrients by autotrophs (plants and certain bacteria) (@noauthor_united_nodate). 
 
 **Primary Production Required:**
-Indicator expressing the total amount of fish removed from an area as a fraction of the total primary production in the area (@pauly1995).
+Indicator expressing the total amount of fish removed from an area as a fraction of the total primary production in the area (@pauly_primary_1995).
 
 **Primary Productivity:**
 The rate at which food energy is generated, or fixed, by photosynthesis or chemosynthesis.  
@@ -193,7 +193,7 @@ The rate at which food energy is generated, or fixed, by photosynthesis or chemo
 The modelled chance of a species being likely to occur in a specific area. 
 
 **Productivity:**
-Relates to the birth, growth and death rates of a stock. A highly productive stock is characterized by high birth, growth, and mortality rates, and as a consequence, a high turnover and production to biomass ratios (P/B) (@unfao). 
+Relates to the birth, growth and death rates of a stock. A highly productive stock is characterized by high birth, growth, and mortality rates, and as a consequence, a high turnover and production to biomass ratios (P/B) (@noauthor_united_nodate). 
 
 **Recreational Fishery:**
 Fishing for fun or competition instead of profit like a commercial fishery. Includes for-hire charter and party boats, private boats, and shore-based fishing activities.
@@ -208,39 +208,39 @@ Large, abrupt and persistent change in the structure and function of an ecosyste
 The dollar value commercial fishermen receive for selling landed fish. 
 
 **Salinity:**
-The total mass of salts dissolved in seawater per unit of water; generally expressed in parts per thousands (ppt) or practical salinity units (psu) (@madden2004). 
+The total mass of salts dissolved in seawater per unit of water; generally expressed in parts per thousands (ppt) or practical salinity units (psu) (@madden_framework_2004). 
 
 **Satellite Imagery:**
-Imagery of the ocean surface gathered by earth-orbiting satellites (@unfao). 
+Imagery of the ocean surface gathered by earth-orbiting satellites (@noauthor_united_nodate). 
 
 **Slopewater Proportion:**
-The proportion of deep water entering the Gulf of Maine through the Northeast channel from two main water sources. The Labrador slope water is colder water moving south from Canada and Warm slope water is warmer water moving north from the southern U.S. (@techdoc).  
+The proportion of deep water entering the Gulf of Maine through the Northeast channel from two main water sources. The Labrador slope water is colder water moving south from Canada and Warm slope water is warmer water moving north from the southern U.S. (@noauthor_technical_nodate).  
 
 **Socio-Economic:**
-The combination or interaction of social and economic factors and involves topics such as distributional issues, labor market structure, social and opportunity costs, community dynamics, and decision-making processes (@unfao). 
+The combination or interaction of social and economic factors and involves topics such as distributional issues, labor market structure, social and opportunity costs, community dynamics, and decision-making processes (@noauthor_united_nodate). 
 
 **SS:**
-Scotian Shelf Ecological Production Unit. (@techdoc)
+Scotian Shelf Ecological Production Unit. (@noauthor_technical_nodate)
 
 **Stock:**
-A part of a fish population usually with a particular migration pattern, specific spawning grounds, and subject to a distinct fishery. Total stock refers to both juveniles and adults, either in numbers or by weight (@unfao).
+A part of a fish population usually with a particular migration pattern, specific spawning grounds, and subject to a distinct fishery. Total stock refers to both juveniles and adults, either in numbers or by weight (@noauthor_united_nodate).
 
 
 **Trophic Level:**
-Position in the food chain determined by the number of energy-transfer steps to that level. Primary producers constitute the lowest level, followed by zooplankton, etc. (@unfao).
+Position in the food chain determined by the number of energy-transfer steps to that level. Primary producers constitute the lowest level, followed by zooplankton, etc. (@noauthor_united_nodate).
 
 **Warm Core Ring:**
 A clockwise turning eddy of cold water surrounding warm water in the center that breaks away from the Gulf Stream as it meanders. 
 
 **Water Quality:**
-The chemical, physical, and biological characteristics of water in respect to its suitability for a particular purpose (@noaaglos). 
+The chemical, physical, and biological characteristics of water in respect to its suitability for a particular purpose (@united_states_noaa_2005). 
 
 **Zooplankton:**
 Plankton consisting of small animals and the immature stages of larger animals, ranging from microscopic organisms to large species, such as jellyfish.
 
 
 
-(ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @Hare2016.
+(ref:neusmap) Map of Northeast U.S. Continental Shelf Large Marine Ecosystem from @hare_vulnerability_2016.
 
 
 ```{r neusmap, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F, fig.cap='(ref:neusmap)'}

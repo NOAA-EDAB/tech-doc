@@ -17,7 +17,7 @@
 
   
 ## Methods
-Diversity estimates have been developed to understand whether the overall structure of the ecosystem has remained stable or is changing.  There are a large number of diversity indices that can be used to measure diversity; for the purposes of the State of the Ecosystem report we report on the expected number of species in a sample size ($E(S_n)$).  This index was originally developed by @sanders1968 and later refined by @hurlbert1971 using a hypergeometric probability distribution.  These “rarefied” samples allow for comparisons between sample sites with varying number of species present.  The estimate of $E(S_n)$ is less biased than other diversity indices which usually increase with sample size.  It also has a more meaningful biological interpretation than other indices.  For example, if a predator eats 10 random individuals, $E(S_n)$ will predict the number of species consumed.
+Diversity estimates have been developed to understand whether the overall structure of the ecosystem has remained stable or is changing.  There are a large number of diversity indices that can be used to measure diversity; for the purposes of the State of the Ecosystem report we report on the expected number of species in a sample size ($E(S_n)$).  This index was originally developed by @sanders_marine_1968 and later refined by @hurlbert_nonconcept_1971 using a hypergeometric probability distribution.  These “rarefied” samples allow for comparisons between sample sites with varying number of species present.  The estimate of $E(S_n)$ is less biased than other diversity indices which usually increase with sample size.  It also has a more meaningful biological interpretation than other indices.  For example, if a predator eats 10 random individuals, $E(S_n)$ will predict the number of species consumed.
 
 
 ### Data sources
@@ -30,7 +30,7 @@ The expected number of species ($E(S_n)$) was calculated for each survey tow as:
 E(S_n) = \sum_{i=1}^S{ \Bigg( 1 - \frac{\binom{N-N_i}{n}}{\binom{N}{n}} \Bigg) }  
 \end{equation}
 
-where $S$ is the total number of species present, $N$ the total number of individuals, and $N_i$ the number of individuals of *ith* species.  The result represents a sample of *n* individuals randomly selected from the tow without replacement.  The calculation is made using the `rarefy` function of the `vegan` package [@R-vegan] using an *n* of 1000.
+where $S$ is the total number of species present, $N$ the total number of individuals, and $N_i$ the number of individuals of *ith* species.  The result represents a sample of *n* individuals randomly selected from the tow without replacement.  The calculation is made using the `rarefy` function of the `vegan` package [@dixon_vegan_2003] using an *n* of 1000.
 
 The number of species represented in these samples of 1000 fishes are then averaged over the survey for each [Ecological Production Unit](https://noaa-edab.github.io/tech-doc/epu.html).  Due to the lack of survey calibration factor to account for differences in the number of species caught between the NOAA Ship Albatross IV and NOAA Ship Henry B. Bigelow, the time series are kept separate.  
 

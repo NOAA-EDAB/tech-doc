@@ -20,7 +20,7 @@ imagePath <- here::here("images")
 
 ## Methods
 
-We use the definition of ecosystem overfishing from [@link2019eof]: 
+We use the definition of ecosystem overfishing from [@link_global_2019]: 
 
 1. The sum of catches is flat or declining
 1. Total catch per unit effort is declining
@@ -30,9 +30,9 @@ All of the indices are based on the principle of energy transfer up the foodweb 
 
 ### Fogarty & Ryther Indices
 
-The Fogarty index is defined as ratio of total catches to total primary productivity in an ecosystem [@link2019eof]. The units are parts per thousand.
+The Fogarty index is defined as ratio of total catches to total primary productivity in an ecosystem [@link_global_2019]. The units are parts per thousand.
 
-The Ryther index is defined as total catch per unit area in the ecosystem [@link2019eof]. The units are mt km^-2 year^-1
+The Ryther index is defined as total catch per unit area in the ecosystem [@link_global_2019]. The units are mt km^-2 year^-1
 
 A modification of the indices is used. Total landings are used in lieu of total catch. This will have the effect of reducing the value of the index (compared to using total catch).
 
@@ -40,7 +40,7 @@ A modification of the indices is used. Total landings are used in lieu of total 
 
 The index is a measure of the impact of fishing on the base of the foodweb. The amount of potential yield we can expect from a marine ecosystem depends on the amount of production entering at the base of the food web, primarily in the form of phytoplankton; the pathways this energy follows to reach harvested species; the efficiency of transfer of energy at each step in the food web; and the fraction of this production that is removed by the fisheries. Species such as scallops and clams primarily feed directly on larger phytoplankton species and therefore require only one step in the transfer of energy. The loss of energy at each step can exceed 80-90%. For many fish species, as many as 2-4 steps may be necessary. Given the trophic level and the efficiency of energy transfer of the species in the ecosystem the amount phytoplankton production required (PPR) to account for the observed catch can be estimated.
 
-The index for Primary Production Required (PPR) was adapted from [@pauly1995ppr].
+The index for Primary Production Required (PPR) was adapted from [@pauly_primary_1995].
 
 $$PPR_t = \sum_{i=1}^{n_t}  \left(\frac{landings_{t,i}}{9}\right) \left(\frac{1}{TE}\right)^{TL_i-1}$$
 
@@ -60,7 +60,7 @@ Data for this index come from a variety of sources. The landings data come from 
 
 Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](#comdat)
 
-Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese2019fishbase] in tandem with the package [eofindices.](https://noaa-edab.github.io/eofindices/)
+Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese_fishbase_2019] in tandem with the package [eofindices.](https://noaa-edab.github.io/eofindices/)
 
 Primary Production is estimated using the methods described in the chapter [Chlorophyll a and Primary Production.](#chl-pp)
 

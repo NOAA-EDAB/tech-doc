@@ -16,11 +16,11 @@
 
 
 ## Methods
-Relative condition (Kn) was introduced by @Cren1951a as a way to remove the influence of length on condition, and @Blackwell2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
+Relative condition (Kn) was introduced by @le_cren_length-weight_1951 as a way to remove the influence of length on condition, and @blackwell_relative_2000 noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
 $$Kn = W/W',$$ where $W$ is the weight of an individual fish and $W'$ is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn bottom trawl survey, from 1992-present. 
 
 
-For this work, length-weight coefficients from @Wigley2003 were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution. 
+For this work, length-weight coefficients from @wigley_length-weight_2003 were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution. 
 
 The `Condition` package used for calculations and plotting of fish condition factor can be found on [GitHub](https://github.com/Laurels1/Condition).
 
@@ -36,7 +36,7 @@ Relative condition is calculated by fish species and EPU as ($Kn$ formula found 
 
 $$\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},$$
 
-where $Fall coef$ and $Fall exp$ are from @Wigley2003.
+where $Fall coef$ and $Fall exp$ are from @wigley_length-weight_2003.
  
 
 The code found [here](https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R) was used in the analysis of fish condition.

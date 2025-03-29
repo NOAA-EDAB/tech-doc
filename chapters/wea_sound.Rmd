@@ -18,15 +18,15 @@
 
 ### Data Sources
 
-Acoustic recorders were deployed in 7 locations on Cox’s Ledge and Nantucket Shoals between November 2020 and May 2022, with continuous recordings ranging 111 - 1010 days analyzed per site. Each recorder used a minimum sample rate of 48 kHz (Van Parijs et al. 2023). 
+Acoustic recorders were deployed in 7 locations on Cox’s Ledge and Nantucket Shoals between November 2020 and May 2022, with continuous recordings ranging 111 - 1010 days analyzed per site. Each recorder used a minimum sample rate of 48 kHz [@vanparijs_establishing_2023]. 
 
 ### Data Analysis
 
-Annual medians and distribution percentiles (10th and 90th percentiles) of decidecade levels at each nominal center frequency were generated to assess temporal trends at each monitoring location. See Van Parijs et al. 2023 for more details.
+Annual medians and distribution percentiles (10th and 90th percentiles) of decidecade levels at each nominal center frequency were generated to assess temporal trends at each monitoring location. See @vanparijs_establishing_2023 for more details.
 
 ### Data Processing 
 
-Decidecade (one-third octave) sound pressure level (SPL) was calculated using the Soundscape Metrics Remora in the Triton Software Package (https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics). Mean decidecade SPLs per minute were calculated by integrating the mean-square 1-Hz sound pressure spectral densities over their respective frequency bands, computing the arithmetic mean per minute, and converting to decibels (db re 1uPa). Decidecade bands corresponded to standard frequency bands ranging from nominal center frequencies of 25 Hz - 20 kHz. See Van Parijs et al. 2023 for more details.
+Decidecade (one-third octave) sound pressure level (SPL) was calculated using the Soundscape Metrics Remora in the Triton Software Package (https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics). Mean decidecade SPLs per minute were calculated by integrating the mean-square 1-Hz sound pressure spectral densities over their respective frequency bands, computing the arithmetic mean per minute, and converting to decibels (db re 1uPa). Decidecade bands corresponded to standard frequency bands ranging from nominal center frequencies of 25 Hz - 20 kHz. See @vanparijs_establishing_2023 for more details.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/wea_sound.html>

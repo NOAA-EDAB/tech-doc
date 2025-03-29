@@ -31,7 +31,7 @@ Original data were collected by the State of Maine, Department of Marine Resourc
 
 ### Data Analysis
 
-Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of Paralytic Shellfish Poison (PSP) toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as "ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@Chung2010).
+Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of Paralytic Shellfish Poison (PSP) toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as "ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@chung_measuring_2010).
 
 
 Data include total number of samples at multiple locations collected in each calendar year (2005-2019), numbers of samples above and below the PSP threshold of 44 ug/100g, and percentage of samples above the threshold.  Simple bar and line graphs are used to plot the values for each variable as time series, 2005-2019.

@@ -19,13 +19,13 @@
 ## Methods
 
 ### Data sources
-Data collected during NMFS aerial and shipboard line transect abundance surveys (Palka et al. 2021). Processed data are available at https://github.com/NEFSC/READ-PSB-AMAPPS-public
+Data collected during NMFS aerial and shipboard line transect abundance surveys [@palka_atlantic_2021]. Processed data are available at https://github.com/NEFSC/READ-PSB-AMAPPS-public
 
 ### Data analysis
-Centroid of spatial density distribution map from each season and species in 2010 was then compared to the corresponding season and species in 2017 (Chavez-Rosales et al. 2022). 
+Centroid of spatial density distribution map from each season and species in 2010 was then compared to the corresponding season and species in 2017 [@chavez-rosales_detection_2022]. 
 
 ### Data processing
-Line transect data were processed using standard 2-team Distance sampling analysis methods, then used in generalized additive models to describe the spatiotemporal habitat-density relationships (Chavez-Rosales et al. 2022).
+Line transect data were processed using standard 2-team Distance sampling analysis methods, then used in generalized additive models to describe the spatiotemporal habitat-density relationships [@chavez-rosales_detection_2022].
 
 The Cetacean distribution shifts indicator was formatted for inclusion in the `ecodata` R package using the R script  found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cetacean_dist.R).
 
