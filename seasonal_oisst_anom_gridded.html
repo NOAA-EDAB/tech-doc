@@ -195,8 +195,8 @@
 <h3>
 <span class="header-section-number">43.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-42"><i class="fas fa-link"></i></a>
 </h3>
-<p>Data for seasonal sea surface tempature anomalies were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set (<a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html">NOAA OISST V2</a>) provided by NOAA Earth System Research Laboratory’s Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25° x 0.25° global grid of SST measurements <span class="citation">(<a href="#ref-Reynolds2007">Reynolds et al. 2007</a>)</span>.</p>
-<p>In 2021, the Daily OISST data was updated and there are a couple papers describing and comparing the new version <span class="citation">Huang, Liu, Banzon, et al. (<a href="#ref-Huang2021improvements">2021</a>)</span>.</p>
+<p>Data for seasonal sea surface tempature anomalies were derived from the National Oceanographic and Atmospheric Administartion optimum interpolation sea surface temperature high resolution data set (<a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html">NOAA OISST V2</a>) provided by NOAA Earth System Research Laboratory’s Physical Science Division, Boulder, CO. The data extend from 1981 to present, and provide a 0.25° x 0.25° global grid of SST measurements <span class="citation">(<a href="#ref-reynolds_daily_2007">Reynolds et al. 2007</a>)</span>.</p>
+<p>In 2021, the Daily OISST data was updated and there are a couple papers describing and comparing the new version <span class="citation">Huang, Liu, Banzon, et al. (<a href="#ref-huang_improvements_2021">2021</a>)</span>.</p>
 </div>
 <div id="data-extraction-24" class="section level3" number="43.1.2">
 <h3>
@@ -209,7 +209,7 @@
 <h3>
 <span class="header-section-number">43.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-40"><i class="fas fa-link"></i></a>
 </h3>
-<p>We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2010, and then subtracted the (LTM) from daily mean SST values to find the SST anomaly for a given year. The use of climatological reference periods is a standard procedure for the calculation of meteorological anomalies <span class="citation">(<a href="#ref-WMO2017">WMO 2017</a>)</span>. Prior to 2019 State of the Ecosystem reports, SST anomaly information made use of a 1982-2012 reference period. A 1982-2010 reference period was adopted to facilitate calculating anomalies from a standard <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html">NOAA ESRL</a> data set.</p>
+<p>We calculated the long-term mean (LTM) for each season-specific stack of rasters over the period of 1982-2010, and then subtracted the (LTM) from daily mean SST values to find the SST anomaly for a given year. The use of climatological reference periods is a standard procedure for the calculation of meteorological anomalies <span class="citation">(<a href="#ref-wmo_wmo_2017">WMO 2017</a>)</span>. Prior to 2019 State of the Ecosystem reports, SST anomaly information made use of a 1982-2012 reference period. A 1982-2010 reference period was adopted to facilitate calculating anomalies from a standard <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.highres.html">NOAA ESRL</a> data set.</p>
 <p>R code used in extraction and processing <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom_gridded.R">gridded</a> and <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_seasonal_oisst_anom.R">timeseries</a> data can found in the <code>ecodata</code> package.</p>
 <p><strong>catalog link</strong>
 <a href="https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html" class="uri">https://noaa-edab.github.io/catalog/seasonal_oisst_anom_gridded.html</a></p>
@@ -219,14 +219,14 @@
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Huang2021improvements" class="csl-entry">
-Huang, Boyin, Chunying Liu, Viva Banzon, Eric Freeman, Garrett Graham, Bill Hankins, Tom Smith, and Huai-Min Zhang. 2021. <span>“Improvements of the Daily Optimum Interpolation Sea Surface Temperature (DOISST) Version 2.1.”</span> <em>Journal of Climate</em> 34 (8): 2923–39. <a href="https://doi.org/10.1175/JCLI-D-20-0166.1">https://doi.org/10.1175/JCLI-D-20-0166.1</a>.
+<div id="ref-huang_improvements_2021" class="csl-entry">
+Huang, Boyin, Chunying Liu, Viva Banzon, Eric Freeman, Garrett Graham, Bill Hankins, Tom Smith, and Huai-Min Zhang. 2021. <span>“Improvements of the <span>Daily</span> <span>Optimum</span> <span>Interpolation</span> <span>Sea</span> <span>Surface</span> <span>Temperature</span> (<span>DOISST</span>) <span>Version</span> 2.1.”</span> <em>Journal of Climate</em> 34 (8): 2923–39. <a href="https://doi.org/10.1175/JCLI-D-20-0166.1">https://doi.org/10.1175/JCLI-D-20-0166.1</a>.
 </div>
-<div id="ref-Reynolds2007" class="csl-entry">
-Reynolds, Richard W., Thomas M. Smith, Chunying Liu, Dudley B. Chelton, Kenneth S. Casey, and Michael G. Schlax. 2007. <span>“<span class="nocase">Daily high-resolution-blended analyses for sea surface temperature</span>.”</span> <em>Journal of Climate</em> 20 (22): 5473–96. <a href="https://doi.org/10.1175/2007JCLI1824.1">https://doi.org/10.1175/2007JCLI1824.1</a>.
+<div id="ref-reynolds_daily_2007" class="csl-entry">
+Reynolds, Richard W., Thomas M. Smith, Chunying Liu, Dudley B. Chelton, Kenneth S. Casey, and Michael G. Schlax. 2007. <span>“Daily High-Resolution-Blended Analyses for Sea Surface Temperature.”</span> <em>Journal of Climate</em> 20 (22): 5473–96. <a href="https://doi.org/10.1175/2007JCLI1824.1">https://doi.org/10.1175/2007JCLI1824.1</a>.
 </div>
-<div id="ref-WMO2017" class="csl-entry">
-WMO. 2017. <span>“<span class="nocase">WMO Guidelines of the Calculation of Climate Normals</span>.”</span> World Meteorological Organization.
+<div id="ref-wmo_wmo_2017" class="csl-entry">
+WMO. 2017. <span>“<span>WMO</span> <span>Guidelines</span> of the <span>Calculation</span> of <span>Climate</span> <span>Normals</span>.”</span> World Meteorological Organization.
 </div>
 </div>
   <div class="chapter-nav">
@@ -260,7 +260,7 @@ WMO. 2017. <span>“<span class="nocase">WMO Guidelines of the Calculation of Cl
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

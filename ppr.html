@@ -191,7 +191,7 @@
 <h2>
 <span class="header-section-number">59.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-59"><i class="fas fa-link"></i></a>
 </h2>
-<p>We use the definition of ecosystem overfishing from <span class="citation">(<a href="#ref-link2019eof">JS Link and Watson 2019</a>)</span>:</p>
+<p>We use the definition of ecosystem overfishing from <span class="citation">(<a href="#ref-link_global_2019">Jason S. Link and Watson 2019</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>The sum of catches is flat or declining</li>
 <li>Total catch per unit effort is declining</li>
@@ -202,8 +202,8 @@
 <h3>
 <span class="header-section-number">59.1.1</span> Fogarty &amp; Ryther Indices<a class="anchor" aria-label="anchor" href="#fogarty-ryther-indices"><i class="fas fa-link"></i></a>
 </h3>
-<p>The Fogarty index is defined as ratio of total catches to total primary productivity in an ecosystem <span class="citation">(<a href="#ref-link2019eof">JS Link and Watson 2019</a>)</span>. The units are parts per thousand.</p>
-<p>The Ryther index is defined as total catch per unit area in the ecosystem <span class="citation">(<a href="#ref-link2019eof">JS Link and Watson 2019</a>)</span>. The units are mt km^-2 year^-1</p>
+<p>The Fogarty index is defined as ratio of total catches to total primary productivity in an ecosystem <span class="citation">(<a href="#ref-link_global_2019">Jason S. Link and Watson 2019</a>)</span>. The units are parts per thousand.</p>
+<p>The Ryther index is defined as total catch per unit area in the ecosystem <span class="citation">(<a href="#ref-link_global_2019">Jason S. Link and Watson 2019</a>)</span>. The units are mt km^-2 year^-1</p>
 <p>A modification of the indices is used. Total landings are used in lieu of total catch. This will have the effect of reducing the value of the index (compared to using total catch).</p>
 </div>
 <div id="primary-production-required-ppr" class="section level3" number="59.1.2">
@@ -211,7 +211,7 @@
 <span class="header-section-number">59.1.2</span> Primary Production Required (PPR)<a class="anchor" aria-label="anchor" href="#primary-production-required-ppr"><i class="fas fa-link"></i></a>
 </h3>
 <p>The index is a measure of the impact of fishing on the base of the foodweb. The amount of potential yield we can expect from a marine ecosystem depends on the amount of production entering at the base of the food web, primarily in the form of phytoplankton; the pathways this energy follows to reach harvested species; the efficiency of transfer of energy at each step in the food web; and the fraction of this production that is removed by the fisheries. Species such as scallops and clams primarily feed directly on larger phytoplankton species and therefore require only one step in the transfer of energy. The loss of energy at each step can exceed 80-90%. For many fish species, as many as 2-4 steps may be necessary. Given the trophic level and the efficiency of energy transfer of the species in the ecosystem the amount phytoplankton production required (PPR) to account for the observed catch can be estimated.</p>
-<p>The index for Primary Production Required (PPR) was adapted from <span class="citation">(<a href="#ref-pauly1995ppr">D. Pauly and Christensen 1995b</a>)</span>.</p>
+<p>The index for Primary Production Required (PPR) was adapted from <span class="citation">(<a href="#ref-pauly_primary_1995">D. Pauly and Christensen 1995</a>)</span>.</p>
 <p><span class="math display">\[PPR_t = \sum_{i=1}^{n_t}  \left(\frac{landings_{t,i}}{9}\right) \left(\frac{1}{TE}\right)^{TL_i-1}\]</span></p>
 <p>where <span class="math inline">\(n_t\)</span> = number of species in time <span class="math inline">\(t\)</span>, <span class="math inline">\(landings_{t,i}\)</span> = landings of species <span class="math inline">\(i\)</span> in time <span class="math inline">\(t\)</span>, <span class="math inline">\(TL_i\)</span> is the trophic level of species <span class="math inline">\(i\)</span>, <span class="math inline">\(TE\)</span> = Trophic efficiency. The PPR estimate assumes a 9:1 ratio for the conversion of wet weight to carbon and a 15% transfer efficiency per trophic level, (<span class="math inline">\(TE\)</span> = 0.15)</p>
 <p>The index is presented as a percentage of <a href="chl_pp.html#chl_pp">estimated primary production</a> (PP) available over the geographic region of interest, termed an <a href="epu.html#epu">Ecological Production Unit</a> (EPU). The scaled index is estimated by dividing the PPR index in year <span class="math inline">\(t\)</span> by the estimated primary production in time <span class="math inline">\(t\)</span>.</p>
@@ -228,7 +228,7 @@
 <span class="header-section-number">59.1.2.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-34"><i class="fas fa-link"></i></a>
 </h4>
 <p>Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter <a href="comdat.html#comdat">Commercial Landings Data.</a></p>
-<p>Trophic level information for each species is obtained from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a> using the R package <a href="https://github.com/ropensci/rfishbase">rfishbase</a> <span class="citation">(<a href="#ref-froese2019fishbase">Froese and Pauly 2019</a>)</span> in tandem with the package <a href="https://noaa-edab.github.io/eofindices/">eofindices.</a></p>
+<p>Trophic level information for each species is obtained from <a href="http://fishbase.de">fishbase</a> and <a href="http://sealifebase.ca">sealifebase</a> using the R package <a href="https://github.com/ropensci/rfishbase">rfishbase</a> <span class="citation">(<a href="#ref-froese_fishbase_2019">Froese and Pauly 2019</a>)</span> in tandem with the package <a href="https://noaa-edab.github.io/eofindices/">eofindices.</a></p>
 <p>Primary Production is estimated using the methods described in the chapter <a href="#chl-pp">Chlorophyll a and Primary Production.</a></p>
 </div>
 <div id="data-analysis-57" class="section level4" number="59.1.2.3">
@@ -258,14 +258,14 @@
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-froese2019fishbase" class="csl-entry">
-Froese, R, and D Pauly, eds. 2019. <em><span>Fishbase</span></em> (version 08/2019).
+<div id="ref-froese_fishbase_2019" class="csl-entry">
+Froese, R, and D Pauly, eds. 2019. <em>Fishbase</em>.
 </div>
-<div id="ref-link2019eof" class="csl-entry">
-Link, JS, and RA Watson. 2019. <span>“<span class="nocase">Global ecosystem overfishing: Clear delineation within real limits to production.</span>”</span> <em>Science Advances</em> 5:6. <a href="https://doi.org/10.1126/sciadv.aav0474">https://doi.org/10.1126/sciadv.aav0474</a>.
+<div id="ref-link_global_2019" class="csl-entry">
+Link, Jason S., and Reg A. Watson. 2019. <span>“Global Ecosystem Overfishing: <span>Clear</span> Delineation Within Real Limits to Production.”</span> <em>Science Advances</em> 5 (6): eaav0474. <a href="https://doi.org/10.1126/sciadv.aav0474">https://doi.org/10.1126/sciadv.aav0474</a>.
 </div>
-<div id="ref-pauly1995ppr" class="csl-entry">
-———. 1995b. <span>“<span class="nocase">Primary production required to sustain global fisheries.</span>”</span> <em>Nature</em> 374: 255–57. https://doi.org/<a href="https://doi.org/10.1038/374255a0">https://doi.org/10.1038/374255a0</a>.
+<div id="ref-pauly_primary_1995" class="csl-entry">
+Pauly, D, and V Christensen. 1995. <span>“Primary Production Required to Sustain Global Fisheries.”</span> <em>Nature</em>. <a href="https://doi.org/10.1038/374255a0">https://doi.org/10.1038/374255a0</a>.
 </div>
 </div>
   <div class="chapter-nav">
@@ -298,7 +298,7 @@ Link, JS, and RA Watson. 2019. <span>“<span class="nocase">Global ecosystem ov
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

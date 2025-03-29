@@ -192,8 +192,8 @@
 <h2>
 <span class="header-section-number">5.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys in the fall since 1963 and spring since 1968. The surveys follow a stratified random design. Fish species and several invertebrate species are enumerated on a tow by tow basis <span class="citation">(<a href="#ref-Azarovitz1981">Azarovitz 1981</a>)</span>. The data are housed in the NEFSC’s survey database (SVDBS) maintained by the Ecosystem Survey Branch.</p>
-<p>Direct pulls from the database are not advisable as there have been several gear modifications and vessel changes over the course of the time series <span class="citation">(<a href="#ref-Miller_2010">T. J. Miller et al. 2010</a>)</span>. Survdat was developed as a database query that applies the appropriate calibration factors for a seamless time series since the 1960s. As such, it is the base for many of the other analyses conducted for the State of the Ecosystem report that involve fisheries independent data.</p>
+<p>The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys in the fall since 1963 and spring since 1968. The surveys follow a stratified random design. Fish species and several invertebrate species are enumerated on a tow by tow basis <span class="citation">(<a href="#ref-azarovitz_brief_1981">Azarovitz 1981</a>)</span>. The data are housed in the NEFSC’s survey database (SVDBS) maintained by the Ecosystem Survey Branch.</p>
+<p>Direct pulls from the database are not advisable as there have been several gear modifications and vessel changes over the course of the time series <span class="citation">(<a href="#ref-miller_estimation_2010">T. J. Miller et al. 2010</a>)</span>. Survdat was developed as a database query that applies the appropriate calibration factors for a seamless time series since the 1960s. As such, it is the base for many of the other analyses conducted for the State of the Ecosystem report that involve fisheries independent data.</p>
 <p>The R package <a href="https://noaa-edab.github.io/survdat/"><code>survdat</code></a> is used to pull and process the data. For the purposes of the State of the Ecosystem reports only the spring and fall data are used. <code>survdat</code> identifies those research cruises associated with the seasonal bottom trawl surveys and pulls the station and biological data. Station data includes tow identification (cruise, station, and stratum), tow location and date, as well as several environmental variables (depth, surface/bottom salinity, and surface/bottom temperature). Stations are filtered using a station, haul, gear (SHG) code for tows prior to 2009 and a tow, operations, gear, and aquisition (TOGA) code from 2009 onward. The codes that correspond to a representative tow (SHG &lt;= 136 or TOGA &lt;= 1324) are the same used by assessment biologists at the NEFSC. Biological data includes the total biomass and abundance by species, as well as lengths and number at length.</p>
 <p><code>survdat</code> applies the calibration factors. There are four calibrartion factors applied (Table <a href="survdat.html#tab:calibration">5.1</a>). Calibration factors are pulled directly from SVDBS. Vessel conversions were made from either the NOAA Ship <em>Delaware II</em> or NOAA Ship <em>Henry Bigelow</em> to the NOAA Ship <em>Albatross IV</em> which was the primary vessel for most of the time series. The Albatross was decommissioned in 2009 and the Bigelow is now the primary vessel for the bottom trawl survey.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -264,10 +264,10 @@ No associated catalog page</p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Azarovitz1981" class="csl-entry">
-Azarovitz, Thomas R. 1981. <span>“<span class="nocase">A brief historical review of the Woods Hole Laboratory trawl survey time series</span>.”</span> In <em>Bottom Trawl Surveys</em>, 62–67. Woods Hole, MA: National Marine Fisheries Service. <a href="http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf">http://dmoserv3.whoi.edu/data_docs/NEFSC_Bottom_Trawl/Azarovitz1981.pdf</a>.
+<div id="ref-azarovitz_brief_1981" class="csl-entry">
+Azarovitz, T. R. 1981. <span>“A Brief Historical Review of the <span>Woods</span> <span>Hole</span> <span>Laboratory</span> Trawl Survey Time Series.”</span> <em>Canadian Special Publication of Fisheries and Aquatic Sciences</em> 58: 62–67.
 </div>
-<div id="ref-Miller_2010" class="csl-entry">
+<div id="ref-miller_estimation_2010" class="csl-entry">
 Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, R. W. Brown, and P. J. Rago. 2010. <span>“Estimation of <span>Albatross</span> <span>IV</span> to <span>Henry</span> <span>B</span>. <span>Bigelow</span> Calibration Factors.”</span> 10-05. Woods Hole, MA: National Marine Fisheries Service. <a href="https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf">https://www.nefsc.noaa.gov/publications/crd/crd1005/crd1005.pdf</a>.
 </div>
 </div>
@@ -302,7 +302,7 @@ Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

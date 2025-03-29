@@ -195,13 +195,13 @@
 <h3>
 <span class="header-section-number">16.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-14"><i class="fas fa-link"></i></a>
 </h3>
-<p>Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span>, <span class="citation">Kane (<a href="#ref-Kane2011">2011</a>)</span>, and <span class="citation">Morse et al. (<a href="#ref-Morse2017">2017</a>)</span>.</p>
+<p>Zooplankton data are from the National Oceanographic and Atmospheric Administration Marine Resources Monitoring, Assessment and Prediction (MARMAP) program and Ecosystem Monitoring (EcoMon) cruises detailed extensively in <span class="citation">Kane (<a href="#ref-kane_zooplankton_2007">2007</a>)</span>, <span class="citation">Kane (<a href="#ref-kane_multiyear_2011">2011</a>)</span>, and <span class="citation">Morse et al. (<a href="#ref-morse_distinct_2017">2017</a>)</span>.</p>
 </div>
 <div id="data-extraction-10" class="section level3" number="16.1.2">
 <h3>
 <span class="header-section-number">16.1.2</span> Data extraction<a class="anchor" aria-label="anchor" href="#data-extraction-10"><i class="fas fa-link"></i></a>
 </h3>
-<p>Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-Kane2011">2011</a>)</span> in addition to other collection details.</p>
+<p>Data are from the publicly available plankton dataset at NCEI Accession 0187513. The accession metadata has a list of excluded samples and cruises based on <span class="citation">Kane (<a href="#ref-kane_zooplankton_2007">2007</a>)</span> and <span class="citation">Kane (<a href="#ref-kane_multiyear_2011">2011</a>)</span> in addition to other collection details.</p>
 </div>
 <div id="data-analysis-14" class="section level3" number="16.1.3">
 <h3>
@@ -211,7 +211,7 @@
 <h4>
 <span class="header-section-number">16.1.3.1</span> Annual abundance anomalies<a class="anchor" aria-label="anchor" href="#annual-abundance-anomalies"><i class="fas fa-link"></i></a>
 </h4>
-<p>Data are processed similarly to <span class="citation">Kane (<a href="#ref-Kane2007">2007</a>)</span> and <span class="citation">Perretti et al. (<a href="#ref-Perretti2017">2017a</a>)</span>, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in <span class="citation">Morse et al. (<a href="#ref-Morse2017">2017</a>)</span>. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year.</p>
+<p>Data are processed similarly to <span class="citation">Kane (<a href="#ref-kane_zooplankton_2007">2007</a>)</span> and <span class="citation">C. Perretti et al. (<a href="#ref-perretti_regime_2017">2017</a>)</span>, where a mean annual abundance by date is computed by area for each species meeting inclusion metrics set in <span class="citation">Morse et al. (<a href="#ref-morse_distinct_2017">2017</a>)</span>. This is accomplished by binning all samples for a given species to bi-monthly collection dates based on median cruise date and taking the mean, then fitting a spline interpolation between mean bi-monthly abundance to give expected abundance on any given day of the year.</p>
 <p>Code used for zooplankton data analysis can be found <a href="https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/zooplankton_analysis.R">here</a>.</p>
 </div>
 <div id="copepod" class="section level4" number="16.1.3.2">
@@ -281,17 +281,17 @@
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Kane2007" class="csl-entry">
-Kane, Joseph. 2007. <span>“<span class="nocase">Zooplankton abundance trends on Georges Bank, 1977-2004</span>.”</span> <em>ICES Journal of Marine Science</em> 64 (5): 909–19. <a href="https://doi.org/10.1093/icesjms/fsm066">https://doi.org/10.1093/icesjms/fsm066</a>.
+<div id="ref-kane_zooplankton_2007" class="csl-entry">
+Kane, Joseph. 2007. <span>“Zooplankton Abundance Trends on <span>Georges</span> <span>Bank</span>, 1977-2004.”</span> <em>ICES Journal of Marine Science</em> 64 (5): 909–19. <a href="https://doi.org/10.1093/icesjms/fsm066">https://doi.org/10.1093/icesjms/fsm066</a>.
 </div>
-<div id="ref-Kane2011" class="csl-entry">
-———. 2011. <span>“<span class="nocase">Multiyear variability of phytoplankton abundance in the Gulf of Maine</span>.”</span> <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. <a href="https://doi.org/10.1093/icesjms/fsr122">https://doi.org/10.1093/icesjms/fsr122</a>.
+<div id="ref-kane_multiyear_2011" class="csl-entry">
+———. 2011. <span>“Multiyear Variability of Phytoplankton Abundance in the <span>Gulf</span> of <span>Maine</span>.”</span> <em>ICES Journal of Marine Science</em> 68 (9): 1833–41. <a href="https://doi.org/10.1093/icesjms/fsr122">https://doi.org/10.1093/icesjms/fsr122</a>.
 </div>
-<div id="ref-Morse2017" class="csl-entry">
-Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. <span>“<span class="nocase">Distinct zooplankton regime shift patterns across ecoregions of the U.S. Northeast continental shelf Large Marine Ecosystem</span>.”</span> <em>Journal of Marine Systems</em> 165: 77–91. <a href="https://doi.org/10.1016/j.jmarsys.2016.09.011">https://doi.org/10.1016/j.jmarsys.2016.09.011</a>.
+<div id="ref-morse_distinct_2017" class="csl-entry">
+Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. <span>“Distinct Zooplankton Regime Shift Patterns Across Ecoregions of the <span>U</span>.<span>S</span>. <span>Northeast</span> Continental Shelf <span>Large</span> <span>Marine</span> <span>Ecosystem</span>.”</span> <em>Journal of Marine Systems</em> 165 (January): 77–91. <a href="https://doi.org/10.1016/j.jmarsys.2016.09.011">https://doi.org/10.1016/j.jmarsys.2016.09.011</a>.
 </div>
-<div id="ref-Perretti2017" class="csl-entry">
-———, et al. 2017a. <span>“<span class="nocase">Regime shifts in fish recruitment on the Northeast US Continental Shelf</span>.”</span> <em>Marine Ecology Progress Series</em> 574: 1–11. <a href="https://doi.org/10.3354/meps12183">https://doi.org/10.3354/meps12183</a>.
+<div id="ref-perretti_regime_2017" class="csl-entry">
+Perretti, Ct, Mj Fogarty, Kd Friedland, Ja Hare, Sm Lucey, Rs McBride, Tj Miller, et al. 2017. <span>“Regime Shifts in Fish Recruitment on the <span>Northeast</span> <span>US</span> <span>Continental</span> <span>Shelf</span>.”</span> <em>Marine Ecology Progress Series</em> 574 (July): 1–11. <a href="https://doi.org/10.3354/meps12183">https://doi.org/10.3354/meps12183</a>.
 </div>
 </div>
   
@@ -304,7 +304,7 @@ Morse, R. E., K. D. Friedland, D. Tommasi, C. Stock, and J. Nye. 2017. <span>“
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

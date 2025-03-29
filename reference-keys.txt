@@ -338,6 +338,7 @@ data-extraction-26
 data-analysis-44
 gsi
 methods-46
+soe-reports-and-northeast-us-ecosystem-indicator-catalog
 data-sources-48
 data-analysis-45
 data-processing-34

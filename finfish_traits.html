@@ -212,19 +212,19 @@
 <h4>
 <span class="header-section-number">19.1.3.1</span> Development of the trait database<a class="anchor" aria-label="anchor" href="#development-of-the-trait-database"><i class="fas fa-link"></i></a>
 </h4>
-<p>To develop the trait database we utilized two primary sources: Beukhof et al. (2019) and Thorsen et al. (2023) FishLife database. Both data sources are based on FishBase (Froese and Pauly 2024), however provide different levels of detail. Specifically, we queried the Beukhof et al. (2019) database for finfish species encountered in the NE Shelf trawl survey. We utilized values from Beukhof et al. (2019) that were species-specific (e.g. not estimated based on averages of traits across other species of the same genus, family, class, order). For remaining species encountered on the NE Shelf, we queried the FishLife database. The FishLife database used a modeling approach to impute trait values for all fish species in FishBase based on taxonomic relatedness. Thus, if a trait for a particular species was unknown, the model generated a prediction for that trait based on taxonomic relatedness via a structural equation model.</p>
+<p>To develop the trait database we utilized two primary sources: <span class="citation">Beukhof et al. (<a href="#ref-beukhof_trait_2019">2019</a>)</span> and <span class="citation">James T. Thorson et al. (<a href="#ref-thorson_identifying_2023">2023</a>)</span> FishLife database. Both data sources are based on FishBase <span class="citation">(<a href="#ref-froese_fishbase_2019">Froese and Pauly 2019</a>)</span>, however provide different levels of detail. Specifically, we queried the <span class="citation">Beukhof et al. (<a href="#ref-beukhof_trait_2019">2019</a>)</span> database for finfish species encountered in the NE Shelf trawl survey. We utilized values from <span class="citation">Beukhof et al. (<a href="#ref-beukhof_trait_2019">2019</a>)</span> that were species-specific (e.g. not estimated based on averages of traits across other species of the same genus, family, class, order). For remaining species encountered on the NE Shelf, we queried the FishLife database. The FishLife database used a modeling approach to impute trait values for all fish species in FishBase based on taxonomic relatedness. Thus, if a trait for a particular species was unknown, the model generated a prediction for that trait based on taxonomic relatedness via a structural equation model.</p>
 </div>
 <div id="principle-component-analysis-of-traits" class="section level4" number="19.1.3.2">
 <h4>
 <span class="header-section-number">19.1.3.2</span> Principle Component Analysis of traits<a class="anchor" aria-label="anchor" href="#principle-component-analysis-of-traits"><i class="fas fa-link"></i></a>
 </h4>
-<p>Many traits represent similar variation in the community. For instance, maximum observed body size and asymptotic body size (from the VB growth equation) both represent similar trait indices. To further reduce the dimensionality across traits, we conducted a principal component analysis (PCA) of the trait database. The first principal component (PCA1) explained 61.5% of the variation, while the second component (PCA2) explained 19.6% of the variation. Traits such as VB growth parameter k, length at maturity, age at maturity, maximum observed length, and VB growth parameter linf all loaded strongly on PCA1. Following, McKeon et al. (2023) we consider this PCA axis as an indicator for finfish “Pace of Life”, with higher values on this axis representing faster growth and small maximum body size. Similarly, we consider the second axis as an indicator of “Fecundity”, with higher values on the axis reflecting lower reproductive investment (smaller offspring, higher fecundity).</p>
+<p>Many traits represent similar variation in the community. For instance, maximum observed body size and asymptotic body size (from the VB growth equation) both represent similar trait indices. To further reduce the dimensionality across traits, we conducted a principal component analysis (PCA) of the trait database. The first principal component (PCA1) explained 61.5% of the variation, while the second component (PCA2) explained 19.6% of the variation. Traits such as VB growth parameter k, length at maturity, age at maturity, maximum observed length, and VB growth parameter linf all loaded strongly on PCA1. Following, <span class="citation">McKeon et al. (<a href="#ref-mckeon_increased_2024">2024</a>)</span> we consider this PCA axis as an indicator for finfish “Pace of Life”, with higher values on this axis representing faster growth and small maximum body size. Similarly, we consider the second axis as an indicator of “Fecundity”, with higher values on the axis reflecting lower reproductive investment (smaller offspring, higher fecundity).</p>
 </div>
 <div id="estimating-trait-distributions" class="section level4" number="19.1.3.3">
 <h4>
 <span class="header-section-number">19.1.3.3</span> Estimating trait distributions<a class="anchor" aria-label="anchor" href="#estimating-trait-distributions"><i class="fas fa-link"></i></a>
 </h4>
-<p>To generate a functional trait index, we then combined our trait database with observations of the finfish community using a community weighted mean (CWM) approach (e.g. Lavorel et al. 2008, Frainer et al. 2017). Specifically, we follow Lavorel et al. (2008), and estimate the CWM for each trait j as</p>
+<p>To generate a functional trait index, we then combined our trait database with observations of the finfish community using a community weighted mean (CWM) approach (e.g. <span class="citation">Lavorel et al. (<a href="#ref-lavorel_assessing_2008">2008</a>)</span>, <span class="citation">Frainer et al. (<a href="#ref-frainer_climate-driven_2017">2017</a>)</span>). Specifically, we follow <span class="citation">Lavorel et al. (<a href="#ref-lavorel_assessing_2008">2008</a>)</span>, and estimate the CWM for each trait j as</p>
 <p><strong>Insert formula</strong></p>
 <p>The community weighted mean can be estimated at different spatial or temporal scales. Here we estimate the CWM for each trait at the scale of the NE Shelf, where bi is the biomass (kg) of species i captured across all tows in a year and season, or similarly at the EPU scale, where bi is the biomass (kg) of species i captured across each EPU in each year and season.</p>
 <p>All other data preparation and processing is standard to the trawl survey data prep, including species-specific vessel corrections, etc.</p>
@@ -233,6 +233,27 @@
 
 </div>
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-beukhof_trait_2019" class="csl-entry">
+Beukhof, Esther, Tim S. Dencker, M. L. D. Palomares, and Aurore Maureaud. 2019. <span>“A Trait Collection of Marine Fish Species from <span>North</span> <span>Atlantic</span> and <span>Northeast</span> <span>Pacific</span> Continental Shelf Seas.”</span> PANGAEA. <a href="https://doi.org/10.1594/PANGAEA.900866">https://doi.org/10.1594/PANGAEA.900866</a>.
+</div>
+<div id="ref-frainer_climate-driven_2017" class="csl-entry">
+Frainer, André, Raul Primicerio, Susanne Kortsch, Magnus Aune, Andrey V Dolgov, Maria Fossheim, and Michaela M Aschan. 2017. <span>“Climate-Driven Changes in Functional Biogeography of <span>Arctic</span> Marine Fish Communities.”</span> <em>Proceedings of the National Academy of Sciences</em> 114 (46): 12202–7.
+</div>
+<div id="ref-froese_fishbase_2019" class="csl-entry">
+Froese, R, and D Pauly, eds. 2019. <em>Fishbase</em>.
+</div>
+<div id="ref-lavorel_assessing_2008" class="csl-entry">
+Lavorel, Sandra, Karl Grigulis, Sue McIntyre, Nick SG Williams, Denys Garden, Josh Dorrough, Sandra Berman, Fabien Quétier, Aurélie Thébault, and Anne Bonis. 2008. <span>“Assessing Functional Diversity in the Field–Methodology Matters!”</span> <em>Functional Ecology</em> 22 (1): 134–47.
+</div>
+<div id="ref-mckeon_increased_2024" class="csl-entry">
+McKeon, Caroline M, Yvonne M Buckley, Meadhbh Moriarty, Mathieu Lundy, and Ruth Kelly. 2024. <span>“Increased Signal of Fishing Pressure on Community Life-History Traits at Larger Spatial Scales.”</span> <em>Global Ecology and Biogeography</em> 33 (5): e13815.
+</div>
+<div id="ref-thorson_identifying_2023" class="csl-entry">
+Thorson, James T, Aurore A Maureaud, Romain Frelat, Bastien Mérigot, Jennifer S Bigman, Sarah T Friedman, Maria Lourdes D Palomares, Malin L Pinsky, Samantha A Price, and Peter Wainwright. 2023. <span>“Identifying Direct and Indirect Associations Among Traits by Merging Phylogenetic Comparative Methods and Structural Equation Models.”</span> <em>Methods in Ecology and Evolution</em> 14 (5): 1259–75.
 </div>
 </div>
   <div class="chapter-nav">
@@ -266,7 +287,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

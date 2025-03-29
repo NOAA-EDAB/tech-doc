@@ -191,9 +191,9 @@
 <h2>
 <span class="header-section-number">18.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods-15"><i class="fas fa-link"></i></a>
 </h2>
-<p>Relative condition (Kn) was introduced by <span class="citation">Le Cren (<a href="#ref-Cren1951a">1951</a>)</span> as a way to remove the influence of length on condition, and <span class="citation">Blackwell, Brown, and Willis (<a href="#ref-Blackwell2000">2000</a>)</span> noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
+<p>Relative condition (Kn) was introduced by <span class="citation">Le Cren (<a href="#ref-le_cren_length-weight_1951">1951</a>)</span> as a way to remove the influence of length on condition, and <span class="citation">Blackwell, Brown, and Willis (<a href="#ref-blackwell_relative_2000">2000</a>)</span> noted that Kn may be useful in detecting prolonged physical stress on a fish populations. Relative condition is calculated as
 <span class="math display">\[Kn = W/W',\]</span> where <span class="math inline">\(W\)</span> is the weight of an individual fish and <span class="math inline">\(W'\)</span> is the predicted length-specific mean weight for the fish population in a given region. Here, relative condition was calculated for finfish stocks commonly caught on the Northeast Fisheries Science Center’s (NEFSC) autumn bottom trawl survey, from 1992-present.</p>
-<p>For this work, length-weight coefficients from <span class="citation">Susan E. Wigley, McBride, and McHugh (<a href="#ref-Wigley2003">2003</a>)</span> were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution.</p>
+<p>For this work, length-weight coefficients from <span class="citation">Wigley, McBride, and McHugh (<a href="#ref-wigley_length-weight_2003">2003</a>)</span> were used to calculate W’. Individual fish weights were total body weights from Northeast Fisheries Science Center (NEFSC) fall bottom trawl surveys. Most finfish species included in this study are spring or summer spawners, so the fall survey was chosen to reduce variability of gonad weights in the spring survey as butterfish ramp up for spawning. Kn was averaged on a NEFSC bottom trawl strata resolution.</p>
 <p>The <code>Condition</code> package used for calculations and plotting of fish condition factor can be found on <a href="https://github.com/Laurels1/Condition">GitHub</a>.</p>
 <div id="data-sources-16" class="section level3" number="18.1.1">
 <h3>
@@ -213,7 +213,7 @@
 </h3>
 <p>Relative condition is calculated by fish species and EPU as (<span class="math inline">\(Kn\)</span> formula found above) where <span class="math inline">\(W\)</span> is the weight of an individual fish and <span class="math inline">\(W'\)</span> is the predicted length-specific mean weight for the fish population in a given region. Predicted weight was calculated as:</p>
 <p><span class="math display">\[\textrm{Weight} = e^{Fall_{coef}} * \textrm{Length}^{Fall_{exp}},\]</span></p>
-<p>where <span class="math inline">\(Fall coef\)</span> and <span class="math inline">\(Fall exp\)</span> are from <span class="citation">Susan E. Wigley, McBride, and McHugh (<a href="#ref-Wigley2003">2003</a>)</span>.</p>
+<p>where <span class="math inline">\(Fall coef\)</span> and <span class="math inline">\(Fall exp\)</span> are from <span class="citation">Wigley, McBride, and McHugh (<a href="#ref-wigley_length-weight_2003">2003</a>)</span>.</p>
 <p>The code found <a href="https://github.com/Laurels1/Condition/blob/master/R/RelConditionEPU.R">here</a> was used in the analysis of fish condition.</p>
 <p><strong>catalog link</strong>
 <a href="https://noaa-edab.github.io/catalog/condition.html" class="uri">https://noaa-edab.github.io/catalog/condition.html</a></p>
@@ -223,14 +223,14 @@
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Blackwell2000" class="csl-entry">
-Blackwell, Brian G., Michael L. Brown, and David W. Willis. 2000. <span>“<span class="nocase">Relative Weight (Wr) Status and Current Use in Fisheries Assessment and Management</span>.”</span> <em>Reviews in Fisheries Science</em> 8 (1): 1–44. <a href="https://doi.org/10.1080/10641260091129161">https://doi.org/10.1080/10641260091129161</a>.
+<div id="ref-blackwell_relative_2000" class="csl-entry">
+Blackwell, Brian G., Michael L. Brown, and David W. Willis. 2000. <span>“Relative <span>Weight</span> (<span>Wr</span>) <span>Status</span> and <span>Current</span> <span>Use</span> in <span>Fisheries</span> <span>Assessment</span> and <span>Management</span>.”</span> <em>Reviews in Fisheries Science</em> 8 (1): 1–44. <a href="https://doi.org/10.1080/10641260091129161">https://doi.org/10.1080/10641260091129161</a>.
 </div>
-<div id="ref-Cren1951a" class="csl-entry">
-Le Cren, E. D. 1951. <span>“<span class="nocase">The Length-Weight Relationship and Seasonal Cycle in Gonad Weight and Condition in the Perch (Perca fluviatilis)</span>.”</span> <em>The Journal of Animal Ecology</em> 20 (2): 201. <a href="https://doi.org/10.2307/1540">https://doi.org/10.2307/1540</a>.
+<div id="ref-le_cren_length-weight_1951" class="csl-entry">
+Le Cren, E. D. 1951. <span>“The <span>Length</span>-<span>Weight</span> <span>Relationship</span> and <span>Seasonal</span> <span>Cycle</span> in <span>Gonad</span> <span>Weight</span> and <span>Condition</span> in the <span>Perch</span> (<span>Perca</span> Fluviatilis).”</span> <em>Journal of Animal Ecology</em> 20 (2): 201–19. <a href="https://doi.org/10.2307/1540">https://doi.org/10.2307/1540</a>.
 </div>
-<div id="ref-Wigley2003" class="csl-entry">
-Wigley, Susan E., Holly M. McBride, and Nancy J. McHugh. 2003. <span>“<span class="nocase">Length-weight relationships for 74 fish species collected during NEFSC research vessel bottom trawl surveys, 1992-99</span>.”</span> <em>NOAA Technical Memorandum NMFS-NE</em>. <a href="https://repository.library.noaa.gov/view/noaa/3346">https://repository.library.noaa.gov/view/noaa/3346</a>.
+<div id="ref-wigley_length-weight_2003" class="csl-entry">
+Wigley, SE, NJ McBride, and NJ McHugh. 2003. <span>“Length-Weight Relationships for 74 Fish Species Collected During <span>NEFSC</span> Research Vessel Bottom Trawl Surveys, 1992-99.”</span> <a href="https://repository.library.noaa.gov/view/noaa/3346">https://repository.library.noaa.gov/view/noaa/3346</a>.
 </div>
 </div>
   <div class="chapter-nav">
@@ -264,7 +264,7 @@ Wigley, Susan E., Holly M. McBride, and Nancy J. McHugh. 2003. <span>“<span cl
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

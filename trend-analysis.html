@@ -191,14 +191,14 @@
 <h2>
 <span class="header-section-number">2.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
 </h2>
-<p>Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations <span class="citation">(see <a href="#ref-Nicholson2004">Nicholson and Jennings 2004</a>; <a href="#ref-Wagner2013">Wagner et al. 2013</a>; <a href="#ref-VonStorch1999a">Storch 1999</a>)</span>. Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p &lt; 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in State of the Ecosystem (SOE) indicators.</p>
-<p>In a simulation study <span class="citation">(<a href="#ref-hardison2019">Hardison et al. 2019a</a>)</span>, we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods: a generalized least squares model selection approach, the Mann-Kendall test, and Mann-Kendall test with trend-free pre-whitening. Methods were applied to simulated time series of varying trend and autocorrelation strengths. Overall, when sample size was low (N = 10) there were high rates of false trend detection, and similarly, low rates of true trend detection. Both of these forms of error were further amplified by autocorrelation in the trend residuals. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend.</p>
+<p>Summarizing trends for ecosystem indicators is desirable, but the power of statistical tests to detect a trend is hampered by low sample size and autocorrelated observations <span class="citation">(see <a href="#ref-nicholson_testing_2004">Nicholson and Jennings 2004</a>; <a href="#ref-wagner_detecting_2013">Wagner et al. 2013</a>; <a href="#ref-von_storch_misuses_1999">Storch 1999</a>)</span>. Prior to 2018, time series indicators in State of the Ecosystem reports were presented with trend lines based on a Mann-Kendall test for monotonic trends to test significance (p &lt; 0.05) of both long term (full time series) and recent (2007–2016) trends, although not all time series were considered for trend analysis due to limited series lengths. There was also concern that a Mann-Kendall test would not account for any autocorrelation present in State of the Ecosystem (SOE) indicators.</p>
+<p>In a simulation study <span class="citation">(<a href="#ref-hardison_simulation_2019">Hardison et al. 2019</a>)</span>, we explored the effect of time series length and autocorrelation strength on statistical power of three trend detection methods: a generalized least squares model selection approach, the Mann-Kendall test, and Mann-Kendall test with trend-free pre-whitening. Methods were applied to simulated time series of varying trend and autocorrelation strengths. Overall, when sample size was low (N = 10) there were high rates of false trend detection, and similarly, low rates of true trend detection. Both of these forms of error were further amplified by autocorrelation in the trend residuals. Based on these findings, we selected a minimum series length of N = 30 for indicator time series before assessing trend.</p>
 <p>We also chose to use a GLS model selection (GLS-MS) approach to evaluate indicator trends in the 2018 (and future) State of the Ecosystem reports, as this approach performed best overall in the simulation study. GLS-MS allowed for linear model fits and quantification of uncertainty in trend estimates. The model selection procedure for the GLS approach fits two models to each time series and selects the best fitting model using AICc. The models are, 1) linear trend with uncorrelated residuals, 2) linear trend with correlated residuals. I.e., the models are of the form</p>
 <p><span class="math display">\[ Y_t = \alpha_0 + \alpha_1X_t +  \epsilon_t\]</span>
 <span class="math display">\[\epsilon_t = \rho\epsilon_{t-1} + \omega_t\]</span></p>
 <p><span class="math display">\[w_t \sim N(0, \sigma^2)\]</span></p>
 <p>Where <span class="math inline">\(Y_t\)</span> is the observation in time <span class="math inline">\(t\)</span>, <span class="math inline">\(X_t\)</span> is the time index, <span class="math inline">\(\epsilon_t\)</span> is the residual in time <span class="math inline">\(t\)</span>, and <span class="math inline">\(\omega_t\)</span> is a normally distributed random variable. Setting <span class="math inline">\(\alpha_2 = 0\)</span> yields the linear trend model, and <span class="math inline">\(\rho = 0\)</span> yields the uncorrelated residuals model.</p>
-<p>The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p &lt; 0.05). All models were fit using the R package <code>nlme</code> <span class="citation">(<a href="#ref-Pinheiro2017">J. Pinheiro et al. 2017</a>)</span> and AICc was calculated using the R package <code>AICcmodavg</code> <span class="citation">(<a href="#ref-Mazerolle2017a">Mazerolle 2017</a>)</span>. In SOE time series figures, significant positive trends were colored orange, and negative trends purple.</p>
+<p>The best fit model was tested against the null hypothesis of no trend through a likelihood ratio test (p &lt; 0.05). All models were fit using the R package <code>nlme</code> <span class="citation">(<a href="#ref-pinheiro_nlme_2017">J. Pinheiro et al. 2017</a>)</span> and AICc was calculated using the R package <code>AICcmodavg</code> <span class="citation">(<a href="#ref-mazerolle_aiccmodavg_2017">Mazerolle 2017</a>)</span>. In SOE time series figures, significant positive trends were colored orange, and negative trends purple.</p>
 <div id="data-sources" class="section level3" number="2.1.1">
 <h3>
 <span class="header-section-number">2.1.1</span> Data source(s)<a class="anchor" aria-label="anchor" href="#data-sources"><i class="fas fa-link"></i></a>
@@ -224,23 +224,23 @@ No associated catalog page</p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-hardison2019" class="csl-entry">
-Hardison, Sean, Charles T Perretti, Geret S DePiper, and Andrew Beet. 2019a. <span>“A Simulation Study of Trend Detection Methods for Integrated Ecosystem Assessment.”</span> <em>ICES Journal of Marine Science</em>. <a href="https://doi.org/10.1093/icesjms/fsz097">https://doi.org/10.1093/icesjms/fsz097</a>.
+<div id="ref-hardison_simulation_2019" class="csl-entry">
+Hardison, Sean, Charles T. Perretti, Geret S. DePiper, and Andrew Beet. 2019. <span>“A Simulation Study of Trend Detection Methods for Integrated Ecosystem Assessment.”</span> <em>ICES Journal of Marine Science</em> 76 (7): 2060–69. <a href="https://doi.org/10.1093/icesjms/fsz097">https://doi.org/10.1093/icesjms/fsz097</a>.
 </div>
-<div id="ref-Mazerolle2017a" class="csl-entry">
-Mazerolle, Marc J. 2017. <span>“<span class="nocase">AICcmodavg: model selection and multimodel inference based on (Q)AIC(c)</span>.”</span> <a href="https://cran.r-project.org/package=AICcmodavg.">https://cran.r-project.org/package=AICcmodavg.</a>
+<div id="ref-mazerolle_aiccmodavg_2017" class="csl-entry">
+Mazerolle, Marc J. 2017. <span>“<span>AICcmodavg</span>: Model Selection and Multimodel Inference Based on (<span>Q</span>)<span>AIC</span>(c).”</span> <a href="https://cran.r-project.org/package=AICcmodavg.">https://cran.r-project.org/package=AICcmodavg.</a>
 </div>
-<div id="ref-Nicholson2004" class="csl-entry">
-Nicholson, Mike D., and Simon Jennings. 2004. <span>“<span class="nocase">Testing candidate indicators to support ecosystem-based management: The power of monitoring surveys to detect temporal trends in fish community metrics</span>.”</span> <a href="https://doi.org/10.1016/j.icesjms.2003.09.004">https://doi.org/10.1016/j.icesjms.2003.09.004</a>.
+<div id="ref-nicholson_testing_2004" class="csl-entry">
+Nicholson, Mike D., and Simon Jennings. 2004. <span>“Testing Candidate Indicators to Support Ecosystem-Based Management: <span>The</span> Power of Monitoring Surveys to Detect Temporal Trends in Fish Community Metrics.”</span> <a href="https://doi.org/10.1016/j.icesjms.2003.09.004">https://doi.org/10.1016/j.icesjms.2003.09.004</a>.
 </div>
-<div id="ref-Pinheiro2017" class="csl-entry">
-Pinheiro, J, D Bates, S DebRoy, D Sarkar, and R Core Team. 2017. <span>“<span class="nocase">nlme: Linear and Nonlinear Mixed Effects Models</span>.”</span> <em>R Package Version 3.1-131</em>. <a href="https://CRAN.R-project.org/package=nlme">https://CRAN.R-project.org/package=nlme</a>.
+<div id="ref-pinheiro_nlme_2017" class="csl-entry">
+Pinheiro, J, D Bates, S DebRoy, D Sarkar, and R Core Team. 2017. <span>“Nlme: <span>Linear</span> and <span>Nonlinear</span> <span>Mixed</span> <span>Effects</span> <span>Models</span>.”</span> <em>R Package Version 3.1-131</em>. <a href="https://CRAN.R-project.org/package=nlme">https://CRAN.R-project.org/package=nlme</a>.
 </div>
-<div id="ref-VonStorch1999a" class="csl-entry">
-Storch, Hans von. 1999. <span>“<span class="nocase">Misuses of Statistical Analysis in Climate Research</span>.”</span> In <em>Analysis of Climate Variability</em>, 11–26. <a href="https://doi.org/10.1007/978-3-662-03744-7_2">https://doi.org/10.1007/978-3-662-03744-7_2</a>.
+<div id="ref-von_storch_misuses_1999" class="csl-entry">
+Storch, Hans von. 1999. <span>“Misuses of <span>Statistical</span> <span>Analysis</span> in <span>Climate</span> <span>Research</span>.”</span> In <em>Analysis of <span>Climate</span> <span>Variability</span></em>, 11–26. <a href="https://doi.org/10.1007/978-3-662-03744-7_2">https://doi.org/10.1007/978-3-662-03744-7_2</a>.
 </div>
-<div id="ref-Wagner2013" class="csl-entry">
-Wagner, Tyler, Brian J. Irwin, James R. Bence, and Daniel B. Hayes. 2013. <span>“<span class="nocase">Detecting Temporal Trends in Freshwater Fisheries Surveys: Statistical Power and the Important Linkages between Management Questions and Monitoring Objectives</span>.”</span> <em>Fisheries</em> 38 (7): 309–19. <a href="https://doi.org/10.1080/03632415.2013.799466">https://doi.org/10.1080/03632415.2013.799466</a>.
+<div id="ref-wagner_detecting_2013" class="csl-entry">
+Wagner, Tyler, Brian J. Irwin, James R. Bence, and Daniel B. Hayes. 2013. <span>“Detecting <span>Temporal</span> <span>Trends</span> in <span>Freshwater</span> <span>Fisheries</span> <span>Surveys</span>: <span>Statistical</span> <span>Power</span> and the <span>Important</span> <span>Linkages</span> Between <span>Management</span> <span>Questions</span> and <span>Monitoring</span> <span>Objectives</span>.”</span> <em>Fisheries</em> 38 (7): 309–19. <a href="https://doi.org/10.1080/03632415.2013.799466">https://doi.org/10.1080/03632415.2013.799466</a>.
 </div>
 </div>
   <div class="chapter-nav">
@@ -274,7 +274,7 @@ Wagner, Tyler, Brian J. Irwin, James R. Bence, and Daniel B. Hayes. 2013. <span>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -194,23 +194,30 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)</p>
 </h2>
 <p>The methods used to calculate the Gulf Stream Index changed between 2019 and 2020 SOEs. The most recent methods and at the top with older methods below those.</p>
 <p>This gulf stream index is a position anomaly meaning the larger the value of the index the further north the northern wall of the Gulf Stream is for that year.</p>
-<div id="data-sources-48" class="section level3" number="47.1.1">
+<div id="soe-reports-and-northeast-us-ecosystem-indicator-catalog" class="section level3" number="47.1.1">
 <h3>
-<span class="header-section-number">47.1.1</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-48"><i class="fas fa-link"></i></a>
+<span class="header-section-number">47.1.1</span> 2025 SOE Reports and Northeast US Ecosystem Indicator Catalog<a class="anchor" aria-label="anchor" href="#soe-reports-and-northeast-us-ecosystem-indicator-catalog"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Gulf Stream indices presented in our 2025 SOE products are described below:</p>
+<p>The T200-based Gulf Stream Index is calculated as the standardized first principal component time series from the empirical orthogonal function (EOF) analysis of the 200 m temperature time series at the 20 base points (selected along the climatological (1954-2018) 15°C isotherm at 200 m between 74° and 55°W; 1° longitudinal resolution) and it represents the meridional fluctuation of the Gulf Stream North Wall [82,84,85]. The T200-based Western Gulf Stream Index is calculated using the same method, except only selecting the western 10 base points (instead of all 20 base points between 74° and 55°W). It suggests the meridional shift of the western part of the Gulf Stream North Wall.</p>
+</div>
+<div id="data-sources-48" class="section level3" number="47.1.2">
+<h3>
+<span class="header-section-number">47.1.2</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources-48"><i class="fas fa-link"></i></a>
 </h3>
 <p>Data used in this analysis come from Compernicus Marine Environment Monitoring Service <a href="https://doi.org/10.48670/moi-00148">CMEMS - GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)</a>(Product ID: SEALEVEL_GLO_PHY_L4_MY_008_047).</p>
 </div>
-<div id="data-analysis-45" class="section level3" number="47.1.2">
+<div id="data-analysis-45" class="section level3" number="47.1.3">
 <h3>
-<span class="header-section-number">47.1.2</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-45"><i class="fas fa-link"></i></a>
+<span class="header-section-number">47.1.3</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-45"><i class="fas fa-link"></i></a>
 </h3>
-<p>The GSI is originally calculated by <span class="citation">Pérez-Hernández and Joyce (<a href="#ref-perez-hernandez2014">2014</a>)</span>, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.</p>
+<p>The GSI is originally calculated by <span class="citation">Pérez-Hernández and Joyce (<a href="#ref-perez-hernandez_two_2014">2014</a>)</span>, which is a simple 16-point GS index constructed by selecting grid points following the maximum Standard deviation of sea level height anomalies every 1.33° longitude between 52° and 72°W and averaging them. The value of 1.33° is based on the resolution of satellite dataset from AVISO.</p>
 <p>We followed the same method, except using the dataset from <a href="https://doi.org/10.48670/moi-00148">CMEMS</a>, which now has a 0.125°x0.125° resolution available from Jan. 1993 to Dec. 2023. We calculated the standard deviation (STD) of SSH over the time period of 1993-2018, and select points every 1° between 52° and 72°W along the latitudinal maximum STD. Later, monthly SSH of these 21 points are averaged and standarized to obtain the time series from Jan. 1993 to Dec. 2023.</p>
 <p>For detailed analytical methods, see the supplemental info of <span class="citation">Chen et al. (<a href="#ref-chen_seasonal_2021">2021</a>)</span>.</p>
 </div>
-<div id="data-processing-34" class="section level3" number="47.1.3">
+<div id="data-processing-34" class="section level3" number="47.1.4">
 <h3>
-<span class="header-section-number">47.1.3</span> Data Processing<a class="anchor" aria-label="anchor" href="#data-processing-34"><i class="fas fa-link"></i></a>
+<span class="header-section-number">47.1.4</span> Data Processing<a class="anchor" aria-label="anchor" href="#data-processing-34"><i class="fas fa-link"></i></a>
 </h3>
 <p>The Gulf Stream index data set was formatted for inclusion in the <code>ecodata</code> R package with the code found <a href="https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gsi.R">here</a>. The computation code can be found <a href="https://github.com/zchenocean/Gulf-Stream-Indices/blob/main/GSI_SSH-based_using_satellite_cmems_ssh_0.125deg.ipynb">here</a>.</p>
 </div>
@@ -219,7 +226,7 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)</p>
 <h2>
 <span class="header-section-number">47.2</span> 2019 Methods<a class="anchor" aria-label="anchor" href="#methods-47"><i class="fas fa-link"></i></a>
 </h2>
-<p>Summarized from <span class="citation">Joyce et al. (<a href="#ref-joyce2019">2019</a>)</span>, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1° of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3<span class="math inline">\(\sigma\)</span> outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75°W to 55°W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50% of the seasonal‐interannual variance between 75°W and 55°W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period.</p>
+<p>Summarized from <span class="citation">Joyce et al. (<a href="#ref-joyce_meridional_2019">2019</a>)</span>, ocean temperature data from NOAA NODC were sorted by latitude, longitude, and time using a resolution of 1° of longitude, latitude, and 3 months of time, respectively, with a Gaussian squared weighting from the selected desired point in a window twice the size of the desired resolution. Editing was used to reject duplicate samples and 3<span class="math inline">\(\sigma\)</span> outliers from each selected sample point prior to performing the weighting and averaging; the latter was only carried out when there were at least three data points in the selected interval for each sample point. Typically, 50 or more data values were available. The resulting temperature field was therefore smoothed. Data along the Gulf Stream north wall at nine data points were used to assemble a spatial/temporal sampling of the temperature at 200m data along the north wall from 75°W to 55°W. The leading mode of temperature variability of the Gulf Stream is equivalent to a north‐south shift of 50–100 km, which is zonally of one sign and amounts to 50% of the seasonal‐interannual variance between 75°W and 55°W. The temporal behavior of this mode (PC1) shows the temporal shift of the Gulf Stream path with a dominant approximately 8‐ to 10‐year periodicity over much of the period.</p>
 <div id="data-sources-49" class="section level3" number="47.2.1">
 <h3>
 <span class="header-section-number">47.2.1</span> Data Sources<a class="anchor" aria-label="anchor" href="#data-sources-49"><i class="fas fa-link"></i></a>
@@ -230,7 +237,7 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)</p>
 <h3>
 <span class="header-section-number">47.2.2</span> Data analysis<a class="anchor" aria-label="anchor" href="#data-analysis-46"><i class="fas fa-link"></i></a>
 </h3>
-<p>For detailed analytical methods, see <span class="citation">Joyce et al. (<a href="#ref-joyce2019">2019</a>)</span>.</p>
+<p>For detailed analytical methods, see <span class="citation">Joyce et al. (<a href="#ref-joyce_meridional_2019">2019</a>)</span>.</p>
 </div>
 <div id="data-processing-and-plotting" class="section level3" number="47.2.3">
 <h3>
@@ -248,11 +255,11 @@ State of the Ecosystem - Mid-Atlantic (2019 (Different Methods), 2020+)</p>
 <div id="ref-chen_seasonal_2021" class="csl-entry">
 Chen, Zhuomin, Young-Oh Kwon, Ke Chen, Paula Fratantoni, Glen Gawarkiewicz, Terrence M. Joyce, Timothy J. Miller, Janet A. Nye, Vincent S. Saba, and Brian C. Stock. 2021. <span>“Seasonal <span>Prediction</span> of <span>Bottom</span> <span>Temperature</span> on the <span>Northeast</span> <span>U</span>.<span>S</span>. <span>Continental</span> <span>Shelf</span>.”</span> <em>Journal of Geophysical Research: Oceans</em> 126 (5): e2021JC017187. <a href="https://doi.org/10.1029/2021JC017187">https://doi.org/10.1029/2021JC017187</a>.
 </div>
-<div id="ref-joyce2019" class="csl-entry">
-Joyce, Terrence M, Young-Oh Kwon, Hyodae Seo, and Caroline C Ummenhofer. 2019. <span>“Meridional Gulf Stream Shifts Can Influence Wintertime Variability in the North Atlantic Storm Track and Greenland Blocking.”</span> <em>Geophysical Research Letters</em> 46 (3): 1702–8. <a href="https://doi.org/10.1029/2018GL081087">https://doi.org/10.1029/2018GL081087</a>.
+<div id="ref-joyce_meridional_2019" class="csl-entry">
+Joyce, Terrence M., Young-Oh Kwon, Hyodae Seo, and Caroline C. Ummenhofer. 2019. <span>“Meridional <span>Gulf</span> <span>Stream</span> <span>Shifts</span> <span>Can</span> <span>Influence</span> <span>Wintertime</span> <span>Variability</span> in the <span>North</span> <span>Atlantic</span> <span>Storm</span> <span>Track</span> and <span>Greenland</span> <span>Blocking</span>.”</span> <em>Geophysical Research Letters</em> 46 (3): 1702–8. <a href="https://doi.org/10.1029/2018GL081087">https://doi.org/10.1029/2018GL081087</a>.
 </div>
-<div id="ref-perez-hernandez2014" class="csl-entry">
-Pérez-Hernández, M. Dolores, and Terrence M. Joyce. 2014. <span>“Two Modes of Gulf Stream Variability Revealed in the Last Two Decades of Satellite Altimeter Data.”</span> <em>Journal of Physical Oceanography</em> 44 (1): 149–63. <a href="https://doi.org/10.1175/JPO-D-13-0136.1">https://doi.org/10.1175/JPO-D-13-0136.1</a>.
+<div id="ref-perez-hernandez_two_2014" class="csl-entry">
+Pérez-Hernández, M. Dolores, and Terrence M. Joyce. 2014. <span>“Two <span>Modes</span> of <span>Gulf</span> <span>Stream</span> <span>Variability</span> <span>Revealed</span> in the <span>Last</span> <span>Two</span> <span>Decades</span> of <span>Satellite</span> <span>Altimeter</span> <span>Data</span>.”</span> <em>Journal of Physical Oceanography</em> 44 (1): 149–63. <a href="https://doi.org/10.1175/JPO-D-13-0136.1">https://doi.org/10.1175/JPO-D-13-0136.1</a>.
 </div>
 </div>
   <div class="chapter-nav">
@@ -264,9 +271,10 @@ Pérez-Hernández, M. Dolores, and Terrence M. Joyce. 2014. <span>“Two Modes o
 <li><a class="nav-link" href="#gsi"><span class="header-section-number">47</span> Gulf Stream Index</a></li>
 <li>
 <a class="nav-link" href="#methods-46"><span class="header-section-number">47.1</span> Methods</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#data-sources-48"><span class="header-section-number">47.1.1</span> Data sources</a></li>
-<li><a class="nav-link" href="#data-analysis-45"><span class="header-section-number">47.1.2</span> Data analysis</a></li>
-<li><a class="nav-link" href="#data-processing-34"><span class="header-section-number">47.1.3</span> Data Processing</a></li>
+<li><a class="nav-link" href="#soe-reports-and-northeast-us-ecosystem-indicator-catalog"><span class="header-section-number">47.1.1</span> 2025 SOE Reports and Northeast US Ecosystem Indicator Catalog</a></li>
+<li><a class="nav-link" href="#data-sources-48"><span class="header-section-number">47.1.2</span> Data sources</a></li>
+<li><a class="nav-link" href="#data-analysis-45"><span class="header-section-number">47.1.3</span> Data analysis</a></li>
+<li><a class="nav-link" href="#data-processing-34"><span class="header-section-number">47.1.4</span> Data Processing</a></li>
 </ul>
 </li>
 <li>
@@ -293,7 +301,7 @@ Pérez-Hernández, M. Dolores, and Terrence M. Joyce. 2014. <span>“Two Modes o
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 20 March 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 29 March 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
