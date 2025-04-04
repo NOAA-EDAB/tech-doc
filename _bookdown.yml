@@ -136,6 +136,6 @@ rmd_files:
     -   "chapters/wind_habitat_occupancy.Rmd"
     -   "chapters/references.Rmd"
 before_chapter_script: _common.R
-delete_merged_file: false
+delete_merged_file: true
 output_dir: "_book"
 new_session: false
