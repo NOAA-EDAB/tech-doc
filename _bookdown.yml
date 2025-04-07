@@ -8,7 +8,6 @@ rmd_files:
     -   "chapters/erddap_query_and_build.Rmd"
     -   "chapters/Trend_analysis.Rmd"
     -   "chapters/short_term_trend.Rmd"
-    -   "chapters/regime_shift_analysis.Rmd"
     -   "chapters/survdat.rmd"
     -   "chapters/EPU.Rmd"
     -   "chapters/conceptualmodels.Rmd"
@@ -110,7 +109,8 @@ rmd_files:
 #
 #
 # ######################## LEGACY PAGES ##################
-    -   "chapters/sectionHeaders/legacy.rmd" 
+    -   "chapters/sectionHeaders/legacy.rmd"
+    -   "chapters/regime_shift_analysis.Rmd" 
     -   "chapters/Annual_SST_cycle_indicator.Rmd"
     -   "chapters/bottom_temperature_GLORYS.Rmd"
     -   "chapters/calanus_stage.Rmd"
@@ -136,6 +136,6 @@ rmd_files:
     -   "chapters/wind_habitat_occupancy.Rmd"
     -   "chapters/references.Rmd"
 before_chapter_script: _common.R
-delete_merged_file: false
+delete_merged_file: true
 output_dir: "_book"
 new_session: false
