@@ -36,7 +36,7 @@ The red vertical lines indicate the years in which a shift occurs.
 **Example plot**
 ```{r regime_example, message = FALSE, warning=FALSE, fig.align='center',out.width="75%", echo = F}
 
-knitr::include_graphics("images/regime_ex_plot.PNG")
+knitr::include_graphics("images/regime_ex_plot.png")
 
 ```
 
