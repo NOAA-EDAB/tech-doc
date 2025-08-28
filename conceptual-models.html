@@ -7,7 +7,7 @@
 <title>6 Conceptual Models | Technical Documentation, State of the Ecosystem Report</title>
 <meta name="author" content="Northeast Fisheries Science Center">
 <meta name="description" content="Description: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem Found in: State of the Ecosystem - Gulf of...">
-<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
 <meta property="og:title" content="6 Conceptual Models | Technical Documentation, State of the Ecosystem Report">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Description: Conceptual models for the New England (Georges Bank and Gulf of Maine) and Mid-Atlantic regions of the Northeast US Large Marine Ecosystem Found in: State of the Ecosystem - Gulf of...">
@@ -22,8 +22,8 @@
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.33/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -841,9 +841,9 @@ What packages or libraries did you use in your work flow?
 
 ``` r
 sessionInfo(package = NULL)
-#> R version 4.4.3 (2025-02-28)
+#> R version 4.5.1 (2025-06-13)
 #> Platform: x86_64-pc-linux-gnu
-#> Running under: Ubuntu 24.04.2 LTS
+#> Running under: Ubuntu 24.04.3 LTS
 #> 
 #> Matrix products: default
 #> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
@@ -867,28 +867,37 @@ sessionInfo(package = NULL)
 #> other attached packages:
 #>  [1] knitr_1.50       kableExtra_1.4.0 here_1.0.1      
 #>  [4] ecodata_6.0      lubridate_1.9.4  forcats_1.0.0   
-#>  [7] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.4     
-#> [10] readr_2.1.5      tidyr_1.3.1      tibble_3.2.1    
-#> [13] ggplot2_3.5.1    tidyverse_2.0.0 
+#>  [7] stringr_1.5.1    dplyr_1.1.4      purrr_1.1.0     
+#> [10] readr_2.1.5      tidyr_1.3.1      tibble_3.3.0    
+#> [13] ggplot2_3.5.2    tidyverse_2.0.0 
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] sass_0.4.9        generics_0.1.3    xml2_1.3.8       
-#>  [4] stringi_1.8.7     hms_1.1.3         digest_0.6.37    
-#>  [7] magrittr_2.0.3    evaluate_1.0.3    grid_4.4.3       
-#> [10] timechange_0.3.0  bookdown_0.42     fastmap_1.2.0    
-#> [13] rprojroot_2.0.4   jsonlite_2.0.0    viridisLite_0.4.2
-#> [16] scales_1.3.0      jquerylib_0.1.4   cli_3.6.4        
-#> [19] crayon_1.5.3      rlang_1.1.5       bit64_4.6.0-1    
-#> [22] munsell_0.5.1     withr_3.0.2       cachem_1.1.0     
-#> [25] yaml_2.3.10       parallel_4.4.3    tools_4.4.3      
-#> [28] tzdb_0.5.0        memoise_2.0.1     colorspace_2.1-1 
-#> [31] vctrs_0.6.5       R6_2.6.1          lifecycle_1.0.4  
-#> [34] bit_4.6.0         fs_1.6.5          vroom_1.6.5      
-#> [37] pkgconfig_2.0.3   pillar_1.10.2     bslib_0.9.0      
-#> [40] gtable_0.3.6      glue_1.8.0        systemfonts_1.2.2
-#> [43] xfun_0.52         tidyselect_1.2.1  rstudioapi_0.17.1
-#> [46] htmltools_0.5.8.1 svglite_2.1.3     rmarkdown_2.29   
-#> [49] compiler_4.4.3    downlit_0.4.4
+#>  [1] sass_0.4.10        generics_0.1.4    
+#>  [3] xml2_1.4.0         stringi_1.8.7     
+#>  [5] hms_1.1.3          digest_0.6.37     
+#>  [7] magrittr_2.0.3     evaluate_1.0.4    
+#>  [9] grid_4.5.1         timechange_0.3.0  
+#> [11] RColorBrewer_1.1-3 bookdown_0.44     
+#> [13] fastmap_1.2.0      rprojroot_2.1.1   
+#> [15] jsonlite_2.0.0     viridisLite_0.4.2 
+#> [17] scales_1.4.0       textshaping_1.0.1 
+#> [19] jquerylib_0.1.4    cli_3.6.5         
+#> [21] crayon_1.5.3       rlang_1.1.6       
+#> [23] bit64_4.6.0-1      withr_3.0.2       
+#> [25] cachem_1.1.0       yaml_2.3.10       
+#> [27] parallel_4.5.1     tools_4.5.1       
+#> [29] tzdb_0.5.0         memoise_2.0.1     
+#> [31] vctrs_0.6.5        R6_2.6.1          
+#> [33] lifecycle_1.0.4    bit_4.6.0         
+#> [35] fs_1.6.6           vroom_1.6.5       
+#> [37] pkgconfig_2.0.3    pillar_1.11.0     
+#> [39] bslib_0.9.0        gtable_0.3.6      
+#> [41] glue_1.8.0         systemfonts_1.2.3 
+#> [43] xfun_0.53          tidyselect_1.2.1  
+#> [45] rstudioapi_0.17.1  farver_2.1.2      
+#> [47] htmltools_0.5.8.1  svglite_2.2.1     
+#> [49] rmarkdown_2.29     compiler_4.5.1    
+#> [51] downlit_0.4.4
 
 
 #Use this to output a detailed list of the package information
@@ -1116,7 +1125,7 @@ current.session$otherPkgs
 #> Maintainer: Yihui Xie <xie@yihui.name>
 #> Repository: RSPM
 #> Date/Publication: 2025-03-16 09:20:02 UTC
-#> Built: R 4.4.0; ; 2025-03-17 15:37:05 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 03:28:21 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: knitr
 #> RemoteRef: knitr
@@ -1193,7 +1202,7 @@ current.session$otherPkgs
 #> Maintainer: Hao Zhu <haozhu233@gmail.com>
 #> Repository: RSPM
 #> Date/Publication: 2024-01-24 14:20:02 UTC
-#> Built: R 4.4.0; ; 2024-04-26 19:23:36 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 04:07:00 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: kableExtra
 #> RemoteRef: kableExtra
@@ -1244,7 +1253,7 @@ current.session$otherPkgs
 #> Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 #> Repository: RSPM
 #> Date/Publication: 2020-12-13 07:30:02 UTC
-#> Built: R 4.4.0; ; 2024-04-25 19:42:20 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 03:26:36 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: here
 #> RemoteRef: here
@@ -1286,7 +1295,7 @@ current.session$otherPkgs
 #> Remotes: NOAA-EDAB/arfit
 #> VignetteBuilder: knitr
 #> RoxygenNote: 7.3.2
-#> Depends: R (>= 3.5)
+#> Depends: R (>= 4.1.0)
 #> RemoteType: github
 #> RemoteHost: api.github.com
 #> RemoteRepo: ecodata
@@ -1299,12 +1308,13 @@ current.session$otherPkgs
 #> GithubRef: HEAD
 #> GithubSHA1: ae74262c465ef0a8478ba34fdcb7c98763f052a9
 #> NeedsCompilation: no
-#> Packaged: 2025-04-07 16:23:21 UTC; runner
+#> Packaged: 2025-08-28 18:01:38 UTC; runner
 #> Author: Brandon Beltz [cre, aut], Andy Beet [aut]
-#>       (<https://orcid.org/0000-0001-8270-7090>),
+#>       (ORCID:
+#>       <https://orcid.org/0000-0001-8270-7090>),
 #>       Kimberly Bastille [aut], Sean Hardison [aut]
 #> Maintainer: Brandon Beltz <brandon.beltz@noaa.gov>
-#> Built: R 4.4.3; ; 2025-04-07 16:23:31 UTC; unix
+#> Built: R 4.5.1; ; 2025-08-28 18:01:47 UTC; unix
 #> 
 #> -- File: /home/runner/work/_temp/Library/ecodata/Meta/package.rds 
 #> 
@@ -1366,8 +1376,8 @@ current.session$otherPkgs
 #>       Chel Hee Lee [ctb]
 #> Repository: RSPM
 #> Date/Publication: 2024-12-08 12:10:02 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2024-12-09
-#>       05:33:13 UTC; unix
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-04-05
+#>       02:58:29 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: lubridate
 #> RemoteRef: lubridate
@@ -1415,7 +1425,7 @@ current.session$otherPkgs
 #> Maintainer: Hadley Wickham <hadley@rstudio.com>
 #> Repository: RSPM
 #> Date/Publication: 2023-01-29 22:20:02 UTC
-#> Built: R 4.4.0; ; 2024-04-25 19:50:20 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 03:32:02 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: forcats
 #> RemoteRef: forcats
@@ -1466,7 +1476,7 @@ current.session$otherPkgs
 #> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
 #> Date/Publication: 2023-11-14 23:10:02 UTC
-#> Built: R 4.4.0; ; 2024-04-25 19:48:59 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 03:30:05 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: stringr
 #> RemoteRef: stringr
@@ -1534,8 +1544,8 @@ current.session$otherPkgs
 #> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
 #> Date/Publication: 2023-11-17 16:50:02 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2024-04-25
-#>       19:50:23 UTC; unix
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-04-05
+#>       03:34:53 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: dplyr
 #> RemoteRef: dplyr
@@ -1549,27 +1559,28 @@ current.session$otherPkgs
 #> $purrr
 #> Package: purrr
 #> Title: Functional Programming Tools
-#> Version: 1.0.4
+#> Version: 1.1.0
 #> Authors@R: c( person("Hadley", "Wickham", ,
 #>       "hadley@posit.co", role = c("aut", "cre"),
 #>       comment = c(ORCID = "0000-0003-4757-117X")),
 #>       person("Lionel", "Henry", , "lionel@posit.co",
 #>       role = "aut"), person("Posit Software, PBC",
 #>       role = c("cph", "fnd"), comment = c(ROR =
-#>       "03wc8by49")) )
+#>       "https://ror.org/03wc8by49")) )
 #> Description: A complete and consistent functional
 #>       programming toolkit for R.
 #> License: MIT + file LICENSE
 #> URL: https://purrr.tidyverse.org/,
 #>       https://github.com/tidyverse/purrr
 #> BugReports: https://github.com/tidyverse/purrr/issues
-#> Depends: R (>= 4.0)
+#> Depends: R (>= 4.1)
 #> Imports: cli (>= 3.6.1), lifecycle (>= 1.0.3),
 #>       magrittr (>= 1.5.0), rlang (>= 1.1.1), vctrs
 #>       (>= 0.6.3)
-#> Suggests: covr, dplyr (>= 0.7.8), httr, knitr,
-#>       lubridate, rmarkdown, testthat (>= 3.0.0),
-#>       tibble, tidyselect
+#> Suggests: carrier (>= 0.2.0), covr, dplyr (>= 0.7.8),
+#>       httr, knitr, lubridate, mirai (>= 2.4.0),
+#>       rmarkdown, testthat (>= 3.0.0), tibble,
+#>       tidyselect
 #> LinkingTo: cli
 #> VignetteBuilder: knitr
 #> Biarch: true
@@ -1580,23 +1591,23 @@ current.session$otherPkgs
 #> Encoding: UTF-8
 #> RoxygenNote: 7.3.2
 #> NeedsCompilation: yes
-#> Packaged: 2025-01-29 21:33:56 UTC; hadleywickham
-#> Author: Hadley Wickham [aut, cre]
-#>       (<https://orcid.org/0000-0003-4757-117X>),
+#> Packaged: 2025-07-10 12:22:53 UTC; hadleywickham
+#> Author: Hadley Wickham [aut, cre] (ORCID:
+#>       <https://orcid.org/0000-0003-4757-117X>),
 #>       Lionel Henry [aut], Posit Software, PBC [cph,
-#>       fnd] (03wc8by49)
+#>       fnd] (ROR: <https://ror.org/03wc8by49>)
 #> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
-#> Date/Publication: 2025-02-05 18:00:01 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2025-02-14
-#>       04:25:14 UTC; unix
+#> Date/Publication: 2025-07-10 17:50:02 UTC
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-07-11
+#>       04:28:49 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: purrr
 #> RemoteRef: purrr
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 1.0.4
+#> RemoteSha: 1.1.0
 #> 
 #> -- File: /home/runner/work/_temp/Library/purrr/Meta/package.rds 
 #> 
@@ -1658,8 +1669,8 @@ current.session$otherPkgs
 #> Maintainer: Jennifer Bryan <jenny@posit.co>
 #> Repository: RSPM
 #> Date/Publication: 2024-01-10 23:20:02 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2025-03-17
-#>       15:39:36 UTC; unix
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-04-05
+#>       03:44:00 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: readr
 #> RemoteRef: readr
@@ -1719,8 +1730,8 @@ current.session$otherPkgs
 #> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
 #> Date/Publication: 2024-01-24 14:50:09 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2025-03-04
-#>       04:41:23 UTC; unix
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-04-05
+#>       03:44:55 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: tidyr
 #> RemoteRef: tidyr
@@ -1734,7 +1745,7 @@ current.session$otherPkgs
 #> $tibble
 #> Package: tibble
 #> Title: Simple Data Frames
-#> Version: 3.2.1
+#> Version: 3.3.0
 #> Authors@R: c(person(given = "Kirill", family =
 #>       "M\u00fcller", role = c("aut", "cre"), email =
 #>       "kirill@cynkra.com", comment = c(ORCID =
@@ -1756,19 +1767,18 @@ current.session$otherPkgs
 #> BugReports:
 #>       https://github.com/tidyverse/tibble/issues
 #> Depends: R (>= 3.4.0)
-#> Imports: fansi (>= 0.4.0), lifecycle (>= 1.0.0),
-#>       magrittr, methods, pillar (>= 1.8.1),
-#>       pkgconfig, rlang (>= 1.0.2), utils, vctrs (>=
-#>       0.4.2)
-#> Suggests: bench, bit64, blob, brio, callr, cli, covr,
-#>       crayon (>= 1.3.4), DiagrammeR, dplyr, evaluate,
-#>       formattable, ggplot2, here, hms, htmltools,
-#>       knitr, lubridate, mockr, nycflights13,
-#>       pkgbuild, pkgload, purrr, rmarkdown, stringi,
-#>       testthat (>= 3.0.2), tidyr, withr
+#> Imports: cli, lifecycle (>= 1.0.0), magrittr,
+#>       methods, pillar (>= 1.8.1), pkgconfig, rlang
+#>       (>= 1.0.2), utils, vctrs (>= 0.5.0)
+#> Suggests: bench, bit64, blob, brio, callr,
+#>       DiagrammeR, dplyr, evaluate, formattable,
+#>       ggplot2, here, hms, htmltools, knitr,
+#>       lubridate, nycflights13, pkgload, purrr,
+#>       rmarkdown, stringi, testthat (>= 3.0.2), tidyr,
+#>       withr
 #> VignetteBuilder: knitr
 #> Encoding: UTF-8
-#> RoxygenNote: 7.2.3
+#> RoxygenNote: 7.3.2.9000
 #> Config/testthat/edition: 3
 #> Config/testthat/parallel: true
 #> Config/testthat/start-first: vignette-formats,
@@ -1778,29 +1788,29 @@ current.session$otherPkgs
 #> Config/autostyle/rmd: false
 #> Config/Needs/website: tidyverse/tidytemplate
 #> NeedsCompilation: yes
-#> Packaged: 2023-03-19 09:23:10 UTC; kirill
-#> Author: Kirill Müller [aut, cre]
-#>       (<https://orcid.org/0000-0002-1416-3412>),
+#> Packaged: 2025-06-07 08:54:33 UTC; kirill
+#> Author: Kirill Müller [aut, cre] (ORCID:
+#>       <https://orcid.org/0000-0002-1416-3412>),
 #>       Hadley Wickham [aut], Romain Francois [ctb],
 #>       Jennifer Bryan [ctb], RStudio [cph, fnd]
 #> Maintainer: Kirill Müller <kirill@cynkra.com>
 #> Repository: RSPM
-#> Date/Publication: 2023-03-20 06:30:02 UTC
-#> Built: R 4.4.0; x86_64-pc-linux-gnu; 2024-04-25
-#>       19:50:02 UTC; unix
+#> Date/Publication: 2025-06-08 12:10:02 UTC
+#> Built: R 4.5.0; x86_64-pc-linux-gnu; 2025-06-09
+#>       04:18:14 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: tibble
 #> RemoteRef: tibble
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 3.2.1
+#> RemoteSha: 3.3.0
 #> 
 #> -- File: /home/runner/work/_temp/Library/tibble/Meta/package.rds 
 #> 
 #> $ggplot2
 #> Package: ggplot2
-#> Version: 3.5.1
+#> Version: 3.5.2
 #> Title: Create Elegant Data Visualisations Using the
 #>       Grammar of Graphics
 #> Authors@R: c( person("Hadley", "Wickham", ,
@@ -1855,10 +1865,10 @@ current.session$otherPkgs
 #> Config/testthat/edition: 3
 #> Encoding: UTF-8
 #> LazyData: true
-#> RoxygenNote: 7.3.1
+#> RoxygenNote: 7.3.2
 #> Collate: 'ggproto.R' 'ggplot-global.R' 'aaa-.R' .....
 #> NeedsCompilation: no
-#> Packaged: 2024-04-22 10:39:16 UTC; thomas
+#> Packaged: 2025-04-08 10:58:01 UTC; thomas
 #> Author: Hadley Wickham [aut]
 #>       (<https://orcid.org/0000-0003-4757-117X>),
 #>       Winston Chang [aut]
@@ -1879,15 +1889,15 @@ current.session$otherPkgs
 #> Maintainer: Thomas Lin Pedersen
 #>       <thomas.pedersen@posit.co>
 #> Repository: RSPM
-#> Date/Publication: 2024-04-23 08:00:08 UTC
-#> Built: R 4.4.0; ; 2024-04-25 19:52:10 UTC; unix
+#> Date/Publication: 2025-04-09 09:40:10 UTC
+#> Built: R 4.5.0; ; 2025-04-10 19:12:24 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: ggplot2
 #> RemoteRef: ggplot2
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 3.5.1
+#> RemoteSha: 3.5.2
 #> 
 #> -- File: /home/runner/work/_temp/Library/ggplot2/Meta/package.rds 
 #> 
@@ -1938,7 +1948,7 @@ current.session$otherPkgs
 #> Maintainer: Hadley Wickham <hadley@rstudio.com>
 #> Repository: RSPM
 #> Date/Publication: 2023-02-22 09:20:06 UTC
-#> Built: R 4.4.0; ; 2024-04-24 19:46:17 UTC; unix
+#> Built: R 4.5.0; ; 2025-04-05 04:13:41 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: tidyverse
 #> RemoteRef: tidyverse
@@ -2217,7 +2227,7 @@ Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. <span>“Dynamics of the Dire
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 7 April 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 28 August 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
