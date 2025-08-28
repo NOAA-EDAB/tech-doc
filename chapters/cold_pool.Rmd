@@ -6,11 +6,11 @@
 
 **Indicator category**:Published methods, Extensive analysis, not yet published
 
-**Contributor(s)**: Hubert du Pontavice, Vincent Saba, Zhuomin Chen
+**Contributor(s)**: Joseph Caracappa, Vincent Saba, Zhuomin Chen
   
-**Data steward**: Kimberly Bastille <Kimberly.bastille@noaa.gov>
+**Data steward**: Joseph Caracappa <joseph.caracappa@noaa.gov>
   
-**Point of contact**: Hubert du Pontavice <hubert.dupontavice@noaa.gov>
+**Point of contact**: Joseph Caracappa <joseph.caracappa@noaa.gov>
   
 **Public availability statement**: Source data are NOT publicly available. Please email hubert.dupontavice@noaa.gov for further information and accessing the ROMS-NWA bottom temperature data.
 
@@ -22,18 +22,18 @@ The cold pool is an area of relatively cold bottom water that forms on the US no
 
 
 ### Data Sources
-The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the [Bottom Temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html) chapter and in @duPontavice2023.
+The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the [Bottom Temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html) chapter and in @noauthor_high-resolution_2023.
 
 
 ### Data Analysis 
 
 #### Cold Pool Domain
 
-The first step was to define the Cold Pool domain, which is typically located within the MAB and the southern flank of Georges Bank (@Chen2018; @Houghton1982; @Lentz2017). Here, we delineated a spatial domain covering the management area of the SNEMA yellowtail flounder (since this method was initially developed to study the Cold Pool impact on yellowtail flounder recruitment) comprising the MAB and in the SNE shelf between the 20 and 200 m isobaths (@Chen2018; @Chen2020). We restricted the time period from June (to match the start of the settlement period; @Sullivan2005) to September (which is the average end date of the Cold Pool (calendar day 269) estimated by @Chen2020. The Cold Pool domain was defined as the area, wherein average bottom temperature was cooler than 10°C between June and September from 1959 to 2022. We then developed the three Cold Pool indices using bottom temperature from ocean models.
+The first step was to define the Cold Pool domain, which is typically located within the MAB and the southern flank of Georges Bank (@chen_seasonal_2018; @houghton_middle_1982; @lentz_seasonal_2017). Here, we delineated a spatial domain covering the management area of the SNEMA yellowtail flounder (since this method was initially developed to study the Cold Pool impact on yellowtail flounder recruitment) comprising the MAB and in the SNE shelf between the 20 and 200 m isobaths (@chen_seasonal_2018; @chen_interannual_2020). We restricted the time period from June (to match the start of the settlement period; @sullivan_evidence_2005) to September (which is the average end date of the Cold Pool (calendar day 269) estimated by @chen_interannual_2020. The Cold Pool domain was defined as the area, wherein average bottom temperature was cooler than 10°C between June and September from 1959 to 2022. We then developed the three Cold Pool indices using bottom temperature from ocean models.
 
 #### Cold Pool Index (Model_CPI)
 
-The Cold Pool Index (Model_CPI) was adapted from @miller2016 based on the method developed in @dupontavice2022. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1959–2022 $$({\bar{T}}_{i,\ 1958-2022})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
+The Cold Pool Index (Model_CPI) was adapted from @miller_state-space_2016 based on the method developed in @dupontavice_ocean_2022. Residual temperature was calculated in each grid cell, i, in the Cold Pool domain as the difference between the average bottom temperature at the year y (Ty) and the average bottom temperature over the period 1959–2022 $$({\bar{T}}_{i,\ 1958-2022})$$ between June and September. Model_CPI was calculated as the mean residual temperature over the Cold Pool domain such that:
 
 
 
@@ -57,16 +57,16 @@ $${PI}_y=\ \frac{\sum_{i=1}^{n}{{(Month}_{i,\ y}\ -\ {\bar{Month}}_{i,\ 1958-202
 
 The spatial component of the Cold Pool and the habitat provided by the cold pool was calculated using the Spatial Extent Index (Model_SEI). The Model_SEI is estimated by the number of cells where bottom temperature remains below 10C for at least 2 months between June and September. 
 
-The Bottom temperature data is the average ROMS-NWA bottom temperature over the decade $$d$$ in the grid cell $$i$$. All above methods @dupontavice2022.
+The Bottom temperature data is the average ROMS-NWA bottom temperature over the decade $$d$$ in the grid cell $$i$$. All above methods @dupontavice_ocean_2022.
 
 Bottom temperature from Glorys reanalysis and Global Ocean Physics Analysis were not being processed. 
 
-Bottom temperature from ROMS-NWA (used for the period 1959-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (@Chen2018; @Chen2020). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (@Seidov2016a, @Seidov2016b) (https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:
+Bottom temperature from ROMS-NWA (used for the period 1959-1992) were bias-corrected. Previous studies that focused on the ROMS-NWA-based Cold Pool highlighted strong and consistent warm bias in bottom temperature of about 1.5C during the stratified seasons over the period of 1958-2007 (@chen_seasonal_2018; @chen_interannual_2020). In order to bias-correct bottom temperature from ROMS-NWA, we used the monthly climatologies of observed bottom temperature from the Northwest Atlantic Ocean regional climatology (NWARC) over decadal periods from 1955 to 1994. The NWARC provides high resolution (1/10° grids) of quality-controlled in situ ocean temperature based on a large volume of observed temperature data (@seidov_northwest_2016, @seidov_northwest_2016-1) (https://www.ncei.noaa.gov/products/northwest-atlantic-regional-climatology). The first step was to re-grid the ROMS-NWA to obtain bottom temperature over the same 1/10° grid as the NWARC. Then, a monthly bias was calculated in each grid cell and for each decade (1955–1964, 1965–1974, 1975–1984, 1985–1994) in the MAB and in the SNE shelf:
 
 $${BIAS}_{i,\ d}=\ T_{i,d}^{Climatology}\ -\ {\bar{T}}_{i,\ d}^{ROMS-NWA}$$
 
 
-where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell i for the decade d and $${\bar{T}}_{i,\ d}^{ROMS-NWA}$$ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. All above methods @dupontavice2022.
+where $$T_{i,d}^{Climatology}$$ is the NWARC bottom temperature in the grid cell i for the decade d and $${\bar{T}}_{i,\ d}^{ROMS-NWA}$$ is the average ROMS-NWA bottom temperature over the decade d in the grid cell i. All above methods @dupontavice_ocean_2022.
 
 ### Data processing
 
@@ -79,7 +79,7 @@ Code used to process the cold pool inidcator can be found in the `ecodata` packa
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
 
 ### Data Analysis
-Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following @Chen2018.
+Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following @chen_seasonal_2018.
 
 ### Data processing
 
@@ -96,7 +96,7 @@ This data represents the annual mean bottom temperature residual for Sept-Oct in
 
 
 ### Data analysis
-Methods published @miller2016, [original MATLAB source code](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/cold_pool_analysis.txt) used in that paper was provided by Jon Hare and used in this analysis.
+Methods published @miller_state-space_2016, [original MATLAB source code](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/cold_pool_analysis.txt) used in that paper was provided by Jon Hare and used in this analysis.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/cold_pool.html>

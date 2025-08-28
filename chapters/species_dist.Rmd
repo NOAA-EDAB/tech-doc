@@ -8,15 +8,15 @@
 
 **Contributor(s)**: Kevin Friedland
   
-**Data steward**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Data steward**: Brandon Beltz <brandon.beltz@noaa.gov>
   
-**Point of contact**: Kevin Friedland, <kevin.friedland@noaa.gov>
+**Point of contact**: Kevin Friedland, <brandon.beltz@noaa.gov>
   
 **Public availability statement**: Source data are available upon request (read more [here](https://inport.nmfs.noaa.gov/inport/item/22560)). Derived data may be downloaded [here](https://comet.nefsc.noaa.gov/erddap/tabledap/SOE_habitat_soe_v1.html).
 
 
 ## Methods
-Three metrics quantifying spatial-temporal distribution shifts within fish populations were developed by @Friedland2018, including mean depth, along-shelf distance, and distance to coastline. Along-shelf distance is a metric for quantifying the distribution of a species through time along the axis of the US Northeast Continental Shelf, which extends northeastward from the Outer Banks of North Carolina. Values in the derived time series correspond to mean distance in km from the southwest origin of the along-shelf axis at 0 km. The along-shelf axis begins at 76.53&deg;W 34.60&deg;N and terminates at 65.71&deg;W 43.49&deg;N. 
+Three metrics quantifying spatial-temporal distribution shifts within fish populations were developed by @friedland_event_2019, including mean depth, along-shelf distance, and distance to coastline. Along-shelf distance is a metric for quantifying the distribution of a species through time along the axis of the US Northeast Continental Shelf, which extends northeastward from the Outer Banks of North Carolina. Values in the derived time series correspond to mean distance in km from the southwest origin of the along-shelf axis at 0 km. The along-shelf axis begins at 76.53&deg;W 34.60&deg;N and terminates at 65.71&deg;W 43.49&deg;N. 
 
 Once mean distance is found, depth of occurrence and distance to coastline can be calculated for each species' positional center. Analyses present in the State of the Ecosystem (SOE) reports include mean depth and along-shelf distance for Atlantic cod, sea scallop, summer flounder, and black sea bass. 
 

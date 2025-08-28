@@ -7,7 +7,7 @@ rmd_files:
     -   "chapters/sectionHeaders/methods.rmd"
     -   "chapters/erddap_query_and_build.Rmd"
     -   "chapters/Trend_analysis.Rmd"
-    -   "chapters/regime_shift_analysis.Rmd"
+    -   "chapters/short_term_trend.Rmd"
     -   "chapters/survdat.rmd"
     -   "chapters/EPU.Rmd"
     -   "chapters/conceptualmodels.Rmd"
@@ -22,7 +22,8 @@ rmd_files:
     #-   "chapters/annual_chl_pp.Rmd" *Turned off in catalog
     -   "chapters/habs.Rmd"
     -   "chapters/SAV.Rmd"
-    #-   "chapters/calanus_variation.Rmd" *Missing tech doc page
+    -   "chapters/zooplankton_index.Rmd"
+    -   "chapters/calanus_variation.Rmd"
     -   "chapters/wbts_mesozooplankton.Rmd"
     -   "chapters/zoo_abundance_anom.Rmd"
     #-   "chapters/zoo_diversity.Rmd" *Missing tech doc page
@@ -36,33 +37,38 @@ rmd_files:
     #-   "chapters/ne_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
     #-   "chapters/osw_survey_impact.Rmd" *Missing tech doc page
     -   "chapters/condition.Rmd"
+    -   "chapters/finfish_traits.Rmd"
     -   "chapters/habitat_diversity.Rmd"
     -   "chapters/species_dist.Rmd"
     -   "chapters/energy_density.Rmd"
     -   "chapters/spawn_timing.Rmd"
     -   "chapters/exp_n.Rmd"
     -   "chapters/forage_index.Rmd"
+    -   "chapters/benthos_index.Rmd"
     -   "chapters/harborporpoise.Rmd"
     -   "chapters/hms_cpue.Rmd"
     -   "chapters/hms_landings.Rmd"
     -   "chapters/hms_stock_status.Rmd"
-    -   "chapters/HMS_species_distribution.Rmd"
+    -   "chapters/cetacean_dist.Rmd"
     -   "chapters/narw.rmd"
     -   "chapters/productivity_anomaly.Rmd"
     -   "chapters/seal_pups.Rmd"
     -   "chapters/gom_salmon.Rmd"
     -   "chapters/grayseal.Rmd"
     -   "chapters/seabird_ne.Rmd"
+    -   "chapters/cetacean_acoustic.Rmd"
+    -   "chapters/wea_sound.Rmd"
     -   "chapters/species_groupings.rmd"  
 #
 #
 # #################### OCEANOGRAPHIC ##################
     -   "chapters/sectionHeaders/oceanographic.rmd" 
-    -   "chapters/bottom_temp.Rmd"
-    #-   "chapters/bottom_temp_comp.Rmd" *Missing tech doc page
-    -   "chapters/bottom_temp_seasonal_gridded.Rmd"
-    -   "chapters/seasonal_sst_anomaly_gridded.Rmd"
+    -   "chapters/bottom_temp_insitu.Rmd"
+    #-   "chapters/bottom_temp_model_anom.Rmd" *Missing tech doc page
+    -   "chapters/bottom_temp_model_gridded.Rmd"
+    -   "chapters/seasonal_oisst_anom_gridded.Rmd"
     #-   "chapters/seasonal_oisst_anom.Rmd" *Missing tech doc page
+    #-   "chapters/surface_temp_mom6.Rmd"
     -   "chapters/trans_dates.Rmd"
     -   "chapters/long_term_sst.Rmd"
     -   "chapters/cold_pool.Rmd"
@@ -80,7 +86,8 @@ rmd_files:
     #-   "chapters/heatwave_year.Rmd" *Shares tech doc page with heatwave
     #-   "chapters/timing_shifts.Rmd" *Missing tech doc page
     #-   "chapters/observation_synthesis.Rmd" *Missing tech doc page
-    -   "chapters/ocean_acidification.Rmd"  
+    -   "chapters/ocean_acidification.Rmd"
+    -   "chapters/gom_acidification.Rmd"
 #
 #
 # ######################## ECONOMIC ##################
@@ -94,6 +101,7 @@ rmd_files:
     -   "chapters/bennet.Rmd"
     -   "chapters/stock_status.Rmd"
     -   "chapters/engagement.Rmd"
+    #-   "chapters/community_climate_vulnerability.Rmd" *Missing tech doc page
     -   "chapters/aquaculture.Rmd"
     -   "chapters/Wind_dev_speed.Rmd"
     -   "chapters/wind_port.Rmd"
@@ -101,7 +109,8 @@ rmd_files:
 #
 #
 # ######################## LEGACY PAGES ##################
-    -   "chapters/sectionHeaders/legacy.rmd" 
+    -   "chapters/sectionHeaders/legacy.rmd"
+    -   "chapters/regime_shift_analysis.Rmd" 
     -   "chapters/Annual_SST_cycle_indicator.Rmd"
     -   "chapters/bottom_temperature_GLORYS.Rmd"
     -   "chapters/calanus_stage.Rmd"
@@ -127,6 +136,6 @@ rmd_files:
     -   "chapters/wind_habitat_occupancy.Rmd"
     -   "chapters/references.Rmd"
 before_chapter_script: _common.R
-delete_merged_file: false
+delete_merged_file: true
 output_dir: "_book"
 new_session: false

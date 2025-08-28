@@ -23,7 +23,7 @@ Two sources are used in separate productivity indicators, one based on survey da
 
 Survey data from the Northeast Fisheries Science Center (NEFSC) trawl database. These data in their derived form are available through the R package [survdat](#survdat), which works within the NEFSC firewall.
 
-Stock assessment outputs are retrieved from the StockSMART website using the R package [stocksmart](https://noaa-edab.github.io/stocksmart/), [@stocksmart_2024]. 
+Stock assessment outputs are retrieved from the StockSMART website using the R package [stocksmart](https://noaa-edab.github.io/stocksmart/), [@beet_stocksmart_2024]. 
 
 
 ### Data extraction 

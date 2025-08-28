@@ -20,12 +20,12 @@ Individual hotspot richness maps represent annual persistent hotspots of 71 spec
 
 ### Data sources
 
-The annual persistent hotspot maps presented here of seabirds, cetaceans, and sea turtles were derived from observations and survey effort archived in publically available databases such as the Bureau of Ocean Energy Management’s Northwest Atlantic Seabird Catalog; NOAA Northeast Fisheries Science Center’s (NEFSC) AMAPPS database; NEFSC’s Right Whale Aerial Survey database; and the MassCEC/NEAq database of cetacean and turtle surveys. Observer-based programs use two main survey methods to estimate densities at sea from ships and aircraft 1) the strip-width method (@White2020) and 2) distance sampling @Palka2017). 
+The annual persistent hotspot maps presented here of seabirds, cetaceans, and sea turtles were derived from observations and survey effort archived in publically available databases such as the Bureau of Ocean Energy Management’s Northwest Atlantic Seabird Catalog; NOAA Northeast Fisheries Science Center’s (NEFSC) AMAPPS database; NEFSC’s Right Whale Aerial Survey database; and the MassCEC/NEAq database of cetacean and turtle surveys. Observer-based programs use two main survey methods to estimate densities at sea from ships and aircraft 1) the strip-width method (@white_spatial_2020) and 2) distance sampling @palka_atlantic_2017). 
 
 
 ### Data analysis
 
-All detailed data processing steps are not currently included in this document, but general steps are outlined. Species-specific persistent hotspots were computed with observations and survey effort collected on ship and aerial surveys from 1978-2020. Species-specific hotspots were derived with daily timesteps on 10 x 10 km grids covering the Atlantic EEZ. Hotspot probabilities (i.e., persistence) were derived by summing the number of daily hotspots divided by the number of time steps (@Gende2006), which produced a continuum of probabilistic hotspots ranging from 0 to 1 across a final species-specific grid. Annual hotspot richness maps were derived by summing the species-specific grid cells with high persistence.
+All detailed data processing steps are not currently included in this document, but general steps are outlined. Species-specific persistent hotspots were computed with observations and survey effort collected on ship and aerial surveys from 1978-2020. Species-specific hotspots were derived with daily timesteps on 10 x 10 km grids covering the Atlantic EEZ. Hotspot probabilities (i.e., persistence) were derived by summing the number of daily hotspots divided by the number of time steps (@gende_persistence_2006), which produced a continuum of probabilistic hotspots ranging from 0 to 1 across a final species-specific grid. Annual hotspot richness maps were derived by summing the species-specific grid cells with high persistence.
 
 
 ### Data processing

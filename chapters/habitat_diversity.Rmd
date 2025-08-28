@@ -10,11 +10,11 @@ State of the Ecosystem - Mid-Atlantic (2023)
 
 **Contributor(s)**: Chris Haak <ChrisHaak@gmail.com>
   
-**Data steward**: Laurel Smith <laurel.smith@noaa.gov>
+**Data steward**: SOE Leads <nefsc.soe.leads@noaa.gov>
   
-**Point of contact**: Laurel Smith <laurel.smith@noaa.gov>
+**Point of contact**: SOE Leads <nefsc.soe.leads@noaa.gov>
   
-**Public availability statement**: This analysis is based on NEFSC bottom trawl survey data which are publicly available. Please reached out to Laurel Smith with questions.
+**Public availability statement**: This analysis is based on NEFSC bottom trawl survey data which are publicly available. Please reached out to <nefsc.soe.leads@noaa.gov> with questions.
 
 
 ## Methods
@@ -105,9 +105,9 @@ A spatiotemporal joint species distribution model was fitted to n=13231 observat
 #### Environmental Covariates
 
 Covariate values (i.e., environmental parameters) corresponding to the approximate location (and time, when applicable) of each observation (i.e., tow) were extracted from the following sources:
-Monthly mean surface and bottom temperature, surface and bottom salinity, and sea surface height anomaly were obtained from the GLORYS12V1 reanalysis (@Lellouche2012), as were annual minimum and maximum surface and bottom temperatures.
+Monthly mean surface and bottom temperature, surface and bottom salinity, and sea surface height anomaly were obtained from the GLORYS12V1 reanalysis (@jean-michel_copernicus_2021), as were annual minimum and maximum surface and bottom temperatures.
 
-Monthly mean underwater optical parameters, including the intensity (photosynthetically active radiation - PAR) and spectral composition (hue angle) of downwelling light at mid-water column, were estimated from remote sensing data, following the methods of @Lee2005 and @Lee2022, respectively.
+Monthly mean underwater optical parameters, including the intensity (photosynthetically active radiation - PAR) and spectral composition (hue angle) of downwelling light at mid-water column, were estimated from remote sensing data, following the methods of @lee_diffuse_2005 and @lee_three-dimensional_2022, respectively.
 
 Hydrodynamic stress near the seabed (95th quantile) was obtained from the USGS Sea Floor Stress and Sediment Mobility database (Dalyander et al. 2012).
 
@@ -118,7 +118,7 @@ Bathymetric position index (BPI), benthic structural complexity, and sediment ty
 
 #### Estimating Richness
 
-Simulating from the fitted model, we generated 100 random draws of “joint” predictions of the species assemblage observed in the survey, taking into account species residual covariances (see @Wilkinson2021 for additional details). We used these to produce estimates of the mean species richness (and corresponding 95% prediction intervals) across all observations within each ecological production unit (EPU) for each modeled year (2000-2019).
+Simulating from the fitted model, we generated 100 random draws of “joint” predictions of the species assemblage observed in the survey, taking into account species residual covariances (see @wilkinson_defining_2021 for additional details). We used these to produce estimates of the mean species richness (and corresponding 95% prediction intervals) across all observations within each ecological production unit (EPU) for each modeled year (2000-2019).
 
 
 

@@ -8,9 +8,9 @@
 
 **Contributor(s)**: James Gartland, Matt Camisa, Rebecca Peters, Sean Lucey
   
-**Data steward**: Kimberly Bastille, <kimberly.bastille@noaa.gov>
+**Data steward**: Brandon Beltz <brandon.beltz@noaa.gov>
   
-**Points of contact**: James Gartland (NEAMAP), <jgartlan@vims.edu>; Rebecca Peters (ME/NH survey), <rebecca.j.peters@maine.gov>; Sean Lucey (MA Inshore Survey), <sean.lucey@noaa.gov>
+**Points of contact**: James Gartland (NEAMAP), <jgartlan@vims.edu>; Rebecca Peters (ME/NH survey), <rebecca.j.peters@maine.gov>
   
 **Public availability statement**: Data are available upon request. 
 
@@ -30,7 +30,7 @@ The following R code was used to process inshore bottom trawl data into the `eco
 
 **New England**
 
-https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_inshore_survdat.R
+https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_ne_inshore_survey.R
 
 **Massachusetts**
 

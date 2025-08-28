@@ -1,38 +1,36 @@
-# Fishery Reliance and Social Vulnerability {#engagement}
+# Community Social Vulnerability Indicators (CSVI) {#engagement}
 
-**Description**: Fishing community commercial and recreational fishing reliance and social vulnerability
+**Description**: The data presented here are 2022 social vulnerability indicators in top commercial and top recreational communities in Mid-Atlantic and New England regions, respectively.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+) 
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2018+), State of the Ecosystem - Mid-Atlantic (2018+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Database pull with analysis
 
-**Contributor(s)**: Lisa L. Colburn, Changhua Weng
+**Contributor(s)**: Robert Murphy, Changhua Weng, Tanya Noteva
   
-**Data steward**: Changhua Weng <changhua.weng@noaa.gov>
+**Data steward**: Robert Murphy <robert.murphy@noaa.gov>; Changhua Weng <changhua.weng@noaa.gov>
 
-**Point of contact**: Lisa L. Colburn <lisa.colburn@noaa.gov>
+**Point of contact**: Robert Murphy <robert.murphy@noaa.gov>; Changhua Weng <changhua.weng@noaa.gov>
   
-**Public availability statement**: The source data used to construct the commercial fishing engagement and reliance indices include confidential information and are not available publicly. However, the commercial fishing engagement and reliance indices are not confidential so are available to the public. All calculated indices can be found [here](https://www.fisheries.noaa.gov/national/socioeconomics/social-indicators-coastal-communities).
+**Public availability statement**: Source data are NOT publicly available. Please email Robert Murphy <robert.murphy@noaa.gov> for further information and queries of fishing and vulnerability indicator source data.
   
-
 ## Methods
 
-
 ### Data sources
-NOAA Fisheries' Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic and fisheries variables. The social and demographic data were downloaded from the 2018 American Community Survey (ACS) 5-yr estimates Dataset at the [U.S. Census American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs/) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the SOLE server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the [Marine Recreational Information Program (MRIP)](https://www.st.nmfs.noaa.gov/recreational-fisheries/MRIP/), and for this analysis was custom requested from NOAA Fisheries headquarters.
-
+NOAA Fisheries’ Community Social Vulnerability Indicators (CSVIs) were developed using secondary data including social, demographic, and fisheries variables. The social and demographic data were downloaded from the 2022 American Community Survey (ACS) 5-yr estimates Dataset in the U.S. Census American Community Survey (ACS) for coastal communities at the Census Designated Place (CDP) level, and in some cases the County Subdivision (MCD) level. Commercial fisheries data were pulled from the CAMS server located at Northeast Fisheries Science Center in Woods Hole, MA. The recreational fishing information is publicly accessible through the Marine Recreational Information Program (MRIP), and for this analysis was custom requested from NOAA Fisheries headquarters.
 
 ### Data extraction 
 Commercial fisheries data was pulled from the NEFSC SOLE server in Woods Hole, MA.
 
 SQL and SAS code for data extraction and processing steps can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/comm_rel_vuln_extraction.sql). 
 
-
-
 ### Data analysis
-The indicators were developed using the methodology described in @Jacob2010, @Jacob2013, @colburn_social_2012 and @Jepson2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above.500; factor loadings above.350; Bartlett's test of sphericity significance above .05; and an Armor's Theta reliability coefficient above .500. Factor scores for each community were ranked based on standard deviations into the following categories: High(>=1.00SD), MedHigh .500-.999 SD), Moderate (.000-.499 SD) and Low (<.000 SD).
+The indicators were developed using the methodology described in @jacob_exploring_2010, @jacob_development_2013, @colburn_social_2012 and @jepson_development_2013. Indicators were constructed through principal component analysis with a single factor solution, and the following criteria had to have been met: a minimum variance explained of 45%; Kasier-Meyer Olkin measure of sampling adequacy above 0.500; factor loadings above 0.350; Bartlett’s test of sphericity significance above 0.05; and an Armor’s Theta reliability coefficient above 0.500. Factor scores for each community were ranked based on standard deviations into the following categories: High (>=1.00SD), Medium-High 0.500-0.999 SD), Medium (0.000-0.499 SD) and Low (<0.000 SD).
+
+Note, commercial and recreational reliance indicators have been renamed as ‘population relative engagement’ indicators given that they are a proxy for how engaged each community is in fishing relative to its total population size. The calculation of these indicators remains the same.
 
 ### Data processing
+Commercial fisheries data was pulled from the NEFSC CAMS server in Woods Hole, MA.
 
 Data were formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_engagement.R).
 

@@ -20,10 +20,10 @@
 
 
 ### Data Extraction
-Data extraction described in Stevens et al. 2023.
+Data extraction described in @stevens_modeling_2019.
 
 ### Data Analysis 
-Data analysis described in Stevens et al. 2023.  
+Data analysis described in @stevens_modeling_2019.  
 
 ### Data Processing 
 

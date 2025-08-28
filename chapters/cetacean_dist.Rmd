@@ -1,0 +1,33 @@
+# Cetacean Distribution Shifts {#cetacean_dist}
+
+**Description**: The data presented here are the locations of the center of core habitat for cetaceans by season as documented in 2010 versus 2017.
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2024), State of the Ecosystem - Mid-Atlantic (2024)
+
+**Indicator category**:  Published methods.
+
+**Contributor(s)**:  Sam Chavez, Debra Palka
+
+**Data steward**: Debra Palka <debra.palka@noaa.gov>
+  
+**Point of contact**: Debra Palka <debra.palka@noaa.gov>
+  
+**Public availability statement**:  Source data are publicly available.
+
+
+  
+## Methods
+
+### Data sources
+Data collected during NMFS aerial and shipboard line transect abundance surveys [@palka_atlantic_2021]. Processed data are available at https://github.com/NEFSC/READ-PSB-AMAPPS-public
+
+### Data analysis
+Centroid of spatial density distribution map from each season and species in 2010 was then compared to the corresponding season and species in 2017 [@chavez-rosales_detection_2022]. 
+
+### Data processing
+Line transect data were processed using standard 2-team Distance sampling analysis methods, then used in generalized additive models to describe the spatiotemporal habitat-density relationships [@chavez-rosales_detection_2022].
+
+The Cetacean distribution shifts indicator was formatted for inclusion in the `ecodata` R package using the R script  found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_cetacean_dist.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/cetacean_dist.html>

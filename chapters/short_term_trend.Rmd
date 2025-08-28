@@ -1,0 +1,50 @@
+# Short Term Trend Analysis
+
+
+**Description**: Time series trend analysis for short time series
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2025+), State of the Ecosystem - Mid-Atlantic (2025+)
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Andy Beet
+
+**Data steward**: NA
+
+**Point of contact**: Andy Beet, <andrew.beet@noaa.gov>
+
+**Public availability statement**: NA
+
+
+## Methods
+
+In prep: **A.Beet "A test for short term trend detection in the presence of autocorrelation"**
+
+The specific model addressed here is of the form,
+
+\begin{equation}
+  Y_t = \beta_0 + \beta_1 t + \epsilon_t  
+\end{equation}
+
+where $\epsilon_t = \phi\epsilon_{t-1} + z_t$ is a stationary first order autoregressive process with $z_t \sim N(0,\sigma^2)$. Interest centers on testing the null hypothesis, $H_0:\beta_1 = 0$ against the alternative, $H_1:\beta_1 \neq 0$
+
+Testing for a trend in time series data has been addressed by many authors from a wide range of disciplines including economics, statistics, hydrology, ecology, fisheries, and epidemiology (@cochrane_application_1949, @prais_trend_1954, @beach_maximum_1978, @park_estimating_1980, @brillinger_trend_1994, @bence_analysis_1995, @woodward_improved_1997, @zhang_temperature_2000, @yue_influence_2002, @wang_linear_2015 ,@hardison_simulation_2019). These approaches have typically taken one of three paths; non parametric methods such as the Mann Kendall test and its pre-whitening variants (@hamed_modified_1998,  @zhang_temperature_2000, @yue_applicability_2002,  @wang_linear_2015); parametric methods involving data transformation such as @cochrane_application_1949, @prais_trend_1954, @woodward_improved_1997; parametric methods such as generalized least squares and maximum likelihood estimation (@beach_maximum_1978,  @davidson_economic_1999, @pinheiro_mixed-effects_2000). 
+
+It has been well documented that under the null hypothesis of no trend, $H_0:\beta_1=0$, in the presence of autocorrelation, parametric tests relying on asymptotic distribution theory reject the null hypothesis too frequently, leading to nominal significance levels that are too high, even for relatively long time series of length n = 100 (@woodward_improved_1997). Non parametric tests like those listed above also suffer the same problem. 
+
+We introduce a test that, like @beach_maximum_1978, uses maximum likelihood for parameter estimation, but differs in that the significance of the likelihood ratio statistic, LR, is assessed via a parametric bootstrap (@efron_inrtoduction_1993). Parametric bootstrap procedures have been used in some of the aforementioned work. @woodward_improved_1997 uses an alternative statistic, the Cochrane-Orchutt statistic, for detecting a trend. @rayner_bootstrapping_1990 focuses on the significance of the AR(1) parameter and @bence_analysis_1995 focuses on adjusting confidence intervals. We use the parametric bootstrap as an alternative means of assessing the significance of the LR statistic.
+
+The Likelihood ratio statistic combined with a parametric bootstrap is employed to test for a linear trend in the presence of autocorrelation in the form of an AR(1) process. Small samples of size, n = 10, are of particular interest. 
+
+### Data source(s)
+NA
+
+### Data extraction
+NA
+
+### Data analysis
+
+Code used for the fitting and evaluation of short term trend can be found [here](https://github.com/NOAA-EDAB/arfit).
+
+**catalog link**
+No associated catalog page

@@ -26,7 +26,7 @@ Data comes from NOAA's high resolution blended analysis of daily sea surface tem
 
 ### Data analysis
 
-Analysis was recreated from @friedland2015. 
+Analysis was recreated from @friedland_spring_2015. 
 
 
 ### Data Processing

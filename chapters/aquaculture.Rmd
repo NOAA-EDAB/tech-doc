@@ -1,6 +1,6 @@
 # Aquaculture {#aquaculture}
 
-**Description**: Aquaculture indicators
+**Description**: Oyster production: number of oysters harvested from aquaculture.
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017, 2018 (Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2017, 2018, 2019)
 
@@ -59,7 +59,7 @@ Aquaculture data included in the State of the Ecosystem (SOE) report were time s
 
 
 ### Data sources
-Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@Hudson2017a]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@ACC2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@Calvo2017]. 
+Virginia oyster harvest data are collected from mail and internet-based surveys of active oyster aquaculture operations on both sides of the Chesapeake Bay, which are then synthesized in an annual report [@hudson_virginia_2017]. In Maryland, shellfish aquaculturists are required to report their monthly harvests to the Maryland Department of Natural Resources (MD-DNR). The MD-DNR then aggregates the harvest data for release in the Maryland Aquaculture Coordinating Council Annual Report [@acc_maryland_2017], from which data were collected. Similar to Virginia, New Jersey releases annual reports synthesizing electronic survey results from lease-holding shellfish growers. Data from New Jersey reflects cage reared oysters grown from hatchery seed [@calvo_new_2017]. 
 
 
 ### Data extraction 

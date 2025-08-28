@@ -1,65 +1,71 @@
 # Highly Migratory Species Landings {#hms_landings}
 
-**Description**: Atlantic Highly Migratory Species Landings
+**Description**: Aggregated Atlantic HMS landings data prepared for the Fisheries of the United States (FUS) report, spanning 2015-2023.
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021+)
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2020(Different Methods), 2021+), State of the Ecosystem - Mid-Atlantic (2020(Different Methods), 2021+), State of the Ecosystem - Indicator Catalog (2024+)
 
 **Indicator category**: Database pull with analysis
 
 **Contributor(s)**: Heather Baertlein, Jackie Wilson, George Silva, Jennifer Cudney
-  
-**Data steward**: Jennifer Cudney <jennifer.cudney@noaa.gov>
-  
-**Point of contact**: Jennifer Cudney <jennifer.cudney@noaa.gov>
-  
-**Public availability statement**: Source data are NOT publicly available.
+
+**Data steward**: Jennifer Cudney [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email}
+
+**Point of contact**: Jennifer Cudney [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email}
+
+**Public availability statement**: Source data are NOT publicly available. Confidential data may be released in "any aggregate or summary form which does not directly or indirectly disclose the identity or business of any person who submits such information" (Magnuson-Stevens Act § 402(b)(3); 16 U.S.C. 1881a(b)(3)). NOAA Fisheries presents such information only if it can be aggregated or summarized at a temporal and/or spatial level to maintain confidentiality of individuals, businesses, and related business information. Data that has been properly screened to meet data standards and confidentiality are publicly available via the Fisheries of the United States (FUS) landings portal. Canadian landings information, which are included in this analysis, are not included in the FUS portal (<https://www.fisheries.noaa.gov/national/sustainable-fisheries/commercial-fisheries-landings>). Data should be aggregated to protect data confidentiality (raw data are lumped by year and species). Data were included in the final summary unless there were 2 or less dealers involved in the landings, 2 or less vessels, or if any one dealer or vessel purchased/landed more than 2/3 of the total amount for that data unit. Please email [jennifer.cudney\@noaa.gov](mailto:jennifer.cudney@noaa.gov){.email} for further information and queries of source data.
 
 ## Methods
+
 ### Data Sources
-Data from eDealer database (https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting) and Bluefin Tuna Dealer reports on SAFIS (https://www.accsp.org/what-we-do/safis/).  The eDealer data were supplemented with ACCSP records, GulfFIN records, and pelagic and coastal fisheries vessel logbook catches reported to SEFSC for which no dealer reports were submitted.
+
+Data from eDealer database (<https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting>) and Bluefin Tuna Dealer reports on SAFIS (<https://www.accsp.org/what-we-do/safis/>). The eDealer data were supplemented with ACCSP records, GulfFIN records, and pelagic and coastal fisheries vessel logbook catches reported to SEFSC for which no dealer reports were submitted.
 
 ### Data Analysis
-Data, from 2015-2022, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database and the Caribbean Commercial Vessel logbook database. Additional landings of these HMS not in this dataset were collected from ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook databases. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS.
 
-Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state reporting requirements and definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, may result in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings prior to summarizing the data for analyses, including the Fisheries of the United States.
+Data, from 2015-2023, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database and the Caribbean Commercial Vessel logbook database. Additional landings of these HMS not in this dataset were collected from ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook databases. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS.
+
+Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as ""Packing"". Differences in federal and state reporting requirements and definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, may result in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings prior to summarizing the data for analyses, including the Fisheries of the United States.
 
 All reported landings were converted to live weights using conversion ratios appropriate for the species/species group and reported grade of the product. Shark fins, shark heads, shark tails, and shark bellies were not reported to live weight as these weights are included in the converted whole weight of the reported shark landing.
 
-States, where the landings occurred, were grouped into ‘ecological production units’ (EPUs), as defined by GARFO staff. “New England”, or NE, includes Maine, New Hampshire and Massachusetts, as well as landings from Canada. The “Mid-Atlantic Bight”, or MAB, includes states from Rhode Island to North Carolina. Landings in states outside of these EPUs were excluded from further summaries.
+States, where the landings occurred, were grouped into ‘ecological production units’ (EPUs), as defined by GARFO staff. “New England” includes Maine, New Hampshire and Massachusetts, as well as landings from Canada. The “Mid-Atlantic Bight” includes states from Rhode Island to North Carolina. Landings in states outside of these EPUs were excluded from further summaries.
 
 Seven HMS Management Groups represent 26 highly migratory species in the dataset. HMS Management Groups may include a single species or a group of species. HMS groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark. 
 
+On July 1, 2023, a zero-retention limit went into effect for shortfin mako sharks; therefore, 2023 landings of shortfin mako between January and June were considered “Pelagic Sharks” and in July and after were considered “Prohibited shark species”. No landings of shortfin mako were reported after June 2023 in the northeast region. 
+
 Price per pound was used to determine the ex-vessel value. For landings with a reported disposition of “Food” and prices per pound reported as “N/A”, 0, $0.01 or left blank, average prices were calculated for each species and state. Those average prices replaced the missing values to determine landings revenue. Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens.
 
-### Data Processing 
+### Data Processing
+
 Highly migratory species landings include 26 species of tunas, sharks and swordfish. Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of entities represented was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential; generally, data was marked confidential if it did not meet the "rule of three" (i.e., at least three unique entities represented).
 
 HMS landings data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_landings.R).
 
 ## Methods 2020
 
-
 ### Data sources
-Data from eDealer database (https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting) and Bluefin Tuna Dealer reports on [SAFIS](https://www.accsp.org/what-we-do/safis/).  The eDealer data were supplemented with GulfFIN records and vessel logbook catches for which no dealer reports were submitted.
 
+Data from eDealer database (<https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting>) and Bluefin Tuna Dealer reports on [SAFIS](https://www.accsp.org/what-we-do/safis/). The eDealer data were supplemented with GulfFIN records and vessel logbook catches for which no dealer reports were submitted.
 
-### Data extraction 
+### Data extraction
+
 Data were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues.
 
 Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database. Additional landings of these HMS not in eDealer were found in GulfFIN records. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS .
 
-Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in “Packing” situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state definitions of who is considered the “dealer” of the product, and thus ultimately responsible for submitting the landings report, often results in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings. Therefore, searches for duplicate reports of the same landing were conducted and eliminated prior to summarizing the data for the Fisheries of the United States.
+Procedures of quality assurance were conducted. Duplicate records were removed from the data. This may occur from multiple submissions of reports by the same dealer. It may also occur when two or more dealers report the same landings in "Packing" situations. While most vessels immediately sell their catch to the dealer at their port of landing, some vessels sell their catch to a dealer(s) in another location. Transport to alternate locations requires processing of the fish to preserve quality. This processing activity is done by the dealer at the port of landing and is referred to as "Packing". Differences in federal and state definitions of who is considered the "dealer" of the product, and thus ultimately responsible for submitting the landings report, often results in multiple reports being created for the same landings. These duplicate reports need to be accounted for when summarizing the data to reflect accurate landings. Therefore, searches for duplicate reports of the same landing were conducted and eliminated prior to summarizing the data for the Fisheries of the United States.
 
-Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens. 
+Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens.
 
 All reported landings were converted to live weights using conversion ratios appropriate for the species/species group and reported grade of the product. Shark fins were not reported to live weight as these weights are included in the converted whole weight of the reported shark landing.
 
-Price per pound was used to determine the ex-vessel value. For landings with prices per pound reported as “N/A”, 0, $0.01 or left blank, average prices were calculated for each species and state. Those averages replaced the missing values to determine landings revenue.
+Price per pound was used to determine the ex-vessel value. For landings with prices per pound reported as "N/A", 0, \$0.01 or left blank, average prices were calculated for each species and state. Those averages replaced the missing values to determine landings revenue.
 
-The extract only includes species with more than $1,000 in landings in the region for that year to avoid issues with data confidentiality.  Other species landed include: tiger sharks, porbeagle, bonnethead, blacknose, blue, lemon, silky and smooth hammerhead sharks. However, these are not reported because of low volume and resulting data confidentiality issues.
-
+The extract only includes species with more than \$1,000 in landings in the region for that year to avoid issues with data confidentiality. Other species landed include: tiger sharks, porbeagle, bonnethead, blacknose, blue, lemon, silky and smooth hammerhead sharks. However, these are not reported because of low volume and resulting data confidentiality issues.
 
 ### Data analysis
+
 High migratory landings include 19 species of tunas, sharks and swordfish (table \@ref(tab:hmsspp)).
 
 ```{r hmsspp, eval = T, echo = F}
@@ -72,6 +78,4 @@ knitr::kable(rec_spp, caption="Species included in the highly migratory species 
 
 Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of records marked as confidential and the number of states represented in each regional species sum was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential.
 
-**catalog link**
-<https://noaa-edab.github.io/catalog/hms_landings.html>
-
+**catalog link** <https://noaa-edab.github.io/catalog/hms_landings.html>

@@ -1,0 +1,32 @@
+# Cetacean Weekly Acoustic Presence {#cetacean_acoustic}
+
+**Description**: A summary of weekly acoustic presence of eight cetacean species summarized across two years at four recording sites in southern New England.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Published methods
+
+**Contributor(s)**: Sofie Van Parijs, Annamaria DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Xavier Mouy, Tim Rowell, Sara Tennant, Annabel Westell, and Genevieve Davis
+  
+**Data steward**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>
+  
+**Point of contact**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>; Genevieve Davis <genevieve.davis@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data Sources
+
+Data collected by the NEFSC Passive Acoustic Branch from four recording sites in and around the southern New England Wind Energy areas. 
+
+### Data Analysis
+
+Manual verification of the automated detections was conducted to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis can be found in @vanparijs_establishing_2023.
+
+### Data Processing 
+
+Species-specific vocalizations of eight cetacean were identified in the acoustic data using multiple automated detectors following the methodology described in @vanparijs_establishing_2023.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/cetacean_acoustic.html>

@@ -1,4 +1,4 @@
-# Bottom temperature - High Resolution {#bottom_temp_seasonal_gridded}
+# Bottom temperature - High Resolution {#bottom_temp_model_gridded}
 
 **Description**: Seasonal bottom temperatures on the Northeast Continental Shelf between 1959 and 2022 in a 1/12° grid. 
 
@@ -6,7 +6,7 @@
 
 **Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2023+); State of the Ecosystem - Mid-Atlantic Bight (2023+)
 
-**Contributor(s)**: Joe Caracappa, Hubert du Pontavice, Vincent Saba, Zhuomin Chen
+**Contributor(s)**: Joe Caracappa, Vincent Saba, Zhuomin Chen
 
 **Data steward**: Joe Caracappa, joseph.caracappa@noaa.gov
 
@@ -29,18 +29,18 @@ The bottom temperature product is in a horizontal 1/12 degree grid between 1959 
 *Bias-corrected ROMS-NWA (ROMScor) between 1959 and 1992 which was regridded
 in the same 1/12degree grid as GLORYS using bilinear interpolation;
 *GLORYS12v1 in its original 1/12 degree grid between 1993 and 2020;
-*GLO12v3 (called PSY4V3R1 in @duPontavice2023 and @Lellouche2018) in its original 1/12 degree grid for 2021.
+*GLO12v3 (called PSY4V3R1 in @noauthor_high-resolution_2023 and @lellouche_recent_2018 in its original 1/12 degree grid for 2021.
 *GLO12v4 in its original 1/12 degree grid for 2022.
 
 #### Ocean model data
 
 Four ocean models were used to get high-resolution daily bottom temperature on the NEUS between 1959 and 2022.
 
-For the period between 1959 and 1992, we used daily ocean bottom temperature from the long-term (1958–2007) high-resolution numerical simulation of the Northwest Atlantic Ocean in the Regional Ocean Modelling System (ROMS), a split-explicit, free-surface, terrain-following, hydrostatic, primitive equation model (@Shchepetkin2005). The model domain covers the Northwest Atlantic Ocean with ~7km horizontal resolution and 40 vertical terrain- following layers. A detailed description of ROMS-NWA can be found in @chen2018.
+For the period between 1959 and 1992, we used daily ocean bottom temperature from the long-term (1958–2007) high-resolution numerical simulation of the Northwest Atlantic Ocean in the Regional Ocean Modelling System (ROMS), a split-explicit, free-surface, terrain-following, hydrostatic, primitive equation model (@shchepetkin_regional_2005). The model domain covers the Northwest Atlantic Ocean with ~7km horizontal resolution and 40 vertical terrain- following layers. A detailed description of ROMS-NWA can be found in @chen_seasonal_2018.
 
-For the period between 1992 and 2020, the daily bottom temperature outputs from the GLORYS12v1 ocean reanalysis product were used. GLORYS12v1 is a global ocean, eddy-resolving, and data assimilated hindcast from Mercator Ocean (European Union-Copernicus Marine Service, 2018; Fernandez and Lellouche2018; @Lellouche2021) with 1/12 degree horizontal resolution and 50 vertical levels. The base ocean model is the Nucleus for European Modelling of the Ocean 3.1 (NEMO 3.1; Madec, 2016) driven at the surface by the European Centre for the Medium-Range Weather Forecasts (ECMWF) ERA-Interim reanalysis (@Dee2011). Remotely sensed and in situ observations are jointly assimilated by means of a reduced-order Kalman filter.
+For the period between 1992 and 2020, the daily bottom temperature outputs from the GLORYS12v1 ocean reanalysis product were used. GLORYS12v1 is a global ocean, eddy-resolving, and data assimilated hindcast from Mercator Ocean (European Union-Copernicus Marine Service, 2018; @lellouche_recent_2018; @jean-michel_copernicus_2021) with 1/12 degree horizontal resolution and 50 vertical levels. The base ocean model is the Nucleus for European Modelling of the Ocean 3.1 (NEMO 3.1; Madec, 2016) driven at the surface by the European Centre for the Medium-Range Weather Forecasts (ECMWF) ERA-Interim reanalysis (@dee_era-interim_2011). Remotely sensed and in situ observations are jointly assimilated by means of a reduced-order Kalman filter.
 
-For the year 2021 and 2022, we used GLO12v4 which is a revised and updated version of GLO12v3 (European Union-Copernicus Marine Service, 2016). The general model structure is similar to GLO12v3 with some changes in model configuration, parameterizations, relaxations to avoid spurious drifts, river inputs, atmospheric fluxes and data assimilation (more detail in https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description)
+For the years 2021 and 2022, we used GLO12v4 which is a revised and updated version of GLO12v3 (European Union-Copernicus Marine Service, 2016). The general model structure is similar to GLO12v3 with some changes in model configuration, parameterizations, relaxations to avoid spurious drifts, river inputs, atmospheric fluxes and data assimilation (more detail in https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description)
 
 #### Bias-correction process of NWA-ROMS
 
@@ -51,4 +51,4 @@ We used the methodology presented in du Pontavice et al. (2023) based on the Nor
 Derived bottom temperature data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_bottom_temp_comp.R).
 
 **catalog link**
-<https://noaa-edab.github.io/catalog/bottom_temp_seasonal_gridded.html>
+<https://noaa-edab.github.io/catalog/bottom_temp_model_gridded.html>

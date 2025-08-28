@@ -1,0 +1,81 @@
+# Zooplankton Indices {#zooplankton_index}
+
+**Description**: Model-based abundance and annual center of gravity indices for zooplankton groups sampled by NEFSC surveys
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sarah Gaichas and Harvey Walsh
+  
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Public availability statement**: Source data are NOT publicly available.
+
+## Methods
+
+### Data Sources
+
+The Northeast Fisheries Science Center has conducted [zooplankton surveys](https://www.fisheries.noaa.gov/inport/item/9286) since the 1970s.
+
+The dataset through 2022 used in this analysis was obtained from the Oceanography Branch. 
+
+### Data Analysis
+
+#### VAST models
+VAST is a spatio-temporal modeling framework used for index standardization [@thorson_comparing_2017; @thorson_guidance_2019].
+
+Zooplankton models were evaluated using two stages of model selection to determine whether to include
+
+1. spatial and spatio-temporal random effects, and
+
+2. "catchability" covariates affecting the observation process: day of year.
+
+Model selection script is
+https://github.com/NOAA-EDAB/zooplanktonindex/blob/main/VASTscripts/VASTunivariate_zoopindex_modselection.R
+
+Models were run using REML and without bias correction.
+
+Two different observation models were applied. The default VAST index standardization (purpose = "index2" in make_settings) uses a Gamma distribution for positive catches and an alternative "Poisson-link delta-model" using log-link for numbers-density and log-link for biomass per number (ObsModel= c(2,1)).
+
+We applied the default observation model to Calanus finmarchicus (calfin_100m3) and Large copepods (calfin_100m3 + mlucens_100m3 + calminor_100m3 + euc_100m3 + calspp_100m3) datasets.
+
+The default was used for index standardization of stomach contents data for pelagic and benthic forage indices. It is intended for continuous data, which includes biomass data and "numbers standardized to a fixed area" (see section starting at line 239 in the VAST user manual [here](https://github.com/James-Thorson-NOAA/VAST/blob/main/manual/VAST_model_structure.pdf). I am interpreting zooplankton abundance per 100 cubic meters as numbers standardized to a fixed area (volume) in applying the Gamma observation model.
+
+For data where there are some years where the species is present in all (or 0) samples, estimating the probability of encounter fails (or at least, VAST won't let you try). In these cases, the options are to treat intercepts representing temporal variability as random effects (by setting RhoConfig Beta or Epsilon entries to something other than 0), or to use a different link function.
+
+We intend for our indices to potentially be used in assessment (though as a covariate rather than an index, so maybe I'm being too strict), so the recommendation is to "minimize covariance in the estimated index by excluding any temporal correlation on model components (i.e., the intercept is a fixed effect in each year, and the spatio-temporal term is independent in each year)" [@thorson_guidance_2019].
+
+All of the small copepods datasets had at least one year where our small copepods groupings were encountered at all stations. None had years with 0 encounters.
+
+Therefore, we used a different link function, the Poisson-link fixing encounter probability=1 for any year where all samples encounter the species. We kept all other settings for index standardization the same, but set (ObsModel= c(2,4)).
+
+Model selection results are reported at this link: https://noaa-edab.github.io/zooplanktonindex/CopeModSelection.html
+
+In the second stage of model selection, the day of year covariate had mixed success. Results of the best models which both converged and had the lowest AIC are reported here: https://noaa-edab.github.io/zooplanktonindex/CopeModResults.html
+
+### Data Processing 
+
+#### Data were aggregated into groups for analysis (names indicate column names in the dataset linked above):
+A lookup of these column headings is here: https://www.fisheries.noaa.gov/inport/item/35054
+
+- Calanus finmarchicus (calfin_100m3) = “calfin” ,
+- Large copepods (calfin_100m3, mlucens_100m3, calminor_100m3, euc_100m3, calspp_100m3) = “lgcopeALL”,
+- Small copepods (all) (ctyp_100m3, pseudo_100m3, tlong_100m3, cham_100m3, para_100m3, acarspp_100m3, clauso, acarlong_100m3, fur_100m3, ost_100m3, temspp_100m3, tort_100m3, paraspp_100m3) = “smallcopeALL” and
+- Small copepods (SOE) (ctyp_100m3, pseudo_100m3, tlong_100m3, cham_100m3) = “smallcopeSOE”.
+- Euphausiids = "euph_100m3"
+- Zoopvolume = "volume_100m3"
+
+#### Data were assigned to seasonal blocks
+- Spring = January-June
+- Fall = July-December
+
+#### Years were selected for analysis
+1982 - 2022
+
+The script that processes input data is available here: https://github.com/NOAA-EDAB/zooplanktonindex/blob/main/data/VASTzoopindex_processinputs.R
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/zooplankton_index.html>

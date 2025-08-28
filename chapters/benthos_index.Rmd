@@ -1,0 +1,52 @@
+# Benthic Invertebrate Indices {#benthos_index}
+
+**Description**: Aggregate macrobenthos and megabenthos invertebrate indices from fish stomach contents
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Sarah Gaichas, James Gartland, Brian E. Smith, Sarah Weisberg, Sean Lucey
+  
+**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available. All data and code available on GitHub at <https://github.com/NOAA-EDAB/benthosindex>
+
+## Methods
+
+### Data Sources
+
+Data used to develop these indicators comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Bottom temperature data is described in [Bottom temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom_temp_seasonal_gridded.html). 
+
+### Data Analysis
+
+VAST spatio-temporal modeling [@thorson_comparing_2017; @thorson_guidance_2019] is described here.
+
+The approach follows that used for the forage fish index [@gaichas_assessing_2023], which was in turn based on @ng_predator_2021.
+
+Two stages of model selection determined whether to include:
+
+1. spatial and spatio-temporal random effects, and
+2. vessel effects, and "catchability" covariates affecting the observation process: mean predator size, number of predators, and bottom temperature.
+Using REML in stage 1, models including spatial and spatio-temporal random effects as well as anisotropy were best supported by the data. This was true for the spring dataset and the fall dataset for both macrobenthos and megabenthos.
+
+In stage 2, combinations of catchability covariates were better supported by the data than vessel effects. Model comparisons led us to the best model fit using mean predator length, number of predator species, and bottom temperature at a survey station as catchability covariates.
+
+Model selection results are reported at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+Scripts used to run the model selection and to produce the final bias corrected models are posted at <https://github.com/NOAA-EDAB/benthosindex/tree/main/VASTscripts>
+
+### Data Processing 
+
+The basic workflow is to develop a dataset of stomach contents data where fish predators act as samplers of the prey field, then fit a vector autoregressive spatio-temporal (VAST) model to this dataset to generate an index. Dataset development is described here.
+
+NEFSC survey food habits data were extracted and provided by Brian Smith (NEFSC). NEAMAP survey food habits data were extracted and processed by James Gartland (VIMS). Macrobenthos and Megabenthos categories were those used in Northeast US food web models. The Macrobenthos Rpath category has 833 food habits database species codes. The Megabenthos Rpath category has 105 food habits database species codes. All are listed at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+Benthic predator/size combinations were selected using a cluster analysis of a diet similarity matrix provided by Brian Smith. Species categorized as pelagic or piscivorous feeders were eliminated, and all other species were retained as general benthivores. This resulted in 88 predator/size combinations used to "sample" benthic invertebrates. The predator/size list is available at [this link](https://noaa-edab.github.io/benthosindex/WorkflowDecisions.html).
+
+These input datasets were processed, aggregated, and combined with bottom temperature data to become VAST model input datasets using the script at [this link](https://github.com/NOAA-EDAB/benthosindex/blob/main/fhdata/VASTbenthos_ProcessInputDat.R).
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/benthos_index.html>

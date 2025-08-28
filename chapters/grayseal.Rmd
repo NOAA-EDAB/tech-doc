@@ -7,7 +7,7 @@
 
 **Indicator category**: Synthesis of published information; Published methods
 
-**Contributor(s)**: Kristin Precoda, Christopher D. Orphanides, Debra Palka
+**Contributor(s)**: Kristin Precoda, Kimberly Murray, Debra Palka
   
 **Data steward**: Debra Palka <debra.palka@noaa.gov>
 
