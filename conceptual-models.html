@@ -20,7 +20,7 @@
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="libs/datatables-binding-0.33/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -865,22 +865,22 @@ sessionInfo(package = NULL)
 #> [6] methods   base     
 #> 
 #> other attached packages:
-#>  [1] knitr_1.50       kableExtra_1.4.0 here_1.0.1      
-#>  [4] ecodata_6.0      lubridate_1.9.4  forcats_1.0.0   
-#>  [7] stringr_1.5.1    dplyr_1.1.4      purrr_1.1.0     
+#>  [1] knitr_1.50       kableExtra_1.4.0 here_1.0.2      
+#>  [4] ecodata_6.0.1    lubridate_1.9.4  forcats_1.0.1   
+#>  [7] stringr_1.5.2    dplyr_1.1.4      purrr_1.1.0     
 #> [10] readr_2.1.5      tidyr_1.3.1      tibble_3.3.0    
-#> [13] ggplot2_3.5.2    tidyverse_2.0.0 
+#> [13] ggplot2_4.0.0    tidyverse_2.0.0 
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] sass_0.4.10        generics_0.1.4    
 #>  [3] xml2_1.4.0         stringi_1.8.7     
 #>  [5] hms_1.1.3          digest_0.6.37     
-#>  [7] magrittr_2.0.3     evaluate_1.0.5    
+#>  [7] magrittr_2.0.4     evaluate_1.0.5    
 #>  [9] grid_4.5.1         timechange_0.3.0  
 #> [11] RColorBrewer_1.1-3 bookdown_0.44     
 #> [13] fastmap_1.2.0      rprojroot_2.1.1   
 #> [15] jsonlite_2.0.0     viridisLite_0.4.2 
-#> [17] scales_1.4.0       textshaping_1.0.1 
+#> [17] scales_1.4.0       textshaping_1.0.3 
 #> [19] jquerylib_0.1.4    cli_3.6.5         
 #> [21] crayon_1.5.3       rlang_1.1.6       
 #> [23] bit64_4.6.0-1      withr_3.0.2       
@@ -889,15 +889,15 @@ sessionInfo(package = NULL)
 #> [29] tzdb_0.5.0         memoise_2.0.1     
 #> [31] vctrs_0.6.5        R6_2.6.1          
 #> [33] lifecycle_1.0.4    bit_4.6.0         
-#> [35] fs_1.6.6           vroom_1.6.5       
-#> [37] pkgconfig_2.0.3    pillar_1.11.0     
+#> [35] fs_1.6.6           vroom_1.6.6       
+#> [37] pkgconfig_2.0.3    pillar_1.11.1     
 #> [39] bslib_0.9.0        gtable_0.3.6      
-#> [41] glue_1.8.0         systemfonts_1.2.3 
+#> [41] glue_1.8.0         systemfonts_1.3.1 
 #> [43] xfun_0.53          tidyselect_1.2.1  
 #> [45] rstudioapi_0.17.1  farver_2.1.2      
 #> [47] htmltools_0.5.8.1  svglite_2.2.1     
-#> [49] rmarkdown_2.29     compiler_4.5.1    
-#> [51] downlit_0.4.4
+#> [49] rmarkdown_2.30     compiler_4.5.1    
+#> [51] S7_0.2.0           downlit_0.4.4
 
 
 #Use this to output a detailed list of the package information
@@ -1216,11 +1216,11 @@ current.session$otherPkgs
 #> $here
 #> Package: here
 #> Title: A Simpler Way to Find Your Files
-#> Version: 1.0.1
-#> Date: 2020-12-13
+#> Version: 1.0.2
+#> Date: 2025-09-06
 #> Authors@R: c(person(given = "Kirill", family =
 #>       "M\u00fcller", role = c("aut", "cre"), email =
-#>       "krlmlr+r@mailbox.org", comment = c(ORCID =
+#>       "kirill@cynkra.com", comment = c(ORCID =
 #>       "0000-0002-1416-3412")), person(given =
 #>       "Jennifer", family = "Bryan", role = "ctb",
 #>       email = "jenny@rstudio.com", comment = c(ORCID
@@ -1235,39 +1235,39 @@ current.session$otherPkgs
 #> URL: https://here.r-lib.org/,
 #>       https://github.com/r-lib/here
 #> BugReports: https://github.com/r-lib/here/issues
-#> Imports: rprojroot (>= 2.0.2)
+#> Imports: rprojroot (>= 2.1.0)
 #> Suggests: conflicted, covr, fs, knitr,
 #>       palmerpenguins, plyr, readr, rlang, rmarkdown,
 #>       testthat, uuid, withr
 #> VignetteBuilder: knitr
 #> Encoding: UTF-8
-#> LazyData: true
-#> RoxygenNote: 7.1.1.9000
+#> RoxygenNote: 7.3.3.9000
 #> Config/testthat/edition: 3
+#> Config/Needs/website: tidyverse/tidytemplate
 #> NeedsCompilation: no
-#> Packaged: 2020-12-13 06:59:33 UTC; kirill
-#> Author: Kirill Müller [aut, cre]
-#>       (<https://orcid.org/0000-0002-1416-3412>),
-#>       Jennifer Bryan [ctb]
-#>       (<https://orcid.org/0000-0002-6983-2759>)
-#> Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
+#> Packaged: 2025-09-14 18:48:53 UTC; kirill
+#> Author: Kirill Müller [aut, cre] (ORCID:
+#>       <https://orcid.org/0000-0002-1416-3412>),
+#>       Jennifer Bryan [ctb] (ORCID:
+#>       <https://orcid.org/0000-0002-6983-2759>)
+#> Maintainer: Kirill Müller <kirill@cynkra.com>
 #> Repository: RSPM
-#> Date/Publication: 2020-12-13 07:30:02 UTC
-#> Built: R 4.5.0; ; 2025-04-05 03:26:36 UTC; unix
+#> Date/Publication: 2025-09-15 05:10:09 UTC
+#> Built: R 4.5.0; ; 2025-09-16 04:25:19 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: here
 #> RemoteRef: here
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 1.0.1
+#> RemoteSha: 1.0.2
 #> 
 #> -- File: /home/runner/work/_temp/Library/here/Meta/package.rds 
 #> 
 #> $ecodata
 #> Package: ecodata
 #> Title: Documentation of Ecosystem Indicator Reporting
-#> Version: 6.0
+#> Version: 6.0.1
 #> Authors@R: c(person("Brandon", "Beltz", email =
 #>       "brandon.beltz@noaa.gov", role = c("cre",
 #>       "aut")), person("Andy", "Beet", email =
@@ -1302,19 +1302,19 @@ current.session$otherPkgs
 #> RemoteUsername: NOAA-EDAB
 #> RemotePkgRef: NOAA-EDAB/ecodata
 #> RemoteRef: HEAD
-#> RemoteSha: cdb08f4d6af2327cc7f7d91937d784f5d4578163
+#> RemoteSha: 6aabcdfad776747d0f724bf7c91a574446f7e4c3
 #> GithubRepo: ecodata
 #> GithubUsername: NOAA-EDAB
 #> GithubRef: HEAD
-#> GithubSHA1: cdb08f4d6af2327cc7f7d91937d784f5d4578163
+#> GithubSHA1: 6aabcdfad776747d0f724bf7c91a574446f7e4c3
 #> NeedsCompilation: no
-#> Packaged: 2025-08-28 19:00:53 UTC; runner
+#> Packaged: 2025-10-02 15:05:23 UTC; runner
 #> Author: Brandon Beltz [cre, aut], Andy Beet [aut]
 #>       (ORCID:
 #>       <https://orcid.org/0000-0001-8270-7090>),
 #>       Kimberly Bastille [aut], Sean Hardison [aut]
 #> Maintainer: Brandon Beltz <brandon.beltz@noaa.gov>
-#> Built: R 4.5.1; ; 2025-08-28 19:01:02 UTC; unix
+#> Built: R 4.5.1; ; 2025-10-02 15:05:32 UTC; unix
 #> 
 #> -- File: /home/runner/work/_temp/Library/ecodata/Meta/package.rds 
 #> 
@@ -1392,10 +1392,11 @@ current.session$otherPkgs
 #> Package: forcats
 #> Title: Tools for Working with Categorical Variables
 #>       (Factors)
-#> Version: 1.0.0
+#> Version: 1.0.1
 #> Authors@R: c( person("Hadley", "Wickham", ,
-#>       "hadley@rstudio.com", role = c("aut", "cre")),
-#>       person("RStudio", role = c("cph", "fnd")) )
+#>       "hadley@posit.co", role = c("aut", "cre")),
+#>       person("Posit Software, PBC", role = c("cph",
+#>       "fnd"), comment = c(ROR = "03wc8by49")) )
 #> Description: Helpers for reordering factor levels
 #>       (including moving specified levels to front,
 #>       ordering by first appearance, reversing, and
@@ -1408,7 +1409,7 @@ current.session$otherPkgs
 #>       https://github.com/tidyverse/forcats
 #> BugReports:
 #>       https://github.com/tidyverse/forcats/issues
-#> Depends: R (>= 3.4)
+#> Depends: R (>= 4.1)
 #> Imports: cli (>= 3.4.0), glue, lifecycle, magrittr,
 #>       rlang (>= 1.0.0), tibble
 #> Suggests: covr, dplyr, ggplot2, knitr, readr,
@@ -1418,21 +1419,23 @@ current.session$otherPkgs
 #> Config/testthat/edition: 3
 #> Encoding: UTF-8
 #> LazyData: true
-#> RoxygenNote: 7.2.3
+#> RoxygenNote: 7.3.3
 #> NeedsCompilation: no
-#> Packaged: 2023-01-27 14:11:11 UTC; hadleywickham
-#> Author: Hadley Wickham [aut, cre], RStudio [cph, fnd]
-#> Maintainer: Hadley Wickham <hadley@rstudio.com>
+#> Packaged: 2025-09-24 17:08:21 UTC; hadleywickham
+#> Author: Hadley Wickham [aut, cre], Posit Software,
+#>       PBC [cph, fnd] (ROR:
+#>       <https://ror.org/03wc8by49>)
+#> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
-#> Date/Publication: 2023-01-29 22:20:02 UTC
-#> Built: R 4.5.0; ; 2025-04-05 03:32:02 UTC; unix
+#> Date/Publication: 2025-09-25 05:10:20 UTC
+#> Built: R 4.5.0; ; 2025-09-26 04:18:56 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: forcats
 #> RemoteRef: forcats
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 1.0.0
+#> RemoteSha: 1.0.1
 #> 
 #> -- File: /home/runner/work/_temp/Library/forcats/Meta/package.rds 
 #> 
@@ -1440,7 +1443,7 @@ current.session$otherPkgs
 #> Package: stringr
 #> Title: Simple, Consistent Wrappers for Common String
 #>       Operations
-#> Version: 1.5.1
+#> Version: 1.5.2
 #> Authors@R: c( person("Hadley", "Wickham", ,
 #>       "hadley@posit.co", role = c("aut", "cre",
 #>       "cph")), person("Posit Software, PBC", role =
@@ -1468,22 +1471,22 @@ current.session$otherPkgs
 #> Config/testthat/edition: 3
 #> Encoding: UTF-8
 #> LazyData: true
-#> RoxygenNote: 7.2.3
+#> RoxygenNote: 7.3.2
 #> NeedsCompilation: no
-#> Packaged: 2023-11-14 15:03:52 UTC; hadleywickham
+#> Packaged: 2025-09-03 22:57:02 UTC; hadleywickham
 #> Author: Hadley Wickham [aut, cre, cph], Posit
 #>       Software, PBC [cph, fnd]
 #> Maintainer: Hadley Wickham <hadley@posit.co>
 #> Repository: RSPM
-#> Date/Publication: 2023-11-14 23:10:02 UTC
-#> Built: R 4.5.0; ; 2025-04-05 03:30:05 UTC; unix
+#> Date/Publication: 2025-09-08 12:00:02 UTC
+#> Built: R 4.5.0; ; 2025-09-09 05:22:26 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: stringr
 #> RemoteRef: stringr
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 1.5.1
+#> RemoteSha: 1.5.2
 #> 
 #> -- File: /home/runner/work/_temp/Library/stringr/Meta/package.rds 
 #> 
@@ -1810,9 +1813,9 @@ current.session$otherPkgs
 #> 
 #> $ggplot2
 #> Package: ggplot2
-#> Version: 3.5.2
 #> Title: Create Elegant Data Visualisations Using the
 #>       Grammar of Graphics
+#> Version: 4.0.0
 #> Authors@R: c( person("Hadley", "Wickham", ,
 #>       "hadley@posit.co", role = "aut", comment =
 #>       c(ORCID = "0000-0003-4757-117X")),
@@ -1834,7 +1837,8 @@ current.session$otherPkgs
 #>       "0000-0002-9415-4582")), person("Teun", "van
 #>       den Brand", role = "aut", comment = c(ORCID =
 #>       "0000-0002-9335-7468")), person("Posit, PBC",
-#>       role = c("cph", "fnd")) )
+#>       role = c("cph", "fnd"), comment = c(ROR =
+#>       "03wc8by49")) )
 #> Description: A system for 'declaratively' creating
 #>       graphics, based on "The Grammar of Graphics".
 #>       You provide the data, tell 'ggplot2' how to map
@@ -1846,58 +1850,62 @@ current.session$otherPkgs
 #>       https://github.com/tidyverse/ggplot2
 #> BugReports:
 #>       https://github.com/tidyverse/ggplot2/issues
-#> Depends: R (>= 3.5)
-#> Imports: cli, glue, grDevices, grid, gtable (>=
-#>       0.1.1), isoband, lifecycle (> 1.0.1), MASS,
-#>       mgcv, rlang (>= 1.1.0), scales (>= 1.3.0),
-#>       stats, tibble, vctrs (>= 0.6.0), withr (>=
-#>       2.5.0)
-#> Suggests: covr, dplyr, ggplot2movies, hexbin, Hmisc,
-#>       knitr, mapproj, maps, multcomp, munsell, nlme,
-#>       profvis, quantreg, ragg (>= 1.2.6),
-#>       RColorBrewer, rmarkdown, rpart, sf (>= 0.7-3),
-#>       svglite (>= 2.1.2), testthat (>= 3.1.2), vdiffr
-#>       (>= 1.0.6), xml2
+#> Depends: R (>= 4.1)
+#> Imports: cli, grDevices, grid, gtable (>= 0.3.6),
+#>       isoband, lifecycle (> 1.0.1), rlang (>= 1.1.0),
+#>       S7, scales (>= 1.4.0), stats, vctrs (>= 0.6.0),
+#>       withr (>= 2.5.0)
+#> Suggests: broom, covr, dplyr, ggplot2movies, hexbin,
+#>       Hmisc, knitr, mapproj, maps, MASS, mgcv,
+#>       multcomp, munsell, nlme, profvis, quantreg,
+#>       ragg (>= 1.2.6), RColorBrewer, rmarkdown,
+#>       roxygen2, rpart, sf (>= 0.7-3), svglite (>=
+#>       2.1.2), testthat (>= 3.1.5), tibble, vdiffr (>=
+#>       1.0.6), xml2
 #> Enhances: sp
 #> VignetteBuilder: knitr
 #> Config/Needs/website: ggtext, tidyr, forcats,
 #>       tidyverse/tidytemplate
 #> Config/testthat/edition: 3
+#> Config/usethis/last-upkeep: 2025-04-23
 #> Encoding: UTF-8
 #> LazyData: true
 #> RoxygenNote: 7.3.2
 #> Collate: 'ggproto.R' 'ggplot-global.R' 'aaa-.R' .....
 #> NeedsCompilation: no
-#> Packaged: 2025-04-08 10:58:01 UTC; thomas
-#> Author: Hadley Wickham [aut]
-#>       (<https://orcid.org/0000-0003-4757-117X>),
-#>       Winston Chang [aut]
-#>       (<https://orcid.org/0000-0002-1576-2126>),
+#> Packaged: 2025-08-19 08:21:45 UTC; thomas
+#> Author: Hadley Wickham [aut] (ORCID:
+#>       <https://orcid.org/0000-0003-4757-117X>),
+#>       Winston Chang [aut] (ORCID:
+#>       <https://orcid.org/0000-0002-1576-2126>),
 #>       Lionel Henry [aut], Thomas Lin Pedersen [aut,
-#>       cre] (<https://orcid.org/0000-0002-5147-4711>),
+#>       cre] (ORCID:
+#>       <https://orcid.org/0000-0002-5147-4711>),
 #>       Kohske Takahashi [aut], Claus Wilke [aut]
-#>       (<https://orcid.org/0000-0002-7470-9261>), Kara
-#>       Woo [aut]
-#>       (<https://orcid.org/0000-0002-5125-4188>),
-#>       Hiroaki Yutani [aut]
-#>       (<https://orcid.org/0000-0002-3385-7233>),
-#>       Dewey Dunnington [aut]
-#>       (<https://orcid.org/0000-0002-9415-4582>), Teun
-#>       van den Brand [aut]
-#>       (<https://orcid.org/0000-0002-9335-7468>),
-#>       Posit, PBC [cph, fnd]
+#>       (ORCID:
+#>       <https://orcid.org/0000-0002-7470-9261>), Kara
+#>       Woo [aut] (ORCID:
+#>       <https://orcid.org/0000-0002-5125-4188>),
+#>       Hiroaki Yutani [aut] (ORCID:
+#>       <https://orcid.org/0000-0002-3385-7233>), Dewey
+#>       Dunnington [aut] (ORCID:
+#>       <https://orcid.org/0000-0002-9415-4582>), Teun
+#>       van den Brand [aut] (ORCID:
+#>       <https://orcid.org/0000-0002-9335-7468>),
+#>       Posit, PBC [cph, fnd] (ROR:
+#>       <https://ror.org/03wc8by49>)
 #> Maintainer: Thomas Lin Pedersen
 #>       <thomas.pedersen@posit.co>
 #> Repository: RSPM
-#> Date/Publication: 2025-04-09 09:40:10 UTC
-#> Built: R 4.5.0; ; 2025-04-10 19:12:24 UTC; unix
+#> Date/Publication: 2025-09-11 07:10:02 UTC
+#> Built: R 4.5.0; ; 2025-09-12 04:34:25 UTC; unix
 #> RemoteType: standard
 #> RemotePkgRef: ggplot2
 #> RemoteRef: ggplot2
 #> RemoteRepos:
 #>       https://packagemanager.posit.co/cran/__linux__/noble/latest
 #> RemotePkgPlatform: x86_64-pc-linux-gnu-ubuntu-24.04
-#> RemoteSha: 3.5.2
+#> RemoteSha: 4.0.0
 #> 
 #> -- File: /home/runner/work/_temp/Library/ggplot2/Meta/package.rds 
 #> 
@@ -2227,7 +2235,7 @@ Zhang, Weifeng G., and Glen G. Gawarkiewicz. 2015. <span>“Dynamics of the Dire
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 28 August 2025.</p>
+    <p>"<strong>Technical Documentation, State of the Ecosystem Report</strong>" was written by Northeast Fisheries Science Center. It was last built on 2 October 2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
