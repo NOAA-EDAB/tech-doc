@@ -20,14 +20,14 @@
 
 
 ### Data sources
-Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed in [Marine Mammal Protection Stock Assessments](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/northeast-fisheries-science-center-publications). 
+Bycatch estimates and potential biological removal levels are reported in the publicly available [Marine Mammal Stock Assessment reports](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). More descriptions on data sources, processing and analyses are found in Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) and journal papers. The data to calculate the bycatch estimate comes from observer program databases and fishing effort databases.
 
 
 ### Data extraction 
-Annual gillnet bycatch estimates are documented in the CRDs. These feed into the Stock Assessment Reports which report both the annual bycatch estimate and the mean 5-year estimate. 
+Annual and 5-year averaged bycatch estimates are documented in Center Reference Documents (CRD). The potential biological removal values are extracted from the Stock Assessment Reports. 
 
 ### Data analysis
-Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+Bycatch estimates and their associated coefficients of variation are documented in the CRDs, then reported in the Marine Mammal Stock Assessment Reports. Annual estimates from all fisheries as reported in the Marine Mammal Stock Assessment Reports are summed together and the CV of the sum is calculated using the delta method. The 95% confidence intervals are then calculated from the sums and associated CVs assuming a lognormal distribution. ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
 
 Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Harbor Porpoise](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_harborporpoise.R).
 
