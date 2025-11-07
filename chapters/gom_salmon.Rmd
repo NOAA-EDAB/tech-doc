@@ -17,7 +17,7 @@
 ## Methods
 
 ### Data Sources
-
+Data Sources described in @stevens_modeling_2019.
 
 ### Data Extraction
 Data extraction described in @stevens_modeling_2019.
