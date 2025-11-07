@@ -1,0 +1,39 @@
+# Survey Diversity {#shannon_survey}
+
+**Description**: Bottom Trawl Survey species diversity index
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull with analysis; Published methods
+
+**Contributor(s)**: Andy Beet
+
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
+
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
+
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). 
+
+## Methods
+
+The Shannon index or Shannon's diversity index or the Shannon-Wiener index is a popular diversity index used in the ecological literature. The index is a measure of species richness (how many species) and evenness (the proportion of a species abundance relative to the total). It is defined as:
+
+$$H^{\prime} = -\sum_{i=1}^Sp_iln(p_i)$$
+where S is the total number of species and $p_i = n_i/N$ is the proportion of individuals of species *i*, where i = 1, ..., S, and N is the total number of individuals. $H^{\prime}$ is at its maximum value ($ln(S)$) when $p_i$ = 1/S for all species, indicating maximum diversity. All species are equally common. $H^{\prime}$ is at its minimum value (of zero), indicating no diversity, when only one species is present.
+
+### Data sources
+
+[`survdat`](https://noaa-edab.github.io/survdat/) is an R package that allows for queries of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
+
+### Data extraction 
+
+The R package  [`survdat`](https://noaa-edab.github.io/survdat/) was used in the survey data extraction process. 
+
+
+### Data analysis
+
+The Shannon index, $H^\prime$, was calculated for each [Ecological Production Unit](#epu) (EPU) annually after determining the set of stations surveyed and assigning them to the appropriate EPU. 
+
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/survey_shannon.html>

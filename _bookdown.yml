@@ -32,6 +32,7 @@ rmd_files:
 # #################### MEGAFAUNA ##################
     -   "chapters/sectionHeaders/megafauna.rmd"
     -   "chapters/aggregate_biomass.rmd" 
+    -   "chapters/survey_shannon.rmd" 
     -   "chapters/mab_inshore_survey.Rmd"
     #-   "chapters/mass_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
     #-   "chapters/ne_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
