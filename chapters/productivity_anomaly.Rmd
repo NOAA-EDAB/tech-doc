@@ -29,7 +29,7 @@ Stock assessment outputs are retrieved from the StockSMART website using the R p
 ### Data extraction 
 Survey data were extracted from [survdat](#survdat). 
 
-Code for retrieving Northeast US stock assessment outputs, along with visualizations of the input information, is available at  https://sgaichas.github.io/stockstatusindicator/MultisppRec2023.html#get-stocksmart-info
+Code for retrieving Northeast US stock assessment outputs, along with visualizations of the input information, is available at  https://noaa-edab.github.io/stockstatusindicator/MultisppRec2024.html#get-stocksmart-info
 
 ### Data analysis
 
@@ -45,7 +45,7 @@ Stock assessment recruitment estimates for each species were compared with the s
 
 Once standardized and aligned, the same calculations described in @perretti_regime_2017 for survey data were applied to the stock assessment outputs. 
 
-Detailed code on all methods is provided at https://sgaichas.github.io/stockstatusindicator/MultisppRec2023.html 
+Detailed code on all methods is provided at https://noaa-edab.github.io/stockstatusindicator/MultisppRec2024.html 
 
 ### Data processing
 
