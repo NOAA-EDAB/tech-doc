@@ -29,7 +29,7 @@ Data comes from NOAA's high resolution blended analysis of daily sea surface tem
 Analysis was recreated from @friedland_spring_2015. 
 
 
-### Data Processing
+### Data processing
 
 The Transiton Date indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_transition_dates.R).
 

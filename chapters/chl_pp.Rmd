@@ -25,7 +25,7 @@ Daily Level 3 mapped (4km resolution, sinusoidally projected) satellite ocean co
 
 The global OC-CCI, GlobColour, and the SST data are mapped to the same sinusoidal map projection and subset to the east coast region (SW longitude=82.5$^\circ$W, SW latitude=22.5$^\circ$N, NE longitude=51.5$^\circ$W, NE latitude=48.5$^\circ$N).
 
-#### Data Interpolation
+#### Data interpolation
 
 Daily CHL and AVHRR SST data are temporally interpolated and smoothed (CHLINT and SSTINT respectively) for use in the primary production model.  The interpolation increases the data coverage and is necessary to better match data collected from different sensors and different times. The daily PAR data are not affected by cloud cover and MUR SST data is a blended/gap free product so these parameters were not interpolated. Daily data at each pixel location are linearly interpolated based on days in the time series using [interpx.pro](https://github.com/callumenator/idl/blob/master/external/JHUAPL/INTERPX.PRO). Prior to interpolation, the CHL data are log-transformed to account for the log-normal distribution of chlorophyll data (@campbell_lognormal_1995). The time series are processed in one-year chunks, with each yearly series including 60 days from the previous year and 60 days from the following year to improve the interpolation at the beginning and end of the year. Following interpolation, the data are smoothed with a tri-cube filter (width=7) using IDL’s [CONVOL](https://www.harrisgeospatial.com/docs/CONVOL.html) program. In order to avoid over interpolating data when there were several days of missing data in the time series, the interpolated data were removed and replaced with blank data if the window of interpolation spanned more than 7 days for CHL or 10 days for SST. 
 
@@ -63,9 +63,9 @@ Where $\textrm{CHL}_0$ is the surface chlorophyll concentration.
 
 Phytoplankton size classes (PSC) are calculated according to @turner_optimization_2021. The regionally tuned abundance-based model is based on the three-component model of @brewin_three-component_2010 that varies as a function of SST (@brewin_uncertainty_2017, @moore_incorporating_2020). The model uses a look-up table with parameters indexed by SST, developed using a local data set of HPLC diagnostic pigment-derived phytoplankton size fractions matched with coincident satellite SST.
 
-### Data Analysis
+### Data analysis
 
-#### Statistics and Anomalies
+#### Statistics and anomalies
 
 Gridded statistics, including the arithmetic mean, geometric mean, median, standard deviation, and coefficient of variation are calculated at daily (3 and 8-day running means), weekly, monthly, and annual time steps, and for several climatological periods. Annual statistics used the monthly means as inputs to avoid a summer time bias when more data are available due to reduced cloud cover. The daily, weekly, monthly and annual climatological statistics include the entire time series for each specified period. For example, the climatological January uses the monthly mean from each January in the time series and the climatological annual uses the annual mean from each year. Prior to 2024, the climatological date range was from 1998 to the current year. Starting in 2024, the climatological period was fixed to 1998 to 2020 in order to be consistent with the climatological date range of other products. 
 

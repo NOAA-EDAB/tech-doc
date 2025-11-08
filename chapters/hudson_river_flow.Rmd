@@ -16,17 +16,17 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 River gauge data from USGS gauge 01358000 was obtained from [USGS water data](https://waterdata.usgs.gov/nwis/uv?site_no=01358000).
 
-### Data Analysis
+### Data analysis
 
 "Mean annual flow rate was calculated by averaging all flow rate data for each year. Cubic feet per second were converted to cubic meters per second. Attached code shows this process in detail.
 
 A linear trend and a nonlinear GAM were calculated for the resulting annual mean flow rate time series. Attached code shows this process in detail: <https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/Gruenburg_Hudson_River_Flow.R>"
 
-### Data Processing
+### Data processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hudson_river_flow.R).
 

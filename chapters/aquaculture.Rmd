@@ -18,7 +18,7 @@
 
 ## Methods
 
-### Data Sources 
+### Data sources 
 Data was synthesized from state specific sources, listed below. 
 
 * [State of Maine, Department of Marine Resources.](https://www.maine.gov/dmr/aquaculture/data/index.html)                
@@ -31,7 +31,7 @@ Data was synthesized from state specific sources, listed below.
 
 * [State of Maryland, Aquaculture Coordinating Council](https://calendarmedia.blob.core.windows.net/assets/1495a281-9eab-422a-9f90-a16ac9686db8.pdf) 
 
-### Data Extraction/Analysis
+### Data extraction/analysis
 Production described as the number of oysters harvested is collected by individual states. This means that time series maybe vary by state. A table of start dates are shown below. Individual state information is available at the above links.  
 
 Only the New England State of the Ecosystem includes aquaculture information as there are reporting issues and many states are do not have available data in the Mid-Atlantic States.  

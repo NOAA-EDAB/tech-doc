@@ -15,13 +15,13 @@
 **Public availability statement**: Source data are NOT publicly available. Please email angela.silva@noaa.gov for further information and queries of Speed and Extent of Offshore Wind Development indicator source data.
 
 ## Methods
-### Data Sources
+### Data sources
 BOEM lease area, Call Areas, Planning Area shapefiles:  https://www.boem.gov/renewable-energy/mapping-and-data/renewable-energy-gis-data; 
 
 Maine Area of Interest: Maine Department of Marine Resources, Central Atlantic Bight planning area draft (BOEM communication, INTERNAL ONLY private shapefile); Foundation and Cable data from South Fork Final Environemntal Impact Statement (SWFW FEIS) data tables E-4, E-4-1, E-2: https://www.boem.gov/sites/default/files/documents/renewable-energy/state-activities/SFWF%20FEIS.pdf
 
 
-### Data Analysis
+### Data analysis
 All data was updated for 2022 with South Fork Wind Farm FEIS and the following assumptions were made on future wind areas: 
 * (1) There are no reported values for foundations, cable acres and miles and year of construction for NY WEA, Maine AOI, and Central Atlantic Bight draft planning area. 
 * (2) To estimate the variables, the ratio of each (Cumul_FNDS, Cumul_Offsh_Cbl_Acres, Cumul_OffExp_Inter_Cab_Miles, TBNSinstall_no) was calculated by using reported values for existing lease area. All data is reported as ""2030""
@@ -50,7 +50,7 @@ Dominion Energy was presented as 3 phases in Table E-4 for Project_Name (Dominio
 OffExpCab_Miles: Offshore Export Cable Length OCS-A 0482, OCS-A 0519 OCS-A 0490 had 360 offshore export cable miles reported in Table E-4. This number was divided by 3 and 120 were assigned to these three project areas. 
 
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_dev_speed.R).
 

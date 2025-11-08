@@ -16,7 +16,7 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 All inshore bottom trawl survey data sets were derived from raw survey data. NEAMAP source data are available for download [here](https://www.vims.edu/research/departments/fisheries/programs/multispecies_fisheries_research/abundance_indices/index.php). More detailed information describing NEAMAP survey methods is available on the [NEAMAP website](http://neamap.net). ME/NH inshore survey data are available upon request (see Points of Contact). Technical documentation for ME/NH survey methods and survey updates are made available through the [Maine Department of Marine Resources](https://www.maine.gov/dmr/science-research/projects/trawlsurvey/index.html). Data from the MA Inshore Bottom Trawl Survey are stored on local servers at the Northeast Fisheries Science Center (Woods Hole, MA), and are also available upon request. More information about the MA Inshore Bottom Trawl Survey is available [here](https://www.mass.gov/service-details/review-trawl-survey-updates).
 
@@ -24,7 +24,7 @@ All inshore bottom trawl survey data sets were derived from raw survey data. NEA
 
 Source data from the Massachusetts DMF Bottom Trawl Survey were extracted using this [R script](https://github.com/slucey/RSurvey/blob/master/Mass_survey.R).
 
-### Data Processing
+### Data processing
 
 The following R code was used to process inshore bottom trawl data into the `ecodata` R package.  
 
@@ -40,7 +40,7 @@ https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mass_inshore_surve
 
 https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_mab_inshore_survey.R
 
-### Data Analysis
+### Data analysis
 
 Biomass indices were provided as stratified mean biomass (kg `r ifelse(knitr::is_latex_output(), 'tow\\textsuperscript{-1}', 'tow<sup>-1</sup>')`) for all inshore surveys. Time series of stratified mean biomass were calculated for ME/NH and NEAMAP surveys through the following procedure:
 

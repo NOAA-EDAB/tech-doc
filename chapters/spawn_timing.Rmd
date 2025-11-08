@@ -16,17 +16,17 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 Spawning phenology of haddock and yellowtail flounder was evaluated using macroscopic maturity data collected during routine NEFSC spring and fall bottom trawl surveys.
 
 The macroscopic maturity classification scheme includes six stages – immature, developing, ripe, running ripe, spent, and resting- and criteria are described in @burnett_finfish_1989. Beginning in the fall of 2006, the classification of ripe changed, from >50% of eggs hydrated (clear) to the presence of any hydrated eggs. In this scheme, fish mature once in their life, and then cycle through developing to resting stages annually.
 
 As batch spawners, haddock and yellowtail flounder would be developing leading up to spawning, then undergo cycles of ripe and running ripe as individual batches mature, hydrate and are released. After each batch is released, they would return to a developing stage and repeat until the last batch is released, after which they would proceed to the spent and resting stages. Therefore individuals in the developing stage could either be prespawning, or in between batches, which cannot be distinguished macroscopically (ovarian histology can differentiate these two based on the presence of postovulatory follicles). At the population level, the occurrence of developing fish with some ripe is indicative of active spawning. The present analysis is restricted to mature females, since males are generally prepared to spawn over a broader time period than females. Histological verification of the macroscopic staging, and formal quantification of error rates have not been evaluated for haddock or yellowtail flounder. However, for species that have been evaluated, the error rates have been relatively low (@mcbride_latitudinal_2013, @wuenschel_reproductive_2019). The rates of misclassifications are minor compared to the volume of correct classifications.
 
-### Data Extraction
+### Data extraction
 Input datasets are available at: https://github.com/sgaichas/spawntiming
 
-### Data Analysis 
+### Data analysis 
 The same series of summary/diagnostic plots are presented for each species and stock area. The data summaries allow visual interpretation of patterns and trends. The function ecodata::geom_gls was applied to detect trends.
 
 Multinomial regression results are reported but figures not shown in catalog.
@@ -37,7 +37,7 @@ For yellowtail flounder, multinomial logistic regression was used to summarize a
 
 Where spawning condition of individual fish is Prespawning, spawning, postspawning; as outlined above), Week of Year, Bottom Temperature (°C), and Time block (10year periods) are associated with each sample. Models were fit using multinom function in the nnet library [@venables_exploratory_2002] in R with Hess= True to calculate coefficient standard errors. The three probabilities (prespawning, spawning, postspawning) sum to one, only two need to be estimated. The resulting odds ratios were used to estimate probabilities using the R package ggeffects [@ludecke_ggeffects_2018] for visualizations of marginal effects. The significance of variables in the model was evaluated with likelihood ratio test using Anova in the R package (car) [@fox_package_2012]. 
 
-### Data Processing 
+### Data processing 
 The survey data was not edited in any way, and it is likely there are some erroneous classifications included, therefore caution should be exercised when interpreting subsets of the data where sample sizes become limited.
 
 Haddock data was analyzed for each of the two stock regions (Georges Bank-GB and Gulf of Maine-GOM) using the survey strata sets identified for each stock. Specifically, the proportions developing, ripe, spent, and resting were calculated for each stock region and survey. The period from 1970 to 2023 was analyzed.

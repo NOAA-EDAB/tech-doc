@@ -16,11 +16,11 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Data used to develop these indicators comes from multispecies diet data collected on the Northeast Fisheries Science Center (NEFSC) and NorthEast Area Monitoring and Assessment Program (NEAMAP) bottom trawl surveys. Bottom temperature data is described in [Bottom temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom_temp_seasonal_gridded.html). 
 
-### Data Analysis
+### Data analysis
 
 VAST spatio-temporal modeling [@thorson_comparing_2017; @thorson_guidance_2019] is described here.
 
@@ -38,7 +38,7 @@ Model selection results are reported at [this link](https://noaa-edab.github.io/
 
 Scripts used to run the model selection and to produce the final bias corrected models are posted at <https://github.com/NOAA-EDAB/benthosindex/tree/main/VASTscripts>
 
-### Data Processing 
+### Data processing 
 
 The basic workflow is to develop a dataset of stomach contents data where fish predators act as samplers of the prey field, then fit a vector autoregressive spatio-temporal (VAST) model to this dataset to generate an index. Dataset development is described here.
 

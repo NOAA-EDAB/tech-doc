@@ -16,16 +16,16 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 Data Sources described in @stevens_modeling_2019.
 
-### Data Extraction
+### Data extraction
 Data extraction described in @stevens_modeling_2019.
 
-### Data Analysis 
+### Data analysis 
 Data analysis described in @stevens_modeling_2019.  
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_gom_salmon.R).
 

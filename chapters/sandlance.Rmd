@@ -15,17 +15,17 @@
 **Public availability statement**:Source data are publicly available.
 
 ## Methods
-### Data Sources
+### Data sources
 
 This data set is taken directly from Table 1, @silva_high_2020.  See full citation in "References" section below.
 
-### Data Analysis
+### Data analysis
 
 Data processing and analysis methods are described in @silva_high_2020.  The catch counts of sand lance and observational counts of humpback whales and great shearwater were used to derive spatial metrics (center of gravity, and inertia) for each species.  Equations for these spatial metrics are provided in Table 2 of @silva_high_2020. The spatial metrics (center of gravity,  inertia) were used to calculate the global index of collocation (GIC) to quantify spatial overlap between pairs of species for each cruise.  GICs for species pairs are reported in Table 3 of @silva_high_2020, but data were not sufficient to calculate GICs for each pair of species in each cruise.
 
 
 
-### Data Processing
+### Data processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sandlance.R).
 
