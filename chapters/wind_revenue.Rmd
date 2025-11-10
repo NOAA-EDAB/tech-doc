@@ -16,21 +16,21 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Modeled vessel trip report (VTR) data using the fishing footprint method (@depiper_statistically_2014 and @benjamin_visualizing_2018) linked with dealer reports for annual landings and revenue within wind lease areas and dealer report data for annual GARFO landings/revenue.
 
 
-### Data Analysis
+### Data analysis
 
 Using raster data of modeled VTR data using the Fishing Footprint method, we integrated dealer data and compared to existing/proposed wind lease areas to get landings/revenue in each area by year.  
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_revenue.R).
 
 ## Methods 2021
-### Data Sources
+### Data sources
 
 This indicator is derived from the data underpinning the "Sociceoeconomic Impacts of Atlantic Offshore Wind Development" web site, which can be accessed at https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development.
 
@@ -38,7 +38,7 @@ The underlying raster data is defined in @benjamin_visualizing_2018. Visualizing
 
 This raster data was then linked to the Greater Atlantic Regional Office's Data Matching Imputation System (https://www.fisheries.noaa.gov/inport/item/17328) to derive revenue estimates from the Wind Energy Areas, defined as of December 11, 2020. Of note is that the version of DMIS utilized for this reporting includes the SFCLAM data missing from the traditional DMIS dataset. All revenue estimates are deflated to 2019 dollars using the St. Louis Federal Reserve's Quarterly Implicit GDP Deflator, which can be accessed at https://fred.stlouisfed.org/data/GDPDEF.txt
 
-### Data Analysis
+### Data analysis
 Code used to analyze this data can be [found here](https://github.com/NOAA-EDAB/tech-doc/blob/master/R/stored_scripts/WindRevenue_Code_for_Dissemination.R)
 
 **catalog link**

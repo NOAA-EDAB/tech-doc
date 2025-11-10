@@ -16,13 +16,13 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Data found in NFMS [Species Information System (SIS)](https://apps-st.fisheries.noaa.gov/sis/#no-back-button). 
 
 SIS Annual Catch Limit reports were used to collate data for each Fisheries Management Plan (FMP). The Allowable Biological Catch and Grand Total Catch (Commercial + Recreational) were recorded. 
 
-### Data Analysis
+### Data analysis
 
 Each stock has a threshold and catch value assigned to it from the sources above. The table below outlines the data pull for each FMP. 
 
@@ -38,7 +38,7 @@ Each stock has a threshold and catch value assigned to it from the sources above
 
 
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
 

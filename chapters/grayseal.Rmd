@@ -7,7 +7,7 @@
 
 **Indicator category**: Synthesis of published information; Published methods
 
-**Contributor(s)**: Kristin Precoda, Kimberly Murray, Debra Palka
+**Contributor(s)**: Kristin Precoda, Debra Palka
   
 **Data steward**: Debra Palka <debra.palka@noaa.gov>
 
@@ -20,14 +20,16 @@
 
 
 ### Data sources
-Reported harbor porpoise bycatch estimates and potential biological removal levels can be found in publicly available documents; detailed in [Marine Mammal Protection Stock Assessments](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region). More detailed documentation as to the methods employed can be found in NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) found on the NEFSC [publications page](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/northeast-fisheries-science-center-publications). 
+Reported gray seal bycatch estimates and potential biological removal levels can be found in publicly available documents, namely NOAA Fisheries Northeast Fisheries Science Center (NEFSC) Center Reference Documents (CRDs) on the NEFSC [publications page](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/northeast-fisheries-science-center-publications) and [Marine Mammal Protection Stock Assessments](https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region) respectively. More detailed documentation as to the methods employed can be found in the CRDs.
 
 
 ### Data extraction 
 Annual gillnet bycatch estimates are documented in the CRDs. These feed into the Stock Assessment Reports which report both the annual bycatch estimate and the mean 5-year estimate. 
 
 ### Data analysis
-Bycatch estimates as found in stock assessment reports were plotted along with confidence intervals. The confidence intervals were calculated from published CVs assuming a normal distribution ($\sigma = \mu CV$; $CI = \bar{x} \pm \sigma * 1.96$).
+Annual estimates from all fisheries as reported in the CRDs are summed together and the CV of the sum is calculated using the delta method. The 95% confidence intervals are then calculated from the sums and associated CVs, assuming a lognormal distribution.
+LCI = estimate / exp[qnorm(0.975) * sqrt(log(1+CV<sup>2</sup>))]
+UCI = estimate * exp[qnorm(0.975) * sqrt(log(1+CV<sup>2</sup>))]
 
 Data were analyzed and formatted for inclusion in the `ecodata` R package using the R code found here, [Gray Seal](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_grayseal.R).
 

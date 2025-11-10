@@ -1,0 +1,39 @@
+# Aggregate Survey Biomass {#aggregate_biomass}
+
+**Description**: Bottom Trawl Survey data biomass for season and region aaggregated over species groupings
+
+**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2017+), State of the Ecosystem - Mid-Atlantic (2017+)
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Andy Beet
+
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
+
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
+
+**Public availability statement**: Source data are available to qualified researchers upon request (see "Access Information" [here](https://inport.nmfs.noaa.gov/inport/item/22560)). 
+
+## Methods
+The Northeast Fisheries Science Center (NEFSC) has been conducting standardized bottom trawl surveys in the fall since 1963 and spring since 1968.  The surveys follow a stratified random design and are explained in detail the [Survey Data](survdat) section.
+
+The R package [`survdat`](https://noaa-edab.github.io/survdat/) is used to pull and process the survey data.
+
+
+### Data sources
+
+[`survdat`](https://noaa-edab.github.io/survdat/) is an R package that allows for queries of the NEFSC survey database (SVDBS).These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
+
+### Data extraction 
+
+The R package  [`survdat`](https://noaa-edab.github.io/survdat/) was used in the survey data extraction process.
+
+
+### Data analysis
+
+For the purposes of the aggregate biomass indicators, fall and spring survey data are treated separately.  Additionally, all length data is dropped and species separated by sex at the catch level are merged back together.
+
+Biomass was summed by species per year per Ecological Production Unit (EPU).  Those sums were divided by the appropriate station count to get the EPU mean. Finally, the mean biomasses were summed by [aggregate groups](#species_groupings). 
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/aggregate_biomass.html>

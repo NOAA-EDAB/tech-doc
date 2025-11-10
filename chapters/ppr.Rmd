@@ -28,7 +28,7 @@ We use the definition of ecosystem overfishing from [@link_global_2019]:
 
 All of the indices are based on the principle of energy transfer up the foodweb from primary producers.
 
-### Fogarty & Ryther Indices
+**Fogarty & Ryther Indices**
 
 The Fogarty index is defined as ratio of total catches to total primary productivity in an ecosystem [@link_global_2019]. The units are parts per thousand.
 
@@ -36,9 +36,9 @@ The Ryther index is defined as total catch per unit area in the ecosystem [@link
 
 A modification of the indices is used. Total landings are used in lieu of total catch. This will have the effect of reducing the value of the index (compared to using total catch).
 
-### Primary Production Required (PPR)
+**Primary Production Required (PPR)**
 
-The index is a measure of the impact of fishing on the base of the foodweb. The amount of potential yield we can expect from a marine ecosystem depends on the amount of production entering at the base of the food web, primarily in the form of phytoplankton; the pathways this energy follows to reach harvested species; the efficiency of transfer of energy at each step in the food web; and the fraction of this production that is removed by the fisheries. Species such as scallops and clams primarily feed directly on larger phytoplankton species and therefore require only one step in the transfer of energy. The loss of energy at each step can exceed 80-90%. For many fish species, as many as 2-4 steps may be necessary. Given the trophic level and the efficiency of energy transfer of the species in the ecosystem the amount phytoplankton production required (PPR) to account for the observed catch can be estimated.
+The Primary Production Required index is a measure of the impact of fishing on the base of the foodweb. The amount of potential yield we can expect from a marine ecosystem depends on the amount of production entering at the base of the food web, primarily in the form of phytoplankton; the pathways this energy follows to reach harvested species; the efficiency of transfer of energy at each step in the food web; and the fraction of this production that is removed by the fisheries. Species such as scallops and clams primarily feed directly on larger phytoplankton species and therefore require only one step in the transfer of energy. The loss of energy at each step can exceed 80-90%. For many fish species, as many as 2-4 steps may be necessary. Given the trophic level and the efficiency of energy transfer of the species in the ecosystem the amount phytoplankton production required (PPR) to account for the observed catch can be estimated.
 
 The index for Primary Production Required (PPR) was adapted from [@pauly_primary_1995].
 
@@ -52,11 +52,11 @@ $$scaledPPR_t = \frac{PPR_t}{PP_t}$$
 
 The species selected in each year were determined by their cumulative contribution to total landings. A threshold of at least 80% of the total landings is used.
 
-#### Data sources
+### Data sources
 
 Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca), and primary production estimates are derived from [satellites](#chl_pp). Some of these data are typically not available to the public.
 
-#### Data extraction
+### Data extraction
 
 Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](#comdat)
 
@@ -64,9 +64,9 @@ Trophic level information for each species is obtained from [fishbase](http://fi
 
 Primary Production is estimated using the methods described in the chapter [Chlorophyll a and Primary Production.](#chl-pp)
 
-#### Data analysis
+### Data analysis
 
-##### Primary Production Required
+#### Primary Production Required
 
 Annual (wet weight) landings are calculated for each species for a given EPU. For each year the landings are sorted in descending order by species and the cumulative landings are calculated. The species that accounted for the top 80% of total cumulative landings are selected. The trophic level for each of these species are then obtained from fishbase/sealifebase. At this point the PPR index is calculated. The units of the index are $gCyear^{-1}$ for the EPU. The index is converted to $gCm^{-2}year^{-1}$ by dividing by the area (in $m^2$) of the EPU.
 
@@ -74,7 +74,7 @@ To normalize the index the total Primary Production for the given EPU is require
 
 The index is then normalized by dividing the index in year t by the total primary production in time $t$.
 
-##### Fogarty and Ryther Indices
+#### Fogarty and Ryther Indices
 
 Total annual (wet weight) landings are calculated for a given EPU (summed over all species). The units for both primary production and landings are in $mt km^{-2} year^1$. A factor of (1/9) is used to convert landings to weight in carbon. The area in $km^2$ of each EPU is obtained from the shapefile used to define the area.
 

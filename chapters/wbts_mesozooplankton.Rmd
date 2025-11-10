@@ -16,20 +16,20 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 Mesozooplankton biomass data can be found in (J. Runge can provide xlsx spreadsheet if needed):
 
 https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_2004_2017.html
 
 https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_start_2020.html
 
-### Data Extraction
+### Data extraction
 -No response-
 
-### Data Analysis 
+### Data analysis 
 Please refer to Runge J, Karp Boss L, Dullaert E, Ji, R, Motyka J, Young-Morse R, Pugh, D, Shellito S, Vandemark D.  2023.  Sustained monitoring of zooplankton populations at the Coastal Maine Time Series (CMTS) and Wilkinson Basin Time Series (WBTS) stations in the western Gulf of Maine: Results from 2005-2022. Sterling (VA): U.S. Department of the Interior, Bureau of Ocean Energy Management. 40 p. Report No.: OCS Study BOEM 2023-015. Contract No.: CA M19AC00022.
 
-### Data Processing 
+### Data processing 
 Please refer to Runge J, Karp Boss L, Dullaert E, Ji, R, Motyka J, Young-Morse R, Pugh, D, Shellito S, Vandemark D.  2023.  Sustained monitoring of zooplankton populations at the Coastal Maine Time Series (CMTS) and Wilkinson Basin Time Series (WBTS) stations in the western Gulf of Maine: Results from 2005-2022. Sterling (VA): U.S. Department of the Interior, Bureau of Ocean Energy Management. 40 p. Report No.: OCS Study BOEM 2023-015. Contract No.: CA M19AC00022.
 
 **catalog link**

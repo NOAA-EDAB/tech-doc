@@ -25,7 +25,7 @@ Data comes from NOAA's NEFSC Aerial Surveys (@wood_gray_2022-1).
 
 Image processing and modelling is described in a NEFSC center reference document (@wood_gray_2022-1). 
 
-### Data Processing
+### Data processing
 
 The gray seal pup indicator was formatted for inclusion in the `ecodata` R package with the code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_sealpups.R).
 
