@@ -39,7 +39,7 @@ knitr::kable(df,
 
 R code used in extracting time series of long-term SST data can be found [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/R/stored_scripts/long-term-sst-extraction.R).
 
-### Data Processing
+### Data processing
 
 Data were formatted for inclusion in the `ecodata` R package with the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_long_term_sst.R).
 

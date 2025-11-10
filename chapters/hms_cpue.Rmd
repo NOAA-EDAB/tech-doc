@@ -62,7 +62,7 @@ The species groupings are available in the table below.
 | Pelagic        | Shortfin Mako        | *Isurus oxyrinchus*          |
 | Pelagic        | Thresher             | *Alopias vulpinus*           |
 
-### Data Processing 
+### Data processing 
 HMS staff sent a request for data to POP Observer Program staff (Sascha Cushner, Lawrence Beerkircher, Garry Decossas, and Scott Leach) using this form (https://forms.gle/kiMGRfUwbKJCf8Vs6). SEFSC statistician Garry Decossas completed the data pull based on submissions to the SOE from previous years, and provided the data to HMS staff. Data from the areas (MAB, NEC) and time period of interest (1992-2023) are summarized by species and year. Number of hauls per year are also provided to enable CPUE calculations of species per year. This is a data pull of ALL species reported in these areas, so there is more than just sharks in the dataset.
 
 Code used to process this data for SOE products can be found on Github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).

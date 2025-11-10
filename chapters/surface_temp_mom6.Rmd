@@ -16,17 +16,17 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Data from the Modular Ocean Model Version 6 for the Northwest Atlantic (MOM6-NWA12, Ross et al., 2023) hindcast are available through the Climate Ecosystems Fisheries Initiative web portal (https://psl.noaa.gov/cefi_portal/).  Data from the decadal forecast version of the MOM6-NWA12 model described in Koul et al. (2024) are available from zenodo (https://zenodo.org/records/10412704). 
 
-### Data Analysis
+### Data analysis
 
 Hindcast sea surface temperature was downloaded at a daily temporal scale for the time period 1993-2019.  This data was averaged seasonally (Winter: January, February, March; Spring: April, May, June; Summer: July, August, September; Fall: October, November, December) and spatially within three EPUs - the Mid Atlantic Bight (MAB), the Gulf of Maine (GOM) and Georges Bank (GB).  A seasonal climatology was created for each EPU by averaging seasonal values over the base period 1993-2019.  Seasonal anomalies were created for each EPU by subtracting this seasonal climatology from the seasonal sea surface temperature time series.
 
 Decadal forecast data for annual sea surface temperature anomalies by EPU is presented as in Figure 3 of Koul et al. (2024).  In this instance the climatology period is 1993-2021.
 
-### Data Processing 
+### Data processing 
 
 
 **catalog link**

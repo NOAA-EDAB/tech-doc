@@ -74,7 +74,7 @@ A database query of the NEFSC commercial fishery database (CFDBS). More informat
 
 [`comlandr`](https://noaa-edab.github.io/comlandr/) is an R package used to extract relevant data from the database.
 
-#### Data Processing
+#### Data processing
 
 The landings data were formatted for inclusion in the [`ecodata`](https://noaa-edab.github.io/ecodata/) R package
 

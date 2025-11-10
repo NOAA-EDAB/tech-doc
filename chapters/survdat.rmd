@@ -46,13 +46,11 @@ Extraction methods are described above. The R package  [`survdat`](https://noaa-
 ### Data analysis
 
 The fisheries independent data obtained using `survdat` is used in a variety of
-products; the more complicated analyses are detailed in their own sections.  The most straightforward use of this data is for the resource species aggregate biomass 
-indicators.  For the purposes of the aggregate biomass indicators, fall and spring 
-survey data are treated separately.  Additionally, all length data is dropped and 
-species separated by sex at the catch level are merged back together.
+SOE products; [Aggregate biomass](#aggregate_biomass), [Survey diversity metrics](#shannon_survey), [Expected number of species](#exp_n), [Species Condition](#condition), [Massachusetts inshore survey](#mab_inshore_survey)
 
 Since 2020, survey strata where characterized as being within an [Ecological Production Unit](#epu) based on where at least 50% of the area of the strata was located (Figure \@ref(fig:epustrata).  While this does not create a perfect match for the EPU boundaries it allows us to calculate the variance associated with the index as the survey was designed. 
 
+Prior to 2020, `survdat` would post stratified into EPUs by labeling stations with the EPU that contained them. 
 
 ```{r epustrata, fig.cap="Map of the Northeast Shelf broken into the four Ecological Production Units by strata.Strata were assigned to an EPU based on which one contained at least 50% of the area of the strata." , out.width="90%",echo = F}
 
@@ -61,7 +59,6 @@ knitr::include_graphics(file.path(image.dir,"EPU_Designations_Map.jpg"))
 ```
   
 
-Prior to 2020, `survdat` would post stratified into EPUs by labeling stations with the EPU that contained them. The total number of stations within each EPU per year was counted using unique station records. Biomass was summed by species per year per EPU.  Those sums were divided by the appropriate station count to get the EPU mean.  Finally, the mean biomasses were summed by [aggregate groups](#species_groupings). 
 
 **catalog link**
 No associated catalog page

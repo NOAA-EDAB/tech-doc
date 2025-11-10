@@ -16,11 +16,11 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Data from eDealer database (<https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-highly-migratory-species-dealer-reporting>) and Bluefin Tuna Dealer reports on SAFIS (<https://www.accsp.org/what-we-do/safis/>). The eDealer data were supplemented with ACCSP records, GulfFIN records, and pelagic and coastal fisheries vessel logbook catches reported to SEFSC for which no dealer reports were submitted.
 
-### Data Analysis
+### Data analysis
 
 Data, from 2015-2023, were processed for Fisheries of the United States and then aggregated by regions to avoid confidentiality issues. Data of Atlantic shark, swordfish, bigeye tuna, albacore tuna, yellowfin tuna and skipjack tuna were initially extracted from our eDealer database and the Caribbean Commercial Vessel logbook database. Additional landings of these HMS not in this dataset were collected from ACCSP, GulfFIN, and the SEFSC Atlantic HMS vessel logbook databases. Bluefin tuna landings data from the Bluefin Tuna Dealer reports in SAFIS were also extracted and combined with the eDealer data for other HMS.
 
@@ -36,7 +36,7 @@ On July 1, 2023, a zero-retention limit went into effect for shortfin mako shark
 
 Price per pound was used to determine the ex-vessel value. For landings with a reported disposition of “Food” and prices per pound reported as “N/A”, 0, $0.01 or left blank, average prices were calculated for each species and state. Those average prices replaced the missing values to determine landings revenue. Revenue from sales to the aquarium trade were also excluded to avoid extreme values associated with shipping live specimens.
 
-### Data Processing
+### Data processing
 
 Highly migratory species landings include 26 species of tunas, sharks and swordfish. Data were processed and analyzed using SAS and Microsoft Excel pivot tables. The count of entities represented was used to determine if a sufficient number of records were available to make the data public or if it needed to be marked as confidential; generally, data was marked confidential if it did not meet the "rule of three" (i.e., at least three unique entities represented).
 

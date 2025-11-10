@@ -16,13 +16,13 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 The Northeast Fisheries Science Center has conducted [zooplankton surveys](https://www.fisheries.noaa.gov/inport/item/9286) since the 1970s.
 
 The dataset through 2022 used in this analysis was obtained from the Oceanography Branch. 
 
-### Data Analysis
+### Data analysis
 
 #### VAST models
 VAST is a spatio-temporal modeling framework used for index standardization [@thorson_comparing_2017; @thorson_guidance_2019].
@@ -56,7 +56,7 @@ Model selection results are reported at this link: https://noaa-edab.github.io/z
 
 In the second stage of model selection, the day of year covariate had mixed success. Results of the best models which both converged and had the lowest AIC are reported here: https://noaa-edab.github.io/zooplanktonindex/CopeModResults.html
 
-### Data Processing 
+### Data processing 
 
 #### Data were aggregated into groups for analysis (names indicate column names in the dataset linked above):
 A lookup of these column headings is here: https://www.fisheries.noaa.gov/inport/item/35054
