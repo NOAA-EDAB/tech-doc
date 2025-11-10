@@ -16,15 +16,15 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 TEXT 
 
-### Data Analysis
+### Data analysis
 
 TEXT
 
-### Data Processing 
+### Data processing 
 
 TEXT
 

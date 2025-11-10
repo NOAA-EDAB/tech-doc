@@ -16,19 +16,19 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Observations from 2004 - 2017: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_2004_2017.html
 
 Observations beginning in 2020: https://data.neracoos.org/erddap/tabledap/WBTS_CFIN_start_2020.html
 
-### Data Analysis
+### Data analysis
 
 All analyses were conducted using the R programming software (R Core Team, 2023), utilizing the mgcv package for GAMs (Wood, 2023). Model estimation was conducted using Restricted Maximum Likelihood (REML) and to ensure the robustness of the model, we utilized DHARMa (Hartig, 2023) residual diagnostics to perform a Kolmogorov-Smirnov test for scaled residuals, assess dispersion, and detect outliers. The GAMs that passed the significance and diagnostic tests were then visualized using ggplot2 in R to graphically display the model outputs and trends. The GAMs of seasonal trends in a time series measurement were only depicted if the day of year smoother was significant, while the GAMs of annual climatologies were only depicted if the year smoother was significant. 
 
 Time series indices of C. finmarchicus  abundance of copepodid stages and total mesozooplankton biomassare presented in the following format: the accepted GAM of each time series variable is used to estimate the expected average value and confidence interval  to depict climatology over an annual time period, or to depict the  trend in each season over multiple years. These estimated expected average values are the indices for each variable and can be calculated for any combination of year and day of year. For depicting the annual climatology , the year is set to 2012 while days range from 1 to 365. For depicting interannual trends, a single day is set within each season (see figure captions for which day) while years vary from 2023 to 2005. A transformation by the square root was applied  to achieve a normal distribution for the analysis, and in the depicted figure these values are displayed by their untransformed number.
 
-### Data Processing 
+### Data processing 
 
 The Wilkinson Basin Time Series (WBTS) Station (42°51.7ʹN, -69°51.8ʹW, previously Station WB-7) is located 60 km from Portsmouth, New Hampshire, in the northwest corner of Wilkinson Basin at an average station depth of 257 m.  Since the start of the time series in December, 2004, it has been accessed by day trips using the University of New Hampshire research vessel, R/V Gulf Challenger. Contingent on funding support, the station was sampled at approximately monthly intervals between January, 2005- August, 2008, April, 2012-May, 2013, October, 2015-July, 2017, January, 2021- March, 2024 and at less frequent intervals in other years, for a total of 142 visits for CTD casts, 116 of which also include net tows. It continues to be sampled at approximately monthly intervals since 2020 as part of the U.S. MBON.
 

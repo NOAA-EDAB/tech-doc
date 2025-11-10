@@ -15,7 +15,7 @@
 **Public availability statement**: Source data are NOT publicly available. Data can be acquired upon request.
 
 ## Methods
-### Data Sources
+### Data sources
 
 Data set was provided by Yizhen Li, NOAA/NOS NCCOS Stressor Detection and Impacts Division, HAB Forecasting Branch, Silver Spring, MD. Graphics and summaries were developed by Ayman Mabrouk, NOAA/NOS NCCOS Marine Spatial Ecology Division, Biogeography Branch, Silver Spring, MD.
 
@@ -29,7 +29,7 @@ Original data were collected by the State of Maine, Department of Marine Resourc
 
 [New Hampshire Department of Environmental Services](https://www.des.nh.gov/water/healthy-swimming/harmful-algal-blooms)
 
-### Data Analysis
+### Data analysis
 
 Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from March through October, and tissues were analyzed for presence and quantity of Paralytic Shellfish Poison (PSP) toxins.  Saxitoxin (STX) is a well-known PSP toxin, but a bloom can generate a range of related PSP toxins.  Therefore, in many monitoring programs, toxins are reported as "ug STX equivalents per 100 grams of shellfish tissue", where the quantity of each toxin present is normalized by it's toxicity compared to STX (@chung_measuring_2010).
 
@@ -37,7 +37,7 @@ Blue mussels (*Mytilis edulis*) were sampled at designated sites each year from 
 Data include total number of samples at multiple locations collected in each calendar year (2005-2019), numbers of samples above and below the PSP threshold of 44 ug/100g, and percentage of samples above the threshold.  Simple bar and line graphs are used to plot the values for each variable as time series, 2005-2019.
 Operational Harmful Algal Bloom forecast is served online at https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/hab-forecasts/gulf-of-maine-alexandrium-catenella-predictive-models/.
 
-### Data Processing
+### Data processing
 
 Code for processing salinity data can be found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_habs.R).
 

@@ -21,7 +21,7 @@
 ### Data sources
 European Centre for Medium-Range Weather Forecasts atmospheric reanalysis version 5 (ERA5) accessed via the  Copernicus Climate Change Service https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form. The 3-hour data cover the Earth on a 30km grid and are freely available to the public.
 
-### Data Extraction
+### Data extraction
 The following variables were extracted from the input data: 
  + 10m_u_component_of_wind
  + '10m_v_component_of_wind
@@ -41,7 +41,7 @@ knitr::include_graphics(c(file.path(image.dir, "NEUS_regions.png")))
 ```
 
 
-### Data Processing 
+### Data processing 
 
 Code for processing wind process_data.py and wave data can be found at: 
 https://github.com/nrcc-cornell/regional-swh 

@@ -16,34 +16,39 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 Currently, the version of the NEFSC Trawl Survey used to generate the community weighted mean trait values is from <https://github.com/NOAA-EDAB/data-requests/tree/main/EwE-menhaden-AndreBuchheister>. However, any version of the trawl survey data that has corrected estimates of biomass by species at the tow scale could be used to update/recreate the index.
 
 The trait values for each species can be found at <https://github.com/bartdifiore/Fish-Functional-Traits/blob/main/Data/Derived/trait_database.csv> and the PCA ordinations of these traits can be found at <https://github.com/bartdifiore/Fish-Functional-Traits/blob/main/Data/Derived/pca_variables.csv>. I have included in this submission the derived CWM trait database that can be directly used to create all figures etc.
 
-### Data Analysis 
-
-Here, we present indices for 8 functional traits and three aggregate trait ordinations. To better understand the long-term linear change in these indicators, we fit linear mixed effects models. Specifically, at the EPU scale we estimated the linear change in the response (e.g. PCA1, PCA2, or PCA3) with time in each season in each EPU . We include year as a random intercept effect to account for systematic annual variation across EPU’s. For visualization purposes we include the long-term linear trend if the 95% confidence intervals on the slope estimate do not include zero.
-
-### Data Processing
-
-#### Development of the trait database
+**Development of the Trait Database**
 
 To develop the trait database we utilized two primary sources: @beukhof_trait_2019 and @thorson_identifying_2023 FishLife database. Both data sources are based on FishBase [@froese_fishbase_2019], however provide different levels of detail. Specifically, we queried the @beukhof_trait_2019 database for finfish species encountered in the NE Shelf trawl survey. We utilized values from @beukhof_trait_2019 that were species-specific (e.g. not estimated based on averages of traits across other species of the same genus, family, class, order). For remaining species encountered on the NE Shelf, we queried the FishLife database. The FishLife database used a modeling approach to impute trait values for all fish species in FishBase based on taxonomic relatedness. Thus, if a trait for a particular species was unknown, the model generated a prediction for that trait based on taxonomic relatedness via a structural equation model.
 
-#### Principle Component Analysis of traits
+### Data analysis 
+
+Here, we present indices for 8 functional traits and three aggregate trait ordinations. To better understand the long-term linear change in these indicators, we fit linear mixed effects models. Specifically, at the EPU scale we estimated the linear change in the response (e.g. PCA1, PCA2, or PCA3) with time in each season in each EPU . We include year as a random intercept effect to account for systematic annual variation across EPU’s. For visualization purposes we include the long-term linear trend if the 95% confidence intervals on the slope estimate do not include zero.
+
+**Principal Component Analysis of traits**
 
 Many traits represent similar variation in the community. For instance, maximum observed body size and asymptotic body size (from the VB growth equation) both represent similar trait indices. To further reduce the dimensionality across traits, we conducted a principal component analysis (PCA) of the trait database. The first principal component (PCA1) explained 61.5% of the variation, while the second component (PCA2) explained 19.6% of the variation. Traits such as VB growth parameter k, length at maturity, age at maturity, maximum observed length, and VB growth parameter linf all loaded strongly on PCA1. Following, @mckeon_increased_2024 we consider this PCA axis as an indicator for finfish “Pace of Life”, with higher values on this axis representing faster growth and small maximum body size. Similarly, we consider the second axis as an indicator of “Fecundity”, with higher values on the axis reflecting lower reproductive investment (smaller offspring, higher fecundity).
 
-#### Estimating trait distributions
+**Estimating trait distributions**
+
 To generate a functional trait index, we then combined our trait database with observations of the finfish community using a community weighted mean (CWM) approach (e.g. @lavorel_assessing_2008, @frainer_climate-driven_2017). Specifically, we follow @lavorel_assessing_2008, and estimate the CWM for each trait j as
 
-**Insert formula**
+$$CWM_j = \frac{\sum_{i=1}^nb_it_{ij}}{\sum_{i=1}^nb_i}$$
+where $b_i$ is the biomass (kg) of species $i$, $t_{ij}$ is the value of trait $j$ for species $i$, and $n$ is the total number of species captured. The units of $CWM_j$ depend on the trait value. For instance, the units of the CWM length at maturity are cm. 
 
 The community weighted mean can be estimated at different spatial or temporal scales. Here we estimate the CWM for each trait at the scale of the NE Shelf, where bi is the biomass (kg) of species i captured across all tows in a year and season, or similarly at the EPU scale, where bi is the biomass (kg) of species i captured across each EPU in each year and season.
 
 All other data preparation and processing is standard to the trawl survey data prep, including species-specific vessel corrections, etc.
+
+### Data processing
+
+The indicator data set was formatted for inclusion in the ecodata R package using the R script found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_finfish_traits.R).
+
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/finfish_traits.html>

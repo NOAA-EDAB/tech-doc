@@ -15,7 +15,7 @@
 **Public availability statement**: Source data are NOT publicly available. Please email angela.silva@noaa.gov for further information and queries of Speed and Extent of Offshore Wind Development indicator source data.
 
 ## Methods
-### Data Sources
+### Data sources
 Social Indicators Data: 
 *https://www.fisheries.noaa.gov/national/socioeconomics/social-indicators-coastal-communities
 *https://www.st.nmfs.noaa.gov/data-and-tools/social-indicators/
@@ -25,12 +25,12 @@ Wind Data:
 *https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development
 
 
-### Data Analysis
+### Data analysis
 
 Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WEA) were pulled for communities along the Northeast US Shelf from 2010 to 2019. Percent of wind lease area landings were calculated compared to total landings for those communities. Social Vulnerability indicators were then matched to these communities. 
 
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_port.R).
 

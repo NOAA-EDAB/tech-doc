@@ -21,11 +21,11 @@ The methodology for the cold pool index changed between 2020, 2021, and 2022 SOE
 The cold pool is an area of relatively cold bottom water that forms on the US northeast shelf in the Mid-Atlantic Bight.
 
 
-### Data Sources
+### Data sources
 The three cold pool indices were calculated using a high-resolution long-term bottom temperature product. All the details on the bottom temperature dataset are available in the [Bottom Temperature - High Resolution](https://noaa-edab.github.io/tech-doc/bottom-temperature---high-resolution.html) chapter and in @noauthor_high-resolution_2023.
 
 
-### Data Analysis 
+### Data analysis 
 
 #### Cold Pool Domain
 
@@ -75,10 +75,10 @@ Code used to process the cold pool inidcator can be found in the `ecodata` packa
 ## 2021 Methods
 **Point of Contact:**: Zhoumin Chen <zhuomin.chen@uconn.edu>
 
-### Data Sources
+### Data sources
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
 
-### Data Analysis
+### Data analysis
 Depth-averaged spatial temperature is calculated based on the daily Cold Pool dataset, which is quantified following @chen_seasonal_2018.
 
 ### Data processing

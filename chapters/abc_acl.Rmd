@@ -16,11 +16,11 @@
 
 ## Methods
 
-### Data Sources
+### Data sources
 
 These data were compiled from MAFMC [Fishery Information Documents](https://www.mafmc.org/fishery-performance-reports), Stock Assessment reports, [SSC reports](https://www.mafmc.org/ssc), GARFO catch/landings database, and MRIP queries. 
 
-### Data Analysis
+### Data analysis
 
 Each stock has a threshold and catch value assigned to it from the sources above. The table below shows where the information comes from for each stock. 
 
@@ -52,7 +52,7 @@ Allowable Biological Catch (ABC) for each managed stock is set by the MAFMC Scie
 
 Each species, depending upon data availability, sectors, fleets etc., goes through a different data processing process. 
 
-### Data Processing 
+### Data processing 
 
 Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_abc.acl.R).
 
