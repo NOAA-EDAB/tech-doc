@@ -2,7 +2,7 @@ Package: placeholder
 Type: Book
 Title: Technical Documentation, State of the Ecosystem Report
 Description: Technical documentation for State of the Ecosystem Reporting.
-Version: 2026.1.0
+Version: 2026.0.0
 Depends: 
   bookdown, 
   rmarkdown,
@@ -20,3 +20,4 @@ Remotes:
   NOAA-EDAB/stocksmart
 
   
+
