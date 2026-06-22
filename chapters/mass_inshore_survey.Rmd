@@ -30,7 +30,7 @@ Biomass indices were provided as stratified mean biomass (kg `r ifelse(knitr::is
 
 1. All species catch weights were summed for each tow and for each feeding guild category. 
 2. The average weight per tow, associated variances and standard deviation for each survey, region, stratum, and feeding guild was calculated.
-3. Stratified mean biomass was then calculated as the sum of the weighted averages of the strata, where the weight of a given [stratum]((https://nefsc.github.io/NEFSC-Spatial/reference/mass_inshore_strata.html)) was the proportion of the survey area accounted for by that stratum. 
+3. Stratified mean biomass was then calculated as the sum of the weighted averages of the strata, where the weight of a given [stratum](https://nefsc.github.io/NEFSC-Spatial/reference/mass_inshore_strata.html) was the proportion of the survey area accounted for by that stratum. 
 
 These calculations followed those used to find stratified mean biomass by feeding guild in the NEFSC Bottom Trawl Survey and are described in greater detail in the [Survey Data](#survdat) section.
 
