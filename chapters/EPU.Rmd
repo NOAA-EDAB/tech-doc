@@ -17,7 +17,7 @@
 
 **Point of contact**: Robert Gamble, <robert.gamble@noaa.gov>
 
-**Public availability statement**: Ecological production unit (EPU) shapefiles are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis). More information about source data used to derive EPUs can be found [here](https://www.integratedecosystemassessment.noaa.gov/sites/default/files/pdf/ne-ecological-production-units-paper.pdf).
+**Public availability statement**: Ecological production unit (EPU) shapefiles are available [here](https://github.com/NOAA-EDAB/tech-doc/tree/master/gis). 
 
 
 ## Methods
@@ -26,6 +26,13 @@ To define ecological production units (EPUs), we assembled a set of physiographi
 We did not include information on zooplankton, benthic invertebrates, fish, protected species, or fishing patterns in our analysis. The biomass and production of the higher trophic level groups in this region has been sharply perturbed by fishing and other anthropogenic influences. Similarly, fishing patterns are affected by regulatory change, market and economic factors and other external influences. 
 
 Because these malleable patterns of change are often unconnected with underlying productivity, we excluded factors directly related to fishing practices. The physiographic variables considered in this analysis are listed in Table \@ref(tab:epuinputs). They include bathymetry and surficial sediments. The physical oceanographic and hydrographic measurements include sea surface temperature, annual temperature span, and temperature gradient water derived from satellite observations for the period 1998 to 2007. 
+
+## Adaptations for the State of the ecosystem report
+
+The definition of an EPU, for all indices used in the State of the ecosystem report is as follows:
+
+* For commercial data - EPUs are defined by Greater Atlantic Region Statistical Areas. See [Commercial landings data](#comdat)
+* For survey data - EPUs are defined by [survey data](#survdat)
 
 ### Data sources
 Shipboard observations for surface and bottom water temperature and salinity in surveys conducted in spring and fall. Daily sea surface temperature (SST, &deg;C) measurements at 4 km resolution were derived from nighttime scenes composited from the AVHRR sensor on NOAA's polar-orbiting satellites and from NASA's MODIS TERRA and MODIS AQUA sensors. We extracted information for the annual mean SST, temperature span, and temperature gradients from these sources. The latter metric provides information on frontal zone locations. 
@@ -86,7 +93,7 @@ After the analyses were done, we next considered options for interpolation of ne
 Finally, we next considered consolidation of ecological subareas so that nearshore regions are considered to be special zones nested within the adjacent shelf regions. Similar consideration led to nesting the continental slope regions within adjacent shelf regions in the Mid-Atlantic and Georges Bank regions. This led to four major units: Mid-Atlantic Bight, Georges Bank, Western-Central Gulf of Maine (simply "Gulf of Maine" in the State of the Ecosystem), and Scotian Shelf-Eastern Gulf of Maine. As the State of the Ecosystem reports are specific to FMC managed regions, the Scotian Shelf-Eastern Gulf of Maine EPU is not considered in SOE indicator analyses. 
 
 
-```{r EPUmap, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue)", fig.align='center', echo = F}
+```{r EPUmap, fig.cap="Map of the four Ecological Production Units, including the Mid-Atlantic Bight (light blue), Georges Bank (red), Western-Central Gulf of Maine (or Gulf of Maine; green), and Scotian Shelf-Eastern Gulf of Maine (dark blue)", fig.align='center', out.width = '50%', echo = F}
 
 knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
@@ -94,7 +101,7 @@ knitr::include_graphics(file.path(image.dir,"EPUs.jpg"))
 
 ### Data processing
 
-Shapefiles were converted to `sf` objects for inclusion in the `ecodata` R package using the R code found [here](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/data-raw/get_epu_sf.R).
+Shapefiles were converted to `sf` objects for inclusion in the `ecodata` R package 
 
 **catalog link**
 No associated catalog page
