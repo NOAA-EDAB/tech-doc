@@ -23,8 +23,9 @@ rmd_files:
     -   "chapters/habs.Rmd"
     -   "chapters/SAV.Rmd"
     -   "chapters/zooplankton_index.Rmd"
-    -   "chapters/calanus_variation.Rmd"
-    -   "chapters/wbts_mesozooplankton.Rmd"
+    -   "chapters/wbts_zoo.Rmd"
+    -   "chapters/preyfield_energy.Rmd"
+    #-   "chapters/calanus_variation.Rmd"
     -   "chapters/zoo_abundance_anom.Rmd"
     #-   "chapters/zoo_diversity.Rmd" *Missing tech doc page
 #
@@ -35,7 +36,7 @@ rmd_files:
     -   "chapters/survey_shannon.rmd" 
     -   "chapters/mab_inshore_survey.Rmd"
     #-   "chapters/mass_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
-    #-   "chapters/ne_inshore_survey.Rmd" *Shares tech doc page with mab_inshore_survey
+    -   "chapters/ne_inshore_survey.Rmd"
     #-   "chapters/osw_survey_impact.Rmd" *Missing tech doc page
     -   "chapters/condition.Rmd"
     -   "chapters/finfish_traits.Rmd"
@@ -44,6 +45,7 @@ rmd_files:
     -   "chapters/energy_density.Rmd"
     -   "chapters/spawn_timing.Rmd"
     -   "chapters/exp_n.Rmd"
+    -   "chapters/effective_sweptarea.Rmd"
     -   "chapters/forage_index.Rmd"
     -   "chapters/benthos_index.Rmd"
     -   "chapters/harborporpoise.Rmd"
@@ -65,7 +67,7 @@ rmd_files:
 # #################### OCEANOGRAPHIC ##################
     -   "chapters/sectionHeaders/oceanographic.rmd" 
     -   "chapters/bottom_temp_insitu.Rmd"
-    #-   "chapters/bottom_temp_model_anom.Rmd" *Missing tech doc page
+    -   "chapters/bottom_temp_model_anom.Rmd"
     -   "chapters/bottom_temp_model_gridded.Rmd"
     -   "chapters/seasonal_oisst_anom_gridded.Rmd"
     #-   "chapters/seasonal_oisst_anom.Rmd" *Missing tech doc page
@@ -77,13 +79,16 @@ rmd_files:
     -   "chapters/slopewater.Rmd"
     -   "chapters/persistent_hotspots.Rmd"
     -   "chapters/wcr.Rmd"
-    #-   "chapters/thermal_habitat_area.Rmd" *Missing tech doc page
-    #-   "chapters/thermal_habitat_persistence.Rmd" *Missing tech doc page
+    -   "chapters/advection.Rmd"
+    -   "chapters/thermal_habitat_area.Rmd"
+    -   "chapters/thermal_habitat_gridded.Rmd"
     -   "chapters/ch_bay_sal.Rmd"
     -   "chapters/ch_bay_temp.Rmd"
     -   "chapters/ches_bay_sst.Rmd"
     #-   "chapters/ches_bay_synthesis.Rmd" *Missing tech doc page
     -   "chapters/heatwave.Rmd"
+    -   "chapters/cold_spell.Rmd"
+    -   "chapters/MOM6_forecasts.Rmd"
     #-   "chapters/heatwave_year.Rmd" *Shares tech doc page with heatwave
     #-   "chapters/timing_shifts.Rmd" *Missing tech doc page
     #-   "chapters/observation_synthesis.Rmd" *Missing tech doc page
@@ -94,6 +99,7 @@ rmd_files:
 # ######################## ECONOMIC ##################
     -   "chapters/sectionHeaders/economic.rmd"
     -   "chapters/comdat.Rmd"
+    -   "chapters/comdat_profit.Rmd"
     -   "chapters/commercial_div.Rmd"
     -   "chapters/ppr.Rmd"
     -   "chapters/recdat.Rmd"
@@ -103,6 +109,7 @@ rmd_files:
     -   "chapters/stock_status.Rmd"
     -   "chapters/engagement.Rmd"
     #-   "chapters/community_climate_vulnerability.Rmd" *Missing tech doc page
+    -   "chapters/crew_survey.Rmd"
     -   "chapters/aquaculture.Rmd"
     -   "chapters/Wind_dev_speed.Rmd"
     -   "chapters/wind_port.Rmd"
@@ -113,7 +120,6 @@ rmd_files:
     -   "chapters/sectionHeaders/legacy.rmd"
     -   "chapters/regime_shift_analysis.Rmd" 
     -   "chapters/Annual_SST_cycle_indicator.Rmd"
-    -   "chapters/bottom_temperature_GLORYS.Rmd"
     -   "chapters/calanus_stage.Rmd"
     #-   "chapters/forage_anomaly.Rmd"
     -   "chapters/occupancy_indicator.Rmd"
