@@ -8,11 +8,11 @@
 
 **Contributor(s)**: Geret DePiper, Sarah Gaichas, Sean Hardison, Sean Lucey
   
-**Data steward**: Sarah Gaichas <Sarah.Gaichas@noaa.gov>
+**Data steward**: Andy Beet <andrew.beet@noaa.gov>
   
-**Point of contact**: Sarah Gaichas <Sarah.Gaichas@noaa.gov>
+**Point of contact**: Andy Beet <andrew.beet@noaa.gov>
   
-**Public availability statement**: Source data is available to the public (see Data Sources). 
+**Public availability statement**: Source data is available to the public (see [Data Sources](#sg-data-sources)). 
 ```{r global-opts2, echo = FALSE}
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 ```
@@ -52,7 +52,7 @@ kable(soe.18.class, booktabs = TRUE,
       caption = "Aggregate groups use since 2018 SOE.  Classifications are based on Link et al. (2006).")
 ```
 
-### Data sources
+### Data sources {#sg-data-sources}
 
 In order to match aggregate groups with various data sources, a look-up table was generated which includes species' common names (COMNAME) along with their scientific names (SCINAME) and several species codes. SVSPP codes are used by the NEFSC Ecosystems Surveys Branch (ESB) in their fishery-independent Survey Database (SVDBS), while NESPP3 codes refer to the codes used by the Commercial Fisheries Database System (CFDBS) for fishery-dependent data. A third species code provided is the ITISSPP, which refers to species identifiers used by the Integrated Taxonomic Information System (ITIS). Digits within ITIS codes are hierarchical, with different positions in the identifier referring to higher or lower taxonomic levels. More information about the SVDBS, CFDBS, and ITIS species codes are available in the links provided below.
 
@@ -60,18 +60,15 @@ Management responsibilities for different species are listed under the column "F
 
 #### Supplemental information
 
-See the following links for more information regarding the NEFSC ESB Bottom Trawl Survey, CFDBS, and ITIS:  
+See the following links for more information 
 
-*    https://www.itis.gov/  
-*    https://inport.nmfs.noaa.gov/inport/item/22561  
-*    https://inport.nmfs.noaa.gov/inport/item/22560  
-*    https://inport.nmfs.noaa.gov/inport/item/27401  	
-
-More information about the NE-IEA program is available [here](http://integratedecosystemassessment.noaa.gov).
-
-More information about the New Engalnd Fisheries Management Council is available [here](https://www.nefmc.org/).
-
-More information about the Mid-Atlantic Fisheries Management Council is available [here](http://www.mafmc.org/).
+*    [Integrated Taxonomic Information System, (ITIS)](https://www.itis.gov/)
+*    [Spring Botton Trawl Survey](https://inport.nmfs.noaa.gov/inport/item/22561)
+*    [Fall Bottom Trawl Survey](https://inport.nmfs.noaa.gov/inport/item/22560)
+*    [Commercial Fisheries Database](https://inport.nmfs.noaa.gov/inport/item/27401)- This has been superseded by the Catch Accounting and Monitoring System (CAMS)
+*    [NE-IEA program](http://integratedecosystemassessment.noaa.gov)
+*    [New Engalnd Fisheries Management Council](https://www.nefmc.org/)
+*    [Mid-Atlantic Fisheries Management Council](http://www.mafmc.org/)
 
 ### Data extraction 
 

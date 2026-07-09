@@ -14,7 +14,8 @@ Depends:
   kableExtra,
   ecodata,
   stocksmart,
-  DT
+  DT, 
+  formatR
 Remotes:
   NOAA-EDAB/ecodata@dev,
   NOAA-EDAB/stocksmart
