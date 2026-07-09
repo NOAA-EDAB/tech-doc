@@ -1,0 +1,32 @@
+# Advection {#advection}
+
+**Description**: The advection data is an integrated mass transport through transects along the shelf break
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2026+), State of the Ecosystem - Mid-Atlantic (2026), State of the Ecosystem - New England (2026)
+
+**Indicator category**: Extensive analysis, not yet published; Database pull with analysis
+
+**Contributor(s)**: Zhitao Yu and Laurel Smith
+  
+**Data steward**: Zhitao Yu <Zhitao.Yu@noaa.gov>
+  
+**Point of contact**: Zhitao Yu <Zhitao.Yu@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+U.S. Navy analysis/reanalysis and operational data from https://www.hycom.org/dataserver/gofs-3pt1/reanalysis and https://www.hycom.org/dataserver/gofs-3pt1/analysis 
+
+### Data analysis
+
+The water velocity data was averaged by month and the velocity normal to the transect was calculated integrated through the water column by three depth ranges: top 15m, 15-40m and 40m to the sea floor.
+
+### Data processing 
+
+Water velocity data by 3-hour increments was downloaded from the hycom server.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/advection.html>
