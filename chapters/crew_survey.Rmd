@@ -1,0 +1,34 @@
+# NE Socio-economic and Demographic Data of Commercial Crew and Hired Captains {#crew_survey}
+
+**Description**: The data set presented here covers three waves of survey questions and responses pertaining to commercial crew and hired captains’ health, well-being, satisfaction, and demographics for the entire Northeast region from 2012, 2018, and 2023/24.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2026+) 
+
+**Indicator category**: Extensive analysis, not yet published; Synthesis of published information
+
+**Contributor(s)**: Kiera Morrill, Matthew Cutler
+  
+**Data steward**: Kiera Morrill <kiera.morrill@noaa.gov>
+  
+**Point of contact**: Kiera Morrill <kiera.morrill@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+The data was collected as part of the field survey. This survey was conducted as an intercept-style-method for the majority of the waves, with the first wave using a third-party survey company to act in place of researchers while fielding questions. The survey focused questions on crew health, well-being, and livelihood, with particular attention to factors such as age, educational attainment, ethnicity, marital status, position on the vessel, and years of experience in commercial fishing, all of which emerged as significant predictors. Spatial context also proved important, including respondents’ primary ZIP code and whether they lived in rural or urban communities. 
+
+### Data analysis
+
+-	Research questions centered on job-satisfaction, well-being, and what variables may predict that including: place-based, social, demographic, and financial factors.
+-	Data was statistically analyzed into tables present then further analyzed to understand the coefficient estimated between variables. 
+-	Hypothesized relationships amongst socio-economic and place-based factors were examined using mixed-effects regression modeling analyses. This approach provided researchers with variability in operating at multiple levels including individual, organizational, and geospatial, ultimately providing a more comprehensive understanding of the interconnected nature these influences play in relation to commercial fishers’ perception of satisfaction and well-being. The use of this approach allowed for satisfaction-related outcomes to be evaluated from the view of individual crew members, regional ports, and fishing communities at large. Job satisfaction was measured using the summed score of responses to a Likert-style scale adapted from @pollnac_structure_1988, which highlights three core categories: Basic Needs, Self-Actualization, and Social-Psychological Needs. Crew experiences are shaped by a nuanced combination of social and spatial contexts, which were reflected in this framework.
+
+### Data processing 
+
+Intercept survey method was conducted at higher traffic fishing ports and paper copies were used for the interview process. Digital interviews and interviews on the phone were also occasionally conducted. Each interview was individually entered into a survey platform which organized and processed information to be used later in data and statistical analysis. The visuals included in this report were processed in Excel which allows for a more descriptive visual of the qualitative data.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/crew_survey.html>
