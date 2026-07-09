@@ -1,0 +1,34 @@
+# MOM6 Forecasts {#MOM6_forecasts}
+
+**Description**: Seasonal and decadal bottom temperature predictions for the Northeast US shelf.
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2026), State of the Ecosystem - New England (2026), State of the Ecosystem - Indicator Catalog (2026) 
+
+**Indicator category**: Published methods; Extensive analysis, not yet published
+
+**Contributor(s)**: Andrew Ross
+  
+**Data steward**: Andrew Ross <andrew.c.ross@noaa.gov>
+  
+**Point of contact**: Andrew Ross <andrew.c.ross@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available from the [CEFI data portal](https://psl.noaa.gov/cefi_portal/).
+
+## Methods
+
+### Data sources
+
+Forecast bottom temperature data are obtained from a high-resolution regional ocean model, MOM6-COBALT-NWA12, run at NOAA Geophysical Fluid Dynamics Laboratory (GFDL; Ross et al., 2023 [@ross_high-resolution_2023]). This model is used to run forecasts with seasonal and decadal time horizons. Both types of forecasts are created by downscaling GFDL's Seamless System for Prediction and EArth System Research (SPEAR; Delworth et al., 2020 [delworth_spear_2020]), a global model, with the higher resolution NWA12 regional model. 10 ensemble members are downscaled for each forecast. Raw model data is available for download at the [Changing Ecosystems and Fisheries Initiative data portal](https://psl.noaa.gov/cefi_portal/). 
+
+### Data analysis
+
+Data processing began with monthly average (seasonal forecast) and annual average (decadal forecast) bottom temperature data from the MOM6-NWA12 numerical model. A suite of retrospective forecasts was used to calculate the lead-dependent climatology of the forecasts. These climatologies were subtracted from the forecasts to produce anomalies. Additional details of the model data processing steps are provided in Ross et al. 2024 [@ross_dynamically_2024] and Koul et al. 2024 [@koul_predicted_2024], 2026 [@koul_decadal_2026]. Code to process the seasonal forecasts is available at [https://github.com/NOAA-CEFI-Regional-Ocean-Modeling/seasonal-workflow](https://github.com/NOAA-CEFI-Regional-Ocean-Modeling/seasonal-workflow). 
+
+### Data processing 
+
+For the seasonal forecast, the bottom temperature anomalies were post-processed using extended logistic regression [@wilks_extending_2009]. The extended logistic regression model uses the ensemble mean forecast to predict the probability of exceeding a given quantile value. This model was fit for each grid point in the MOM6 output using the retrospective forecasts as predictors and the GLORYS reanalysis data [@jean-michel_copernicus_2021] as truth. From the fitted regression model, the probability of being warmer than average was defined as the predicted probability of exceeding the 0.67 quantile threshold, the probability of being cooler than average was 1 minus the probability of exceeding the 0.33 quantile threshold, and the probability of being near average was 1 minus the previous two probabilities. At grid points where one of these probabilities exceeds 50%, the corresponding category was plotted on the map. Grid points where none of the three probabilities exceed 50% were marked as “uncertain”. 
+
+Predicted anomalies from the decadal forecasts were averaged over the entire Northeast U.S. Large Marine Ecosystem. Annual anomalies were plotted for the most recent forecast, initialized Jan 1, 2025. To provide a graphical depiction of past forecast skill, the 2022 retrospective forecast and 3 previous forecasts initialized at 9 year intervals were also plotted. The plot shows the ensemble mean forecast as a line and plus/minus one standard deviation of the ensemble members as a shaded region. The GLORYS reanalysis averaged over the same Northeast U.S. region is shown as a reference.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/MOM6_forecasts.html>
