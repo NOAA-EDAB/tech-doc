@@ -6,7 +6,9 @@
 - [Bottom Temperature - in situ](https://noaa-edab.github.io/tech-doc/bottom_temp_insitu.html)
 - [Bottom Temperature - Seasonal Anomaly](https://noaa-edab.github.io/tech-doc/bottom_temp_model_anom.html)
 - [Bottom Temperature - Seasonal Gridded](https://noaa-edab.github.io/tech-doc/bottom_temp_model_gridded.html)
+- [Calanus Variation - WBTS](https://noaa-edab.github.io/tech-doc/wbts_zoo.html)
 - [Cetacean Distribution Shifts](https://noaa-edab.github.io/tech-doc/cetacean_dist.html)
+- [Mesozooplankton Biomass - WBTS](https://noaa-edab.github.io/tech-doc/wbts_zoo.html)
 - [Thermal Habitat Persistence](https://noaa-edab.github.io/tech-doc/thermal_habitat_gridded.html)
 - [Seasonal OISST Anomaly Map](https://noaa-edab.github.io/tech-doc/seasonal_oisst_anom_gridded.html)
 
