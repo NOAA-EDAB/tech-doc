@@ -1,38 +1,99 @@
 # WEA Fishing Port Landings {#wind_port}
 
-**Description**: Port Landings from within Wind Lease Areas and Community Social Vulnerability Indicators
+**Description**: Percent of port-level revenue from wind lease areas and Community Social Vulnerability Indicators
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2022+), State of the Ecosystem - Mid-Atlantic (2022+)
+**Found in**: State of the Ecosystem - New England (2022+), State of the Ecosystem - Mid-Atlantic (2022+), State of the Ecosystem - Indicator Catalog (2024+)
 
-**Indicator category**: Database pull with analysis
+**Indicator category**: Extensive analysis, not yet published
 
-**Contributor(s)**: Angela Silva, Doug Christel
+**Contributor(s)**: Angela Silva, Doug Christel, Benjamin Galuardi, Nicole Morgan, Bobby Murphy, Abigail Tyrell
   
-**Data steward**: Angela Silva
+**Data steward**: Abigail Tyrell <abigail.tyrell@noaa.gov>
   
-**Point of contact**: Angela Silva <angela.silva@noaa.gov>
+**Point of contact**: Abigail Tyrell <abigail.tyrell@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available. Please email angela.silva@noaa.gov for further information and queries of Speed and Extent of Offshore Wind Development indicator source data.
+**Public availability statement**: Source data are publicly available.
 
 ## Methods
+
 ### Data sources
-Social Indicators Data: 
-*https://www.fisheries.noaa.gov/national/socioeconomics/social-indicators-coastal-communities
-*https://www.st.nmfs.noaa.gov/data-and-tools/social-indicators/
 
-Wind Data: 
-*https://www.greateratlantic.fisheries.noaa.gov/ro/fso/reports/WIND/ALL_WEA_BY_AREA_DATA.html
-*https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development
+Fishing footprint data were obtained from the Greater Atlantic Regional Fisheries Office ([NMFS.GAR.Data.Requests@noaa.gov](mailto:NMFS.GAR.Data.Requests@noaa.gov)). Data were obtained for two categories of wind lease areas, as well as for all wind lease areas combined. The wind lease areas that were categorized as "developed or under construction" were:
+- OCS-A 0483 - Virginia Electric and Power Company
+- OCS-A 0512 - Empire Offshore Wind, LLC
+- OCS-A 0517 - South Fork Wind, LLC
+- OCS-A 0486 - Revolution Wind, LLC
+- OCS-A 0487 - Sunrise Wind LLC
+- OCS-A 0501 - Vineyard Wind LLC
 
+The wind lease areas that were categorized as "not yet under construction" were:
+- OCS-A 0534- New England Wind 1
+- OCS-A 0561- New England Wind 2
+- OCS-A 0521- SouthCoast Wind 1 & 2
+- OCS-A 0512- Empire Wind 2
+- OCS-A 0570- Atlantic Shores South 2
+- OCS-A 0499- Atlantic Shores South 1
+- OCS-A 0498- Ocean Wind 1 
+- OCS-A 0490- Maryland Wind
+- OCS-A 0500- Starboard Wind/Bay State Wind
+- OCS-A 0520 Beacon Wind
+- OCS-A 0522 Vineyard Northeast
+- OCS-A 0544 Vineyard Mid-Atlantic
+- OCS-A 0538 Attentive Energy 2
+- OCS-A 0549 Atlantic Shores North
+- OCS-A 0519 Skipjack Wind
+- OCS-A 0553 State of Maine/TBD
+- OCS-A 0562 Invenergy NE Offshore Wind/TBD
+- OCS-A 0564 Avangrid Renewables/TBD
+- OCS-A 0568 Avangrid Renewables/TBD
+- OCS-A 0567 Invenergy NE Offshore Wind/TBD
+- OCS-A 0537 Bluepoint Wind
+- OCS-A 0539 Community Offshore Wind
+- OCS-A 0541 Atlantic Shores Offshore Wind Bight
+- OCS-A 0542 Leading Light Wind
+- OCS-A 0532 Ocean Wind 2
+- OCS-A 0557 A-2/Equinor Wind
+- OCS-A 0482 GSOE 1 LLC
+- OCS-A 0558 CVOW-East
+- OCS-A 0559 CVOW-South
+- OCS-A 0508 Kitty Hawk South
+- OCS-A 0546 Cinergy Corp./TBD
+- OCS-A 0545 Total Energies 
+
+Therefore, there were three spatial definitions for which data was obtained: leases with construction in progress or complete, leases with construction not in progress, and all leases. Under each of these spatial definitions, we obtained: (1) revenue in 2024 USD at the port level (excluding confidential data) (dataset 1), (2) revenue in 2024 USD at the species-port level (including confidential data) (dataset 2), (3) revenue in 2024 USD and pounds landed at the species-port level (excluding confidential data) (dataset 3). We also obtained total nominal port revenue from the Social Sciences Branch, NEFSC (dataset 4). Port revenues were converted from nominal values to 2024 USD based on the GDP deflator provided by GARFO.
+
+Community Social Vulnerability Indicators were provided by Changhua Weng (NEFSC). 
+
+Fisheries Council management designations were obtained from Council websites. 
 
 ### Data analysis
 
-Cumulative port landings(pounds) and revenue(dollars) from Wind Energy Areas (WEA) were pulled for communities along the Northeast US Shelf from 2010 to 2019. Percent of wind lease area landings were calculated compared to total landings for those communities. Social Vulnerability indicators were then matched to these communities. 
+The non-confidential wind lease area data (dataset 1) and the total port revenue data (dataset 4) were used to calculate the percent revenue values that are shown in the State of the Ecosystem report. All of the numbers presented in the State of the Ecosystem report and the `ecodata` R package are based on this non-confidential data. Years with no revenue from the wind lease areas were not included in the analysis; however, only five ports had years with no revenue from the wind lease areas. Ports with less than 5 years of data and/or with less than $10,000 average revenue in wind lease areas were excluded from the results. 
 
+The confidential species-port level data (dataset 2) was used to calculate the total number of years that each port had revenue from the lease areas, to improve the contextual description and interpretation of this indicator.
+
+The non-confidential species-port level data (dataset 3) was used to determine which ports have the majority of their revenue or landings within the wind lease areas coming from species managed by the opposite region, to address a data request from the Councils. Specifically, this analysis identified (1) New England ports that landed species managed by the Mid Atlantic Fisheries Management Council from wind lease areas, and (2) Mid Atlantic ports that landed species managed by the New England Fisheries Management Council from wind lease areas. In both cases, wind lease areas were assessed under two definitions, (1) wind lease areas under construction or completed, and (2) wind lease areas not currently under construction. Only ports that had been identified in the main indicator were considered for this analysis. Species were categorized into "New England" or "Mid Atlantic" categories based on which Council is responsible for their management, and the proportion of revenue and proportion of pounds landed from the wind lease areas deriving from these categories was determined for each port. Ports that attributed greater than 50% of revenue or greater than 50% of pounds landed to species managed by the opposite Council were identified. The output of this analysis was a list of ports that was used to generate figures containing a subset of the main indicator data.
 
 ### Data processing 
 
-Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_wind_port.R).
+Port names in the port revenue dataset were cleaned to match the port names in the wind lease area revenue datasets. Port revenues were then joined into the wind lease area revenue dataset.
+- "NARRAGANSETT/POINT JUDITH, RI" was revised to "POINT JUDITH, RI",
+- "POINT PLEASANT BEACH, NJ" was revised to "POINT PLEASANT, NJ",
+- "HAMPTON BAYS/SHINNECOCK, NY" was revised to "SHINNECOCK/HAMPTON BAYS, NY",
+- "NORTH KINGSTOWN, RI" was revised to "DAVISVILLE/NORTH KINGSTOWN, RI",
+- "VIRGINIA BEACH, VA" was revised to "VIRGINIA BEACH/LYNNHAVEN, VA",
+- "HARWICH PORT, MA" was revised to "HARWICHPORT, MA"
+
+Port names in the wind lease area revenue datasets were cleaned and data was aggregated to match the communities in the Community Social Vulnerability Indicators.
+- "BARNEGAT, NJ", "BARNEGAT LIGHT, NJ", and "LONG BEACH (TOWN OF), NJ" were consolidated into "BARNEGAT LIGHT, NJ"
+- "DAVISVILLE, RI" and "NORTH KINGSTOWN, RI" were consolidated into "DAVISVILLE/NORTH KINGSTOWN, RI"
+- "HAMPTON BAY, NY", "HAMPTON BAYS, NY", and "SHINNECOCK, NY" were consolidated into "SHINNECOCK/HAMPTON BAYS, NY"
+- "PROVINCETOWN WHARF, MA" and "PROVINCETOWN, MA" were consolidated into "PROVINCETOWN, MA"
+- "CHILMARK, MA" and "MENEMSHA, MA" were consolidated into "CHILMARK, MA"
+- "HYANNIS, MA" and "BARNSTABLE, MA" were consolidated into "BARNSTABLE, MA"
+- "POINT PLEASANT BEACH, NJ" and "POINT PLEASANT, NJ" were consolidated into "POINT PLEASANT, NJ"
+
+The Council responsible for each species' management was joined in based on information from the Councils' websites. Community Social Vulnerability Indicator designations of Medium-High or High in the Demographics indicators (Poverty, Population Composition, Personal Disruption) and the Gentrification indicators (Housing Characteristics, Retiree Migration, Urban Sprawl) were joined to the data based on port name.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/wind_port.html>
