@@ -1,0 +1,36 @@
+# Inshore Survey (New England) {#ne_inshore_survey}
+
+**Description**: The data presented here represent the biomass time series for aggregate species groups from the Maine/New Hampshire inshore bottom trawl surveys conducted in Maine and New Hampshire state waters.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2024+), State of the Ecosystem - New England (2019+), State of the Ecosystem - Mid-Atlantic (2019+)
+
+**Indicator category**: Synthesis of published information; Database pull
+
+**Contributor(s)**: Robyn Linner
+  
+**Data steward**: Robyn Linner <robyn.linner@maine.gov>
+  
+**Point of contact**: Robyn Linner <robyn.linner@maine.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+All data shown here were collected on the Maine-New Hampshire Inshore Trawl Survey. Data can be viewed and download requests can be made here: https://mainedmr.shinyapps.io/MaineDMR_Trawl_Survey_Portal/ and survey protocols can be found [here](https://github.com/NOAA-EDAB/tech-doc/blob/feature/i164-routine-page-updates/data-raw/supplemental-files/MEDMR_Trawl_Survey_Protocols_2005 - Trawl Survey.pdf). 
+
+### Data analysis
+
+Species weights in a given tow are combined into trophic categories (provided by NOAA) before calculating the stratified trophic-level biomass indices.  The survey area is stratified by 5 regions of the coast, and 4 depth strata, so average weight for each trophic category is calculated within the 20 distinct strata. These values are multiplied by the area (km^2) of the strata combination, each of which are summed together and divided by the total survey area for stratified indices of biomass. Prior to 2003, only 3 depth strata were sampled, so the two periods are calculated separately due to differing total areas.
+
+Please see the attached R markdown file [“MENH_ITIS_AbundanceIndices_AllSpecies.html”](https://github.com/NOAA-EDAB/tech-doc/blob/feature/i164-routine-page-updates/data-raw/supplemental-files/MENH_ITIS_AbundanceIndices_AllSpecies - Trawl Survey.html), steps 9-13 which outlines how indices are calculated for individual species. The same analysis is used on the aggregate weights of each trophic category to create the results presented here.
+
+### Data processing 
+
+Raw Data is stored in MARVIN in what is essentially an Access file format. MARVIN is not publicly available and is hosted by the State of Maine. Various files are pulled from MARVIN, combined, cleaned (correcting formats, removing fixed station data which are no longer conducted), and expanded (to reflect a standard 20 min tow) using R. 
+
+For more detailed information please see [“MENH_ITIS_AbundanceIndices_AllSpecies.html”](https://github.com/NOAA-EDAB/tech-doc/blob/feature/i164-routine-page-updates/data-raw/supplemental-files/MENH_ITIS_AbundanceIndices_AllSpecies - Trawl Survey.html), steps 1-8 describing how data is pulled from our database and cleaned prior to the calculation of biomass indices.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/ne_inshore_survey.html>
