@@ -1,0 +1,32 @@
+# Trends in effective area swept and revenue per km2 by EPU and gear {#effective_sweptarea}
+
+**Description**: Data presented here represent a summary of total area swept derived from VTR information, e.g. gear type, gear sweep, vessel size, number of tows, etc. and represents a complete census of commercial fishing trips reported by dealers, either from VTR or imputed data. Assumptions about the effect on habitat by gear components (sweeps, cables, doors, dredges, traps, gillnets, and longlines) are made and documented.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2026+) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Andrew Applegate, Michelle Bachman, Geret DePiper
+  
+**Data steward**: Andrew Applegate <aapplegate@nefmc.org>
+  
+**Point of contact**: Andrew Applegate <aapplegate@nefmc.org>
+  
+**Public availability statement**: Source data are NOT publicly available. Must have access to confidential data and CAMS on the GARFO server.
+
+## Methods
+
+### Data sources
+
+CAMS, VTR, permit, VMS, and observed trips 
+
+### Data analysis
+
+SQL is listed in an RMD chunk at the end of the script. Run the SQL to download a CSV from output, use the RMD first chunk to read the data in and process the data to be suitable for plotting using ggplot. NEFMC habitat team fishing effects analysis: https://www.nefmc.org/library/fishing-effects-model. Model from 2017 has been updated to pull relevant data from CAMS, so that every trip reported by dealers has VTR or imputed data for area fished and gear quantity. In particular, the swept area calculations are documented here: https://d23h0vhsm26o6d.cloudfront.net/Appendix-A-Area-Swept-Table-Generation.pdf
+
+### Data processing 
+
+Data is summarized at the EPU and gear level by year in SQL and downloaded as a CSV file, imported into R and plots are produced in the RMD script.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/effective_sweptarea.html>
