@@ -2,53 +2,42 @@
 
 **Description**: Wind Energy Lease Area Development 
 
-**Found in**: State of the Ecosystem - Gulf of Maine & Georges Bank (2021+), State of the Ecosystem - Mid-Atlantic (2021+)
+**Found in**: State of the Ecosystem - New England (2021+), State of the Ecosystem - Mid-Atlantic (2021+), State of the Ecosystem - Indicator Catalog (2024+)
 
-**Indicator category**: Published methods, Synthesis of published information, Database pull, Database pull with analysis
+**Indicator category**: Published methods; Synthesis of published information; Database pull with analysis
 
-**Contributor(s)**: Angela Silva, Andrew Lipsky, Doug Christel
+**Contributor(s)**: Nicole Mucci, Joshua Hatch, Angela Silva, Data steward: Nicole Mucci, Angela Silva
   
-**Data steward**: Angela Silva
+**Data steward**: Nicole Mucci <nicole.mucci@noaa.gov>, Angela Silva <angela.silva@noaa.gov>
   
-**Point of contact**: Angela Silva <angela.silva@noaa.gov>
+**Point of contact**: Nicole Mucci <nicole.mucci@noaa.gov>, Angela Silva <angela.silva@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available. Please email angela.silva@noaa.gov for further information and queries of Speed and Extent of Offshore Wind Development indicator source data.
+**Public availability statement**: Source data are publicly available. Please email <nicole.mucci@noaa.gov> for further information and queries of Wind Energy Development Timeline indicator source data.
 
 ## Methods
+
 ### Data sources
-BOEM lease area, Call Areas, Planning Area shapefiles:  https://www.boem.gov/renewable-energy/mapping-and-data/renewable-energy-gis-data; 
 
-Maine Area of Interest: Maine Department of Marine Resources, Central Atlantic Bight planning area draft (BOEM communication, INTERNAL ONLY private shapefile); Foundation and Cable data from South Fork Final Environemntal Impact Statement (SWFW FEIS) data tables E-4, E-4-1, E-2: https://www.boem.gov/sites/default/files/documents/renewable-energy/state-activities/SFWF%20FEIS.pdf
-
+BOEM lease areas: https://www.boem.gov/renewable-energy/mapping-and-data/renewable-energy-gis-data
+BOEM lease construction status: https://www.boem.gov/renewable-energy/offshore-renewable-activities
+NOAA ENC - Turbine Foundation Locations: https://www.nauticalcharts.noaa.gov/charts/noaa-enc.html
 
 ### Data analysis
-All data was updated for 2022 with South Fork Wind Farm FEIS and the following assumptions were made on future wind areas: 
-* (1) There are no reported values for foundations, cable acres and miles and year of construction for NY WEA, Maine AOI, and Central Atlantic Bight draft planning area. 
-* (2) To estimate the variables, the ratio of each (Cumul_FNDS, Cumul_Offsh_Cbl_Acres, Cumul_OffExp_Inter_Cab_Miles, TBNSinstall_no) was calculated by using reported values for existing lease area. All data is reported as ""2030""
 
-Spatial Analysis for Project_Acres:
+Lease area acreage was obtained from the ‘Acres’ column of the attribute table in the Bureau of Ocean Energy Management’s (BOEM) ArcGIS Online (AGOL) hosted feature service, “Wind Lease Boundaries BOEM - Offshore Wind Lease Outlines”. To the extent possible, acreage values were verified against official lease documents. In the event of a discrepancy or missing data, the acreage reported in the official lease document was used (see Table 1). Note that a single lease area may comprise multiple projects (for example, the Empire Wind lease area comprises the Empire Wind 1 and Empire Wind 2 projects).
 
+Table 1: List of discrepancies or missing acreage data between the BOEM hosted feature service and official lease documents.
 
-Project Areas and Call Area acres were calculated using BOEM Project Area Shapefiles (Project_Areas_12_3_2019), BOEM NY Call Area Shapefiles (NY_Call_Areas), and NY Call Area Primary and Secondary Recommendation shapefiles (BOEM_NY_Draft_WEAs_11_1_2018) in ArcMap. 
+| Lease Number | Hosted Feature Service Acreage | Lease Document Acreage |
+|--------------|--------------------------------|------------------------|
+| OCS-A 0486   | 83,789                         | 83,798                 |
+| OCS-A 0520   | 128,881                        | 128,811                |
+| OCS-A 0534   | NA (missing)                   | 52,663                 |
+| OCS-A 0561   | NA (missing)                   | 48,927                 |
+| OCS-A 0570   | 43,439                         | 43,412                 |
 
-
-Project_Areas_12_3_2019, NY_Call_Areas, and BOEM_NY_Draft_WEAs_11_1_2018 Acres were calculated using Add Field and Field Calculator tool. Python Expression = !shape.area@acres!
-
-
-Project_Name:  Table E-4 of South Fork FEIS Project names were matched to shapefiles by name and lease number. 
-
-
-FDNS: Number of foundations proposed or expected for each Project area taken directly from Table E-4 of South Fork DEIS.
-
-
-Offsh_Cbl_Acres: Values taken directly from Table A-4 in South Fork DEIS (Table A-4: Offshore Wind Leasing Activities in the U.S. East Coast: Projects and Assumptions [part 2], pg. E-3-4). Total values for MA/RI lease areas Bay State Wind, Liberty Wind, OCS-A 0522 Remainder, OCS-A 0500 Remainder, OCS-A 0521 Remainder, OCS-A 0520 were aggregated in the table (567 total acres).  Values were evenly distributed across the 6 Project areas.  As such, these values should be treated as estimates until more information is released specific to individual project areas and their landing sites. 
-
-
-Dominion Energy was presented as 3 phases in Table E-4 for Project_Name (Dominion Energy Phase1, Dominion Energy Phase 2, Dominion Energy Phase 3). Only one Project shapefile area exists for this lease  area OCS-A 0483. Therefore, the total shapefile acreage was evenly divided between 3 phases similar to how the foundations were treated in table E-4 (Future Offshore Wind Project Construction Schedule, pg. E-14). 
-
-
-OffExpCab_Miles: Offshore Export Cable Length OCS-A 0482, OCS-A 0519 OCS-A 0490 had 360 offshore export cable miles reported in Table E-4. This number was divided by 3 and 120 were assigned to these three project areas. 
-
+Turbine Foundations
+The number of turbine foundations in each lease area, either proposed or installed, was tallied using the NOAA Electronic Navigational Charts (ENCs).
 
 ### Data processing 
 
