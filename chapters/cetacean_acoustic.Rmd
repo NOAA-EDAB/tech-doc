@@ -1,16 +1,16 @@
 # Cetacean Weekly Acoustic Presence {#cetacean_acoustic}
 
-**Description**: A summary of weekly acoustic presence of eight cetacean species summarized across two years at four recording sites in southern New England.
+**Description**: Passive acoustic monitoring (PAM) is a non-invasive method for studying cetaceans, relying on the detection of the unique vocalizations that cetaceans produce. PAM provides continuous sampling effort in areas that are otherwise difficult to access and provides information on multiple species simultaneously. The resulting long-term, robust datasets allow for insights into species distributions, behavior, and habitat use. Furthermore, PAM can be used from a management perspective to implement risk mitigation efforts, assess the cumulative impacts of stressors, and evaluate potential behavioral and distributional changes resulting from climate change or anthropogenic activity.
 
-**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+**Found in**: State of the Ecosystem - Indicator Catalog (2025+)
 
-**Indicator category**: Published methods
+**Indicator category**: Extensive analysis, not yet published
 
-**Contributor(s)**: Sofie Van Parijs, Annamaria DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Xavier Mouy, Tim Rowell, Sara Tennant, Annabel Westell, and Genevieve Davis
+**Contributor(s)**: Renea Briner, Amanda Holdman, Daryll Carlson, Genevieve Davis, Rhett Finley, Sophie Ferguson, Leila Hatch, Katie Kowarski, Bruce Martin, Jessica McCordic, Jennifer Miksis-Olds, Hilary Moors-Murphy, Xavier Mouy, Anita Murray, Maricarmen Serna, Erin Summers, Joy Stanistreet, Lindsey Transue, Christopher Tremblay, Annabel Westell, Rebecca Vanhoeck, Emma Vergow, Sofie Van Parijs, Mark Baumgartner, Joel Bell, Amy Engelhaupt, Paige Hanson, Hana Koilpillai, Melinda Rekdahl, Howard Rosenbaum, Julianne Wilder
   
-**Data steward**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>
+**Data steward**: Renea Briner <renea.briner@noaa.gov>
   
-**Point of contact**: Rebecca Van Hoeck <rebecca.vanhoeck@noaa.gov>; Genevieve Davis <genevieve.davis@noaa.gov>
+**Point of contact**: Renea Briner <renea.briner@noaa.gov>
   
 **Public availability statement**: Source data are publicly available.
 
@@ -18,15 +18,21 @@
 
 ### Data sources
 
-Data collected by the NEFSC Passive Acoustic Branch from four recording sites in and around the southern New England Wind Energy areas. 
+#### Cetacean Acoustic Presence
+
+Data were collected by the NEFSC Passive Acoustics Branch, the Office of National Marine Sanctuaries, Department of Fisheries and Oceans Canada, Maine Department of Marine Resources, and the Acoustic and Environmental Observation Network in the Gulf of Maine from a total of thirty recording sites throughout the Gulf of Maine. Recording sites encompassed coastal waters, deep basins, and onshore and offshore banks. Data collection occurred from September 2019 to September 2023.
+
+#### Baleen Whale Acoustic Presence
+
+Data were collected by the NEFSC Passive Acoustics Branch, Woods Hole Oceanographic Institute, Naval Facilities Engineering Command Atlantic, Amy Engelhaupt Consulting, and Wildlife Conservation Society from a total of thirteen recording sites throughout the Mid-Atlantic Bight. Recorders were arranged in transects spanning the continental shelf. Data collection occurred from June 2022 to November 2024.
 
 ### Data analysis
 
-Manual verification of the automated detections was conducted to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis can be found in @vanparijs_establishing_2023.
+Automated detections were manually verified to confirm daily acoustic presence for each species. Weekly acoustic presence was summarized as the median number of days of acoustic presence per calendar week across all data. Horizontal lines within the boxes indicate the median, box boundaries indicate the 25th (lower quartile) and 75th (upper quartile) percentiles, vertical lines indicate the largest (upper whisker) and smallest (lower whisker) values no further than 1.5 times the interquartile range, and black dots represent outliers. Further details of the analysis are in preparation for publication.
 
 ### Data processing 
 
-Species-specific vocalizations of eight cetacean were identified in the acoustic data using multiple automated detectors following the methodology described in @vanparijs_establishing_2023.
+Species-specific vocalizations of eight cetacean species, one cetacean family and six baleen whales were identified in the acoustic data using multiple automated detectors, following similar methodology to that described in Van Parijs et al. 2023 [@vanparijs_establishing_2023]. Further processing details are in preparation for publication.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/cetacean_acoustic.html>

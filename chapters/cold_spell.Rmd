@@ -1,0 +1,32 @@
+# Marine Cold Spell Events {#cold_spell}
+
+**Description**: Surface and bottom marine cold spells (MCSs) for 2025.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2026+), State of the Ecosystem - Mid-Atlantic (2026), State of the Ecosystem - New England (2026) 
+
+**Indicator category**: Published methods; Database pull with analysis
+
+**Contributor(s)**: Vincent Saba
+  
+**Data steward**: Vincent Saba <vincent.saba@noaa.gov>
+  
+**Point of contact**: Vincent Saba <vincent.saba@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+OISST, debiased ROMS BT, GLORYS BT 
+
+### Data analysis
+
+https://robwschlegel.github.io/heatwaveR/articles/detection_and_visualisation.html#calculating-marine-cold-spells-mcss
+
+### Data processing 
+
+Raw data were linearly detrended.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/cold_spell.html>

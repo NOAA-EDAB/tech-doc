@@ -2,7 +2,7 @@
 
 **Description**: These data represent estimates of trait distributions for key functional traits amongst finfish species at each EPU on the Northeast Continental Shelf.
 
-**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+**Found in**: State of the Ecosystem - Indicator Catalog (2025+) 
 
 **Indicator category**: Extensive analysis, not yet published; Database pull with analysis
 

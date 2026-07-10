@@ -1,0 +1,39 @@
+# Thermal Habitat Area {#thermal_habitat_area}
+
+**Description**: Calculates the proportion of each EPU that exceeds temperature thresholds as a daily time series from 1993 – 2025.
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2024), State of the Ecosystem - New England (2024), State of the Ecosystem - Indicator Catalog (2024+)
+
+**Indicator category**: Extensive analysis, not yet published
+
+**Contributor(s)**: Joseph Caracappa
+  
+**Data steward**: Joseph Caracappa <joseph.caracappa@noaa.gov>
+  
+**Point of contact**: Joseph Caracappa <joseph.caracappa@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+Daily bottom temperature data were obtained from [GLORYS global reanalysis](https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/description) using Copernicus Marine Service's API toolbox. GLOYRS is a data assimilative model that incorporates a wide range of global observational data including NOAA observations in the World Ocean Database. This product starts in 1993 to present day and is updated quarterly with a spatial resolution of 1/12 degree.  
+
+### Data analysis
+
+Daily files are first cropped to the [EPU footprint shapefile](https://nefsc.github.io/NEFSC-Spatial/reference/epu_sf.html), so that only the Northeast Shelf LME is used in the analysis. Then all values below a given temperature threshold are masked out. The daily values are constructed as an annual file with a daily time dimension.
+
+#### `thermal_habitat_area`
+For `ecodata::thermal_habitat_area` , indices are constructed separately for each Ecological Production Unit (EPU; Mid-Atlantic Bight, Georges Bank, and the Gulf of Maine, Scotian Shelf) as well the entire Northeast US Shelf, depth bands (0 - 25m, 25 - 100m, 100 - 300m, and All Depths), and maximum temperature thresholds (0.5C to 30C at 0.5C increments). The bathymetry used for the depth bands is the same as used in the GLORYS product (`cmems_mod_glo_phy_my_0.083deg_static`). 
+
+First, a binary mask is applied to each annual gridded file (with daily timesteps) to convert all cells that exceed a temperature threshold as 1 and 0 otherwise. Then, the total area of those exceeding cells is calculated for each day in that year. Finally, the average daily area is calculated as the main indicator value.
+
+### Data processing 
+
+Thermal habitat indices are constructed using a workflow in the [`bottom_temp_SOE`](https://github.com/jcaracappa1/bottom_temp_SOE) repository, which utilizes gridded data functions found in the [`EDABUtilities` package](https://github.com/NEFSC/READ_EDAB_Utilities).
+
+This work was built off of [similar analysis](https://apps-nefsc.fisheries.noaa.gov/saw/sasi_files.php?year=2025&species_id=26&stock_id=6&review_type_id=5&info_type_id=5&map_type_id=&filename=2025_SCA_RT_WP_TOR1b%20Climate%20Influences.pdf) conducted as part of the 2025 Atlantic Sea Scallop Research Track Stock Assessment.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/thermal_habitat_area.html>
