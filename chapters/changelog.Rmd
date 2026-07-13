@@ -1,0 +1,51 @@
+# Changelog {.unnumbered}
+
+## tech-doc 7.0.0 {.unnumbered}
+
+Date: 07/13/2026
+
+Release includes processes and .Rmd files used to build the version of the Technical Documentation referenced in the 2026 State of the Ecosystem reports.
+
+## tech-doc 6.0.0 {.unnumbered}
+
+Date: 09/18/2025
+
+Release includes processes and .Rmd files used to build the version of the Technical Documentation referenced in the 2025 State of the Ecosystem reports. Uses [ecodata 6.0.1](https://github.com/NOAA-EDAB/ecodata/releases/tag/6.0.1).
+
+## tech-doc 5.0.0 {.unnumbered}
+
+Date: 08/29/2024
+
+Release includes processes and .Rmd files used to build the version of the Technical Documentation referenced in the 2024 State of the Ecosystem reports submitted to the MAFMC SSC. Uses [ecodata 5.0.1](https://github.com/NOAA-EDAB/ecodata/releases/tag/5.0.1).
+
+## tech-doc 4.0.0 {.unnumbered}
+
+Date: 08/01/2023
+
+Release includes the methodology for indicators used to build the MAFMC and NEFMC 2023 State of the Ecosystem Reports.
+
+## tech-doc 3.0.0 {.unnumbered}
+
+Date: 09/14/2022
+
+Release includes the methodology for indicators used to build the MAFMC and NEFMC 2022 State of the Ecosystem Reports.
+
+## tech-doc 2.1.0 {.unnumbered}
+
+Date: 04/09/2021
+
+Release includes the methodology for indicators used to build the MAFMC and NEFMC 2021 State of the Ecosystem Reports.
+
+## tech-doc 2.0.0 {.unnumbered}
+
+Date: 06/08/2020
+
+Within this repository is the [technical documentation](https://doi.org/10.25923/64pf-sc70) for the 2020 State of the Ecosystem (SOE) reports, including relevant indicator metadata, literature cited, and scripts for processing and analyses. Indicators described in this documentation were those included in the SOE reports delivered to the Mid-Atlantic Fishery Management Council (MAFMC) and New England Fishery Management Council (NEFMC) in the spring of 2020.
+
+## tech-doc 1.0.0 {.unnumbered}
+
+Date: 12/19/2019
+
+Within this repository is the technical documentation for the 2018/2019 State of the Ecosystem (SOE) reports, including relevant indicator metadata, literature cited, and scripts for processing and analyses. Indicators described in this documentation were those included in the SOE reports delivered to the Mid-Atlantic Fishery Management Council (MAFMC) and New England Fishery Management Council (NEFMC) in the spring of 2018/2019. View the New England reports [2018](https://github.com/NOAA-EDAB/tech-doc/files/3984008/SOE_2018_NEMFC.pdf)and [2019](https://github.com/NOAA-EDAB/tech-doc/files/3984012/SOE_2019_NEMFC.pdf), and the Mid-Atlantic reports [2018](https://github.com/NOAA-EDAB/tech-doc/files/3984006/SOE_2018_MAMFC.pdf) and [2019](https://github.com/NOAA-EDAB/tech-doc/files/3984010/SOE_2019_MAMFC.pdf).
+
+There are multiple ways to build this version of the repository locally in RStudio, including through the remotes package (e.g. remotes::install_github('noaa-edab/tech-memo@v1.0.0')). The document may also be built from the zipped files associated with this release.
