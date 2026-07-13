@@ -140,6 +140,11 @@ rmd_files:
     -   "chapters/observer_data_indicator.Rmd"
     -   "chapters/Seabird_MAB.Rmd"
     -   "chapters/wind_habitat_occupancy.Rmd"
+#
+#
+# #################### RESOURCES ##################
+    -   "chapters/sectionHeaders/resources.rmd"
+    -   "chapters/changelog.Rmd"
     -   "chapters/references.Rmd"
 before_chapter_script: _common.R
 delete_merged_file: true
