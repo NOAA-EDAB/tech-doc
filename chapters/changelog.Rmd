@@ -2,7 +2,7 @@
 
 ## tech-doc 7.0.0 {.unnumbered}
 
-Date: 07/13/2026
+Date: 07/14/2026
 
 Release includes processes and .Rmd files used to build the version of the Technical Documentation referenced in the 2026 State of the Ecosystem reports.
 
