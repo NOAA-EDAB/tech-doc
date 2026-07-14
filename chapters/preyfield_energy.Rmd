@@ -1,0 +1,36 @@
+# Copepod Preyfield Energy Density {#preyfield_energy}
+
+**Description**: These data show the estimated average preyfield energy available to foraging North Atlantic Right Whales on the shelf waters of the US northeast coast.
+
+**Found in**: State of the Ecosystem - Indicator Catalog (2026+) 
+
+**Indicator category**: Database pull with analysis
+
+**Contributor(s)**: Gregory Ellis, Chris Orphanides, Jordan Katz, Harvey Walsh
+  
+**Data steward**: Gregory Ellis <gregory.ellis@noaa.gov>
+  
+**Point of contact**: Gregory Ellis <gregory.ellis@noaa.gov>
+  
+**Public availability statement**: Source data are publicly available.
+
+## Methods
+
+### Data sources
+
+Data are taken from the Ecomon zooplankton abundance surveys conducted in the NW Atlantic:
+
+https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0187513
+
+### Data analysis
+
+Monthly point data coverages for each species were interpolated to continuous abundance surfaces in Python using the processing modules in ArcGIS Pro (ArcPy). Interpolation was performed using the empirical Bayesian kriging algorithm. 
+
+Abundances were converted to energy content using literature values specific to each species, then summed using raster algebra to produce the final monthly energy density estimates.
+
+### Data processing 
+
+Data were subsetted to include only the regions of interest and transformed to units of individuals per cubic meter or seawater using Python code. They were then binned by month prior to further analysis.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/preyfield_energy.html>

@@ -1,8 +1,8 @@
-# Bottom temperature - GLORYS
+# Bottom temperature - GLORYS {#bottom_temp_model_anom}
 
 **Description**: Time series of annual bottom temperatures on the Northeast Continental Shelf from the GLORYS model.
 
-**Indicator category**: 
+**Indicator category**: Database pull with analysis
 
 **Found in:** State of the Ecosystem - Gulf of Maine & Georges Bank (2021); State of the Ecosystem - Mid-Atlantic Bight (2021)
 
@@ -19,11 +19,6 @@
 ### Data sources
 
 The three-dimensional temperature of the Northeast US shelf is downloaded from the CMEMS (https://marine.copernicus.eu/). Source data is available [at this link](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030).
-
-
-### Data extraction
-
-NA
 
 ### Data analysis
 

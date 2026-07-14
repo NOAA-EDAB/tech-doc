@@ -1,0 +1,69 @@
+# Comdat Profitability Indices {#comdat_profit}
+
+**Description**: 
+
+**Found in**: State of the Ecosystem - Mid-Atlantic (2026), State of the Ecosystem - New England (2026), State of the Ecosystem - Indicator Catalog (2026+) 
+
+**Indicator category**: 
+
+**Contributor(s)**: Samantha Werner
+  
+**Data steward**: Samantha Werner <samantha.werner@noaa.gov>
+  
+**Point of contact**: Samantha Werner <samantha.werner@noaa.gov>
+  
+**Public availability statement**: 
+
+## Methods
+
+### Data sources
+
+Trip Costs – Trip Cost Model Estimates (POC Samantha Werner)
+Revenue – ecodata (commercial_bennet.rds)
+GDP Price Deflator– Bureau of Economic Analysis (BEA)
+Latitudes and Longitudes – CAMS_GARFO.CAMS_SUBTRIP
+EPU data – Ecodata (epu_sf) 
+
+### Data analysis
+
+The cost index tracks the relative change in real trip costs over time by calculating the
+geometric mean.The index is calculated by first normalizing individual trip costs against
+a constant reference value to create a trip-level ratio, where the constant reference
+value is the average of all trips from the study area in calendar year 2000 (i.e., the
+minimum year in the time series). The function then aggregates these ratios by year
+using a geometric mean, calculated via the log-transform method. Lastly, the time series
+
+values are re-based to a specific target year by dividing each annual geometric mean by
+the mean of that base year, resulting in a standardized index where the base year
+equals 1.000.
+The revenue index tracks the performance of total commercial fishing revenue over
+time, relative to the average revenue from GB, GOM and MAB from the minimum year
+in the dataset. In this case, this is the calendar year 2000. This is accomplished by first
+scaling annual total revenues against the 2000 average annual revenue of the three
+area sums. Values are then rebased by dividing each year&#39;s index value by the base
+year index value such that calendar year 2000 is equal to 1.000. Note, this index does
+not use the geometric mean as it is obtaining the aggregate fleet performance rather
+than the average trip-level information.
+Lastly, a Profitability Index is derived by calculating the ratio of the Revenue Index to the
+Cost Index, where values greater than 1.000 indicate that revenue growth has outpaced
+cost increases relative to the base year which, in this case, is calendar year 2000.
+
+### Data processing 
+
+Trip cost data, developed from the trip cost model run by Samantha Werner are derived
+from the static files on the NEFSC network drive. The cost information is a composite
+variable of trip cost information consisting of fuel, bait, groceries, water, ice, oil and
+general supplies. Note, that this cost variable does not include labor costs (crew or hired
+captain payments). There are decision rules within the models (one model pertaining to
+data from 2000-2009 and another for 2010-2024) which can be found within their
+respective folders on the network drive. The trip cost models have been adapted from
+methods described in Werner et al. 2020 [@werner_estimation_2020]. Latitude and longitudinal information sourced
+from CAMS_GARFO.CAMS_SUBTRIP and merged with the trip cost information. The
+data are then allocated to EPUs using Ecodata (epu_sf) for GB, GOM and MAB.
+Revenue data are derived from EcoData (commercial_bennet.rds) for all U.S. landings
+where the species value is greater than zero. All values are deflated to 2024 constant
+dollars using the Bureau of Economic Analysis (BEA) Gross Domestic Product Implicit
+Price Deflator which is pulled directly from the BEA into R.
+
+**catalog link**
+<https://noaa-edab.github.io/catalog/comdat_profit.html>

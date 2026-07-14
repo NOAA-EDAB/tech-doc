@@ -12,20 +12,19 @@
   
 **Point of contact**:  Jennifer Cudney <jennifer.cudney@noaa.gov>
   
-**Public availability statement**: Source data are NOT publicly available. Pelagic observer data is considered confidential data, and must be screened to ensure that data meet requirements for "rule of three" at the set and vessel level before they can be distributed. 
-
+**Public availability statement**: Source data are NOT publicly available. Pelagic observer data is considered confidential data, and must be screened to ensure that data meet requirements for "rule of three" at the set and vessel level before they can be distributed.
 
 ## Methods
 
 ### Data sources
-Data for this indicator are sourced from the NOAA Southeast Fisheries Science Center, Pelagic Observer Program. These data come from the NOAA Southeast Fisheries Science Center databases holding the Atlantic highly migratory species information from the pelagic observer program. 
 
-The Southeast Pelagic Observer Program monitors the pelagic longline fleet all along the Northeast U.S. Shelf. This covers approximately 1000 hauls per year and targets 8% coverage of the fishing effort. 
-
+NOAA Southeast Fisheries Science Center, Pelagic Observer Program.  Data can be requested using this form (https://forms.gle/kiMGRfUwbKJCf8Vs6). For more information regarding the dataset please see the SEFSC POP InPort catalog entry (https://www.fisheries.noaa.gov/inport/item/30713). For data requests contact popobserver@noaa.gov.
 
 ### Data analysis
 
-Catch per unit effort was calculated as number of individuals per haul and summarized by year and species. 
+Catch per unit effort was calculated as number of animals caught per haul and summarized by year and species/management group. 
+
+HMS staff created graphs that can be used in technical documentation and in the upcoming SOE report. The graphs were created by plotting the data from each tab in the “HMS POP CPUE 1992-2024” file in R. CPUE (# fish / # hauls) are plotted on the y-axis, and year is plotted on the x-axis.
 
 The species groupings are available in the table below. 
 
@@ -63,9 +62,8 @@ The species groupings are available in the table below.
 | Pelagic        | Thresher             | *Alopias vulpinus*           |
 
 ### Data processing 
-HMS staff sent a request for data to POP Observer Program staff (Sascha Cushner, Lawrence Beerkircher, Garry Decossas, and Scott Leach) using this form (https://forms.gle/kiMGRfUwbKJCf8Vs6). SEFSC statistician Garry Decossas completed the data pull based on submissions to the SOE from previous years, and provided the data to HMS staff. Data from the areas (MAB, NEC) and time period of interest (1992-2023) are summarized by species and year. Number of hauls per year are also provided to enable CPUE calculations of species per year. This is a data pull of ALL species reported in these areas, so there is more than just sharks in the dataset.
 
-Code used to process this data for SOE products can be found on Github - [NOAA-EDAB/ecodata](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_hms_cpue.R).
+Data requests are submitted to the Pelagic Observer Program staff using this request form (https://forms.gle/kiMGRfUwbKJCf8Vs6) or by contacting popobserver@noaa.gov. Data from the areas (combined from pelagic observer program reporting areas “MAB” and “NEC”) are summarized by species (or management group) and year. Number of hauls per year are also provided to enable CPUE calculations of species per year. Data only include HMS managed under the Atlantic HMS Fishery Management Plan and its amendments. 
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/hms_cpue.html>

@@ -21,7 +21,7 @@ Diversity estimates have been developed to understand whether the overall struct
 
 
 ### Data sources
-Data used for the calculation of the expected number of species come from the Northeast Fisheries Science Center's survey database (SVDBS) as pulled in the Survdat data set.  These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
+Data used for the calculation of the expected number of species come from the Northeast Fisheries Science Center's survey database (SVDBS) as descrived in the [Survey Data](#survdat) section. These data are available to qualified researchers upon request. More information on the data request process is available under the "Access Information" field [here](https://inport.nmfs.noaa.gov/inport/item/22560).
 
 ### Data analysis
 The expected number of species ($E(S_n)$) was calculated for each survey tow as:
@@ -34,9 +34,6 @@ where $S$ is the total number of species present, $N$ the total number of indivi
 
 The number of species represented in these samples of 1000 fishes are then averaged over the survey for each [Ecological Production Unit](https://noaa-edab.github.io/tech-doc/epu.html).  Due to the lack of survey calibration factor to account for differences in the number of species caught between the NOAA Ship Albatross IV and NOAA Ship Henry B. Bigelow, the time series are kept separate.  
 
-
-### Data processing
-Data were formatted for inclusion in the `ecodata` R package using the R code found [here](https://github.com/NOAA-EDAB/ecodata/blob/master/data-raw/get_exp_n.R).
 
 **catalog page**
 <https://noaa-edab.github.io/catalog/exp_n.html>

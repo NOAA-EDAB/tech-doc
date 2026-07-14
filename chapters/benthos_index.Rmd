@@ -6,13 +6,13 @@
 
 **Indicator category**: Extensive analysis, not yet published
 
-**Contributor(s)**: Sarah Gaichas, James Gartland, Brian E. Smith, Sarah Weisberg, Sean Lucey
+**Contributor(s)**: Maxwell Grezlik, Sarah Gaichas, James Gartland, Brian E. Smith, Sarah Weisberg, Sean Lucey
   
-**Data steward**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+**Data steward**: Maxwell Grezlik <maxwell.grezlik@noaa.gov>
   
-**Point of contact**: Sarah Gaichas <sarah.gaichas@noaa.gov>
+**Point of contact**: EDAB <edab.data@noaa.gov>
   
-**Public availability statement**: Source data are publicly available. All data and code available on GitHub at <https://github.com/NOAA-EDAB/benthosindex>
+**Public availability statement**: Source data are publicly available. Initial model development (used in the SOE published in 2023-2025) is available at: https://github.com/NOAA-EDAB/benthos_index.html. Code for data updates (used in the SOE published in 2026-present) is available at: https://github.com/NEFSC/READ-EDAB-VAST_indices/tree/main/benthos.
 
 ## Methods
 

@@ -1,7 +1,8 @@
 # tech-doc
 
 [![build-book](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml/badge.svg)](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml)
-![gitleaks](https://github.com/NOAA-EDAB/tech-doc/workflows/gitleaks/badge.svg)
+[![gitleaks](https://github.com/NOAA-EDAB/tech-doc/workflows/gitleaks/badge.svg)
+[![Run PR Checks](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/verify_pr.yml/badge.svg)](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/verify_pr.yml)
 
 Technical documentation for State of the Ecosystem indicators and general methods. 
 

@@ -1,16 +1,16 @@
 # Ambient sound levels SNE wind lease areas {#wea_sound}
 
-**Description**: Annual decidecade sound pressure levels from Southern New England Wind Lease Areas
+**Description**: Passive acoustic monitoring (PAM) simultaneously captures the biological, anthropogenic, climatological, and geological sounds occurring in an area. PAM provides continuous sampling effort in areas that are otherwise difficult to access, resulting in long-term, robust datasets. Ambient sound (soundscape) metrics show the distribution of acoustic energy across frequencies. Peaks in sound levels within particular frequency bins indicate louder sounds at those frequencies, with frequencies below 1000 Hz typically representing contributions from baleen whales, vessel traffic, and noise-generating fishes. Therefore, soundscapes can be used as an indicator of ecosystem health and to identify changes to sound sources, which could be indicative of changes in phenology, species distributions, storm activity, and human activity.
 
-**Found in**: State of the Ecosystem - Indicator Catalog (2025) 
+**Found in**: State of the Ecosystem - Indicator Catalog (2025+)
 
-**Indicator category**: Published methods, Synthesis of published information
+**Indicator category**: Extensive analysis, not yet published
 
-**Contributor(s)**: Sofie M. Van Parijs, Annamaria I. DeAngelis, Tyler Aldrich, Rochelle Gordon, Amanda Holdman, Xavier Mouy, Timothy J. Rowell, Sara Tennant, Annabel Westell and Genevieve E. Davis
+**Contributor(s)**: Renea Briner, Amanda Holdman, Genevieve Davis, Rhett Finley, Sophie Ferguson, Leila Hatch, Samara Haver, Jessica McCordic, Xavier Mouy, Anita Murray, Maricarmen Serna, Anne Smith, Erin Summers, Lindsey Transue, Christopher Tremblay, Annabel Westell, Rebecca Vanhoeck, Sofie Van Parijs, Isabella Garfield, Joel Bell, Amy Engelhaupt
   
-**Data steward**: SOE Leads <nefsc.soe.leads@noaa.gov>
+**Data steward**: Renea Briner <renea.briner@noaa.gov>
   
-**Point of contact**: SOE Leads <nefsc.soe.leads@noaa.gov>; Sofie Van Parijs <sofie.vanparijs@noaa.gov>
+**Point of contact**: Renea Briner <renea.briner@noaa.gov>
   
 **Public availability statement**: Source data are publicly available.
 
@@ -18,15 +18,21 @@
 
 ### Data sources
 
-Acoustic recorders were deployed in 7 locations on Cox’s Ledge and Nantucket Shoals between November 2020 and May 2022, with continuous recordings ranging 111 - 1010 days analyzed per site. Each recorder used a minimum sample rate of 48 kHz [@vanparijs_establishing_2023]. 
+#### Mid-Atlantic Bight
+
+Data were collected by the NEFSC Passive Acoustics Branch, Naval Facilities Engineering Command Atlantic, and Amy Engelhaupt Consulting from a total of nine recording sites throughout the Mid-Atlantic Bight. Recorders were arranged in transects spanning the continental shelf. Data collection occurred from June 2022 to November 2024 and each recorder used a minimum sample rate of 48 kHz.
+
+#### Gulf of Maine
+
+Data were collected by the NEFSC Passive Acoustics Branch, Maine Department of Marine Resources, and the Office of National Marine Sanctuaries from a total of nine recording sites throughout the Gulf of Maine. Recorders were broadly grouped into three subregions: coastal Gulf of Maine, Stellwagen Bank National Marine Sanctuary, and offshore Gulf of Maine. Data collection occurred from January 2020 to July 2024 and each recorder used a minimum sample rate of 48 kHz.
 
 ### Data analysis
 
-Annual medians and distribution percentiles (10th and 90th percentiles) of decidecade levels at each nominal center frequency were generated to assess temporal trends at each monitoring location. See @vanparijs_establishing_2023 for more details.
+To assess peaks in fish chorusing and temporal trends at each monitoring station, hourly median sound levels (dB re 1µPa2/Hz) in the 500 Hz, 1 kHz, and 2 kHz center frequency octave bands were calculated from one-minute hybrid-millidecade levels using the soundscape data visualization and analysis R package PAMscapes ([Sakai, 2025](https://github.com/TaikiSan21/PAMscapes)).
 
 ### Data processing 
 
-Decidecade (one-third octave) sound pressure level (SPL) was calculated using the Soundscape Metrics Remora in the Triton Software Package (https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics). Mean decidecade SPLs per minute were calculated by integrating the mean-square 1-Hz sound pressure spectral densities over their respective frequency bands, computing the arithmetic mean per minute, and converting to decibels (db re 1uPa). Decidecade bands corresponded to standard frequency bands ranging from nominal center frequencies of 25 Hz - 20 kHz. See @vanparijs_establishing_2023 for more details.
+Hybrid millidecade sound levels (dB re 1µPa2/Hz; Martin et al., 2021 [@martin_hybrid_2021]) were calculated to one-minute resolution bins from raw continuous .wav audio files using the PyPAM package in Python (Parcerisas, 2022 [@parcerisas_lifewatchpypam_2022]). Data was calibrated according to a manufacturer provided frequency response value unique to each recorder.
 
 **catalog link**
 <https://noaa-edab.github.io/catalog/wea_sound.html>

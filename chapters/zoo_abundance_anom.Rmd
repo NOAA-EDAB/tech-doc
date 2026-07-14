@@ -6,11 +6,11 @@
 
 **Indicator category**: Database pull with analysis; Synthesis of published information; Extensive analysis, not yet published; Published methods
 
-**Contributor(s)**: Ryan Morse, Kevin Friedland
+**Contributor(s)**: Harvey Walsh, Ryan Morse, Kevin Friedland
   
 **Data steward**: Harvey Walsh, <harvey.walsh@noaa.gov>
   
-**Point of contact**: Ryan Morse, <ryan.morse@noaa.gov>; Harvey Walsh, <harvey.walsh@noaa.gov>
+**Point of contact**: Harvey Walsh, <harvey.walsh@noaa.gov>; Ryan Morse, <ryan.morse@noaa.gov>
   
 **Public availability statement**: Source data through 2019 are publicly available [here](ftp://ftp.nefsc.noaa.gov/pub/hydro/zooplankton_data/), and data through 2021 are available upon request from harvey.walsh@noaa.gov. Derived data can be found [here](https://comet.nefsc.noaa.gov/erddap/tabledap/zoo_abundance_soe_v1.html).
 

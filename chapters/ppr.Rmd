@@ -22,10 +22,6 @@ imagePath <- here::here("images")
 
 We use the definition of ecosystem overfishing from [@link_global_2019]: 
 
-1. The sum of catches is flat or declining
-1. Total catch per unit effort is declining
-1. Total landings relative to ecosystem  production exceeds suitable limits
-
 All of the indices are based on the principle of energy transfer up the foodweb from primary producers.
 
 **Fogarty & Ryther Indices**
@@ -50,15 +46,15 @@ The index is presented as a percentage of [estimated primary production](#chl_pp
 
 $$scaledPPR_t = \frac{PPR_t}{PP_t}$$
 
-The species selected in each year were determined by their cumulative contribution to total landings. A threshold of at least 80% of the total landings is used.
+The species selected in each year were determined by their cumulative contribution to total landings. Prior to 2026, a threshold of at least 80% of the total landings was used (due to the fact that trophic level estimates were not availabale for many species). From 2026, trophic level esimates are avilabale for all species and therefore, 100% of the landings are used in the PPR calculation.
 
 ### Data sources
 
-Data for this index come from a variety of sources. The landings data come from the Commercial Fishery Database (CFDBS), species trophic level information come from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca), and primary production estimates are derived from [satellites](#chl_pp). Some of these data are typically not available to the public.
+Data for this index come from a variety of sources. The landings data come from the Catch Accounting and Monitoring System (CAMS), via the Stock Efficiency initiative (STOCKEFF). Species trophic level information come from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca), and primary production estimates are derived from [satellites](#chl_pp). Some of these data are typically not available to the public.
 
 ### Data extraction
 
-Landings are extracted from the commercial fisheries database (CFDBS) using the methods described in the chapter [Commercial Landings Data.](#comdat)
+Landings are extracted from the Catch Accounting and Monitoring System (CAMS), via the Stock Efficiency initiative (STOCKEFF) using the methods described in the chapter [Commercial Landings Data.](#comdat)
 
 Trophic level information for each species is obtained from [fishbase](http://fishbase.de) and [sealifebase](http://sealifebase.ca) using the R package [rfishbase](https://github.com/ropensci/rfishbase) [@froese_fishbase_2019] in tandem with the package [eofindices.](https://noaa-edab.github.io/eofindices/)
 
@@ -68,7 +64,7 @@ Primary Production is estimated using the methods described in the chapter [Chlo
 
 #### Primary Production Required
 
-Annual (wet weight) landings are calculated for each species for a given EPU. For each year the landings are sorted in descending order by species and the cumulative landings are calculated. The species that accounted for the top 80% of total cumulative landings are selected. The trophic level for each of these species are then obtained from fishbase/sealifebase. At this point the PPR index is calculated. The units of the index are $gCyear^{-1}$ for the EPU. The index is converted to $gCm^{-2}year^{-1}$ by dividing by the area (in $m^2$) of the EPU.
+Annual (wet weight) landings are calculated for each species for a given EPU. The trophic level for each of these species are then obtained from fishbase/sealifebase. At this point the PPR index is calculated. The units of the index are $gCyear^{-1}$ for the EPU. The index is converted to $gCm^{-2}year^{-1}$ by dividing by the area (in $m^2$) of the EPU.
 
 To normalize the index the total Primary Production for the given EPU is required. This is calculated as described in the chapter [Chlorophyll a and Primary Production](#chl_pp). The units are also converted to $gCm^{-2}year^{-1}$.
 
