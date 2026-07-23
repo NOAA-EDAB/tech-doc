@@ -1,4 +1,4 @@
-# tech-doc
+# Technical Documentation, State of the Ecosystem
 
 [![build-book](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml/badge.svg)](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/bookdown.yaml)
 [![gitleaks](https://github.com/NOAA-EDAB/tech-doc/workflows/gitleaks/badge.svg)](https://github.com/NOAA-EDAB/tech-doc/actions/workflows/secretScan.yml)
@@ -6,7 +6,7 @@
 
 ## Overview
 
-`tech-doc` is a bookdown document developed by the Ecosystem Dynamics and Assessment Branch of the Northeast Fisheries Science Center which details the methodology used to create and maintain the indicators featured in State of the Ecosystem (SOE) reporting. In addition to methods specific to each indictor, `tech-doc` also includes general methods related to the production, maintenance and dissemination of the SOE reports and other regional information. This document should be referenced when using the [`ecodata` package](https://noaa-edab.github.io/ecodata/) to access SOE indicators or datasets. For more context regarding SOE indicators, please see the [Northeast US Ecosystem Indicator Catalog](https://noaa-edab.github.io/catalog/). Full SOE reports can be accessed using the table below:
+[Tech-Doc](https://noaa-edab.github.io/tech-doc/) is a bookdown document developed by the Ecosystem Dynamics and Assessment Branch of the Northeast Fisheries Science Center which details the methodology used to create and maintain the indicators featured in State of the Ecosystem (SOE) reporting. In addition to methods specific to each indictor, `tech-doc` also includes general methods related to the production, maintenance and dissemination of the SOE reports and other regional information. This document should be referenced when using the [`ecodata` package](https://noaa-edab.github.io/ecodata/) to access SOE indicators or datasets. For more context regarding SOE indicators, please see the [Northeast US Ecosystem Indicator Catalog](https://noaa-edab.github.io/catalog/). Full SOE reports can be accessed using the table below:
 
 | Year | State of the Ecosystem: New England | State of the Ecosystem: Mid-Atlantic |
 |------|-------------------------------------|--------------------------------------|
