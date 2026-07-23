@@ -20,7 +20,7 @@
 ## Maintainers
 
 | [Brandon Beltz](https://github.com/BBeltz1) | [Andy Beet](https://github.com/andybeet) |
-|---------------------------------------------|---------------------------------------------| 
+|----|----| 
 | [![](https://avatars.githubusercontent.com/u/136381970?s=200&v=4)](https://github.com/BBeltz1) | [![](https://avatars.githubusercontent.com/u/22455149?s=200&v=4)](https://github.com/andybeet) |
 
 ## Legal Disclaimer
