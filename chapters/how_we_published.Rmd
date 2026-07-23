@@ -23,7 +23,7 @@ Copied in the order I did things to implement gh-pages:
 
 >An alternative approach is to create a `gh-pages` branch in your repository, build the book, put the HTML output (including all external resources like images, CSS, and JavaScript files) in this branch, and push the branch to the remote repository. If your book repository does not have the `gh-pages` branch, you may use the following commands to create one:
 
-**Sarah's notes**: Do this on your _local_ machine, using the terminal under the git-tracked directory, pushing to the github repo last. Don't be tempted to make the gh-pages branch on github first, it causes pain. Using [checkout --orphan](https://git-scm.com/docs/git-checkout) means you are making a new branch that has no history (you don't need to carry the version control history here; it stays on the master branch). Next you are removing all the files from this new branch using [rm -rf .](https://git-scm.com/docs/git-rm) because it will only have the compiled book files on it. All rmd files, etc will remain on the master branch. At the end of this step in the terminal you push to create the gh-pages branch on github. You should see it there, containing only .nojekyll
+**Sarah's notes**: Do this on your _local_ machine, using the terminal under the git-tracked directory, pushing to the github repo last. Don't be tempted to make the gh-pages branch on github first, it causes pain. Using [checkout --orphan](https://git-scm.com/docs/git-checkout) means you are making a new branch that has no history (you don't need to carry the version control history here; it stays on the main branch). Next you are removing all the files from this new branch using [rm -rf .](https://git-scm.com/docs/git-rm) because it will only have the compiled book files on it. All rmd files, etc will remain on the main branch. At the end of this step in the terminal you push to create the gh-pages branch on github. You should see it there, containing only .nojekyll
 
 >
 >From bookdown github chapter:
@@ -43,8 +43,8 @@ git add .nojekyll
 git commit -m"Initial commit"
 git push origin gh-pages
 
-# when done, go back to master branch
-git checkout master
+# when done, go back to main branch
+git checkout main
 ```
 >    
 >
@@ -135,7 +135,7 @@ Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 set -e
 
 [ -z "${GITHUB_PAT}" ] && exit 0
-[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+[ "${TRAVIS_BRANCH}" != "main" ] && exit 0
 
 git config --global user.email "Sarah.Gaichas@noaa.gov"
 git config --global user.name "Sarah Gaichas"
