@@ -21,7 +21,7 @@
 
 | [Brandon Beltz](https://github.com/BBeltz1) | [Andy Beet](https://github.com/andybeet) |
 |----|----| 
-| [![](https://avatars.githubusercontent.com/u/136381970?s=200&v=4)](https://github.com/BBeltz1) | [![](https://avatars.githubusercontent.com/u/22455149?s=200&v=4)](https://github.com/andybeet) |
+| <a href="https://github.com/BBeltz1"><img src="https://avatars.githubusercontent.com/u/136381970?v=4" alt="Brandon Beltz avatar" width="100" align="center"></a> | <a href="https://github.com/andybeet"><img src="https://avatars.githubusercontent.com/u/22455149?v=4" alt="Andy Beet avatar" width="100" align="center"></a> |
 
 ## Legal Disclaimer
 
