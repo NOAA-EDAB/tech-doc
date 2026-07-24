@@ -2,7 +2,6 @@ name: State of the Ecosystem - Tech Doc Submission
 description: Use this issue template to submit tech doc information for the State of the Ecosystem reports.
 title: "[Submission]: "
 labels: ["submission"]
-assignees: "BBeltz1"
 body:
   - type: markdown
     attributes:
