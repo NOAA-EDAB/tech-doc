@@ -1,11 +1,9 @@
-
-
 ## Long Term SST extraction
 
 #```{r, echo = T, eval = F}
 # Include R code here
 # all year
-years="ersst"
+years <- "ersst"
 
 # a year
 #years=".2016"
@@ -16,15 +14,18 @@ setwd("C:/2_ersst/datafiles_v5")
 
 
 # NES standard bounded by 34-46N and 78-62W
-minlon= -78; maxlon= -62; minlat= 34; maxlat= 46
-dataoutfile="C:/2_ersst/nes_std_area_v5.csv"
+minlon <- -78
+maxlon <- -62
+minlat <- 34
+maxlat <- 46
+dataoutfile <- "C:/2_ersst/nes_std_area_v5.csv"
 
 #  DELETE ONLY FILE WILL APPEND AND DOUBLE DATA
 file.remove(dataoutfile)
 
 ##################################################  END SET
 
-# LABRODOR SEA  
+# LABRODOR SEA
 #minlon= -66; #maxlon= -44; #minlat= 50; #maxlat= 70
 #dataoutfile="C:/2_ersst/lab_sea.csv"
 
@@ -85,22 +86,14 @@ file.remove(dataoutfile)
 #minlon= 0; #maxlon= 30; #minlat= 20; #maxlat= 70
 #dataoutfile="C:/1_analyses/ersst/na area2.csv"
 
-
-
-
-
-
-
-
-
 # constants for area
 R <- 6371 # Earth mean radius [km]
-dheight =  222
+dheight <- 222
 
 #library(ncdf)
 library(ncdf4)
 
-# ERSST data  
+# ERSST data
 # lon goes from 0E to 358E with lon at center of box
 # lat goes from 88S to 88N with lat at center of box
 
@@ -119,85 +112,95 @@ library(ncdf4)
 
 # -> -> -> USE APPROPRIATE lon lat and outfile block:
 
-
-
-
-
-
 # set lon limits in array units
-if ( minlon < 0){ 
-  arrayminlon=(minlon+360)/2+1
-} else { 
-  arrayminlon=minlon/2+1 
-} 
-
-if ( maxlon < 0){ 
-  arraymaxlon=(maxlon+360)/2+1
-} else { 
-  arraymaxlon=maxlon/2+1 
-} 
-
-# set lat limits in array units
-arrayminlat=minlat/2+45
-arraymaxlat=maxlat/2+45
-
-
-filelist=list.files(pattern=years)
-
-numfiles=length(filelist)
-
-for (filenum in 1:numfiles){
-  
-  #  ersst = open.ncdf(filelist[filenum]) 
-  ersst = nc_open(filelist[filenum]) 
-  print(filelist[filenum])
-  
-  #  sst = get.var.ncdf( ersst, "sst") 
-  sst <- ncvar_get(ersst,"sst" )
-  
-  year=as.numeric(substr(filelist[filenum],10,13))
-  month=as.numeric(substr(filelist[filenum],14,15))
-  
-  for (arrlons in arrayminlon:arraymaxlon){
-    for (arrlats in arrayminlat:arraymaxlat){
-      
-      
-      if ( arrlons < 91){ 
-        regenlon=(arrlons-1)*2
-      } else { 
-        regenlon=(arrlons-1)*2-360
-      } 
-      
-      
-      regenlat=(arrlats-45)*2
-      
-      long1=regenlon-1 *pi/180
-      lat1=regenlat-1 *pi/180
-      long2=regenlon+1 *pi/180
-      lat2=regenlat-1 *pi/180
-      dwidth1 <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
-      long1=regenlon-1 *pi/180
-      lat1=regenlat+1 *pi/180
-      long2=regenlon+1 *pi/180
-      lat2=regenlat+1 *pi/180
-      dwidth2 <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
-      area=((dwidth1 + dwidth1)/2) * dheight
-      
-      dataline <- matrix(c(year, month, regenlon, regenlat,
-                           round(sst[arrlons,arrlats],digits=2),area),1,6)
-      
-      
-      if(is.finite(sst[arrlons,arrlats])) {
-        write.table(dataline,file=dataoutfile,sep=",",row.name=F,col.names=F,append=TRUE)   
-      }
-      
-    }
-  }
-  
-  #    close.ncdf(ersst) 
-  nc_close(ersst)
-  
+if (minlon < 0) {
+  arrayminlon <- (minlon + 360) / 2 + 1
+} else {
+  arrayminlon <- minlon / 2 + 1
 }
 
+if (maxlon < 0) {
+  arraymaxlon <- (maxlon + 360) / 2 + 1
+} else {
+  arraymaxlon <- maxlon / 2 + 1
+}
+
+# set lat limits in array units
+arrayminlat <- minlat / 2 + 45
+arraymaxlat <- maxlat / 2 + 45
+
+
+filelist <- list.files(pattern = years)
+
+numfiles <- length(filelist)
+
+for (filenum in 1:numfiles) {
+  #  ersst = open.ncdf(filelist[filenum])
+  ersst <- nc_open(filelist[filenum])
+  print(filelist[filenum])
+
+  #  sst = get.var.ncdf( ersst, "sst")
+  sst <- ncvar_get(ersst, "sst")
+
+  year <- as.numeric(substr(filelist[filenum], 10, 13))
+  month <- as.numeric(substr(filelist[filenum], 14, 15))
+
+  for (arrlons in arrayminlon:arraymaxlon) {
+    for (arrlats in arrayminlat:arraymaxlat) {
+      if (arrlons < 91) {
+        regenlon <- (arrlons - 1) * 2
+      } else {
+        regenlon <- (arrlons - 1) * 2 - 360
+      }
+
+      regenlat <- (arrlats - 45) * 2
+
+      long1 <- regenlon - 1 * pi / 180
+      lat1 <- regenlat - 1 * pi / 180
+      long2 <- regenlon + 1 * pi / 180
+      lat2 <- regenlat - 1 * pi / 180
+      dwidth1 <- acos(
+        sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long2 - long1)
+      ) *
+        R
+      long1 <- regenlon - 1 * pi / 180
+      lat1 <- regenlat + 1 * pi / 180
+      long2 <- regenlon + 1 * pi / 180
+      lat2 <- regenlat + 1 * pi / 180
+      dwidth2 <- acos(
+        sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long2 - long1)
+      ) *
+        R
+      area <- ((dwidth1 + dwidth1) / 2) * dheight
+
+      dataline <- matrix(
+        c(
+          year,
+          month,
+          regenlon,
+          regenlat,
+          round(sst[arrlons, arrlats], digits = 2),
+          area
+        ),
+        1,
+        6
+      )
+
+      if (is.finite(sst[arrlons, arrlats])) {
+        write.table(
+          dataline,
+          file = dataoutfile,
+          sep = ",",
+          row.name = F,
+          col.names = F,
+          append = TRUE
+        )
+      }
+    }
+  }
+
+  #    close.ncdf(ersst)
+  nc_close(ersst)
+}
 
 #```
