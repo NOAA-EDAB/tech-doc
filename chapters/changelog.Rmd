@@ -4,7 +4,7 @@
 
 Date: 07/29/2026
 
-### Improvements
+### Improvements {.unnumbered}
 
 - Renamed default branch from `master` to `main`
 - Deployed suite of new and revised issue templates
