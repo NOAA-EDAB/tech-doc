@@ -17,4 +17,4 @@ jobs:
     - name: Verify Changelog Updated
       uses: takanuva15/verify-file-updated@v1
       with:
-        filename_to_check: changelog.Rmd
+        filename_to_check: chapters/changelog.Rmd
