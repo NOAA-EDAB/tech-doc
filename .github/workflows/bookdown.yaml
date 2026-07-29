@@ -3,13 +3,8 @@
 on:
   push:
     branches:
-      - master
-      - dev
-      
-  pull_request:
-    branches:
-      - master
-
+      - main
+  workflow_dispatch:
 
 name: build-book
 
@@ -22,7 +17,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -33,10 +28,10 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Build book
-        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
+        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = FALSE)'
         
       - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.

@@ -2,7 +2,6 @@ name: State of the Ecosystem - Edit Tech Doc Page
 description: Use this issue template to suggest an edit to a page in the State of the Ecosystem technical documentation.
 title: "[Tech Doc Page Edit]: "
 labels: ["page edit"]
-assignees: "BBeltz1"
 body:
   - type: markdown
     attributes:

@@ -1,6 +1,21 @@
 # Changelog {.unnumbered}
 
-## tech-doc 7.0.0 {.unnumbered}
+## tech-doc v8.0.0 {.unnumbered}
+
+Date: 07/29/2026
+
+### Improvements {.unnumbered}
+
+- Renamed default branch from `master` to `main`
+- Deployed suite of new and revised issue templates
+- Deployed suite of new pull request templates
+- Added new repository documentation (CONTRIBUTING, CODE_OF_CONDUCT)
+- Revised README
+- Adjusted workflow triggers and bumped versions of external actions
+- Deployed Air reformatter workflows and style guide
+- Reformatted codebase according to new style guide
+
+## tech-doc v7.0.0 {.unnumbered}
 
 Date: 07/14/2026
 

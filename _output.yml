@@ -14,7 +14,7 @@ bookdown::gitbook:
     #   collapse: section
     #   before: |
     #     <li><a href="./">Mastering Shiny</a></li>
-    edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+    edit: https://github.com/NOAA-EDAB/tech-doc/edit/main/%s
     download: []
     sharing:
       facebook: no
@@ -42,7 +42,7 @@ bookdown::epub_book: default
 #            <li><a href="https://github.com/NOAA-EDAB/tech-doc" target="blank">Published with bookdown</a></li>
 #    toolbar:
 #       position: static
-#     edit: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+#     edit: https://github.com/NOAA-EDAB/tech-doc/edit/main/%s
 #     download: ["pdf"]
 # bookdown::pdf_book:
 #   keep_tex: yes
@@ -62,6 +62,6 @@ bookdown::epub_book: default
 #        <li><a href="https://github.com/NOAA-EDAB/tech-doc"></a></li>
 #        <li><a href="./"Published with bookdown</a></li>
 #    edit:
-#      link: https://github.com/NOAA-EDAB/tech-doc/edit/master/%s
+#      link: https://github.com/NOAA-EDAB/tech-doc/edit/main/%s
 #bookdown::pdf_book:
 #  keep_tex: yes
